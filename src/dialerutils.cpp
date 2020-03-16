@@ -85,7 +85,7 @@ const QString DialerUtils::formatNumber(const QString& number)
     // Get formatter instance
     QLocale locale;
     QStringList qcountry = locale.name().split('_');
-    QString countrycode(qcountry.constLast());
+    const QString &countrycode(qcountry.constLast());
     string country = countrycode.toUtf8().constData();
     PhoneNumberUtil* util = PhoneNumberUtil::GetInstance();
     AsYouTypeFormatter* formatter = util->PhoneNumberUtil::GetAsYouTypeFormatter(country);

@@ -87,10 +87,9 @@ int main(int argc, char **argv)
     QApplication app(argc, argv);
 
     const QString description = i18n("Plasma Phone Dialer");
-    const char version[] = PROJECT_VERSION;
 
 //     app.setQuitOnLastWindowClosed(false);
-    app.setApplicationVersion(version);
+    app.setApplicationVersion(PROJECT_VERSION);
     app.setOrganizationDomain("kde.org");
 
     KDBusService service(KDBusService::Unique);
@@ -151,7 +150,8 @@ int main(int argc, char **argv)
 
     Tp::AccountPtr simAccount;
     const Tp::AccountSetPtr accountSet = manager->validAccounts();
-    for (const Tp::AccountPtr &account : accountSet->accounts()) {
+    const auto accounts = accountSet->accounts();
+    for (const Tp::AccountPtr &account : accounts) {
         static const QStringList supportedProtocols = {
             QLatin1String("ofono"),
             QLatin1String("tel"),
@@ -185,7 +185,7 @@ int main(int argc, char **argv)
     
     KAboutData::setApplicationData(aboutData);
 
-    QWindow *window = qobject_cast<QWindow *>(engine.rootObjects()[0]);
+    QWindow *window = qobject_cast<QWindow *>(engine.rootObjects().at(0));
 
     Q_ASSERT(window);
 
@@ -206,7 +206,7 @@ int main(int argc, char **argv)
         window->requestActivate();
     }
     if (!parser.positionalArguments().isEmpty()) {
-        QString numberArg = parser.positionalArguments().first();
+        QString numberArg = parser.positionalArguments().constFirst();
         if (numberArg.startsWith("tel:")) {
             numberArg = numberArg.mid(4);
         }

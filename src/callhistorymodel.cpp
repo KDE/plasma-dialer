@@ -53,7 +53,7 @@ CallHistoryModel::CallHistoryModel(QObject *parent)
     endResetModel();
 }
 
-void CallHistoryModel::addCall(QString number, int duration, int type)
+void CallHistoryModel::addCall(const QString &number, int duration, int type)
 {
     beginInsertRows(QModelIndex(), m_calls.size(), m_calls.size());
     QSqlQuery putCall(m_db);
