@@ -33,11 +33,11 @@ public:
 
 private Q_SLOTS:
     void onChannelLost(const Tp::ChannelPtr & channel,
-                       const QString & errorName,
-                       const QString & errorMessage);
+                       const QString &errorName,
+                       const QString &errorMessage);
     void onDispatchOperationInvalidated(Tp::DBusProxy *proxy,
-                                        const QString & errorName,
-                                        const QString & errorMessage);
+                                        const QString &errorName,
+                                        const QString &errorMessage);
     void onChannelAccepted();
     void onChannelRejected();
     void onClaimFinished(Tp::PendingOperation *operation);
