@@ -43,7 +43,6 @@
 #include <QQmlContext>
 #include <QQmlEngine>
 #include <QQuickWindow>
-#include <KDeclarative/QmlObject>
 #include <KAboutData>
 #include <KDBusService>
 
