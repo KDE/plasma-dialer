@@ -20,8 +20,12 @@ include(FeatureSummary)
 
 find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED Core Qml Quick Sql)
 
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS CoreAddons I18n People)
-find_package(KF5 REQUIRED COMPONENTS DBusAddons Notifications)
+find_package(KF5CoreAddons ${KF5_MIN_VERSION} REQUIRED)
+find_package(KF5I18n ${KF5_MIN_VERSION} REQUIRED)
+find_package(KF5People ${KF5_MIN_VERSION} REQUIRED)
+find_package(KF5DBusAddons ${KF5_MIN_VERSION} REQUIRED)
+find_package(KF5Notifications ${KF5_MIN_VERSION} REQUIRED)
+
 find_package(TelepathyQt5 REQUIRED)
 
 install(FILES metadata.desktop DESTINATION ${XDG_APPS_INSTALL_DIR} RENAME org.kde.phone.dialer.desktop)
