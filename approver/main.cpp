@@ -31,6 +31,8 @@
 #include <TelepathyQt/ClientRegistrar>
 #include <TelepathyQt/CallChannel>
 
+#include "phoneapprover.h"
+
 int main(int argc, char **argv)
 {
     QCommandLineParser parser;
@@ -62,6 +64,7 @@ int main(int argc, char **argv)
     Tp::ClientRegistrarPtr m_registrar;
     m_registrar = Tp::ClientRegistrar::create(accountFactory, connectionFactory,
                                               channelFactory, contactFactory);
-    
+    m_registrar->registerClient(Tp::SharedPtr<PhoneApprover>(new PhoneApprover()),
+                                "Plasma.Approver");
     return app.exec();
 }

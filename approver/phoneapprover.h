@@ -33,7 +33,7 @@ public:
     
 protected:
     void addDispatchOperation(const Tp::MethodInvocationContextPtr<>& context,
-                              const Tp::ChannelDispatchOperationPtr& dispatchOperation) = 0;
+                              const Tp::ChannelDispatchOperationPtr& dispatchOperation) override;
 
 };
 

@@ -24,6 +24,8 @@
 #include <TelepathyQt/ChannelClassSpec>
 #include <TelepathyQt/ChannelDispatchOperation>
 
+#include "dispatchoperation.h"
+
 static inline Tp::ChannelClassSpecList channelClassSpecList()
 {
     return Tp::ChannelClassSpecList()
@@ -35,7 +37,9 @@ PhoneApprover::PhoneApprover(QObject *parent)
 {
 }
 
-void PhoneApprover::addDispatchOperation(const Tp::MethodInvocationContextPtr<  >& context,
+void PhoneApprover::addDispatchOperation(const Tp::MethodInvocationContextPtr<>& context,
                                          const Tp::ChannelDispatchOperationPtr& dispatchOperation)
 {
+    new DispatchOperation(dispatchOperation, this);
+    context->setFinished();
 }
