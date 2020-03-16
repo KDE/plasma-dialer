@@ -21,8 +21,6 @@
 import QtQuick 2.0
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.5 as QQC2
-import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.kirigami 2.9 as Kirigami
 import "Dialpad"
 import org.kde.phone.dialer 1.0
@@ -50,9 +48,9 @@ Kirigami.Page {
             verticalAlignment: Qt.AlignBottom
 
             Layout.fillWidth: true
-            Layout.topMargin: units.largeSpacing * 2
-            Layout.bottomMargin: units.largeSpacing
-            Layout.minimumHeight: units.gridUnit * 3
+            Layout.topMargin: Kirigami.Units.largeSpacing * 2
+            Layout.bottomMargin: Kirigami.Units.largeSpacing
+            Layout.minimumHeight: Kirigami.Units.gridUnit * 3
             Layout.maximumHeight: Layout.minimumHeight
             font.pixelSize: units.gridUnit * 2.3
 

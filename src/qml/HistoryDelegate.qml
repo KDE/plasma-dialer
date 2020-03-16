@@ -22,7 +22,6 @@ import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.2 as Controls
 
 import org.kde.kirigami 2.2 as Kirigami
-import org.kde.plasma.components 2.0 as PlasmaComponents
 
 Item {
     id: delegateParent
@@ -62,61 +61,62 @@ Item {
         easing.type: Easing.InOutQuad
     }
 
-    PlasmaComponents.ListItem {
+    Kirigami.BasicListItem {
         id: delegate
 
-        MouseArea {
-            width: parent.width
-            height: childrenRect.height
-            onClicked: call(model.number);
-            drag.axis: Drag.XAxis
-            drag.target: delegate
-            onReleased: {
-                if (drag.active) {
-                    if (delegate.x > delegate.width / 3 || delegate.x < width / -3) {
-                        removeAnim.running = true;
-                    } else {
-                        resetAnim.running = true;
+        RowLayout {
+            Layout.fillWidth: true
+            id: contentLayout
+            //FIXME: ad hoc icons
+            Kirigami.Icon {
+                width: Kirigami.Units.iconSizes.medium
+                height: width
+                source: {
+                    print("ICON", model.callType)
+                    switch (model.callType) {
+                    case 0:
+                        return "list-remove";
+                    case 1:
+                        return "go-down";
+                    case 2:
+                        return "go-up";
                     }
                 }
             }
-
-            RowLayout {
-                width: parent.width
-                //FIXME: ad hoc icons
-                Kirigami.Icon {
-                    width: units.iconSizes.medium
-                    height: width
-                    source: {
-                        switch (model.callType) {
-                        case 0:
-                            return "list-remove";
-                        case 1:
-                            return "go-down";
-                        case 2:
-                            return "go-up";
-                        }
-                    }
+            ColumnLayout {
+                Controls.Label {
+                    text: "Name (todo)"
                 }
-                ColumnLayout {
-                    Controls.Label {
-                        text: "Name (todo)"
-                    }
-                    Controls.Label {
-                        text: model.number
-                        Layout.fillWidth: true
-                    }
+                Controls.Label {
+                    text: model.number
+                    Layout.fillWidth: true
                 }
-                ColumnLayout {
-                    Controls.Label {
-                        Layout.alignment: Qt.AlignRight
-                        text: Qt.formatTime(model.time, Qt.locale().timeFormat(Locale.ShortFormat));
-                    }
-                    Controls.Label {
-                        Layout.alignment: Qt.AlignRight
-                        text: i18n("Duration: %1", secondsToTimeString(model.duration));
-                        visible: model.duration > 0
-                    }
+            }
+            ColumnLayout {
+                Layout.fillWidth: true
+                Controls.Label {
+                    Layout.alignment: Qt.AlignRight
+                    text: Qt.formatTime(model.time, Qt.locale().timeFormat(Locale.ShortFormat));
+                }
+                Controls.Label {
+                    Layout.alignment: Qt.AlignRight
+                    text: i18n("Duration: %1", secondsToTimeString(model.duration));
+                    visible: model.duration > 0
+                }
+            }
+        }
+    }
+    MouseArea {
+        anchors.fill: delegate
+        onClicked: call(model.number);
+        drag.axis: Drag.XAxis
+        drag.target: delegate
+        onReleased: {
+            if (drag.active) {
+                if (delegate.x > delegate.width / 3 || delegate.x < width / -3) {
+                    removeAnim.running = true;
+                } else {
+                    resetAnim.running = true;
                 }
             }
         }

@@ -116,9 +116,9 @@ QHash<int, QByteArray> CallHistoryModel::roleNames() const
 {
     QHash<int, QByteArray> roleNames;
     roleNames[PhoneNumberRole] = "number";
-    roleNames[CallTypeRole] = "time";
+    roleNames[TimeRole] = "time";
     roleNames[DurationRole] = "duration";
-    roleNames[TimeRole] = "callType";
+    roleNames[CallTypeRole] = "callType";
     roleNames[IdRole] = "dbid";
 
     return roleNames;

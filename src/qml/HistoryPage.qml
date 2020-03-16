@@ -20,10 +20,7 @@ import QtQuick 2.3
 import QtQuick.Controls 2.3
 import QtQuick.Layouts 1.1
 
-import org.kde.plasma.extras 2.0 as PlasmaExtras
-import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.kirigami 2.0 as Kirigami
-import org.kde.plasma.components 2.0 as PlasmaComponents
+import org.kde.kirigami 2.10 as Kirigami
 
 import org.kde.phone.dialer 1.0
 
@@ -87,12 +84,8 @@ Kirigami.ScrollablePage {
         }
         section {
             property: "date"
-            delegate: PlasmaComponents.ListItem {
-                id: sectionItem
-                sectionDelegate: true
-                Label {
-                    text: Qt.formatDate(section, Qt.locale().dateFormat(Locale.LongFormat));
-                }
+            delegate: Kirigami.ListSectionHeader {
+                label: Qt.formatDate(section, Qt.locale().dateFormat(Locale.LongFormat));
             }
         }
         delegate: HistoryDelegate {}
