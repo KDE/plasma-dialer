@@ -14,15 +14,13 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_D
 include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
-include(ECMOptionalAddSubdirectory)
 include(ECMInstallIcons)
-include(ECMSetupVersion)
 include(ECMMarkNonGuiExecutable)
 include(FeatureSummary)
 
 find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED Core Qml Quick Sql)
 
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Plasma Service Declarative I18n KIO People)
+find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS CoreAddons I18n People)
 find_package(KF5 REQUIRED COMPONENTS DBusAddons Notifications)
 find_package(TelepathyQt5 REQUIRED)
 

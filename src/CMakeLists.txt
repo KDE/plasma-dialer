@@ -13,13 +13,10 @@ find_package(PhoneNumber COMPONENTS PhoneNumber REQUIRED)
 
 target_link_libraries(plasmaphonedialer
  PhoneNumber::PhoneNumber
- Qt5::Gui
  Qt5::Quick
- Qt5::Widgets
  Qt5::Sql
- KF5::Declarative
+ KF5::CoreAddons
  KF5::I18n
- KF5::QuickAddons
  KF5::DBusAddons
  KF5::Notifications
  ${TELEPATHY_QT5_LIBRARIES}
