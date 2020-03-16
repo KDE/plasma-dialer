@@ -37,9 +37,7 @@ int main(int argc, char **argv)
     QCoreApplication app(argc, argv);
 
     const QString description = i18n("Plasma Phone Approver");
-    const char version[] = PROJECT_VERSION;
-    
-    app.setApplicationVersion(version);
+    app.setApplicationVersion(PROJECT_VERSION);
     app.setOrganizationDomain("kde.org");
 
     KDBusService service(KDBusService::Unique);
