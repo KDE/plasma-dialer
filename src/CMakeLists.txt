@@ -19,7 +19,7 @@ target_link_libraries(plasmaphonedialer
  KF5::I18n
  KF5::DBusAddons
  KF5::Notifications
- ${TELEPATHY_QT5_LIBRARIES}
+ TelepathyQt5::Core 
 )
 
 install(TARGETS plasmaphonedialer ${INSTALL_TARGETS_DEFAULT_ARGS})
