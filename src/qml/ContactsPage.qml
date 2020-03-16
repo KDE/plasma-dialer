@@ -74,7 +74,7 @@ Kirigami.ScrollablePage {
         }
 
         delegate: Kirigami.DelegateRecycler {
-            width: parent.width
+            width: parent && parent.width
             sourceComponent: contactListDelegate
         }
     }

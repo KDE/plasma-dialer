@@ -19,20 +19,20 @@
 
 import QtQuick 2.0
 import QtQuick.Layouts 1.1
-import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.components 2.0 as PlasmaComponents
+
+import org.kde.kirigami 2.8 as Kirigami
 
 
 Item {
     Layout.fillWidth: true
     Layout.fillHeight: true
-    Layout.minimumHeight: parent.height/2
+    Layout.minimumHeight: parent.height / 2
     Rectangle {
         height: Math.min(parent.width, parent.height)
         width: height
         radius: 5
         anchors.centerIn: parent
-        PlasmaCore.IconItem {
+        Kirigami.Icon {
             anchors {
                 fill: parent
                 centerIn: parent

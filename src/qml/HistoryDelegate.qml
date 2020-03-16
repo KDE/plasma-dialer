@@ -72,7 +72,6 @@ Item {
                 width: Kirigami.Units.iconSizes.medium
                 height: width
                 source: {
-                    print("ICON", model.callType)
                     switch (model.callType) {
                     case 0:
                         return "list-remove";

@@ -19,8 +19,8 @@
 
 import QtQuick 2.4
 import QtQuick.Layouts 1.1
-import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.components 2.0 as PlasmaComponents
+
+import org.kde.kirigami 2.8 as Kirigami
 
 MouseArea {
     id: root
@@ -28,7 +28,7 @@ MouseArea {
     signal accepted
     signal rejected
 
-    Layout.minimumHeight: units.gridUnit * 5
+    Layout.minimumHeight: Kirigami.Units.gridUnit * 5
     Layout.fillWidth: true
     property int handlePosition: (answerHandle.x + answerHandle.width/2)
     drag {
@@ -42,20 +42,22 @@ MouseArea {
         radius: height
         color: Qt.rgba((handlePosition > root.width/2 ? 0.6 : 0)+0.2, (handlePosition < root.width/2 ? 0.6 : 0)+0.2, 0.2, Math.abs(handlePosition - (root.width/2)) / answerHandle.width/2);
 
-        PlasmaCore.IconItem {
+        Kirigami.Icon {
             source: "call-start"
             width: icon.width
             height: width
+            smooth: true
             anchors {
                 verticalCenter: parent.verticalCenter
                 left: parent.left
                 leftMargin: units.largeSpacing
             }
         }
-        PlasmaCore.IconItem {
+        Kirigami.Icon {
             source: "call-stop"
             width: icon.width
             height: width
+            smooth: true
             anchors {
                 verticalCenter: parent.verticalCenter
                 right: parent.right
@@ -70,11 +72,12 @@ MouseArea {
             width: height
             radius: width
             color: Qt.rgba(0.2, 0.8, 0.2, 1)
-            PlasmaCore.IconItem {
+            Kirigami.Icon {
                 id: icon
                 source: "call-start"
                 width: parent.width * 0.7
                 height: width
+                smooth: true
                 anchors.centerIn: parent
             }
             Behavior on x {

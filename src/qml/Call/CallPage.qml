@@ -19,9 +19,9 @@
  */
 
 import QtQuick 2.0
+import QtQuick.Controls 2.7 as Controls
 import QtQuick.Layouts 1.1
-import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.components 2.0 as PlasmaComponents
+
 import org.kde.kirigami 2.5 as Kirigami
 
 import "../Dialpad"
@@ -62,7 +62,7 @@ Kirigami.Page {
             id: topFlickable
             Layout.fillWidth: true
             Layout.fillHeight: true
-            Layout.minimumHeight: parent.height/2
+            Layout.minimumHeight: parent.height / 2
 
             contentWidth: topContents.width
             contentHeight: topContents.height
@@ -94,20 +94,20 @@ Kirigami.Page {
                 id: topSlideAnim
                 target: topFlickable
                 properties: "contentX"
-                duration: units.longDuration
+                duration: Kirigami.Units.longDuration
                 easing.type: Easing.InOutQuad
             }
         }
 
-        PlasmaComponents.Label {
+        Controls.Label {
             Layout.fillWidth: true
             Layout.minimumHeight: implicitHeight
             horizontalAlignment: Qt.AlignHCenter
             verticalAlignment: Qt.AlignVCenter
-            font.pointSize: theme.defaultFont.pointSize * 2
+            font.pointSize: Kirigami.Units.fontMetrics.pointSize * 2
             text: dialerUtils.callContactAlias
         }
-        PlasmaComponents.Label {
+        Controls.Label {
             Layout.fillWidth: true
             Layout.minimumHeight: implicitHeight
             horizontalAlignment: Qt.AlignHCenter
@@ -122,15 +122,15 @@ Kirigami.Page {
                 }
             }
         }
-        PlasmaComponents.ButtonRow {
-            opacity: status === dialerUtils.Active ? 1 : 0
-            exclusive: false
-            spacing: 0
+
+        RowLayout {
+            opacity: status === DialerUtils.Active ? 1 : 0
             Layout.alignment: Qt.AlignHCenter
-            PlasmaComponents.ToolButton {
+            id: buttonRow
+            Controls.ToolButton {
                 id: muteButton
                 flat: false
-                iconSource: "audio-volume-high"
+                icon.name: "audio-volume-high"
                 //TODO
 //                 iconSource: ofonoWrapper.isMicrophoneMuted ? "audio-volume-muted" : "audio-volume-high"
                 onClicked: {
@@ -138,10 +138,10 @@ Kirigami.Page {
 //                     ofonoWrapper.isMicrophoneMuted = !ofonoWrapper.isMicrophoneMuted;
                 }
             }
-            PlasmaComponents.ToolButton {
+            Controls.ToolButton {
                 id: dialerButton
                 flat: false
-                iconSource: "input-keyboard"
+                icon.name: "input-keyboard"
                 checkable: true
                 onCheckedChanged: {
                     if (checked) {
@@ -154,15 +154,14 @@ Kirigami.Page {
             }
         }
 
-
         Item {
-            Layout.minimumHeight: units.gridUnit * 5
+            Layout.minimumHeight: Kirigami.Units.gridUnit * 5
             Layout.fillWidth: true
 
             AnswerSwipe {
                 anchors.fill: parent
                 //STATUS_INCOMING
-                visible: status === dialerUtils.Active
+                visible: status !== DialerUtils.Active
                 onAccepted: {
                     dialerUtils.acceptCall();
                 }
@@ -171,11 +170,11 @@ Kirigami.Page {
                 }
             }
 
-            PlasmaComponents.Button {
+            Controls.Button {
                 anchors.fill: parent
                 //STATUS_INCOMING
-                visible: status != "incoming"
-                iconSource: "call-stop"
+                visible: status !== DialerUtils.Incoming
+                icon.name: "call-stop"
                 Layout.fillWidth: true
                 text: i18n("End Call")
                 onClicked: {
