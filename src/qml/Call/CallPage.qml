@@ -28,9 +28,10 @@ import "../Dialpad"
 import org.kde.phone.dialer 1.0
 
 Kirigami.Page {
+    objectName: "callPage"
     id: callPage
 
-    property DialerUtils.CallState status: dialerUtils.callState
+    property int status: dialerUtils.callState
 
     function secondsToTimeString(seconds) {
         var h = Math.floor(seconds / 3600);

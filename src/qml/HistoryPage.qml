@@ -27,9 +27,37 @@ import org.kde.plasma.components 2.0 as PlasmaComponents
 
 import org.kde.phone.dialer 1.0
 
-Kirigami.Page {
-
+Kirigami.ScrollablePage {
     title: i18n("History")
+
+
+    actions.main: Kirigami.Action {
+        onTriggered: historyModel.clear()
+        text: "Clear history"
+        icon.name: "edit-clear-history"
+    }
+
+    header: TabBar {
+        Layout.fillWidth: true
+        TabButton {
+            icon.name: "call-start"
+            text: i18n("All")
+            onCheckedChanged: {
+                if (checked) {
+                    filterModel.setFilterFixedString("")
+                }
+            }
+        }
+        TabButton {
+            icon.name: "list-remove"
+            text: i18n("Missed")
+            onCheckedChanged: {
+                if (checked) {
+                    filterModel.setFilterFixedString("0")
+                }
+            }
+        }
+    }
 
     function secondsToTimeString(seconds) {
         var h = Math.floor(seconds / 3600);
@@ -47,67 +75,26 @@ Kirigami.Page {
         visible: view.count == 0
     }
 
-    ColumnLayout {
-        anchors.fill: parent
-        visible: view.count > 0
-        PlasmaComponents.ToolBar {
-            Layout.fillWidth: true
-            tools: RowLayout {
-                id: toolBarLayout
-                PlasmaComponents.TabBar {
-                    tabPosition: Qt.TopEdge
-                    PlasmaComponents.TabButton {
-                        iconSource: "call-start"
-                        text: i18n("All")
-                        onCheckedChanged: {
-                            if (checked) {
-                                filterModel.setFilterFixedString("")
-                            }
-                        }
-                    }
-                    PlasmaComponents.TabButton {
-                        iconSource: "list-remove"
-                        text: i18n("Missed")
-                        onCheckedChanged: {
-                            if (checked) {
-                                filterModel.setFilterFixedString("0")
-                            }
-                        }
-                    }
-                }
-                Item {
-                    Layout.fillWidth: true
-                }
-                PlasmaComponents.Button {
-                    text: i18n("Clear")
-                    onClicked: historyModel.clear()
+
+    ListView {
+        id: view
+        model: CallHistorySortFilterModel {
+            id: filterModel
+            sourceModel: historyModel
+            filterRole: CallHistoryModel.CallTypeRole
+            sortRole: CallHistoryModel.TimeRole
+            Component.onCompleted: sort(0, Qt.DescendingOrder)
+        }
+        section {
+            property: "date"
+            delegate: PlasmaComponents.ListItem {
+                id: sectionItem
+                sectionDelegate: true
+                Label {
+                    text: Qt.formatDate(section, Qt.locale().dateFormat(Locale.LongFormat));
                 }
             }
         }
-        PlasmaExtras.ScrollArea {
-            Layout.fillWidth: true
-            Layout.fillHeight: true
-            ListView {
-                id: view
-                model: CallHistorySortFilterModel {
-                    id: filterModel
-                    sourceModel: historyModel
-                    filterRole: CallHistoryModel.CallTypeRole
-                    sortRole: CallHistoryModel.TimeRole
-                    Component.onCompleted: sort(0, Qt.DescendingOrder)
-                }
-                section {
-                    property: "date"
-                    delegate: PlasmaComponents.ListItem {
-                        id: sectionItem
-                        sectionDelegate: true
-                        PlasmaComponents.Label {
-                            text: Qt.formatDate(section, Qt.locale().dateFormat(Locale.LongFormat));
-                        }
-                    }
-                }
-                delegate: HistoryDelegate {}
-            }
-        }
+        delegate: HistoryDelegate {}
     }
 }

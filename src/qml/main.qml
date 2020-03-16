@@ -23,12 +23,12 @@ import QtQuick.Controls 2.3
 import QtQuick.Layouts 1.1
 import QtQuick.LocalStorage 2.0
 
-import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.kirigami 2.0 as Kirigami
 
 import org.kde.phone.dialer 1.0
 
 Kirigami.ApplicationWindow {
+    wideScreen: false
     id: root
 
 //BEGIN PROPERTIES
@@ -42,7 +42,7 @@ Kirigami.ApplicationWindow {
     //was the last call an incoming one?
     property bool isIncoming
 
-    pageStack.globalToolBar.style:Kirigami.ApplicationHeaderStyle.Titles
+    pageStack.globalToolBar.style: pageStack.currentItem.objectName && pageStack.currentItem.objectName === "callPage" ? Kirigami.ApplicationHeaderStyle.None : Kirigami.ApplicationHeaderStyle.Titles
 //END PROPERTIES
 
 //BEGIN SIGNAL HANDLERS
@@ -86,24 +86,37 @@ Kirigami.ApplicationWindow {
     pageStack.initialPage: dialerUtils.callState === DialerUtils.Idle || dialerUtils.callState === dialerUtils.Failed ? [Qt.resolvedUrl("HistoryPage.qml"), Qt.resolvedUrl("ContactsPage.qml"), Qt.resolvedUrl("DialerPage.qml")] : Qt.resolvedUrl("Call/CallPage.qml")
 
     footer: TabBar {
-        height: 50
+        height: 75
+        visible: !(pageStack.currentItem.objectName && pageStack.currentItem.objectName === "callPage")
 
         currentIndex: pageStack.currentIndex
 
         TabButton {
+            height: parent.height
+            width: parent.width / parent.children.count
+            anchors.bottom: parent.bottom
             text: i18n("History")
-            icon.name: "view-pim-contacts"
+            icon.name: "clock"
             onClicked: pageStack.currentIndex = 0
+            display: AbstractButton.TextUnderIcon
         }
         TabButton {
+            height: parent.height
+            width: parent.width / parent.children.count
+            anchors.bottom: parent.bottom
             text: i18n("Contacts")
             icon.name: "view-pim-contacts"
             onClicked: pageStack.currentIndex = 1
+            display: AbstractButton.TextUnderIcon
         }
         TabButton {
+            height: parent.height
+            width: parent.width / parent.children.count
+            anchors.bottom: parent.bottom
             text: i18n("Dialer")
-            icon.name: "view-pim-contacts"
+            icon.name: "call-start"
             onClicked: pageStack.currentIndex = 2
+            display: AbstractButton.TextUnderIcon
         }
     }
 }

@@ -23,8 +23,7 @@ import QtQuick.Layouts 1.1
 import org.kde.kirigami 2.10 as Kirigami
 import org.kde.people 1.0 as KPeople
 
-Kirigami.Page {
-
+Kirigami.ScrollablePage {
     title: i18n("Contacts")
 
     header: Kirigami.SearchField {
@@ -45,7 +44,9 @@ Kirigami.Page {
 
         section.property: "display"
         section.criteria: ViewSection.FirstCharacter
-        section.delegate: Kirigami.ListSectionHeader {text: section}
+        section.delegate: Kirigami.ListSectionHeader {
+            text: section
+        }
         clip: true
 
         model: KPeople.PersonsSortFilterProxyModel {
@@ -66,9 +67,9 @@ Kirigami.Page {
             id: contactListDelegate
 
             Kirigami.BasicListItem {
-                icon: model.decoration
-                label: model.display
-//                     onClicked: dialerUtils.dial(model.phoneNumber)
+                icon: model && model.decoration
+                label: model && model.display
+                onClicked: dialerUtils.dial(model.phoneNumber)
             }
         }
 
