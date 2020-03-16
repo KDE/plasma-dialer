@@ -26,7 +26,7 @@ import QtQuick.LocalStorage 2.0
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.kirigami 2.0 as Kirigami
 
-import org.kde.plasma.dialer 1.0
+import org.kde.phone.dialer 1.0
 
 Kirigami.ApplicationWindow {
     id: root
@@ -83,7 +83,7 @@ Kirigami.ApplicationWindow {
 
 //END MODELS
 
-    pageStack.initialPage: dialerUtils.callState == "idle" || dialerUtils.callState == "failed" ? [Qt.resolvedUrl("HistoryPage.qml"), Qt.resolvedUrl("ContactsPage.qml"), Qt.resolvedUrl("DialerPage.qml")] : Qt.resolvedUrl("Call/CallPage.qml")
+    pageStack.initialPage: dialerUtils.callState === DialerUtils.Idle || dialerUtils.callState === dialerUtils.Failed ? [Qt.resolvedUrl("HistoryPage.qml"), Qt.resolvedUrl("ContactsPage.qml"), Qt.resolvedUrl("DialerPage.qml")] : Qt.resolvedUrl("Call/CallPage.qml")
 
     footer: TabBar {
         height: 50

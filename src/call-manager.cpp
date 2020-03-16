@@ -55,7 +55,7 @@ CallManager::CallManager(const Tp::CallChannelPtr &callChannel, DialerUtils *dia
     connect(d->dialerUtils, &DialerUtils::hangUp, this, &CallManager::onHangUpRequested);
     connect(d->callChannel.data(), &Tp::CallChannel::invalidated, this, [=]() {
         qDebug() << "Channel invalidated";
-        d->dialerUtils->setCallState("idle");
+        d->dialerUtils->setCallState(DialerUtils::CallState::Idle);
         d->dialerUtils->emitCallEnded();
         deleteLater();
     });
@@ -110,7 +110,7 @@ void CallManager::onCallStateChanged(Tp::CallState state)
         break;
     case Tp::CallStateInitialising:
         if (d->callChannel->isRequested()) {
-            d->dialerUtils->setCallState("dialing");
+            d->dialerUtils->setCallState(DialerUtils::CallState::Dialing);
 
             //show status that the call is connecting
 //             ensureCallWindow();
@@ -121,12 +121,12 @@ void CallManager::onCallStateChanged(Tp::CallState state)
         break;
     case Tp::CallStateInitialised:
         if (d->callChannel->isRequested()) {
-            d->dialerUtils->setCallState("dialing");
+            d->dialerUtils->setCallState(DialerUtils::CallState::Dialing);
             //show status that the remote end is ringing
 //             ensureCallWindow();
 //             d->callWindow.data()->setStatus(CallWindow::StatusRemoteRinging);
         } else {
-            d->dialerUtils->setCallState("incoming");
+            d->dialerUtils->setCallState(DialerUtils::CallState::Incoming);
 
             //show approver;
             (void) d->callChannel->setRinging();
@@ -139,7 +139,7 @@ void CallManager::onCallStateChanged(Tp::CallState state)
         break;
     case Tp::CallStateAccepted:
         if (d->callChannel->isRequested()) {
-            d->dialerUtils->setCallState("answered");
+            d->dialerUtils->setCallState(DialerUtils::CallState::Answered);
             //show status that the remote end accepted the call
 //             ensureCallWindow();
 //             d->callWindow.data()->setStatus(CallWindow::StatusRemoteAccepted);
@@ -160,7 +160,7 @@ void CallManager::onCallStateChanged(Tp::CallState state)
         if (!d->callChannel->isRequested()) {
 //             delete d->approver.data();
         }
-        d->dialerUtils->setCallState("active");
+        d->dialerUtils->setCallState(DialerUtils::CallState::Active);
         d->callTimer = new QTimer(this);
         connect(d->callTimer, &QTimer::timeout, d->callTimer, [=]() {
             d->dialerUtils->setCallDuration(d->dialerUtils->callDuration() + 1);
@@ -171,7 +171,7 @@ void CallManager::onCallStateChanged(Tp::CallState state)
 //         d->callWindow.data()->setStatus(CallWindow::StatusActive);
         break;
     case Tp::CallStateEnded:
-        d->dialerUtils->setCallState("ended");
+        d->dialerUtils->setCallState(DialerUtils::CallState::Ended);
         if (d->ringingNotification) {
             d->ringingNotification->close();
         }

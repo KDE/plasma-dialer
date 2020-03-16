@@ -25,7 +25,7 @@ import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.kirigami 2.0 as Kirigami
 import org.kde.plasma.components 2.0 as PlasmaComponents
 
-import org.kde.plasma.dialer 1.0
+import org.kde.phone.dialer 1.0
 
 Kirigami.Page {
 

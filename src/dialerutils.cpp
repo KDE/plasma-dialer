@@ -65,15 +65,15 @@ void DialerUtils::dial(const QString &number)
         connect(pendingChannel, &Tp::PendingChannelRequest::finished, pendingChannel, [=](){
             if (pendingChannel->isError()) {
                 qWarning() << "Error when requesting channel" << pendingChannel->errorMessage();
-                setCallState("failed");
+                setCallState(CallState::Failed);
             }
         });
     } else {
-        setCallState("failed");
+        setCallState(CallState::Failed);
     }
 }
 
-QString DialerUtils::callState() const
+DialerUtils::CallState DialerUtils::callState() const
 {
     return m_callState;
 }
@@ -105,7 +105,7 @@ const QString DialerUtils::formatNumber(const QString& number)
     return QString::fromStdString(formatted);
 }
 
-void DialerUtils::setCallState(const QString &state)
+void DialerUtils::setCallState(const CallState &state)
 {
     if (m_callState != state) {
         m_callState = state;

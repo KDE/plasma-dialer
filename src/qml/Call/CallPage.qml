@@ -25,11 +25,12 @@ import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.kirigami 2.5 as Kirigami
 
 import "../Dialpad"
+import org.kde.phone.dialer 1.0
 
 Kirigami.Page {
     id: callPage
 
-    property string status: dialerUtils.callState
+    property DialerUtils.CallState status: dialerUtils.callState
 
     function secondsToTimeString(seconds) {
         var h = Math.floor(seconds / 3600);
@@ -42,7 +43,7 @@ Kirigami.Page {
     }
 
     onStatusChanged: {
-        if (status != "active") {
+        if (status !== DialerUtils.Active) {
             dialerButton.checked = false;
         }
     }
@@ -64,7 +65,7 @@ Kirigami.Page {
 
             contentWidth: topContents.width
             contentHeight: topContents.height
-            interactive: status == "active";
+            interactive: status === DialerUtils.Active;
             Row {
                 id: topContents
                 Avatar {
@@ -111,7 +112,7 @@ Kirigami.Page {
             horizontalAlignment: Qt.AlignHCenter
             verticalAlignment: Qt.AlignVCenter
             text: {
-                if (dialerUtils.callState == "dialing") {
+                if (dialerUtils.callState === DialerUtils.Dialing) {
                     return i18n("Calling...");
                 } else if (dialerUtils.callDuration > 0) {
                     return secondsToTimeString(dialerUtils.callDuration);
@@ -121,7 +122,7 @@ Kirigami.Page {
             }
         }
         PlasmaComponents.ButtonRow {
-            opacity: status == "active" ? 1 : 0
+            opacity: status === dialerUtils.Active ? 1 : 0
             exclusive: false
             spacing: 0
             Layout.alignment: Qt.AlignHCenter
@@ -160,7 +161,7 @@ Kirigami.Page {
             AnswerSwipe {
                 anchors.fill: parent
                 //STATUS_INCOMING
-                visible: status == "incoming"
+                visible: status === dialerUtils.Active
                 onAccepted: {
                     dialerUtils.acceptCall();
                 }

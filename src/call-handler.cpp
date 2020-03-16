@@ -45,7 +45,7 @@ CallHandler::CallHandler(DialerUtils *utils)
     : Tp::AbstractClientHandler(channelClassSpecList(), capabilities())
 {
     m_dialerUtils = utils;
-    m_dialerUtils->setCallState("idle");
+    m_dialerUtils->setCallState(DialerUtils::CallState::Idle);
     qDebug() << "Call handler ready";
 }
 

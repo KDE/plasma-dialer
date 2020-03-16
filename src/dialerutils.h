@@ -28,19 +28,29 @@
 class DialerUtils : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(QString callState READ callState NOTIFY callStateChanged);
+    Q_PROPERTY(CallState callState READ callState NOTIFY callStateChanged);
     Q_PROPERTY(uint callDuration READ callDuration NOTIFY callDurationChanged);
     Q_PROPERTY(QString callContactAlias READ callContactAlias NOTIFY callContactAliasChanged);
     Q_PROPERTY(QString callContactNumber READ callContactNumber NOTIFY callContactNumberChanged);
     Q_PROPERTY(bool isIncomingCall READ isIncomingCall NOTIFY isIncomingCallChanged);
 
 public:
+    enum CallState {
+        Idle,
+        Dialing,
+        Incoming,
+        Answered,
+        Active,
+        Ended,
+        Failed
+    };
+    Q_ENUM(CallState)
 
     DialerUtils(const Tp::AccountPtr &simAccount, QObject *parent = nullptr);
     ~DialerUtils() override;
 
-    QString callState() const;
-    void setCallState(const QString &state);
+    CallState callState() const;
+    void setCallState(const CallState &state);
 
     uint callDuration() const;
     void setCallDuration(uint duration);
@@ -76,7 +86,7 @@ private:
     QPointer <KNotification> m_callsNotification;
     QPointer <KNotification> m_ringingNotification;
     int m_missedCalls;
-    QString m_callState;
+    CallState m_callState;
     Tp::AccountPtr m_simAccount;
     QString m_callContactNumber;
     uint m_callDuration;

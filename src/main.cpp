@@ -60,7 +60,7 @@ void myMessageOutput(QtMsgType type, const QMessageLogContext &context, const QS
     out << context.function << ":" << context.line << " ";
 
     switch (type) {
-        case QtDebugMsg:	  out << "DBG"; break;
+        case QtDebugMsg:    out << "DBG"; break;
         case QtInfoMsg:     out << "NFO"; break;
         case QtWarningMsg:  out << "WRN"; break;
         case QtCriticalMsg: out << "CRT"; break;
@@ -109,8 +109,8 @@ int main(int argc, char **argv)
 
     parser.process(app);
 
-    qmlRegisterType<CallHistoryModel>("org.kde.plasma.dialer", 1, 0, "CallHistoryModel");
-    qmlRegisterType<CallHistorySortFilterModel>("org.kde.plasma.dialer", 1, 0, "CallHistorySortFilterModel");
+    qmlRegisterType<CallHistoryModel>("org.kde.phone.dialer", 1, 0, "CallHistoryModel");
+    qmlRegisterType<CallHistorySortFilterModel>("org.kde.phone.dialer", 1, 0, "CallHistorySortFilterModel");
 
     Tp::registerTypes();
 
@@ -170,6 +170,7 @@ int main(int argc, char **argv)
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
 
     auto *dialerUtils = new DialerUtils(simAccount);
+    qmlRegisterUncreatableType<DialerUtils>("org.kde.phone.dialer", 1, 0, "DialerUtils", "Created from c++");
     engine.rootContext()->setContextProperty("dialerUtils", QVariant::fromValue(dialerUtils));
     engine.rootContext()->setContextProperty("commandlineArguments", parser.positionalArguments());
 
