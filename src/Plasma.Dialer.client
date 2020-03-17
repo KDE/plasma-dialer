@@ -15,9 +15,6 @@ org.freedesktop.Telepathy.Channel.ChannelType s=org.freedesktop.Telepathy.Channe
 org.freedesktop.Telepathy.Channel.TargetHandleType u=1
 org.freedesktop.Telepathy.Channel.Type.Call1.InitialVideo b=true
 
-[org.freedesktop.Telepathy.Client.Handler]
-BypassApproval=true
-
 [org.freedesktop.Telepathy.Client.Handler.Capabilities]
 org.freedesktop.Telepathy.Channel.Type.Call1/audio=true
 org.freedesktop.Telepathy.Channel.Type.Call1/video=false
