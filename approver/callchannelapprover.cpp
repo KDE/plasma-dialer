@@ -63,6 +63,7 @@ void CallChannelApprover::onChannelReady(Tp::PendingOperation* op)
         qDebug() << "Blablalblalblabla";
         callChannel->setRinging();
     }
+    
     QStringList actions;
     actions << i18n("Accept") << i18n("Reject");
     if(!m_ringingNotification) {
@@ -72,6 +73,7 @@ void CallChannelApprover::onChannelReady(Tp::PendingOperation* op)
     m_ringingNotification->setIconName("call-start");
     m_ringingNotification->setTitle("Incoming call");
     m_ringingNotification->setText(callChannel->targetContact()->alias());
+    m_ringingNotification->setHint("category", "x-kde.incoming-call");
     m_ringingNotification->setActions(actions);
     m_ringingNotification->sendEvent();
     
