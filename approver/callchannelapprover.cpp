@@ -74,8 +74,8 @@ void CallChannelApprover::onChannelReady(Tp::PendingOperation* op)
     m_ringingNotification->setText(callChannel->targetContact()->alias());
     m_ringingNotification->setActions(actions);
     m_ringingNotification->sendEvent();
-    qDebug() << "BLAAAAAAAA";
-
+    
+    // once we have accept or reject action from user, we forward this to call handler
 }
 
 
