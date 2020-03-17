@@ -18,6 +18,9 @@ target_link_libraries(plasma-telepathy-approver
     TelepathyQt5::Core
 )
 
+install(TARGETS plasma-telepathy-approver ${INSTALL_TARGETS_DEFAULT_ARGS})
+
+
 configure_file(org.freedesktop.Telepathy.Client.Plasma.Approver.service.in
                 org.freedesktop.Telepathy.Client.Plasma.Approver.service)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.freedesktop.Telepathy.Client.Plasma.Approver.service
