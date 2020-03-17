@@ -19,8 +19,10 @@
 #include "channelapprover.h"
 #include <TelepathyQt/PendingOperation>
 
-#include <TelepathyQt/TextChannel>
+#include <TelepathyQt/CallChannel>
 #include <TelepathyQt/ReceivedMessage>
+
+#define TELEPHONY_SERVICE_HANDLER TP_QT_IFACE_CLIENT + ".Plasma.Dialer"
 
 DispatchOperation::DispatchOperation(const Tp::ChannelDispatchOperationPtr & dispatchOperation,
                                      QObject *parent)
@@ -71,21 +73,25 @@ void DispatchOperation::onDispatchOperationInvalidated(Tp::DBusProxy *proxy,
 
 void DispatchOperation::onChannelAccepted()
 {
-    //new HandleWithCaller(m_dispatchOperation, this);
+    m_dispatchOperation->handleWith(TELEPHONY_SERVICE_HANDLER);
+    for(auto channel: m_dispatchOperation->channels()) {
+        Tp::CallChannelPtr callChannel = Tp::CallChannelPtr::dynamicCast(channel);
+        if (callChannel && callChannel->callState() != Tp::CallStateActive) {
+            callChannel->accept();
+        }
+    }
 }
 
 void DispatchOperation::onChannelRejected()
 {
+    qDebug() << "Bla bla bla bla bla bla";
     Tp::PendingOperation *operation = m_dispatchOperation->claim();
     connect(operation, SIGNAL(finished(Tp::PendingOperation*)),
             SLOT(onClaimFinished(Tp::PendingOperation*)));
     Q_FOREACH(const Tp::ChannelPtr &channel, m_dispatchOperation->channels()) {
-        Tp::TextChannelPtr textChannel  = Tp::TextChannelPtr::dynamicCast(channel);
-        if (textChannel) {
-            //ack everything before we close the channel. Otherwise it will reappear
-            textChannel->acknowledge(textChannel->messageQueue());
-        }
+        Tp::CallChannelPtr callChannel  = Tp::CallChannelPtr::dynamicCast(channel);
         channel->requestClose();
+        qDebug() << "Blab bla bla blalbala";
     }
 }
 

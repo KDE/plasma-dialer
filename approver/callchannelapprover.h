@@ -37,6 +37,7 @@ public:
 
 private slots:
     void onChannelReady(Tp::PendingOperation *op);
+    void onNotificationAction(unsigned int action);
     
 private:
     QMap<Tp::PendingOperation*,Tp::ChannelPtr> m_Channels;
