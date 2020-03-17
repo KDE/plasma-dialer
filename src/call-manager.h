@@ -36,9 +36,6 @@ private Q_SLOTS:
     void onHangUpRequested();
 
 private:
-    void ensureCallWindow();
-
-private:
     struct Private;
     Private *const d;
 };

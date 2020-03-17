@@ -20,12 +20,7 @@
 
 #include <KNotification>
 #include <KLocalizedString>
-// #include "call-window.h"
-// #include "approver.h"
-// #include "../libktpcall/call-channel-handler.h"
-// #include "ktp_call_ui_debug.h"
 
-// #include <KTp/telepathy-handler-application.h>
 
 constexpr int MISSED_CALL_REASON = 5;
 constexpr int CALL_DURATION_UPDATE_DELAY = 1000;
@@ -33,9 +28,6 @@ constexpr int CALL_DURATION_UPDATE_DELAY = 1000;
 struct CallManager::Private
 {
     Tp::CallChannelPtr callChannel;
-//     CallChannelHandler *channelHandler;
-//     QPointer<CallWindow> callWindow;
-//     QPointer<Approver> approver;
     DialerUtils *dialerUtils;
     KNotification *ringingNotification;
     KNotification *callsNotification;
@@ -46,7 +38,6 @@ struct CallManager::Private
 CallManager::CallManager(const Tp::CallChannelPtr &callChannel, DialerUtils *dialerUtils, QObject *parent)
     : QObject(parent), d(new Private)
 {
-//     KTp::TelepathyHandlerApplication::newJob();
 
     d->dialerUtils = dialerUtils;
     d->callChannel = callChannel;
@@ -67,16 +58,6 @@ CallManager::CallManager(const Tp::CallChannelPtr &callChannel, DialerUtils *dia
     d->callsNotification = nullptr;
     d->callTimer = nullptr;
 
-    //create the channel handler
-//     d->channelHandler = new CallChannelHandler(callChannel, this);
-
-    //delete the CallManager when the channel has closed
-    //and the farstream side has safely shut down.
-    //NOTE this MUST be used with Qt::QueuedConnection because of
-    // https://bugreports.qt-project.org/browse/QTBUG-24571
-//     connect(d->channelHandler, SIGNAL(channelClosed()),
-//             this, SLOT(deleteLater()), Qt::QueuedConnection);
-
     //bring us up-to-date with the current call state
     onCallStateChanged(d->callChannel->callState());
 }
@@ -85,12 +66,6 @@ CallManager::~CallManager()
 {
     qDebug() << "Deleting CallManager";
 
-    //delete the window just in case CallManager was deleted
-    //before the channel entered CallStateEnded
-//     delete d->callWindow.data();
-//     delete d;
-
-//     KTp::TelepathyHandlerApplication::jobFinished();
 }
 
 void CallManager::onCallStateChanged(Tp::CallState state)
@@ -114,10 +89,6 @@ void CallManager::onCallStateChanged(Tp::CallState state)
     case Tp::CallStateInitialising:
         if (d->callChannel->isRequested()) {
             d->dialerUtils->setCallState(DialerUtils::CallState::Dialing);
-
-            //show status that the call is connecting
-//             ensureCallWindow();
-//             d->callWindow.data()->setStatus(CallWindow::StatusConnecting);
         } else {
             qDebug() << "Call is initialising";
         }
@@ -125,53 +96,26 @@ void CallManager::onCallStateChanged(Tp::CallState state)
     case Tp::CallStateInitialised:
         if (d->callChannel->isRequested()) {
             d->dialerUtils->setCallState(DialerUtils::CallState::Dialing);
-            //show status that the remote end is ringing
-//             ensureCallWindow();
-//             d->callWindow.data()->setStatus(CallWindow::StatusRemoteRinging);
         } else {
             d->dialerUtils->setCallState(DialerUtils::CallState::Incoming);
-
-            //show approver;
-            (void) d->callChannel->setRinging();
-            if (!d->ringingNotification) {
-                d->ringingNotification = new KNotification(QStringLiteral("ringing"), KNotification::Persistent | KNotification::LoopSound, nullptr);
-                d->ringingNotification->setComponentName(QStringLiteral("plasma_dialer"));
-            }
-            d->ringingNotification->sendEvent();
         }
         break;
     case Tp::CallStateAccepted:
         if (d->callChannel->isRequested()) {
             d->dialerUtils->setCallState(DialerUtils::CallState::Answered);
-            //show status that the remote end accepted the call
-//             ensureCallWindow();
-//             d->callWindow.data()->setStatus(CallWindow::StatusRemoteAccepted);
         } else {
-            //hide approver & show call window
             if (d->ringingNotification) {
                 d->ringingNotification->close();
             }
-//             delete d->approver.data();
-//             ensureCallWindow();
-//             d->callWindow.data()->setStatus(CallWindow::StatusConnecting);
         }
         break;
     case Tp::CallStateActive:
-        //normally the approver is already deleted and the call window
-        //already exists at this point, but we just want to be safe
-        //in case the CM decides to do a weird state jump
-        if (!d->callChannel->isRequested()) {
-//             delete d->approver.data();
-        }
         d->dialerUtils->setCallState(DialerUtils::CallState::Active);
         d->callTimer = new QTimer(this);
         connect(d->callTimer, &QTimer::timeout, d->callTimer, [=]() {
             d->dialerUtils->setCallDuration(d->dialerUtils->callDuration() + 1);
         });
         d->callTimer->start(CALL_DURATION_UPDATE_DELAY);
-
-//         ensureCallWindow();
-//         d->callWindow.data()->setStatus(CallWindow::StatusActive);
         break;
     case Tp::CallStateEnded:
         d->dialerUtils->setCallState(DialerUtils::CallState::Ended);
@@ -207,24 +151,6 @@ void CallManager::onCallStateChanged(Tp::CallState state)
             d->callTimer->deleteLater();
             d->callTimer = nullptr;
         }
-        //if we requested the call, make sure we have a window to show the error (if any)
-//         if (d->callChannel->isRequested()) {
-//             ensureCallWindow();
-//         }
-
-//         if (d->callWindow) {
-//             Tp::CallStateReason reason = d->callChannel->callStateReason();
-//             d->callWindow.data()->setStatus(CallWindow::StatusDisconnected, reason);
-//
-//             //kill the call manager when the call window is closed,
-//             //after shutting down the channelHandler
-//             connect(d->callWindow.data(), SIGNAL(destroyed()), d->channelHandler, SLOT(shutdown()));
-//         } else {
-//             //missed the call
-//             qCDebug(KTP_CALL_UI) << "missed call";
-//             delete d->approver.data();
-//             d->channelHandler->shutdown();
-//         }
         break;
     default:
         Q_ASSERT(false);
@@ -255,21 +181,3 @@ void CallManager::onHangUpRequested()
     }
 }
 
-void CallManager::ensureCallWindow()
-{
-//     if (!d->callWindow) {
-//         d->callWindow = new CallWindow(d->callChannel);
-//         d->callWindow.data()->show();
-//         d->callWindow.data()->setAttribute(Qt::WA_DeleteOnClose);
-//
-//         connect(d->channelHandler, SIGNAL(contentAdded(CallContentHandler*)),
-//                 d->callWindow.data(), SLOT(onContentAdded(CallContentHandler*)));
-//         connect(d->channelHandler, SIGNAL(contentRemoved(CallContentHandler*)),
-//                 d->callWindow.data(), SLOT(onContentRemoved(CallContentHandler*)));
-//
-//         //inform the ui about already existing contents
-//         Q_FOREACH(CallContentHandler *content, d->channelHandler->contents()) {
-//             d->callWindow.data()->onContentAdded(content);
-//         }
-//     }
-}

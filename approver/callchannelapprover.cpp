@@ -85,7 +85,6 @@ void CallChannelApprover::onChannelReady(Tp::PendingOperation* op)
     void (KNotification::* activation)(unsigned int) = &KNotification::activated;
     connect(m_ringingNotification, activation,
             this, &CallChannelApprover::onNotificationAction);
-    // once we have accept or reject action from user, we forward this to call handler
 }
 
 void CallChannelApprover::onNotificationAction(unsigned int action)
