@@ -15,6 +15,7 @@ target_link_libraries(plasma-telepathy-approver
     KF5::CoreAddons
     KF5::DBusAddons
     KF5::I18n
+    KF5::Notifications
     TelepathyQt5::Core
 )
 

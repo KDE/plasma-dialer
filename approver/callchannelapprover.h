@@ -26,6 +26,8 @@
 
 #include <TelepathyQt/CallChannel>
 
+#include <KNotification>
+
 class CallChannelApprover : public ChannelApprover
 {
     Q_OBJECT
@@ -38,8 +40,7 @@ private slots:
     
 private:
     QMap<Tp::PendingOperation*,Tp::ChannelPtr> m_Channels;
-
-
+    KNotification *m_ringingNotification = nullptr;
 };
 
 #endif // CALLCHANNELAPPROVER_H

@@ -21,6 +21,8 @@
 
 #include "callchannelapprover.h"
 
+#include <KLocalizedString>
+
 #include <TelepathyQt/PendingReady>
 #include <TelepathyQt/ChannelClassSpec>
 #include <TelepathyQt/ClientRegistrar>
@@ -61,7 +63,19 @@ void CallChannelApprover::onChannelReady(Tp::PendingOperation* op)
         qDebug() << "Blablalblalblabla";
         callChannel->setRinging();
     }
-    // at this point we do have a incoming call, so we show a user interface
-    // if user accepts it, we emit approved signal
+    QStringList actions;
+    actions << i18n("Accept") << i18n("Reject");
+    if(!m_ringingNotification) {
+        m_ringingNotification = new KNotification("ringing", KNotification::Persistent | KNotification::LoopSound, nullptr);
+    }
+    m_ringingNotification->setComponentName("plasma_dialer");
+    m_ringingNotification->setIconName("call-start");
+    m_ringingNotification->setTitle("Incoming call");
+    m_ringingNotification->setText(callChannel->targetContact()->alias());
+    m_ringingNotification->setActions(actions);
+    m_ringingNotification->sendEvent();
+    qDebug() << "BLAAAAAAAA";
+
 }
+
 
