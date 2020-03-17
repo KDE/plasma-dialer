@@ -33,6 +33,13 @@ public:
     CallChannelApprover(const Tp::CallChannelPtr& channel, QObject *parent);
     ~CallChannelApprover();
 
+private slots:
+    void onChannelReady(Tp::PendingOperation *op);
+    
+private:
+    QMap<Tp::PendingOperation*,Tp::ChannelPtr> m_Channels;
+
+
 };
 
 #endif // CALLCHANNELAPPROVER_H

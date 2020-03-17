@@ -21,12 +21,47 @@
 
 #include "callchannelapprover.h"
 
+#include <TelepathyQt/PendingReady>
+#include <TelepathyQt/ChannelClassSpec>
+#include <TelepathyQt/ClientRegistrar>
+#include <TelepathyQt/CallChannel>
+
 CallChannelApprover::CallChannelApprover(const Tp::CallChannelPtr & channel, QObject *parent)
     : ChannelApprover(parent)
 {
+    if (!channel.isNull()) {
+        Tp::PendingReady *pendingReady = channel->becomeReady(Tp::Features()
+                                                            << Tp::CallChannel::FeatureCore
+                                                            << Tp::CallChannel::FeatureCallState);
+        m_Channels[pendingReady] = channel;
+        connect(pendingReady, &Tp::PendingOperation::finished, 
+                this, &CallChannelApprover::onChannelReady);
+    }
 }
 
 CallChannelApprover::~CallChannelApprover()
 {
     deleteLater();
 }
+
+void CallChannelApprover::onChannelReady(Tp::PendingOperation* op)
+{
+    Tp::PendingReady *pendingReady = qobject_cast<Tp::PendingReady*>(op);
+    if (!pendingReady || !m_Channels.contains(pendingReady)) {
+        qWarning() << "Pending operation is not tracked" << op;
+        return;
+    }
+    
+    Tp::ChannelPtr channel = m_Channels[pendingReady];
+    Tp::CallChannelPtr callChannel = Tp::CallChannelPtr::dynamicCast(channel);
+    
+    if (channel->initiatorContact() != channel->connection()->selfContact()
+        && callChannel->callState() == Tp::CallStateInitialised
+        && !callChannel->isRequested()) {
+        qDebug() << "Blablalblalblabla";
+        callChannel->setRinging();
+    }
+    // at this point we do have a incoming call, so we show a user interface
+    // if user accepts it, we emit approved signal
+}
+

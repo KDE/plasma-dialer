@@ -46,14 +46,14 @@ DispatchOperation::DispatchOperation(const Tp::ChannelDispatchOperationPtr & dis
 
 DispatchOperation::~DispatchOperation()
 {
-//     qCDebug(APPROVER);
+     qDebug();
 }
 
 void DispatchOperation::onChannelLost(const Tp::ChannelPtr & channel,
                                       const QString & errorName,
                                       const QString & errorMessage)
 {
-//     qCDebug(APPROVER) << "Channel lost:" << errorName << errorMessage;
+    qDebug() << "Channel lost:" << errorName << errorMessage;
 
     ChannelApprover *approver = m_channelApprovers.take(channel);
     Q_ASSERT(approver);
@@ -65,7 +65,7 @@ void DispatchOperation::onDispatchOperationInvalidated(Tp::DBusProxy *proxy,
                                                        const QString & errorMessage)
 {
     Q_UNUSED(proxy);
-//     qCDebug(APPROVER) << "Dispatch operation invalidated" << errorName << errorMessage;
+    qDebug() << "Dispatch operation invalidated" << errorName << errorMessage;
     deleteLater();
 }
 
@@ -92,7 +92,7 @@ void DispatchOperation::onChannelRejected()
 void DispatchOperation::onClaimFinished(Tp::PendingOperation *operation)
 {
     if (operation->isError()) {
-//         qCDebug(APPROVER) << "Claim error:" << operation->errorName() << operation->errorMessage();
+        qDebug() << "Claim error:" << operation->errorName() << operation->errorMessage();
         return;
     }
 
