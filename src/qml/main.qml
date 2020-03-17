@@ -54,11 +54,11 @@ Kirigami.ApplicationWindow {
         onCallEnded: {
             var callType;
             if (isIncomingCall && callDuration == 0) {
-                callType = 0;
+                callType = DialerUtils.IncomingRejected;
             } else if (isIncomingCall && callDuration > 0) {
-                callType = 1;
+                callType = DialerUtils.IncomingAccepted;
             } else {
-                callType = 2;
+                callType = DialerUtils.Outgoing;
             }
             historyModel.addCall(callContactNumber, callDuration, callType)
         }

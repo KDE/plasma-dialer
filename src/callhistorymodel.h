@@ -22,12 +22,14 @@
 #include <QDateTime>
 #include <QVector>
 
+#include "dialerutils.h"
+
 struct CallData {
     QString id;
     QString number;
     QDateTime time;
     int duration;
-    int callType;
+    DialerUtils::CallType callType;
 };
 
 class CallHistoryModel : public QAbstractListModel
@@ -50,7 +52,7 @@ public:
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     QHash<int, QByteArray> roleNames() const override;
 
-    Q_INVOKABLE void addCall(const QString &number, int duration, int type);
+    Q_INVOKABLE void addCall(const QString &number, int duration, DialerUtils::CallType type);
     Q_INVOKABLE void clear();
 
     bool removeRows(int row, int count, const QModelIndex &parent = QModelIndex()) override;

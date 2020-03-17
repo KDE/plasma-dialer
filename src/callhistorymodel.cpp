@@ -46,14 +46,14 @@ CallHistoryModel::CallHistoryModel(QObject *parent)
         call.number = fetchCalls.value(1).toString();
         call.time = QDateTime::fromMSecsSinceEpoch(fetchCalls.value(2).toInt());
         call.duration = fetchCalls.value(3).toInt();
-        call.callType = fetchCalls.value(4).toInt();
+        call.callType = fetchCalls.value(4).value<DialerUtils::CallType>();
 
         m_calls.append(call);
     }
     endResetModel();
 }
 
-void CallHistoryModel::addCall(const QString &number, int duration, int type)
+void CallHistoryModel::addCall(const QString &number, int duration, DialerUtils::CallType type)
 {
     beginInsertRows(QModelIndex(), m_calls.size(), m_calls.size());
     QSqlQuery putCall(m_db);

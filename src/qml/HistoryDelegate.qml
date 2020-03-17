@@ -22,6 +22,7 @@ import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.2 as Controls
 
 import org.kde.kirigami 2.2 as Kirigami
+import org.kde.phone.dialer 1.0
 
 Item {
     id: delegateParent
@@ -73,11 +74,11 @@ Item {
                 height: width
                 source: {
                     switch (model.callType) {
-                    case 0:
+                    case DialerUtils.IncomingRejected:
                         return "list-remove";
-                    case 1:
+                    case DialerUtils.IncomingAccepted:
                         return "go-down";
-                    case 2:
+                    case DialerUtils.Outgoing:
                         return "go-up";
                     }
                 }

@@ -46,6 +46,13 @@ public:
     };
     Q_ENUM(CallState)
 
+    enum CallType {
+        IncomingRejected,
+        IncomingAccepted,
+        Outgoing
+    };
+    Q_ENUM(CallType)
+
     DialerUtils(const Tp::AccountPtr &simAccount, QObject *parent = nullptr);
     ~DialerUtils() override;
 
