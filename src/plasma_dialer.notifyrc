@@ -163,6 +163,6 @@ Comment[uk]=Телефон дзвонить
 Comment[x-test]=xxThe phone is ringingxx
 Comment[zh_CN]=手机正在响铃
 Comment[zh_TW]=電話正在響鈴中
-Action=Sound
+Action=Popup|Sound
 Sound=Oxygen-Im-Phone-Ring.ogg
 
