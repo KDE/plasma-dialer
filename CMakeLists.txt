@@ -1,6 +1,7 @@
 # minimal requirements
 cmake_minimum_required (VERSION 2.8.12 FATAL_ERROR)
-project(plasma-dialer)
+cmake_policy(SET CMP0048 NEW)
+project(plasma-dialer VERSION 0.9)
 set(QT_MIN_VERSION "5.12.0")
 set(KF5_MIN_VERSION "5.66.0")
 

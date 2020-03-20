@@ -78,7 +78,7 @@ DialerUtils::CallState DialerUtils::callState() const
     return m_callState;
 }
 
-const QString DialerUtils::formatNumber(const QString& number)
+QString DialerUtils::formatNumber(const QString &number)
 {
     using namespace ::i18n::phonenumbers;
 
@@ -105,7 +105,7 @@ const QString DialerUtils::formatNumber(const QString& number)
     return QString::fromStdString(formatted);
 }
 
-void DialerUtils::setCallState(const CallState &state)
+void DialerUtils::setCallState(const CallState state)
 {
     if (m_callState != state) {
         m_callState = state;

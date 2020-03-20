@@ -57,7 +57,7 @@ public:
     ~DialerUtils() override;
 
     CallState callState() const;
-    void setCallState(const CallState &state);
+    void setCallState(const DialerUtils::CallState state);
 
     uint callDuration() const;
     void setCallDuration(uint duration);
@@ -75,7 +75,7 @@ public:
 
     Q_INVOKABLE void resetMissedCalls();
     Q_INVOKABLE void dial(const QString &number);
-    Q_INVOKABLE const QString formatNumber(const QString& number);
+    Q_INVOKABLE QString formatNumber(const QString& number);
 
 Q_SIGNALS:
     void missedCallsActionTriggered();

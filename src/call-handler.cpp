@@ -31,12 +31,12 @@ static inline Tp::AbstractClientHandler::Capabilities capabilities()
     Tp::AbstractClientHandler::Capabilities caps;
 
     //we support both audio and video in calls
-    caps.setToken(TP_QT_IFACE_CHANNEL_TYPE_CALL + QLatin1String("/audio"));
+    caps.setToken(TP_QT_IFACE_CHANNEL_TYPE_CALL + QLatin1String("/audio"));  // clazy:exclude=qstring-allocations
 
     //transport methods - farstream supports them all
-    caps.setToken(TP_QT_IFACE_CHANNEL_TYPE_CALL + QLatin1String("/ice"));
-    caps.setToken(TP_QT_IFACE_CHANNEL_TYPE_CALL + QLatin1String("/gtalk-p2p"));
-    caps.setToken(TP_QT_IFACE_CHANNEL_TYPE_CALL + QLatin1String("/shm"));
+    caps.setToken(TP_QT_IFACE_CHANNEL_TYPE_CALL + QLatin1String("/ice")); // clazy:exclude=qstring-allocations
+    caps.setToken(TP_QT_IFACE_CHANNEL_TYPE_CALL + QLatin1String("/gtalk-p2p")); // clazy:exclude=qstring-allocations
+    caps.setToken(TP_QT_IFACE_CHANNEL_TYPE_CALL + QLatin1String("/shm"));  // clazy:exclude=qstring-allocations
 
     return caps;
 }

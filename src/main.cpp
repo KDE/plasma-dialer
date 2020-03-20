@@ -56,7 +56,7 @@ void myMessageOutput(QtMsgType type, const QMessageLogContext &context, const QS
 
     QString strout;
     QTextStream out(&strout);
-    out << QTime::currentTime().toString("hh:mm:ss.zzz ");
+    out << QTime::currentTime().toString(QStringLiteral("hh:mm:ss.zzz "));
     out << context.function << ":" << context.line << " ";
 
     switch (type) {
@@ -89,8 +89,8 @@ int main(int argc, char **argv)
     const QString description = i18n("Plasma Phone Dialer");
 
 //     app.setQuitOnLastWindowClosed(false);
-    app.setApplicationVersion(PROJECT_VERSION);
-    app.setOrganizationDomain("kde.org");
+    QCoreApplication::setApplicationVersion(QStringLiteral(PROJECT_VERSION));
+    QCoreApplication::setOrganizationDomain(QStringLiteral("kde.org"));
 
     KDBusService service(KDBusService::Unique);
 
@@ -102,7 +102,7 @@ int main(int argc, char **argv)
                                  QStringLiteral("daemon"),
                                  i18n("Daemon mode. run without displaying anything."));
 
-    parser.addPositionalArgument("number", i18n("Call the given number"));
+    parser.addPositionalArgument(QStringLiteral("number"), i18n("Call the given number"));
 
     parser.addOption(daemonOption);
 
@@ -172,16 +172,16 @@ int main(int argc, char **argv)
     auto *dialerUtils = new DialerUtils(simAccount);
 
     // TODO: Make dialerUtils a sigleton once we can depend on Qt 5.14
-    qmlRegisterUncreatableType<DialerUtils>("org.kde.phone.dialer", 1, 0, "DialerUtils", "Created from c++");
-    engine.rootContext()->setContextProperty("dialerUtils", QVariant::fromValue(dialerUtils));
+    qmlRegisterUncreatableType<DialerUtils>("org.kde.phone.dialer", 1, 0, "DialerUtils", QStringLiteral("Created from c++"));
+    engine.rootContext()->setContextProperty(QStringLiteral("dialerUtils"), QVariant::fromValue(dialerUtils));
 
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
 
     Tp::SharedPtr<CallHandler> callHandler(new CallHandler(dialerUtils));
-    registrar->registerClient(Tp::AbstractClientPtr::dynamicCast(callHandler), "Plasma.Dialer");
+    registrar->registerClient(Tp::AbstractClientPtr::dynamicCast(callHandler), QStringLiteral("Plasma.Dialer"));
 
-    KAboutData aboutData("dialer", i18n("Dialer"), "0.9", i18n("Plasma phone dialer"), KAboutLicense::GPL);
-    aboutData.setDesktopFileName("org.kde.phone.dialer");
+    KAboutData aboutData(QStringLiteral("dialer"), i18n("Dialer"), QStringLiteral(PROJECT_VERSION), i18n("Plasma phone dialer"), KAboutLicense::GPL);
+    aboutData.setDesktopFileName(QStringLiteral("org.kde.phone.dialer"));
     
     KAboutData::setApplicationData(aboutData);
 
@@ -189,13 +189,13 @@ int main(int argc, char **argv)
 
     Q_ASSERT(window);
 
-    QObject::connect(&service, &KDBusService::activateRequested, [=](const QStringList &arguments, const QString &workingDirectory) {
+    QObject::connect(&service, &KDBusService::activateRequested, window, [=](const QStringList &arguments, const QString &workingDirectory) {
         Q_UNUSED(workingDirectory);
         window->show();
         window->requestActivate();
         if (arguments.length() > 0) {
             QString numberArg = arguments[1];
-            if (numberArg.startsWith("tel:")) {
+            if (numberArg.startsWith(QStringLiteral("tel:"))) {
                 numberArg = numberArg.mid(4);
             }
             dialerUtils->dial(numberArg);
@@ -207,7 +207,7 @@ int main(int argc, char **argv)
     }
     if (!parser.positionalArguments().isEmpty()) {
         QString numberArg = parser.positionalArguments().constFirst();
-        if (numberArg.startsWith("tel:")) {
+        if (numberArg.startsWith(QStringLiteral("tel:"))) {
             numberArg = numberArg.mid(4);
         }
         qWarning() << "Calling" << numberArg;

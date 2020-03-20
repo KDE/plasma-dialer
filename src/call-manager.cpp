@@ -27,6 +27,9 @@
 
 // #include <KTp/telepathy-handler-application.h>
 
+constexpr int MISSED_CALL_REASON = 5;
+constexpr int CALL_DURATION_UPDATE_DELAY = 1000;
+
 struct CallManager::Private
 {
     Tp::CallChannelPtr callChannel;
@@ -131,8 +134,8 @@ void CallManager::onCallStateChanged(Tp::CallState state)
             //show approver;
             (void) d->callChannel->setRinging();
             if (!d->ringingNotification) {
-                d->ringingNotification = new KNotification("ringing", KNotification::Persistent | KNotification::LoopSound, nullptr);
-                d->ringingNotification->setComponentName("plasma_dialer");
+                d->ringingNotification = new KNotification(QStringLiteral("ringing"), KNotification::Persistent | KNotification::LoopSound, nullptr);
+                d->ringingNotification->setComponentName(QStringLiteral("plasma_dialer"));
             }
             d->ringingNotification->sendEvent();
         }
@@ -165,7 +168,7 @@ void CallManager::onCallStateChanged(Tp::CallState state)
         connect(d->callTimer, &QTimer::timeout, d->callTimer, [=]() {
             d->dialerUtils->setCallDuration(d->dialerUtils->callDuration() + 1);
         });
-        d->callTimer->start(1000);
+        d->callTimer->start(CALL_DURATION_UPDATE_DELAY);
 
 //         ensureCallWindow();
 //         d->callWindow.data()->setStatus(CallWindow::StatusActive);
@@ -176,20 +179,20 @@ void CallManager::onCallStateChanged(Tp::CallState state)
             d->ringingNotification->close();
         }
         //FIXME this is defined in the spec, but try to find a proper enum value for it
-        if (d->callChannel->callStateReason().reason == 5) {
+        if (d->callChannel->callStateReason().reason == MISSED_CALL_REASON) {
             qDebug() << "Adding notification";
             d->missedCalls++;
             if (!d->callsNotification) {
-                d->callsNotification = new KNotification("callMissed", KNotification::Persistent, nullptr);
+                d->callsNotification = new KNotification(QStringLiteral("callMissed"), KNotification::Persistent, nullptr);
             }
-            d->callsNotification->setComponentName("plasma_dialer");
-            d->callsNotification->setIconName("call-start");
+            d->callsNotification->setComponentName(QStringLiteral("plasma_dialer"));
+            d->callsNotification->setIconName(QStringLiteral("call-start"));
             if (d->missedCalls == 1) {
                 d->callsNotification->setTitle(i18n("Missed call from %1", d->callChannel->targetContact()->alias()));
-                d->callsNotification->setText(QTime::currentTime().toString("HH:mm"));
+                d->callsNotification->setText(QTime::currentTime().toString(QStringLiteral("HH:mm")));
             } else {
                 d->callsNotification->setTitle(i18n("%1 calls missed", d->missedCalls));
-                d->callsNotification->setText(i18n("Last call: %1", QTime::currentTime().toString("HH:mm")));
+                d->callsNotification->setText(i18n("Last call: %1", QTime::currentTime().toString(QStringLiteral("HH:mm"))));
             }
 
             if (d->missedCalls == 1) {
@@ -235,7 +238,7 @@ void CallManager::onCallAccepted()
 
 void CallManager::onCallRejected()
 {
-    (void) d->callChannel->hangup(Tp::CallStateChangeReasonRejected, TP_QT_ERROR_REJECTED);
+    (void) d->callChannel->hangup(Tp::CallStateChangeReasonRejected, TP_QT_ERROR_REJECTED); // clazy:exclude=qstring-allocations
 }
 
 void CallManager::onHangUpRequested()

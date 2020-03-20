@@ -58,10 +58,10 @@ void CallHistoryModel::addCall(const QString &number, int duration, DialerUtils:
     beginInsertRows(QModelIndex(), m_calls.size(), m_calls.size());
     QSqlQuery putCall(m_db);
     putCall.prepare(QStringLiteral("INSERT INTO History (number, time, duration, callType) VALUES (:number, :time, :duration, :callType)"));
-    putCall.bindValue(":number", number);
-    putCall.bindValue(":time", QDateTime::currentDateTime().toMSecsSinceEpoch());
-    putCall.bindValue(":duration", duration);
-    putCall.bindValue(":callType", type);
+    putCall.bindValue(QStringLiteral(":number"), number);
+    putCall.bindValue(QStringLiteral(":time"), QDateTime::currentDateTime().toMSecsSinceEpoch());
+    putCall.bindValue(QStringLiteral(":duration"), duration);
+    putCall.bindValue(QStringLiteral(":callType"), type);
     putCall.exec();
 
     CallData data;
@@ -131,7 +131,7 @@ bool CallHistoryModel::removeRows(int row, int count, const QModelIndex &parent)
     beginRemoveRows(parent, row, row);
     QSqlQuery remove(m_db);
     remove.prepare(QStringLiteral("DELETE FROM History WHERE id=:id"));
-    remove.bindValue(":id", m_calls[row].id);
+    remove.bindValue(QStringLiteral(":id"), m_calls[row].id);
     remove.exec();
 
     endRemoveRows();
