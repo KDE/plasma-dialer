@@ -16,11 +16,35 @@
 */
 #include "call-manager.h"
 #include "dialerutils.h"
+#include "qpulseaudioengine.h"
+
 #include <QTimer>
 
 #include <KNotification>
 #include <KLocalizedString>
 
+static void enable_earpiece()
+{
+    QPulseAudioEngine::instance()->setCallMode(CallActive, AudioModeEarpiece);
+}
+
+
+static void enable_normal()
+{
+    QTimer* timer = new QTimer();
+    timer->setSingleShot(true);
+    QObject::connect(timer, &QTimer::timeout, [=](){
+        QPulseAudioEngine::instance()->setMicMute(false);
+        QPulseAudioEngine::instance()->setCallMode(CallEnded, AudioModeWiredOrSpeaker);
+        timer->deleteLater();
+    });
+    timer->start(2000);
+}
+
+static void enable_speaker()
+{
+    QPulseAudioEngine::instance()->setCallMode(CallActive, AudioModeSpeaker);
+}
 
 constexpr int MISSED_CALL_REASON = 5;
 constexpr int CALL_DURATION_UPDATE_DELAY = 1000;
@@ -86,6 +110,8 @@ void CallManager::onCallStateChanged(Tp::CallState state)
     case Tp::CallStateInitialising:
         if (d->callChannel->isRequested()) {
             d->dialerUtils->setCallState(DialerUtils::CallState::Dialing);
+            qDebug() << "CallStateInitialising";
+            enable_earpiece();
         } else {
             qDebug() << "Call is initialising";
         }
@@ -93,7 +119,11 @@ void CallManager::onCallStateChanged(Tp::CallState state)
     case Tp::CallStateInitialised:
         if (d->callChannel->isRequested()) {
             d->dialerUtils->setCallState(DialerUtils::CallState::Dialing);
+            qDebug() << "Call state initialized";
+            enable_earpiece();
         } else {
+            qDebug() << "Call state initialized #2";
+            enable_earpiece();
             d->dialerUtils->setCallState(DialerUtils::CallState::Incoming);
         }
         break;
@@ -109,9 +139,13 @@ void CallManager::onCallStateChanged(Tp::CallState state)
             d->dialerUtils->setCallDuration(d->dialerUtils->callDuration() + 1);
         });
         d->callTimer->start(CALL_DURATION_UPDATE_DELAY);
+        qDebug() << "call state active";
+        enable_earpiece();
         break;
     case Tp::CallStateEnded:
         d->dialerUtils->setCallState(DialerUtils::CallState::Ended);
+        qDebug() << "Call ended";
+        enable_normal();
         //FIXME this is defined in the spec, but try to find a proper enum value for it
         if (d->callChannel->callStateReason().reason == MISSED_CALL_REASON) {
             qDebug() << "Adding notification";
