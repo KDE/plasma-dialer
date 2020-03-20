@@ -4,6 +4,7 @@ set(plasmaphonedialer_SRCS
     call-handler.cpp
     callhistorymodel.cpp
     call-manager.cpp
+    qpulseaudioengine.cpp
     resources.qrc
 )
 add_executable(plasmaphonedialer ${plasmaphonedialer_SRCS})
@@ -20,6 +21,8 @@ target_link_libraries(plasmaphonedialer
  KF5::DBusAddons
  KF5::Notifications
  TelepathyQt5::Core 
+ ${PULSEAUDIO_LIBRARY}
+ ${PULSEAUDIO_MAINLOOP_LIBRARY}
 )
 
 install(TARGETS plasmaphonedialer ${INSTALL_TARGETS_DEFAULT_ARGS})

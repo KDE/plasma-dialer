@@ -176,7 +176,7 @@ void CallManager::onHangUpRequested()
             if (op->isError()) {
                 qWarning() << "Unable to hang up:" << op->errorMessage();
             }
-//             d->callChannel->requestClose();
+            d->callChannel->requestClose();
         });
     }
 }

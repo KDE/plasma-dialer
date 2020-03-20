@@ -23,6 +23,8 @@ find_package(KF5People ${KF5_MIN_VERSION} REQUIRED)
 find_package(KF5DBusAddons ${KF5_MIN_VERSION} REQUIRED)
 find_package(KF5Notifications ${KF5_MIN_VERSION} REQUIRED)
 
+find_package(PulseAudio 5.0.0 REQUIRED)
+
 find_package(TelepathyQt5 REQUIRED)
 
 install(FILES metadata.desktop DESTINATION ${XDG_APPS_INSTALL_DIR} RENAME org.kde.phone.dialer.desktop)
