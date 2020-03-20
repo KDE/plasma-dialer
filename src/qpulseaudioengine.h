@@ -56,7 +56,7 @@ class QPulseAudioEngineWorker : public QObject
     Q_OBJECT
 
 public:
-    QPulseAudioEngineWorker(QObject *parent = 0);
+    QPulseAudioEngineWorker(QObject *parent = nullptr);
     ~QPulseAudioEngineWorker();
 
     pa_threaded_mainloop *mainloop() { return m_mainLoop; }
@@ -91,12 +91,18 @@ private:
     CallStatus m_callstatus;
     AudioMode m_audiomode;
     AudioMode m_audiomodetoset;
-    bool m_micmute, m_handleevent;
-    std::string m_nametoset, m_valuetoset;
-    std::string m_defaultsink, m_defaultsource;
-    std::string m_bt_hsp, m_bt_hsp_a2dp;
+    bool m_micmute;
+    bool m_handleevent;
+    std::string m_nametoset;
+    std::string m_valuetoset;
+    std::string m_defaultsink;
+    std::string m_defaultsource;
+    std::string m_voicecallhighest;
+    std::string m_bt_hsp;
+    std::string m_bt_hsp_a2dp;
     std::string m_default_bt_card_fallback;
-    std::string m_voicecallcard, m_voicecallhighest, m_voicecallprofile;
+    std::string m_voicecallcard;
+    std::string m_voicecallprofile;
 
     bool handleOperation(pa_operation *operation, const char *func_name);
     void releasePulseContext(void);
@@ -105,8 +111,9 @@ private:
 class QPulseAudioEngine : public QObject
 {
     Q_OBJECT
+
 public:
-    explicit QPulseAudioEngine(QObject *parent = 0);
+    explicit QPulseAudioEngine(QObject *parent = nullptr);
     ~QPulseAudioEngine();
     static QPulseAudioEngine *instance();
 
