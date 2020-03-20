@@ -29,7 +29,6 @@ struct CallManager::Private
 {
     Tp::CallChannelPtr callChannel;
     DialerUtils *dialerUtils;
-    KNotification *ringingNotification;
     KNotification *callsNotification;
     uint missedCalls;
     QTimer *callTimer;
@@ -53,8 +52,6 @@ CallManager::CallManager(const Tp::CallChannelPtr &callChannel, DialerUtils *dia
         d->dialerUtils->emitCallEnded();
         deleteLater();
     });
-
-    d->ringingNotification = nullptr;
     d->callsNotification = nullptr;
     d->callTimer = nullptr;
 
@@ -103,10 +100,6 @@ void CallManager::onCallStateChanged(Tp::CallState state)
     case Tp::CallStateAccepted:
         if (d->callChannel->isRequested()) {
             d->dialerUtils->setCallState(DialerUtils::CallState::Answered);
-        } else {
-            if (d->ringingNotification) {
-                d->ringingNotification->close();
-            }
         }
         break;
     case Tp::CallStateActive:
@@ -119,9 +112,6 @@ void CallManager::onCallStateChanged(Tp::CallState state)
         break;
     case Tp::CallStateEnded:
         d->dialerUtils->setCallState(DialerUtils::CallState::Ended);
-        if (d->ringingNotification) {
-            d->ringingNotification->close();
-        }
         //FIXME this is defined in the spec, but try to find a proper enum value for it
         if (d->callChannel->callStateReason().reason == MISSED_CALL_REASON) {
             qDebug() << "Adding notification";

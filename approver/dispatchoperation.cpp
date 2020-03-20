@@ -89,7 +89,7 @@ void DispatchOperation::onChannelRejected()
             SLOT(onClaimFinished(Tp::PendingOperation*)));
     Q_FOREACH(const Tp::ChannelPtr &channel, m_dispatchOperation->channels()) {
         Tp::CallChannelPtr callChannel  = Tp::CallChannelPtr::dynamicCast(channel);
-        channel->requestClose();
+        callChannel->hangup(Tp::CallStateChangeReasonRejected, TP_QT_ERROR_REJECTED);
     }
 }
 

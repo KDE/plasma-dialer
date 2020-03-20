@@ -43,11 +43,6 @@ CallChannelApprover::CallChannelApprover(const Tp::CallChannelPtr & channel, QOb
 
 CallChannelApprover::~CallChannelApprover()
 {
-    if(m_ringingNotification)
-    {
-        m_ringingNotification->close();
-        m_ringingNotification->deleteLater();
-    }
     deleteLater();
 }
 
