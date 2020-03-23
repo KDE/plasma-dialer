@@ -48,32 +48,33 @@ CallChannelApprover::~CallChannelApprover()
 
 void CallChannelApprover::onChannelReady(Tp::PendingOperation* op)
 {
-    Tp::PendingReady *pendingReady = qobject_cast<Tp::PendingReady*>(op);
+    auto *pendingReady = qobject_cast<Tp::PendingReady *>(op);
     if (!pendingReady || !m_Channels.contains(pendingReady)) {
         qWarning() << "Pending operation is not tracked" << op;
         return;
     }
     
-    Tp::ChannelPtr channel = m_Channels[pendingReady];
+    Tp::ChannelPtr channel = m_Channels.value(pendingReady);
     Tp::CallChannelPtr callChannel = Tp::CallChannelPtr::dynamicCast(channel);
     
     if (channel->initiatorContact() != channel->connection()->selfContact()
         && callChannel->callState() == Tp::CallStateInitialised
         && !callChannel->isRequested()) {
-        qDebug() << "Blablalblalblabla";
         callChannel->setRinging();
     }
     
     QStringList actions;
     actions << i18n("Accept") << i18n("Reject");
     if(!m_ringingNotification) {
-        m_ringingNotification = new KNotification("ringing", KNotification::Persistent | KNotification::LoopSound, nullptr);
+        m_ringingNotification = new KNotification(QStringLiteral("ringing"), KNotification::Persistent | KNotification::LoopSound, nullptr);
     }
-    m_ringingNotification->setComponentName("plasma_dialer");
-    m_ringingNotification->setIconName("call-start");
-    m_ringingNotification->setTitle("Incoming call");
+    m_ringingNotification->setComponentName(QStringLiteral("plasma_dialer"));
+    m_ringingNotification->setIconName(QStringLiteral("call-start"));
+    m_ringingNotification->setTitle(QStringLiteral("Incoming call"));
     m_ringingNotification->setText(callChannel->targetContact()->alias());
-    m_ringingNotification->setHint("category", "x-kde.incoming-call");
+    // this will be used by the notification applet to show custom notification UI
+    // with swipe decision.
+    m_ringingNotification->setHint(QStringLiteral("category"), "x-kde.incoming-call");
     m_ringingNotification->setActions(actions);
     m_ringingNotification->sendEvent();
     

@@ -28,19 +28,20 @@ DispatchOperation::DispatchOperation(const Tp::ChannelDispatchOperationPtr & dis
                                      QObject *parent)
     : QObject(parent), m_dispatchOperation(dispatchOperation)
 {
-    connect(m_dispatchOperation.data(), SIGNAL(channelLost(Tp::ChannelPtr,QString,QString)),
-            SLOT(onChannelLost(Tp::ChannelPtr,QString,QString)));
-    connect(m_dispatchOperation.data(), SIGNAL(invalidated(Tp::DBusProxy*,QString,QString)),
-            SLOT(onDispatchOperationInvalidated(Tp::DBusProxy*,QString,QString)));
+    connect(m_dispatchOperation.data(), &Tp::ChannelDispatchOperation::channelLost,
+            this, &DispatchOperation::onChannelLost);
+    connect(m_dispatchOperation.data(), &Tp::ChannelDispatchOperation::invalidated,
+            this, &DispatchOperation::onDispatchOperationInvalidated);
 
-    Q_FOREACH(const Tp::ChannelPtr & channel, dispatchOperation->channels()) {
+    const auto channels = dispatchOperation->channels();
+    for (const Tp::ChannelPtr &channel : channels) {
         ChannelApprover *approver = ChannelApprover::create(channel, this);
         Q_ASSERT(approver);
 
         m_channelApprovers.insert(channel, approver);
 
-        connect(approver, SIGNAL(channelAccepted()), SLOT(onChannelAccepted()));
-        connect(approver, SIGNAL(channelRejected()), SLOT(onChannelRejected()));
+        connect(approver, &ChannelApprover::channelAccepted, this, &DispatchOperation::onChannelAccepted);
+        connect(approver, &ChannelApprover::channelRejected, this, &DispatchOperation::onChannelRejected);
     }
 
     Q_ASSERT(!m_channelApprovers.isEmpty());
@@ -51,9 +52,9 @@ DispatchOperation::~DispatchOperation()
      qDebug();
 }
 
-void DispatchOperation::onChannelLost(const Tp::ChannelPtr & channel,
-                                      const QString & errorName,
-                                      const QString & errorMessage)
+void DispatchOperation::onChannelLost(const Tp::ChannelPtr &channel,
+                                      const QString &errorName,
+                                      const QString &errorMessage)
 {
     qDebug() << "Channel lost:" << errorName << errorMessage;
 
@@ -63,8 +64,8 @@ void DispatchOperation::onChannelLost(const Tp::ChannelPtr & channel,
 }
 
 void DispatchOperation::onDispatchOperationInvalidated(Tp::DBusProxy *proxy,
-                                                       const QString & errorName,
-                                                       const QString & errorMessage)
+                                                       const QString &errorName,
+                                                       const QString &errorMessage)
 {
     Q_UNUSED(proxy);
     qDebug() << "Dispatch operation invalidated" << errorName << errorMessage;
@@ -74,7 +75,8 @@ void DispatchOperation::onDispatchOperationInvalidated(Tp::DBusProxy *proxy,
 void DispatchOperation::onChannelAccepted()
 {
     m_dispatchOperation->handleWith(TELEPHONY_SERVICE_HANDLER);
-    for(auto channel: m_dispatchOperation->channels()) {
+    const auto channels = m_dispatchOperation->channels();
+    for (const auto &channel : m_dispatchOperation->channels()) {
         Tp::CallChannelPtr callChannel = Tp::CallChannelPtr::dynamicCast(channel);
         if (callChannel && callChannel->callState() != Tp::CallStateActive) {
             callChannel->accept();
@@ -85,9 +87,9 @@ void DispatchOperation::onChannelAccepted()
 void DispatchOperation::onChannelRejected()
 {
     Tp::PendingOperation *operation = m_dispatchOperation->claim();
-    connect(operation, SIGNAL(finished(Tp::PendingOperation*)),
-            SLOT(onClaimFinished(Tp::PendingOperation*)));
-    Q_FOREACH(const Tp::ChannelPtr &channel, m_dispatchOperation->channels()) {
+    connect(operation, &Tp::PendingOperation::finished, this, &DispatchOperation::onClaimFinished);
+    const auto channels = m_dispatchOperation->channels();
+    for (const Tp::ChannelPtr &channel : channels) {
         Tp::CallChannelPtr callChannel  = Tp::CallChannelPtr::dynamicCast(channel);
         callChannel->hangup(Tp::CallStateChangeReasonRejected, TP_QT_ERROR_REJECTED);
     }

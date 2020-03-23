@@ -38,9 +38,8 @@ int main(int argc, char **argv)
     QCommandLineParser parser;
     QCoreApplication app(argc, argv);
 
-    const QString description = i18n("Plasma Phone Approver");
-    app.setApplicationVersion(PROJECT_VERSION);
-    app.setOrganizationDomain("kde.org");
+    app.setApplicationVersion(QStringLiteral(PROJECT_VERSION));
+    app.setOrganizationDomain(QStringLiteral("kde.org"));
 
     KDBusService service(KDBusService::Unique);
     Tp::registerTypes();
@@ -65,6 +64,6 @@ int main(int argc, char **argv)
     m_registrar = Tp::ClientRegistrar::create(accountFactory, connectionFactory,
                                               channelFactory, contactFactory);
     m_registrar->registerClient(Tp::SharedPtr<PhoneApprover>(new PhoneApprover()),
-                                "Plasma.Approver");
+                                QStringLiteral("Plasma.Approver"));
     return app.exec();
 }
