@@ -51,8 +51,6 @@ int main(int argc, char **argv)
     QCommandLineParser parser;
     QApplication app(argc, argv);
 
-    const QString description = i18n("Plasma Phone Dialer");
-
 //     app.setQuitOnLastWindowClosed(false);
     QCoreApplication::setApplicationVersion(QStringLiteral(PROJECT_VERSION));
     QCoreApplication::setOrganizationDomain(QStringLiteral("kde.org"));
@@ -61,7 +59,7 @@ int main(int argc, char **argv)
 
     parser.addVersionOption();
     parser.addHelpOption();
-    parser.setApplicationDescription(description);
+    parser.setApplicationDescription(i18n("Plasma Phone Dialer"));
 
     QCommandLineOption daemonOption(QStringList() << QStringLiteral("d") <<
                                  QStringLiteral("daemon"),
