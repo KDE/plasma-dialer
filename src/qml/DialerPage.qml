@@ -31,6 +31,8 @@ Kirigami.Page {
     property alias numberEntryText: status.text
 
     title: i18n("Dialer")
+    icon.name: "call-start"
+
     header: Kirigami.InlineMessage {
         type: Kirigami.MessageType.Error
         text: i18n("Unable to make a call at this moment")

@@ -25,6 +25,7 @@ import org.kde.people 1.0 as KPeople
 
 Kirigami.ScrollablePage {
     title: i18n("Contacts")
+    icon.name: "view-pim-contacts"
 
     header: Kirigami.SearchField {
         id: searchField
