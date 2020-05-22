@@ -46,43 +46,8 @@
 #include <KAboutData>
 #include <KDBusService>
 
-
-void myMessageOutput(QtMsgType type, const QMessageLogContext &context, const QString &msg)
-{
-    QFile file(QDir::homePath() + "/dialer.log");
-
-    bool opened = file.open(QIODevice::WriteOnly | QIODevice::Append);
-    Q_ASSERT(opened);
-
-    QString strout;
-    QTextStream out(&strout);
-    out << QTime::currentTime().toString(QStringLiteral("hh:mm:ss.zzz "));
-    out << context.function << ":" << context.line << " ";
-
-    switch (type) {
-        case QtDebugMsg:    out << "DBG"; break;
-        case QtInfoMsg:     out << "NFO"; break;
-        case QtWarningMsg:  out << "WRN"; break;
-        case QtCriticalMsg: out << "CRT"; break;
-        case QtFatalMsg:    out << "FTL"; break;
-    }
-
-    out << " " << msg << '\n';
-
-    // Write to log file
-    QTextStream fileout(&file);
-    fileout << strout;
-    out.flush();
-
-    // Write to stdout
-    QTextStream console(stdout);
-    console << strout;
-    console.flush();
-}
-
 int main(int argc, char **argv)
 {
-    qInstallMessageHandler(myMessageOutput);
     QCommandLineParser parser;
     QApplication app(argc, argv);
 
