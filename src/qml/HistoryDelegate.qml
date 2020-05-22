@@ -29,22 +29,12 @@ Item {
     width: view.width
     height: childrenRect.height
 
-    Behavior on height {
-        SpringAnimation { spring: 5; damping: 0.3 }
-    }
     SequentialAnimation {
         id: removeAnim
         XAnimator {
             target: delegate
             from: delegate.x
             to: delegate.x > 0 ? width : -width
-            duration: units.longDuration
-            easing.type: Easing.InOutQuad
-        }
-        PropertyAnimation {
-            target: delegateParent
-            properties: "height"
-            to: 0
             duration: units.longDuration
             easing.type: Easing.InOutQuad
         }
