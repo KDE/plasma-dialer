@@ -20,7 +20,7 @@
 import QtQuick 2.7
 import QtQuick.Controls 2.2 as Controls
 import QtQuick.Layouts 1.1
-import org.kde.kirigami 2.10 as Kirigami
+import org.kde.kirigami 2.12 as Kirigami
 import org.kde.people 1.0 as KPeople
 
 Kirigami.ScrollablePage {
@@ -32,7 +32,7 @@ Kirigami.ScrollablePage {
         onTextChanged: contactsProxyModel.setFilterFixedString(text)
     }
 
-    Controls.Label {
+    Kirigami.PlaceholderMessage {
         anchors.centerIn: parent
         text: i18n("No contacts")
         visible: contactsList.count === 0

@@ -20,7 +20,7 @@ import QtQuick 2.3
 import QtQuick.Controls 2.3
 import QtQuick.Layouts 1.1
 
-import org.kde.kirigami 2.10 as Kirigami
+import org.kde.kirigami 2.12 as Kirigami
 
 import org.kde.phone.dialer 1.0
 
@@ -44,7 +44,7 @@ Kirigami.ScrollablePage {
         return '' + h + ':' + m + ':' + s;
     }
 
-    Label {
+    Kirigami.PlaceholderMessage {
         anchors.centerIn: parent
         text: i18n("No recent calls")
         visible: view.count == 0
