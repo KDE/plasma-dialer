@@ -138,12 +138,7 @@ bool CallHistoryModel::removeRows(int row, int count, const QModelIndex &parent)
     return true;
 }
 
-void CallHistorySortFilterModel::remove(int index)
+void CallHistoryModel::remove(int index)
 {
-    QSortFilterProxyModel::removeRow(index);
-}
-
-void CallHistorySortFilterModel::sort(int column, Qt::SortOrder order)
-{
-    QSortFilterProxyModel::sort(column, order);
+    removeRow(index);
 }

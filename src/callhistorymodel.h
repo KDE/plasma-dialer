@@ -54,18 +54,11 @@ public:
 
     Q_INVOKABLE void addCall(const QString &number, int duration, DialerUtils::CallType type);
     Q_INVOKABLE void clear();
+    Q_INVOKABLE void remove(int index);
 
     bool removeRows(int row, int count, const QModelIndex &parent = QModelIndex()) override;
 
 private:
     QSqlDatabase m_db;
     QVector<CallData> m_calls;
-};
-
-class CallHistorySortFilterModel : public QSortFilterProxyModel
-{
-    Q_OBJECT
-public:
-    Q_INVOKABLE void remove(int index);
-    Q_INVOKABLE void sort(int column, Qt::SortOrder order = Qt::AscendingOrder) override;
 };

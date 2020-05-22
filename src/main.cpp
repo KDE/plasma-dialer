@@ -72,7 +72,6 @@ int main(int argc, char **argv)
     parser.process(app);
 
     qmlRegisterType<CallHistoryModel>("org.kde.phone.dialer", 1, 0, "CallHistoryModel");
-    qmlRegisterType<CallHistorySortFilterModel>("org.kde.phone.dialer", 1, 0, "CallHistorySortFilterModel");
 
     Tp::registerTypes();
 

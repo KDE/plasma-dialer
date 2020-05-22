@@ -49,7 +49,7 @@ Item {
             easing.type: Easing.InOutQuad
         }
         ScriptAction {
-            script: filterModel.remove(model.index)
+            script: historyModel.remove(model.index)
         }
     }
 
