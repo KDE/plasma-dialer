@@ -32,16 +32,8 @@ Kirigami.ScrollablePage {
         onTextChanged: contactsProxyModel.setFilterFixedString(text)
     }
 
-    Kirigami.PlaceholderMessage {
-        anchors.centerIn: parent
-        text: i18n("No contacts")
-        visible: contactsList.count === 0
-    }
-
     ListView {
         id: contactsList
-
-        anchors.fill: parent
 
         section.property: "display"
         section.criteria: ViewSection.FirstCharacter
@@ -77,6 +69,12 @@ Kirigami.ScrollablePage {
         delegate: Kirigami.DelegateRecycler {
             width: parent ? parent.width : 0
             sourceComponent: contactListDelegate
+        }
+
+        Kirigami.PlaceholderMessage {
+            anchors.centerIn: parent
+            text: i18n("No contacts")
+            visible: contactsList.count === 0
         }
     }
 }
