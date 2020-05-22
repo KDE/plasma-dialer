@@ -31,7 +31,6 @@ Kirigami.ApplicationWindow {
     wideScreen: false
     id: root
 
-//BEGIN PROPERTIES
     width: 1080
     height: 800
 
@@ -52,9 +51,6 @@ Kirigami.ApplicationWindow {
         DialerPage {}
     }
 
-//END PROPERTIES
-
-//BEGIN SIGNAL HANDLERS
     Connections {
         target: dialerUtils
         onMissedCallsActionTriggered: {
@@ -77,18 +73,12 @@ Kirigami.ApplicationWindow {
         //TODO
         //reset missed calls if the status is not STATUS_INCOMING when got visible
     }
-//END SIGNAL HANDLERS
 
-//BEGIN FUNCTIONS
     function call(number) {
         dialerUtils.dial(number);
     }
-//END FUNCTIONS
 
-//BEGIN MODELS
     CallHistoryModel {
         id: historyModel
     }
-
-//END MODELS
 }
