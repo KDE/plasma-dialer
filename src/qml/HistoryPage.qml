@@ -34,28 +34,6 @@ Kirigami.ScrollablePage {
         icon.name: "edit-clear-history"
     }
 
-    header: TabBar {
-        Layout.fillWidth: true
-        TabButton {
-            icon.name: "call-start"
-            text: i18n("All")
-            onCheckedChanged: {
-                if (checked) {
-                    filterModel.setFilterFixedString("")
-                }
-            }
-        }
-        TabButton {
-            icon.name: "list-remove"
-            text: i18n("Missed")
-            onCheckedChanged: {
-                if (checked) {
-                    filterModel.setFilterFixedString("0")
-                }
-            }
-        }
-    }
-
     function secondsToTimeString(seconds) {
         var h = Math.floor(seconds / 3600);
         var m = Math.floor((seconds - (h * 3600)) / 60);
@@ -75,13 +53,7 @@ Kirigami.ScrollablePage {
 
     ListView {
         id: view
-        model: CallHistorySortFilterModel {
-            id: filterModel
-            sourceModel: historyModel
-            filterRole: CallHistoryModel.CallTypeRole
-            sortRole: CallHistoryModel.TimeRole
-            Component.onCompleted: sort(0, Qt.DescendingOrder)
-        }
+        model: historyModel
         section {
             property: "date"
             delegate: Kirigami.ListSectionHeader {
