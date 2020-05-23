@@ -24,91 +24,87 @@ import QtQuick.Controls 2.2 as Controls
 import org.kde.kirigami 2.2 as Kirigami
 import org.kde.phone.dialer 1.0
 
-Item {
-    id: delegateParent
-    width: view.width
-    height: childrenRect.height
+Kirigami.AbstractListItem {
+    id: root
 
-    SequentialAnimation {
-        id: removeAnim
-        XAnimator {
-            target: delegate
-            from: delegate.x
-            to: delegate.x > 0 ? width : -width
-            duration: units.longDuration
-            easing.type: Easing.InOutQuad
+    highlighted: false
+
+    RowLayout {
+        Kirigami.Icon {
+            width: Kirigami.Units.iconSizes.medium
+            height: width
+            source: {
+                switch (model.callType) {
+                case DialerUtils.IncomingRejected:
+                    return "list-remove";
+                case DialerUtils.IncomingAccepted:
+                    return "go-down";
+                case DialerUtils.Outgoing:
+                    return "go-up";
+                }
+            }
         }
-        ScriptAction {
-            script: historyModel.remove(model.index)
+
+        ColumnLayout {
+            Controls.Label {
+                text: "Name (todo)"
+            }
+            Controls.Label {
+                text: model.number
+                Layout.fillWidth: true
+            }
         }
-    }
 
-    XAnimator {
-        id: resetAnim
-        target: delegate
-        from: delegate.x
-        to: 0
-        duration: units.longDuration
-        easing.type: Easing.InOutQuad
-    }
-
-    Kirigami.BasicListItem {
-        id: delegate
-
-        RowLayout {
+        ColumnLayout {
             Layout.fillWidth: true
-            id: contentLayout
-            //FIXME: ad hoc icons
-            Kirigami.Icon {
-                width: Kirigami.Units.iconSizes.medium
-                height: width
-                source: {
-                    switch (model.callType) {
-                    case DialerUtils.IncomingRejected:
-                        return "list-remove";
-                    case DialerUtils.IncomingAccepted:
-                        return "go-down";
-                    case DialerUtils.Outgoing:
-                        return "go-up";
+            Controls.Label {
+                Layout.alignment: Qt.AlignRight
+                text: Qt.formatTime(model.time, Qt.locale().timeFormat(Locale.ShortFormat));
+            }
+            Controls.Label {
+                Layout.alignment: Qt.AlignRight
+                text: i18n("Duration: %1", secondsToTimeString(model.duration));
+                visible: model.duration > 0
+            }
+        }
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: call(model.number);
+            drag.axis: Drag.XAxis
+            drag.target: root
+            onReleased: {
+                if (drag.active) {
+                    if (root.x > root.width / 3 || root.x < root / -3) {
+                        removeAnim.running = true;
+                    } else {
+                        resetAnim.running = true;
                     }
                 }
             }
-            ColumnLayout {
-                Controls.Label {
-                    text: "Name (todo)"
-                }
-                Controls.Label {
-                    text: model.number
-                    Layout.fillWidth: true
-                }
+        }
+
+        SequentialAnimation {
+            id: removeAnim
+            XAnimator {
+                target: root
+                from: root.x
+                to: root.x > 0 ? width : -width
+                duration: units.longDuration
+                easing.type: Easing.InOutQuad
             }
-            ColumnLayout {
-                Layout.fillWidth: true
-                Controls.Label {
-                    Layout.alignment: Qt.AlignRight
-                    text: Qt.formatTime(model.time, Qt.locale().timeFormat(Locale.ShortFormat));
-                }
-                Controls.Label {
-                    Layout.alignment: Qt.AlignRight
-                    text: i18n("Duration: %1", secondsToTimeString(model.duration));
-                    visible: model.duration > 0
-                }
+            ScriptAction {
+                script: historyModel.remove(model.index)
             }
         }
-    }
-    MouseArea {
-        anchors.fill: delegate
-        onClicked: call(model.number);
-        drag.axis: Drag.XAxis
-        drag.target: delegate
-        onReleased: {
-            if (drag.active) {
-                if (delegate.x > delegate.width / 3 || delegate.x < width / -3) {
-                    removeAnim.running = true;
-                } else {
-                    resetAnim.running = true;
-                }
-            }
+
+        XAnimator {
+            id: resetAnim
+            target: root
+            from: root.x
+            to: 0
+            duration: units.longDuration
+            easing.type: Easing.InOutQuad
         }
     }
 }
