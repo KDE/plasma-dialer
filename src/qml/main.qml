@@ -53,10 +53,11 @@ Kirigami.ApplicationWindow {
 
     Connections {
         target: dialerUtils
-        onMissedCallsActionTriggered: {
+
+        function onMissedCallsActionTriggered() {
             root.visible = true;
         }
-        onCallEnded: {
+        function onCallEnded(number, duration, incoming) {
             var callType;
             if (isIncomingCall && callDuration == 0) {
                 callType = DialerUtils.IncomingRejected;
