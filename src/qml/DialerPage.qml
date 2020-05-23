@@ -33,6 +33,11 @@ Kirigami.Page {
     title: i18n("Dialer")
     icon.name: "call-start"
 
+    leftPadding: 0
+    rightPadding: 0
+    topPadding: 0
+    bottomPadding: 0
+
     header: Kirigami.InlineMessage {
         type: Kirigami.MessageType.Error
         text: i18n("Unable to make a call at this moment")
@@ -42,27 +47,35 @@ Kirigami.Page {
     ColumnLayout {
         id: dialPadArea
         anchors.fill: parent
+        spacing: 0
 
         QQC2.Label {
             id: status
 
             horizontalAlignment: Qt.AlignHCenter
-            verticalAlignment: Qt.AlignBottom
-
+            verticalAlignment: Qt.AlignVCenter
             Layout.fillWidth: true
-            Layout.topMargin: Kirigami.Units.largeSpacing * 2
-            Layout.bottomMargin: Kirigami.Units.largeSpacing
-            Layout.minimumHeight: Kirigami.Units.gridUnit * 3
-            Layout.maximumHeight: Layout.minimumHeight
+            Layout.preferredHeight: parent.height * 0.3
             font.pixelSize: units.gridUnit * 2.3
 
             text: dialerUtils.formatNumber(dialPad.number)
         }
 
-        Dialpad {
-            id: dialPad
+        Kirigami.Separator {
+            Layout.fillWidth: true
+        }
+
+        Rectangle {
             Layout.fillWidth: true
             Layout.fillHeight: true
+            Kirigami.Theme.colorSet: Kirigami.Theme.View
+            Kirigami.Theme.inherit: false
+            color: Kirigami.Theme.backgroundColor
+
+            Dialpad {
+                id: dialPad
+                anchors.fill: parent
+            }
         }
     }
 }

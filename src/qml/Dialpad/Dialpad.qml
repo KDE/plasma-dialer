@@ -28,8 +28,6 @@ GridLayout {
     columns: 3
     rowSpacing: 10
     columnSpacing: 10
-    Layout.leftMargin: Kirigami.Units.largeSpacing * 2
-    Layout.rightMargin: Kirigami.Units.largeSpacing * 2
 
     property string number
 
