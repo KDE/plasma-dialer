@@ -28,6 +28,7 @@ Kirigami.AbstractListItem {
     id: root
 
     highlighted: false
+    onClicked: call(model.number)
 
     RowLayout {
         Kirigami.Icon {
@@ -66,45 +67,6 @@ Kirigami.AbstractListItem {
                 text: i18n("Duration: %1", secondsToTimeString(model.duration));
                 visible: model.duration > 0
             }
-        }
-
-        MouseArea {
-            anchors.fill: parent
-            onClicked: call(model.number);
-            drag.axis: Drag.XAxis
-            drag.target: root
-            onReleased: {
-                if (drag.active) {
-                    if (root.x > root.width / 3 || root.x < root / -3) {
-                        removeAnim.running = true;
-                    } else {
-                        resetAnim.running = true;
-                    }
-                }
-            }
-        }
-
-        SequentialAnimation {
-            id: removeAnim
-            XAnimator {
-                target: root
-                from: root.x
-                to: root.x > 0 ? width : -width
-                duration: units.longDuration
-                easing.type: Easing.InOutQuad
-            }
-            ScriptAction {
-                script: historyModel.remove(model.index)
-            }
-        }
-
-        XAnimator {
-            id: resetAnim
-            target: root
-            from: root.x
-            to: 0
-            duration: units.longDuration
-            easing.type: Easing.InOutQuad
         }
     }
 }
