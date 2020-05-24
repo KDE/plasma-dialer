@@ -23,6 +23,8 @@ import QtQuick.Layouts 1.1
 import org.kde.kirigami 2.12 as Kirigami
 import org.kde.people 1.0 as KPeople
 
+import org.kde.phone.dialer 1.0
+
 Kirigami.ScrollablePage {
     title: i18n("Contacts")
     icon.name: "view-pim-contacts"
@@ -62,7 +64,7 @@ Kirigami.ScrollablePage {
             Kirigami.BasicListItem {
                 icon: model && model.decoration
                 label: model && model.display
-                onClicked: dialerUtils.dial(model.phoneNumber)
+                onClicked: DialerUtils.dial(model.phoneNumber)
             }
         }
 

@@ -31,7 +31,7 @@ Kirigami.Page {
     objectName: "callPage"
     id: callPage
 
-    property int status: dialerUtils.callState
+    property int status: DialerUtils.callState
 
     function secondsToTimeString(seconds) {
         var h = Math.floor(seconds / 3600);
@@ -105,7 +105,7 @@ Kirigami.Page {
             horizontalAlignment: Qt.AlignHCenter
             verticalAlignment: Qt.AlignVCenter
             font.pointSize: Kirigami.Units.fontMetrics.pointSize * 2
-            text: dialerUtils.callContactAlias
+            text: DialerUtils.callContactAlias
         }
         Controls.Label {
             Layout.fillWidth: true
@@ -113,10 +113,10 @@ Kirigami.Page {
             horizontalAlignment: Qt.AlignHCenter
             verticalAlignment: Qt.AlignVCenter
             text: {
-                if (dialerUtils.callState === DialerUtils.Dialing) {
+                if (DialerUtils.callState === DialerUtils.Dialing) {
                     return i18n("Calling...");
-                } else if (dialerUtils.callDuration > 0) {
-                    return secondsToTimeString(dialerUtils.callDuration);
+                } else if (DialerUtils.callDuration > 0) {
+                    return secondsToTimeString(DialerUtils.callDuration);
                 } else {
                     return '';
                 }
@@ -163,10 +163,10 @@ Kirigami.Page {
                 //STATUS_INCOMING
                 visible: status !== DialerUtils.Active
                 onAccepted: {
-                    dialerUtils.acceptCall();
+                    DialerUtils.acceptCall();
                 }
                 onRejected: {
-                    dialerUtils.rejectCall();
+                    DialerUtils.rejectCall();
                 }
             }
 
@@ -178,7 +178,7 @@ Kirigami.Page {
                 Layout.fillWidth: true
                 text: i18n("End Call")
                 onClicked: {
-                    dialerUtils.hangUp();
+                    DialerUtils.hangUp();
                 }
             }
         }

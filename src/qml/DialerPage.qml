@@ -41,7 +41,7 @@ Kirigami.Page {
     header: Kirigami.InlineMessage {
         type: Kirigami.MessageType.Error
         text: i18n("Unable to make a call at this moment")
-        visible: dialerUtils.callState === DialerUtils.Failed
+        visible: DialerUtils.callState === DialerUtils.Failed
     }
 
     ColumnLayout {
@@ -58,7 +58,7 @@ Kirigami.Page {
             Layout.preferredHeight: parent.height * 0.3
             font.pixelSize: Kirigami.Units.gridUnit * 2.3
 
-            text: dialerUtils.formatNumber(dialPad.number)
+            text: DialerUtils.formatNumber(dialPad.number)
         }
 
         Kirigami.Separator {

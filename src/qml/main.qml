@@ -52,7 +52,7 @@ Kirigami.ApplicationWindow {
     }
 
     Connections {
-        target: dialerUtils
+        target: DialerUtils
 
         function onMissedCallsActionTriggered() {
             root.visible = true;
@@ -76,7 +76,7 @@ Kirigami.ApplicationWindow {
     }
 
     function call(number) {
-        dialerUtils.dial(number);
+        DialerUtils.dial(number);
     }
 
     CallHistoryModel {

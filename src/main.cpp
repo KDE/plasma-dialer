@@ -131,12 +131,10 @@ int main(int argc, char **argv)
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
 
-    auto *dialerUtils = new DialerUtils(simAccount);
+    auto *dialerUtils = new DialerUtils(simAccount, &engine);
 
-    // TODO: Make dialerUtils a sigleton once we can depend on Qt 5.14
-    qmlRegisterUncreatableType<DialerUtils>("org.kde.phone.dialer", 1, 0, "DialerUtils", QStringLiteral("Created from c++"));
+    qmlRegisterSingletonInstance<DialerUtils>("org.kde.phone.dialer", 1, 0, "DialerUtils", dialerUtils);
     qmlRegisterAnonymousType<QAbstractItemModel>("org.kde.phone.dialer", 1);
-    engine.rootContext()->setContextProperty(QStringLiteral("dialerUtils"), QVariant::fromValue(dialerUtils));
 
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
 
