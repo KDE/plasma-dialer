@@ -50,7 +50,7 @@ MouseArea {
             anchors {
                 verticalCenter: parent.verticalCenter
                 left: parent.left
-                leftMargin: units.largeSpacing
+                leftMargin: Kirigami.Units.largeSpacing
             }
         }
         Kirigami.Icon {
@@ -61,7 +61,7 @@ MouseArea {
             anchors {
                 verticalCenter: parent.verticalCenter
                 right: parent.right
-                leftMargin: units.largeSpacing
+                leftMargin: Kirigami.Units.largeSpacing
             }
         }
 
@@ -83,7 +83,7 @@ MouseArea {
             Behavior on x {
                 enabled: root.pressed
                 XAnimator {
-                    duration: units.longDuration
+                    duration: Kirigami.Units.longDuration
                     easing.type: Easing.InOutQuad
                 }
             }

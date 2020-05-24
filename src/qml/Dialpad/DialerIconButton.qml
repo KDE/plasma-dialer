@@ -43,11 +43,11 @@ Item {
         anchors.fill: parent
         z: -1
         color: Kirigami.Theme.highlightColor
-        radius: units.smallSpacing
+        radius: Kirigami.Units.smallSpacing
         opacity: mouse.pressed ? 0.4 : 0
         Behavior on opacity {
             OpacityAnimator {
-                duration: units.longDuration
+                duration: Kirigami.Units.longDuration
                 easing.type: Easing.InOutQuad
             }
         }

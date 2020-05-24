@@ -135,6 +135,7 @@ int main(int argc, char **argv)
 
     // TODO: Make dialerUtils a sigleton once we can depend on Qt 5.14
     qmlRegisterUncreatableType<DialerUtils>("org.kde.phone.dialer", 1, 0, "DialerUtils", QStringLiteral("Created from c++"));
+    qmlRegisterAnonymousType<QAbstractItemModel>("org.kde.phone.dialer", 1);
     engine.rootContext()->setContextProperty(QStringLiteral("dialerUtils"), QVariant::fromValue(dialerUtils));
 
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
@@ -144,7 +145,7 @@ int main(int argc, char **argv)
 
     KAboutData aboutData(QStringLiteral("dialer"), i18n("Dialer"), QStringLiteral(PROJECT_VERSION), i18n("Plasma phone dialer"), KAboutLicense::GPL);
     aboutData.setDesktopFileName(QStringLiteral("org.kde.phone.dialer"));
-    
+
     KAboutData::setApplicationData(aboutData);
 
     QWindow *window = qobject_cast<QWindow *>(engine.rootObjects().at(0));

@@ -43,7 +43,7 @@ Item {
         anchors.fill: parent
         z: -1
         color: Kirigami.Theme.highlightColor
-        radius: units.smallSpacing
+        radius: Kirigami.Units.smallSpacing
         opacity: mouse.pressed ? 0.4 : 0
         Behavior on opacity {
             OpacityAnimator {
@@ -75,7 +75,7 @@ Item {
         Controls.Label {
             id: main
 
-            font.pixelSize: units.gridUnit * 2
+            font.pixelSize: Kirigami.Units.gridUnit * 2
             text: root.display || root.text
             opacity: special ? 0.4 : 1.0
             Layout.minimumWidth: parent.width
