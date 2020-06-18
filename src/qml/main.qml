@@ -26,6 +26,7 @@ import QtQuick.LocalStorage 2.0
 import org.kde.kirigami 2.13 as Kirigami
 
 import org.kde.phone.dialer 1.0
+import "Call"
 
 Kirigami.ApplicationWindow {
     wideScreen: false
@@ -42,6 +43,7 @@ Kirigami.ApplicationWindow {
     property bool isIncoming
 
     Kirigami.SwipeNavigator {
+        id: navigator
         anchors.fill: parent
 
         HistoryPage {}
@@ -49,6 +51,11 @@ Kirigami.ApplicationWindow {
         ContactsPage {}
 
         DialerPage {}
+    }
+
+    Component {
+        id: callPage
+        CallPage {}
     }
 
     Connections {
@@ -68,6 +75,17 @@ Kirigami.ApplicationWindow {
             }
             historyModel.addCall(callContactNumber, callDuration, callType)
         }
+        function onCallStateChanged(state) {
+            if (DialerUtils.callState === DialerUtils.Active || DialerUtils.callState === DialerUtils.Dialing) {
+                if (navigator.layers.depth == 0) {
+                    navigator.layers.push(callPage)
+                }
+            } else {
+                if (navigator.layers.depth > 0) {
+                    navigator.layers.clear()
+                }
+            }
+        }
     }
 
     onVisibleChanged: {
@@ -76,7 +94,7 @@ Kirigami.ApplicationWindow {
     }
 
     function call(number) {
-        DialerUtils.dial(number);
+        DialerUtils.dial(number)
     }
 
     CallHistoryModel {
