@@ -26,7 +26,10 @@ CallHistoryModel::CallHistoryModel(QObject *parent)
     : QAbstractListModel(parent)
     , m_db(QSqlDatabase::addDatabase(QStringLiteral("QSQLITE"), QStringLiteral("calldb")))
 {
-    m_db.setDatabaseName(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/callhistory.sqlite");
+    const QString databasePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/";
+    QDir().mkpath(databasePath);
+    m_db.setDatabaseName(databasePath + "callhistory.sqlite");
+
     bool open = m_db.open();
 
     if (!open) {
