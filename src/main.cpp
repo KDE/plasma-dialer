@@ -50,6 +50,7 @@ int main(int argc, char **argv)
 {
     QCommandLineParser parser;
     QApplication app(argc, argv);
+    app.setQuitOnLastWindowClosed(false);
 
 //     app.setQuitOnLastWindowClosed(false);
     QCoreApplication::setApplicationVersion(QStringLiteral(PROJECT_VERSION));

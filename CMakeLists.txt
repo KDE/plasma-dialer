@@ -28,6 +28,7 @@ find_package(PulseAudio 5.0.0 REQUIRED)
 find_package(TelepathyQt5 REQUIRED)
 
 install(FILES metadata.desktop DESTINATION ${XDG_APPS_INSTALL_DIR} RENAME org.kde.phone.dialer.desktop)
+install(FILES dialer-autostart.desktop DESTINATION ${KDE_INSTALL_AUTOSTARTDIR} RENAME org.kde.phone.dialer.desktop)
 install(FILES dialer.svg DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/hicolor/scalable/apps/)
 
 add_subdirectory(src)
