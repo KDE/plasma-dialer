@@ -79,6 +79,8 @@ Kirigami.ApplicationWindow {
             if (DialerUtils.callState === DialerUtils.Active || DialerUtils.callState === DialerUtils.Dialing) {
                 if (navigator.layers.depth == 0) {
                     navigator.layers.push(callPage)
+                    root.show()
+                    root.requestActivate()
                 }
             } else {
                 if (navigator.layers.depth > 0) {
