@@ -32,10 +32,12 @@ Kirigami.ApplicationWindow {
     wideScreen: false
     id: root
 
-    width: 1080
-    height: 800
+    width: 800
+    height: 1080
 
     visible: false
+
+    readonly property bool smallMode: root.height < Kirigami.Units.gridUnit * 20
 
     //keep track if we were visible when ringing
     property bool wasVisible
@@ -77,13 +79,13 @@ Kirigami.ApplicationWindow {
         }
         function onCallStateChanged(state) {
             if (DialerUtils.callState === DialerUtils.Active || DialerUtils.callState === DialerUtils.Dialing) {
-                if (navigator.layers.depth == 0) {
+                if (navigator.layers.depth == 1) {
                     navigator.layers.push(callPage)
                     root.show()
                     root.requestActivate()
                 }
             } else {
-                if (navigator.layers.depth > 0) {
+                if (navigator.layers.depth > 1) {
                     navigator.layers.clear()
                 }
             }

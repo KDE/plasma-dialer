@@ -55,8 +55,8 @@ Kirigami.Page {
             horizontalAlignment: Qt.AlignHCenter
             verticalAlignment: Qt.AlignVCenter
             Layout.fillWidth: true
-            Layout.preferredHeight: parent.height * 0.3
-            font.pixelSize: Kirigami.Units.gridUnit * 2.3
+            Layout.preferredHeight: applicationWindow().smallMode ? implicitHeight : parent.height * 0.3
+            font.pixelSize: applicationWindow().smallMode ? Kirigami.Units.gridUnit * 1.6 : Kirigami.Units.gridUnit * 2.3
 
             text: DialerUtils.formatNumber(dialPad.number)
         }
