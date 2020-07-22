@@ -1,6 +1,20 @@
 [Desktop Entry]
 Comment=Telepathy services required for telephony
+Comment[ca]=Serveis del Telepathy requerits per a la telefonia
+Comment[ca@valencia]=Serveis del Telepathy requerits per a la telefonia
+Comment[nl]=Telepathy services vereist voor telefonie
+Comment[pt]=Serviços do Telepathy necessários para telefones
+Comment[sv]=Telepathy-tjänster krävs för telefoni
+Comment[uk]=Для роботи зі службами телефонії слід встановити Telepathy
+Comment[x-test]=xxTelepathy services required for telephonyxx
 Name=Telepathy Services
+Name[ca]=Serveis del Telepathy
+Name[ca@valencia]=Serveis del Telepathy
+Name[nl]=Telepathy services
+Name[pt]=Serviços do Telepathy
+Name[sv]=Telepathy-tjänster
+Name[uk]=Служби Telepathy
+Name[x-test]=xxTelepathy Servicesxx
 Type=Service
 Icon=dialer
 Exec=dbus-send --session --print-reply --dest=org.freedesktop.DBus /org/freedesktop/DBus org.freedesktop.DBus.StartServiceByName string:org.freedesktop.Telepathy.MissionControl5 uint32:0
