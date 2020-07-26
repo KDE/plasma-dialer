@@ -2,6 +2,8 @@
 Comment=Telepathy services required for telephony
 Comment[ca]=Serveis del Telepathy requerits per a la telefonia
 Comment[ca@valencia]=Serveis del Telepathy requerits per a la telefonia
+Comment[fr]=Les services Telepathy sont nécessaires pour la téléphonie
+Comment[it]=Servizi Telepathy richiesti per la telefonia
 Comment[nl]=Telepathy services vereist voor telefonie
 Comment[pt]=Serviços do Telepathy necessários para telefones
 Comment[pt_BR]=Serviços do Telepathy necessários para telefonia
@@ -12,6 +14,8 @@ Comment[x-test]=xxTelepathy services required for telephonyxx
 Name=Telepathy Services
 Name[ca]=Serveis del Telepathy
 Name[ca@valencia]=Serveis del Telepathy
+Name[fr]=Services Telephathy
+Name[it]=Servizi Telepathy
 Name[nl]=Telepathy services
 Name[pt]=Serviços do Telepathy
 Name[pt_BR]=Serviços do Telepathy
