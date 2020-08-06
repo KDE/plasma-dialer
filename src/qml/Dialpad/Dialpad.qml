@@ -26,8 +26,8 @@ import org.kde.kirigami 2.5 as Kirigami
 GridLayout {
     id: pad
     columns: 3
-    rowSpacing: 10
-    columnSpacing: 10
+    rowSpacing: Kirigami.Units.largeSpacing * 2
+    columnSpacing: Kirigami.Units.largeSpacing * 2
 
     property string number
 

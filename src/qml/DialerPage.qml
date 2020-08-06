@@ -75,6 +75,10 @@ Kirigami.Page {
             Dialpad {
                 id: dialPad
                 anchors.fill: parent
+                anchors.topMargin: Kirigami.Units.largeSpacing
+                anchors.leftMargin: Kirigami.Units.largeSpacing
+                anchors.rightMargin: Kirigami.Units.largeSpacing
+                anchors.bottomMargin: Kirigami.Units.largeSpacing
             }
         }
     }
