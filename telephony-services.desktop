@@ -18,6 +18,7 @@ Comment[x-test]=xxTelepathy services required for telephonyxx
 Name=Telepathy Services
 Name[ca]=Serveis del Telepathy
 Name[ca@valencia]=Serveis del Telepathy
+Name[cs]=Služby Telepathy
 Name[es]=Servicios Telepathy
 Name[eu]=Telepathy zerbitzuak
 Name[fi]=Telepathy-palvelut
