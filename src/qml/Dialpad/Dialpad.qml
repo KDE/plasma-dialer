@@ -31,7 +31,7 @@ GridLayout {
 
     property string number
 
-    DialerButton { id: one; text: "1"; onClicked: pad.number += text }
+    DialerButton { text: "1"; onClicked: pad.number += text }
     DialerButton { text: "2"; sub: "ABC"; onClicked: pad.number += text }
     DialerButton { text: "3"; sub: "DEF"; onClicked: pad.number += text }
 
@@ -43,9 +43,9 @@ GridLayout {
     DialerButton { text: "8"; sub: "TUV"; onClicked: pad.number += text }
     DialerButton { text: "9"; sub: "WXYZ"; onClicked: pad.number += text }
 
-    DialerButton { display: "＊"; text: "*"; special: true; onClicked: pad.number += text }
-    DialerButton { text: "0"; subdisplay: "＋"; sub: "+"; onClicked: pad.number += text }
-    DialerButton { display: "＃"; text: "#"; special: true; onClicked: pad.number += text }
+    DialerButton { text: "*"; special: true; onClicked: pad.number += text }
+    DialerButton { text: "0"; sub: "+"; onClicked: pad.number += text }
+    DialerButton { text: "#"; special: true; onClicked: pad.number += text }
 
     Item {
         Layout.fillWidth: true
