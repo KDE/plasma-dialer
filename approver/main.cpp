@@ -32,13 +32,14 @@
 #include <TelepathyQt/CallChannel>
 
 #include "phoneapprover.h"
+#include "version.h"
 
 int main(int argc, char **argv)
 {
     QCommandLineParser parser;
     QCoreApplication app(argc, argv);
 
-    app.setApplicationVersion(QStringLiteral(PROJECT_VERSION));
+    app.setApplicationVersion(QStringLiteral(PLASMADIALER_VERSION_STRING));
     app.setOrganizationDomain(QStringLiteral("kde.org"));
 
     KDBusService service(KDBusService::Unique);

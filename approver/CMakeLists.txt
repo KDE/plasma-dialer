@@ -1,4 +1,4 @@
-set(approver_SRCS
+add_executable(plasma-telepathy-approver
     main.cpp
     phoneapprover.cpp
     dispatchoperation.cpp
@@ -6,8 +6,7 @@ set(approver_SRCS
     callchannelapprover.cpp
 )
 
-add_executable(plasma-telepathy-approver ${approver_SRCS})
-target_compile_definitions(plasma-telepathy-approver PRIVATE -DPROJECT_VERSION="${PROJECT_VERSION}")
+target_include_directories(plasma-telepathy-approver PRIVATE ${CMAKE_BINARY_DIR})
 
 target_link_libraries(plasma-telepathy-approver
     Qt5::Core
@@ -21,8 +20,4 @@ target_link_libraries(plasma-telepathy-approver
 
 install(TARGETS plasma-telepathy-approver ${INSTALL_TARGETS_DEFAULT_ARGS})
 
-
-configure_file(org.freedesktop.Telepathy.Client.Plasma.Approver.service.in
-                org.freedesktop.Telepathy.Client.Plasma.Approver.service)
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.freedesktop.Telepathy.Client.Plasma.Approver.service
-        DESTINATION ${DBUS_SERVICES_INSTALL_DIR})
+ecm_install_configured_files(INPUT org.freedesktop.Telepathy.Client.Plasma.Approver.service.in DESTINATION ${DBUS_SERVICES_INSTALL_DIR} @ONLY)

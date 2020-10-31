@@ -22,6 +22,7 @@
 #include "dialerutils.h"
 #include "call-handler.h"
 #include "callhistorymodel.h"
+#include "version.h"
 
 #include <TelepathyQt/Types>
 #include <TelepathyQt/Debug>
@@ -53,7 +54,7 @@ int main(int argc, char **argv)
     app.setQuitOnLastWindowClosed(false);
 
 //     app.setQuitOnLastWindowClosed(false);
-    QCoreApplication::setApplicationVersion(QStringLiteral(PROJECT_VERSION));
+    QCoreApplication::setApplicationVersion(QStringLiteral(PLASMADIALER_VERSION_STRING));
     QCoreApplication::setOrganizationDomain(QStringLiteral("kde.org"));
 
     KDBusService service(KDBusService::Unique);
@@ -142,7 +143,7 @@ int main(int argc, char **argv)
     Tp::SharedPtr<CallHandler> callHandler(new CallHandler(dialerUtils));
     registrar->registerClient(Tp::AbstractClientPtr::dynamicCast(callHandler), QStringLiteral("Plasma.Dialer"));
 
-    KAboutData aboutData(QStringLiteral("dialer"), i18n("Dialer"), QStringLiteral(PROJECT_VERSION), i18n("Plasma phone dialer"), KAboutLicense::GPL);
+    KAboutData aboutData(QStringLiteral("dialer"), i18n("Dialer"), QStringLiteral(PLASMADIALER_VERSION_STRING), i18n("Plasma phone dialer"), KAboutLicense::GPL);
     aboutData.setDesktopFileName(QStringLiteral("org.kde.phone.dialer"));
 
     KAboutData::setApplicationData(aboutData);
