@@ -68,14 +68,14 @@ Kirigami.ApplicationWindow {
         }
         function onCallEnded(number, duration, incoming) {
             var callType;
-            if (isIncomingCall && callDuration == 0) {
+            if (incoming && duration == 0) {
                 callType = DialerUtils.IncomingRejected;
-            } else if (isIncomingCall && callDuration > 0) {
+            } else if (incoming && duration > 0) {
                 callType = DialerUtils.IncomingAccepted;
             } else {
                 callType = DialerUtils.Outgoing;
             }
-            historyModel.addCall(callContactNumber, callDuration, callType)
+            historyModel.addCall(number, duration, callType)
         }
         function onCallStateChanged(state) {
             if (DialerUtils.callState === DialerUtils.Active || DialerUtils.callState === DialerUtils.Dialing) {

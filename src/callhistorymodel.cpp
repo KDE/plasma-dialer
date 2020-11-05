@@ -24,56 +24,24 @@
 
 CallHistoryModel::CallHistoryModel(QObject *parent)
     : QAbstractListModel(parent)
-    , m_db(QSqlDatabase::addDatabase(QStringLiteral("QSQLITE"), QStringLiteral("calldb")))
+    , m_database(this)
 {
-    const QString databasePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/";
-    QDir().mkpath(databasePath);
-    m_db.setDatabaseName(databasePath + "callhistory.sqlite");
-
-    bool open = m_db.open();
-
-    if (!open) {
-        qWarning() << "Could not open call database" << m_db.lastError();
-    }
-
-    QSqlQuery createTable(m_db);
-    createTable.exec(QStringLiteral("CREATE TABLE IF NOT EXISTS History(id INTEGER PRIMARY KEY AUTOINCREMENT, number TEXT, time DATETIME, duration INTEGER, callType INTEGER)"));
-
-    QSqlQuery fetchCalls(m_db);
-    fetchCalls.exec(QStringLiteral("SELECT id, number, time, duration, callType FROM History"));
-
     beginResetModel();
-    while (fetchCalls.next()) {
-        CallData call;
-        call.id = fetchCalls.value(0).toString();
-        call.number = fetchCalls.value(1).toString();
-        call.time = QDateTime::fromMSecsSinceEpoch(fetchCalls.value(2).toInt());
-        call.duration = fetchCalls.value(3).toInt();
-        call.callType = fetchCalls.value(4).value<DialerUtils::CallType>();
-
-        m_calls.append(call);
-    }
+    m_calls = m_database.fetchCalls();
     endResetModel();
 }
 
 void CallHistoryModel::addCall(const QString &number, int duration, DialerUtils::CallType type)
 {
     beginInsertRows(QModelIndex(), m_calls.size(), m_calls.size());
-    QSqlQuery putCall(m_db);
-    putCall.prepare(QStringLiteral("INSERT INTO History (number, time, duration, callType) VALUES (:number, :time, :duration, :callType)"));
-    putCall.bindValue(QStringLiteral(":number"), number);
-    putCall.bindValue(QStringLiteral(":time"), QDateTime::currentDateTime().toMSecsSinceEpoch());
-    putCall.bindValue(QStringLiteral(":duration"), duration);
-    putCall.bindValue(QStringLiteral(":callType"), type);
-    putCall.exec();
+    m_database.addCall(number, duration, type);
 
     CallData data;
-    data.id = putCall.lastInsertId().toString();
+    data.id = m_database.lastId();
     data.number = number;
     data.duration = duration;
     data.time = QDateTime::currentDateTime();
     data.callType = type;
-
     m_calls.append(data);
 
     endInsertRows();
@@ -82,11 +50,8 @@ void CallHistoryModel::addCall(const QString &number, int duration, DialerUtils:
 void CallHistoryModel::clear()
 {
     beginResetModel();
-
-    QSqlQuery clearCalls(m_db);
-    clearCalls.exec(QStringLiteral("DELETE FROM History"));
+    m_database.clear();
     m_calls.clear();
-
     endResetModel();
 }
 
@@ -132,12 +97,10 @@ bool CallHistoryModel::removeRows(int row, int count, const QModelIndex &parent)
     Q_UNUSED(count)
 
     beginRemoveRows(parent, row, row);
-    QSqlQuery remove(m_db);
-    remove.prepare(QStringLiteral("DELETE FROM History WHERE id=:id"));
-    remove.bindValue(QStringLiteral(":id"), m_calls[row].id);
-    remove.exec();
-
+    m_database.remove(m_calls[row].id);
+    m_calls = m_database.fetchCalls();
     endRemoveRows();
+
     return true;
 }
 

@@ -101,5 +101,6 @@ private:
     bool m_isIncomingCall;
 };
 
+Q_DECLARE_METATYPE(DialerUtils::CallType)
 
 #endif

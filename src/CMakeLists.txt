@@ -5,6 +5,7 @@ set(plasmaphonedialer_SRCS
     callhistorymodel.cpp
     call-manager.cpp
     qpulseaudioengine.cpp
+    database.cpp
     resources.qrc
 )
 add_executable(plasmaphonedialer ${plasmaphonedialer_SRCS})

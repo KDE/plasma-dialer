@@ -18,19 +18,11 @@
 
 #include <QAbstractListModel>
 #include <QSortFilterProxyModel>
-#include <QSqlDatabase>
 #include <QDateTime>
 #include <QVector>
 
 #include "dialerutils.h"
-
-struct CallData {
-    QString id;
-    QString number;
-    QDateTime time;
-    int duration;
-    DialerUtils::CallType callType;
-};
+#include "database.h"
 
 class CallHistoryModel : public QAbstractListModel
 {
@@ -59,6 +51,6 @@ public:
     bool removeRows(int row, int count, const QModelIndex &parent = QModelIndex()) override;
 
 private:
-    QSqlDatabase m_db;
     QVector<CallData> m_calls;
+    Database m_database;
 };
