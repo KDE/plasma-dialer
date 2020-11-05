@@ -23,6 +23,7 @@
 
 #include "dialerutils.h"
 #include "database.h"
+#include "contactmapper.h"
 
 class CallHistoryModel : public QAbstractListModel
 {
@@ -33,6 +34,8 @@ public:
 
     enum Roles {
         PhoneNumberRole = Qt::UserRole + 1,
+        DisplayNameRole,
+        PhotoRole,
         DurationRole,
         TimeRole,
         CallTypeRole,
@@ -53,4 +56,5 @@ public:
 private:
     QVector<CallData> m_calls;
     Database m_database;
+    ContactMapper m_mapper;
 };

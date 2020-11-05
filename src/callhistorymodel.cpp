@@ -21,11 +21,15 @@
 #include <QSqlQuery>
 #include <QSqlError>
 #include <QDebug>
+#include <KPeople/PersonData>
 
 CallHistoryModel::CallHistoryModel(QObject *parent)
     : QAbstractListModel(parent)
     , m_database(this)
+    , m_mapper(new ContactMapper(this))
 {
+    m_mapper.performInitialScan();
+
     beginResetModel();
     m_calls = m_database.fetchCalls();
     endResetModel();
@@ -62,6 +66,10 @@ QVariant CallHistoryModel::data(const QModelIndex& index, int role) const
     switch (role) {
         case Roles::PhoneNumberRole:
             return m_calls[row].number;
+        case DisplayNameRole:
+            return KPeople::PersonData{m_mapper.uriForNumber(m_calls.at(index.row()).number)}.name();
+        case PhotoRole:
+            return KPeople::PersonData{m_mapper.uriForNumber(m_calls.at(index.row()).number)}.photo();
         case Roles::CallTypeRole:
             return m_calls[row].callType;
         case Roles::DurationRole:
@@ -84,6 +92,8 @@ QHash<int, QByteArray> CallHistoryModel::roleNames() const
 {
     QHash<int, QByteArray> roleNames;
     roleNames[PhoneNumberRole] = "number";
+    roleNames[DisplayNameRole] = "displayName";
+    roleNames[PhotoRole] = "photo";
     roleNames[TimeRole] = "time";
     roleNames[DurationRole] = "duration";
     roleNames[CallTypeRole] = "callType";

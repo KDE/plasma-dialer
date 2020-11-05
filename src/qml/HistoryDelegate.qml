@@ -48,7 +48,7 @@ Kirigami.AbstractListItem {
 
         ColumnLayout {
             Controls.Label {
-                text: "Name (todo)"
+                text: model.displayName
             }
             Controls.Label {
                 text: model.number
