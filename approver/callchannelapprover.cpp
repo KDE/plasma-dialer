@@ -78,6 +78,11 @@ void CallChannelApprover::onChannelReady(Tp::PendingOperation* op)
     m_ringingNotification->setActions(actions);
     m_ringingNotification->sendEvent();
     
+    connect(callChannel.data(), &Tp::CallChannel::callStateChanged, this, [=](Tp::CallState state) {
+        if (state == Tp::CallStateEnded) {
+            m_ringingNotification->close();
+        }
+    });
     void (KNotification::* activation)(unsigned int) = &KNotification::activated;
     connect(m_ringingNotification, activation,
             this, &CallChannelApprover::onNotificationAction);
