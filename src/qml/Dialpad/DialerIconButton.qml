@@ -69,7 +69,7 @@ Item {
         }
     }
 
-    MouseArea {
+    Controls.AbstractButton {
         id: mouse
         anchors.fill: parent
         onClicked: buttonRoot.pressed()
