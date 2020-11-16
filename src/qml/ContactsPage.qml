@@ -29,9 +29,13 @@ Kirigami.ScrollablePage {
     title: i18n("Contacts")
     icon.name: "view-pim-contacts"
 
-    header: Kirigami.SearchField {
-        id: searchField
-        onTextChanged: contactsProxyModel.setFilterFixedString(text)
+    header: Controls.Control {
+        padding: Kirigami.Units.largeSpacing
+        
+        contentItem: Kirigami.SearchField {
+            id: searchField
+            onTextChanged: contactsProxyModel.setFilterFixedString(text)
+        }
     }
 
     ListView {
