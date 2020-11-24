@@ -37,11 +37,11 @@ Kirigami.AbstractListItem {
             source: {
                 switch (model.callType) {
                 case DialerUtils.IncomingRejected:
-                    return "list-remove";
+                    return "call-stop";
                 case DialerUtils.IncomingAccepted:
-                    return "go-down";
+                    return "call-incoming";
                 case DialerUtils.Outgoing:
-                    return "go-up";
+                    return "call-outgoing";
                 }
             }
         }
