@@ -80,6 +80,7 @@ Kirigami.ScrollablePage {
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
             text: i18n("No contacts")
+            icon.name: "contact-new-symbolic"
             visible: contactsList.count === 0
         }
     }

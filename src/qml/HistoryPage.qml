@@ -25,7 +25,7 @@ import org.kde.kirigami 2.12 as Kirigami
 import org.kde.phone.dialer 1.0
 
 Kirigami.ScrollablePage {
-    title: i18n("History")
+    title: i18n("Call History")
     icon.name: "clock"
 
     actions.main: Kirigami.Action {
@@ -47,6 +47,7 @@ Kirigami.ScrollablePage {
     Kirigami.PlaceholderMessage {
         anchors.centerIn: parent
         text: i18n("No recent calls")
+        icon.name: "call-outgoing"
         visible: view.count == 0
     }
 
