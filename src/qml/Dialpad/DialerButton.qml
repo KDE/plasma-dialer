@@ -75,7 +75,7 @@ Item {
         Controls.Label {
             id: main
 
-            font.pixelSize: applicationWindow().smallMode ? Kirigami.Units.gridUnit * 1.2 : Kirigami.Units.gridUnit * 2
+            font.pixelSize: applicationWindow().smallMode ? Kirigami.Units.gridUnit * 1.2 : Kirigami.Units.gridUnit * 1.75
             text: root.display || root.text
             opacity: special ? 0.4 : 1.0
             Layout.minimumWidth: parent.width

@@ -18,8 +18,9 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-import QtQuick 2.0
+import QtQuick 2.4
 import QtQuick.Layouts 1.2
+import QtQuick.Controls 2.2 as Controls
 
 import org.kde.kirigami 2.5 as Kirigami
 
@@ -52,17 +53,41 @@ GridLayout {
         Layout.fillHeight: true
     }
 
-    DialerIconButton {
+    // call button
+    Controls.AbstractButton {
         id: callButton
         Layout.fillWidth: true
         Layout.fillHeight: true
-
+        
         enabled: status.text.length > 0
-        opacity: enabled ? 1 : 0.5
-        source: "call-start"
-        size: Kirigami.Units.gridUnit * 3
-        onPressed: call(status.text)
+        opacity: enabled ? 1 : 0.8
+        onClicked: call(status.text)
+        
+        background: Rectangle {
+            anchors.centerIn: parent
+            height: Kirigami.Units.gridUnit * 3.5
+            width: height
+            radius: height / 2
+            
+            color: Kirigami.Theme.highlightColor
+            opacity: callButton.pressed ? 0.7 : 1
+            Behavior on opacity {
+                OpacityAnimator {
+                    duration: Kirigami.Units.longDuration
+                    easing.type: Easing.InOutQuad
+                }
+            }
+            
+            Kirigami.Icon {
+                source: "call-start"
+                anchors.fill: parent
+                anchors.margins: Kirigami.Units.largeSpacing
+                color: "white"
+                isMask: true
+            }
+        }
     }
+    
     DialerIconButton {
         id: delButton
         Layout.fillWidth: true
