@@ -31,11 +31,11 @@ ToolBar {
     property double fontSize: Kirigami.Theme.defaultFont.pointSize * 0.8
     property double shrinkFontSize: Kirigami.Theme.defaultFont.pointSize * 0.7
     
-    function getPage(name) {
-        switch (name) {
-            case "Call History": return historyPage;
-            case "Contacts": return contactsPage;
-            case "Dialer": return dialerPage;
+    function getPage(id) {
+        switch (id) {
+            case "callhistory": return historyPage;
+            case "contacts": return contactsPage;
+            case "dialer": return dialerPage;
         }
     }
     
@@ -58,15 +58,18 @@ ToolBar {
         Repeater {
             model: ListModel {
                 ListElement {
-                    name: "Call History"
+                    pageId: "callhistory"
+                    name: qsTr("Call History")
                     icon: "clock"
                 }
                 ListElement {
-                    name: "Contacts"
+                    pageId: "contacts"
+                    name: qsTr("Contacts")
                     icon: "view-pim-contacts"
                 }
                 ListElement {
-                    name: "Dialer"
+                    pageId: "dialer"
+                    name: qsTr("Dialer")
                     icon: "call-start"
                 }
             }
@@ -80,6 +83,8 @@ ToolBar {
                 color: mouseArea.pressed ? Qt.darker(Kirigami.Theme.backgroundColor, 1.1) : 
                        mouseArea.containsMouse ? Qt.darker(Kirigami.Theme.backgroundColor, 1.03) : Kirigami.Theme.backgroundColor
                        
+                property var page: getPage(model.pageId)
+                       
                 Behavior on color {
                     ColorAnimation { 
                         duration: 100 
@@ -92,8 +97,8 @@ ToolBar {
                     hoverEnabled: true
                     anchors.fill: parent
                     onClicked: {
-                        if (!getPage(model.name).visible) {
-                            root.switchToPage(getPage(model.name), 0)
+                        if (!page.visible) {
+                            root.switchToPage(page, 0)
                         }
                     }
                     onPressed: {
@@ -126,7 +131,7 @@ ToolBar {
                     spacing: Kirigami.Units.smallSpacing
                     
                     Kirigami.Icon {
-                        color: getPage(model.name).visible ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
+                        color: page.visible ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
                         source: model.icon
                         Layout.alignment: Qt.AlignHCenter | Qt.AlignBottom
                         Layout.preferredHeight: toolbarRoot.iconSize
@@ -160,7 +165,7 @@ ToolBar {
                     }
                     
                     Label {
-                        color: getPage(model.name).visible ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
+                        color: page.visible ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
                         text: i18n(model.name)
                         Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
                         horizontalAlignment: Text.AlignHCenter
