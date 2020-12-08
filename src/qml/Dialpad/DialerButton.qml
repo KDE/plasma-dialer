@@ -45,12 +45,6 @@ Item {
         color: Kirigami.Theme.highlightColor
         radius: Kirigami.Units.smallSpacing
         opacity: mouse.pressed ? 0.4 : 0
-        Behavior on opacity {
-            OpacityAnimator {
-                duration: Kirigami.Units.longDuration
-                easing.type: Easing.InOutQuad
-            }
-        }
     }
 
     Controls.AbstractButton {

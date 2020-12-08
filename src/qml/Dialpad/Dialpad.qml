@@ -71,12 +71,6 @@ GridLayout {
             
             color: Kirigami.Theme.highlightColor
             opacity: callButton.pressed ? 0.7 : 1
-            Behavior on opacity {
-                OpacityAnimator {
-                    duration: Kirigami.Units.longDuration
-                    easing.type: Easing.InOutQuad
-                }
-            }
             
             Kirigami.Icon {
                 source: "call-start"
@@ -99,6 +93,9 @@ GridLayout {
         size: Kirigami.Units.gridUnit * 2
         onPressed: {
             pad.number = pad.number.slice(0, -1)
+        }
+        onPressAndHold: { // clear
+            pad.number = ""
         }
     }
 }

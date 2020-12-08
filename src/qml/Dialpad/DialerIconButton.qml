@@ -32,6 +32,7 @@ Item {
     Layout.fillHeight: true
 
     signal pressed()
+    signal pressAndHold()
 
     property var callback
     property string sub
@@ -45,12 +46,6 @@ Item {
         color: Kirigami.Theme.highlightColor
         radius: Kirigami.Units.smallSpacing
         opacity: mouse.pressed ? 0.4 : 0
-        Behavior on opacity {
-            OpacityAnimator {
-                duration: Kirigami.Units.longDuration
-                easing.type: Easing.InOutQuad
-            }
-        }
     }
 
     Row {
@@ -73,5 +68,6 @@ Item {
         id: mouse
         anchors.fill: parent
         onClicked: buttonRoot.pressed()
+        onPressAndHold: buttonRoot.pressAndHold()
     }
 }
