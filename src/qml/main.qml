@@ -32,6 +32,8 @@ Kirigami.ApplicationWindow {
     wideScreen: false
     id: root
 
+    title: i18n("Dialer")
+    
     width: 800
     height: 1080
 
@@ -44,15 +46,28 @@ Kirigami.ApplicationWindow {
     //was the last call an incoming one?
     property bool isIncoming
 
-    Kirigami.SwipeNavigator {
-        id: navigator
-        anchors.fill: parent
+    pageStack.initialPage: historyPage
+    
+    function switchToPage(page, depth) {
+        while (pageStack.depth > depth) pageStack.pop()
+        pageStack.push(page)
+    }
+    
+    footer: BottomToolbar {}
+    
+    HistoryPage {
+        id: historyPage
+        visible: true
+    }
 
-        HistoryPage {}
+    ContactsPage {
+        id: contactsPage
+        visible: false
+    }
 
-        ContactsPage {}
-
-        DialerPage {}
+    DialerPage {
+        id: dialerPage
+        visible: false
     }
 
     Component {
@@ -79,14 +94,14 @@ Kirigami.ApplicationWindow {
         }
         function onCallStateChanged(state) {
             if (DialerUtils.callState === DialerUtils.Active || DialerUtils.callState === DialerUtils.Dialing) {
-                if (navigator.layers.depth == 1) {
-                    navigator.layers.push(callPage)
+                if (root.pageStack.layers.depth == 0) {
+                    root.pageStack.layers.push(callPage)
                     root.show()
                     root.requestActivate()
                 }
             } else {
-                if (navigator.layers.depth > 1) {
-                    navigator.layers.clear()
+                if (root.pageStack.layers.depth > 0) {
+                    root.pageStack.layers.clear()
                 }
             }
         }
