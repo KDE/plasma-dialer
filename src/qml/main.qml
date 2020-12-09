@@ -94,13 +94,13 @@ Kirigami.ApplicationWindow {
         }
         function onCallStateChanged(state) {
             if (DialerUtils.callState === DialerUtils.Active || DialerUtils.callState === DialerUtils.Dialing) {
-                if (root.pageStack.layers.depth == 0) {
+                if (root.pageStack.layers.depth == 1) {
                     root.pageStack.layers.push(callPage)
                     root.show()
                     root.requestActivate()
                 }
             } else {
-                if (root.pageStack.layers.depth > 0) {
+                if (root.pageStack.layers.depth > 1) {
                     root.pageStack.layers.clear()
                 }
             }
