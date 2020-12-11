@@ -31,6 +31,8 @@ import org.kde.phone.dialer 1.0
 Kirigami.Page {
     objectName: "callPage"
     id: callPage
+    
+    title: i18n("Calling %1", DialerUtils.callContactAlias)
 
     property int status: DialerUtils.callState
 
@@ -123,7 +125,6 @@ Kirigami.Page {
             verticalAlignment: Qt.AlignVCenter
             font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.1
             text: {
-                //return "Calling..."
                 if (DialerUtils.callState === DialerUtils.Dialing) {
                     return i18n("Calling...");
                 } else if (DialerUtils.callDuration > 0) {

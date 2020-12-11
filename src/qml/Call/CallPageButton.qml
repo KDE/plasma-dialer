@@ -21,7 +21,7 @@ import QtQuick 2.0
 import QtQuick.Controls 2.7 
 import QtQuick.Layouts 1.1
 
-import org.kde.kirigami 2.12 as Kirigami
+import org.kde.kirigami 2.13 as Kirigami
 
 Rectangle {
     id: buttonRoot
