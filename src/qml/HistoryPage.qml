@@ -27,6 +27,11 @@ import org.kde.phone.dialer 1.0
 Kirigami.ScrollablePage {
     title: i18n("Call History")
     icon.name: "clock"
+    
+    header: InCallInlineMessage {
+        anchors.margins: Kirigami.Units.smallSpacing
+        dialerUtils: DialerUtils
+    }
 
     actions.main: Kirigami.Action {
         onTriggered: historyModel.clear()

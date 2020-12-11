@@ -38,10 +38,21 @@ Kirigami.Page {
     topPadding: 0
     bottomPadding: 0
 
-    header: Kirigami.InlineMessage {
-        type: Kirigami.MessageType.Error
-        text: i18n("Unable to make a call at this moment")
-        visible: DialerUtils.callState === DialerUtils.Failed
+    header: ColumnLayout {
+        anchors.margins: Kirigami.Units.smallSpacing
+        spacing: Kirigami.Units.smallSpacing
+        Kirigami.InlineMessage {
+            id: callError
+            Layout.fillWidth: true
+            type: Kirigami.MessageType.Error
+            text: i18n("Unable to make a call at this moment")
+            visible: DialerUtils.callState === DialerUtils.Failed
+        }
+        InCallInlineMessage {
+            id: inCall
+            Layout.fillWidth: true
+            dialerUtils: DialerUtils
+        }
     }
 
     ColumnLayout {

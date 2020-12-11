@@ -53,7 +53,9 @@ Kirigami.ApplicationWindow {
         pageStack.push(page)
     }
     
-    footer: BottomToolbar {}
+    footer: BottomToolbar {
+        visible: root.pageStack.layers.depth < 2
+    }
     
     HistoryPage {
         id: historyPage
