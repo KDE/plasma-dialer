@@ -90,7 +90,7 @@ Item {
             playKeytone.play();
             pressTime = new Date().getTime();
         }
-        onCanceled: {
+        function stop() {
             let curTime = new Date().getTime();
             if ((curTime - pressTime) < 200) {
                 releaseTimer.interval = 200 - (curTime - pressTime);
@@ -99,6 +99,8 @@ Item {
                 playKeytone.stop();
             }
         }
+        onCanceled: stop()
+        onReleased: stop()
         
         onClicked: buttonRoot.pressed()
         onPressAndHold: buttonRoot.pressAndHold()
