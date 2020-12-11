@@ -103,21 +103,27 @@ Kirigami.Page {
             }
         }
 
+        // phone number/alias
         Controls.Label {
             Layout.fillWidth: true
             Layout.minimumHeight: implicitHeight
             horizontalAlignment: Qt.AlignHCenter
             verticalAlignment: Qt.AlignVCenter
-            font.pointSize: Kirigami.Units.fontMetrics.pointSize * 2
+            font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.15
             text: DialerUtils.callContactAlias
+            font.bold: true
             visible: text != ""
         }
+        
+        // time spent on call
         Controls.Label {
             Layout.fillWidth: true
             Layout.minimumHeight: implicitHeight
             horizontalAlignment: Qt.AlignHCenter
             verticalAlignment: Qt.AlignVCenter
+            font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.1
             text: {
+                //return "Calling..."
                 if (DialerUtils.callState === DialerUtils.Dialing) {
                     return i18n("Calling...");
                 } else if (DialerUtils.callDuration > 0) {
