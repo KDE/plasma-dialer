@@ -33,21 +33,21 @@ GridLayout {
     property string number
     property bool showBottomRow: true
 
-    DialerButton { id: one; text: "1"; onClicked: pad.number += text }
-    DialerButton { text: "2"; sub: "ABC"; onClicked: pad.number += text }
-    DialerButton { text: "3"; sub: "DEF"; onClicked: pad.number += text }
+    DialerButton { id: one; text: "1"; sound: "qrc:///Dtmf1.wav"; onClicked: pad.number += text }
+    DialerButton { text: "2"; sub: "ABC"; sound: "qrc:///Dtmf2.wav"; onClicked: pad.number += text }
+    DialerButton { text: "3"; sub: "DEF"; sound: "qrc:///Dtmf3.wav"; onClicked: pad.number += text }
 
-    DialerButton { text: "4"; sub: "GHI"; onClicked: pad.number += text }
-    DialerButton { text: "5"; sub: "JKL"; onClicked: pad.number += text }
-    DialerButton { text: "6"; sub: "MNO"; onClicked: pad.number += text }
+    DialerButton { text: "4"; sub: "GHI"; sound: "qrc:///Dtmf4.wav"; onClicked: pad.number += text }
+    DialerButton { text: "5"; sub: "JKL"; sound: "qrc:///Dtmf5.wav"; onClicked: pad.number += text }
+    DialerButton { text: "6"; sub: "MNO"; sound: "qrc:///Dtmf6.wav"; onClicked: pad.number += text }
 
-    DialerButton { text: "7"; sub: "PQRS"; onClicked: pad.number += text }
-    DialerButton { text: "8"; sub: "TUV"; onClicked: pad.number += text }
-    DialerButton { text: "9"; sub: "WXYZ"; onClicked: pad.number += text }
+    DialerButton { text: "7"; sub: "PQRS"; sound: "qrc:///Dtmf7.wav"; onClicked: pad.number += text }
+    DialerButton { text: "8"; sub: "TUV"; sound: "qrc:///Dtmf8.wav"; onClicked: pad.number += text }
+    DialerButton { text: "9"; sub: "WXYZ"; sound: "qrc:///Dtmf9.wav"; onClicked: pad.number += text }
 
-    DialerButton { display: "＊"; text: "*"; special: true; onClicked: pad.number += text }
-    DialerButton { text: "0"; subdisplay: "＋"; sub: "+"; onClicked: pad.number += text }
-    DialerButton { display: "＃"; text: "#"; special: true; onClicked: pad.number += text }
+    DialerButton { display: "＊"; text: "*"; special: true; sound: "qrc:///DtmfStar.wav"; onClicked: pad.number += text }
+    DialerButton { text: "0"; subdisplay: "＋"; sub: "+"; sound: "qrc:///Dtmf0.wav"; onClicked: pad.number += text }
+    DialerButton { display: "＃"; text: "#"; special: true; sound: "qrc:///DtmfPound.wav"; onClicked: pad.number += text }
 
     Item {
         visible: pad.showBottomRow

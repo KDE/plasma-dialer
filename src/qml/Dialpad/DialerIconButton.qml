@@ -21,6 +21,7 @@
 import QtQuick 2.4
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.2 as Controls
+import QtMultimedia 5.12
 
 import org.kde.kirigami 2.2 as Kirigami
 
@@ -38,6 +39,7 @@ Item {
     property string sub
     property alias source: icon.source
     property alias text: label.text
+    property string sound
     property int size
 
     Rectangle {
@@ -64,9 +66,40 @@ Item {
         }
     }
 
+    SoundEffect {
+        id: playKeytone
+        source: buttonRoot.sound
+        volume: 0.5
+        loops: SoundEffect.Infinite
+    }
+    
     Controls.AbstractButton {
         id: mouse
         anchors.fill: parent
+        
+        Timer { // allow time for sound to play if press/release is fast
+            id: releaseTimer
+            repeat: false
+            onTriggered: playKeytone.stop()
+        }
+        
+        property double pressTime: 0
+        
+        onPressed: {
+            releaseTimer.stop();
+            playKeytone.play();
+            pressTime = new Date().getTime();
+        }
+        onReleased: {
+            let curTime = new Date().getTime();
+            if ((curTime - pressTime) < 200) {
+                releaseTimer.interval = 200 - (curTime - pressTime);
+                releaseTimer.restart();
+            } else {
+                playKeytone.stop();
+            }
+        }
+        
         onClicked: buttonRoot.pressed()
         onPressAndHold: buttonRoot.pressAndHold()
     }
