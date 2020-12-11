@@ -1,6 +1,7 @@
 /*
  *   Copyright 2014 Aaron Seigo <aseigo@kde.org>
  *   Copyright 2015 Marco Martin <mart@kde.org>
+ *   Copyright 2020 Devin Lin <espidev@gmail.com>
  *
  *   This program is free software; you can redistribute it and/or modify
  *   it under the terms of the GNU Library General Public License as
@@ -22,7 +23,7 @@ import QtQuick 2.0
 import QtQuick.Controls 2.7 as Controls
 import QtQuick.Layouts 1.1
 
-import org.kde.kirigami 2.5 as Kirigami
+import org.kde.kirigami 2.12 as Kirigami
 
 import "../Dialpad"
 import org.kde.phone.dialer 1.0
@@ -45,17 +46,17 @@ Kirigami.Page {
 
     onStatusChanged: {
         if (status !== DialerUtils.Active) {
-            dialerButton.checked = false;
+            dialerButton.toggledOn = false;
         }
     }
 
     ColumnLayout {
         id: activeCallUi
-        spacing: 10
+        spacing: Kirigami.Units.largeSpacing
 
         anchors {
             fill: parent
-            margins: 20
+            margins: Kirigami.Units.largeSpacing
         }
 
         Flickable {
@@ -67,15 +68,18 @@ Kirigami.Page {
             contentWidth: topContents.width
             contentHeight: topContents.height
             interactive: status === DialerUtils.Active;
-            Row {
+            RowLayout {
                 id: topContents
+                
                 Avatar {
-                    width: topFlickable.width
-                    height: topFlickable.height
+                    Layout.minimumWidth: topFlickable.width
+                    Layout.minimumHeight: topFlickable.height
                 }
+                
                 Dialpad {
-                    width: topFlickable.width
-                    height: topFlickable.height
+                    Layout.minimumWidth: topFlickable.width
+                    Layout.minimumHeight: topFlickable.height
+                    showBottomRow: false
                 }
             }
 
@@ -106,6 +110,7 @@ Kirigami.Page {
             verticalAlignment: Qt.AlignVCenter
             font.pointSize: Kirigami.Units.fontMetrics.pointSize * 2
             text: DialerUtils.callContactAlias
+            visible: text != ""
         }
         Controls.Label {
             Layout.fillWidth: true
@@ -121,36 +126,66 @@ Kirigami.Page {
                     return '';
                 }
             }
+            visible: text !== ""
         }
 
+        // controls
         RowLayout {
             opacity: status === DialerUtils.Active ? 1 : 0
             Layout.alignment: Qt.AlignHCenter
+            Layout.maximumWidth: Kirigami.Units.gridUnit * 16
+            Layout.minimumHeight: Kirigami.Units.gridUnit * 3.5
             id: buttonRow
-            Controls.ToolButton {
+            
+            spacing: Kirigami.Units.smallSpacing
+            
+            CallPageButton {
                 id: muteButton
-                flat: false
-                icon.name: "audio-volume-high"
-                //TODO
-//                 iconSource: ofonoWrapper.isMicrophoneMuted ? "audio-volume-muted" : "audio-volume-high"
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+                
+                iconSource: toggledOn ? "microphone-sensitivity-muted-symbolic" : "microphone-sensitivity-high-symbolic"
+                text: i18n("Mute")
+                toggledOn: false
+                
                 onClicked: {
-                    //TODO
-//                     ofonoWrapper.isMicrophoneMuted = !ofonoWrapper.isMicrophoneMuted;
+                    toggledOn = !toggledOn
+                    // ofonoWrapper.isMicrophoneMuted = !ofonoWrapper.isMicrophoneMuted;
                 }
+//                 iconSource: ofonoWrapper.isMicrophoneMuted ? "audio-volume-muted" : "audio-volume-high" TODO
             }
-            Controls.ToolButton {
+            CallPageButton {
                 id: dialerButton
-                flat: false
-                icon.name: "input-keyboard"
-                checkable: true
-                onCheckedChanged: {
-                    if (checked) {
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+                
+                iconSource: "input-dialpad-symbolic"
+                text: i18n("Keypad")
+                toggledOn: false
+                
+                onClicked: toggledOn = !toggledOn
+                
+                onToggledOnChanged: {
+                    if (toggledOn) {
                         topSlideAnim.to = topFlickable.width;
                     } else {
                         topSlideAnim.to = 0;
                     }
                     topSlideAnim.running = true;
                 }
+            }
+            CallPageButton {
+                id: speakerButton
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+                
+                iconSource: "audio-speakers-symbolic"
+                text: i18n("Speaker")
+                toggledOn: false
+                
+                onClicked: toggledOn = !toggledOn
+                
+                // TODO functionality
             }
         }
 
@@ -161,7 +196,7 @@ Kirigami.Page {
             AnswerSwipe {
                 anchors.fill: parent
                 //STATUS_INCOMING
-                visible: status !== DialerUtils.Active
+                visible: status === DialerUtils.Incoming
                 onAccepted: {
                     DialerUtils.acceptCall();
                 }
@@ -169,16 +204,35 @@ Kirigami.Page {
                     DialerUtils.rejectCall();
                 }
             }
-
-            Controls.Button {
-                anchors.fill: parent
-                //STATUS_INCOMING
+            
+            // end call button
+            Controls.AbstractButton {
+                id: endCallButton
+                //STATUS_ACTIVE
                 visible: status !== DialerUtils.Incoming
-                icon.name: "call-stop"
-                Layout.fillWidth: true
-                text: i18n("End Call")
-                onClicked: {
-                    DialerUtils.hangUp();
+                
+                anchors.centerIn: parent
+                width: Kirigami.Units.gridUnit * 3.5
+                height: Kirigami.Units.gridUnit * 3.5
+                
+                onClicked: DialerUtils.hangUp()
+                
+                background: Rectangle {
+                    anchors.centerIn: parent
+                    height: Kirigami.Units.gridUnit * 3.5
+                    width: height
+                    radius: height / 2
+                    
+                    color: "red"
+                    opacity: endCallButton.pressed ? 0.7 : 1
+                    
+                    Kirigami.Icon {
+                        source: "call-stop"
+                        anchors.fill: parent
+                        anchors.margins: Kirigami.Units.largeSpacing
+                        color: "white"
+                        isMask: true
+                    }
                 }
             }
         }

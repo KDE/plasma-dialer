@@ -31,6 +31,7 @@ GridLayout {
     columnSpacing: 10
 
     property string number
+    property bool showBottomRow: true
 
     DialerButton { id: one; text: "1"; onClicked: pad.number += text }
     DialerButton { text: "2"; sub: "ABC"; onClicked: pad.number += text }
@@ -49,12 +50,15 @@ GridLayout {
     DialerButton { display: "＃"; text: "#"; special: true; onClicked: pad.number += text }
 
     Item {
+        visible: pad.showBottomRow
         Layout.fillWidth: true
         Layout.fillHeight: true
     }
 
     // call button
     Controls.AbstractButton {
+        visible: pad.showBottomRow
+        
         id: callButton
         Layout.fillWidth: true
         Layout.fillHeight: true
@@ -83,6 +87,8 @@ GridLayout {
     }
     
     DialerIconButton {
+        visible: pad.showBottomRow
+        
         id: delButton
         Layout.fillWidth: true
         Layout.fillHeight: true
