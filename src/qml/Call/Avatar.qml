@@ -20,25 +20,17 @@
 import QtQuick 2.0
 import QtQuick.Layouts 1.1
 
-import org.kde.kirigami 2.8 as Kirigami
+import org.kde.kirigami 2.13 as Kirigami
 
 
 Item {
     Layout.fillWidth: true
     Layout.fillHeight: true
     Layout.minimumHeight: parent.height / 2
-    Rectangle {
-        height: Math.min(parent.width, parent.height)
+    Kirigami.Avatar {
+        height: Math.min(parent.width / 2, parent.height / 2)
         width: height
-        radius: 5
         anchors.centerIn: parent
-        Kirigami.Icon {
-            anchors {
-                fill: parent
-                centerIn: parent
-                margins: 20
-            }
-            source: "im-user"
-        }
+        source: "im-user"
     }
 }
