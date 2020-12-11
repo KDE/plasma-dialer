@@ -73,7 +73,8 @@ Item {
             playKeytone.play();
             pressTime = new Date().getTime();
         }
-        onReleased: {
+        
+        onCanceled: {
             let curTime = new Date().getTime();
             if ((curTime - pressTime) < 200) {
                 releaseTimer.interval = 200 - (curTime - pressTime);
