@@ -93,7 +93,6 @@ Kirigami.Page {
                 } else {
                     topSlideAnim.to = 0;
                 }
-                dialerButton.checked = checked;
                 topSlideAnim.running = true;
             }
             PropertyAnimation {
@@ -156,7 +155,8 @@ Kirigami.Page {
                 toggledOn: false
                 
                 onClicked: {
-                    toggledOn = !toggledOn
+                    //toggledOn = !toggledOn TODO uncomment once mute is working
+                    
                     // ofonoWrapper.isMicrophoneMuted = !ofonoWrapper.isMicrophoneMuted;
                 }
 //                 iconSource: ofonoWrapper.isMicrophoneMuted ? "audio-volume-muted" : "audio-volume-high" TODO
@@ -231,7 +231,7 @@ Kirigami.Page {
                     radius: height / 2
                     
                     color: "red"
-                    opacity: endCallButton.pressed ? 0.7 : 1
+                    opacity: endCallButton.pressed ? 0.5 : 1
                     
                     Kirigami.Icon {
                         source: "call-stop"

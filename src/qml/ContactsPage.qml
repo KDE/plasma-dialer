@@ -30,23 +30,22 @@ Kirigami.ScrollablePage {
     icon.name: "view-pim-contacts"
 
     header: ColumnLayout {
+        anchors.margins: Kirigami.Units.smallSpacing
         spacing: Kirigami.Units.smallSpacing
         
         InCallInlineMessage {
             id: inCall
             Layout.fillWidth: true
-            Layout.margins: Kirigami.Units.smallSpacing
+            Layout.leftMargin: Kirigami.Units.smallSpacing
+            Layout.rightMargin: Kirigami.Units.smallSpacing
             dialerUtils: DialerUtils
         }
         
-        Controls.Control {
-            padding: Kirigami.Units.largeSpacing
+        Kirigami.SearchField {
+            id: searchField
+            onTextChanged: contactsProxyModel.setFilterFixedString(text)
             Layout.fillWidth: true
-            
-            contentItem: Kirigami.SearchField {
-                id: searchField
-                onTextChanged: contactsProxyModel.setFilterFixedString(text)
-            }
+            Layout.margins: Kirigami.Units.largeSpacing
         }
     }
 

@@ -29,10 +29,10 @@ Kirigami.ScrollablePage {
     icon.name: "clock"
     
     header: InCallInlineMessage {
-        anchors.margins: Kirigami.Units.smallSpacing
+        id: inCall
         dialerUtils: DialerUtils
     }
-
+    
     actions.main: Kirigami.Action {
         onTriggered: historyModel.clear()
         text: "Clear history"
