@@ -35,7 +35,7 @@ Kirigami.ScrollablePage {
     
     actions.main: Kirigami.Action {
         onTriggered: historyModel.clear()
-        text: "Clear history"
+        text: i18n("Clear history")
         icon.name: "edit-clear-history"
     }
 
