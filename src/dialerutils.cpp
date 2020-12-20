@@ -37,7 +37,8 @@ DialerUtils::DialerUtils(const Tp::AccountPtr &simAccount, QObject *parent)
   m_callState(CallState::Idle),
   m_simAccount(simAccount),
   m_callDuration(0),
-  m_callContactAlias(QString())
+  m_callContactAlias(QString()),
+  m_isIncomingCall(false)
 {
     if (!m_simAccount) {
         return;
