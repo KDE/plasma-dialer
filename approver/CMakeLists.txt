@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: (C) 2020 Bhushan Shah <bshah@kde.org>
+# SPDX-License-Identifier: BSD-3-Clause
+
 add_executable(plasma-telepathy-approver
     main.cpp
     phoneapprover.cpp

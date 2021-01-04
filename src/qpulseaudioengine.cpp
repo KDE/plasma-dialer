@@ -1,6 +1,6 @@
 /****************************************************************************
 **
-** Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
+** SPDX-FileCopyrightText: 2013 Digia Plc and /or its subsidiary(-ies).
 ** Contact: http://www.qt-project.org/legal
 **
 ** This file was taken from qt5 and modified by 

@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: (C) 2015 Marco Martin <notmart@gmail.com>
+# SPDX-FileCopyrightText: (C) 2015 Martin Klapetek <mklapetek@kde.org>
+# SPDX-FileCopyrightText: (C) 2019 Jonah Brüchert <jbb.prv@gmx.de>
+# SPDX-FileCopyrightText: (C) 2020 Nicolas Fella <nicolas.fella@gmx.de>
+# SPDX-FileCopyrightText: (C) 2020 Bhushan Shah <bshah@kde.org>
+# SPDX-License-Identifier: BSD-3-Clause
+
 add_executable(plasmaphonedialer
     main.cpp
     dialerutils.cpp
