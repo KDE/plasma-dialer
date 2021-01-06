@@ -1,6 +1,7 @@
 [Global]
 IconName=call-start
 Comment=Phone
+Comment[az]=Telefon
 Comment[ca]=Telèfon
 Comment[ca@valencia]=Telèfon
 Comment[cs]=Telefon
@@ -31,6 +32,7 @@ Comment[zh_TW]=電話
 
 [Event/callMissed]
 Name=Missed Call
+Name[az]=Buraxılmış Zəng
 Name[ca]=Trucada perduda
 Name[ca@valencia]=Trucada perduda
 Name[cs]=Zmeškaný hovor
@@ -59,6 +61,7 @@ Name[uk]=Пропущений дзвінок
 Name[x-test]=xxMissed Callxx
 Name[zh_TW]=未接來電
 Comment=A call has been missed
+Comment[az]=Zəng buraxıldı
 Comment[ca]=S'ha perdut una trucada
 Comment[ca@valencia]=S'ha perdut una trucada
 Comment[da]=Der har været et ubesvaret opkald
@@ -89,6 +92,7 @@ Action=Popup
 
 [Event/ringing]
 Name=Ringing
+Name[az]=Zəng
 Name[ca]=Sonant
 Name[ca@valencia]=Sonant
 Name[cs]=Zvoní
@@ -117,6 +121,7 @@ Name[uk]=Дзвінок
 Name[x-test]=xxRingingxx
 Name[zh_TW]=鈴響
 Comment=The phone is ringing
+Comment[az]=Telefon zəng çalır
 Comment[ca]=El telèfon està sonant
 Comment[ca@valencia]=El telèfon està sonant
 Comment[cs]=Telefon zvoní

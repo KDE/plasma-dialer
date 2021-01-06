@@ -1,5 +1,6 @@
 [Desktop Entry]
 Comment=Telepathy services required for telephony
+Comment[az]=Telefoniya üçün Telepathy xidməti tələb olunur
 Comment[ca]=Serveis del Telepathy requerits per a la telefonia
 Comment[ca@valencia]=Serveis del Telepathy requerits per a la telefonia
 Comment[da]=Telepathy-tjenester kræves for telefoni
@@ -26,6 +27,7 @@ Comment[sv]=Telepathy-tjänster krävs för telefoni
 Comment[uk]=Для роботи зі службами телефонії слід встановити Telepathy
 Comment[x-test]=xxTelepathy services required for telephonyxx
 Name=Telepathy Services
+Name[az]=Telepathy Xidmətləri
 Name[ca]=Serveis del Telepathy
 Name[ca@valencia]=Serveis del Telepathy
 Name[cs]=Služby Telepathy
