@@ -42,6 +42,8 @@ int main(int argc, char **argv)
     app.setApplicationVersion(QStringLiteral(PLASMADIALER_VERSION_STRING));
     app.setOrganizationDomain(QStringLiteral("kde.org"));
 
+    KLocalizedString::setApplicationDomain("plasma-dialer");
+
     KDBusService service(KDBusService::Unique);
     Tp::registerTypes();
     Tp::enableDebug(false);

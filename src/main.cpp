@@ -56,6 +56,7 @@ int main(int argc, char **argv)
 //     app.setQuitOnLastWindowClosed(false);
     QCoreApplication::setApplicationVersion(QStringLiteral(PLASMADIALER_VERSION_STRING));
     QCoreApplication::setOrganizationDomain(QStringLiteral("kde.org"));
+    KLocalizedString::setApplicationDomain("plasma-dialer");
 
     KDBusService service(KDBusService::Unique);
 
