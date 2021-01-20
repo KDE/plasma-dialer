@@ -70,7 +70,7 @@ void CallChannelApprover::onChannelReady(Tp::PendingOperation* op)
     }
     m_ringingNotification->setComponentName(QStringLiteral("plasma_dialer"));
     m_ringingNotification->setIconName(QStringLiteral("call-start"));
-    m_ringingNotification->setTitle(QStringLiteral("Incoming call"));
+    m_ringingNotification->setTitle(i18n("Incoming call"));
     m_ringingNotification->setText(callChannel->targetContact()->alias());
     // this will be used by the notification applet to show custom notification UI
     // with swipe decision.
