@@ -19,6 +19,8 @@
 #include "qpulseaudioengine.h"
 
 #include <QTimer>
+#include <QDBusConnection>
+#include <QDBusMessage>
 
 #include <KNotification>
 #include <KLocalizedString>
@@ -56,6 +58,7 @@ struct CallManager::Private
     KNotification *callsNotification;
     uint missedCalls;
     QTimer *callTimer;
+    int inhibitCookie;
 };
 
 CallManager::CallManager(const Tp::CallChannelPtr &callChannel, DialerUtils *dialerUtils, QObject *parent)
@@ -134,6 +137,15 @@ void CallManager::onCallStateChanged(Tp::CallState state)
         break;
     case Tp::CallStateActive:
         d->dialerUtils->setCallState(DialerUtils::CallState::Active);
+        {
+            QDBusMessage inhibitCall = QDBusMessage::createMethodCall(QStringLiteral("org.freedesktop.PowerManagement.Inhibit"),
+                                                                      QStringLiteral("/org/freedesktop/PowerManagement/Inhibit"),
+                                                                      QStringLiteral("org.freedesktop.PowerManagement.Inhibit"),
+                                                                      QStringLiteral("Inhibit"));
+            inhibitCall.setArguments({i18n("Active call inhibits system suspend"), "org.kde.phone.dialer"});
+            QDBusReply<uint> reply = QDBusConnection::sessionBus().call(inhibitCall);
+            d->inhibitCookie = reply.isValid() ? reply.value() : -1;
+        }
         d->callTimer = new QTimer(this);
         connect(d->callTimer, &QTimer::timeout, d->callTimer, [=]() {
             d->dialerUtils->setCallDuration(d->dialerUtils->callDuration() + 1);
@@ -146,6 +158,14 @@ void CallManager::onCallStateChanged(Tp::CallState state)
         d->dialerUtils->setCallState(DialerUtils::CallState::Ended);
         qDebug() << "Call ended";
         enable_normal();
+        if (d->inhibitCookie != -1) {
+            QDBusMessage uninhibitCall = QDBusMessage::createMethodCall(QStringLiteral("org.freedesktop.PowerManagement.Inhibit"),
+                                                                      QStringLiteral("/org/freedesktop/PowerManagement/Inhibit"),
+                                                                      QStringLiteral("org.freedesktop.PowerManagement.Inhibit"),
+                                                                      QStringLiteral("UnInhibit"));
+            uninhibitCall << d->inhibitCookie;
+            QDBusConnection::sessionBus().call(uninhibitCall);
+        }
         //FIXME this is defined in the spec, but try to find a proper enum value for it
         if (d->callChannel->callStateReason().reason == MISSED_CALL_REASON) {
             qDebug() << "Adding notification";
