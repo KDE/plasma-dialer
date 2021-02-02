@@ -28,7 +28,7 @@ import org.kde.phone.dialer 1.0
 Kirigami.Page {
     id: dialer
 
-    property alias numberEntryText: status.text
+    property alias numberEntryText: statusLabel.text
 
     title: i18n("Dialer")
     icon.name: "call-start"
@@ -65,7 +65,7 @@ Kirigami.Page {
         spacing: 0
 
         QQC2.Label {
-            id: status
+            id: statusLabel
 
             horizontalAlignment: Qt.AlignHCenter
             verticalAlignment: Qt.AlignVCenter

@@ -34,7 +34,7 @@ Kirigami.Page {
     
     title: i18n("Calling %1", DialerUtils.callContactAlias)
 
-    property int status: DialerUtils.callState
+    property int callStatus: DialerUtils.callState
 
     function secondsToTimeString(seconds) {
         var h = Math.floor(seconds / 3600);
@@ -46,8 +46,8 @@ Kirigami.Page {
         return '' + h + ':' + m + ':' + s;
     }
 
-    onStatusChanged: {
-        if (status !== DialerUtils.Active) {
+    onCallStatusChanged: {
+        if (callStatus !== DialerUtils.Active) {
             dialerButton.toggledOn = false;
         }
     }
@@ -69,7 +69,7 @@ Kirigami.Page {
 
             contentWidth: topContents.width
             contentHeight: topContents.height
-            interactive: status === DialerUtils.Active;
+            interactive: callStatus === DialerUtils.Active;
             RowLayout {
                 id: topContents
                 
@@ -137,7 +137,7 @@ Kirigami.Page {
 
         // controls
         RowLayout {
-            opacity: status === DialerUtils.Active ? 1 : 0
+            opacity: callStatus === DialerUtils.Active ? 1 : 0
             Layout.alignment: Qt.AlignHCenter
             Layout.maximumWidth: Kirigami.Units.gridUnit * 16
             Layout.minimumHeight: Kirigami.Units.gridUnit * 3.5
@@ -203,7 +203,7 @@ Kirigami.Page {
             AnswerSwipe {
                 anchors.fill: parent
                 //STATUS_INCOMING
-                visible: status === DialerUtils.Incoming
+                visible: callStatus === DialerUtils.Incoming
                 onAccepted: {
                     DialerUtils.acceptCall();
                 }
@@ -216,7 +216,7 @@ Kirigami.Page {
             Controls.AbstractButton {
                 id: endCallButton
                 //STATUS_ACTIVE
-                visible: status !== DialerUtils.Incoming
+                visible: callStatus !== DialerUtils.Incoming
                 
                 anchors.centerIn: parent
                 width: Kirigami.Units.gridUnit * 3.5

@@ -63,9 +63,9 @@ GridLayout {
         Layout.fillWidth: true
         Layout.fillHeight: true
         
-        enabled: status.text.length > 0
+        enabled: statusLabel.text.length > 0
         opacity: enabled ? 1 : 0.8
-        onClicked: call(status.text)
+        onClicked: call(statusLabel.text)
         
         background: Rectangle {
             anchors.centerIn: parent
@@ -93,7 +93,7 @@ GridLayout {
         Layout.fillWidth: true
         Layout.fillHeight: true
 
-        enabled: status.text.length > 0
+        enabled: statusLabel.text.length > 0
         opacity: enabled ? 1 : 0.5
         source: "edit-clear"
         size: Kirigami.Units.gridUnit * 2
