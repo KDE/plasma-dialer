@@ -24,6 +24,8 @@ import QtQuick.Controls 2.2 as Controls
 
 import org.kde.kirigami 2.5 as Kirigami
 
+import org.kde.phone.dialer 1.0
+
 GridLayout {
     id: pad
     columns: 3
@@ -33,21 +35,29 @@ GridLayout {
     property string number
     property bool showBottomRow: true
 
-    DialerButton { id: one; text: "1"; onClicked: pad.number += text }
-    DialerButton { text: "2"; sub: "ABC"; onClicked: pad.number += text }
-    DialerButton { text: "3"; sub: "DEF"; onClicked: pad.number += text }
+    function onPadNumberPressed(number) {
+        if (DialerUtils.callState !== DialerUtils.Active) {
+            pad.number += number
+        } else {
+            sendTones(number)
+        }
+    }
 
-    DialerButton { text: "4"; sub: "GHI"; onClicked: pad.number += text }
-    DialerButton { text: "5"; sub: "JKL"; onClicked: pad.number += text }
-    DialerButton { text: "6"; sub: "MNO"; onClicked: pad.number += text }
+    DialerButton { id: one; text: "1"; onClicked: onPadNumberPressed(text) }
+    DialerButton { text: "2"; sub: "ABC"; onClicked: onPadNumberPressed(text) }
+    DialerButton { text: "3"; sub: "DEF"; onClicked: onPadNumberPressed(text) }
 
-    DialerButton { text: "7"; sub: "PQRS"; onClicked: pad.number += text }
-    DialerButton { text: "8"; sub: "TUV"; onClicked: pad.number += text }
-    DialerButton { text: "9"; sub: "WXYZ"; onClicked: pad.number += text }
+    DialerButton { text: "4"; sub: "GHI"; onClicked: onPadNumberPressed(text) }
+    DialerButton { text: "5"; sub: "JKL"; onClicked: onPadNumberPressed(text) }
+    DialerButton { text: "6"; sub: "MNO"; onClicked: onPadNumberPressed(text) }
 
-    DialerButton { display: "＊"; text: "*"; special: true; onClicked: pad.number += text }
-    DialerButton { text: "0"; subdisplay: "＋"; sub: "+"; onClicked: pad.number += text }
-    DialerButton { display: "＃"; text: "#"; special: true; onClicked: pad.number += text }
+    DialerButton { text: "7"; sub: "PQRS"; onClicked: onPadNumberPressed(text) }
+    DialerButton { text: "8"; sub: "TUV"; onClicked: onPadNumberPressed(text) }
+    DialerButton { text: "9"; sub: "WXYZ"; onClicked: onPadNumberPressed(text) }
+
+    DialerButton { display: "＊"; text: "*"; special: true; onClicked: onPadNumberPressed(text) }
+    DialerButton { text: "0"; subdisplay: "＋"; sub: "+"; onClicked: onPadNumberPressed(text) }
+    DialerButton { display: "＃"; text: "#"; special: true; onClicked: onPadNumberPressed(text) }
 
     Item {
         visible: pad.showBottomRow
