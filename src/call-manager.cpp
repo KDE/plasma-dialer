@@ -235,7 +235,7 @@ void CallManager::onSendDtmfRequested(const QString &tones)
         return;
     }
 
-    Q_FOREACH(const Tp::CallContentPtr &content, d->callChannel->contents()) {
+    for (const Tp::CallContentPtr & content : d->callChannel->contents()) {
         if (content->supportsDTMF()) {
             bool ok;
             QStringListIterator keysIterator(tones.split(QString(), Qt::SkipEmptyParts));

@@ -71,7 +71,7 @@ void CallHandler::handleChannels(const Tp::MethodInvocationContextPtr<> & contex
     Q_UNUSED(userActionTime);
     Q_UNUSED(handlerInfo);
 
-    Q_FOREACH(const Tp::ChannelPtr & channel, channels) {
+    for (const Tp::ChannelPtr & channel : channels) {
         Tp::CallChannelPtr callChannel = Tp::CallChannelPtr::qObjectCast(channel);
         if (!callChannel) {
             qDebug() << "Channel is not a Call channel. Ignoring";
