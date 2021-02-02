@@ -88,6 +88,7 @@ Q_SIGNALS:
     void rejectCall();
     void hangUp();
     void callEnded(const QString &callContactNumber, uint callDuration, bool isIncomingCall);
+    void sendDtmf(const QString &tones);
 
 private:
     QPointer <KNotification> m_callsNotification;

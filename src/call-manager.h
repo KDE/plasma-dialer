@@ -34,6 +34,7 @@ private Q_SLOTS:
     void onCallAccepted();
     void onCallRejected();
     void onHangUpRequested();
+    void onSendDtmfRequested(const QString &tones);
 
 private:
     struct Private;

@@ -25,6 +25,8 @@
 #include <KNotification>
 #include <KLocalizedString>
 
+#include <TelepathyQt/CallContent>
+
 static void enable_earpiece()
 {
     QPulseAudioEngine::instance()->setCallMode(CallActive, AudioModeEarpiece);
@@ -73,6 +75,7 @@ CallManager::CallManager(const Tp::CallChannelPtr &callChannel, DialerUtils *dia
     connect(d->dialerUtils, &DialerUtils::acceptCall, this, &CallManager::onCallAccepted);
     connect(d->dialerUtils, &DialerUtils::rejectCall, this, &CallManager::onCallRejected);
     connect(d->dialerUtils, &DialerUtils::hangUp, this, &CallManager::onHangUpRequested);
+    connect(d->dialerUtils, &DialerUtils::sendDtmf, this, &CallManager::onSendDtmfRequested);
     connect(d->callChannel.data(), &Tp::CallChannel::invalidated, this, [=]() {
         qDebug() << "Channel invalidated";
         d->dialerUtils->setCallState(DialerUtils::CallState::Idle);
@@ -222,6 +225,43 @@ void CallManager::onHangUpRequested()
             }
             d->callChannel->requestClose();
         });
+    }
+}
+
+void CallManager::onSendDtmfRequested(const QString &tones)
+{
+    if (!d->callChannel && !d->callChannel->isValid()) {
+        qWarning() << Q_FUNC_INFO;
+        return;
+    }
+
+    Q_FOREACH(const Tp::CallContentPtr &content, d->callChannel->contents()) {
+        if (content->supportsDTMF()) {
+            bool ok;
+            QStringListIterator keysIterator(tones.split(QString(), Qt::SkipEmptyParts));
+            while (keysIterator.hasNext()) {
+                QString key = keysIterator.next();
+                Tp::DTMFEvent event = (Tp::DTMFEvent)key.toInt(&ok);
+                if (!ok) {
+                    if (!key.compare("*")) {
+                        event = Tp::DTMFEventAsterisk;
+                    } else if (!key.compare("#")) {
+                        event = Tp::DTMFEventHash;
+                    } else {
+                        qWarning() << "Tone not recognized. DTMF failed";
+                        return;
+                    }
+                }
+                qDebug() << "Sending DTMF tone";
+                Tp::PendingOperation *op = content->startDTMFTone(event);
+                connect(op, &Tp::PendingOperation::finished, [=]() {
+                    if (op->isError()) {
+                        qWarning() << "Unable to send DTMF tone:" << op->errorMessage();
+                    }
+                    content->stopDTMFTone();
+                });
+            }
+        }
     }
 }
 
