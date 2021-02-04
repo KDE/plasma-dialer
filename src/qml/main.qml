@@ -118,10 +118,6 @@ Kirigami.ApplicationWindow {
         DialerUtils.dial(number)
     }
 
-    function sendTones(tones) {
-        DialerUtils.sendDtmf(tones)
-    }
-
     CallHistoryModel {
         id: historyModel
     }

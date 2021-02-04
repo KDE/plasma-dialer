@@ -39,7 +39,7 @@ GridLayout {
         if (DialerUtils.callState !== DialerUtils.Active) {
             pad.number += number
         } else {
-            sendTones(number)
+            DialerUtils.sendDtmf(number)
         }
     }
 
