@@ -4,6 +4,7 @@ add_executable(plasmaphonedialer
     call-handler.cpp
     callhistorymodel.cpp
     call-manager.cpp
+    ussd-manager.cpp
     qpulseaudioengine.cpp
     database.cpp
     contactmapper.cpp

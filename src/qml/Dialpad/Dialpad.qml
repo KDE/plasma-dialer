@@ -43,6 +43,11 @@ GridLayout {
         }
     }
 
+    function onCallButtonPressed(number) {
+        // TODO: check for USSD
+        DialerUtils.dial(number)
+    }
+
     DialerButton { id: one; text: "1"; onClicked: onPadNumberPressed(text) }
     DialerButton { text: "2"; sub: "ABC"; onClicked: onPadNumberPressed(text) }
     DialerButton { text: "3"; sub: "DEF"; onClicked: onPadNumberPressed(text) }
@@ -75,7 +80,7 @@ GridLayout {
         
         enabled: statusLabel.text.length > 0
         opacity: enabled ? 1 : 0.8
-        onClicked: call(statusLabel.text)
+        onClicked: onCallButtonPressed(statusLabel.text)
         
         background: Rectangle {
             anchors.centerIn: parent
