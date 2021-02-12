@@ -107,6 +107,14 @@ Kirigami.ApplicationWindow {
                 }
             }
         }
+
+        function onNotificationReceivedFromUssd(message) {
+            console.log("TODO: notificationReceivedFromUssd:", message)
+        }
+
+        function onRequestReceivedFromUssd(message) {
+            console.log("TODO: requestReceivedFromUssd:", message)
+        }
     }
 
     onVisibleChanged: {

@@ -43,9 +43,23 @@ GridLayout {
         }
     }
 
+    function isSpecialCode(number) {
+        if (!number.startsWith("*")) {
+            return false
+        }
+        if (!number.endsWith("#")) {
+            return false
+        }
+
+        return true
+    }
+
     function onCallButtonPressed(number) {
-        // TODO: check for USSD
-        DialerUtils.dial(number)
+        if (isSpecialCode(number)) {
+            DialerUtils.initiateUssd(number)
+        } else {
+            DialerUtils.dial(number)
+        }
     }
 
     DialerButton { id: one; text: "1"; onClicked: onPadNumberPressed(text) }
