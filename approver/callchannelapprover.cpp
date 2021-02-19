@@ -78,6 +78,12 @@ void CallChannelApprover::onChannelReady(Tp::PendingOperation* op)
     m_ringingNotification->setActions(actions);
     m_ringingNotification->sendEvent();
     
+    QDBusMessage wakeupCall = QDBusMessage::createMethodCall(QStringLiteral("org.kde.Solid.PowerManagement"),
+                                                              QStringLiteral("/org/kde/Solid/PowerManagement"),
+                                                              QStringLiteral("org.kde.Solid.PowerManagement"),
+                                                              QStringLiteral("wakeup"));
+    QDBusConnection::sessionBus().call(wakeupCall);
+
     connect(callChannel.data(), &Tp::CallChannel::callStateChanged, this, [=](Tp::CallState state) {
         if (state == Tp::CallStateEnded) {
             m_ringingNotification->close();
