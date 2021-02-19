@@ -61,6 +61,13 @@ UssdManager::UssdManager(const Tp::ConnectionPtr &connection, DialerUtils *diale
     QDBusConnection::sessionBus().connect(d->connection->busName(),
                                           d->connection->objectPath(),
                                           CANONICAL_TELEPHONY_USSD_IFACE,
+                                          QStringLiteral("InitiateUSSDComplete"),
+                                          this,
+                                          SLOT(onInitiateComplete(QString)));
+
+    QDBusConnection::sessionBus().connect(d->connection->busName(),
+                                          d->connection->objectPath(),
+                                          CANONICAL_TELEPHONY_USSD_IFACE,
                                           QStringLiteral("StateChanged"),
                                           this,
                                           SLOT(onStateChanged(QString)));
@@ -85,6 +92,16 @@ void UssdManager::onInitiated(const QString &command)
 {
     qDebug() << Q_FUNC_INFO << command;
     d->ussdInterface->asyncCall(QStringLiteral("Initiate"), command);
+}
+
+void UssdManager::onInitiateComplete(const QString &command)
+{
+    qDebug() << Q_FUNC_INFO;
+    if (state() == QStringLiteral("user-response")) {
+        Q_EMIT d->dialerUtils->requestReceivedFromUssd(command);
+        return;
+    }
+    Q_EMIT d->dialerUtils->notificationReceivedFromUssd(command);
 }
 
 void UssdManager::onResponded(const QString &reply)
