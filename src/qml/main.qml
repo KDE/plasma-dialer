@@ -72,6 +72,14 @@ Kirigami.ApplicationWindow {
         visible: false
     }
 
+    USSDSheet {
+        id: ussdSheet
+        onResponseReady: {
+            // TODO: debug
+            // DialerUtils.resondToUssd(response)
+        }
+    }
+
     Component {
         id: callPage
         CallPage {}
@@ -109,11 +117,15 @@ Kirigami.ApplicationWindow {
         }
 
         function onNotificationReceivedFromUssd(message) {
-            console.log("TODO: notificationReceivedFromUssd:", message)
+            ussdSheet.showNotification(message)
         }
 
         function onRequestReceivedFromUssd(message) {
-            console.log("TODO: requestReceivedFromUssd:", message)
+            ussdSheet.showNotification(message, true)
+        }
+
+        function onInitiateUssd(number) {
+            ussdSheet.open()
         }
     }
 
