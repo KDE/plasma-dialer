@@ -136,7 +136,11 @@ int main(int argc, char **argv)
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
 
     auto *dialerUtils = new DialerUtils(simAccount, &engine);
-    UssdManager ussdManager(simAccount->connection(), dialerUtils, &engine);
+    Tp::ConnectionPtr connection;
+    if (!simAccount.isNull()) {
+        connection = simAccount->connection();
+    }
+    UssdManager ussdManager(connection, dialerUtils, &engine);
 
     qmlRegisterSingletonInstance<DialerUtils>("org.kde.phone.dialer", 1, 0, "DialerUtils", dialerUtils);
     qmlRegisterAnonymousType<QAbstractItemModel>("org.kde.phone.dialer", 1);

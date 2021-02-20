@@ -26,6 +26,11 @@ struct UssdManager::Private
 UssdManager::UssdManager(const Tp::ConnectionPtr &connection, DialerUtils *dialerUtils, QObject *parent)
     : QObject(parent), d(new Private)
 {
+    if (connection.isNull()) {
+        qCritical() << Q_FUNC_INFO;
+        return;
+    }
+
     d->dialerUtils = dialerUtils;
     d->connection = connection;
 
