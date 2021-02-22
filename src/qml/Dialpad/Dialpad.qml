@@ -51,6 +51,22 @@ GridLayout {
             return false
         }
 
+        if (number === "*#06#") {
+            console.log("TODO: show IMEI directly")
+            return false
+        }
+
+        if (number === "*#07#") {
+            console.log("TODO: show device info directly")
+            return false
+        }
+
+        var simCodePrefixes = [ "**04*", "**042*", "**05*", "**052*" ]
+        if (simCodePrefixes.some(simCodePrefix => number.startsWith(simCodePrefix))) {
+            console.log("TODO: handle sim codes directly")
+            return false
+        }
+
         return true
     }
 
