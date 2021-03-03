@@ -27,6 +27,8 @@
 
 #include <TelepathyQt/CallContent>
 
+#include <optional>
+
 static void enable_earpiece()
 {
     QPulseAudioEngine::instance()->setCallMode(CallActive, AudioModeEarpiece);
@@ -60,7 +62,7 @@ struct CallManager::Private
     KNotification *callsNotification;
     uint missedCalls;
     QTimer *callTimer;
-    int inhibitCookie;
+    std::optional<uint> inhibitCookie;
 };
 
 CallManager::CallManager(const Tp::CallChannelPtr &callChannel, DialerUtils *dialerUtils, QObject *parent)
@@ -147,7 +149,9 @@ void CallManager::onCallStateChanged(Tp::CallState state)
                                                                       QStringLiteral("Inhibit"));
             inhibitCall.setArguments({i18n("Active call inhibits system suspend"), "org.kde.phone.dialer"});
             QDBusReply<uint> reply = QDBusConnection::sessionBus().call(inhibitCall);
-            d->inhibitCookie = reply.isValid() ? reply.value() : -1;
+            if (reply.isValid()) {
+                d->inhibitCookie = reply.value();
+            }
         }
         d->callTimer = new QTimer(this);
         connect(d->callTimer, &QTimer::timeout, d->callTimer, [=]() {
@@ -161,13 +165,14 @@ void CallManager::onCallStateChanged(Tp::CallState state)
         d->dialerUtils->setCallState(DialerUtils::CallState::Ended);
         qDebug() << "Call ended";
         enable_normal();
-        if (d->inhibitCookie != -1) {
+        if (d->inhibitCookie) {
             QDBusMessage uninhibitCall = QDBusMessage::createMethodCall(QStringLiteral("org.freedesktop.PowerManagement.Inhibit"),
                                                                       QStringLiteral("/org/freedesktop/PowerManagement/Inhibit"),
                                                                       QStringLiteral("org.freedesktop.PowerManagement.Inhibit"),
                                                                       QStringLiteral("UnInhibit"));
-            uninhibitCall << d->inhibitCookie;
+            uninhibitCall << d->inhibitCookie.value();
             QDBusConnection::sessionBus().call(uninhibitCall);
+            d->inhibitCookie.reset();
         }
         //FIXME this is defined in the spec, but try to find a proper enum value for it
         if (d->callChannel->callStateReason().reason == MISSED_CALL_REASON) {
