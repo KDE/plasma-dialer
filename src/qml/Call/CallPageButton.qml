@@ -7,6 +7,7 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.7 
 import QtQuick.Layouts 1.1
+import QtFeedback 5.0
 
 import org.kde.kirigami 2.13 as Kirigami
 
@@ -32,10 +33,22 @@ Rectangle {
         }
     }
     
+    // vibration
+    HapticsEffect {
+        id: vibrate
+        attackIntensity: 0.0
+        attackTime: 0
+        fadeTime: 0
+        fadeIntensity: 0.0
+        intensity: 0.5
+        duration: Kirigami.Units.shortDuration
+    }
+    
     MouseArea {
         id: mouseArea
         anchors.fill: parent
-        
+
+        onPressed: vibrate.start()
         onClicked: buttonRoot.clicked()
     }
     

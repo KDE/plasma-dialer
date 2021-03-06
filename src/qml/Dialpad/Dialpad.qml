@@ -8,6 +8,7 @@
 import QtQuick 2.4
 import QtQuick.Layouts 1.2
 import QtQuick.Controls 2.2 as Controls
+import QtFeedback 5.0
 
 import org.kde.kirigami 2.5 as Kirigami
 
@@ -117,10 +118,22 @@ GridLayout {
         Layout.fillWidth: true
         Layout.fillHeight: true
         
+        // vibration
+        HapticsEffect {
+            id: vibrate
+            attackIntensity: 0.0
+            attackTime: 0
+            fadeIntensity: 0.0
+            fadeTime: 0
+            intensity: 0.5
+            duration: Kirigami.Units.shortDuration
+
+        }
         enabled: pad.showBottomRow && statusLabel.text.length > 0
         opacity: enabled ? 1 : 0.8
         onClicked: onCallButtonPressed(statusLabel.text)
-        
+        onPressed: vibrate.start()
+
         background: Rectangle {
             anchors.centerIn: parent
             height: Kirigami.Units.gridUnit * 3.5

@@ -5,9 +5,9 @@
 import QtQuick 2.4
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.2 as Controls
+import QtFeedback 5.0
 
 import org.kde.kirigami 2.2 as Kirigami
-
 
 Item {
     id: root
@@ -32,10 +32,22 @@ Item {
         opacity: mouse.pressed ? 0.4 : 0
     }
 
+    // vibration
+    HapticsEffect {
+        id: vibrate
+        attackIntensity: 0.0
+        attackTime: 0
+        fadeTime: 0
+        fadeIntensity: 0.0
+        intensity: 0.5
+        duration: Kirigami.Units.shortDuration
+    }
+
     Controls.AbstractButton {
         id: mouse
         anchors.fill: parent
 
+        onPressed: vibrate.start()
         onClicked: root.clicked(parent.text)
 
         onPressAndHold: root.held(parent.text)

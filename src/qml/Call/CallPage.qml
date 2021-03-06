@@ -9,6 +9,7 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.7 as Controls
 import QtQuick.Layouts 1.1
+import QtFeedback 5.0
 
 import org.kde.kirigami 2.12 as Kirigami
 
@@ -48,6 +49,17 @@ Kirigami.Page {
             margins: Kirigami.Units.largeSpacing
         }
 
+        // vibration
+        HapticsEffect {
+            id: vibrate
+            attackIntensity: 0.0
+            attackTime: 0
+            fadeTime: 0
+            fadeIntensity: 0.0
+            intensity: 0.5
+            duration: Kirigami.Units.shortDuration
+        }
+        
         Flickable {
             id: topFlickable
             Layout.fillWidth: true
@@ -209,9 +221,10 @@ Kirigami.Page {
                 anchors.centerIn: parent
                 width: Kirigami.Units.gridUnit * 3.5
                 height: Kirigami.Units.gridUnit * 3.5
-                
+
+                onPressed: vibrate.start()
                 onClicked: DialerUtils.hangUp()
-                
+
                 background: Rectangle {
                     anchors.centerIn: parent
                     height: Kirigami.Units.gridUnit * 3.5
