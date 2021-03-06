@@ -46,7 +46,7 @@ void CallHistoryModel::addCall(const QString &number, int duration, DialerUtils:
     data.duration = duration;
     data.time = QDateTime::currentDateTime();
     data.callType = type;
-    m_calls.append(data);
+    m_calls.push_front(data); // insert latest calls at the top of the list
 
     endInsertRows();
 }
