@@ -72,6 +72,7 @@ Kirigami.Page {
             Layout.fillWidth: true
             Layout.preferredHeight: applicationWindow().smallMode ? implicitHeight : parent.height * 0.3
             font.pixelSize: applicationWindow().smallMode ? Kirigami.Units.gridUnit * 1.6 : Kirigami.Units.gridUnit * 2.3
+            font.weight: Font.Light
 
             text: DialerUtils.formatNumber(dialPad.number)
         }
