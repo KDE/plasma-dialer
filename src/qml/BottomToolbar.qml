@@ -32,7 +32,7 @@ ToolBar {
     property double shrinkFontSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 0.7)
     
     background: Rectangle {
-        Kirigami.Theme.colorSet: Kirigami.Theme.Header
+        Kirigami.Theme.colorSet: Kirigami.Theme.Window
         Kirigami.Theme.inherit: false
         color: Kirigami.Theme.backgroundColor
         anchors.fill: parent
@@ -70,7 +70,7 @@ ToolBar {
                 Layout.preferredHeight: Kirigami.Units.gridUnit * 3
                 Layout.alignment: Qt.AlignCenter
                 
-                Kirigami.Theme.colorSet: Kirigami.Theme.Header
+                Kirigami.Theme.colorSet: Kirigami.Theme.Window
                 Kirigami.Theme.inherit: false
 
                 color: mouseArea.pressed ? Qt.darker(Kirigami.Theme.backgroundColor, 1.1) : 
