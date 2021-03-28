@@ -28,6 +28,7 @@ Comment[sv]=Telepathy-tjänster krävs för telefoni
 Comment[uk]=Для роботи зі службами телефонії слід встановити Telepathy
 Comment[vi]=Các dịch vụ Telepathy cần cho truyền thanh
 Comment[x-test]=xxTelepathy services required for telephonyxx
+Comment[zh_CN]=电话所需的 Telepathy 服务
 Name=Telepathy Services
 Name[az]=Telepathy Xidmətləri
 Name[ca]=Serveis del Telepathy
@@ -58,6 +59,7 @@ Name[sv]=Telepathy-tjänster
 Name[uk]=Служби Telepathy
 Name[vi]=Các dịch vụ Telepathy
 Name[x-test]=xxTelepathy Servicesxx
+Name[zh_CN]=Telepathy 服务
 Type=Service
 Icon=dialer
 Exec=dbus-send --session --print-reply --dest=org.freedesktop.DBus /org/freedesktop/DBus org.freedesktop.DBus.StartServiceByName string:org.freedesktop.Telepathy.MissionControl5 uint32:0
