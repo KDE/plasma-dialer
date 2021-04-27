@@ -50,6 +50,15 @@ Kirigami.Page {
             text: i18n("Unable to make a call at this moment")
             visible: DialerUtils.callState === DialerUtils.Failed
         }
+        Kirigami.InlineMessage {
+            id: imeiInfo
+            Layout.fillWidth: true
+            Layout.leftMargin: Kirigami.Units.smallSpacing
+            Layout.rightMargin: Kirigami.Units.smallSpacing
+            type: Kirigami.MessageType.Information
+            text: i18n("IMEIs: ") + dialPad.imeis.join(", ")
+            visible: dialPad.showImeis
+        }
         InCallInlineMessage {
             id: inCall
             Layout.fillWidth: true

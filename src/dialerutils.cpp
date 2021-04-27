@@ -183,4 +183,40 @@ void DialerUtils::resetMissedCalls()
     m_callsNotification.clear();
 }
 
+QStringList DialerUtils::getImeis()
+{
+    // based on https://git.sailfishos.org/jpetrell/ssu/commit/1b2a59378713dd93b8b215a99f7f2aeb524b35bd
+    QStringList imeis;
+
+    QDBusMessage reply = QDBusConnection::systemBus().call(
+        QDBusMessage::createMethodCall("org.ofono", "/", "org.ofono.Manager", "GetModems")
+    );
+
+    for (const QVariant &v : reply.arguments()) {
+        if (v.canConvert<QDBusArgument>()) {
+            const QDBusArgument arg = v.value<QDBusArgument>();
+            if (arg.currentType() == QDBusArgument::ArrayType) {
+                arg.beginArray();
+                while (!arg.atEnd()) {
+                    if (arg.currentType() == QDBusArgument::StructureType) {
+                        QString path;
+                        QVariantMap props;
+
+                        arg.beginStructure();
+                        arg >> path >> props;
+                        arg.endStructure();
+
+                        if (props.contains("Serial")) {
+                            imeis << props["Serial"].toString();
+                        }
+
+                    }
+                }
+                arg.endArray();
+            }
+        }
+    }
+    return imeis;
+}
+
 #include "moc_dialerutils.cpp"

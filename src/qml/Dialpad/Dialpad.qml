@@ -34,6 +34,8 @@ GridLayout {
 
     property string number
     property bool showBottomRow: true
+    property bool showImeis: false
+    property var imeis: []
 
     function onPadNumberPressed(number) {
         if (DialerUtils.callState !== DialerUtils.Active) {
@@ -52,7 +54,6 @@ GridLayout {
         }
 
         if (number === "*#06#") {
-            console.log("TODO: show IMEI directly")
             return false
         }
 
@@ -71,8 +72,13 @@ GridLayout {
     }
 
     function onCallButtonPressed(number) {
+        this.showImeis = false
         if (isSpecialCode(number)) {
             DialerUtils.initiateUssd(number)
+        } else if (number === "*#06#") {
+            var imeis = DialerUtils.getImeis()
+            this.imeis = imeis
+            this.showImeis = true
         } else {
             DialerUtils.dial(number)
         }
