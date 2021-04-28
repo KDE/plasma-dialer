@@ -90,7 +90,7 @@ Q_SIGNALS:
     void callEnded(const QString &callContactNumber, uint callDuration, bool isIncomingCall);
     void sendDtmf(const QString &tones);
     void initiateUssd(const QString &command);
-    void resondToUssd(const QString &reply);
+    void respondToUssd(const QString &reply);
     void cancelUssd();
     void notificationReceivedFromUssd(const QString &message);
     void requestReceivedFromUssd(const QString &message);

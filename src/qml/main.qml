@@ -76,7 +76,7 @@ Kirigami.ApplicationWindow {
         id: ussdSheet
         onResponseReady: {
             // TODO: debug
-            // DialerUtils.resondToUssd(response)
+            // DialerUtils.respondToUssd(response)
         }
     }
 

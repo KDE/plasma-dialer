@@ -46,7 +46,7 @@ UssdManager::UssdManager(const Tp::ConnectionPtr &connection, DialerUtils *diale
     }
 
     connect(d->dialerUtils, &DialerUtils::initiateUssd, this, &UssdManager::onInitiated);
-    connect(d->dialerUtils, &DialerUtils::resondToUssd, this, &UssdManager::onResponded);
+    connect(d->dialerUtils, &DialerUtils::respondToUssd, this, &UssdManager::onResponded);
     connect(d->dialerUtils, &DialerUtils::cancelUssd, this, &UssdManager::onCanceled);
 
     QDBusConnection::sessionBus().connect(d->connection->busName(),
