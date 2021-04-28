@@ -183,7 +183,7 @@ void DialerUtils::resetMissedCalls()
     m_callsNotification.clear();
 }
 
-QStringList DialerUtils::getImeis()
+void DialerUtils::getImeis()
 {
     // based on https://git.sailfishos.org/jpetrell/ssu/commit/1b2a59378713dd93b8b215a99f7f2aeb524b35bd
     QStringList imeis;
@@ -216,7 +216,7 @@ QStringList DialerUtils::getImeis()
             }
         }
     }
-    return imeis;
+    Q_EMIT displayImeis(imeis);
 }
 
 #include "moc_dialerutils.cpp"

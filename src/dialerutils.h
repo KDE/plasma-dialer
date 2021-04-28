@@ -76,7 +76,7 @@ public:
     Q_INVOKABLE void resetMissedCalls();
     Q_INVOKABLE void dial(const QString &number);
     Q_INVOKABLE QString formatNumber(const QString& number);
-    Q_INVOKABLE QStringList getImeis();
+    Q_INVOKABLE void getImeis();
 
 Q_SIGNALS:
     void missedCallsActionTriggered();
@@ -95,6 +95,7 @@ Q_SIGNALS:
     void cancelUssd();
     void notificationReceivedFromUssd(const QString &message);
     void requestReceivedFromUssd(const QString &message);
+    void displayImeis(const QStringList &imeis);
 
 private:
     QPointer <KNotification> m_callsNotification;

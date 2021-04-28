@@ -70,6 +70,11 @@ Kirigami.ApplicationWindow {
     DialerPage {
         id: dialerPage
         visible: false
+
+        function onDisplayImeis(imeis) {
+            imeiSheet.imeis = imeis
+            imeiSheet.open()
+        }
     }
 
     USSDSheet {
@@ -78,6 +83,10 @@ Kirigami.ApplicationWindow {
             // TODO: debug
             // DialerUtils.respondToUssd(response)
         }
+    }
+
+    ImeiSheet {
+        id: imeiSheet
     }
 
     Component {
@@ -126,6 +135,11 @@ Kirigami.ApplicationWindow {
 
         function onInitiateUssd(number) {
             ussdSheet.open()
+        }
+
+        function onDisplayImeis(imeis) {
+            imeiSheet.imeis = imeis
+            imeiSheet.open()
         }
     }
 

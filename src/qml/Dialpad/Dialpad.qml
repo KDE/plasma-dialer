@@ -76,9 +76,7 @@ GridLayout {
         if (isSpecialCode(number)) {
             DialerUtils.initiateUssd(number)
         } else if (number === "*#06#") {
-            var imeis = DialerUtils.getImeis()
-            this.imeis = imeis
-            this.showImeis = true
+            DialerUtils.getImeis()
         } else {
             DialerUtils.dial(number)
         }

@@ -15,5 +15,6 @@
         <file alias="Dialpad/DialerButton.qml">qml/Dialpad/DialerButton.qml</file>
         <file alias="Dialpad/DialerIconButton.qml">qml/Dialpad/DialerIconButton.qml</file>
         <file alias="USSDSheet.qml">qml/USSDSheet.qml</file>
+        <file alias="ImeiSheet.qml">qml/ImeiSheet.qml</file>
     </qresource>
 </RCC>
