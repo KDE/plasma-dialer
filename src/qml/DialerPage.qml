@@ -29,6 +29,7 @@ Kirigami.Page {
     id: dialer
 
     property alias numberEntryText: statusLabel.text
+    property alias pad: dialPad
 
     title: i18n("Dialer")
     icon.name: "call-start"

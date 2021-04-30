@@ -149,7 +149,8 @@ Kirigami.ApplicationWindow {
     }
 
     function call(number) {
-        DialerUtils.dial(number)
+        dialerPage.pad.number = number
+        switchToPage(dialerPage, 0)
     }
 
     CallHistoryModel {
