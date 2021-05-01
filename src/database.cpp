@@ -35,7 +35,7 @@ Database::Database(QObject *parent)
 QVector<CallData> Database::fetchCalls()
 {
     QSqlQuery fetchCalls(m_database);
-    fetchCalls.exec(QStringLiteral("SELECT id, number, time, duration, callType FROM History"));
+    fetchCalls.exec(QStringLiteral("SELECT id, number, time, duration, callType FROM History ORDER BY time DESC"));
 
     QVector<CallData> calls;
     while (fetchCalls.next()) {
