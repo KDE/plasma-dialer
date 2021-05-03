@@ -32,6 +32,7 @@ Item {
     Layout.fillHeight: true
 
     signal clicked(string text)
+    signal held(string text)
 
     property string text
     property string sub
@@ -53,12 +54,7 @@ Item {
 
         onClicked: root.clicked(parent.text)
 
-        onPressAndHold: {
-            var text = parent.sub.length > 0 ? parent.sub : parent.text
-            if (text.length === 1) {
-                root.clicked(text);
-            }
-        }
+        onPressAndHold: root.held(parent.text)
     }
 
     ColumnLayout {

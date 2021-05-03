@@ -26,6 +26,7 @@ target_link_libraries(plasmaphonedialer
     TelepathyQt5::Core
     PhoneNumber::PhoneNumber
     PkgConfig::LIBPULSE
+    PkgConfig::LIBQOFONO
 )
 
 install(TARGETS plasmaphonedialer ${INSTALL_TARGETS_DEFAULT_ARGS})

@@ -51,6 +51,15 @@ Kirigami.Page {
             text: i18n("Unable to make a call at this moment")
             visible: DialerUtils.callState === DialerUtils.Failed
         }
+        Kirigami.InlineMessage {
+            id: voicemailError
+            Layout.fillWidth: true
+            Layout.leftMargin: Kirigami.Units.smallSpacing
+            Layout.rightMargin: Kirigami.Units.smallSpacing
+            type: Kirigami.MessageType.Error
+            text: i18n("Voicemail number couldn't be found")
+            visible: dialPad.voicemailFail
+        }
         InCallInlineMessage {
             id: inCall
             Layout.fillWidth: true

@@ -34,10 +34,10 @@ GridLayout {
 
     property string number
     property bool showBottomRow: true
-    property bool showImeis: false
-    property var imeis: []
+    property bool voicemailFail: false
 
     function onPadNumberPressed(number) {
+        pad.voicemailFail = false
         if (DialerUtils.callState !== DialerUtils.Active) {
             pad.number += number
         } else {
@@ -72,7 +72,6 @@ GridLayout {
     }
 
     function onCallButtonPressed(number) {
-        this.showImeis = false
         if (isSpecialCode(number)) {
             DialerUtils.initiateUssd(number)
         } else if (number === "*#06#") {
@@ -82,7 +81,18 @@ GridLayout {
         }
     }
 
-    DialerButton { id: one; text: "1"; onClicked: onPadNumberPressed(text) }
+    function callVoicemail() {
+        var number = DialerUtils.getVoicemailNumber()
+        if (number === "") {
+            pad.voicemailFail = true
+        } else {
+            pad.voicemailFail = false;
+            // voicemail number is real phone number and should not be a MMI code
+            DialerUtils.dial(number)
+        }
+    }
+
+    DialerButton { id: one; text: "1"; onClicked: onPadNumberPressed(text); onHeld: callVoicemail() }
     DialerButton { text: "2"; sub: "ABC"; onClicked: onPadNumberPressed(text) }
     DialerButton { text: "3"; sub: "DEF"; onClicked: onPadNumberPressed(text) }
 
@@ -94,9 +104,9 @@ GridLayout {
     DialerButton { text: "8"; sub: "TUV"; onClicked: onPadNumberPressed(text) }
     DialerButton { text: "9"; sub: "WXYZ"; onClicked: onPadNumberPressed(text) }
 
-    DialerButton { display: "＊"; text: "*"; special: true; onClicked: onPadNumberPressed(text) }
+    DialerButton { display: "＊"; text: "*"; special: true; onClicked: onPadNumberPressed(text); onHeld: onPadNumberPressed(text) }
     DialerButton { text: "0"; subdisplay: "＋"; sub: "+"; onClicked: onPadNumberPressed(text) }
-    DialerButton { display: "＃"; text: "#"; special: true; onClicked: onPadNumberPressed(text) }
+    DialerButton { display: "＃"; text: "#"; special: true; onClicked: onPadNumberPressed(text); onHeld: onPadNumberPressed(text) }
 
     Item {
         visible: pad.showBottomRow

@@ -24,6 +24,7 @@
 #include <KNotification>
 
 #include <TelepathyQt/Account>
+#include <qofono-qt5/qofonomessagewaiting.h>
 
 class DialerUtils : public QObject
 {
@@ -77,6 +78,7 @@ public:
     Q_INVOKABLE void dial(const QString &number);
     Q_INVOKABLE QString formatNumber(const QString& number);
     Q_INVOKABLE void getImeis();
+    Q_INVOKABLE QString getVoicemailNumber();
 
 Q_SIGNALS:
     void missedCallsActionTriggered();
@@ -107,6 +109,7 @@ private:
     uint m_callDuration;
     QString m_callContactAlias;
     bool m_isIncomingCall;
+    QOfonoMessageWaiting* m_msgWaiting;
 };
 
 Q_DECLARE_METATYPE(DialerUtils::CallType)

@@ -27,6 +27,8 @@
 #include <TelepathyQt/PendingContacts>
 #include <TelepathyQt/Types>
 #include <TelepathyQt/ContactManager>
+#include <qofono-qt5/qofonomanager.h>
+#include <qofono-qt5/qofonomessagewaiting.h>
 
 #include "phonenumbers/phonenumberutil.h"
 #include "phonenumbers/asyoutypeformatter.h"
@@ -38,7 +40,8 @@ DialerUtils::DialerUtils(const Tp::AccountPtr &simAccount, QObject *parent)
   m_simAccount(simAccount),
   m_callDuration(0),
   m_callContactAlias(QString()),
-  m_isIncomingCall(false)
+  m_isIncomingCall(false),
+  m_msgWaiting(nullptr)
 {
     if (!m_simAccount) {
         return;
@@ -53,6 +56,14 @@ DialerUtils::DialerUtils(const Tp::AccountPtr &simAccount, QObject *parent)
             qDebug() << "SIM Account ready to use";
         }
     });
+
+    QOfonoManager manager;
+    manager.getModems();
+    QString modemPath = manager.defaultModem();
+    if (!modemPath.isEmpty()) {
+        m_msgWaiting = new QOfonoMessageWaiting(this);
+        m_msgWaiting->setModemPath(modemPath);
+    }
 }
 
 DialerUtils::~DialerUtils()
@@ -219,4 +230,12 @@ void DialerUtils::getImeis()
     Q_EMIT displayImeis(imeis);
 }
 
+QString DialerUtils::getVoicemailNumber()
+{
+    if (m_msgWaiting == nullptr) return QString();
+    QString number = m_msgWaiting->voicemailMailboxNumber();
+    return number;
+}
+
 #include "moc_dialerutils.cpp"
+
