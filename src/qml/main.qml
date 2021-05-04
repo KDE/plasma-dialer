@@ -112,6 +112,9 @@ Kirigami.ApplicationWindow {
             historyModel.addCall(number, duration, callType)
         }
         function onCallStateChanged(state) {
+            if (DialerUtils.callState === DialerUtils.Active) {
+                    dialerPage.pad.number = ""
+            }
             if (DialerUtils.callState === DialerUtils.Active || DialerUtils.callState === DialerUtils.Dialing) {
                 if (root.pageStack.layers.depth == 1) {
                     root.pageStack.layers.push(callPage)
