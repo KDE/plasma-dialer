@@ -92,7 +92,12 @@ GridLayout {
         }
     }
 
-    DialerButton { id: one; text: "1"; onClicked: onPadNumberPressed(text); onHeld: callVoicemail() }
+    DialerButton {
+        id: one
+        text: "1"
+        onClicked: onPadNumberPressed(text)
+        onHeld: DialerUtils.callState !== DialerUtils.Active && callVoicemail()
+    }
     DialerButton { text: "2"; sub: "ABC"; onClicked: onPadNumberPressed(text) }
     DialerButton { text: "3"; sub: "DEF"; onClicked: onPadNumberPressed(text) }
 
