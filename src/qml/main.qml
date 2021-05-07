@@ -46,7 +46,7 @@ Kirigami.ApplicationWindow {
     //was the last call an incoming one?
     property bool isIncoming
 
-    pageStack.initialPage: historyPage
+    pageStack.initialPage: dialerPage
     
     function switchToPage(page, depth) {
         while (pageStack.depth > depth) pageStack.pop()
@@ -59,7 +59,7 @@ Kirigami.ApplicationWindow {
     
     HistoryPage {
         id: historyPage
-        visible: true
+        visible: false
     }
 
     ContactsPage {
@@ -69,7 +69,7 @@ Kirigami.ApplicationWindow {
 
     DialerPage {
         id: dialerPage
-        visible: false
+        visible: true
 
         function onDisplayImeis(imeis) {
             imeiSheet.imeis = imeis
