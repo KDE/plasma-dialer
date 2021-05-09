@@ -137,7 +137,6 @@ Kirigami.Page {
 
         // controls
         RowLayout {
-            opacity: callStatus === DialerUtils.Active ? 1 : 0
             Layout.alignment: Qt.AlignHCenter
             Layout.maximumWidth: Kirigami.Units.gridUnit * 16
             Layout.minimumHeight: Kirigami.Units.gridUnit * 3.5
@@ -147,6 +146,7 @@ Kirigami.Page {
             
             CallPageButton {
                 id: muteButton
+                visible: callStatus === DialerUtils.Active ? true : false
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 
@@ -163,6 +163,7 @@ Kirigami.Page {
             }
             CallPageButton {
                 id: dialerButton
+                visible: callStatus === DialerUtils.Active ? true : false
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 
@@ -183,6 +184,7 @@ Kirigami.Page {
             }
             CallPageButton {
                 id: speakerButton
+                visible: callStatus === DialerUtils.Active ? true : false
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 
