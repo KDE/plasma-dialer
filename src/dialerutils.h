@@ -21,7 +21,6 @@
 
 #include <QObject>
 #include <QPointer>
-#include <KNotification>
 
 #include <TelepathyQt/Account>
 #include <qofono-qt5/qofonomessagewaiting.h>
@@ -100,8 +99,6 @@ Q_SIGNALS:
     void displayImeis(const QStringList &imeis);
 
 private:
-    QPointer <KNotification> m_callsNotification;
-    QPointer <KNotification> m_ringingNotification;
     int m_missedCalls;
     CallState m_callState;
     Tp::AccountPtr m_simAccount;

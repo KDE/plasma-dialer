@@ -9,7 +9,6 @@
 #include <QDBusMessage>
 #include <QDBusInterface>
 
-#include <KNotification>
 #include <KLocalizedString>
 
 #define CANONICAL_TELEPHONY_USSD_IFACE "com.canonical.Telephony.USSD"
@@ -18,7 +17,6 @@ struct UssdManager::Private
 {
     Tp::ConnectionPtr connection;
     DialerUtils *dialerUtils;
-    KNotification *callsNotification;
     QDBusInterface *ussdInterface;
     QString state;
 };

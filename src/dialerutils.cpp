@@ -189,10 +189,6 @@ void DialerUtils::emitCallEnded()
 void DialerUtils::resetMissedCalls()
 {
     m_missedCalls = 0;
-    if (m_callsNotification) {
-        m_callsNotification->close();
-    }
-    m_callsNotification.clear();
 }
 
 void DialerUtils::getImeis()
