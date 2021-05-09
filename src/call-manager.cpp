@@ -102,8 +102,13 @@ void CallManager::onCallStateChanged(Tp::CallState state)
     qDebug() << "new call state:" << state;
 
     if (d->callChannel->targetContact()) {
-        d->dialerUtils->setCallContactAlias(d->callChannel->targetContact()->alias());
-        d->dialerUtils->setCallContactNumber(d->callChannel->targetContact()->id());
+        const QString number = d->callChannel->targetContact()->id();
+        if (number == d->dialerUtils->getVoicemailNumber()) {
+            d->dialerUtils->setCallContactAlias(i18n("Voicemail"));
+        } else {
+            d->dialerUtils->setCallContactAlias(d->callChannel->targetContact()->alias());
+        }
+        d->dialerUtils->setCallContactNumber(number);
     }
 
     if (d->callChannel->isValid()) {

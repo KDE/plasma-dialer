@@ -41,7 +41,8 @@ DialerUtils::DialerUtils(const Tp::AccountPtr &simAccount, QObject *parent)
   m_callDuration(0),
   m_callContactAlias(QString()),
   m_isIncomingCall(false),
-  m_msgWaiting(nullptr)
+  m_msgWaiting(nullptr),
+  m_voicemailNumber(QString())
 {
     if (!m_simAccount) {
         return;
@@ -232,8 +233,10 @@ void DialerUtils::getImeis()
 
 QString DialerUtils::getVoicemailNumber()
 {
+    if (!m_voicemailNumber.isEmpty()) return m_voicemailNumber;
     if (m_msgWaiting == nullptr) return QString();
     QString number = m_msgWaiting->voicemailMailboxNumber();
+    m_voicemailNumber = number;
     return number;
 }
 

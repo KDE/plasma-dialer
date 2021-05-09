@@ -110,6 +110,7 @@ private:
     QString m_callContactAlias;
     bool m_isIncomingCall;
     QOfonoMessageWaiting* m_msgWaiting;
+    QString m_voicemailNumber;
 };
 
 Q_DECLARE_METATYPE(DialerUtils::CallType)
