@@ -29,7 +29,8 @@ Database::Database(QObject *parent)
     }
 
     QSqlQuery createTable(m_database);
-    createTable.exec(QStringLiteral("CREATE TABLE IF NOT EXISTS History(id INTEGER PRIMARY KEY AUTOINCREMENT, number TEXT, time DATETIME, duration INTEGER, callType INTEGER)"));
+    createTable.exec(QStringLiteral(
+        "CREATE TABLE IF NOT EXISTS History(id INTEGER PRIMARY KEY AUTOINCREMENT, number TEXT, time DATETIME, duration INTEGER, callType INTEGER)"));
 }
 
 QVector<CallData> Database::fetchCalls()

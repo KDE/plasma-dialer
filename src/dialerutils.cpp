@@ -20,29 +20,29 @@
 
 #include <QDebug>
 
-#include <TelepathyQt/PendingOperation>
-#include <TelepathyQt/PendingChannelRequest>
-#include <TelepathyQt/PendingReady>
 #include <TelepathyQt/Constants>
-#include <TelepathyQt/PendingContacts>
-#include <TelepathyQt/Types>
 #include <TelepathyQt/ContactManager>
+#include <TelepathyQt/PendingChannelRequest>
+#include <TelepathyQt/PendingContacts>
+#include <TelepathyQt/PendingOperation>
+#include <TelepathyQt/PendingReady>
+#include <TelepathyQt/Types>
 #include <qofono-qt5/qofonomanager.h>
 #include <qofono-qt5/qofonomessagewaiting.h>
 
-#include "phonenumbers/phonenumberutil.h"
 #include "phonenumbers/asyoutypeformatter.h"
+#include "phonenumbers/phonenumberutil.h"
 
 DialerUtils::DialerUtils(const Tp::AccountPtr &simAccount, QObject *parent)
-: QObject(parent),
-  m_missedCalls(0),
-  m_callState(CallState::Idle),
-  m_simAccount(simAccount),
-  m_callDuration(0),
-  m_callContactAlias(QString()),
-  m_isIncomingCall(false),
-  m_msgWaiting(nullptr),
-  m_voicemailNumber(QString())
+    : QObject(parent)
+    , m_missedCalls(0)
+    , m_callState(CallState::Idle)
+    , m_simAccount(simAccount)
+    , m_callDuration(0)
+    , m_callContactAlias(QString())
+    , m_isIncomingCall(false)
+    , m_msgWaiting(nullptr)
+    , m_voicemailNumber(QString())
 {
     if (!m_simAccount) {
         return;
@@ -50,7 +50,7 @@ DialerUtils::DialerUtils(const Tp::AccountPtr &simAccount, QObject *parent)
 
     Tp::PendingReady *op = m_simAccount->becomeReady(Tp::Features() << Tp::Account::FeatureCore);
 
-    connect(op, &Tp::PendingOperation::finished, [=](){
+    connect(op, &Tp::PendingOperation::finished, [=]() {
         if (op->isError()) {
             qWarning() << "SIM card account failed to get ready:" << op->errorMessage();
         } else {
@@ -67,8 +67,7 @@ DialerUtils::DialerUtils(const Tp::AccountPtr &simAccount, QObject *parent)
     }
 }
 
-DialerUtils::~DialerUtils()
-= default;
+DialerUtils::~DialerUtils() = default;
 
 void DialerUtils::dial(const QString &number)
 {
@@ -76,7 +75,7 @@ void DialerUtils::dial(const QString &number)
     qDebug() << "Starting call...";
     if (m_simAccount) {
         Tp::PendingChannelRequest *pendingChannel = m_simAccount->ensureAudioCall(number);
-        connect(pendingChannel, &Tp::PendingChannelRequest::finished, pendingChannel, [=](){
+        connect(pendingChannel, &Tp::PendingChannelRequest::finished, pendingChannel, [=]() {
             if (pendingChannel->isError()) {
                 qWarning() << "Error when requesting channel" << pendingChannel->errorMessage();
                 setCallState(CallState::Failed);
@@ -101,8 +100,8 @@ QString DialerUtils::formatNumber(const QString &number)
     QStringList qcountry = locale.name().split('_');
     const QString &countrycode(qcountry.constLast());
     string country = countrycode.toUtf8().constData();
-    PhoneNumberUtil* util = PhoneNumberUtil::GetInstance();
-    AsYouTypeFormatter* formatter = util->PhoneNumberUtil::GetAsYouTypeFormatter(country);
+    PhoneNumberUtil *util = PhoneNumberUtil::GetInstance();
+    AsYouTypeFormatter *formatter = util->PhoneNumberUtil::GetAsYouTypeFormatter(country);
 
     // Normalize input
     string stdnumber = number.toUtf8().constData();
@@ -111,7 +110,7 @@ QString DialerUtils::formatNumber(const QString &number)
     // Format
     string formatted;
     formatter->Clear();
-    for (char& c : stdnumber) {
+    for (char &c : stdnumber) {
         formatter->InputDigit(c, &formatted);
     }
     delete formatter;
@@ -196,9 +195,7 @@ void DialerUtils::getImeis()
     // based on https://git.sailfishos.org/jpetrell/ssu/commit/1b2a59378713dd93b8b215a99f7f2aeb524b35bd
     QStringList imeis;
 
-    QDBusMessage reply = QDBusConnection::systemBus().call(
-        QDBusMessage::createMethodCall("org.ofono", "/", "org.ofono.Manager", "GetModems")
-    );
+    QDBusMessage reply = QDBusConnection::systemBus().call(QDBusMessage::createMethodCall("org.ofono", "/", "org.ofono.Manager", "GetModems"));
 
     for (const QVariant &v : reply.arguments()) {
         if (v.canConvert<QDBusArgument>()) {
@@ -217,7 +214,6 @@ void DialerUtils::getImeis()
                         if (props.contains("Serial")) {
                             imeis << props["Serial"].toString();
                         }
-
                     }
                 }
                 arg.endArray();
@@ -229,12 +225,13 @@ void DialerUtils::getImeis()
 
 QString DialerUtils::getVoicemailNumber()
 {
-    if (!m_voicemailNumber.isEmpty()) return m_voicemailNumber;
-    if (m_msgWaiting == nullptr) return QString();
+    if (!m_voicemailNumber.isEmpty())
+        return m_voicemailNumber;
+    if (m_msgWaiting == nullptr)
+        return QString();
     QString number = m_msgWaiting->voicemailMailboxNumber();
     m_voicemailNumber = number;
     return number;
 }
 
 #include "moc_dialerutils.cpp"
-

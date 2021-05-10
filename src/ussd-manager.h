@@ -1,5 +1,5 @@
 // SPDX-FileCopyrightText: 2021 Alexey Andreyev <aa13q@ya.ru>
-// 
+//
 // SPDX-License-Identifier: LicenseRef-KDE-Accepted-GPL
 
 #ifndef USSD_MANAGER_H

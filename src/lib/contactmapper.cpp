@@ -17,7 +17,6 @@ ContactMapper::ContactMapper(QObject *parent)
     : QObject(parent)
     , m_model(new KPeople::PersonsModel(this))
 {
-
     const QLocale locale;
     const QStringList qcountry = locale.name().split('_');
     const QString &countrycode(qcountry.constLast());
@@ -55,8 +54,9 @@ void ContactMapper::processRows(const int first, const int last)
         // to return an AbstractContact::Ptr, although the name suggests differneltly. Luckily we can get
         // the actual VCard from it.
         const auto phoneNumbers = m_model->data(index, KPeople::PersonsModel::PersonVCardRole)
-                        .value<KPeople::AbstractContact::Ptr>()
-                        ->customProperty(KPeople::AbstractContact::AllPhoneNumbersProperty).toStringList();
+                                      .value<KPeople::AbstractContact::Ptr>()
+                                      ->customProperty(KPeople::AbstractContact::AllPhoneNumbersProperty)
+                                      .toStringList();
 
         const auto personUri = m_model->data(index, KPeople::PersonsModel::PersonUriRole).toString();
 

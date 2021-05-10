@@ -1,7 +1,7 @@
 /*
  * <one line to give the library's name and an idea of what it does.>
  * Copyright 2020  <copyright holder> <email>
- * 
+ *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation; either
@@ -9,12 +9,12 @@
  * later version accepted by the membership of KDE e.V. (or its
  * successor approved by the membership of KDE e.V.), which shall
  * act as a proxy defined in Section 6 of version 3 of the license.
- * 
+ *
  * This library is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
  * Lesser General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU Lesser General Public
  * License along with this library.  If not, see <https://www.gnu.org/licenses/>.
  */
@@ -25,28 +25,27 @@
 
 #include <KPeople/PersonData>
 
-#include <TelepathyQt/PendingReady>
+#include <TelepathyQt/CallChannel>
 #include <TelepathyQt/ChannelClassSpec>
 #include <TelepathyQt/ClientRegistrar>
-#include <TelepathyQt/CallChannel>
+#include <TelepathyQt/PendingReady>
 
 #include "contactmapper.h"
 
 static ContactMapper s_mapper;
 static std::once_flag s_mapperInit;
 
-CallChannelApprover::CallChannelApprover(const Tp::CallChannelPtr & channel, QObject *parent)
+CallChannelApprover::CallChannelApprover(const Tp::CallChannelPtr &channel, QObject *parent)
     : ChannelApprover(parent)
 {
-  std::call_once(s_mapperInit, [] { s_mapper.performInitialScan(); });
+    std::call_once(s_mapperInit, [] {
+        s_mapper.performInitialScan();
+    });
 
     if (!channel.isNull()) {
-        Tp::PendingReady *pendingReady = channel->becomeReady(Tp::Features()
-                                                            << Tp::CallChannel::FeatureCore
-                                                            << Tp::CallChannel::FeatureCallState);
+        Tp::PendingReady *pendingReady = channel->becomeReady(Tp::Features() << Tp::CallChannel::FeatureCore << Tp::CallChannel::FeatureCallState);
         m_Channels[pendingReady] = channel;
-        connect(pendingReady, &Tp::PendingOperation::finished,
-                this, &CallChannelApprover::onChannelReady);
+        connect(pendingReady, &Tp::PendingOperation::finished, this, &CallChannelApprover::onChannelReady);
     }
 }
 
@@ -55,31 +54,29 @@ CallChannelApprover::~CallChannelApprover()
     deleteLater();
 }
 
-void CallChannelApprover::onChannelReady(Tp::PendingOperation* op)
+void CallChannelApprover::onChannelReady(Tp::PendingOperation *op)
 {
     auto *pendingReady = qobject_cast<Tp::PendingReady *>(op);
     if (!pendingReady || !m_Channels.contains(pendingReady)) {
         qWarning() << "Pending operation is not tracked" << op;
         return;
     }
-    
+
     Tp::ChannelPtr channel = m_Channels.value(pendingReady);
     Tp::CallChannelPtr callChannel = Tp::CallChannelPtr::dynamicCast(channel);
-    
-    if (channel->initiatorContact() != channel->connection()->selfContact()
-        && callChannel->callState() == Tp::CallStateInitialised
+
+    if (channel->initiatorContact() != channel->connection()->selfContact() && callChannel->callState() == Tp::CallStateInitialised
         && !callChannel->isRequested()) {
         callChannel->setRinging();
     }
 
-    KPeople::PersonData person(
-        s_mapper.uriForNumber(callChannel->targetContact()->alias()));
+    KPeople::PersonData person(s_mapper.uriForNumber(callChannel->targetContact()->alias()));
 
     const QString callerDisplayName = !person.name().isEmpty() ? person.name() : callChannel->targetContact()->alias();
 
     QStringList actions;
     actions << i18n("Accept") << i18n("Reject");
-    if(!m_ringingNotification) {
+    if (!m_ringingNotification) {
         m_ringingNotification = new KNotification(QStringLiteral("ringing"), KNotification::Persistent | KNotification::LoopSound, nullptr);
     }
     m_ringingNotification->setComponentName(QStringLiteral("plasma_dialer"));
@@ -91,11 +88,11 @@ void CallChannelApprover::onChannelReady(Tp::PendingOperation* op)
     m_ringingNotification->setHint(QStringLiteral("category"), "x-kde.incoming-call");
     m_ringingNotification->setActions(actions);
     m_ringingNotification->sendEvent();
-    
+
     QDBusMessage wakeupCall = QDBusMessage::createMethodCall(QStringLiteral("org.kde.Solid.PowerManagement"),
-                                                              QStringLiteral("/org/kde/Solid/PowerManagement"),
-                                                              QStringLiteral("org.kde.Solid.PowerManagement"),
-                                                              QStringLiteral("wakeup"));
+                                                             QStringLiteral("/org/kde/Solid/PowerManagement"),
+                                                             QStringLiteral("org.kde.Solid.PowerManagement"),
+                                                             QStringLiteral("wakeup"));
     QDBusConnection::sessionBus().call(wakeupCall);
 
     connect(callChannel.data(), &Tp::CallChannel::callStateChanged, this, [=](Tp::CallState state) {
@@ -103,26 +100,23 @@ void CallChannelApprover::onChannelReady(Tp::PendingOperation* op)
             m_ringingNotification->close();
         }
     });
-    void (KNotification::* activation)(unsigned int) = &KNotification::activated;
-    connect(m_ringingNotification, activation,
-            this, &CallChannelApprover::onNotificationAction);
+    void (KNotification::*activation)(unsigned int) = &KNotification::activated;
+    connect(m_ringingNotification, activation, this, &CallChannelApprover::onNotificationAction);
 }
 
 void CallChannelApprover::onNotificationAction(unsigned int action)
 {
-    switch(action) {
-        case 1:
-            // call accepted
-            emit channelAccepted();
-            break;
-        case 2:
-            // call rejected
-            emit channelRejected();
-            break;
-        default:
-            Q_UNREACHABLE();
-            break;
+    switch (action) {
+    case 1:
+        // call accepted
+        emit channelAccepted();
+        break;
+    case 2:
+        // call rejected
+        emit channelRejected();
+        break;
+    default:
+        Q_UNREACHABLE();
+        break;
     }
 }
-
-

@@ -18,12 +18,12 @@
 #include "dialerutils.h"
 #include "qpulseaudioengine.h"
 
-#include <QTimer>
 #include <QDBusConnection>
 #include <QDBusMessage>
+#include <QTimer>
 
-#include <KNotification>
 #include <KLocalizedString>
+#include <KNotification>
 
 #include <TelepathyQt/CallContent>
 
@@ -34,12 +34,11 @@ static void enable_earpiece()
     QPulseAudioEngine::instance()->setCallMode(CallActive, AudioModeEarpiece);
 }
 
-
 static void enable_normal()
 {
-    QTimer* timer = new QTimer();
+    QTimer *timer = new QTimer();
     timer->setSingleShot(true);
-    QObject::connect(timer, &QTimer::timeout, [=](){
+    QObject::connect(timer, &QTimer::timeout, [=]() {
         QPulseAudioEngine::instance()->setMicMute(false);
         QPulseAudioEngine::instance()->setCallMode(CallEnded, AudioModeWiredOrSpeaker);
         timer->deleteLater();
@@ -55,8 +54,7 @@ static void enable_speaker()
 constexpr int MISSED_CALL_REASON = 5;
 constexpr int CALL_DURATION_UPDATE_DELAY = 1000;
 
-struct CallManager::Private
-{
+struct CallManager::Private {
     Tp::CallChannelPtr callChannel;
     DialerUtils *dialerUtils;
     KNotification *callsNotification;
@@ -66,13 +64,12 @@ struct CallManager::Private
 };
 
 CallManager::CallManager(const Tp::CallChannelPtr &callChannel, DialerUtils *dialerUtils, QObject *parent)
-    : QObject(parent), d(new Private)
+    : QObject(parent)
+    , d(new Private)
 {
-
     d->dialerUtils = dialerUtils;
     d->callChannel = callChannel;
-    connect(callChannel.data(), &Tp::CallChannel::callStateChanged,
-            this, &CallManager::onCallStateChanged);
+    connect(callChannel.data(), &Tp::CallChannel::callStateChanged, this, &CallManager::onCallStateChanged);
 
     connect(d->dialerUtils, &DialerUtils::acceptCall, this, &CallManager::onCallAccepted);
     connect(d->dialerUtils, &DialerUtils::rejectCall, this, &CallManager::onCallRejected);
@@ -87,14 +84,13 @@ CallManager::CallManager(const Tp::CallChannelPtr &callChannel, DialerUtils *dia
     d->callsNotification = nullptr;
     d->callTimer = nullptr;
 
-    //bring us up-to-date with the current call state
+    // bring us up-to-date with the current call state
     onCallStateChanged(d->callChannel->callState());
 }
 
 CallManager::~CallManager()
 {
     qDebug() << "Deleting CallManager";
-
 }
 
 void CallManager::onCallStateChanged(Tp::CallState state)
@@ -118,7 +114,7 @@ void CallManager::onCallStateChanged(Tp::CallState state)
     switch (state) {
     case Tp::CallStatePendingInitiator:
         Q_ASSERT(d->callChannel->isRequested());
-        (void) d->callChannel->accept();
+        (void)d->callChannel->accept();
         break;
     case Tp::CallStateInitialising:
         if (d->callChannel->isRequested()) {
@@ -172,14 +168,14 @@ void CallManager::onCallStateChanged(Tp::CallState state)
         enable_normal();
         if (d->inhibitCookie) {
             QDBusMessage uninhibitCall = QDBusMessage::createMethodCall(QStringLiteral("org.freedesktop.PowerManagement.Inhibit"),
-                                                                      QStringLiteral("/org/freedesktop/PowerManagement/Inhibit"),
-                                                                      QStringLiteral("org.freedesktop.PowerManagement.Inhibit"),
-                                                                      QStringLiteral("UnInhibit"));
+                                                                        QStringLiteral("/org/freedesktop/PowerManagement/Inhibit"),
+                                                                        QStringLiteral("org.freedesktop.PowerManagement.Inhibit"),
+                                                                        QStringLiteral("UnInhibit"));
             uninhibitCall << d->inhibitCookie.value();
             QDBusConnection::sessionBus().call(uninhibitCall);
             d->inhibitCookie.reset();
         }
-        //FIXME this is defined in the spec, but try to find a proper enum value for it
+        // FIXME this is defined in the spec, but try to find a proper enum value for it
         if (d->callChannel->callStateReason().reason == MISSED_CALL_REASON) {
             qDebug() << "Adding notification";
             d->missedCalls++;
@@ -216,12 +212,12 @@ void CallManager::onCallStateChanged(Tp::CallState state)
 
 void CallManager::onCallAccepted()
 {
-    (void) d->callChannel->accept();
+    (void)d->callChannel->accept();
 }
 
 void CallManager::onCallRejected()
 {
-    (void) d->callChannel->hangup(Tp::CallStateChangeReasonRejected, TP_QT_ERROR_REJECTED); // clazy:exclude=qstring-allocations
+    (void)d->callChannel->hangup(Tp::CallStateChangeReasonRejected, TP_QT_ERROR_REJECTED); // clazy:exclude=qstring-allocations
 }
 
 void CallManager::onHangUpRequested()
@@ -245,7 +241,7 @@ void CallManager::onSendDtmfRequested(const QString &tones)
         return;
     }
 
-    for (const Tp::CallContentPtr & content : d->callChannel->contents()) {
+    for (const Tp::CallContentPtr &content : d->callChannel->contents()) {
         if (content->supportsDTMF()) {
             bool ok;
             QStringListIterator keysIterator(tones.split(QString(), Qt::SkipEmptyParts));
@@ -274,4 +270,3 @@ void CallManager::onSendDtmfRequested(const QString &tones)
         }
     }
 }
-

@@ -3,8 +3,8 @@
 ** Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
 ** Contact: http://www.qt-project.org/legal
 **
-** This file was taken from qt5 and modified by 
-** David Henningsson <david.henningsson@canonical.com> for usage in 
+** This file was taken from qt5 and modified by
+** David Henningsson <david.henningsson@canonical.com> for usage in
 ** telepathy-ofono.
 **
 ** GNU Lesser General Public License Usage
@@ -20,9 +20,9 @@
 #ifndef QPULSEAUDIOENGINE_H
 #define QPULSEAUDIOENGINE_H
 
-#include <QtCore/qmap.h>
-#include <QtCore/qbytearray.h>
 #include <QThread>
+#include <QtCore/qbytearray.h>
+#include <QtCore/qmap.h>
 #include <pulse/pulseaudio.h>
 
 enum AudioMode {
@@ -41,11 +41,7 @@ Q_DECLARE_METATYPE(AudioMode)
 typedef QList<AudioMode> AudioModes;
 Q_DECLARE_METATYPE(AudioModes)
 
-enum CallStatus {
-    CallRinging,
-    CallActive,
-    CallEnded
-};
+enum CallStatus { CallRinging, CallActive, CallEnded };
 
 Q_DECLARE_METATYPE(CallStatus)
 
@@ -59,8 +55,14 @@ public:
     QPulseAudioEngineWorker(QObject *parent = nullptr);
     ~QPulseAudioEngineWorker();
 
-    pa_threaded_mainloop *mainloop() { return m_mainLoop; }
-    pa_context *context() { return m_context; }
+    pa_threaded_mainloop *mainloop()
+    {
+        return m_mainLoop;
+    }
+    pa_context *context()
+    {
+        return m_context;
+    }
     bool createPulseContext(void);
     int setupVoiceCall(void);
     void restoreVoiceCall(void);
@@ -123,6 +125,7 @@ public:
 Q_SIGNALS:
     void audioModeChanged(const AudioMode mode);
     void availableAudioModesChanged(const AudioModes modes);
+
 private:
     QPulseAudioEngineWorker *mWorker;
     QThread mThread;

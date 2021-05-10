@@ -24,14 +24,12 @@
 
 #define TELEPHONY_SERVICE_HANDLER TP_QT_IFACE_CLIENT + ".Plasma.Dialer"
 
-DispatchOperation::DispatchOperation(const Tp::ChannelDispatchOperationPtr & dispatchOperation,
-                                     QObject *parent)
-    : QObject(parent), m_dispatchOperation(dispatchOperation)
+DispatchOperation::DispatchOperation(const Tp::ChannelDispatchOperationPtr &dispatchOperation, QObject *parent)
+    : QObject(parent)
+    , m_dispatchOperation(dispatchOperation)
 {
-    connect(m_dispatchOperation.data(), &Tp::ChannelDispatchOperation::channelLost,
-            this, &DispatchOperation::onChannelLost);
-    connect(m_dispatchOperation.data(), &Tp::ChannelDispatchOperation::invalidated,
-            this, &DispatchOperation::onDispatchOperationInvalidated);
+    connect(m_dispatchOperation.data(), &Tp::ChannelDispatchOperation::channelLost, this, &DispatchOperation::onChannelLost);
+    connect(m_dispatchOperation.data(), &Tp::ChannelDispatchOperation::invalidated, this, &DispatchOperation::onDispatchOperationInvalidated);
 
     const auto channels = dispatchOperation->channels();
     for (const Tp::ChannelPtr &channel : channels) {
@@ -49,12 +47,10 @@ DispatchOperation::DispatchOperation(const Tp::ChannelDispatchOperationPtr & dis
 
 DispatchOperation::~DispatchOperation()
 {
-     qDebug();
+    qDebug();
 }
 
-void DispatchOperation::onChannelLost(const Tp::ChannelPtr &channel,
-                                      const QString &errorName,
-                                      const QString &errorMessage)
+void DispatchOperation::onChannelLost(const Tp::ChannelPtr &channel, const QString &errorName, const QString &errorMessage)
 {
     qDebug() << "Channel lost:" << errorName << errorMessage;
 
@@ -63,9 +59,7 @@ void DispatchOperation::onChannelLost(const Tp::ChannelPtr &channel,
     approver->deleteLater();
 }
 
-void DispatchOperation::onDispatchOperationInvalidated(Tp::DBusProxy *proxy,
-                                                       const QString &errorName,
-                                                       const QString &errorMessage)
+void DispatchOperation::onDispatchOperationInvalidated(Tp::DBusProxy *proxy, const QString &errorName, const QString &errorMessage)
 {
     Q_UNUSED(proxy);
     qDebug() << "Dispatch operation invalidated" << errorName << errorMessage;
@@ -90,7 +84,7 @@ void DispatchOperation::onChannelRejected()
     connect(operation, &Tp::PendingOperation::finished, this, &DispatchOperation::onClaimFinished);
     const auto channels = m_dispatchOperation->channels();
     for (const Tp::ChannelPtr &channel : channels) {
-        Tp::CallChannelPtr callChannel  = Tp::CallChannelPtr::dynamicCast(channel);
+        Tp::CallChannelPtr callChannel = Tp::CallChannelPtr::dynamicCast(channel);
         callChannel->hangup(Tp::CallStateChangeReasonRejected, TP_QT_ERROR_REJECTED);
     }
 }
@@ -102,8 +96,8 @@ void DispatchOperation::onClaimFinished(Tp::PendingOperation *operation)
         return;
     }
 
-    QHashIterator<Tp::ChannelPtr, ChannelApprover*> it(m_channelApprovers);
-    while(it.hasNext()) {
+    QHashIterator<Tp::ChannelPtr, ChannelApprover *> it(m_channelApprovers);
+    while (it.hasNext()) {
         it.next();
         it.key()->requestClose();
     }

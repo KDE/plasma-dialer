@@ -42,14 +42,14 @@ public:
         Answered,
         Active,
         Ended,
-        Failed
+        Failed,
     };
     Q_ENUM(CallState)
 
     enum CallType {
         IncomingRejected,
         IncomingAccepted,
-        Outgoing
+        Outgoing,
     };
     Q_ENUM(CallType)
 
@@ -75,7 +75,7 @@ public:
 
     Q_INVOKABLE void resetMissedCalls();
     Q_INVOKABLE void dial(const QString &number);
-    Q_INVOKABLE QString formatNumber(const QString& number);
+    Q_INVOKABLE QString formatNumber(const QString &number);
     Q_INVOKABLE void getImeis();
     Q_INVOKABLE QString getVoicemailNumber();
 
@@ -106,7 +106,7 @@ private:
     uint m_callDuration;
     QString m_callContactAlias;
     bool m_isIncomingCall;
-    QOfonoMessageWaiting* m_msgWaiting;
+    QOfonoMessageWaiting *m_msgWaiting;
     QString m_voicemailNumber;
 };
 

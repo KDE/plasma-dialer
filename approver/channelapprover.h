@@ -25,14 +25,17 @@ class ChannelApprover : public QObject
 {
     Q_OBJECT
 public:
-    static ChannelApprover *create(const Tp::ChannelPtr & channel, QObject *parent);
+    static ChannelApprover *create(const Tp::ChannelPtr &channel, QObject *parent);
 
 Q_SIGNALS:
     void channelAccepted();
     void channelRejected();
 
 protected:
-    inline ChannelApprover(QObject *parent) : QObject(parent) {}
+    inline ChannelApprover(QObject *parent)
+        : QObject(parent)
+    {
+    }
 };
 
 #endif // CHANNELAPPROVER_H

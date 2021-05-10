@@ -17,19 +17,18 @@
 #pragma once
 
 #include <QAbstractListModel>
-#include <QSortFilterProxyModel>
 #include <QDateTime>
+#include <QSortFilterProxyModel>
 #include <QVector>
 
-#include "dialerutils.h"
-#include "database.h"
 #include "contactmapper.h"
+#include "database.h"
+#include "dialerutils.h"
 
 class CallHistoryModel : public QAbstractListModel
 {
     Q_OBJECT
 public:
-
     CallHistoryModel(QObject *parent = nullptr);
 
     enum Roles {
@@ -39,7 +38,7 @@ public:
         DurationRole,
         TimeRole,
         CallTypeRole,
-        IdRole
+        IdRole,
     };
     Q_ENUM(Roles)
 

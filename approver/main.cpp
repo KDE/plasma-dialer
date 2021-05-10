@@ -23,13 +23,13 @@
 #include <KDBusService>
 #include <KLocalizedString>
 
-#include <TelepathyQt/Types>
-#include <TelepathyQt/Debug>
+#include <TelepathyQt/CallChannel>
 #include <TelepathyQt/Channel>
-#include <TelepathyQt/PendingReady>
 #include <TelepathyQt/ChannelClassSpec>
 #include <TelepathyQt/ClientRegistrar>
-#include <TelepathyQt/CallChannel>
+#include <TelepathyQt/Debug>
+#include <TelepathyQt/PendingReady>
+#include <TelepathyQt/Types>
 
 #include "phoneapprover.h"
 #include "version.h"
@@ -49,24 +49,16 @@ int main(int argc, char **argv)
     Tp::enableDebug(false);
     Tp::enableWarnings(true);
 
-    Tp::AccountFactoryPtr accountFactory =
-        Tp::AccountFactory::create(QDBusConnection::sessionBus());
-    Tp::ConnectionFactoryPtr connectionFactory =
-        Tp::ConnectionFactory::create(QDBusConnection::sessionBus());
+    Tp::AccountFactoryPtr accountFactory = Tp::AccountFactory::create(QDBusConnection::sessionBus());
+    Tp::ConnectionFactoryPtr connectionFactory = Tp::ConnectionFactory::create(QDBusConnection::sessionBus());
 
-    Tp::ChannelFactoryPtr channelFactory =
-        Tp::ChannelFactory::create(QDBusConnection::sessionBus());
-        
+    Tp::ChannelFactoryPtr channelFactory = Tp::ChannelFactory::create(QDBusConnection::sessionBus());
+
     channelFactory->addCommonFeatures(Tp::Channel::FeatureCore);
-    Tp::ContactFactoryPtr contactFactory =
-    Tp::ContactFactory::create(Tp::Features()
-        << Tp::Contact::FeatureAlias
-        << Tp::Contact::FeatureAvatarData);
+    Tp::ContactFactoryPtr contactFactory = Tp::ContactFactory::create(Tp::Features() << Tp::Contact::FeatureAlias << Tp::Contact::FeatureAvatarData);
 
     Tp::ClientRegistrarPtr m_registrar;
-    m_registrar = Tp::ClientRegistrar::create(accountFactory, connectionFactory,
-                                              channelFactory, contactFactory);
-    m_registrar->registerClient(Tp::SharedPtr<PhoneApprover>(new PhoneApprover()),
-                                QStringLiteral("Plasma.Approver"));
+    m_registrar = Tp::ClientRegistrar::create(accountFactory, connectionFactory, channelFactory, contactFactory);
+    m_registrar->registerClient(Tp::SharedPtr<PhoneApprover>(new PhoneApprover()), QStringLiteral("Plasma.Approver"));
     return app.exec();
 }

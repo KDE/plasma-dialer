@@ -16,12 +16,12 @@
 */
 #include "callhistorymodel.h"
 
-#include <QDateTime>
-#include <QStandardPaths>
-#include <QSqlQuery>
-#include <QSqlError>
-#include <QDebug>
 #include <KPeople/PersonData>
+#include <QDateTime>
+#include <QDebug>
+#include <QSqlError>
+#include <QSqlQuery>
+#include <QStandardPaths>
 
 CallHistoryModel::CallHistoryModel(QObject *parent)
     : QAbstractListModel(parent)
@@ -59,25 +59,25 @@ void CallHistoryModel::clear()
     endResetModel();
 }
 
-QVariant CallHistoryModel::data(const QModelIndex& index, int role) const
+QVariant CallHistoryModel::data(const QModelIndex &index, int role) const
 {
     int row = index.row();
 
     switch (role) {
-        case Roles::PhoneNumberRole:
-            return m_calls[row].number;
-        case DisplayNameRole:
-            return KPeople::PersonData{m_mapper.uriForNumber(m_calls.at(index.row()).number)}.name();
-        case PhotoRole:
-            return KPeople::PersonData{m_mapper.uriForNumber(m_calls.at(index.row()).number)}.photo();
-        case Roles::CallTypeRole:
-            return m_calls[row].callType;
-        case Roles::DurationRole:
-            return m_calls[row].duration;
-        case Roles::TimeRole:
-            return m_calls[row].time;
-        case Roles::IdRole:
-            return m_calls[row].id;
+    case Roles::PhoneNumberRole:
+        return m_calls[row].number;
+    case DisplayNameRole:
+        return KPeople::PersonData{m_mapper.uriForNumber(m_calls.at(index.row()).number)}.name();
+    case PhotoRole:
+        return KPeople::PersonData{m_mapper.uriForNumber(m_calls.at(index.row()).number)}.photo();
+    case Roles::CallTypeRole:
+        return m_calls[row].callType;
+    case Roles::DurationRole:
+        return m_calls[row].duration;
+    case Roles::TimeRole:
+        return m_calls[row].time;
+    case Roles::IdRole:
+        return m_calls[row].id;
     }
     return {};
 }

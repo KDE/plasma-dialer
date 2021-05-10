@@ -20,6 +20,7 @@ include(ECMMarkNonGuiExecutable)
 include(FeatureSummary)
 include(ECMConfiguredInstall)
 include(ECMSetupVersion)
+include(KDEClangFormat)
 
 ecm_setup_version(${PROJECT_VERSION}
     VARIABLE_PREFIX PLASMADIALER
@@ -45,5 +46,8 @@ install(FILES dialer.svg DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/hicolor/scalabl
 
 add_subdirectory(src)
 add_subdirectory(approver)
+
+file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES *.cpp *.h)
+kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)

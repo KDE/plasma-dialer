@@ -29,13 +29,14 @@ public:
     ~CallHandler() override;
 
     bool bypassApproval() const override;
-    void handleChannels(const Tp::MethodInvocationContextPtr<> & context,
-                                const Tp::AccountPtr & account,
-                                const Tp::ConnectionPtr & connection,
-                                const QList<Tp::ChannelPtr> & channels,
-                                const QList<Tp::ChannelRequestPtr> & requestsSatisfied,
-                                const QDateTime & userActionTime,
-                                const Tp::AbstractClientHandler::HandlerInfo & handlerInfo) override;
+    void handleChannels(const Tp::MethodInvocationContextPtr<> &context,
+                        const Tp::AccountPtr &account,
+                        const Tp::ConnectionPtr &connection,
+                        const QList<Tp::ChannelPtr> &channels,
+                        const QList<Tp::ChannelRequestPtr> &requestsSatisfied,
+                        const QDateTime &userActionTime,
+                        const Tp::AbstractClientHandler::HandlerInfo &handlerInfo) override;
+
 private:
     QList<Tp::CallChannelPtr> handledCallChannels;
     DialerUtils *m_dialerUtils;

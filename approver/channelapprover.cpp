@@ -19,11 +19,10 @@
 
 #include "callchannelapprover.h"
 
-ChannelApprover *ChannelApprover::create(const Tp::ChannelPtr & channel, QObject *parent)
+ChannelApprover *ChannelApprover::create(const Tp::ChannelPtr &channel, QObject *parent)
 {
-    if(channel->channelType() == TP_QT_IFACE_CHANNEL_TYPE_CALL) {
+    if (channel->channelType() == TP_QT_IFACE_CHANNEL_TYPE_CALL) {
         return new CallChannelApprover(Tp::CallChannelPtr::dynamicCast(channel), parent);
     }
     return nullptr;
 }
-

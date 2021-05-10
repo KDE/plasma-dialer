@@ -19,34 +19,34 @@
 
 #include <QApplication>
 
-#include "dialerutils.h"
 #include "call-handler.h"
-#include "ussd-manager.h"
 #include "callhistorymodel.h"
+#include "dialerutils.h"
+#include "ussd-manager.h"
 #include "version.h"
 
-#include <TelepathyQt/Types>
-#include <TelepathyQt/Debug>
-#include <TelepathyQt/ClientRegistrar>
+#include <TelepathyQt/Account>
+#include <TelepathyQt/AccountManager>
+#include <TelepathyQt/AccountSet>
 #include <TelepathyQt/CallChannel>
 #include <TelepathyQt/ChannelClassSpec>
 #include <TelepathyQt/ChannelFactory>
-#include <TelepathyQt/Account>
-#include <TelepathyQt/AccountSet>
-#include <TelepathyQt/AccountManager>
+#include <TelepathyQt/ClientRegistrar>
+#include <TelepathyQt/Debug>
 #include <TelepathyQt/PendingReady>
+#include <TelepathyQt/Types>
 
-#include <KLocalizedString>
 #include <KLocalizedContext>
-#include <QCommandLineParser>
+#include <KLocalizedString>
 #include <QCommandLineOption>
+#include <QCommandLineParser>
 #include <QtQml>
 
+#include <KAboutData>
+#include <KDBusService>
 #include <QQmlContext>
 #include <QQmlEngine>
 #include <QQuickWindow>
-#include <KAboutData>
-#include <KDBusService>
 
 int main(int argc, char **argv)
 {
@@ -54,7 +54,7 @@ int main(int argc, char **argv)
     QApplication app(argc, argv);
     app.setQuitOnLastWindowClosed(false);
 
-//     app.setQuitOnLastWindowClosed(false);
+    //     app.setQuitOnLastWindowClosed(false);
     QCoreApplication::setApplicationVersion(QStringLiteral(PLASMADIALER_VERSION_STRING));
     QCoreApplication::setOrganizationDomain(QStringLiteral("kde.org"));
     KLocalizedString::setApplicationDomain("plasma-dialer");
@@ -65,9 +65,7 @@ int main(int argc, char **argv)
     parser.addHelpOption();
     parser.setApplicationDescription(i18n("Plasma Phone Dialer"));
 
-    QCommandLineOption daemonOption(QStringList() << QStringLiteral("d") <<
-                                 QStringLiteral("daemon"),
-                                 i18n("Daemon mode. run without displaying anything."));
+    QCommandLineOption daemonOption(QStringList() << QStringLiteral("d") << QStringLiteral("daemon"), i18n("Daemon mode. run without displaying anything."));
 
     parser.addPositionalArgument(QStringLiteral("number"), i18n("Call the given number"));
 
@@ -79,35 +77,25 @@ int main(int argc, char **argv)
 
     Tp::registerTypes();
 
-    Tp::AccountFactoryPtr accountFactory = Tp::AccountFactory::create(QDBusConnection::sessionBus(),
-                                                                      Tp::Features() << Tp::Account::FeatureCore
-    );
+    Tp::AccountFactoryPtr accountFactory = Tp::AccountFactory::create(QDBusConnection::sessionBus(), Tp::Features() << Tp::Account::FeatureCore);
 
-    Tp::ConnectionFactoryPtr connectionFactory = Tp::ConnectionFactory::create(QDBusConnection::sessionBus(),
-                                                                               Tp::Features() << Tp::Connection::FeatureCore
-                                                                                              << Tp::Connection::FeatureSelfContact
-                                                                                              << Tp::Connection::FeatureConnected
-    );
+    Tp::ConnectionFactoryPtr connectionFactory =
+        Tp::ConnectionFactory::create(QDBusConnection::sessionBus(),
+                                      Tp::Features() << Tp::Connection::FeatureCore << Tp::Connection::FeatureSelfContact << Tp::Connection::FeatureConnected);
 
     Tp::ChannelFactoryPtr channelFactory = Tp::ChannelFactory::create(QDBusConnection::sessionBus());
     channelFactory->addCommonFeatures(Tp::Channel::FeatureCore);
-    channelFactory->addFeaturesForCalls(Tp::Features() << Tp::CallChannel::FeatureContents
-                                                       << Tp::CallChannel::FeatureCallState
-                                                       << Tp::CallChannel::FeatureCallMembers
-                                                       << Tp::CallChannel::FeatureLocalHoldState
-    );
+    channelFactory->addFeaturesForCalls(Tp::Features() << Tp::CallChannel::FeatureContents << Tp::CallChannel::FeatureCallState
+                                                       << Tp::CallChannel::FeatureCallMembers << Tp::CallChannel::FeatureLocalHoldState);
 
-//     channelFactory->addFeaturesForTextChats(Tp::Features() << Tp::TextChannel::FeatureMessageQueue
-//                                                            << Tp::TextChannel::FeatureMessageSentSignal
-//                                                            << Tp::TextChannel::FeatureChatState
-//                                                            << Tp::TextChannel::FeatureMessageCapabilities);
+    //     channelFactory->addFeaturesForTextChats(Tp::Features() << Tp::TextChannel::FeatureMessageQueue
+    //                                                            << Tp::TextChannel::FeatureMessageSentSignal
+    //                                                            << Tp::TextChannel::FeatureChatState
+    //                                                            << Tp::TextChannel::FeatureMessageCapabilities);
 
-    Tp::ContactFactoryPtr contactFactory = Tp::ContactFactory::create(Tp::Features() << Tp::Contact::FeatureAlias
-                                                                                     << Tp::Contact::FeatureAvatarData
-    );
+    Tp::ContactFactoryPtr contactFactory = Tp::ContactFactory::create(Tp::Features() << Tp::Contact::FeatureAlias << Tp::Contact::FeatureAvatarData);
 
-    Tp::ClientRegistrarPtr registrar = Tp::ClientRegistrar::create(accountFactory, connectionFactory,
-                                                                   channelFactory, contactFactory);
+    Tp::ClientRegistrarPtr registrar = Tp::ClientRegistrar::create(accountFactory, connectionFactory, channelFactory, contactFactory);
     QEventLoop loop;
     Tp::AccountManagerPtr manager = Tp::AccountManager::create();
     Tp::PendingReady *ready = manager->becomeReady();
@@ -150,7 +138,11 @@ int main(int argc, char **argv)
     Tp::SharedPtr<CallHandler> callHandler(new CallHandler(dialerUtils));
     registrar->registerClient(Tp::AbstractClientPtr::dynamicCast(callHandler), QStringLiteral("Plasma.Dialer"));
 
-    KAboutData aboutData(QStringLiteral("dialer"), i18n("Dialer"), QStringLiteral(PLASMADIALER_VERSION_STRING), i18n("Plasma phone dialer"), KAboutLicense::GPL);
+    KAboutData aboutData(QStringLiteral("dialer"),
+                         i18n("Dialer"),
+                         QStringLiteral(PLASMADIALER_VERSION_STRING),
+                         i18n("Plasma phone dialer"),
+                         KAboutLicense::GPL);
     aboutData.setDesktopFileName(QStringLiteral("org.kde.phone.dialer"));
 
     KAboutData::setApplicationData(aboutData);

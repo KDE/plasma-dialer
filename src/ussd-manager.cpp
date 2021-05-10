@@ -1,20 +1,19 @@
 // SPDX-FileCopyrightText: 2021 Alexey Andreyev <aa13q@ya.ru>
-// 
+//
 // SPDX-License-Identifier: LicenseRef-KDE-Accepted-GPL
 
 #include "ussd-manager.h"
 #include "dialerutils.h"
 
 #include <QDBusConnection>
-#include <QDBusMessage>
 #include <QDBusInterface>
+#include <QDBusMessage>
 
 #include <KLocalizedString>
 
 #define CANONICAL_TELEPHONY_USSD_IFACE "com.canonical.Telephony.USSD"
 
-struct UssdManager::Private
-{
+struct UssdManager::Private {
     Tp::ConnectionPtr connection;
     DialerUtils *dialerUtils;
     QDBusInterface *ussdInterface;
@@ -22,7 +21,8 @@ struct UssdManager::Private
 };
 
 UssdManager::UssdManager(const Tp::ConnectionPtr &connection, DialerUtils *dialerUtils, QObject *parent)
-    : QObject(parent), d(new Private)
+    : QObject(parent)
+    , d(new Private)
 {
     if (connection.isNull()) {
         qCritical() << Q_FUNC_INFO;
@@ -32,11 +32,8 @@ UssdManager::UssdManager(const Tp::ConnectionPtr &connection, DialerUtils *diale
     d->dialerUtils = dialerUtils;
     d->connection = connection;
 
-    d->ussdInterface = new QDBusInterface(d->connection->busName(),
-                                          d->connection->objectPath(),
-                                          CANONICAL_TELEPHONY_USSD_IFACE,
-                                          QDBusConnection::sessionBus(),
-                                          this);
+    d->ussdInterface =
+        new QDBusInterface(d->connection->busName(), d->connection->objectPath(), CANONICAL_TELEPHONY_USSD_IFACE, QDBusConnection::sessionBus(), this);
 
     if (!d->ussdInterface->isValid()) {
         qDebug() << Q_FUNC_INFO;
