@@ -23,20 +23,29 @@
 
 #include <KLocalizedString>
 
+#include <KPeople/PersonData>
+
 #include <TelepathyQt/PendingReady>
 #include <TelepathyQt/ChannelClassSpec>
 #include <TelepathyQt/ClientRegistrar>
 #include <TelepathyQt/CallChannel>
 
+#include "contactmapper.h"
+
+static ContactMapper s_mapper;
+static std::once_flag s_mapperInit;
+
 CallChannelApprover::CallChannelApprover(const Tp::CallChannelPtr & channel, QObject *parent)
     : ChannelApprover(parent)
 {
+  std::call_once(s_mapperInit, [] { s_mapper.performInitialScan(); });
+
     if (!channel.isNull()) {
         Tp::PendingReady *pendingReady = channel->becomeReady(Tp::Features()
                                                             << Tp::CallChannel::FeatureCore
                                                             << Tp::CallChannel::FeatureCallState);
         m_Channels[pendingReady] = channel;
-        connect(pendingReady, &Tp::PendingOperation::finished, 
+        connect(pendingReady, &Tp::PendingOperation::finished,
                 this, &CallChannelApprover::onChannelReady);
     }
 }
@@ -62,16 +71,21 @@ void CallChannelApprover::onChannelReady(Tp::PendingOperation* op)
         && !callChannel->isRequested()) {
         callChannel->setRinging();
     }
-    
+
+    KPeople::PersonData person(
+        s_mapper.uriForNumber(callChannel->targetContact()->alias()));
+
+    const QString callerDisplayName = !person.name().isEmpty() ? person.name() : callChannel->targetContact()->alias();
+
     QStringList actions;
     actions << i18n("Accept") << i18n("Reject");
     if(!m_ringingNotification) {
         m_ringingNotification = new KNotification(QStringLiteral("ringing"), KNotification::Persistent | KNotification::LoopSound, nullptr);
     }
     m_ringingNotification->setComponentName(QStringLiteral("plasma_dialer"));
-    m_ringingNotification->setIconName(QStringLiteral("call-start"));
+    m_ringingNotification->setPixmap(person.photo());
     m_ringingNotification->setTitle(i18n("Incoming call"));
-    m_ringingNotification->setText(callChannel->targetContact()->alias());
+    m_ringingNotification->setText(callerDisplayName);
     // this will be used by the notification applet to show custom notification UI
     // with swipe decision.
     m_ringingNotification->setHint(QStringLiteral("category"), "x-kde.incoming-call");

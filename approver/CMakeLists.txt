@@ -16,6 +16,7 @@ target_link_libraries(plasma-telepathy-approver
     KF5::I18n
     KF5::Notifications
     TelepathyQt5::Core
+    dialer
 )
 
 install(TARGETS plasma-telepathy-approver ${INSTALL_TARGETS_DEFAULT_ARGS})
