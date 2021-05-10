@@ -74,6 +74,7 @@ Kirigami.Page {
                 id: topContents
                 
                 Avatar {
+                    source: DialerUtils.callContactPicture
                     Layout.minimumWidth: topFlickable.width
                     Layout.minimumHeight: topFlickable.height
                 }

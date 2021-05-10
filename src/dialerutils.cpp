@@ -246,4 +246,13 @@ QString DialerUtils::callContactDisplayString() const
     return m_callContactAlias;
 }
 
+QPixmap DialerUtils::callContactPicture() const
+{
+    const QString uri = ContactMapper::instance().uriForNumber(m_callContactAlias);
+
+    KPeople::PersonData person(uri);
+
+    return person.photo();
+}
+
 #include "moc_dialerutils.cpp"

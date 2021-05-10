@@ -34,6 +34,7 @@ class DialerUtils : public QObject
     Q_PROPERTY(QString callContactNumber READ callContactNumber NOTIFY callContactNumberChanged);
     Q_PROPERTY(bool isIncomingCall READ isIncomingCall NOTIFY isIncomingCallChanged);
     Q_PROPERTY(QString callContactDisplayString READ callContactDisplayString NOTIFY callContactDisplayStringChanged);
+    Q_PROPERTY(QPixmap callContactPicture READ callContactPicture NOTIFY callContactPictureChanged);
 
 public:
     enum CallState {
@@ -76,6 +77,8 @@ public:
 
     QString callContactDisplayString() const;
 
+    QPixmap callContactPicture() const;
+
     Q_INVOKABLE void resetMissedCalls();
     Q_INVOKABLE void dial(const QString &number);
     Q_INVOKABLE QString formatNumber(const QString &number);
@@ -90,6 +93,7 @@ Q_SIGNALS:
     void callContactNumberChanged();
     void isIncomingCallChanged();
     void callContactDisplayStringChanged();
+    void callContactPictureChanged();
     void acceptCall();
     void rejectCall();
     void hangUp();
