@@ -32,16 +32,9 @@
 
 #include "contactmapper.h"
 
-static ContactMapper s_mapper;
-static std::once_flag s_mapperInit;
-
 CallChannelApprover::CallChannelApprover(const Tp::CallChannelPtr &channel, QObject *parent)
     : ChannelApprover(parent)
 {
-    std::call_once(s_mapperInit, [] {
-        s_mapper.performInitialScan();
-    });
-
     if (!channel.isNull()) {
         Tp::PendingReady *pendingReady = channel->becomeReady(Tp::Features() << Tp::CallChannel::FeatureCore << Tp::CallChannel::FeatureCallState);
         m_Channels[pendingReady] = channel;
@@ -70,7 +63,7 @@ void CallChannelApprover::onChannelReady(Tp::PendingOperation *op)
         callChannel->setRinging();
     }
 
-    KPeople::PersonData person(s_mapper.uriForNumber(callChannel->targetContact()->alias()));
+    KPeople::PersonData person(ContactMapper::instance().uriForNumber(callChannel->targetContact()->alias()));
 
     const QString callerDisplayName = !person.name().isEmpty() ? person.name() : callChannel->targetContact()->alias();
 

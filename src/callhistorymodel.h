@@ -21,7 +21,6 @@
 #include <QSortFilterProxyModel>
 #include <QVector>
 
-#include "contactmapper.h"
 #include "database.h"
 #include "dialerutils.h"
 
@@ -55,5 +54,4 @@ public:
 private:
     QVector<CallData> m_calls;
     Database m_database;
-    ContactMapper m_mapper;
 };

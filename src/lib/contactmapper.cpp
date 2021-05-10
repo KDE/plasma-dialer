@@ -13,8 +13,14 @@
 
 using namespace ::i18n::phonenumbers;
 
-ContactMapper::ContactMapper(QObject *parent)
-    : QObject(parent)
+ContactMapper &ContactMapper::instance()
+{
+    static ContactMapper instance;
+    return instance;
+}
+
+ContactMapper::ContactMapper()
+    : QObject()
     , m_model(new KPeople::PersonsModel(this))
 {
     const QLocale locale;
@@ -27,6 +33,8 @@ ContactMapper::ContactMapper(QObject *parent)
     connect(m_model, &QAbstractItemModel::rowsInserted, this, [this](const QModelIndex &, int first, int last) {
         processRows(first, last);
     });
+
+    processRows(0, m_model->rowCount() - 1);
 }
 
 std::string ContactMapper::normalizeNumber(const std::string &numberString) const
@@ -68,11 +76,6 @@ void ContactMapper::processRows(const int first, const int last)
     }
 
     emit contactsChanged(affectedNumbers);
-}
-
-void ContactMapper::performInitialScan()
-{
-    processRows(0, m_model->rowCount() - 1);
 }
 
 QString ContactMapper::uriForNumber(const QString &phoneNumber) const

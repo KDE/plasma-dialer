@@ -23,13 +23,12 @@
 #include <QSqlQuery>
 #include <QStandardPaths>
 
+#include "contactmapper.h"
+
 CallHistoryModel::CallHistoryModel(QObject *parent)
     : QAbstractListModel(parent)
     , m_database(this)
-    , m_mapper(new ContactMapper(this))
 {
-    m_mapper.performInitialScan();
-
     beginResetModel();
     m_calls = m_database.fetchCalls();
     endResetModel();
@@ -67,9 +66,9 @@ QVariant CallHistoryModel::data(const QModelIndex &index, int role) const
     case Roles::PhoneNumberRole:
         return m_calls[row].number;
     case DisplayNameRole:
-        return KPeople::PersonData{m_mapper.uriForNumber(m_calls.at(index.row()).number)}.name();
+        return KPeople::PersonData{ContactMapper::instance().uriForNumber(m_calls.at(index.row()).number)}.name();
     case PhotoRole:
-        return KPeople::PersonData{m_mapper.uriForNumber(m_calls.at(index.row()).number)}.photo();
+        return KPeople::PersonData{ContactMapper::instance().uriForNumber(m_calls.at(index.row()).number)}.photo();
     case Roles::CallTypeRole:
         return m_calls[row].callType;
     case Roles::DurationRole:

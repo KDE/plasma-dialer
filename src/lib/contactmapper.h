@@ -12,7 +12,6 @@ class ContactMapper : public QObject
     Q_OBJECT
 
 public:
-    explicit ContactMapper(QObject *parent = nullptr);
 
     /**
      * @brief Returns the KPeople URI belonging to phone number,
@@ -22,6 +21,8 @@ public:
      * @return the uri belonging to the phone number
      */
     QString uriForNumber(const QString &phoneNumber) const;
+
+    static ContactMapper &instance();
 
 signals:
     /**
@@ -34,14 +35,8 @@ signals:
 private slots:
     void processRows(const int first, const int last);
 
-public slots:
-    /**
-     * @brief Scans all persons known to kpeople for phone numbers
-     * This must be run before anything useful can be done with the ContactMapper
-     */
-    void performInitialScan();
-
 private:
+    explicit ContactMapper();
     [[nodiscard]] std::string normalizeNumber(const std::string &numberString) const;
 
     KPeople::PersonsModel *m_model;
