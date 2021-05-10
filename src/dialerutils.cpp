@@ -30,8 +30,12 @@
 #include <qofono-qt5/qofonomanager.h>
 #include <qofono-qt5/qofonomessagewaiting.h>
 
+#include <KPeople/PersonData>
+
 #include "phonenumbers/asyoutypeformatter.h"
 #include "phonenumbers/phonenumberutil.h"
+
+#include "contactmapper.h"
 
 DialerUtils::DialerUtils(const Tp::AccountPtr &simAccount, QObject *parent)
     : QObject(parent)
@@ -225,6 +229,21 @@ QString DialerUtils::getVoicemailNumber()
     QString number = m_msgWaiting->voicemailMailboxNumber();
     m_voicemailNumber = number;
     return number;
+}
+
+QString DialerUtils::callContactDisplayString() const
+{
+    const QString uri = ContactMapper::instance().uriForNumber(m_callContactAlias);
+
+    KPeople::PersonData person(uri);
+
+    const QString name = person.name();
+
+    if (!name.isEmpty()) {
+        return name;
+    }
+
+    return m_callContactAlias;
 }
 
 #include "moc_dialerutils.cpp"

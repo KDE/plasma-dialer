@@ -32,7 +32,7 @@ Kirigami.Page {
     objectName: "callPage"
     id: callPage
     
-    title: i18n("Calling %1", DialerUtils.callContactAlias)
+    title: i18n("Calling %1", DialerUtils.callContactDisplayString)
 
     property int callStatus: DialerUtils.callState
 
@@ -111,7 +111,7 @@ Kirigami.Page {
             horizontalAlignment: Qt.AlignHCenter
             verticalAlignment: Qt.AlignVCenter
             font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.15
-            text: DialerUtils.callContactAlias
+            text: DialerUtils.callContactDisplayString
             font.bold: true
             visible: text != ""
         }
