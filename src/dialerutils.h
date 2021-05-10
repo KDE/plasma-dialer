@@ -99,14 +99,14 @@ Q_SIGNALS:
     void displayImeis(const QStringList &imeis);
 
 private:
-    int m_missedCalls;
-    CallState m_callState;
+    int m_missedCalls = 0;
+    CallState m_callState = CallState::Idle;
     Tp::AccountPtr m_simAccount;
     QString m_callContactNumber;
-    uint m_callDuration;
+    uint m_callDuration = 0;
     QString m_callContactAlias;
     bool m_isIncomingCall;
-    QOfonoMessageWaiting *m_msgWaiting;
+    QOfonoMessageWaiting *m_msgWaiting = nullptr;
     QString m_voicemailNumber;
 };
 

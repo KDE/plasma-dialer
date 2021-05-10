@@ -35,14 +35,7 @@
 
 DialerUtils::DialerUtils(const Tp::AccountPtr &simAccount, QObject *parent)
     : QObject(parent)
-    , m_missedCalls(0)
-    , m_callState(CallState::Idle)
     , m_simAccount(simAccount)
-    , m_callDuration(0)
-    , m_callContactAlias(QString())
-    , m_isIncomingCall(false)
-    , m_msgWaiting(nullptr)
-    , m_voicemailNumber(QString())
 {
     if (!m_simAccount) {
         return;
