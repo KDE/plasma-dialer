@@ -1,3 +1,5 @@
+add_subdirectory(lib)
+
 add_executable(plasmaphonedialer
     main.cpp
     dialerutils.cpp
@@ -7,7 +9,6 @@ add_executable(plasmaphonedialer
     ussd-manager.cpp
     qpulseaudioengine.cpp
     database.cpp
-    contactmapper.cpp
     resources.qrc
 )
 
@@ -27,6 +28,7 @@ target_link_libraries(plasmaphonedialer
     PhoneNumber::PhoneNumber
     PkgConfig::LIBPULSE
     PkgConfig::LIBQOFONO
+    dialer
 )
 
 install(TARGETS plasmaphonedialer ${INSTALL_TARGETS_DEFAULT_ARGS})
