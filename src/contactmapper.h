@@ -42,6 +42,9 @@ public slots:
     void performInitialScan();
 
 private:
+    [[nodiscard]] std::string normalizeNumber(const std::string &numberString) const;
+
     KPeople::PersonsModel *m_model;
-    QHash<QString, QString> m_numberToUri;
+    std::unordered_map<std::string, QString> m_numberToUri;
+    std::string m_country;
 };
