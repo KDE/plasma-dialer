@@ -127,7 +127,7 @@ GridLayout {
         Layout.fillWidth: true
         Layout.fillHeight: true
         
-        enabled: statusLabel.text.length > 0
+        enabled: pad.showBottomRow && statusLabel.text.length > 0
         opacity: enabled ? 1 : 0.8
         onClicked: onCallButtonPressed(statusLabel.text)
         
@@ -157,7 +157,7 @@ GridLayout {
         Layout.fillWidth: true
         Layout.fillHeight: true
 
-        enabled: statusLabel.text.length > 0
+        enabled: pad.showBottomRow && statusLabel.text.length > 0
         opacity: enabled ? 1 : 0.5
         source: "edit-clear"
         size: Kirigami.Units.gridUnit * 2
