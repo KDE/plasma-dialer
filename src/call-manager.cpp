@@ -62,6 +62,7 @@ CallManager::CallManager(const Tp::CallChannelPtr &callChannel, DialerUtils *dia
     connect(d->dialerUtils, &DialerUtils::rejectCall, this, &CallManager::onCallRejected);
     connect(d->dialerUtils, &DialerUtils::hangUp, this, &CallManager::onHangUpRequested);
     connect(d->dialerUtils, &DialerUtils::sendDtmf, this, &CallManager::onSendDtmfRequested);
+    connect(d->dialerUtils, &DialerUtils::setSpeakerMode, this, &CallManager::onSetSpeakerModeRequested);
     connect(d->callChannel.data(), &Tp::CallChannel::invalidated, this, [=]() {
         qDebug() << "Channel invalidated";
         d->dialerUtils->setCallState(DialerUtils::CallState::Idle);
@@ -256,5 +257,14 @@ void CallManager::onSendDtmfRequested(const QString &tones)
                 });
             }
         }
+    }
+}
+
+void CallManager::onSetSpeakerModeRequested(bool enabled)
+{
+    if (enabled) {
+        enable_speaker();
+    } else {
+        enable_earpiece();
     }
 }

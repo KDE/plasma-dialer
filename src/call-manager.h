@@ -22,6 +22,7 @@ private Q_SLOTS:
     void onCallRejected();
     void onHangUpRequested();
     void onSendDtmfRequested(const QString &tones);
+    void onSetSpeakerModeRequested(bool enabled);
 
 private:
     struct Private;

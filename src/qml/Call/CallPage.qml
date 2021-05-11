@@ -180,7 +180,9 @@ Kirigami.Page {
                 
                 onClicked: toggledOn = !toggledOn
                 
-                // TODO functionality
+                onToggledOnChanged: {
+                    DialerUtils.setSpeakerMode(toggledOn);
+                }
             }
         }
 

@@ -87,6 +87,8 @@ Q_SIGNALS:
     void hangUp();
     void callEnded(const QString &callContactNumber, uint callDuration, bool isIncomingCall);
     void sendDtmf(const QString &tones);
+    void setSpeakerMode(bool enabled);
+
     void initiateUssd(const QString &command);
     void respondToUssd(const QString &reply);
     void cancelUssd();

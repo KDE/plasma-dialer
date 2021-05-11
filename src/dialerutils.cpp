@@ -60,7 +60,7 @@ void DialerUtils::dial(const QString &number)
     qDebug() << "Starting call...";
     if (m_simAccount) {
         Tp::PendingChannelRequest *pendingChannel = m_simAccount->ensureAudioCall(number);
-        connect(pendingChannel, &Tp::PendingChannelRequest::finished, pendingChannel, [=]() {
+        connect(pendingChannel, &Tp::PendingChannelRequest::finished, pendingChannel, [=, this]() {
             if (pendingChannel->isError()) {
                 qWarning() << "Error when requesting channel" << pendingChannel->errorMessage();
                 setCallState(CallState::Failed);
