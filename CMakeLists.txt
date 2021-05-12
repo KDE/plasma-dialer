@@ -3,7 +3,7 @@ cmake_minimum_required (VERSION 3.14 FATAL_ERROR)
 project(plasma-dialer)
 set(PROJECT_VERSION "21.05")
 
-set(QT_MIN_VERSION "5.14.0")
+set(QT_MIN_VERSION "5.15.0")
 set(KF5_MIN_VERSION "5.73.0")
 
 set(CMAKE_CXX_STANDARD 20)
