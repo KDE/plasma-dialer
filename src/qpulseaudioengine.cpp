@@ -1,21 +1,5 @@
-/****************************************************************************
-**
-** Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
-** Contact: http://www.qt-project.org/legal
-**
-** This file was taken from qt5 and modified by
-** David Henningsson <david.henningsson@canonical.com> for usage in
-** telepathy-ofono.
-**
-** GNU Lesser General Public License Usage
-** Alternatively, this file may be used under the terms of the GNU Lesser
-** General Public License version 2.1 as published by the Free Software
-** Foundation and appearing in the file LICENSE.LGPL included in the
-** packaging of this file.  Please review the following information to
-** ensure the GNU Lesser General Public License version 2.1 requirements
-** will be met: http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html.
-**
-****************************************************************************/
+// SPDX-FileCopyrightText: 2013 Digia Plc <https://qt-project.org/legal>
+// SPDX-License-Identifier: LGPL-2.1-only
 
 #include <QDebug>
 
