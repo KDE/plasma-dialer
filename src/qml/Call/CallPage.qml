@@ -134,22 +134,6 @@ Kirigami.Page {
             spacing: Kirigami.Units.smallSpacing
             
             CallPageButton {
-                id: muteButton
-                Layout.fillHeight: true
-                Layout.fillWidth: true
-                
-                iconSource: toggledOn ? "microphone-sensitivity-muted-symbolic" : "microphone-sensitivity-high-symbolic"
-                text: i18n("Mute")
-                toggledOn: false
-                
-                onClicked: {
-                    //toggledOn = !toggledOn TODO uncomment once mute is working
-                    
-                    // ofonoWrapper.isMicrophoneMuted = !ofonoWrapper.isMicrophoneMuted;
-                }
-//                 iconSource: ofonoWrapper.isMicrophoneMuted ? "audio-volume-muted" : "audio-volume-high" TODO
-            }
-            CallPageButton {
                 id: dialerButton
                 Layout.fillHeight: true
                 Layout.fillWidth: true
@@ -182,6 +166,21 @@ Kirigami.Page {
                 
                 onToggledOnChanged: {
                     DialerUtils.setSpeakerMode(toggledOn);
+                }
+            }
+            CallPageButton {
+                id: muteButton
+
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+
+                iconSource: toggledOn ? "microphone-sensitivity-muted-symbolic" : "microphone-sensitivity-high-symbolic"
+                text: i18n("Mute")
+                toggledOn: false
+                onClicked: toggledOn = !toggledOn
+
+                onToggledOnChanged: {
+                    DialerUtils.setMute(toggledOn)
                 }
             }
         }

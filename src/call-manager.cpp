@@ -63,6 +63,7 @@ CallManager::CallManager(const Tp::CallChannelPtr &callChannel, DialerUtils *dia
     connect(d->dialerUtils, &DialerUtils::hangUp, this, &CallManager::onHangUpRequested);
     connect(d->dialerUtils, &DialerUtils::sendDtmf, this, &CallManager::onSendDtmfRequested);
     connect(d->dialerUtils, &DialerUtils::setSpeakerMode, this, &CallManager::onSetSpeakerModeRequested);
+    connect(d->dialerUtils, &DialerUtils::setMute, this, &CallManager::onSetMuteRequested);
     connect(d->callChannel.data(), &Tp::CallChannel::invalidated, this, [=]() {
         qDebug() << "Channel invalidated";
         d->dialerUtils->setCallState(DialerUtils::CallState::Idle);
@@ -267,4 +268,9 @@ void CallManager::onSetSpeakerModeRequested(bool enabled)
     } else {
         enable_earpiece();
     }
+}
+
+void CallManager::onSetMuteRequested(bool muted)
+{
+    QPulseAudioEngine::instance()->setMicMute(muted);
 }
