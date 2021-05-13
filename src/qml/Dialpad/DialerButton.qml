@@ -21,6 +21,7 @@ Item {
     property string sub
     property string display
     property string subdisplay
+    property bool voicemail: false
     property bool special: false
 
     Rectangle {
@@ -62,6 +63,14 @@ Item {
             opacity: 0.4
             Layout.minimumWidth: parent.width
             horizontalAlignment: Text.AlignHCenter
+
+            Kirigami.Icon {
+                source: "call-voicemail"
+                visible: root.voicemail
+                width: Kirigami.Units.iconSizes.small
+                height: width
+                color: Kirigami.Theme.textColor
+            }
         }
     }
 }

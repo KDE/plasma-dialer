@@ -83,6 +83,7 @@ GridLayout {
         id: one
         text: "1"
         onClicked: onPadNumberPressed(text)
+        voicemail: showBottomRow // TODO: only show voicemail icon if voicemail number exists
         onHeld: DialerUtils.callState !== DialerUtils.Active && callVoicemail()
     }
     DialerButton { text: "2"; sub: "ABC"; onClicked: onPadNumberPressed(text) }
