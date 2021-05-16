@@ -171,6 +171,7 @@ void CallManager::onCallStateChanged(Tp::CallState state)
             }
             d->callsNotification->setComponentName(QStringLiteral("plasma_dialer"));
             d->callsNotification->setIconName(QStringLiteral("call-start"));
+            d->callsNotification->setUrgency(KNotification::HighUrgency);
             if (d->missedCalls == 1) {
                 d->callsNotification->setTitle(i18n("Missed call from %1", d->callChannel->targetContact()->alias()));
                 d->callsNotification->setText(QTime::currentTime().toString(QStringLiteral("HH:mm")));

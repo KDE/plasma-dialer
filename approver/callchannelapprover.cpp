@@ -56,6 +56,7 @@ void CallChannelApprover::onChannelReady(Tp::PendingOperation *op)
     if (!m_ringingNotification) {
         m_ringingNotification = new KNotification(QStringLiteral("ringing"), KNotification::Persistent | KNotification::LoopSound, nullptr);
     }
+    m_ringingNotification->setUrgency(KNotification::CriticalUrgency);
     m_ringingNotification->setComponentName(QStringLiteral("plasma_dialer"));
     m_ringingNotification->setPixmap(person.photo());
     m_ringingNotification->setTitle(i18n("Incoming call"));
