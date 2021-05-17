@@ -44,6 +44,7 @@ install(FILES metadata.desktop DESTINATION ${XDG_APPS_INSTALL_DIR} RENAME org.kd
 install(FILES telephony-services.desktop DESTINATION ${KDE_INSTALL_AUTOSTARTDIR})
 install(FILES dialer-autostart.desktop DESTINATION ${KDE_INSTALL_AUTOSTARTDIR} RENAME org.kde.phone.dialer.desktop)
 install(FILES dialer.svg DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/hicolor/scalable/apps/)
+install(FILES org.kde.phone.dialer.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 
 add_subdirectory(src)
 add_subdirectory(approver)

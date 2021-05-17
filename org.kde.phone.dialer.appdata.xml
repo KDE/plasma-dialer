@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+SPDX-FileCopyrightText: 2021 Smitty van Bodegom
+SPDX-License-Identifier: CC0-1.0
+-->
+<component type="desktop-application">
+  <id>org.kde.phone.dialer</id>
+
+  <name>Phone</name>
+  <summary>Send and receive phone calls</summary>
+
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-only AND LGPL-2.1-only</project_license>
+
+  <developer_name>KDE Community</developer_name>
+  <url type="bugtracker">https://invent.kde.org/plasma-mobile/plasma-dialer/-/issues</url>
+  <url type="donation">https://www.kde.org/community/donations/?app=plasmaphonedialer</url>
+
+  <recommends>
+    <control>touch</control>
+  </recommends>
+
+  <description>
+    <p>The Phone app lets you easily send and receive phone calls from your smartphone.</p>
+    <p>Features:</p>
+    <ul>
+      <li>See your call history and easily call the same number again</li>
+      <li>Manage your contacts that have a phone number set</li>
+    </ul>
+  </description>
+  <project_group>KDE</project_group>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://cdn.kde.org/screenshots/plasma-dialer/plasma-dialer.png</image>
+      <caption>The dialer page</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://cdn.kde.org/screenshots/plasma-dialer/calling-voicemail.png</image>
+      <caption>Calling voicemail</caption>
+    </screenshot>
+  </screenshots>
+
+  <provides>
+    <binary>plasmaphonedialer</binary>
+  </provides>
+
+  <launchable type="desktop-id">org.kde.phone.dialer.desktop</launchable>
+</component>
