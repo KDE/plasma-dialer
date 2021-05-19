@@ -40,7 +40,7 @@ find_package(PkgConfig REQUIRED)
 pkg_check_modules(LIBPULSE libpulse REQUIRED IMPORTED_TARGET)
 pkg_check_modules(LIBQOFONO qofono-qt5 REQUIRED IMPORTED_TARGET)
 
-install(FILES metadata.desktop DESTINATION ${XDG_APPS_INSTALL_DIR} RENAME org.kde.phone.dialer.desktop)
+install(FILES org.kde.phone.dialer.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
 install(FILES telephony-services.desktop DESTINATION ${KDE_INSTALL_AUTOSTARTDIR})
 install(FILES dialer-autostart.desktop DESTINATION ${KDE_INSTALL_AUTOSTARTDIR} RENAME org.kde.phone.dialer.desktop)
 install(FILES dialer.svg DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/hicolor/scalable/apps/)
