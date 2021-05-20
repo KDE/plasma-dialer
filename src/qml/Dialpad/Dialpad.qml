@@ -28,6 +28,8 @@ GridLayout {
         if (DialerUtils.callState !== DialerUtils.Active) {
             pad.number += number
         } else {
+            // never try to send + as a DTMF tone
+            if (number === "+") number = "0"
             DialerUtils.sendDtmf(number)
         }
     }
