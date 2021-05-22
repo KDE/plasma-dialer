@@ -6,30 +6,36 @@ SPDX-License-Identifier: CC0-1.0
 <component type="desktop-application">
   <id>org.kde.phone.dialer</id>
   <name>Phone</name>
+  <name xml:lang="az">Telefon</name>
   <name xml:lang="ca">Telèfon</name>
   <name xml:lang="nl">Telefoon</name>
   <name xml:lang="pt">Telefone</name>
   <name xml:lang="pt-BR">Celular</name>
   <name xml:lang="sv">Telefon</name>
   <name xml:lang="uk">Телефон</name>
+  <name xml:lang="vi">Điện thoại</name>
   <name xml:lang="x-test">xxPhonexx</name>
   <summary>Send and receive phone calls</summary>
+  <summary xml:lang="az">Zəng etmək və zəngləri qəbul etmək</summary>
   <summary xml:lang="ca">Envia i rep trucades de telèfon</summary>
   <summary xml:lang="nl">Telefoonoproepen verzenden en ontvangen</summary>
   <summary xml:lang="pt">Enviar a receber chamadas telefónicas</summary>
   <summary xml:lang="pt-BR">Enviar e receber chamadas telefônicas</summary>
   <summary xml:lang="sv">Ring och ta emot telefonsamtal</summary>
   <summary xml:lang="uk">Надсилання і отримання телефонних дзвінків</summary>
+  <summary xml:lang="vi">Gửi và nhận các cuộc gọi điện thoại</summary>
   <summary xml:lang="x-test">xxSend and receive phone callsxx</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0-only</project_license>
   <developer_name>KDE Community</developer_name>
+  <developer_name xml:lang="az">KDE İcması</developer_name>
   <developer_name xml:lang="ca">La comunitat KDE</developer_name>
   <developer_name xml:lang="nl">KDE-gemeenschap</developer_name>
   <developer_name xml:lang="pt">Comunidade do KDE</developer_name>
   <developer_name xml:lang="pt-BR">Comunidade KDE</developer_name>
   <developer_name xml:lang="sv">KDE-gemenskapen</developer_name>
   <developer_name xml:lang="uk">Спільнота KDE</developer_name>
+  <developer_name xml:lang="vi">Cộng đồng KDE</developer_name>
   <developer_name xml:lang="x-test">xxKDE Communityxx</developer_name>
   <url type="bugtracker">https://invent.kde.org/plasma-mobile/plasma-dialer/-/issues</url>
   <url type="donation">https://www.kde.org/community/donations/?app=plasmaphonedialer</url>
@@ -38,37 +44,45 @@ SPDX-License-Identifier: CC0-1.0
   </recommends>
   <description>
     <p>The Phone app lets you easily send and receive phone calls from your smartphone.</p>
+    <p xml:lang="az">Telefon, smartfonunuzdan asanlıqla zəng etməyə və zəngləri qəbul etməyə imkan verir.</p>
     <p xml:lang="ca">L'aplicació Telèfon permet enviar i rebre fàcilment trucades de telèfon en el vostre telèfon intel·ligent.</p>
     <p xml:lang="nl">De toepassing Telefoon laat u gemakkelijk telefoonoproepen verzenden en ontvangen vanaf uw smartphone.</p>
     <p xml:lang="pt">a aplicação de Telefone permite-lhe efectuar e receber facilmente chamadas telefónicas no seu telemóvel.</p>
     <p xml:lang="pt-BR">O aplicativo Phone permite a você enviar e receber chamadas telefônicas de seu celular.</p>
     <p xml:lang="sv">Telefonprogrammet låter dig enkelt ringa och ta emot telefonsamtal på din smarta telefon.</p>
     <p xml:lang="uk">Програма «Телефон» надає вам змогу без проблем виконувати та отримувати телефонні дзвінки на вашому смартфоні.</p>
+    <p xml:lang="vi">Ứng dụng Điện thoại cho phép bạn dễ dàng gửi và nhận các cuộc gọi từ điện thoại của bạn.</p>
     <p xml:lang="x-test">xxThe Phone app lets you easily send and receive phone calls from your smartphone.xx</p>
     <p>Features:</p>
+    <p xml:lang="az">İmkanlar:</p>
     <p xml:lang="ca">Característiques:</p>
     <p xml:lang="nl">Mogelijkheden:</p>
     <p xml:lang="pt">Funcionalidades:</p>
     <p xml:lang="pt-BR">Funcionalidades:</p>
     <p xml:lang="sv">Funktioner:</p>
     <p xml:lang="uk">Можливості:</p>
+    <p xml:lang="vi">Tính năng:</p>
     <p xml:lang="x-test">xxFeatures:xx</p>
     <ul>
       <li>See your call history and easily call the same number again</li>
+      <li xml:lang="az">Zəng tarixçəsinə baxın və həmin nömrəyə asanlıqla yenidən zəng edin</li>
       <li xml:lang="ca">Vegeu l'historial de trucades i torneu a trucar al mateix número amb facilitat</li>
       <li xml:lang="nl">Bekijk uw oproepgeschiedenis en maak opnieuw een oproep naar hetzelfde nummer</li>
       <li xml:lang="pt">Ver o seu histórico de chamadas e invocar o mesmo número de novo</li>
       <li xml:lang="pt-BR">Veja seu histórico de chamadas e disque facilmente o mesmo número novamente</li>
       <li xml:lang="sv">Se din samtalshistorik och ring enkelt samma nummer igen</li>
       <li xml:lang="uk">Перегляд журналу дзвінків та просте повторне набирання номерів</li>
+      <li xml:lang="vi">Xem lịch sử gọi và dễ dàng gọi lại cùng số đó</li>
       <li xml:lang="x-test">xxSee your call history and easily call the same number againxx</li>
       <li>Manage your contacts that have a phone number set</li>
+      <li xml:lang="az">Telefon nömrəsini saxladığınız şəxslər siyahısını idarə edin</li>
       <li xml:lang="ca">Gestioneu els contactes que tenen un número de telèfon establert</li>
       <li xml:lang="nl">Uw contactpersonen beheren die een telefoonnummer gezet hebben</li>
       <li xml:lang="pt">Gerir os seus contactos que tenham números de telefone atribuídos</li>
       <li xml:lang="pt-BR">Gerencie seus contatos que tenham um número de telefone definido</li>
       <li xml:lang="sv">Hantera dina kontakter som har ett telefonnummer inställt</li>
       <li xml:lang="uk">Керування записами контактів, для яких встановлено номер телефону</li>
+      <li xml:lang="vi">Quản lí các liên hệ đã đặt số điện thoại</li>
       <li xml:lang="x-test">xxManage your contacts that have a phone number setxx</li>
     </ul>
   </description>
@@ -77,23 +91,27 @@ SPDX-License-Identifier: CC0-1.0
     <screenshot type="default">
       <image>https://cdn.kde.org/screenshots/plasma-dialer/plasma-dialer.png</image>
       <caption>The dialer page</caption>
+      <caption xml:lang="az">Nömrə yığma səhifəsi</caption>
       <caption xml:lang="ca">La pàgina del marcador</caption>
       <caption xml:lang="nl">De pagina met de kiezer</caption>
       <caption xml:lang="pt">A página de marcação</caption>
       <caption xml:lang="pt-BR">A página do discador</caption>
       <caption xml:lang="sv">Uppringningssidan</caption>
       <caption xml:lang="uk">Сторінка набирання номеру</caption>
+      <caption xml:lang="vi">Trang quay số</caption>
       <caption xml:lang="x-test">xxThe dialer pagexx</caption>
     </screenshot>
     <screenshot>
       <image>https://cdn.kde.org/screenshots/plasma-dialer/calling-voicemail.png</image>
       <caption>Calling voicemail</caption>
+      <caption xml:lang="az">Səsli poçt nömrəsinə zəng edin</caption>
       <caption xml:lang="ca">Trucada a la bústia de veu</caption>
       <caption xml:lang="nl">Voicemail aanroepen</caption>
       <caption xml:lang="pt">A ligar ao correio de voz</caption>
       <caption xml:lang="pt-BR">Chamando o correio de voz</caption>
       <caption xml:lang="sv">Ringa röstbrevlåda</caption>
       <caption xml:lang="uk">Голосова пошта</caption>
+      <caption xml:lang="vi">Gọi hộp thư thoại</caption>
       <caption xml:lang="x-test">xxCalling voicemailxx</caption>
     </screenshot>
   </screenshots>
