@@ -126,7 +126,7 @@ int main(int argc, char **argv)
     registrar->registerClient(Tp::AbstractClientPtr::dynamicCast(callHandler), QStringLiteral("Plasma.Dialer"));
 
     KAboutData aboutData(QStringLiteral("dialer"),
-                         i18n("Dialer"),
+                         i18n("Phone"),
                          QStringLiteral(PLASMADIALER_VERSION_STRING),
                          i18n("Plasma phone dialer"),
                          KAboutLicense::GPL);

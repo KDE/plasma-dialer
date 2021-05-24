@@ -16,7 +16,7 @@ Kirigami.ApplicationWindow {
     wideScreen: false
     id: root
 
-    title: i18n("Dialer")
+    title: i18n("Phone")
     
     width: 800
     height: 1080
