@@ -34,7 +34,7 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS CoreAddons I18n People D
 
 find_package(TelepathyQt5 REQUIRED)
 
-find_package(KF5PulseAudioQt REQUIRED)
+find_package(KF5PulseAudioQt 1.3 REQUIRED)
 
 find_package(PhoneNumber COMPONENTS PhoneNumber REQUIRED)
 
