@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
 #include "call-manager.h"
+#include "callaudio.h"
 #include "dialerutils.h"
-#include "qpulseaudioengine.h"
 
 #include <QDBusConnection>
 #include <QDBusMessage>
@@ -18,24 +18,17 @@
 
 static void enable_earpiece()
 {
-    QPulseAudioEngine::instance()->setCallMode(CallActive, AudioModeEarpiece);
+    CallAudio::instance()->setCallMode(CallActive, AudioModeEarpiece);
 }
 
 static void enable_normal()
 {
-    QTimer *timer = new QTimer();
-    timer->setSingleShot(true);
-    QObject::connect(timer, &QTimer::timeout, [=]() {
-        QPulseAudioEngine::instance()->setMicMute(false);
-        QPulseAudioEngine::instance()->setCallMode(CallEnded, AudioModeWiredOrSpeaker);
-        timer->deleteLater();
-    });
-    timer->start(2000);
+    CallAudio::instance()->setCallMode(CallEnded, AudioModeWiredOrSpeaker);
 }
 
 static void enable_speaker()
 {
-    QPulseAudioEngine::instance()->setCallMode(CallActive, AudioModeSpeaker);
+    CallAudio::instance()->setCallMode(CallActive, AudioModeSpeaker);
 }
 
 constexpr int MISSED_CALL_REASON = 5;
@@ -79,6 +72,7 @@ CallManager::CallManager(const Tp::CallChannelPtr &callChannel, DialerUtils *dia
 
 CallManager::~CallManager()
 {
+    enable_normal();
     qDebug() << "Deleting CallManager";
 }
 
@@ -272,5 +266,5 @@ void CallManager::onSetSpeakerModeRequested(bool enabled)
 
 void CallManager::onSetMuteRequested(bool muted)
 {
-    QPulseAudioEngine::instance()->setMicMute(muted);
+    CallAudio::instance()->setMicMute(muted);
 }

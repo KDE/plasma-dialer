@@ -34,10 +34,11 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS CoreAddons I18n People D
 
 find_package(TelepathyQt5 REQUIRED)
 
+find_package(KF5PulseAudioQt REQUIRED)
+
 find_package(PhoneNumber COMPONENTS PhoneNumber REQUIRED)
 
 find_package(PkgConfig REQUIRED)
-pkg_check_modules(LIBPULSE libpulse REQUIRED IMPORTED_TARGET)
 pkg_check_modules(LIBQOFONO qofono-qt5 REQUIRED IMPORTED_TARGET)
 
 install(FILES org.kde.phone.dialer.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})

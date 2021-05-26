@@ -5,6 +5,7 @@
 */
 #include "call-handler.h"
 #include "call-manager.h"
+#include "callaudio.h"
 #include "dialerutils.h"
 
 #include <TelepathyQt/CallChannel>
@@ -35,6 +36,7 @@ CallHandler::CallHandler(DialerUtils *utils)
 {
     m_dialerUtils = utils;
     m_dialerUtils->setCallState(DialerUtils::CallState::Idle);
+    CallAudio::instance();
     qDebug() << "Call handler ready";
 }
 

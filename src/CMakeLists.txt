@@ -7,9 +7,9 @@ add_executable(plasmaphonedialer
     callhistorymodel.cpp
     call-manager.cpp
     ussd-manager.cpp
-    qpulseaudioengine.cpp
     database.cpp
     resources.qrc
+    callaudio.cpp
 )
 
 target_include_directories(plasmaphonedialer PRIVATE ${CMAKE_BINARY_DIR})
@@ -24,9 +24,9 @@ target_link_libraries(plasmaphonedialer
     KF5::People
     KF5::PeopleBackend
     KF5::Contacts
+    KF5::PulseAudioQt
     TelepathyQt5::Core
     PhoneNumber::PhoneNumber
-    PkgConfig::LIBPULSE
     PkgConfig::LIBQOFONO
     dialer
 )
