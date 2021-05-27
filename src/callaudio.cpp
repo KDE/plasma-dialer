@@ -107,21 +107,10 @@ void CallAudio::setCallMode(CallStatus callStatus, AudioMode audioMode)
     // this works in two steps, first we query active source/sink
     // and then depending on requested mode, we set the active port for both source and sink
 
-    // TODO: replace with the PulseAudioQt API which provides card sinks and card sources directly
-    const auto sources = PulseAudioQt::Context::instance()->sources();
-    const auto sinks = PulseAudioQt::Context::instance()->sinks();
-    auto activeSource = std::find_if(sources.constBegin(), sources.constEnd(), [voiceCardIndex](PulseAudioQt::Source *source) {
-        return source->cardIndex() == voiceCardIndex;
-    });
-    auto activeSink = std::find_if(sinks.constBegin(), sinks.constEnd(), [voiceCardIndex](PulseAudioQt::Sink *sink) {
-        return sink->cardIndex() == voiceCardIndex;
-    });
-    if (activeSink == sinks.constEnd() || activeSource == sources.constEnd()) {
-        qCritical() << "No sinks associated with current card found, this should not happen";
-        return;
-    }
-    PulseAudioQt::Sink *activeCardSink = *activeSink;
-    PulseAudioQt::Source *activeCardSource = *activeSource;
+    const auto sources = m_voiceCallCard->sources();
+    const auto sinks = m_voiceCallCard->sinks();
+    PulseAudioQt::Sink *activeCardSink = sinks.first();
+    PulseAudioQt::Source *activeCardSource = sources.first();
 
     // find out the ports for both sources and sinks
     std::optional<quint32> builtinMicIndex, headsetMicIndex;
@@ -197,13 +186,8 @@ void CallAudio::setMicMute(bool muted)
 
     if (m_callStatus == CallEnded)
         return;
-    const auto sources = PulseAudioQt::Context::instance()->sources();
-    quint32 voiceCardIndex = PulseAudioQt::Context::instance()->cards().indexOf(m_voiceCallCard);
-    auto activeSource = std::find_if(sources.constBegin(), sources.constEnd(), [voiceCardIndex](PulseAudioQt::Source *source) {
-        return source->cardIndex() == voiceCardIndex;
-    });
-
-    PulseAudioQt::Source *activeCardSource = *activeSource;
+    const auto sources = m_voiceCallCard->sources();
+    PulseAudioQt::Source *activeCardSource = sources.first();
     if (m_micMuted) {
         m_prevVolume = activeCardSource->volume();
         activeCardSource->setVolume(0);
