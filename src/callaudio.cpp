@@ -55,11 +55,11 @@ void CallAudio::cardAdded(PulseAudioQt::Card *card)
     const auto ports = card->ports();
     for (const auto port : ports) {
         qDebug() << "Found card port " << port->name();
-        builtinMic |= port->name().contains(QStringLiteral("DigitalMic"));
-        headsetMic |= port->name().contains(QStringLiteral("HeadsetMic"));
-        outputSpeaker |= port->name().contains(QStringLiteral("Speaker"));
-        outputEarpiece |= port->name().contains(QStringLiteral("Earpiece"));
-        outputHeadPhone |= port->name().contains(QStringLiteral("Headphone"));
+        builtinMic |= port->type() == PulseAudioQt::Port::Mic;
+        headsetMic |= port->type() == PulseAudioQt::Port::Headset;
+        outputSpeaker |= port->type() == PulseAudioQt::Port::Speaker;
+        outputEarpiece |= port->type() == PulseAudioQt::Port::Earpiece;
+        outputHeadPhone |= port->type() == PulseAudioQt::Port::Headphones;
     }
 
     if (!builtinMic) {
@@ -116,10 +116,10 @@ void CallAudio::setCallMode(CallStatus callStatus, AudioMode audioMode)
     std::optional<quint32> builtinMicIndex, headsetMicIndex;
     const auto sourcePorts = activeCardSource->ports();
     for (const auto port : sourcePorts) {
-        if (port->name().contains(QStringLiteral("DigitalMic"))) {
+        if (port->type() == PulseAudioQt::Port::Mic) {
             builtinMicIndex = sourcePorts.indexOf(port);
         }
-        if (port->name().contains(QStringLiteral("HeadsetMic"))) {
+        if (port->type() == PulseAudioQt::Port::Headset) {
             headsetMicIndex = sourcePorts.indexOf(port);
         }
     }
@@ -127,13 +127,13 @@ void CallAudio::setCallMode(CallStatus callStatus, AudioMode audioMode)
     std::optional<quint32> outputSpeakerIndex, outputEarpieceIndex, outputHeadPhoneIndex;
     const auto sinkPorts = activeCardSink->ports();
     for (const auto port : sinkPorts) {
-        if (port->name().contains(QStringLiteral("Speaker"))) {
+        if (port->type() == PulseAudioQt::Port::Speaker) {
             outputSpeakerIndex = sinkPorts.indexOf(port);
         }
-        if (port->name().contains(QStringLiteral("Earpiece"))) {
+        if (port->type() == PulseAudioQt::Port::Earpiece) {
             outputEarpieceIndex = sinkPorts.indexOf(port);
         }
-        if (port->name().contains(QStringLiteral("Headphone"))) {
+        if (port->type() == PulseAudioQt::Port::Headphones) {
             outputHeadPhoneIndex = sinkPorts.indexOf(port);
         }
     }
