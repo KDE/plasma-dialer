@@ -204,7 +204,6 @@ void CallAudio::setMicMute(bool muted)
     });
 
     PulseAudioQt::Source *activeCardSource = *activeSource;
-    activeCardSource->setVolume(0);
     if (m_micMuted) {
         m_prevVolume = activeCardSource->volume();
         activeCardSource->setVolume(0);
