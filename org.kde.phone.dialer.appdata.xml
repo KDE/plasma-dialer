@@ -9,6 +9,7 @@ SPDX-License-Identifier: CC0-1.0
   <name xml:lang="az">Telefon</name>
   <name xml:lang="ca">Telèfon</name>
   <name xml:lang="ca-valencia">Telèfon</name>
+  <name xml:lang="de">Telefon</name>
   <name xml:lang="fi">Phone</name>
   <name xml:lang="it">Telefono</name>
   <name xml:lang="ko">전화</name>
@@ -24,6 +25,7 @@ SPDX-License-Identifier: CC0-1.0
   <summary xml:lang="az">Zəng etmək və zəngləri qəbul etmək</summary>
   <summary xml:lang="ca">Envia i rep trucades de telèfon</summary>
   <summary xml:lang="ca-valencia">Envia i rep trucades de telèfon</summary>
+  <summary xml:lang="de">Senden und Empfangen von Telefonanrufen</summary>
   <summary xml:lang="fi">Soita ja vastaanota puheluja</summary>
   <summary xml:lang="it">Invia e riceve chiamate telefoniche</summary>
   <summary xml:lang="ko">전화 걸고 받기</summary>
@@ -41,6 +43,7 @@ SPDX-License-Identifier: CC0-1.0
   <developer_name xml:lang="az">KDE İcması</developer_name>
   <developer_name xml:lang="ca">La comunitat KDE</developer_name>
   <developer_name xml:lang="ca-valencia">La comunitat KDE</developer_name>
+  <developer_name xml:lang="de">KDE-Gemeinschaft</developer_name>
   <developer_name xml:lang="fi">KDE-yhteisö</developer_name>
   <developer_name xml:lang="it">Comunità KDE</developer_name>
   <developer_name xml:lang="ko">KDE 커뮤니티</developer_name>
@@ -77,6 +80,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="az">İmkanlar:</p>
     <p xml:lang="ca">Característiques:</p>
     <p xml:lang="ca-valencia">Característiques:</p>
+    <p xml:lang="de">Funktionen:</p>
     <p xml:lang="fi">Ominaisuuksia:</p>
     <p xml:lang="it">Funzionalità:</p>
     <p xml:lang="ko">기능:</p>
