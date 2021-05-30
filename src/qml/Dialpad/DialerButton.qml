@@ -65,6 +65,7 @@ Item {
             horizontalAlignment: Text.AlignHCenter
 
             Kirigami.Icon {
+                anchors.horizontalCenter: parent.horizontalCenter
                 source: "call-voicemail"
                 visible: root.voicemail
                 width: Kirigami.Units.iconSizes.small
