@@ -16,6 +16,7 @@ SPDX-License-Identifier: CC0-1.0
   <name xml:lang="nl">Telefoon</name>
   <name xml:lang="pt">Telefone</name>
   <name xml:lang="pt-BR">Celular</name>
+  <name xml:lang="sk">Telefón</name>
   <name xml:lang="sl">Phone</name>
   <name xml:lang="sv">Telefon</name>
   <name xml:lang="uk">Телефон</name>
@@ -50,6 +51,7 @@ SPDX-License-Identifier: CC0-1.0
   <developer_name xml:lang="nl">KDE-gemeenschap</developer_name>
   <developer_name xml:lang="pt">Comunidade do KDE</developer_name>
   <developer_name xml:lang="pt-BR">Comunidade KDE</developer_name>
+  <developer_name xml:lang="sk">KDE komunita</developer_name>
   <developer_name xml:lang="sl">Skupnost KDE</developer_name>
   <developer_name xml:lang="sv">KDE-gemenskapen</developer_name>
   <developer_name xml:lang="uk">Спільнота KDE</developer_name>
@@ -87,6 +89,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="nl">Mogelijkheden:</p>
     <p xml:lang="pt">Funcionalidades:</p>
     <p xml:lang="pt-BR">Funcionalidades:</p>
+    <p xml:lang="sk">Funkcie:</p>
     <p xml:lang="sl">Možnosti:</p>
     <p xml:lang="sv">Funktioner:</p>
     <p xml:lang="uk">Можливості:</p>
