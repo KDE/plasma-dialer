@@ -54,6 +54,7 @@ Item {
             opacity: special ? 0.4 : 1.0
             Layout.minimumWidth: parent.width
             horizontalAlignment: Text.AlignHCenter
+            font.weight: Font.Light
         }
 
         Controls.Label {
