@@ -61,17 +61,26 @@ Kirigami.Page {
         anchors.fill: parent
         spacing: 0
 
-        QQC2.Label {
-            id: statusLabel
-
-            horizontalAlignment: Qt.AlignHCenter
-            verticalAlignment: Qt.AlignVCenter
-            Layout.fillWidth: true
+        QQC2.ScrollView {
+            id: scrollView
+            contentWidth: -1 // no horizontal scrolling necessary
+            Layout.minimumWidth: dialer.width
+            Layout.maximumWidth: dialer.width
             Layout.preferredHeight: applicationWindow().smallMode ? implicitHeight : parent.height * 0.3
-            font.pixelSize: applicationWindow().smallMode ? Kirigami.Units.gridUnit * 1.6 : Kirigami.Units.gridUnit * 2.3
-            font.weight: Font.Light
+            
+            QQC2.Label {
+                id: statusLabel
 
-            text: DialerUtils.formatNumber(dialPad.number)
+                horizontalAlignment: Qt.AlignHCenter
+                verticalAlignment: implicitHeight > scrollView.height ? Qt.AlignTop : Qt.AlignVCenter
+                width: dialer.width
+                height: scrollView.height
+                font.pixelSize: applicationWindow().smallMode ? Kirigami.Units.gridUnit * 1.6 : Kirigami.Units.gridUnit * 2.3
+                font.weight: Font.Light
+                wrapMode: QQC2.Label.WrapAnywhere
+
+                text: DialerUtils.formatNumber(dialPad.number)
+            }
         }
 
         Kirigami.Separator {
