@@ -93,6 +93,11 @@ void CallAudio::setCallMode(CallStatus callStatus, AudioMode audioMode)
     m_callStatus = callStatus;
     m_audioMode = audioMode;
 
+    if (!m_voiceCallCard) {
+        qWarning() << "Skipping audio setup because no voice compatible card found";
+        return;
+    }
+
     // now if we have a active call then switch profile to the VoiceCall profile
     quint32 voiceCardIndex = PulseAudioQt::Context::instance()->cards().indexOf(m_voiceCallCard);
     if ((m_callStatus == CallActive) && (prevStatus != CallActive) && m_voiceCallCard && m_voiceCallProfile) {
