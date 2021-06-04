@@ -101,6 +101,7 @@ Kirigami.Page {
                 anchors.topMargin: Kirigami.Units.largeSpacing * 2
                 anchors.leftMargin: Kirigami.Units.largeSpacing * 3
                 anchors.rightMargin: Kirigami.Units.largeSpacing * 3
+                focus: true
             }
         }
     }

@@ -70,6 +70,7 @@ Kirigami.Page {
                     Layout.minimumWidth: topFlickable.width
                     Layout.minimumHeight: topFlickable.height
                     showBottomRow: false
+                    focus: true
                 }
             }
 

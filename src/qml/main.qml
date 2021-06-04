@@ -35,6 +35,7 @@ Kirigami.ApplicationWindow {
     function switchToPage(page, depth) {
         while (pageStack.depth > depth) pageStack.pop()
         pageStack.push(page)
+        page.forceActiveFocus()
     }
     
     footer: BottomToolbar {

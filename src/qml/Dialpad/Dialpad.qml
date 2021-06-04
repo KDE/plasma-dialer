@@ -5,7 +5,7 @@
  *   SPDX-License-Identifier: LGPL-2.0-or-later
  */
 
-import QtQuick 2.4
+import QtQuick 2.15
 import QtQuick.Layouts 1.2
 import QtQuick.Controls 2.2 as Controls
 
@@ -102,6 +102,20 @@ GridLayout {
     DialerButton { display: "＊"; text: "*"; special: true; onClicked: onPadNumberPressed(text); onHeld: onPadNumberPressed(text) }
     DialerButton { text: "0"; subdisplay: "＋"; sub: "+"; onClicked: onPadNumberPressed(text); onHeld: onPadNumberPressed("+") }
     DialerButton { display: "＃"; text: "#"; special: true; onClicked: onPadNumberPressed(text); onHeld: onPadNumberPressed(text) }
+
+    Keys.onPressed: {
+        if (event.key === Qt.Key_Backspace) {
+            pad.number = pad.number.slice(0, -1)
+        } else if (
+            (event.key === Qt.Key_Enter || event.key === Qt.Key_Return) &&
+            pad.showBottomRow &&
+            statusLabel.text.length > 0
+        ) {
+            onCallButtonPressed(statusLabel.text)
+        } else if (["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "*", "#", "+"].includes(event.text)) {
+            onPadNumberPressed(event.text)
+        }
+    }
 
     Item {
         visible: pad.showBottomRow
