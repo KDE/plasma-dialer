@@ -73,6 +73,7 @@ SPDX-License-Identifier: CC0-1.0
   <url type="donation">https://www.kde.org/community/donations/?app=plasmaphonedialer</url>
   <recommends>
     <control>touch</control>
+    <control>keyboard</control>
   </recommends>
   <description>
     <p>The Phone app lets you easily send and receive phone calls from your smartphone.</p>
