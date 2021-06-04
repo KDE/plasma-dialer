@@ -57,7 +57,7 @@ CallManager::CallManager(const Tp::CallChannelPtr &callChannel, DialerUtils *dia
     connect(d->dialerUtils, &DialerUtils::sendDtmf, this, &CallManager::onSendDtmfRequested);
     connect(d->dialerUtils, &DialerUtils::setSpeakerMode, this, &CallManager::onSetSpeakerModeRequested);
     connect(d->dialerUtils, &DialerUtils::setMute, this, &CallManager::onSetMuteRequested);
-    connect(d->callChannel.data(), &Tp::CallChannel::invalidated, this, [=]() {
+    connect(d->callChannel.data(), &Tp::CallChannel::invalidated, this, [=, this]() {
         qDebug() << "Channel invalidated";
         d->dialerUtils->setCallState(DialerUtils::CallState::Idle);
         d->dialerUtils->emitCallEnded();
@@ -138,7 +138,7 @@ void CallManager::onCallStateChanged(Tp::CallState state)
             }
         }
         d->callTimer = new QTimer(this);
-        connect(d->callTimer, &QTimer::timeout, d->callTimer, [=]() {
+        connect(d->callTimer, &QTimer::timeout, d->callTimer, [=, this]() {
             d->dialerUtils->setCallDuration(d->dialerUtils->callDuration() + 1);
         });
         d->callTimer->start(CALL_DURATION_UPDATE_DELAY);
@@ -209,7 +209,7 @@ void CallManager::onHangUpRequested()
     if (d->callChannel && d->callChannel->isValid()) {
         qDebug() << "Hanging up";
         Tp::PendingOperation *op = d->callChannel->hangup();
-        connect(op, &Tp::PendingOperation::finished, [=]() {
+        connect(op, &Tp::PendingOperation::finished, [=, this]() {
             if (op->isError()) {
                 qWarning() << "Unable to hang up:" << op->errorMessage();
             }

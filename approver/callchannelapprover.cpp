@@ -73,7 +73,7 @@ void CallChannelApprover::onChannelReady(Tp::PendingOperation *op)
                                                              QStringLiteral("wakeup"));
     QDBusConnection::sessionBus().call(wakeupCall);
 
-    connect(callChannel.data(), &Tp::CallChannel::callStateChanged, this, [=](Tp::CallState state) {
+    connect(callChannel.data(), &Tp::CallChannel::callStateChanged, this, [=, this](Tp::CallState state) {
         if (state == Tp::CallStateEnded) {
             m_ringingNotification->close();
         }
