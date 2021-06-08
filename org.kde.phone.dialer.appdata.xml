@@ -203,6 +203,22 @@ SPDX-License-Identifier: CC0-1.0
   </provides>
   <launchable type="desktop-id">org.kde.phone.dialer.desktop</launchable>
   <releases>
-    <release version="21.06" date="2021-06-10"/>
+    <release version="21.06" date="2021-06-10">
+      <description>
+        <p>Plasma Mobile Gear 21.06 release</p>
+        <ul>
+          <li>Show contact name and picture in call notifications</li>
+          <li>Show contact name and picture in active call view</li>
+          <li>Slightly improve performance by using Qt's own DelegateRecycler</li>
+          <li>Fix bug which prevented adding + by holding 0</li>
+          <li>Do not try to send 0 as DTMF tone</li>
+          <li>Allow muting microphone</li>
+          <li>Allow to put phone on speaker</li>
+          <li>Use light font for dialpad numbers, since they are sufficiently large in font size</li>
+          <li>Horizontally align voicemail icon</li>
+          <li>Properly handle overflow numbers (vertically so that it's easier to read)</li>
+        </ul>
+      </description>
+    </release>
   </releases>
 </component>
