@@ -219,6 +219,7 @@ SPDX-License-Identifier: CC0-1.0
           <li>Properly handle overflow numbers (vertically so that it's easier to read)</li>
         </ul>
       </description>
+      <url>https://www.plasma-mobile.org/2021/06/10/plasma-mobile-update-june/</url></release>
     </release>
   </releases>
 </component>
