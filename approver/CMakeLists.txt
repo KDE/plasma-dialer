@@ -8,6 +8,10 @@ add_executable(plasma-telepathy-approver
 
 target_include_directories(plasma-telepathy-approver PRIVATE ${CMAKE_BINARY_DIR})
 
+qt_add_dbus_interface(mpris_srcs org.mpris.MediaPlayer2.Player.xml mprisplayer)
+
+target_sources(plasma-telepathy-approver PRIVATE ${mpris_srcs})
+
 target_link_libraries(plasma-telepathy-approver
     Qt5::Core
     Qt5::Quick

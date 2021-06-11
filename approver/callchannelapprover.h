@@ -22,8 +22,12 @@ private slots:
     void onNotificationAction(unsigned int action);
 
 private:
+    void pauseMedia();
+    void unpauseMedia();
+
     QMap<Tp::PendingOperation *, Tp::ChannelPtr> m_Channels;
     KNotification *m_ringingNotification = nullptr;
+    QSet<QString> m_pausedSources;
 };
 
 #endif // CALLCHANNELAPPROVER_H

@@ -15,6 +15,7 @@
 #include <TelepathyQt/PendingReady>
 
 #include "contactmapper.h"
+#include "mprisplayer.h"
 
 CallChannelApprover::CallChannelApprover(const Tp::CallChannelPtr &channel, QObject *parent)
     : ChannelApprover(parent)
@@ -73,6 +74,8 @@ void CallChannelApprover::onChannelReady(Tp::PendingOperation *op)
                                                              QStringLiteral("wakeup"));
     QDBusConnection::sessionBus().call(wakeupCall);
 
+    pauseMedia();
+
     connect(callChannel.data(), &Tp::CallChannel::callStateChanged, this, [=, this](Tp::CallState state) {
         if (state == Tp::CallStateEnded) {
             m_ringingNotification->close();
@@ -80,6 +83,57 @@ void CallChannelApprover::onChannelReady(Tp::PendingOperation *op)
     });
     void (KNotification::*activation)(unsigned int) = &KNotification::activated;
     connect(m_ringingNotification, activation, this, &CallChannelApprover::onNotificationAction);
+}
+
+void CallChannelApprover::pauseMedia()
+{
+    const QStringList interfaces = QDBusConnection::sessionBus().interface()->registeredServiceNames().value();
+    for (const QString &iface : interfaces) {
+        if (iface.startsWith(QLatin1String("org.mpris.MediaPlayer2"))) {
+            if (iface.contains(QLatin1String("kdeconnect"))) {
+                // Skip players connected over KDE Connect. KDE Connect pauses them itself.
+                continue;
+            }
+
+            QDBusMessage mCall = QDBusMessage::createMethodCall(iface,
+                                                                QStringLiteral("/org/mpris/MediaPlayer2"),
+                                                                QStringLiteral("org.freedesktop.DBus.Properties"),
+                                                                QStringLiteral("Get"));
+            mCall.setArguments(QVariantList{QStringLiteral("org.mpris.MediaPlayer2.Player"), QStringLiteral("PlaybackStatus")});
+            QDBusPendingReply<QVariant> call = QDBusConnection::sessionBus().asyncCall(mCall);
+
+            QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(call, this);
+
+            connect(watcher, &QDBusPendingCallWatcher::finished, this, [this, iface](QDBusPendingCallWatcher *watcher) {
+                watcher->deleteLater();
+
+                const QDBusPendingReply<QVariant> reply = *watcher;
+
+                const QString status = reply.value().toString();
+                if (status == QLatin1String("Playing")) {
+                    OrgMprisMediaPlayer2PlayerInterface mprisInterface(iface, QStringLiteral("/org/mpris/MediaPlayer2"), QDBusConnection::sessionBus());
+
+                    if (!m_pausedSources.contains(iface)) {
+                        m_pausedSources.insert(iface);
+                        if (mprisInterface.canPause()) {
+                            mprisInterface.Pause();
+                        } else {
+                            mprisInterface.Stop();
+                        }
+                    }
+                }
+            });
+        }
+    }
+}
+
+void CallChannelApprover::unpauseMedia()
+{
+    for (const QString &iface : qAsConst(m_pausedSources)) {
+        OrgMprisMediaPlayer2PlayerInterface mprisInterface(iface, QStringLiteral("/org/mpris/MediaPlayer2"), QDBusConnection::sessionBus());
+        mprisInterface.Play();
+    }
+    m_pausedSources.clear();
 }
 
 void CallChannelApprover::onNotificationAction(unsigned int action)
@@ -92,6 +146,7 @@ void CallChannelApprover::onNotificationAction(unsigned int action)
     case 2:
         // call rejected
         emit channelRejected();
+        unpauseMedia();
         break;
     default:
         Q_UNREACHABLE();
