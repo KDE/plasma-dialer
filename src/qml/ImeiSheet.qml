@@ -27,7 +27,7 @@ Kirigami.OverlaySheet {
             Layout.fillWidth: true
             wrapMode: Text.WordWrap
             font.family: "monospace"
-            text: imeiSheet.imeis.join("\n")
+            text: imeis.length === 0 ? i18n("No IMEIs found") : imeis.join("\n")
         }
     }
 }
