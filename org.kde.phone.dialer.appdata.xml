@@ -11,6 +11,7 @@ SPDX-License-Identifier: CC0-1.0
   <name xml:lang="ca-valencia">Telèfon</name>
   <name xml:lang="cs">Telefon</name>
   <name xml:lang="de">Telefon</name>
+  <name xml:lang="en-GB">Phone</name>
   <name xml:lang="es">Teléfono</name>
   <name xml:lang="fi">Phone</name>
   <name xml:lang="fr">Phone</name>
@@ -32,6 +33,7 @@ SPDX-License-Identifier: CC0-1.0
   <summary xml:lang="ca-valencia">Envia i rep trucades de telèfon</summary>
   <summary xml:lang="cs">Začínejte a přijímejte telefonní hovory</summary>
   <summary xml:lang="de">Senden und Empfangen von Telefonanrufen</summary>
+  <summary xml:lang="en-GB">Send and receive phone calls</summary>
   <summary xml:lang="es">Enviar y recibir llamadas de teléfono</summary>
   <summary xml:lang="fi">Soita ja vastaanota puheluja</summary>
   <summary xml:lang="fr">Réaliser et recevoir des appels téléphoniques</summary>
@@ -54,6 +56,7 @@ SPDX-License-Identifier: CC0-1.0
   <developer_name xml:lang="ca-valencia">La comunitat KDE</developer_name>
   <developer_name xml:lang="cs">Komunita KDE</developer_name>
   <developer_name xml:lang="de">KDE-Gemeinschaft</developer_name>
+  <developer_name xml:lang="en-GB">KDE Community</developer_name>
   <developer_name xml:lang="es">La comunidad de KDE</developer_name>
   <developer_name xml:lang="fi">KDE-yhteisö</developer_name>
   <developer_name xml:lang="fr">Communauté de KDE</developer_name>
@@ -80,6 +83,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="az">Telefon, smartfonunuzdan asanlıqla zəng etməyə və zəngləri qəbul etməyə imkan verir.</p>
     <p xml:lang="ca">L'aplicació Telèfon permet enviar i rebre fàcilment trucades de telèfon en el vostre telèfon intel·ligent.</p>
     <p xml:lang="ca-valencia">L'aplicació Telèfon permet enviar i rebre fàcilment trucades de telèfon en el vostre telèfon intel·ligent.</p>
+    <p xml:lang="en-GB">The Phone app lets you easily send and receive phone calls from your smartphone.</p>
     <p xml:lang="es">La aplicación de teléfono le permite enviar y recibir llamadas de teléfono de manera fácil desde su teléfono móvil.</p>
     <p xml:lang="fi">Phone-sovelluksella voit helposti soittaa ja vastaanottaa puheluja älypuhelimessasi.</p>
     <p xml:lang="fr">L'application Phone vous permet facilement de réaliser et recevoir des appels téléphoniques à partir de votre téléphone portable.</p>
@@ -100,6 +104,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="ca-valencia">Característiques:</p>
     <p xml:lang="cs">Vlastnosti:</p>
     <p xml:lang="de">Funktionen:</p>
+    <p xml:lang="en-GB">Features:</p>
     <p xml:lang="es">Características:</p>
     <p xml:lang="fi">Ominaisuuksia:</p>
     <p xml:lang="fr">Fonctionnalités :</p>
@@ -120,6 +125,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="az">Zəng tarixçəsinə baxın və həmin nömrəyə asanlıqla yenidən zəng edin</li>
       <li xml:lang="ca">Vegeu l'historial de trucades i torneu a trucar al mateix número amb facilitat</li>
       <li xml:lang="ca-valencia">Vegeu l'historial de trucades i torneu a trucar al mateix número amb facilitat</li>
+      <li xml:lang="en-GB">See your call history and easily call the same number again</li>
       <li xml:lang="es">Vea su histórico de llamadas y llame fácilmente de nuevo a un número</li>
       <li xml:lang="fi">Tarkastele puheluhistoriaasi ja soita helposti uudelleen samaan numeroon</li>
       <li xml:lang="fr">Consulter l'historique de vos appels et rappeler facilement le même numéro.</li>
@@ -138,6 +144,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="az">Telefon nömrəsini saxladığınız şəxslər siyahısını idarə edin</li>
       <li xml:lang="ca">Gestioneu els contactes que tenen un número de telèfon establert</li>
       <li xml:lang="ca-valencia">Gestioneu els contactes que tenen un número de telèfon establit</li>
+      <li xml:lang="en-GB">Manage your contacts that have a phone number set</li>
       <li xml:lang="es">Administre contactos que tengan un conjunto de números de teléfono</li>
       <li xml:lang="fi">Hallitse yhteystietojasi, joiden puhelinnumero on asetettu</li>
       <li xml:lang="fr">Gérer vos contacts ayant un numéro de téléphone saisi.</li>
@@ -162,6 +169,7 @@ SPDX-License-Identifier: CC0-1.0
       <caption xml:lang="az">Nömrə yığma səhifəsi</caption>
       <caption xml:lang="ca">La pàgina del marcador</caption>
       <caption xml:lang="ca-valencia">La pàgina del marcador</caption>
+      <caption xml:lang="en-GB">The dialer page</caption>
       <caption xml:lang="es">La página del marcador</caption>
       <caption xml:lang="fi">Näppäimistösivu</caption>
       <caption xml:lang="fr">La page du numéroteur.</caption>
@@ -183,6 +191,7 @@ SPDX-License-Identifier: CC0-1.0
       <caption xml:lang="az">Səsli poçt nömrəsinə zəng edin</caption>
       <caption xml:lang="ca">Trucada a la bústia de veu</caption>
       <caption xml:lang="ca-valencia">Trucada a la bústia de veu</caption>
+      <caption xml:lang="en-GB">Calling voicemail</caption>
       <caption xml:lang="es">Llamando al buzón de voz</caption>
       <caption xml:lang="fi">Soitetaan vastaajaan</caption>
       <caption xml:lang="fr">Appel de la messagerie vocale</caption>
