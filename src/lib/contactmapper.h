@@ -7,6 +7,8 @@
 #include <KPeople/PersonsModel>
 #include <QObject>
 
+#include <qofononetworkregistration.h>
+
 #include <optional>
 
 class ContactMapper : public QObject
@@ -24,7 +26,7 @@ public:
      */
     QString uriForNumber(const QString &phoneNumber) const;
 
-    static ContactMapper &instance();
+    static ContactMapper &instance(bool testMode = false);
 
 signals:
     /**
@@ -38,10 +40,12 @@ private slots:
     void processRows(const int first, const int last);
 
 private:
-    explicit ContactMapper();
-    [[nodiscard]] std::optional<std::string> normalizeNumber(const std::string &numberString) const;
+    explicit ContactMapper(bool testMode);
+    [[nodiscard]] std::optional<std::string> normalizeNumber(const std::string &numberString, const std::string &country) const;
 
     KPeople::PersonsModel *m_model;
     std::unordered_map<std::string, QString> m_numberToUri;
-    std::string m_country;
+    std::string m_cellCountry;
+    std::string m_localeCountry;
+    std::unique_ptr<QOfonoNetworkRegistration> m_networkRegistration;
 };

@@ -18,6 +18,7 @@
 #include <TelepathyQt/PendingReady>
 #include <TelepathyQt/Types>
 
+#include "contactmapper.h"
 #include "phoneapprover.h"
 #include "version.h"
 
@@ -47,5 +48,8 @@ int main(int argc, char **argv)
     Tp::ClientRegistrarPtr m_registrar;
     m_registrar = Tp::ClientRegistrar::create(accountFactory, connectionFactory, channelFactory, contactFactory);
     m_registrar->registerClient(Tp::SharedPtr<PhoneApprover>(new PhoneApprover()), QStringLiteral("Plasma.Approver"));
+
+    ContactMapper::instance(); // Ensure the mapper starts initializing
+
     return app.exec();
 }

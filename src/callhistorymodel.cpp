@@ -19,6 +19,10 @@ CallHistoryModel::CallHistoryModel(QObject *parent)
     beginResetModel();
     m_calls = m_database.fetchCalls();
     endResetModel();
+
+    connect(&ContactMapper::instance(), &ContactMapper::contactsChanged, this, [this] {
+        Q_EMIT dataChanged(index(0, 0), index(rowCount() - 1), {DisplayNameRole, PhotoRole});
+    });
 }
 
 void CallHistoryModel::addCall(const QString &number, int duration, DialerUtils::CallType type)
