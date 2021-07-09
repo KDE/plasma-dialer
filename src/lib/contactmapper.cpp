@@ -37,7 +37,7 @@ ContactMapper::ContactMapper()
     processRows(0, m_model->rowCount() - 1);
 }
 
-std::string ContactMapper::normalizeNumber(const std::string &numberString) const
+std::optional<std::string> ContactMapper::normalizeNumber(const std::string &numberString) const
 {
     PhoneNumber phoneNumber;
     auto error = PhoneNumberUtil::GetInstance()->Parse(numberString, m_country, &phoneNumber);
@@ -69,9 +69,12 @@ void ContactMapper::processRows(const int first, const int last)
         const auto personUri = m_model->data(index, KPeople::PersonsModel::PersonUriRole).toString();
 
         for (const QString &numberString : phoneNumbers) {
-            const std::string normalizedNumber = normalizeNumber(numberString.toStdString());
-            m_numberToUri[normalizedNumber] = personUri;
-            affectedNumbers.append(QString::fromStdString(normalizedNumber));
+            const std::optional<std::string> maybeNormalizedNumber = normalizeNumber(numberString.toStdString());
+
+            if (maybeNormalizedNumber) {
+                m_numberToUri[*maybeNormalizedNumber] = personUri;
+                affectedNumbers.append(QString::fromStdString(*maybeNormalizedNumber));
+            }
         }
     }
 
@@ -80,9 +83,14 @@ void ContactMapper::processRows(const int first, const int last)
 
 QString ContactMapper::uriForNumber(const QString &phoneNumber) const
 {
-    const std::string normalizedNumber = normalizeNumber(phoneNumber.toStdString());
-    if (m_numberToUri.contains(normalizedNumber)) {
-        return m_numberToUri.at(normalizedNumber);
+    const std::optional<std::string> maybeNormalizedNumber = normalizeNumber(phoneNumber.toStdString());
+
+    if (!maybeNormalizedNumber) {
+        return QString();
+    }
+
+    if (m_numberToUri.contains(*maybeNormalizedNumber)) {
+        return m_numberToUri.at(*maybeNormalizedNumber);
     }
     return QString();
 }

@@ -7,6 +7,8 @@
 #include <KPeople/PersonsModel>
 #include <QObject>
 
+#include <optional>
+
 class ContactMapper : public QObject
 {
     Q_OBJECT
@@ -37,7 +39,7 @@ private slots:
 
 private:
     explicit ContactMapper();
-    [[nodiscard]] std::string normalizeNumber(const std::string &numberString) const;
+    [[nodiscard]] std::optional<std::string> normalizeNumber(const std::string &numberString) const;
 
     KPeople::PersonsModel *m_model;
     std::unordered_map<std::string, QString> m_numberToUri;
