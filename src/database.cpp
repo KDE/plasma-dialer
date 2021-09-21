@@ -43,7 +43,7 @@ QVector<CallData> Database::fetchCalls()
         CallData call;
         call.id = fetchCalls.value(0).toString();
         call.number = fetchCalls.value(1).toString();
-        call.time = QDateTime::fromMSecsSinceEpoch(fetchCalls.value(2).toInt());
+        call.time = QDateTime::fromMSecsSinceEpoch(fetchCalls.value(2).toLongLong());
         call.duration = fetchCalls.value(3).toInt();
         call.callType = fetchCalls.value(4).value<DialerUtils::CallType>();
 
