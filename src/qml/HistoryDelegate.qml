@@ -44,7 +44,7 @@ Kirigami.AbstractListItem {
             Layout.fillWidth: true
             Controls.Label {
                 Layout.alignment: Qt.AlignRight
-                text: Qt.formatTime(model.time, Qt.locale().timeFormat(Locale.ShortFormat));
+                text: Qt.formatDateTime(model.time, Qt.locale().dateTimeFormat(Locale.ShortFormat));
             }
             Controls.Label {
                 Layout.alignment: Qt.AlignRight
