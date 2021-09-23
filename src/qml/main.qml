@@ -7,7 +7,7 @@ import QtQuick.Controls 2.3
 import QtQuick.Layouts 1.1
 import QtQuick.LocalStorage 2.0
 
-import org.kde.kirigami 2.13 as Kirigami
+import org.kde.kirigami 2.19 as Kirigami
 
 import org.kde.phone.dialer 1.0
 import "Call"
@@ -38,8 +38,43 @@ Kirigami.ApplicationWindow {
         page.forceActiveFocus()
     }
     
-    footer: BottomToolbar {
+    footer: Kirigami.NavigationTabBar {
         visible: root.pageStack.layers.depth < 2
+        actions: [
+            Kirigami.Action {
+                iconName: "clock"
+                text: i18n("History")
+                property bool opened: historyPage === root.pageStack.currentItem
+                checked: opened
+                onTriggered: {
+                    if (!opened) {
+                        root.switchToPage(historyPage, 0);
+                    }
+                }
+            },
+            Kirigami.Action {
+                iconName: "clock"
+                text: i18n("view-pim-contacts")
+                property bool opened: contactsPage === root.pageStack.currentItem
+                checked: opened
+                onTriggered: {
+                    if (!opened) {
+                        root.switchToPage(contactsPage, 0);
+                    }
+                }
+            },
+            Kirigami.Action {
+                iconName: "call-start"
+                text: i18n("Dialer")
+                property bool opened: dialerPage === appwindow.pageStack.currentItem
+                checked: opened
+                onTriggered: {
+                    if (!opened) {
+                        root.switchToPage(dialerPage, 0);
+                    }
+                }
+            }
+        ]
     }
     
     HistoryPage {
