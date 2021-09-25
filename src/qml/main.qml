@@ -54,7 +54,7 @@ Kirigami.ApplicationWindow {
             },
             Kirigami.Action {
                 iconName: "clock"
-                text: i18n("view-pim-contacts")
+                text: i18n("Contacts")
                 property bool opened: contactsPage === root.pageStack.currentItem
                 checked: opened
                 onTriggered: {
