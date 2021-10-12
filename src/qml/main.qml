@@ -15,6 +15,7 @@ import "Call"
 Kirigami.ApplicationWindow {
     wideScreen: false
     id: root
+    pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.ToolBar
 
     title: i18n("Phone")
     
