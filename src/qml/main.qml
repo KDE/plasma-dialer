@@ -44,7 +44,7 @@ Kirigami.ApplicationWindow {
             Kirigami.Action {
                 iconName: "clock"
                 text: i18n("History")
-                property bool opened: historyPage === root.pageStack.currentItem
+                property bool opened: historyPage.visible
                 checked: opened
                 onTriggered: {
                     if (!opened) {
@@ -55,7 +55,7 @@ Kirigami.ApplicationWindow {
             Kirigami.Action {
                 iconName: "view-pim-contacts"
                 text: i18n("Contacts")
-                property bool opened: contactsPage === root.pageStack.currentItem
+                property bool opened: contactsPage.visible
                 checked: opened
                 onTriggered: {
                     if (!opened) {
@@ -66,7 +66,7 @@ Kirigami.ApplicationWindow {
             Kirigami.Action {
                 iconName: "call-start"
                 text: i18n("Dialer")
-                property bool opened: dialerPage === appwindow.pageStack.currentItem
+                property bool opened: dialerPage.visible
                 checked: opened
                 onTriggered: {
                     if (!opened) {
