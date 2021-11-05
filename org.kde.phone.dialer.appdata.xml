@@ -17,6 +17,7 @@ SPDX-License-Identifier: CC0-1.0
   <name xml:lang="fi">Phone</name>
   <name xml:lang="fr">Phone</name>
   <name xml:lang="hu">Telefon</name>
+  <name xml:lang="ia">Telephono</name>
   <name xml:lang="it">Telefono</name>
   <name xml:lang="ko">전화</name>
   <name xml:lang="nl">Telefoon</name>
@@ -42,6 +43,7 @@ SPDX-License-Identifier: CC0-1.0
   <summary xml:lang="fi">Soita ja vastaanota puheluja</summary>
   <summary xml:lang="fr">Réaliser et recevoir des appels téléphoniques</summary>
   <summary xml:lang="hu">Telefonhívások indítása és fogadása</summary>
+  <summary xml:lang="ia">Invia e recipe telephonatas</summary>
   <summary xml:lang="it">Invia e riceve chiamate telefoniche</summary>
   <summary xml:lang="ko">전화 걸고 받기</summary>
   <summary xml:lang="nl">Telefoonoproepen verzenden en ontvangen</summary>
@@ -68,6 +70,7 @@ SPDX-License-Identifier: CC0-1.0
   <developer_name xml:lang="fi">KDE-yhteisö</developer_name>
   <developer_name xml:lang="fr">Communauté de KDE</developer_name>
   <developer_name xml:lang="hu">A KDE Közösség</developer_name>
+  <developer_name xml:lang="ia">Communitate de KDE</developer_name>
   <developer_name xml:lang="it">Comunità KDE</developer_name>
   <developer_name xml:lang="ko">KDE 커뮤니티</developer_name>
   <developer_name xml:lang="nl">KDE-gemeenschap</developer_name>
@@ -122,6 +125,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="fi">Ominaisuuksia:</p>
     <p xml:lang="fr">Fonctionnalités :</p>
     <p xml:lang="hu">Szolgáltatások:</p>
+    <p xml:lang="ia">Characteristicas:</p>
     <p xml:lang="it">Funzionalità:</p>
     <p xml:lang="ko">기능:</p>
     <p xml:lang="nl">Mogelijkheden:</p>
