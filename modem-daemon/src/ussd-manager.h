@@ -2,13 +2,12 @@
 //
 // SPDX-License-Identifier: LicenseRef-KDE-Accepted-GPL
 
-#ifndef USSD_MANAGER_H
-#define USSD_MANAGER_H
+#pragma once
 
 #include <QObject>
-#include <TelepathyQt/Connection>
 
-class DialerUtils;
+class ModemController;
+class UssdUtils;
 
 class UssdManager : public QObject
 {
@@ -18,27 +17,25 @@ class UssdManager : public QObject
     Q_PROPERTY(QString state READ state NOTIFY stateChanged)
 
 public:
-    explicit UssdManager(const Tp::ConnectionPtr &connection, DialerUtils *dialerUtils, QObject *parent = nullptr);
-    ~UssdManager() override;
+    explicit UssdManager(ModemController *modemController, UssdUtils *ussdUtils, QObject *parent = nullptr);
 
     bool active() const;
     QString state() const;
 
 private Q_SLOTS:
-    void onInitiated(const QString &command);
-    void onInitiateComplete(const QString &command);
-    void onResponded(const QString &reply);
-    void onCanceled();
+    void onInitiated(const QString &deviceUni, const QString &command);
+    void onInitiateComplete(const QString &deviceUni, const QString &command);
+    void onResponded(const QString &deviceUni, const QString &reply);
+    void onCanceled(const QString &deviceUni);
 
-    void onStateChanged(const QString &state);
+    void onStateChanged(const QString &deviceUni, const QString &state);
 
 Q_SIGNALS:
-    void activeChanged();
-    void stateChanged(const QString &state);
+    void activeChanged(const QString &deviceUni);
+    void stateChanged(const QString &deviceUni, const QString &state);
 
 private:
-    struct Private;
-    Private *const d;
+    UssdUtils *_ussdUtils;
+    ModemController *_modemController;
+    QString _state;
 };
-
-#endif // USSD_MANAGER_H
