@@ -1,0 +1,6 @@
+[Desktop Entry]
+Comment=Service required for telephony dialer
+Name=Modem Daemon Service
+Type=Service
+Icon=dialer
+Exec=@CMAKE_INSTALL_FULL_LIBEXECDIR@/modem-daemon
