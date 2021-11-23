@@ -6,8 +6,8 @@
 
 #include <QTemporaryFile>
 
-#include "contactmapper.h"
-#include "fakecontactsource.h"
+#include "contact-phone-number-mapper.h"
+#include "fake-contact-source.h"
 
 #include <KPeople/PersonPluginManager>
 #include <kpeopleprivate/personmanager_p.h>
@@ -18,16 +18,16 @@ class ContactMapperTest : public QObject
 private Q_SLOTS:
     void initTestCase()
     {
-        QVERIFY(m_database.open());
+        QVERIFY(_database.open());
 
         // For this test we assume we are in Sweden and the implicit country code is +46
         QLocale::setDefault(QLocale::Swedish);
 
         // Called before the first testfunction is executed
-        PersonManager::instance(m_database.fileName());
-        m_source = new FakeContactSource(nullptr); // don't own. PersonPluginManager removes it on destruction
+        PersonManager::instance(_database.fileName());
+        _source = new FakeContactSource(nullptr); // don't own. PersonPluginManager removes it on destruction
         QHash<QString, KPeople::BasePersonsDataSource *> sources;
-        sources[QStringLiteral("fakesource")] = m_source;
+        sources[QStringLiteral("fakesource")] = _source;
         KPeople::PersonPluginManager::setDataSourcePlugins(sources);
     }
 
@@ -54,7 +54,7 @@ private Q_SLOTS:
 
     void testURI()
     {
-        auto &mapper = ContactMapper::instance(true);
+        auto &mapper = ContactPhoneNumberMapper::instance();
 
         QFETCH(QString, number);
         QFETCH(QString, uri);
@@ -63,10 +63,10 @@ private Q_SLOTS:
     }
 
 private:
-    FakeContactSource *m_source;
-    QTemporaryFile m_database;
+    FakeContactSource *_source;
+    QTemporaryFile _database;
 };
 
 QTEST_GUILESS_MAIN(ContactMapperTest)
 
-#include "contactmappertest.moc"
+#include "contact-mapper-test.moc"

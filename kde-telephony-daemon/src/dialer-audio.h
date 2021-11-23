@@ -1,11 +1,9 @@
-/*
-    SPDX-FileCopyrightText: 2021 Bhushan Shah <bshah@kde.org>
+// SPDX-FileCopyrightText: 2021 Bhushan Shah <bshah@kde.org>
+// SPDX-FileCopyrightText: 2021 Alexey Andreyev <aa13q@ya.ru>
+//
+// SPDX-License-Identifier: GPL-2.0-or-later
 
-    SPDX-License-Identifier: GPL-2.0-or-later
-*/
-
-#ifndef CALLAUDIO_H
-#define CALLAUDIO_H
+#pragma once
 
 #include <PulseAudioQt/Card>
 #include <PulseAudioQt/Context>
@@ -30,13 +28,13 @@ enum CallStatus { CallRinging, CallActive, CallEnded };
 
 Q_DECLARE_METATYPE(CallStatus)
 
-class CallAudio : public QObject
+class DialerAudio : public QObject
 {
     Q_OBJECT
 public:
-    explicit CallAudio(QObject *parent = nullptr);
-    ~CallAudio() override;
-    static CallAudio *instance();
+    explicit DialerAudio(QObject *parent = nullptr);
+    ~DialerAudio() override;
+    static DialerAudio *instance();
 
     void setCallMode(CallStatus callstatus, AudioMode audiomode);
     void setMicMute(bool muted);
@@ -46,14 +44,12 @@ private:
 
     void savePulseState();
 
-    PulseAudioQt::Card *m_voiceCallCard = nullptr;
-    PulseAudioQt::Profile *m_voiceCallProfile = nullptr;
-    PulseAudioQt::Profile *m_previousProfile = nullptr;
+    PulseAudioQt::Card *_voiceCallCard = nullptr;
+    PulseAudioQt::Profile *_voiceCallProfile = nullptr;
+    PulseAudioQt::Profile *_previousProfile = nullptr;
 
-    CallStatus m_callStatus = CallEnded;
-    AudioMode m_audioMode = AudioModeWiredOrSpeaker;
-    bool m_micMuted = false;
-    quint64 m_prevVolume;
+    CallStatus _callStatus = CallEnded;
+    AudioMode _audioMode = AudioModeWiredOrSpeaker;
+    bool _micMuted = false;
+    quint64 _prevVolume;
 };
-
-#endif

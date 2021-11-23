@@ -1,10 +1,8 @@
-/*
-    SPDX-FileCopyrightText: 2013 David Edmundson <davidedmundson@kde.org>
+// SPDX-FileCopyrightText: 2013 David Edmundson <davidedmundson@kde.org>
+//
+// SPDX-License-Identifier: LGPL-2.1-or-later
 
-    SPDX-License-Identifier: LGPL-2.1-or-later
-*/
-
-#include "fakecontactsource.h"
+#include "fake-contact-source.h"
 
 #include <QDebug>
 
@@ -37,36 +35,36 @@ class FakeContact : public KPeople::AbstractContact
 {
 public:
     FakeContact(const QVariantMap &props)
-        : m_properties(props)
+        : _properties(props)
     {
     }
 
     QVariant customProperty(const QString &key) const override
     {
         if (key == KPeople::AbstractContact::AllPhoneNumbersProperty) {
-            const QStringList allNumbers = m_properties[KPeople::AbstractContact::AllPhoneNumbersProperty].toStringList();
+            const QStringList allNumbers = _properties[KPeople::AbstractContact::AllPhoneNumbersProperty].toStringList();
 
             if (allNumbers.isEmpty()) {
-                return m_properties[KPeople::AbstractContact::PhoneNumberProperty];
+                return _properties[KPeople::AbstractContact::PhoneNumberProperty];
             }
 
-            return m_properties[KPeople::AbstractContact::AllPhoneNumbersProperty];
+            return _properties[KPeople::AbstractContact::AllPhoneNumbersProperty];
         }
 
         if (key.startsWith(QLatin1String("all-"))) {
-            return QStringList(m_properties[key.mid(4)].toString());
+            return QStringList(_properties[key.mid(4)].toString());
         } else {
-            return m_properties[key];
+            return _properties[key];
         }
     }
 
-    QVariantMap m_properties;
+    QVariantMap _properties;
 };
 
 FakeAllContactsMonitor::FakeAllContactsMonitor()
 {
     // clang-format off
-    m_contacts.insert(
+    _contacts.insert(
         QStringLiteral("fakesource://contact1"),
         KPeople::AbstractContact::Ptr(new FakeContact({
             {KPeople::AbstractContact::NameProperty, QStringLiteral("Contact 1")},
@@ -74,7 +72,7 @@ FakeAllContactsMonitor::FakeAllContactsMonitor()
         }))
     );
 
-    m_contacts.insert(
+    _contacts.insert(
         QStringLiteral("fakesource://contact2"),
         KPeople::AbstractContact::Ptr(new FakeContact({
             {KPeople::AbstractContact::NameProperty, QStringLiteral("Contact 2")},
@@ -83,7 +81,7 @@ FakeAllContactsMonitor::FakeAllContactsMonitor()
         }))
     );
 
-    m_contacts.insert(
+    _contacts.insert(
         QStringLiteral("fakesource://contact3"),
         KPeople::AbstractContact::Ptr(new FakeContact({{KPeople::AbstractContact::NameProperty, QStringLiteral("Contact 3")},
             {KPeople::AbstractContact::EmailProperty, QStringLiteral("contact3@example.com")},
@@ -91,7 +89,7 @@ FakeAllContactsMonitor::FakeAllContactsMonitor()
         }))
     );
 
-    m_contacts.insert(
+    _contacts.insert(
         QStringLiteral("fakesource://contact4"),
         KPeople::AbstractContact::Ptr(new FakeContact({
             {KPeople::AbstractContact::NameProperty, QStringLiteral("Contact 4")},
@@ -100,7 +98,7 @@ FakeAllContactsMonitor::FakeAllContactsMonitor()
         }))
     );
 
-    m_contacts.insert(
+    _contacts.insert(
         QStringLiteral("fakesource://contact5"),
         KPeople::AbstractContact::Ptr(new FakeContact({
             {KPeople::AbstractContact::NameProperty, QStringLiteral("Contact 5")},
@@ -108,7 +106,7 @@ FakeAllContactsMonitor::FakeAllContactsMonitor()
         }))
     );
 
-    m_contacts.insert(
+    _contacts.insert(
         QStringLiteral("fakesource://contact6"),
         KPeople::AbstractContact::Ptr(new FakeContact({
             {KPeople::AbstractContact::NameProperty, QStringLiteral("Malory")},
@@ -123,19 +121,19 @@ FakeAllContactsMonitor::FakeAllContactsMonitor()
 
 void FakeAllContactsMonitor::remove(const QString &uri)
 {
-    m_contacts.remove(uri);
+    _contacts.remove(uri);
     Q_EMIT contactRemoved(uri);
 }
 
 QMap<QString, KPeople::AbstractContact::Ptr> FakeAllContactsMonitor::contacts()
 {
-    return m_contacts;
+    return _contacts;
 }
 
 void FakeAllContactsMonitor::changeProperty(const QString &key, const QVariant &value)
 {
     KPeople::AbstractContact::Ptr contact1 = contacts()[QStringLiteral("fakesource://contact1")];
-    static_cast<FakeContact *>(contact1.data())->m_properties[key] = value;
+    static_cast<FakeContact *>(contact1.data())->_properties[key] = value;
     Q_ASSERT(contact1->customProperty(key) == value);
 
     Q_EMIT contactChanged(QStringLiteral("fakesource://contact1"), contact1);

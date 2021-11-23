@@ -34,7 +34,7 @@ public:
     void remove(const QString &uri);
 
 private:
-    QMap<QString, KPeople::AbstractContact::Ptr> m_contacts;
+    QMap<QString, KPeople::AbstractContact::Ptr> _contacts;
 };
 
 #endif // FAKECONTACTSOURCE_H

@@ -16,7 +16,6 @@ class ContactMapper : public QObject
     Q_OBJECT
 
 public:
-
     /**
      * @brief Returns the KPeople URI belonging to phone number,
      * provided a contact exists containing the phone number.

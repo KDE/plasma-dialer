@@ -1,8 +1,7 @@
-/*
-    SPDX-FileCopyrightText: 2021 Bhushan Shah <bshah@kde.org>
-
-    SPDX-License-Identifier: GPL-2.0-or-later
-*/
+// SPDX-FileCopyrightText: 2021 Bhushan Shah <bshah@kde.org>
+// SPDX-FileCopyrightText: 2021 Alexey Andreyev <aa13q@ya.ru>
+//
+// SPDX-License-Identifier: GPL-2.0-or-later
 
 #include <QDebug>
 
@@ -14,9 +13,9 @@
 
 #include <optional>
 
-#include "callaudio.h"
+#include "dialer-audio.h"
 
-CallAudio::CallAudio(QObject *parent)
+DialerAudio::DialerAudio(QObject *parent)
     : QObject(parent)
 {
     if (!PulseAudioQt::Context::instance()->isValid()) {
@@ -24,12 +23,12 @@ CallAudio::CallAudio(QObject *parent)
         return;
     }
 
-    connect(PulseAudioQt::Context::instance(), &PulseAudioQt::Context::cardAdded, this, &CallAudio::cardAdded);
+    connect(PulseAudioQt::Context::instance(), &PulseAudioQt::Context::cardAdded, this, &DialerAudio::cardAdded);
 }
 
-void CallAudio::cardAdded(PulseAudioQt::Card *card)
+void DialerAudio::cardAdded(PulseAudioQt::Card *card)
 {
-    if (m_voiceCallCard) {
+    if (_voiceCallCard) {
         qWarning() << "We already found voicecall compatible card";
         return;
     }
@@ -72,15 +71,15 @@ void CallAudio::cardAdded(PulseAudioQt::Card *card)
         return;
     }
 
-    m_voiceCallCard = card;
-    m_voiceCallProfile = *voiceCallProfile;
+    _voiceCallCard = card;
+    _voiceCallProfile = *voiceCallProfile;
 }
 
-void CallAudio::setCallMode(CallStatus callStatus, AudioMode audioMode)
+void DialerAudio::setCallMode(CallStatus callStatus, AudioMode audioMode)
 {
     // first record previous state
-    CallStatus prevStatus = m_callStatus;
-    AudioMode prevMode = m_audioMode;
+    CallStatus prevStatus = _callStatus;
+    AudioMode prevMode = _audioMode;
 
     // if we are transitioning to active/ringing call status, we need to save pulseaudio state
     if (prevStatus == CallEnded && callStatus != CallEnded) {
@@ -90,30 +89,30 @@ void CallAudio::setCallMode(CallStatus callStatus, AudioMode audioMode)
     }
 
     // save new state
-    m_callStatus = callStatus;
-    m_audioMode = audioMode;
+    _callStatus = callStatus;
+    _audioMode = audioMode;
 
-    if (!m_voiceCallCard) {
+    if (!_voiceCallCard) {
         qWarning() << "Skipping audio setup because no voice compatible card found";
         return;
     }
 
     // now if we have a active call then switch profile to the VoiceCall profile
-    quint32 voiceCardIndex = PulseAudioQt::Context::instance()->cards().indexOf(m_voiceCallCard);
-    if ((m_callStatus == CallActive) && (prevStatus != CallActive) && m_voiceCallCard && m_voiceCallProfile) {
-        qDebug() << "Setting current profile to " << m_voiceCallProfile->name();
-        PulseAudioQt::Context::instance()->setCardProfile(voiceCardIndex, m_voiceCallProfile->name());
-    } else if ((m_callStatus == CallEnded) && (prevStatus != CallEnded) && m_voiceCallCard && m_previousProfile) {
-        qDebug() << "Setting current profile to " << m_previousProfile->name();
-        PulseAudioQt::Context::instance()->setCardProfile(voiceCardIndex, m_previousProfile->name());
+    quint32 voiceCardIndex = PulseAudioQt::Context::instance()->cards().indexOf(_voiceCallCard);
+    if ((_callStatus == CallActive) && (prevStatus != CallActive) && _voiceCallCard && _voiceCallProfile) {
+        qDebug() << "Setting current profile to " << _voiceCallProfile->name();
+        PulseAudioQt::Context::instance()->setCardProfile(voiceCardIndex, _voiceCallProfile->name());
+    } else if ((_callStatus == CallEnded) && (prevStatus != CallEnded) && _voiceCallCard && _previousProfile) {
+        qDebug() << "Setting current profile to " << _previousProfile->name();
+        PulseAudioQt::Context::instance()->setCardProfile(voiceCardIndex, _previousProfile->name());
     }
 
     // now we figure out the audio sink/source switching part
     // this works in two steps, first we query active source/sink
     // and then depending on requested mode, we set the active port for both source and sink
 
-    const auto sources = m_voiceCallCard->sources();
-    const auto sinks = m_voiceCallCard->sinks();
+    const auto sources = _voiceCallCard->sources();
+    const auto sinks = _voiceCallCard->sinks();
     PulseAudioQt::Sink *activeCardSink = sinks.first();
     PulseAudioQt::Source *activeCardSource = sources.first();
 
@@ -144,7 +143,7 @@ void CallAudio::setCallMode(CallStatus callStatus, AudioMode audioMode)
     }
 
     quint32 preferredSourcePort, preferredSinkPort;
-    if (m_audioMode & AudioModeEarpiece) {
+    if (_audioMode & AudioModeEarpiece) {
         if (builtinMicIndex.has_value()) {
             preferredSourcePort = builtinMicIndex.value();
         }
@@ -152,7 +151,7 @@ void CallAudio::setCallMode(CallStatus callStatus, AudioMode audioMode)
             preferredSinkPort = outputEarpieceIndex.value();
         }
     }
-    if (m_audioMode & AudioModeSpeaker) {
+    if (_audioMode & AudioModeSpeaker) {
         if (builtinMicIndex.has_value()) {
             preferredSourcePort = builtinMicIndex.value();
         }
@@ -160,7 +159,7 @@ void CallAudio::setCallMode(CallStatus callStatus, AudioMode audioMode)
             preferredSinkPort = outputSpeakerIndex.value();
         }
     }
-    if ((m_audioMode & AudioModeWiredHeadset)) {
+    if ((_audioMode & AudioModeWiredHeadset)) {
         if (headsetMicIndex.has_value()) {
             preferredSourcePort = headsetMicIndex.value();
         }
@@ -173,42 +172,42 @@ void CallAudio::setCallMode(CallStatus callStatus, AudioMode audioMode)
     activeCardSource->setActivePortIndex(preferredSourcePort);
 }
 
-void CallAudio::savePulseState()
+void DialerAudio::savePulseState()
 {
-    if (!m_voiceCallCard) {
+    if (!_voiceCallCard) {
         return;
     }
-    quint32 prevIndex = m_voiceCallCard->activeProfileIndex();
-    m_previousProfile = m_voiceCallCard->profiles().at(prevIndex);
+    quint32 prevIndex = _voiceCallCard->activeProfileIndex();
+    _previousProfile = _voiceCallCard->profiles().at(prevIndex);
 }
 
-void CallAudio::setMicMute(bool muted)
+void DialerAudio::setMicMute(bool muted)
 {
-    if (!m_voiceCallCard) {
+    if (!_voiceCallCard) {
         return;
     }
-    m_micMuted = muted;
+    _micMuted = muted;
 
-    if (m_callStatus == CallEnded)
+    if (_callStatus == CallEnded)
         return;
-    const auto sources = m_voiceCallCard->sources();
+    const auto sources = _voiceCallCard->sources();
     PulseAudioQt::Source *activeCardSource = sources.first();
-    if (m_micMuted) {
-        m_prevVolume = activeCardSource->volume();
+    if (_micMuted) {
+        _prevVolume = activeCardSource->volume();
         activeCardSource->setVolume(0);
-        activeCardSource->setMuted(m_micMuted);
+        activeCardSource->setMuted(_micMuted);
     } else {
-        activeCardSource->setMuted(m_micMuted);
-        activeCardSource->setVolume(m_prevVolume);
+        activeCardSource->setMuted(_micMuted);
+        activeCardSource->setVolume(_prevVolume);
     }
 }
 
-Q_GLOBAL_STATIC(CallAudio, callAudio)
+Q_GLOBAL_STATIC(DialerAudio, dialerAudio)
 
-CallAudio *CallAudio::instance()
+DialerAudio *DialerAudio::instance()
 {
-    CallAudio *audio = callAudio();
+    DialerAudio *audio = dialerAudio();
     return audio;
 }
 
-CallAudio::~CallAudio() = default;
+DialerAudio::~DialerAudio() = default;
