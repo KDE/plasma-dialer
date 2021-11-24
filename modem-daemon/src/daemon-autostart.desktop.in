@@ -1,6 +1,10 @@
 [Desktop Entry]
-Comment=Service required for telephony dialer
+Comment=Qt Modem Daemon to handle @MODEM_SUBSYSTEM@ events
 Name=Modem Daemon Service
-Type=Service
+Type=Application
 Icon=dialer
-Exec=@CMAKE_INSTALL_FULL_LIBEXECDIR@/modem-daemon
+Exec=@KDE_INSTALL_FULL_LIBEXECDIR@/modem-daemon
+X-KDE-StartupNotify=false
+X-KDE-autostart-phase=1
+X-GNOME-Autostart-enabled=true
+NoDisplay=true

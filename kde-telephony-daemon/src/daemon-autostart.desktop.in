@@ -1,6 +1,10 @@
 [Desktop Entry]
-Comment=Service required for telephony dialer
+Comment=KDE Daemon to handle modem daemon events
 Name=Telephony Daemon Service
-Type=Service
+Type=Application
 Icon=dialer
-Exec=@CMAKE_INSTALL_FULL_LIBEXECDIR@/kde-telephony-daemon
+Exec=@KDE_INSTALL_FULL_LIBEXECDIR@/kde-telephony-daemon
+X-KDE-StartupNotify=false
+X-KDE-autostart-phase=1
+X-GNOME-Autostart-enabled=true
+NoDisplay=true

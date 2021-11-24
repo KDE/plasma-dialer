@@ -41,6 +41,8 @@ set(DBUS_INTERFACES_PATH "${CMAKE_INSTALL_PREFIX}/${DBUS_INTERFACES_INSTALL_DIR}
 set(DBUS_INTERFACES_PATH "${SHARED_DBUS_XML_DIR}")
 message("Using D-Bus interface descriptions from: ${DBUS_INTERFACES_PATH}")
 
+set(MODEM_SUBSYSTEM "ModemManager" CACHE INTERNAL "")
+
 add_subdirectory(modem-daemon)
 add_subdirectory(kde-telephony-daemon)
 add_subdirectory(kde-telephony-plugin-declarative)
