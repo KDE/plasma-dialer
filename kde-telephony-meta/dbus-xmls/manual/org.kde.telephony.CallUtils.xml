@@ -1,0 +1,78 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+  <interface name="org.kde.telephony.CallUtils">
+    <signal name="missedCallsActionTriggered">
+    </signal>
+    <signal name="accepted">
+      <arg name="deviceUni" type="s" direction="out"/>
+      <arg name="callUni" type="s" direction="out"/>
+    </signal>
+    <signal name="hungUp">
+      <arg name="deviceUni" type="s" direction="out"/>
+      <arg name="callUni" type="s" direction="out"/>
+    </signal>
+    <signal name="sentDtmf">
+      <arg name="deviceUni" type="s" direction="out"/>
+      <arg name="callUni" type="s" direction="out"/>
+      <arg name="tones" type="s" direction="out"/>
+    </signal>
+    <signal name="fetchedCalls">
+    </signal>
+    <signal name="fetchedCallsChanged">
+        <annotation name="org.qtproject.QtDBus.QtTypeName.Out0" value="DialerTypes::CallDataVector"/>
+        <arg name="fetchedCalls" type="a(sssss(i)(i)(i)ixi)" direction="out"/>
+    </signal>
+    <signal name="callAdded">
+      <annotation name="org.qtproject.QtDBus.QtTypeName.Out2" value="DialerTypes::CallDirection"/>
+      <annotation name="org.qtproject.QtDBus.QtTypeName.Out3" value="DialerTypes::CallState"/>
+      <annotation name="org.qtproject.QtDBus.QtTypeName.Out4" value="DialerTypes::CallStateReason"/>
+      <arg name="deviceUni" type="s" direction="out"/>
+      <arg name="callUni" type="s" direction="out"/>
+      <arg name="callDirection" type="(i)" direction="out"/>
+      <arg name="callState" type="(i)" direction="out"/>
+      <arg name="callStateReason" type="(i)" direction="out"/>
+      <arg name="communicationWith" type="s" direction="out"/>
+    </signal>
+    <signal name="callDeleted">
+      <arg name="deviceUni" type="s" direction="out"/>
+      <arg name="callUni" type="s" direction="out"/>
+    </signal>
+    <signal name="callStateChanged">
+      <annotation name="org.qtproject.QtDBus.QtTypeName.Out2" value="DialerTypes::CallDirection"/>
+      <annotation name="org.qtproject.QtDBus.QtTypeName.Out3" value="DialerTypes::CallState"/>
+      <annotation name="org.qtproject.QtDBus.QtTypeName.Out4" value="DialerTypes::CallStateReason"/>
+      <arg name="deviceUni" type="s" direction="out"/>
+      <arg name="callUni" type="s" direction="out"/>
+      <arg name="callDirection" type="(i)" direction="out"/>
+      <arg name="callState" type="(i)" direction="out"/>
+      <arg name="callStateReason" type="(i)" direction="out"/>
+    </signal>
+    <method name="formatNumber">
+      <arg type="s" direction="out"/>
+      <arg name="number" type="s" direction="in"/>
+    </method>
+    <method name="dial">
+      <arg name="deviceUni" type="s" direction="in"/>
+      <arg name="number" type="s" direction="in"/>
+    </method>
+    <method name="accept">
+      <arg name="deviceUni" type="s" direction="in"/>
+      <arg name="callUni" type="s" direction="in"/>
+    </method>
+    <method name="hangUp">
+      <arg name="deviceUni" type="s" direction="in"/>
+      <arg name="callUni" type="s" direction="in"/>
+    </method>
+    <method name="sendDtmf">
+      <arg name="deviceUni" type="s" direction="in"/>
+      <arg name="callUni" type="s" direction="in"/>
+      <arg name="tones" type="s" direction="in"/>
+    </method>
+    <method name="fetchCalls">
+    </method>
+    <method name="setFetchedCalls">
+      <annotation name="org.qtproject.QtDBus.QtTypeName.In0" value="DialerTypes::CallDataVector"/>
+      <arg name="fetchedCalls" type="a(sssss(i)(i)(i)ixi)" direction="in"/>
+    </method>
+  </interface>
+</node>

@@ -1,0 +1,23 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+  <interface name="org.kde.telephony.CallHistoryDatabase">
+    <signal name="callsChanged">
+    </signal>
+    <method name="fetchCalls">
+        <annotation name="org.qtproject.QtDBus.QtTypeName.Out0" value="DialerTypes::CallDataVector"/>
+        <arg name="calls" type="a(sssss(i)(i)(i)ixi)" direction="out"/>
+    </method>
+    <method name="addCall">
+      <annotation name="org.qtproject.QtDBus.QtTypeName.In0" value="DialerTypes::CallData"/>
+      <arg name="callData" type="(sssss(i)(i)(i)ixi)" direction="in"/>
+    </method>
+    <method name="clear">
+    </method>
+    <method name="remove">
+      <arg name="id" type="s" direction="in"/>
+    </method>
+    <method name="lastId">
+      <arg type="i" direction="out"/>
+    </method>
+  </interface>
+</node>

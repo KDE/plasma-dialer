@@ -1,0 +1,19 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+  <interface name="org.kde.telephony.DialerUtils">
+    <signal name="missedCallsActionTriggered">
+    </signal>
+    <signal name="speakerModeChanged">
+      <arg name="enabled" type="b" direction="out"/>
+    </signal>
+    <signal name="muteChanged">
+      <arg name="muted" type="b" direction="out"/>
+    </signal>
+    <method name="setSpeakerMode">
+      <arg name="enabled" type="b" direction="in"/>
+    </method>
+    <method name="setMute">
+      <arg name="muted" type="b" direction="in"/>
+    </method>
+  </interface>
+</node>

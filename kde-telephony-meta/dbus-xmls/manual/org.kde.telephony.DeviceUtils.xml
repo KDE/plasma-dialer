@@ -1,0 +1,23 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+  <interface name="org.kde.telephony.DeviceUtils">
+    <method name="equipmentIdentifiers">
+        <arg name="equipmentIdentifiers" type="as" direction="out"/>
+    </method>
+    <method name="deviceUniList">
+        <arg name="deviceUniList" type="as" direction="out"/>
+    </method>
+    <method name="setDeviceUniList">
+      <arg name="deviceUniList" type="as" direction="in"/>
+    </method>
+    <method name="setCountryCode">
+      <arg name="countryCode" type="s" direction="in"/>
+    </method>
+    <signal name="deviceUniListChanged">
+      <arg name="deviceUniList" type="as" direction="out"/>
+    </signal>
+    <signal name="countryCodeChanged">
+      <arg name="countryCode" type="s" direction="out"/>
+    </signal>
+  </interface>
+</node>

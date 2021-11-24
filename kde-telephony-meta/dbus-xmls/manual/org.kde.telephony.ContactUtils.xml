@@ -1,0 +1,14 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+  <interface name="org.kde.telephony.ContactUtils">
+    <method name="displayString">
+      <arg name="contact" type="s" direction="in"/>
+      <arg name="displayString" type="s" direction="out"/>
+    </method>
+    <method name="picture">
+      <annotation name="org.qtproject.QtDBus.QtTypeName.Out0" value="QPixmap"/>
+      <arg name="contact" type="s" direction="in"/>
+      <arg name="picture" type="a(iiay)" direction="out"/>
+    </method>
+  </interface>
+</node>
