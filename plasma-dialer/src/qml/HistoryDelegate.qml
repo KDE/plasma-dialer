@@ -6,36 +6,44 @@ import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.2 as Controls
 
 import org.kde.kirigami 2.2 as Kirigami
-import org.kde.phone.dialer 1.0
+import org.kde.telephony 1.0
 
 Kirigami.AbstractListItem {
     id: root
 
     highlighted: false
-    onClicked: call(model.number)
+    onClicked: call(model.communicationWith)
 
     RowLayout {
         Kirigami.Icon {
             width: Kirigami.Units.iconSizes.medium
             height: width
             source: {
-                switch (model.callType) {
-                case DialerUtils.IncomingRejected:
-                    return "call-stop";
-                case DialerUtils.IncomingAccepted:
-                    return "call-incoming";
-                case DialerUtils.Outgoing:
+                if (model.direction == DialerTypes.CallDirection.Incoming) {
+                    if (model.stateReason == DialerTypes.CallStateReason.Accepted) {
+                        return "call-incoming"
+                    } else {
+                        return "call-stop"
+                    }
+                } else if (model.direction == DialerTypes.CallDirection.Outgoing) {
                     return "call-outgoing";
+                } else {
+                    return "call-start";
                 }
             }
         }
 
         ColumnLayout {
+            Layout.fillWidth: true
             Controls.Label {
-                text: model.displayName
+                id: callContactDisplayLabel
+                text: model.communicationWith
+                Layout.fillWidth: true
             }
             Controls.Label {
-                text: model.number
+                id: numberLabel
+                visible: callContactDisplayLabel.text !== text
+                text: model.communicationWith
                 Layout.fillWidth: true
             }
         }
@@ -44,7 +52,7 @@ Kirigami.AbstractListItem {
             Layout.fillWidth: true
             Controls.Label {
                 Layout.alignment: Qt.AlignRight
-                text: Qt.formatDateTime(model.time, Qt.locale().dateTimeFormat(Locale.ShortFormat));
+                text: Qt.formatDateTime(model.startedAt, Qt.locale().dateTimeFormat(Locale.ShortFormat));
             }
             Controls.Label {
                 Layout.alignment: Qt.AlignRight

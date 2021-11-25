@@ -11,7 +11,7 @@ import QtQuick.Controls 2.2 as Controls
 
 import org.kde.kirigami 2.5 as Kirigami
 
-import org.kde.phone.dialer 1.0
+import org.kde.telephony 1.0
 
 GridLayout {
     id: pad
@@ -22,15 +22,14 @@ GridLayout {
     property string number
     property bool showBottomRow: true
     property bool voicemailFail: false
+    property bool callActive: false
 
     function onPadNumberPressed(number) {
         pad.voicemailFail = false
-        if (DialerUtils.callState !== DialerUtils.Active) {
-            pad.number += number
+        if (callActive) {
+            CallUtils.sendDtmf(number)
         } else {
-            // never try to send + as a DTMF tone
-            if (number === "+") number = "0"
-            DialerUtils.sendDtmf(number)
+            pad.number += number
         }
     }
 
@@ -61,23 +60,25 @@ GridLayout {
     }
 
     function onCallButtonPressed(number) {
+        const deviceUni = root.selectModem()
         if (isSpecialCode(number)) {
-            DialerUtils.initiateUssd(number)
+            UssdUtils.initiate(deviceUni, number)
         } else if (number === "*#06#") {
-            DialerUtils.getImeis()
+            imeiSheet.show()
         } else {
-            DialerUtils.dial(number)
+            CallUtils.dial(deviceUni, number)
         }
     }
 
     function callVoicemail() {
-        var number = DialerUtils.getVoicemailNumber()
+        var number = VoiceMailUtils.getVoicemailNumber()
         if (number === "") {
             pad.voicemailFail = true
         } else {
             pad.voicemailFail = false;
             // voicemail number is real phone number and should not be a MMI code
-            DialerUtils.dial(number)
+            var device = root.selectModem()
+            CallUtils.dial(device, number)
         }
     }
 
@@ -86,7 +87,7 @@ GridLayout {
         text: "1"
         onClicked: onPadNumberPressed(text)
         voicemail: showBottomRow // TODO: only show voicemail icon if voicemail number exists
-        onHeld: DialerUtils.callState !== DialerUtils.Active && callVoicemail()
+        onHeld: !callActive && callVoicemail()
     }
     DialerButton { text: "2"; sub: "ABC"; onClicked: onPadNumberPressed(text) }
     DialerButton { text: "3"; sub: "DEF"; onClicked: onPadNumberPressed(text) }
@@ -111,7 +112,7 @@ GridLayout {
             pad.showBottomRow &&
             statusLabel.text.length > 0
         ) {
-            onCallButtonPressed(statusLabel.text)
+            onCallButtonPressed(pad.number)
         } else if (["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "*", "#", "+"].includes(event.text)) {
             onPadNumberPressed(event.text)
         }
@@ -133,7 +134,7 @@ GridLayout {
         
         enabled: pad.showBottomRow && statusLabel.text.length > 0
         opacity: enabled ? 1 : 0.8
-        onClicked: onCallButtonPressed(statusLabel.text)
+        onClicked: onCallButtonPressed(pad.number)
         
         background: Rectangle {
             anchors.centerIn: parent

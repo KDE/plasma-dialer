@@ -10,7 +10,7 @@ import QtQuick.Layouts 1.1
 import org.kde.kirigami 2.12 as Kirigami
 import org.kde.people 1.0 as KPeople
 
-import org.kde.phone.dialer 1.0
+import org.kde.telephony 1.0
 
 Kirigami.ScrollablePage {
     title: i18n("Contacts")
@@ -20,13 +20,7 @@ Kirigami.ScrollablePage {
         anchors.margins: Kirigami.Units.smallSpacing
         spacing: Kirigami.Units.smallSpacing
         
-        InCallInlineMessage {
-            id: inCall
-            Layout.fillWidth: true
-            Layout.leftMargin: Kirigami.Units.smallSpacing
-            Layout.rightMargin: Kirigami.Units.smallSpacing
-            dialerUtils: DialerUtils
-        }
+        InCallInlineMessage {}
         
         Kirigami.SearchField {
             id: searchField
@@ -64,7 +58,10 @@ Kirigami.ScrollablePage {
         delegate: Kirigami.BasicListItem {
             icon: model && model.decoration
             label: model && model.display
-            onClicked: DialerUtils.dial(model.phoneNumber)
+            onClicked: {
+                var device = root.selectModem()
+                CallUtils.dial(device, model.phoneNumber)
+            }
         }
 
         Kirigami.PlaceholderMessage {

@@ -6,12 +6,12 @@ import QtQuick.Controls 2.7
 import QtQuick.Layouts 1.1
 
 import org.kde.kirigami 2.13 as Kirigami
+import org.kde.telephony 1.0
 
 Kirigami.InlineMessage {
-    property var dialerUtils
     type: Kirigami.MessageType.Information
-    text: i18n("In call with %1.", dialerUtils.callContactAlias)
-    visible: dialerUtils.callState === dialerUtils.Active || dialerUtils.callState === dialerUtils.Dialing
+    visible: false
+    text: i18n("In call message")
     actions: [
         Kirigami.Action {
             icon.name: "call-start"
@@ -19,4 +19,7 @@ Kirigami.InlineMessage {
             onTriggered: root.pageStack.layers.push(callPage)
         }
     ]
-} 
+    Layout.fillWidth: true
+    Layout.leftMargin: Kirigami.Units.smallSpacing
+    Layout.rightMargin: Kirigami.Units.smallSpacing
+}

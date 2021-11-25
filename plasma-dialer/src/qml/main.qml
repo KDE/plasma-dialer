@@ -9,7 +9,7 @@ import QtQuick.LocalStorage 2.0
 
 import org.kde.kirigami 2.19 as Kirigami
 
-import org.kde.phone.dialer 1.0
+import org.kde.telephony 1.0
 import "Call"
 
 Kirigami.ApplicationWindow {
@@ -22,14 +22,9 @@ Kirigami.ApplicationWindow {
     width: 800
     height: 1080
 
-    visible: false
+    visible: true
 
     readonly property bool smallMode: root.height < Kirigami.Units.gridUnit * 20
-
-    //keep track if we were visible when ringing
-    property bool wasVisible
-    //was the last call an incoming one?
-    property bool isIncoming
 
     pageStack.initialPage: dialerPage
     
@@ -54,6 +49,7 @@ Kirigami.ApplicationWindow {
                 }
             },
             Kirigami.Action {
+                enabled: false // TODO
                 iconName: "view-pim-contacts"
                 text: i18n("Contacts")
                 property bool opened: contactsPage.visible
@@ -91,53 +87,44 @@ Kirigami.ApplicationWindow {
     DialerPage {
         id: dialerPage
         visible: true
-
-        function onDisplayImeis(imeis) {
-            imeiSheet.imeis = imeis
-            imeiSheet.open()
-        }
     }
 
     USSDSheet {
         id: ussdSheet
         onResponseReady: {
             // TODO: debug
-            // DialerUtils.respondToUssd(response)
+            // USSDUtils.respond(response)
         }
     }
 
     ImeiSheet {
         id: imeiSheet
+        function show() {
+            imeiSheet.imeis = DeviceUtils.equipmentIdentifiers()
+            imeiSheet.open()
+        }
     }
 
     Component {
         id: callPage
-        CallPage {}
+        CallPage {
+        }
     }
 
     Connections {
-        target: DialerUtils
+        target: CallUtils
 
         function onMissedCallsActionTriggered() {
             root.visible = true;
         }
-        function onCallEnded(number, duration, incoming) {
-            var callType;
-            if (incoming && duration == 0) {
-                callType = DialerUtils.IncomingRejected;
-            } else if (incoming && duration > 0) {
-                callType = DialerUtils.IncomingAccepted;
-            } else {
-                callType = DialerUtils.Outgoing;
-            }
-            historyModel.addCall(number, duration, callType)
-        }
+
         function onCallStateChanged(state) {
-            if (DialerUtils.callState === DialerUtils.Active) {
-                    dialerPage.pad.number = ""
+            if (CallUtils.callState === DialerTypes.CallState.Active) {
+                dialerPage.pad.number = ""
             }
-            if (DialerUtils.callState === DialerUtils.Active || DialerUtils.callState === DialerUtils.Dialing) {
-                if (root.pageStack.layers.depth == 1) {
+            if (DialerUtils.callState === DialerTypes.CallState.Active
+                    || DialerUtils.callState === DialerTypes.CallState.Dialing) {
+                if (root.pageStack.layers.depth === 1) {
                     root.pageStack.layers.push(callPage)
                     root.show()
                     root.requestActivate()
@@ -148,22 +135,21 @@ Kirigami.ApplicationWindow {
                 }
             }
         }
+    }
+    
+    Connections {
+        target: UssdUtils
 
-        function onNotificationReceivedFromUssd(message) {
+        function onNotificationReceived(deviceUni, message) {
             ussdSheet.showNotification(message)
         }
 
-        function onRequestReceivedFromUssd(message) {
+        function onRequestReceived(deviceUni, message) {
             ussdSheet.showNotification(message, true)
         }
 
-        function onInitiateUssd(number) {
+        function onInitiated(deviceUni, command) {
             ussdSheet.open()
-        }
-
-        function onDisplayImeis(imeis) {
-            imeiSheet.imeis = imeis
-            imeiSheet.open()
         }
     }
 
@@ -172,12 +158,21 @@ Kirigami.ApplicationWindow {
         //reset missed calls if the status is not STATUS_INCOMING when got visible
     }
 
+    function selectModem() {
+        const deviceUniList = DeviceUtils.deviceUniList()
+        if (deviceUniList.length === 0) {
+            console.warn("Modem devices not found")
+            return ""
+        }
+
+        if (deviceUniList.length === 1) {
+            return deviceUniList[0]
+        }
+        console.log("TODO: select device uni")
+    }
+
     function call(number) {
         dialerPage.pad.number = number
         switchToPage(dialerPage, 0)
-    }
-
-    CallHistoryModel {
-        id: historyModel
     }
 }

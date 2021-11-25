@@ -10,7 +10,7 @@ import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.5 as QQC2
 import org.kde.kirigami 2.9 as Kirigami
 import "Dialpad"
-import org.kde.phone.dialer 1.0
+import org.kde.telephony 1.0
 
 Kirigami.Page {
     id: dialer
@@ -30,13 +30,13 @@ Kirigami.Page {
         anchors.margins: Kirigami.Units.smallSpacing
         spacing: Kirigami.Units.smallSpacing
         Kirigami.InlineMessage {
-            id: callError
+            id: devicesError
             Layout.fillWidth: true
             Layout.leftMargin: Kirigami.Units.smallSpacing
             Layout.rightMargin: Kirigami.Units.smallSpacing
             type: Kirigami.MessageType.Error
-            text: i18n("Unable to make a call at this moment")
-            visible: DialerUtils.callState === DialerUtils.Failed
+            text: i18n("Modem devices are not found")
+            visible: DeviceUtils.deviceUniList().length < 1
         }
         Kirigami.InlineMessage {
             id: voicemailError
@@ -47,13 +47,8 @@ Kirigami.Page {
             text: i18n("Voicemail number couldn't be found")
             visible: dialPad.voicemailFail
         }
-        InCallInlineMessage {
-            id: inCall
-            Layout.fillWidth: true
-            Layout.leftMargin: Kirigami.Units.smallSpacing
-            Layout.rightMargin: Kirigami.Units.smallSpacing
-            dialerUtils: DialerUtils
-        }
+
+        InCallInlineMessage {}
     }
 
     ColumnLayout {
@@ -79,7 +74,7 @@ Kirigami.Page {
                 font.weight: Font.Light
                 wrapMode: QQC2.Label.WrapAnywhere
 
-                text: DialerUtils.formatNumber(dialPad.number)
+                text: CallUtils.formatNumber(dialPad.number)
             }
         }
 

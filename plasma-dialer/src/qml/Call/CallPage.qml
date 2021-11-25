@@ -13,15 +13,23 @@ import QtQuick.Layouts 1.1
 import org.kde.kirigami 2.12 as Kirigami
 
 import "../Dialpad"
-import org.kde.phone.dialer 1.0
+import org.kde.telephony 1.0
 
 Kirigami.Page {
     objectName: "callPage"
     id: callPage
-    
-    title: i18n("Calling %1", DialerUtils.callContactDisplayString)
 
-    property int callStatus: DialerUtils.callState
+    function activeDeviceUni() {
+        return root.selectModem()
+    }
+    function activeCallUni() {
+        return ""
+    }
+
+    property bool callActive: false
+    property int callDuration: 0
+    
+    title: i18n("Active call list")
 
     function secondsToTimeString(seconds) {
         var h = Math.floor(seconds / 3600);
@@ -31,12 +39,6 @@ Kirigami.Page {
         if(s < 10) s = '0' + s;
         if(h === 0) return '' + m + ':' + s;
         return '' + h + ':' + m + ':' + s;
-    }
-
-    onCallStatusChanged: {
-        if (callStatus !== DialerUtils.Active) {
-            dialerButton.toggledOn = false;
-        }
     }
 
     ColumnLayout {
@@ -56,15 +58,9 @@ Kirigami.Page {
 
             contentWidth: topContents.width
             contentHeight: topContents.height
-            interactive: callStatus === DialerUtils.Active;
+            interactive: callActive
             RowLayout {
                 id: topContents
-                
-                Avatar {
-                    source: DialerUtils.callContactPicture
-                    Layout.minimumWidth: topFlickable.width
-                    Layout.minimumHeight: topFlickable.height
-                }
                 
                 Dialpad {
                     Layout.minimumWidth: topFlickable.width
@@ -100,7 +96,7 @@ Kirigami.Page {
             horizontalAlignment: Qt.AlignHCenter
             verticalAlignment: Qt.AlignVCenter
             font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.15
-            text: DialerUtils.callContactDisplayString
+            text: ContactUtils.displayString("")
             font.bold: true
             visible: text != ""
         }
@@ -113,10 +109,10 @@ Kirigami.Page {
             verticalAlignment: Qt.AlignVCenter
             font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.1
             text: {
-                if (DialerUtils.callState === DialerUtils.Dialing) {
+                if (callActive) {
                     return i18n("Calling...");
-                } else if (DialerUtils.callDuration > 0) {
-                    return secondsToTimeString(DialerUtils.callDuration);
+                } else if (callDuration > 0) {
+                    return secondsToTimeString(callDuration);
                 } else {
                     return '';
                 }
@@ -126,7 +122,7 @@ Kirigami.Page {
 
         // controls
         RowLayout {
-            opacity: callStatus === DialerUtils.Active ? 1 : 0
+            opacity: callActive ? 1 : 0
             Layout.alignment: Qt.AlignHCenter
             Layout.maximumWidth: Kirigami.Units.gridUnit * 16
             Layout.minimumHeight: Kirigami.Units.gridUnit * 3.5
@@ -141,7 +137,6 @@ Kirigami.Page {
                 
                 iconSource: "input-dialpad-symbolic"
                 text: i18n("Keypad")
-                toggledOn: false
                 
                 onClicked: toggledOn = !toggledOn
                 
@@ -192,27 +187,25 @@ Kirigami.Page {
 
             AnswerSwipe {
                 anchors.fill: parent
-                //STATUS_INCOMING
-                visible: callStatus === DialerUtils.Incoming
+                visible: false // TODO
                 onAccepted: {
-                    DialerUtils.acceptCall();
+                    CallUtils.accept(activeDeviceUni(), activeCallUni());
                 }
                 onRejected: {
-                    DialerUtils.rejectCall();
+                    CallUtils.hangUp(activeDeviceUni(), activeCallUni());
                 }
             }
             
             // end call button
             Controls.AbstractButton {
                 id: endCallButton
-                //STATUS_ACTIVE
-                visible: callStatus !== DialerUtils.Incoming
+                visible: callActive
                 
                 anchors.centerIn: parent
                 width: Kirigami.Units.gridUnit * 3.5
                 height: Kirigami.Units.gridUnit * 3.5
                 
-                onClicked: DialerUtils.hangUp()
+                onClicked: CallUtils.hangUp(activeDeviceUni(), activeCallUni());
                 
                 background: Rectangle {
                     anchors.centerIn: parent

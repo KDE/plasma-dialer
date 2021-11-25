@@ -7,19 +7,20 @@ import QtQuick.Layouts 1.1
 
 import org.kde.kirigami 2.12 as Kirigami
 
-import org.kde.phone.dialer 1.0
+import org.kde.telephony 1.0
 
 Kirigami.ScrollablePage {
     title: i18n("Call History")
     icon.name: "clock"
     
-    header: InCallInlineMessage {
-        id: inCall
-        dialerUtils: DialerUtils
+    header: ColumnLayout {
+        anchors.margins: Kirigami.Units.smallSpacing
+        spacing: Kirigami.Units.smallSpacing
+        InCallInlineMessage {}
     }
     
     actions.main: Kirigami.Action {
-        onTriggered: historyModel.clear()
+        onTriggered: CallHistoryModel.clear()
         text: i18n("Clear history")
         icon.name: "edit-clear-history"
     }
@@ -44,7 +45,7 @@ Kirigami.ScrollablePage {
 
     ListView {
         id: view
-        model: historyModel
+        model: CallHistoryModel
         section {
             property: "date"
             delegate: Kirigami.ListSectionHeader {
