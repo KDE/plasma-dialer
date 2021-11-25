@@ -1,44 +1,30 @@
 // SPDX-FileCopyrightText: 2019 Nicolas Fella <nicolas.fella@gmx.de>
+// SPDX-FileCopyrightText: 2021 Alexey Andreyev <aa13q@ya.ru>
+//
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
 #pragma once
 
-#include <QAbstractListModel>
-#include <QDateTime>
-#include <QSortFilterProxyModel>
-#include <QVector>
+#include "call-model.h"
+#include "callhistorydatabaseinterface.h"
 
-#include "database.h"
-#include "dialerutils.h"
-
-class CallHistoryModel : public QAbstractListModel
+class CallHistoryModel : public CallModel
 {
     Q_OBJECT
 public:
     CallHistoryModel(QObject *parent = nullptr);
 
-    enum Roles {
-        PhoneNumberRole = Qt::UserRole + 1,
-        DisplayNameRole,
-        PhotoRole,
-        DurationRole,
-        TimeRole,
-        CallTypeRole,
-        IdRole,
-    };
-    Q_ENUM(Roles)
-
-    int rowCount(const QModelIndex &parent = QModelIndex()) const override;
-    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
-    QHash<int, QByteArray> roleNames() const override;
-
-    Q_INVOKABLE void addCall(const QString &number, int duration, DialerUtils::CallType type);
+    Q_INVOKABLE void addCall(const DialerTypes::CallData &callData);
     Q_INVOKABLE void clear();
     Q_INVOKABLE void remove(int index);
 
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
+    int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     bool removeRows(int row, int count, const QModelIndex &parent = QModelIndex()) override;
 
 private:
-    QVector<CallData> m_calls;
-    Database m_database;
+    org::kde::telephony::CallHistoryDatabase *_databaseInterface;
+    DialerTypes::CallDataVector _calls;
+
+    void _fetchCalls();
 };
