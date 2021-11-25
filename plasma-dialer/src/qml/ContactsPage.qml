@@ -59,7 +59,7 @@ Kirigami.ScrollablePage {
             icon: model && model.decoration
             label: model && model.display
             onClicked: {
-                var device = root.selectModem()
+                var device = appWindow.selectModem()
                 CallUtils.dial(device, model.phoneNumber)
             }
         }

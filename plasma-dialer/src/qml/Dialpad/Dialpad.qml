@@ -66,7 +66,7 @@ GridLayout {
     }
 
     function onCallButtonPressed(number) {
-        const deviceUni = root.selectModem()
+        const deviceUni = appWindow.selectModem()
         if (isSpecialCode(number)) {
             UssdUtils.initiate(deviceUni, number)
         } else if (number === "*#06#") {
@@ -83,7 +83,7 @@ GridLayout {
         } else {
             pad.voicemailFail = false;
             // voicemail number is real phone number and should not be a MMI code
-            var device = root.selectModem()
+            var device = appWindow.selectModem()
             CallUtils.dial(device, number)
         }
     }

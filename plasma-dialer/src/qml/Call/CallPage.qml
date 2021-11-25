@@ -16,11 +16,10 @@ import "../Dialpad"
 import org.kde.telephony 1.0
 
 Kirigami.Page {
-    objectName: "callPage"
     id: callPage
 
     function activeDeviceUni() {
-        return root.selectModem()
+        return appWindow.selectModem()
     }
     function activeCallUni() {
         return ActiveCallModel.activeCallUni()
