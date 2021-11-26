@@ -10,7 +10,15 @@
 
 NotificationManager::NotificationManager(QObject *parent)
     : QObject(parent)
+    , _ringEffect(std::make_unique<QFeedbackHapticsEffect>())
 {
+    _ringEffect->setAttackIntensity(0.1);
+    _ringEffect->setAttackTime(420);
+    _ringEffect->setIntensity(0.7);
+    _ringEffect->setDuration(5000);
+    _ringEffect->setFadeTime(700);
+    _ringEffect->setFadeIntensity(0.07);
+    _ringEffect->setPeriod(1300);
 }
 
 void NotificationManager::setCallUtils(org::kde::telephony::CallUtils *callUtils)
@@ -60,6 +68,8 @@ void NotificationManager::onCallStateChanged(const QString &deviceUni,
 
 void NotificationManager::openRingingNotification(const QString &deviceUni, const QString &callUni, const QString communicationWith)
 {
+    _ringEffect->start();
+
     QString callerDisplayName = _contactUtils->displayString(communicationWith);
 
     QStringList actions;
@@ -93,6 +103,7 @@ void NotificationManager::closeRingingNotification()
     _ringingNotification->disconnect();
     _ringingNotification->close();
     _ringingNotification = nullptr;
+    _ringEffect->stop();
 }
 
 void NotificationManager::accept(const QString &deviceUni, const QString &callUni)

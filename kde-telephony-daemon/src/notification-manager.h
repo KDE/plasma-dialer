@@ -5,6 +5,7 @@
 #pragma once
 
 #include <KNotification>
+#include <QtFeedback/QFeedbackEffect>
 
 #include "callutilsinterface.h"
 #include "contact-utils.h"
@@ -44,4 +45,6 @@ private:
 
     org::kde::telephony::CallUtils *_callUtils;
     ContactUtils *_contactUtils;
+
+    std::unique_ptr<QFeedbackHapticsEffect> _ringEffect;
 };
