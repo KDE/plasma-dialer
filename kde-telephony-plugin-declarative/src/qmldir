@@ -1,0 +1,2 @@
+module org.kde.telephony
+plugin KTelephonyPluginDeclarative
