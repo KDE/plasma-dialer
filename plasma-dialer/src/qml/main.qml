@@ -35,7 +35,7 @@ Kirigami.ApplicationWindow {
         case "History": return pagePool.loadPage("qrc:/HistoryPage.qml");
         case "Contacts": return pagePool.loadPage("qrc:/ContactsPage.qml");
         case "Dialer": return pagePool.loadPage("qrc:/DialerPage.qml");
-        case "Call": return pagePool.loadPage("qrc:/CallPage.qml");
+        case "Call": return pagePool.loadPage("qrc:/Call/CallPage.qml");
         }
     }
 

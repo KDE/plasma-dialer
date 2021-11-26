@@ -209,7 +209,10 @@ Kirigami.Page {
                 width: Kirigami.Units.gridUnit * 3.5
                 height: Kirigami.Units.gridUnit * 3.5
                 
-                onClicked: CallUtils.hangUp(activeDeviceUni(), activeCallUni());
+                onClicked: {
+                    CallUtils.hangUp(activeDeviceUni(), activeCallUni());
+                    appWindow.switchToPage(appWindow.getPage("Dialer"), 0);
+                }
                 
                 background: Rectangle {
                     anchors.centerIn: parent

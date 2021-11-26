@@ -73,6 +73,7 @@ GridLayout {
             imeiSheet.show()
         } else {
             CallUtils.dial(deviceUni, number)
+            switchToPage(getPage("Call"), 1)
         }
     }
 
