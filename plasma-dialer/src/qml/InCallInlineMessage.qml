@@ -10,8 +10,8 @@ import org.kde.telephony 1.0
 
 Kirigami.InlineMessage {
     type: Kirigami.MessageType.Information
-    visible: false
-    text: i18n("In call message")
+    visible: ActiveCallModel.active
+    text: i18n("Active call list")
     actions: [
         Kirigami.Action {
             icon.name: "call-start"

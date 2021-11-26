@@ -23,11 +23,11 @@ Kirigami.Page {
         return root.selectModem()
     }
     function activeCallUni() {
-        return ""
+        return ActiveCallModel.activeCallUni()
     }
 
-    property bool callActive: false
-    property int callDuration: 0
+    property bool callActive: ActiveCallModel.active
+    property int callDuration: ActiveCallModel.callDuration
     
     title: i18n("Active call list")
 
@@ -61,6 +61,11 @@ Kirigami.Page {
             interactive: callActive
             RowLayout {
                 id: topContents
+
+                ActiveCallView {
+                    Layout.minimumWidth: topFlickable.width
+                    Layout.minimumHeight: topFlickable.height
+                }
                 
                 Dialpad {
                     Layout.minimumWidth: topFlickable.width

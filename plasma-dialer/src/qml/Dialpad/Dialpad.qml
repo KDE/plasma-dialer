@@ -22,12 +22,18 @@ GridLayout {
     property string number
     property bool showBottomRow: true
     property bool voicemailFail: false
-    property bool callActive: false
+    property bool callActive: ActiveCallModel.active
+
+    function sendDtmf(tones) {
+        const deviceUni = appWindow.selectModem()
+        const callUni = ActiveCallModel.activeCallUni()
+        CallUtils.sendDtmf(deviceUni, callUni, tones)
+    }
 
     function onPadNumberPressed(number) {
         pad.voicemailFail = false
         if (callActive) {
-            CallUtils.sendDtmf(number)
+            sendDtmf(number)
         } else {
             pad.number += number
         }
