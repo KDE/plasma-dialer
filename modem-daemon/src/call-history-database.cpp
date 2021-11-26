@@ -1,91 +1,135 @@
 // SPDX-FileCopyrightText: 2020 Jonah Brüchert <jbb@kaidan.im>
 // SPDX-FileCopyrightText: 2020 Bhushan Shah <bshah@kde.org>
+// SPDX-FileCopyrightText: 2021 Alexey Andreyev <aa13q@ya.ru>
 //
 // SPDX-License-Identifier: LicenseRef-KDE-Accepted-GPL
 
-#include "database.h"
+#include "call-history-database.h"
 
 #include <QDebug>
 #include <QDir>
-#include <QSqlDatabase>
 #include <QSqlError>
 #include <QSqlQuery>
 #include <QStandardPaths>
 
-Database::Database(QObject *parent)
+CallHistoryDatabase::CallHistoryDatabase(QObject *parent)
     : QObject(parent)
-    , m_database(QSqlDatabase::addDatabase(QStringLiteral("QSQLITE"), QStringLiteral("calls")))
+    , _database(QSqlDatabase::addDatabase(QStringLiteral("QSQLITE"), QStringLiteral("calls")))
 {
-    const auto databaseLocation = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/plasmaphonedialer");
+    const QString databaseLocation = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/plasmaphonedialer");
     if (!QDir().mkpath(databaseLocation)) {
         qDebug() << "Could not create the database directory at" << databaseLocation;
     }
 
-    m_database.setDatabaseName(databaseLocation + QStringLiteral("/calls.sqlite"));
-    const bool open = m_database.open();
+    _database.setDatabaseName(databaseLocation + QStringLiteral("/calls.sqlite"));
+    const bool open = _database.open();
 
     if (!open) {
-        qWarning() << "Could not open call database" << m_database.lastError();
+        qWarning() << "Could not open call database" << _database.lastError();
     }
 
-    QSqlQuery createTable(m_database);
-    createTable.exec(QStringLiteral(
-        "CREATE TABLE IF NOT EXISTS History(id INTEGER PRIMARY KEY AUTOINCREMENT, number TEXT, time DATETIME, duration INTEGER, callType INTEGER)"));
+    QSqlQuery createTable(_database);
+    createTable.exec(
+        QStringLiteral("CREATE TABLE IF NOT EXISTS "
+                       "History( "
+                       "id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                       "protocol TEXT, "
+                       "account TEXT, "
+                       "provider TEXT, "
+                       "communicationWith TEXT, "
+                       "direction INTEGER, "
+                       "state INTEGER, "
+                       "stateReason INTEGER, "
+                       "callAttemptDuration INTEGER, "
+                       "startedAt DATETIME, "
+                       "duration INTEGER "
+                       ")"));
 }
 
-QVector<CallData> Database::fetchCalls()
+DialerTypes::CallDataVector CallHistoryDatabase::fetchCalls()
 {
-    QSqlQuery fetchCalls(m_database);
-    fetchCalls.exec(QStringLiteral("SELECT id, number, time, duration, callType FROM History ORDER BY time DESC"));
+    QSqlQuery fetchCalls(_database);
+    fetchCalls.exec(
+        QStringLiteral("SELECT "
+                       "id, protocol, account, provider, "
+                       "communicationWith, direction, state, stateReason, "
+                       "callAttemptDuration, startedAt, duration "
+                       "FROM History ORDER BY startedAt DESC"));
 
-    QVector<CallData> calls;
+    DialerTypes::CallDataVector calls;
     while (fetchCalls.next()) {
-        CallData call;
+        DialerTypes::CallData call;
         call.id = fetchCalls.value(0).toString();
-        call.number = fetchCalls.value(1).toString();
-        call.time = QDateTime::fromMSecsSinceEpoch(fetchCalls.value(2).toLongLong());
-        call.duration = fetchCalls.value(3).toInt();
-        call.callType = fetchCalls.value(4).value<DialerUtils::CallType>();
+        call.protocol = fetchCalls.value(1).toString();
+        call.account = fetchCalls.value(2).toString();
+        call.provider = fetchCalls.value(3).toString();
 
+        call.communicationWith = fetchCalls.value(4).toString();
+        call.direction = fetchCalls.value(5).value<DialerTypes::CallDirection>();
+        call.state = fetchCalls.value(6).value<DialerTypes::CallState>();
+        call.stateReason = fetchCalls.value(7).value<DialerTypes::CallStateReason>();
+
+        call.callAttemptDuration = fetchCalls.value(8).toInt();
+        call.startedAt = QDateTime::fromString(fetchCalls.value(9).toString(), QStringLiteral("yyyy-MM-ddThh:mm:ss.zzz"));
+        call.duration = fetchCalls.value(10).toInt();
         calls.append(call);
     }
     return calls;
 }
 
-void Database::addCall(const QString &number, int duration, DialerUtils::CallType type)
+void CallHistoryDatabase::addCall(const DialerTypes::CallData &callData)
 {
-    QSqlQuery putCall(m_database);
-    putCall.prepare(QStringLiteral("INSERT INTO History (number, time, duration, callType) VALUES (:number, :time, :duration, :callType)"));
-    putCall.bindValue(QStringLiteral(":number"), number);
-    putCall.bindValue(QStringLiteral(":time"), QDateTime::currentDateTime().toMSecsSinceEpoch());
-    putCall.bindValue(QStringLiteral(":duration"), duration);
-    putCall.bindValue(QStringLiteral(":callType"), type);
+    QSqlQuery putCall(_database);
+    putCall.prepare(
+        QStringLiteral("INSERT INTO History "
+                       "("
+                       "protocol, account, provider, "
+                       "communicationWith, direction, state, stateReason, "
+                       "callAttemptDuration, startedAt, duration "
+                       ") "
+                       "VALUES ("
+                       ":protocol, :account, :provider, "
+                       ":communicationWith, :direction, :state, :stateReason, "
+                       ":callAttemptDuration, :startedAt, :duration "
+                       ")"));
+    putCall.bindValue(QStringLiteral(":protocol"), callData.protocol);
+    putCall.bindValue(QStringLiteral(":account"), callData.account);
+    putCall.bindValue(QStringLiteral(":provider"), callData.provider);
+
+    putCall.bindValue(QStringLiteral(":communicationWith"), callData.communicationWith);
+    putCall.bindValue(QStringLiteral(":direction"), static_cast<int>(callData.direction));
+    putCall.bindValue(QStringLiteral(":state"), static_cast<int>(callData.state));
+    putCall.bindValue(QStringLiteral(":stateReason"), static_cast<int>(callData.stateReason));
+
+    putCall.bindValue(QStringLiteral(":callAttemptDuration"), callData.callAttemptDuration);
+    putCall.bindValue(QStringLiteral(":startedAt"), callData.startedAt);
+    putCall.bindValue(QStringLiteral(":duration"), callData.duration);
     putCall.exec();
 
-    emit callsChanged();
+    Q_EMIT callsChanged();
 }
 
-void Database::clear()
+void CallHistoryDatabase::clear()
 {
-    QSqlQuery clearCalls(m_database);
+    QSqlQuery clearCalls(_database);
     clearCalls.exec(QStringLiteral("DELETE FROM History"));
 
-    emit callsChanged();
+    Q_EMIT callsChanged();
 }
 
-void Database::remove(const QString &id)
+void CallHistoryDatabase::remove(const QString &id)
 {
-    QSqlQuery remove(m_database);
+    QSqlQuery remove(_database);
     remove.prepare(QStringLiteral("DELETE FROM History WHERE id=:id"));
     remove.bindValue(QStringLiteral(":id"), id);
     remove.exec();
 
-    emit callsChanged();
+    Q_EMIT callsChanged();
 }
 
-int Database::lastId() const
+int CallHistoryDatabase::lastId() const
 {
-    QSqlQuery fetch(m_database);
+    QSqlQuery fetch(_database);
     fetch.prepare(QStringLiteral("SELECT id FROM History ORDER BY id DESC LIMIT 1"));
     fetch.exec();
     fetch.first();

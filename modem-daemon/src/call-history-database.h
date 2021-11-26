@@ -1,41 +1,34 @@
 // SPDX-FileCopyrightText: 2020 Jonah Brüchert <jbb@kaidan.im>
 // SPDX-FileCopyrightText: 2020 Bhushan Shah <bshah@kde.org>
+// SPDX-FileCopyrightText: 2021 Alexey Andreyev <aa13q@ya.ru>
 //
 // SPDX-License-Identifier: LicenseRef-KDE-Accepted-GPL
 
 #pragma once
 
-#include <QDateTime>
 #include <QObject>
 #include <QSqlDatabase>
 
-#include "dialerutils.h"
+#include <kTelephonyMetaTypes/dialer-types.h>
 
-struct CallData {
-    QString id;
-    QString number;
-    QDateTime time;
-    int duration;
-    DialerUtils::CallType callType;
-};
-
-class Database : public QObject
+class CallHistoryDatabase : public QObject
 {
     Q_OBJECT
+    Q_CLASSINFO("D-Bus Interface", "org.kde.telephony.CallHistoryDatabase")
 
 public:
-    explicit Database(QObject *parent = nullptr);
+    explicit CallHistoryDatabase(QObject *parent = nullptr);
 
-    // Calls
-    QVector<CallData> fetchCalls();
-    void addCall(const QString &number, int duration, DialerUtils::CallType type);
+Q_SIGNALS:
+    void callsChanged();
+
+public Q_SLOTS:
+    DialerTypes::CallDataVector fetchCalls();
+    void addCall(const DialerTypes::CallData &callData);
     void clear();
     void remove(const QString &id);
     int lastId() const;
 
 private:
-    QSqlDatabase m_database;
-
-signals:
-    void callsChanged();
+    QSqlDatabase _database;
 };
