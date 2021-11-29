@@ -40,6 +40,16 @@ Kirigami.Page {
         return '' + h + ':' + m + ':' + s;
     }
 
+    Connections {
+        target: DialerUtils
+        function onMuteChanged(muted) {
+            muteButton.toggledOn = muted
+        }
+        function onSpeakerModeChanged(enabled) {
+            speakerButton.toggledOn = enabled
+        }
+    }
+
     ColumnLayout {
         id: activeCallUi
         spacing: Kirigami.Units.largeSpacing
@@ -160,12 +170,10 @@ Kirigami.Page {
                 
                 iconSource: "audio-speakers-symbolic"
                 text: i18n("Speaker")
-                toggledOn: false
                 
-                onClicked: toggledOn = !toggledOn
-                
-                onToggledOnChanged: {
-                    DialerUtils.setSpeakerMode(toggledOn);
+                onClicked: {
+                    const speakerMode = !toggledOn
+                    DialerUtils.setSpeakerMode(speakerMode);
                 }
             }
             CallPageButton {
@@ -176,11 +184,10 @@ Kirigami.Page {
 
                 iconSource: toggledOn ? "microphone-sensitivity-muted-symbolic" : "microphone-sensitivity-high-symbolic"
                 text: i18n("Mute")
-                toggledOn: false
-                onClicked: toggledOn = !toggledOn
 
-                onToggledOnChanged: {
-                    DialerUtils.setMute(toggledOn)
+                onClicked: {
+                    const micMute = !toggledOn
+                    DialerUtils.setMute(micMute)
                 }
             }
         }
