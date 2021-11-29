@@ -3,12 +3,20 @@
   <interface name="org.kde.telephony.DialerUtils">
     <signal name="missedCallsActionTriggered">
     </signal>
+    <signal name="speakerModeFetched">
+    </signal>
+    <signal name="muteFetched">
+    </signal>
     <signal name="speakerModeChanged">
       <arg name="enabled" type="b" direction="out"/>
     </signal>
     <signal name="muteChanged">
       <arg name="muted" type="b" direction="out"/>
     </signal>
+    <method name="fetchSpeakerMode">
+    </method>
+    <method name="fetchMute">
+    </method>
     <method name="setSpeakerMode">
       <arg name="enabled" type="b" direction="in"/>
     </method>
