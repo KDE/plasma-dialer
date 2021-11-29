@@ -59,7 +59,7 @@ target_link_libraries(kde-telephony-daemon
 
 configure_file(daemon-autostart.desktop.in ${CMAKE_CURRENT_BINARY_DIR}/daemon-autostart.desktop)
 
-set(SERV_EXEC ${KDE_INSTALL_FULL_LIBEXECDIR}/modem-daemon)
+set(SERV_EXEC ${KDE_INSTALL_FULL_LIBEXECDIR}/kde-telephony-daemon)
 configure_file(org.kde.telephony.service.in ${CMAKE_CURRENT_BINARY_DIR}/org.kde.telephony.service)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.telephony.service DESTINATION ${DBUS_SERVICES_INSTALL_DIR})
 
