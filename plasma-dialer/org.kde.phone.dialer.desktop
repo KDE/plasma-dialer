@@ -69,7 +69,8 @@ Name[zh_CN]=电话
 Name[zh_TW]=電話
 Type=Application
 Icon=dialer
-Exec=plasmaphonedialer %u
+Exec=plasmaphonedialer %U
 Categories=Qt;KDE;Telephony;Network;
 
-MimeType=x-scheme-handler/tel
+MimeType=x-scheme-handler/tel;x-scheme-handler/callto;
+X-KDE-Protocols=tel;callto;

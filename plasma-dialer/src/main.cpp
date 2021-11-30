@@ -7,13 +7,35 @@
 
 #include "version.h"
 
+#include <KDBusService>
 #include <KLocalizedContext>
 #include <KLocalizedString>
+#include <KWindowSystem>
+#include <QCommandLineParser>
 #include <QIcon>
+#include <QObject>
 #include <QQuickStyle>
+#include <QQuickWindow>
 #include <QtQml>
 
 #include <KAboutData>
+
+static QString parseTelArgument(const QString &numberArg)
+{
+    QString result;
+    if (numberArg.startsWith(QStringLiteral("tel:"))) {
+        result = numberArg.mid(4);
+    }
+    if (numberArg.startsWith(QStringLiteral("callto:"))) {
+        result = numberArg.mid(7);
+    }
+    return result;
+}
+
+static void inputCallNumber(QWindow *window, const QString &number)
+{
+    QMetaObject::invokeMethod(window, "call", Q_ARG(QVariant, number));
+}
 
 int main(int argc, char **argv)
 {
@@ -32,14 +54,53 @@ int main(int argc, char **argv)
     QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("dialer")));
     QGuiApplication::setApplicationDisplayName(QStringLiteral("Phone"));
 
+    KAboutData aboutData(QStringLiteral("dialer"), i18n("Phone"), QStringLiteral(PLASMADIALER_VERSION_STRING), i18n("Plasma phone dialer"), KAboutLicense::GPL);
+    aboutData.setDesktopFileName(QStringLiteral("org.kde.phone.dialer"));
+    KAboutData::setApplicationData(aboutData);
+
+    QCommandLineParser parser;
+    QCommandLineOption telSchemeOption(QStringList() << QStringLiteral("number"),
+                                       QCoreApplication::translate("main", "Input a phone number"),
+                                       QCoreApplication::translate("main", "phone number"));
+    parser.addOption(telSchemeOption);
+    parser.process(app);
+
+    QString telNumber = parser.value(telSchemeOption);
+
     QQmlApplicationEngine engine;
+    KDBusService service(KDBusService::Unique, &app);
+
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
 
-    KAboutData aboutData(QStringLiteral("dialer"), i18n("Phone"), QStringLiteral(PLASMADIALER_VERSION_STRING), i18n("Plasma phone dialer"), KAboutLicense::GPL);
-    aboutData.setDesktopFileName(QStringLiteral("org.kde.phone.dialer"));
+    if (engine.rootObjects().isEmpty()) {
+        return -1;
+    }
 
-    KAboutData::setApplicationData(aboutData);
+    QWindow *window = qobject_cast<QWindow *>(engine.rootObjects().at(0));
+    Q_ASSERT(window);
+
+    QObject::connect(&service, &KDBusService::activateRequested, window, [=](const QStringList &arguments) {
+        for (const auto &arg : arguments) {
+            QString numberArg = parseTelArgument(arg);
+            if (!numberArg.isEmpty()) {
+                inputCallNumber(window, numberArg);
+                break;
+            }
+        }
+        KWindowSystem::raiseWindow(window->winId());
+    });
+
+    if (!parser.positionalArguments().isEmpty()) {
+        QString numberArg = parseTelArgument(parser.positionalArguments().constFirst());
+        if (!numberArg.isEmpty()) {
+            telNumber = numberArg;
+        }
+    }
+
+    if (!telNumber.isEmpty()) {
+        inputCallNumber(window, telNumber);
+    }
 
     return app.exec();
 }

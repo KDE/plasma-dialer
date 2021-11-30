@@ -4,7 +4,7 @@ add_executable(plasmaphonedialer
 )
 
 find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED Core Quick Qml QuickControls2)
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS CoreAddons I18n DBusAddons)
+find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS CoreAddons I18n DBusAddons WindowSystem)
 
 target_include_directories(plasmaphonedialer PRIVATE ${CMAKE_BINARY_DIR})
 
@@ -16,6 +16,7 @@ target_link_libraries(plasmaphonedialer
     KF5::CoreAddons
     KF5::I18n
     KF5::DBusAddons
+    KF5::WindowSystem
 )
 
 install(TARGETS plasmaphonedialer ${INSTALL_TARGETS_DEFAULT_ARGS})
