@@ -29,6 +29,7 @@ static void enable_speaker()
 DialerManager::DialerManager(QObject *parent)
     : QObject(parent)
 {
+    DialerAudio::instance();
 }
 
 DialerManager::~DialerManager()
@@ -54,6 +55,9 @@ void DialerManager::setDialerUtils(DialerUtils *dialerUtils)
 
     connect(_dialerUtils, &DialerUtils::speakerModeChanged, this, &DialerManager::onSetSpeakerModeRequested);
     connect(_dialerUtils, &DialerUtils::muteChanged, this, &DialerManager::onSetMuteRequested);
+
+    connect(_dialerUtils, &DialerUtils::speakerModeFetched, this, &DialerManager::onSpeakerModeFetched);
+    connect(_dialerUtils, &DialerUtils::muteFetched, this, &DialerManager::onMuteFetched);
 }
 
 void DialerManager::onCallStateChanged(const QString &deviceUni,
@@ -62,19 +66,32 @@ void DialerManager::onCallStateChanged(const QString &deviceUni,
                                        const DialerTypes::CallState &callState,
                                        const DialerTypes::CallStateReason &callStateReason)
 {
-    qDebug() << "new call state:" << callDirection;
     if (!_contactUtils) {
         qCritical() << Q_FUNC_INFO;
     }
+    qDebug() << Q_FUNC_INFO << "new call state:" << callState;
     switch (callState) {
-    case DialerTypes::CallState::Dialing:
+    case DialerTypes::CallState::Active:
         enable_earpiece();
         break;
     case DialerTypes::CallState::Terminated:
         enable_normal();
+        break;
     default:
-        enable_earpiece();
+        break;
     }
+}
+
+void DialerManager::onSpeakerModeFetched()
+{
+    bool speakerMode = DialerAudio::instance()->getCallMode() & AudioModeSpeaker;
+    Q_EMIT _dialerUtils->speakerModeChanged(speakerMode);
+}
+
+void DialerManager::onMuteFetched()
+{
+    auto micMute = DialerAudio::instance()->getMicMute();
+    Q_EMIT _dialerUtils->muteChanged(micMute);
 }
 
 void DialerManager::onSetSpeakerModeRequested(bool enabled)

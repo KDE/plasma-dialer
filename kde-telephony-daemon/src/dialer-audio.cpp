@@ -73,6 +73,14 @@ void DialerAudio::cardAdded(PulseAudioQt::Card *card)
 
     _voiceCallCard = card;
     _voiceCallProfile = *voiceCallProfile;
+
+    // init mute value
+    const auto sources = _voiceCallCard->sources();
+    PulseAudioQt::Source *activeCardSource = sources.first();
+    _micMuted = activeCardSource->isMuted();
+    if (!_micMuted) {
+        _prevVolume = activeCardSource->volume();
+    }
 }
 
 void DialerAudio::setCallMode(CallStatus callStatus, AudioMode audioMode)
@@ -198,6 +206,11 @@ void DialerAudio::setMicMute(bool muted)
         activeCardSource->setMuted(_micMuted);
     } else {
         activeCardSource->setMuted(_micMuted);
+        if (_prevVolume <= PulseAudioQt::minimumVolume()) {
+            // workaround to not have problems with the silent mic
+            qWarning() << Q_FUNC_INFO << "setting mic volume above the minimal";
+            _prevVolume = PulseAudioQt::normalVolume() / 2;
+        }
         activeCardSource->setVolume(_prevVolume);
     }
 }
@@ -208,6 +221,16 @@ DialerAudio *DialerAudio::instance()
 {
     DialerAudio *audio = dialerAudio();
     return audio;
+}
+
+AudioMode DialerAudio::getCallMode()
+{
+    return _audioMode;
+}
+
+bool DialerAudio::getMicMute()
+{
+    return _micMuted;
 }
 
 DialerAudio::~DialerAudio() = default;

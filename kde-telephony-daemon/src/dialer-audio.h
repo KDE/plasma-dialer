@@ -36,6 +36,9 @@ public:
     ~DialerAudio() override;
     static DialerAudio *instance();
 
+    AudioMode getCallMode();
+    bool getMicMute();
+
     void setCallMode(CallStatus callstatus, AudioMode audiomode);
     void setMicMute(bool muted);
 
@@ -51,5 +54,5 @@ private:
     CallStatus _callStatus = CallEnded;
     AudioMode _audioMode = AudioModeWiredOrSpeaker;
     bool _micMuted = false;
-    quint64 _prevVolume;
+    qint64 _prevVolume;
 };

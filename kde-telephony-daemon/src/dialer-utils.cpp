@@ -15,6 +15,16 @@ DialerUtils::DialerUtils(QObject *parent)
 {
 }
 
+void DialerUtils::fetchSpeakerMode()
+{
+    Q_EMIT speakerModeFetched();
+}
+
+void DialerUtils::fetchMute()
+{
+    Q_EMIT muteFetched();
+}
+
 void DialerUtils::setSpeakerMode(bool enabled)
 {
     Q_EMIT speakerModeChanged(enabled);

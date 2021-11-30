@@ -30,6 +30,8 @@ private Q_SLOTS:
                             const DialerTypes::CallDirection &callDirection,
                             const DialerTypes::CallState &callState,
                             const DialerTypes::CallStateReason &callStateReason);
+    void onSpeakerModeFetched();
+    void onMuteFetched();
     void onSetSpeakerModeRequested(bool enabled);
     void onSetMuteRequested(bool muted);
 
