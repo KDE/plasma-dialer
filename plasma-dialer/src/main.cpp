@@ -1,8 +1,7 @@
-/*
- *   SPDX-FileCopyrightText: 2015 Marco Martin <mart@kde.org>
- *
- *   SPDX-License-Identifier: LGPL-2.0-or-later
- */
+// SPDX-FileCopyrightText: 2015 Marco Martin <mart@kde.org>
+// SPDX-FileCopyrightText: 2021 Alexey Andreyev <aa13q@ya.ru>
+//
+// SPDX-License-Identifier: LGPL-2.0-or-later
 
 #include <QGuiApplication>
 
@@ -11,13 +10,19 @@
 #include <KLocalizedContext>
 #include <KLocalizedString>
 #include <QIcon>
+#include <QQuickStyle>
 #include <QtQml>
 
 #include <KAboutData>
 
 int main(int argc, char **argv)
 {
+    QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QGuiApplication app(argc, argv);
+
+    if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE") && QQuickStyle::name().isEmpty()) {
+        QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
+    }
 
     QCoreApplication::setOrganizationName(QStringLiteral("KDE"));
     QCoreApplication::setOrganizationDomain(QStringLiteral("kde.org"));
