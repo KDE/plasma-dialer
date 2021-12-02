@@ -45,6 +45,8 @@ int main(int argc, char **argv)
 
     DialerTypes::registerMetaTypes();
 
+    QObject::connect(deviceUtils, &org::kde::telephony::DeviceUtils::countryCodeChanged, contactUtils, &ContactUtils::changeCountryCode);
+
     QDBusConnection dbus = QDBusConnection::sessionBus();
 
     DialerManager dialerManager(&app);
