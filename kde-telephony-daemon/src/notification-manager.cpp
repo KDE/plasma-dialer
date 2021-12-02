@@ -70,7 +70,9 @@ void NotificationManager::openRingingNotification(const QString &deviceUni, cons
 {
     _ringEffect->start();
 
-    QString callerDisplayName = _contactUtils->displayString(communicationWith);
+    QString contactName = _contactUtils->displayString(communicationWith);
+    QString callerDisplayString =
+        (contactName == communicationWith) ? communicationWith : communicationWith + QStringLiteral("<br>") + QStringLiteral("<b>%1</b>").arg(contactName);
 
     QStringList actions;
     actions << i18n("Accept") << i18n("Reject");
@@ -85,7 +87,7 @@ void NotificationManager::openRingingNotification(const QString &deviceUni, cons
     _ringingNotification->setComponentName(QStringLiteral("plasma_dialer"));
     // _ringingNotification->setPixmap(person.photo());
     _ringingNotification->setTitle(i18n("Incoming call"));
-    _ringingNotification->setText(callerDisplayName);
+    _ringingNotification->setText(callerDisplayString);
     // this will be used by the notification applet to show custom notification UI
     // with swipe decision.
     _ringingNotification->setHint(QStringLiteral("category"), QStringLiteral("x-kde.incoming-call"));
