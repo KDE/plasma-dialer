@@ -58,10 +58,7 @@ Kirigami.ScrollablePage {
         delegate: Kirigami.BasicListItem {
             icon: model && model.decoration
             label: model && model.display
-            onClicked: {
-                var device = appWindow.selectModem()
-                CallUtils.dial(device, model.phoneNumber)
-            }
+            onClicked: appWindow.call(model.phoneNumber)
         }
 
         Kirigami.PlaceholderMessage {

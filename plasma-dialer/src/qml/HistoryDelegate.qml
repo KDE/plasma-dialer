@@ -12,7 +12,7 @@ Kirigami.AbstractListItem {
     id: root
 
     highlighted: false
-    onClicked: call(model.communicationWith)
+    onClicked: appWindow.call(model.communicationWith)
 
     RowLayout {
         Kirigami.Icon {
