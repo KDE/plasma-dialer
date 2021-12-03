@@ -23,7 +23,6 @@ Kirigami.NavigationTabBar {
             }
         },
         Kirigami.Action {
-            enabled: false // TODO
             iconName: "view-pim-contacts"
             text: i18n("Contacts")
             property bool opened: appWindow.getPage("Contacts") === appWindow.pageStack.currentItem

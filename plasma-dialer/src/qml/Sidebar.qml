@@ -63,7 +63,6 @@ Kirigami.OverlayDrawer {
 
             SidebarButton {
                 text: i18n("Contacts")
-                enabled: false // TODO
                 icon.name: "view-pim-contacts"
                 Layout.fillWidth: true
                 Layout.minimumHeight: Kirigami.Units.gridUnit * 2
