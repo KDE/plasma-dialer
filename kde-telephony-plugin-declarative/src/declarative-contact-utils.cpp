@@ -20,6 +20,13 @@ DeclarativeContactUtils::DeclarativeContactUtils(QObject *parent)
 
 QString DeclarativeContactUtils::displayString(const QString &contact)
 {
-    QString displayString = contact;
-    return displayString;
+    QString result = contact;
+    QDBusPendingReply<QString> reply = org::kde::telephony::ContactUtils::displayString(contact);
+    reply.waitForFinished();
+    if (reply.isError()) {
+        qDebug() << Q_FUNC_INFO << reply.error();
+    } else {
+        result = reply;
+    }
+    return result;
 }
