@@ -43,7 +43,7 @@ Kirigami.AbstractListItem {
             Controls.Label {
                 id: numberLabel
                 visible: callContactDisplayLabel.text !== text
-                text: model.communicationWith
+                text: ContactUtils.displayString(model.communicationWith)
                 Layout.fillWidth: true
             }
         }
