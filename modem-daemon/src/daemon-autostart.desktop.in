@@ -1,6 +1,16 @@
 [Desktop Entry]
 Comment=Qt Modem Daemon to handle @MODEM_SUBSYSTEM@ events
+Comment[ca]=Dimoni de mòdem Qt per a gestionar esdeveniments @MODEM_SUBSYSTEM@
+Comment[nl]=Qt modemdaemon om gebeurtenissen van @MODEM_SUBSYSTEM@ te behandelen
+Comment[pt_BR]=Serviço de modem do Qt para manipular eventos do @MODEM_SUBSYSTEM@
+Comment[uk]=Фонова служба модема Qt для обробки подій @MODEM_SUBSYSTEM@
+Comment[x-test]=xxQt Modem Daemon to handle @MODEM_SUBSYSTEM@ eventsxx
 Name=Modem Daemon Service
+Name[ca]=Servei de domini de mòdem
+Name[nl]=Modemdaemon-service
+Name[pt_BR]=Serviço de modem
+Name[uk]=Обслуговування фонової служби модема
+Name[x-test]=xxModem Daemon Servicexx
 Type=Application
 Icon=dialer
 Exec=@KDE_INSTALL_FULL_LIBEXECDIR@/modem-daemon
