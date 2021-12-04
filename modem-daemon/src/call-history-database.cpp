@@ -212,37 +212,39 @@ void CallHistoryDatabase::_migrationV2(uint current)
         exec(createNew);
 
         QSqlQuery copyTemp(_database);
+        // clang-format off
         copyTemp.prepare(
             QStringLiteral("INSERT INTO History "
-                           "("
-                           "protocol, account, provider, "
-                           "communicationWith, direction, state, stateReason, "
-                           "callAttemptDuration, startedAt, duration "
-                           ") "
+                            "("
+                             "protocol, account, provider, "
+                             "communicationWith, direction, state, stateReason, "
+                             "callAttemptDuration, startedAt, duration "
+                            ") "
                            "SELECT "
-                           "'tel', 'unknown', 'unknown', "
-                           "temp_table.number, "
-                           "CASE temp_table.callType " // direction
-                           "WHEN 0 " // IncomingRejected
-                           "THEN 1 " // Incoming
-                           "WHEN 1 " // IncomingAccepted
-                           "THEN 1 " // Incoming
-                           "WHEN 2 " // Outgoing
-                           "THEN 2 " // Outgoing
-                           "ELSE 0 " // Unknown
+                            "'tel', 'unknown', 'unknown', "
+                            "temp_table.number, "
+                            "CASE temp_table.callType " // direction
+                                "WHEN 0 " // IncomingRejected
+                                    "THEN 1 " // Incoming
+                                "WHEN 1 " // IncomingAccepted
+                                    "THEN 1 " // Incoming
+                                "WHEN 2 " // Outgoing
+                                    "THEN 2 " // Outgoing
+                                "ELSE 0 " // Unknown
                            "END, "
                            "7, " // state Terminated
                            "CASE temp_table.callType " // stateReason
-                           "WHEN 0 " // IncomingRejected
-                           "THEN 9 " // Deflected
-                           "WHEN 1 " // IncomingAccepted
-                           "THEN 3 " // Accepted
-                           "WHEN 2 " // Outgoing
-                           "THEN 4 " // TerminatedReason
-                           "ELSE 0 " // Unknown
-                           "END, "
+                                "WHEN 0 " // IncomingRejected
+                                    "THEN 9 " // Deflected
+                                "WHEN 1 " // IncomingAccepted
+                                    "THEN 3 " // Accepted
+                                "WHEN 2 " // Outgoing
+                                    "THEN 4 " // TerminatedReason
+                                "ELSE 0 " // Unknown
+                                    "END, "
                            "0, temp_table.time, temp_table.duration "
                            "FROM temp_table"));
+        // clang-format on
         exec(copyTemp);
 
         QSqlQuery dropTemp(_database);
