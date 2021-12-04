@@ -19,6 +19,8 @@ class CallHistoryDatabase : public QObject
 public:
     explicit CallHistoryDatabase(QObject *parent = nullptr);
 
+    static void exec(QSqlQuery &query);
+
 Q_SIGNALS:
     void callsChanged();
 
@@ -30,5 +32,11 @@ public Q_SLOTS:
     int lastId() const;
 
 private:
+    uint _guessPreHistoricRevision();
+    void _migrationV1(uint current);
+    void _migrationV2(uint current);
+    void _migrationV3(uint current);
+    void _migrate();
+
     QSqlDatabase _database;
 };
