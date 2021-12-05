@@ -35,7 +35,6 @@ private:
     uint _guessPreHistoricRevision();
     void _migrationV1(uint current);
     void _migrationV2(uint current);
-    void _migrationV3(uint current);
     void _migrate();
 
     QSqlDatabase _database;

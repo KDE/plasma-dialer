@@ -12,13 +12,13 @@
 #include <QSqlQuery>
 #include <QStandardPaths>
 
-constexpr auto DATABASE_REVISION = 3; // Keep MIGRATE_TO_LATEST_FROM in sync
+constexpr auto DATABASE_REVISION = 2; // Keep MIGRATE_TO_LATEST_FROM in sync
 #define MIGRATE_TO(n, current)                                                                                                                                 \
     if (current < n) {                                                                                                                                         \
         qDebug() << "Running migration" << #n;                                                                                                                 \
         _migrationV##n(current);                                                                                                                               \
     }
-#define MIGRATE_TO_LATEST_FROM(current) MIGRATE_TO(3, current)
+#define MIGRATE_TO_LATEST_FROM(current) MIGRATE_TO(2, current)
 
 CallHistoryDatabase::CallHistoryDatabase(QObject *parent)
     : QObject(parent)
@@ -154,37 +154,16 @@ uint CallHistoryDatabase::_guessPreHistoricRevision()
         qDebug() << Q_FUNC_INFO << "found column" << tableInfo.value(1).toString();
         columnCount++;
     }
-    if (columnCount == 5) {
-        result = 1;
-    }
     if (columnCount == 11) {
-        result = 2;
+        qDebug() << Q_FUNC_INFO << "found pre-historic revision v1";
+        result = 1; // the db from testing version with the v1 scheme but without migrationId
     }
     return result;
 }
 
 void CallHistoryDatabase::_migrationV1(uint current)
 {
-    Q_UNUSED(current);
-    QSqlQuery createNew(_database);
-
-    createNew.prepare(
-        QStringLiteral("CREATE TABLE IF NOT EXISTS "
-                       "History( "
-                       "id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                       "number TEXT, " // communicationWith
-                       "time DATETIME, " // startedAt
-                       "duration INTEGER, " // duration
-                       "callType INTEGER " //  0=IncomingRejected, 1=IncomingAccepted, 2=Outgoing
-                       ")"));
-    exec(createNew);
-}
-
-void CallHistoryDatabase::_migrationV2(uint current)
-{
-    MIGRATE_TO(1, current);
-
-    if (current < 2) {
+    if (current < 1) {
         QSqlQuery tempTable(_database);
         tempTable.prepare(QStringLiteral("CREATE TABLE temp_table AS SELECT * FROM History"));
         exec(tempTable);
@@ -253,9 +232,9 @@ void CallHistoryDatabase::_migrationV2(uint current)
     }
 }
 
-void CallHistoryDatabase::_migrationV3(uint current)
+void CallHistoryDatabase::_migrationV2(uint current)
 {
-    MIGRATE_TO(2, current);
+    MIGRATE_TO(1, current);
 }
 
 void CallHistoryDatabase::_migrate()
