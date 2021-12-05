@@ -1,14 +1,20 @@
 [Desktop Entry]
 Comment=KDE Daemon to handle modem daemon events
 Comment[ca]=Dimoni del KDE per a gestionar esdeveniments de dimoni de mòdem
+Comment[fr]=Démon de KDE en charge de la gestion des évènements du démon de modem.
 Comment[nl]=KDE-daemon om gebeurtenissen in modem-daemon te behandelen
 Comment[pt_BR]=Serviço do KDE para manipular eventos do serviço de modem
+Comment[sl]=KDE demon za obravnavo dogodkov demona za modem
+Comment[sv]=KDE-demon för att hantera modemdemonhändelser
 Comment[uk]=Фонова служба KDE для обробки подій фонової служби модема
 Comment[x-test]=xxKDE Daemon to handle modem daemon eventsxx
 Name=Telephony Daemon Service
 Name[ca]=Servei de domini de telefonia
+Name[fr]=Service de démon pour la téléphonie
 Name[nl]=Telefoondaemon-service
 Name[pt_BR]=Serviço de telefonia
+Name[sl]=Storitve demona telefonije
+Name[sv]=Telefonidemontjänst
 Name[uk]=Обслуговування фонової служби телефонії
 Name[x-test]=xxTelephony Daemon Servicexx
 Type=Application
