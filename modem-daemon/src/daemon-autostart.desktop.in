@@ -1,6 +1,7 @@
 [Desktop Entry]
 Comment=Qt Modem Daemon to handle @MODEM_SUBSYSTEM@ events
 Comment[ca]=Dimoni de mòdem Qt per a gestionar esdeveniments @MODEM_SUBSYSTEM@
+Comment[ca@valencia]=Dimoni de mòdem Qt per a gestionar esdeveniments @MODEM_SUBSYSTEM@
 Comment[fr]=Démon de modems sous Qt en charge de la gestion des évènements « @MODEM_SUBSYSTEM@ ».
 Comment[nl]=Qt modemdaemon om gebeurtenissen van @MODEM_SUBSYSTEM@ te behandelen
 Comment[pt_BR]=Serviço de modem do Qt para manipular eventos do @MODEM_SUBSYSTEM@
@@ -10,6 +11,7 @@ Comment[uk]=Фонова служба модема Qt для обробки по
 Comment[x-test]=xxQt Modem Daemon to handle @MODEM_SUBSYSTEM@ eventsxx
 Name=Modem Daemon Service
 Name[ca]=Servei de domini de mòdem
+Name[ca@valencia]=Servei de domini de mòdem
 Name[fr]=Service de démon pour les modems
 Name[nl]=Modemdaemon-service
 Name[pt_BR]=Serviço de modem
