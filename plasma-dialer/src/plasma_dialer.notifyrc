@@ -110,7 +110,7 @@ Action=Popup
 
 [Event/ringing]
 Name=Ringing
-Name[az]=Zəng
+Name[az]=Zəng çalır
 Name[ca]=Sonant
 Name[ca@valencia]=Sonant
 Name[cs]=Zvoní
