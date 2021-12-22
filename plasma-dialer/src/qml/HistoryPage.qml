@@ -24,6 +24,16 @@ Kirigami.ScrollablePage {
         text: i18n("Clear history")
         icon.name: "edit-clear-history"
     }
+    
+    actions.contextualActions: [
+        Kirigami.Action {
+            displayHint: Kirigami.Action.IconOnly
+            visible: !applicationWindow().isWidescreen
+            iconName: "settings-configure"
+            text: i18n("Settings")
+            onTriggered: applicationWindow().pageStack.push(applicationWindow().getPage("Settings"))
+        }
+    ]
 
     function secondsToTimeString(seconds) {
         var h = Math.floor(seconds / 3600);

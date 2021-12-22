@@ -16,6 +16,14 @@ Kirigami.ScrollablePage {
     title: i18n("Contacts")
     icon.name: "view-pim-contacts"
 
+    mainAction: Kirigami.Action {
+        displayHint: Kirigami.Action.IconOnly
+        visible: !applicationWindow().isWidescreen
+        iconName: "settings-configure"
+        text: i18n("Settings")
+        onTriggered: applicationWindow().pageStack.push(applicationWindow().getPage("Settings"))
+    }
+    
     header: ColumnLayout {
         anchors.margins: Kirigami.Units.smallSpacing
         spacing: Kirigami.Units.smallSpacing

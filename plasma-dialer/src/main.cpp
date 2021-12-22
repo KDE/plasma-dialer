@@ -68,6 +68,8 @@ int main(int argc, char **argv)
     QString telNumber = parser.value(telSchemeOption);
 
     QQmlApplicationEngine engine;
+    engine.rootContext()->setContextProperty(QStringLiteral("DialerAboutData"), QVariant::fromValue(aboutData));
+
     KDBusService service(KDBusService::Unique, &app);
 
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));

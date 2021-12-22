@@ -16,7 +16,7 @@ Kirigami.InlineMessage {
         Kirigami.Action {
             icon.name: "call-start"
             text: i18n("View")
-            onTriggered: switchToPage(getPage("Call"), 1)
+            onTriggered: applicationWindow().pageStack.layers.push(getPage("Call"))
         }
     ]
     Layout.fillWidth: true

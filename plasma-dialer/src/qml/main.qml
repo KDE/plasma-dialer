@@ -16,8 +16,11 @@ import "Call"
 Kirigami.ApplicationWindow {
     wideScreen: false
     id: appWindow
+    
     pageStack.globalToolBar.canContainHandles: true
     pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.ToolBar
+    pageStack.globalToolBar.showNavigationButtons: Kirigami.ApplicationHeaderStyle.ShowBackButton;
+    
     // needs to work with 360x720 (+ panel heights)
     minimumWidth: 300
     minimumHeight: minimumWidth + 1
@@ -28,6 +31,26 @@ Kirigami.ApplicationWindow {
 
     readonly property bool smallMode: appWindow.height < Kirigami.Units.gridUnit * 20
 
+    // pop pages when not in use
+    Connections {
+        target: applicationWindow().pageStack
+        function onCurrentIndexChanged() {
+            // wait for animation to finish before popping pages
+            timer.restart();
+        }
+    }
+    
+    Timer {
+        id: timer
+        interval: 300
+        onTriggered: {
+            let currentIndex = applicationWindow().pageStack.currentIndex;
+            while (applicationWindow().pageStack.depth > (currentIndex + 1) && currentIndex >= 0) {
+                applicationWindow().pageStack.pop();
+            }
+        }
+    }
+
     Kirigami.PagePool { id: pagePool }
 
     function getPage(name) {
@@ -36,6 +59,8 @@ Kirigami.ApplicationWindow {
         case "Contacts": return pagePool.loadPage("qrc:/ContactsPage.qml");
         case "Dialer": return pagePool.loadPage("qrc:/DialerPage.qml");
         case "Call": return pagePool.loadPage("qrc:/Call/CallPage.qml");
+        case "Settings": return pagePool.loadPage("qrc:/SettingsPage.qml");
+        case "About": return pagePool.loadPage("qrc:/AboutPage.qml");
         }
     }
 

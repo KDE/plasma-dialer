@@ -7,6 +7,8 @@
         <file alias="DialerPage.qml">qml/DialerPage.qml</file>
         <file alias="ContactsPage.qml">qml/ContactsPage.qml</file>
         <file alias="HistoryPage.qml">qml/HistoryPage.qml</file>
+        <file alias="SettingsPage.qml">qml/SettingsPage.qml</file>
+        <file alias="AboutPage.qml">qml/AboutPage.qml</file>
         <file alias="InCallInlineMessage.qml">qml/InCallInlineMessage.qml</file>
         <file alias="Call/AnswerSwipe.qml">qml/Call/AnswerSwipe.qml</file>
         <file alias="Call/CallPage.qml">qml/Call/CallPage.qml</file>

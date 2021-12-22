@@ -96,6 +96,26 @@ Kirigami.OverlayDrawer {
             }
 
             Item { Layout.fillHeight: true }
+            Kirigami.Separator {
+                Layout.fillWidth: true
+                Layout.margins: Kirigami.Units.smallSpacing
+            }
+            
+            SidebarButton {
+                text: i18n("Settings")
+                icon.name: "settings-configure"
+                Layout.fillWidth: true
+                Layout.minimumHeight: Kirigami.Units.gridUnit * 2
+                checked: pageStack.currentItem === page
+                property var page: appWindow.getPage("Settings")
+                onClicked: {
+                    if (appWindow.pageStack.currentItem !== page) {
+                        appWindow.switchToPage(page, 0);
+                    } else {
+                        checked = Qt.binding(function() { return appWindow.pageStack.currentItem === page; });
+                    }
+                }
+            }
         }
     }
 }

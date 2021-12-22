@@ -25,6 +25,14 @@ Kirigami.Page {
     rightPadding: 0
     topPadding: 0
     bottomPadding: 0
+    
+    mainAction: Kirigami.Action {
+        displayHint: Kirigami.Action.IconOnly
+        visible: !applicationWindow().isWidescreen
+        iconName: "settings-configure"
+        text: i18n("Settings")
+        onTriggered: applicationWindow().pageStack.push(applicationWindow().getPage("Settings"))
+    }
 
     header: ColumnLayout {
         anchors.margins: Kirigami.Units.smallSpacing
