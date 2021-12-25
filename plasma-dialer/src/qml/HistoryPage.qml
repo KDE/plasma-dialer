@@ -5,7 +5,7 @@ import QtQuick 2.3
 import QtQuick.Controls 2.3
 import QtQuick.Layouts 1.1
 
-import org.kde.kirigami 2.12 as Kirigami
+import org.kde.kirigami 2.19 as Kirigami
 
 import org.kde.telephony 1.0
 
@@ -20,7 +20,7 @@ Kirigami.ScrollablePage {
     }
     
     actions.main: Kirigami.Action {
-        onTriggered: CallHistoryModel.clear()
+        onTriggered: promptDialog.open()
         text: i18n("Clear history")
         icon.name: "edit-clear-history"
     }
@@ -63,5 +63,14 @@ Kirigami.ScrollablePage {
             }
         }
         delegate: HistoryDelegate {}
+    }
+    
+    Kirigami.PromptDialog {
+        id: promptDialog
+        title: "Clear history?"
+        subtitle: "Delete the call history log without option to restore it"
+        standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
+        onAccepted: CallHistoryModel.clear()
+        onRejected: close()
     }
 }
