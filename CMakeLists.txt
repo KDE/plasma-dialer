@@ -8,7 +8,7 @@ project(plasma-dialer-with-subprojects)
 set(PROJECT_VERSION "21.12")
 
 set(QT_MIN_VERSION "5.15.0")
-set(KF5_MIN_VERSION "5.88.0")
+set(KF5_MIN_VERSION "5.89.0")
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
