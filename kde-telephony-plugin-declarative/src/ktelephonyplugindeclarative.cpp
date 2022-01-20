@@ -98,6 +98,9 @@ void KTelephonyPluginDeclarative::registerTypes(const char *uri)
     qmlRegisterSingletonType<CallHistoryModel>(uri, 1, 0, "CallHistoryModel", callHistoryModelTypeProvider);
     qmlRegisterSingletonType<ActiveCallModel>(uri, 1, 0, "ActiveCallModel", activeCallModelTypeProvider);
 
+    // plugin-only KContacts-related utils
+    qRegisterMetaType<KContacts::PhoneNumber>();
+
     // kde-telephony-daemon
 
     qmlRegisterSingletonType<DeclarativeDialerUtils>(uri, 1, 0, "DialerUtils", dialerUtilsTypeProvider);

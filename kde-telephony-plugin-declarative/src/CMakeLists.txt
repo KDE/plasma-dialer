@@ -28,7 +28,7 @@ set_source_files_properties(
 )
 
 find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED Core Quick Qml Sql DBus)
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS CoreAddons I18n DBusAddons)
+find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS CoreAddons I18n DBusAddons Contacts People)
 find_package(PhoneNumber COMPONENTS PhoneNumber REQUIRED)
 
 # calls-daemon
@@ -71,6 +71,9 @@ target_link_libraries(KTelephonyPluginDeclarative
     KF5::CoreAddons
     KF5::I18n
     KF5::DBusAddons
+    KF5::Contacts
+    KF5::People
+    KF5::PeopleBackend
     ktelephonymetatypes # TODO: KF5 cmake files
     )
 

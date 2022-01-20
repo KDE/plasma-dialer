@@ -4,7 +4,29 @@
 
 #include "declarative-contact-utils.h"
 
+#include <KContacts/VCardConverter>
+#include <KPeople/KPeopleBackend/AbstractContact>
+#include <KPeople/PersonData>
+
 #include "callutilsinterface.h"
+
+template<typename T>
+static QVariantList toVariantList(const QVector<T> &v)
+{
+    QVariantList l;
+    l.reserve(v.size());
+    std::transform(v.begin(), v.end(), std::back_inserter(l), [](const T &elem) {
+        return QVariant::fromValue(elem);
+    });
+    return l;
+}
+
+const static KContacts::VCardConverter converter;
+
+static QSharedPointer<KPeople::PersonData> contactData(const QString &uri)
+{
+    return QSharedPointer<KPeople::PersonData>(new KPeople::PersonData(uri));
+}
 
 DeclarativeContactUtils::DeclarativeContactUtils(QObject *parent)
     : org::kde::telephony::ContactUtils(QString::fromLatin1(staticInterfaceName()),
@@ -29,4 +51,13 @@ QString DeclarativeContactUtils::displayString(const QString &contact)
         result = reply;
     }
     return result;
+}
+
+QVariantList DeclarativeContactUtils::phoneNumbers(const QString &kPeopleUri)
+{
+    auto person = contactData(kPeopleUri);
+    auto vcard = person->contactCustomProperty(KPeople::AbstractContact::VCardProperty).toByteArray();
+    auto addressee = converter.parseVCard(vcard);
+
+    return toVariantList(addressee.phoneNumbers());
 }

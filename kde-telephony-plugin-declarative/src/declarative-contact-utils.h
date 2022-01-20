@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include <KContacts/PhoneNumber>
 #include <QObject>
 
 #include "contactutilsinterface.h"
@@ -15,4 +16,5 @@ public:
     DeclarativeContactUtils(QObject *parent = nullptr);
 
     Q_INVOKABLE QString displayString(const QString &contact);
+    Q_INVOKABLE QVariantList phoneNumbers(const QString &kPeopleUri);
 };
