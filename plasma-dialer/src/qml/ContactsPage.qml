@@ -23,6 +23,12 @@ Kirigami.ScrollablePage {
         text: i18n("Settings")
         onTriggered: applicationWindow().pageStack.push(applicationWindow().getPage("Settings"))
     }
+
+    Component {
+        id: callPopup
+
+        PhoneNumberDialog {}
+    }
     
     header: ColumnLayout {
         anchors.margins: Kirigami.Units.smallSpacing
@@ -66,7 +72,17 @@ Kirigami.ScrollablePage {
         delegate: Kirigami.BasicListItem {
             icon: model && model.decoration
             label: model && model.display
-            onClicked: appWindow.call(model.phoneNumber)
+
+            onClicked: {
+                const phoneNumbers = ContactUtils.phoneNumbers(model.personUri)
+                if (phoneNumbers.length === 1) {
+                    appWindow.call(phoneNumbers[0].normalizedNumber)
+                } else {
+                    const pop = callPopup.createObject(parent, {numbers: phoneNumbers, title: i18n("Select number to call")})
+                    pop.onNumberSelected.connect(number => appWindow.call(number))
+                    pop.open()
+                }
+            }
         }
 
         Kirigami.PlaceholderMessage {
