@@ -40,11 +40,9 @@ DialerManager::~DialerManager()
 
 void DialerManager::setCallUtils(org::kde::telephony::CallUtils *callUtils)
 {
-}
+    _callUtils = callUtils;
 
-void DialerManager::setContactUtils(ContactUtils *contactUtils)
-{
-    _contactUtils = contactUtils;
+    connect(_callUtils, &org::kde::telephony::CallUtils::callStateChanged, this, &DialerManager::onCallStateChanged);
 }
 
 void DialerManager::setDialerUtils(DialerUtils *dialerUtils)
@@ -66,7 +64,12 @@ void DialerManager::onCallStateChanged(const QString &deviceUni,
                                        const DialerTypes::CallState &callState,
                                        const DialerTypes::CallStateReason &callStateReason)
 {
-    if (!_contactUtils) {
+    Q_UNUSED(deviceUni)
+    Q_UNUSED(callUni)
+    Q_UNUSED(callDirection)
+    Q_UNUSED(callStateReason)
+
+    if (!_callUtils) {
         qCritical() << Q_FUNC_INFO;
     }
     qDebug() << Q_FUNC_INFO << "new call state:" << callState;

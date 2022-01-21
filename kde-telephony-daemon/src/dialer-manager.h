@@ -10,7 +10,6 @@
 
 #include "callutilsinterface.h"
 
-#include "contact-utils.h"
 #include "dialer-utils.h"
 
 class DialerManager : public QObject
@@ -21,7 +20,6 @@ public:
     ~DialerManager() override;
 
     void setCallUtils(org::kde::telephony::CallUtils *callUtils);
-    void setContactUtils(ContactUtils *contactUtils);
     void setDialerUtils(DialerUtils *dialerUtils);
 
 private Q_SLOTS:
@@ -36,7 +34,7 @@ private Q_SLOTS:
     void onSetMuteRequested(bool muted);
 
 private:
-    ContactUtils *_contactUtils;
+    org::kde::telephony::CallUtils *_callUtils;
     DialerUtils *_dialerUtils;
 };
 

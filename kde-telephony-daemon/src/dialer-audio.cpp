@@ -108,10 +108,10 @@ void DialerAudio::setCallMode(CallStatus callStatus, AudioMode audioMode)
     // now if we have a active call then switch profile to the VoiceCall profile
     quint32 voiceCardIndex = PulseAudioQt::Context::instance()->cards().indexOf(_voiceCallCard);
     if ((_callStatus == CallActive) && (prevStatus != CallActive) && _voiceCallCard && _voiceCallProfile) {
-        qDebug() << "Setting current profile to " << _voiceCallProfile->name();
+        qDebug() << "Call active. Setting current profile to " << _voiceCallProfile->name();
         PulseAudioQt::Context::instance()->setCardProfile(voiceCardIndex, _voiceCallProfile->name());
     } else if ((_callStatus == CallEnded) && (prevStatus != CallEnded) && _voiceCallCard && _previousProfile) {
-        qDebug() << "Setting current profile to " << _previousProfile->name();
+        qDebug() << "Call ended. Setting current profile to " << _previousProfile->name();
         PulseAudioQt::Context::instance()->setCardProfile(voiceCardIndex, _previousProfile->name());
     }
 
