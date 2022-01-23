@@ -25,6 +25,20 @@ Kirigami.Page {
     rightPadding: 0
     topPadding: 0
     bottomPadding: 0
+
+    Connections {
+        target: ActiveCallModel
+        function onActiveChanged() {
+            const callPage = getPage("Call")
+            if (ActiveCallModel.active) {
+                applicationWindow().pageStack.layers.push(callPage, 1)
+            } else {
+                if (pageStack.layers.currentItem === callPage) {
+                     pageStack.layers.pop()
+                }
+            }
+        }
+    }
     
     mainAction: Kirigami.Action {
         displayHint: Kirigami.Action.IconOnly

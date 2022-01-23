@@ -218,7 +218,6 @@ Kirigami.Page {
                 
                 onClicked: {
                     CallUtils.hangUp(activeDeviceUni(), activeCallUni());
-                    appWindow.switchToPage(appWindow.getPage("Dialer"), 0);
                 }
                 
                 background: Rectangle {
