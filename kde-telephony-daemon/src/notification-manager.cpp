@@ -7,10 +7,25 @@
 #include "notification-manager.h"
 
 #include <KLocalizedString>
+#include <MprisQt/MprisController>
+#include <QTimer>
+
+static void waitForControllerInit(MprisController *mprisController)
+{
+    qDebug() << Q_FUNC_INFO << mprisController->service() << mprisController->isValid();
+    QTimer timer; // as a precaution
+    timer.setSingleShot(true);
+    QEventLoop loop;
+    QObject::connect(mprisController, &MprisController::playbackStatusChanged, &loop, &QEventLoop::quit);
+    QObject::connect(&timer, &QTimer::timeout, &loop, &QEventLoop::quit);
+    timer.start(300);
+    loop.exec();
+}
 
 NotificationManager::NotificationManager(QObject *parent)
     : QObject(parent)
     , _ringEffect(std::make_unique<QFeedbackHapticsEffect>())
+    , _mprisManager(this)
 {
     _ringEffect->setAttackIntensity(0.1);
     _ringEffect->setAttackTime(420);
@@ -46,7 +61,7 @@ void NotificationManager::onCallAdded(const QString &deviceUni,
     qDebug() << Q_FUNC_INFO << "call added" << deviceUni << callUni << callDirection << callState << callStateReason << communicationWith;
     if (callDirection == DialerTypes::CallDirection::Incoming) {
         if (callState == DialerTypes::CallState::RingingIn) {
-            openRingingNotification(deviceUni, callUni, communicationWith);
+            handleIncomingCall(deviceUni, callUni, communicationWith);
         }
     }
 }
@@ -64,6 +79,11 @@ void NotificationManager::onCallStateChanged(const QString &deviceUni,
                                              const DialerTypes::CallStateReason &callStateReason)
 {
     qDebug() << Q_FUNC_INFO << "call state changed:" << deviceUni << callUni << callDirection << callState << callStateReason;
+    if (callDirection == DialerTypes::CallDirection::Incoming) {
+        if (callState == DialerTypes::CallState::Terminated) {
+            handleRejectedCall();
+        }
+    }
 }
 
 void NotificationManager::openRingingNotification(const QString &deviceUni, const QString &callUni, const QString communicationWith)
@@ -126,6 +146,56 @@ void NotificationManager::hangUp(const QString &deviceUni, const QString &callUn
         qDebug() << Q_FUNC_INFO << reply.error();
     }
     closeRingingNotification();
+}
+
+void NotificationManager::handleIncomingCall(const QString &deviceUni, const QString &callUni, const QString communicationWith)
+{
+    pauseMedia();
+    openRingingNotification(deviceUni, callUni, communicationWith);
+}
+
+void NotificationManager::handleRejectedCall()
+{
+    closeRingingNotification();
+    unpauseMedia();
+}
+
+void NotificationManager::pauseMedia()
+{
+    if (_mprisManager.playbackStatus() != Mpris::Playing) {
+        return;
+    }
+
+    auto services = _mprisManager.availableServices();
+    for (auto service : services) {
+        qDebug() << service;
+        if (service.contains(QLatin1String("kdeconnect"))) {
+            qDebug() << Q_FUNC_INFO << "Skip players connected over KDE Connect. KDE Connect pauses them itself";
+            continue;
+        }
+        MprisController mprisController(service, QDBusConnection::sessionBus(), this);
+        waitForControllerInit(&mprisController);
+        if (mprisController.playbackStatus() == Mpris::Playing) {
+            if (!_pausedSources.contains(service)) {
+                _pausedSources.insert(service);
+                if (mprisController.canPause()) {
+                    mprisController.pause();
+                } else {
+                    mprisController.stop();
+                }
+            }
+        }
+    }
+}
+
+void NotificationManager::unpauseMedia()
+{
+    for (const QString &service : qAsConst(_pausedSources)) {
+        MprisController mprisController(service, QDBusConnection::sessionBus(), this);
+        waitForControllerInit(&mprisController);
+        mprisController.play();
+    }
+    _pausedSources.clear();
 }
 
 void NotificationManager::onNotificationAction(unsigned int action)
