@@ -24,6 +24,7 @@ SPDX-License-Identifier: CC0-1.0
   <name xml:lang="pl">Telefon</name>
   <name xml:lang="pt">Telefone</name>
   <name xml:lang="pt-BR">Celular</name>
+  <name xml:lang="ro">Telefon</name>
   <name xml:lang="sk">Telefón</name>
   <name xml:lang="sl">Phone</name>
   <name xml:lang="sv">Telefon</name>
@@ -50,6 +51,7 @@ SPDX-License-Identifier: CC0-1.0
   <summary xml:lang="pl">Nawiązuj rozmowy telefoniczne</summary>
   <summary xml:lang="pt">Enviar a receber chamadas telefónicas</summary>
   <summary xml:lang="pt-BR">Enviar e receber chamadas telefônicas</summary>
+  <summary xml:lang="ro">Trimite și primește apeluri telefonice</summary>
   <summary xml:lang="sl">Pošilja in sprejema telefonske klice</summary>
   <summary xml:lang="sv">Ring och ta emot telefonsamtal</summary>
   <summary xml:lang="uk">Надсилання і отримання телефонних дзвінків</summary>
@@ -77,6 +79,7 @@ SPDX-License-Identifier: CC0-1.0
   <developer_name xml:lang="pl">Społeczność KDE</developer_name>
   <developer_name xml:lang="pt">Comunidade do KDE</developer_name>
   <developer_name xml:lang="pt-BR">Comunidade KDE</developer_name>
+  <developer_name xml:lang="ro">Comunitatea KDE</developer_name>
   <developer_name xml:lang="sk">KDE komunita</developer_name>
   <developer_name xml:lang="sl">Skupnost KDE</developer_name>
   <developer_name xml:lang="sv">KDE-gemenskapen</developer_name>
@@ -107,6 +110,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="pl">Aplikacja telefonu umożliwia łatwe nawiązywanie połączeń telefonicznych z twojego smartfonu.</p>
     <p xml:lang="pt">a aplicação de Telefone permite-lhe efectuar e receber facilmente chamadas telefónicas no seu telemóvel.</p>
     <p xml:lang="pt-BR">O aplicativo Phone permite a você enviar e receber chamadas telefônicas de seu celular.</p>
+    <p xml:lang="ro">Aplicația Telefon vă permite să faceți și să primiți apeluri telefonice de pe telefonul inteligent.</p>
     <p xml:lang="sl">Aplikacija Phone vam omogoča pošiljanje in sprejemanje telefonskih klicev vašega pametnega telefona.</p>
     <p xml:lang="sv">Telefonprogrammet låter dig enkelt ringa och ta emot telefonsamtal på din smarta telefon.</p>
     <p xml:lang="uk">Програма «Телефон» надає вам змогу без проблем виконувати та отримувати телефонні дзвінки на вашому смартфоні.</p>
@@ -132,6 +136,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="pl">Możliwości:</p>
     <p xml:lang="pt">Funcionalidades:</p>
     <p xml:lang="pt-BR">Funcionalidades:</p>
+    <p xml:lang="ro">Caracteristici:</p>
     <p xml:lang="sk">Funkcie:</p>
     <p xml:lang="sl">Možnosti:</p>
     <p xml:lang="sv">Funktioner:</p>
@@ -156,6 +161,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="pl">Zobacz swoją historię dzwonienia i łatwo dzwoń na te same numery ponownie</li>
       <li xml:lang="pt">Ver o seu histórico de chamadas e invocar o mesmo número de novo</li>
       <li xml:lang="pt-BR">Veja seu histórico de chamadas e disque facilmente o mesmo número novamente</li>
+      <li xml:lang="ro">Vedeți istoricul apelurilor și sunați același număr din nou</li>
       <li xml:lang="sl">Ogled zgodovine klicev in enostavno ponovno klicanje iste številke</li>
       <li xml:lang="sv">Se din samtalshistorik och ring enkelt samma nummer igen</li>
       <li xml:lang="uk">Перегляд журналу дзвінків та просте повторне набирання номерів</li>
@@ -178,6 +184,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="pl">Zarządzaj swoimi kontaktami, które mają ustawiony numer telefonu</li>
       <li xml:lang="pt">Gerir os seus contactos que tenham números de telefone atribuídos</li>
       <li xml:lang="pt-BR">Gerencie seus contatos que tenham um número de telefone definido</li>
+      <li xml:lang="ro">Gestionați contactele ce au un număr de telefon înregistrat</li>
       <li xml:lang="sl">Upravljanje vaših stikov, ki imajo nastavljeno telefonsko številko</li>
       <li xml:lang="sv">Hantera dina kontakter som har ett telefonnummer inställt</li>
       <li xml:lang="uk">Керування записами контактів, для яких встановлено номер телефону</li>
@@ -206,6 +213,7 @@ SPDX-License-Identifier: CC0-1.0
       <caption xml:lang="pl">Strona dialera</caption>
       <caption xml:lang="pt">A página de marcação</caption>
       <caption xml:lang="pt-BR">A página do discador</caption>
+      <caption xml:lang="ro">Pagina apelatorului</caption>
       <caption xml:lang="sl">Stran klicanja številk</caption>
       <caption xml:lang="sv">Uppringningssidan</caption>
       <caption xml:lang="uk">Сторінка набирання номеру</caption>
@@ -231,6 +239,7 @@ SPDX-License-Identifier: CC0-1.0
       <caption xml:lang="pl">Dzwonienie na sekretarkę</caption>
       <caption xml:lang="pt">A ligar ao correio de voz</caption>
       <caption xml:lang="pt-BR">Chamando o correio de voz</caption>
+      <caption xml:lang="ro">Apelarea mesageriei vocale</caption>
       <caption xml:lang="sl">Klic telefonskega predala</caption>
       <caption xml:lang="sv">Ringa röstbrevlåda</caption>
       <caption xml:lang="uk">Голосова пошта</caption>
