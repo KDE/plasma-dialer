@@ -253,6 +253,19 @@ SPDX-License-Identifier: CC0-1.0
   </provides>
   <launchable type="desktop-id">org.kde.phone.dialer.desktop</launchable>
   <releases>
+    <release version="22.02" date="2021-02-09">
+      <url>https://www.plasma-mobile.org/2022/02/09/plasma-mobile-gear-22-02/</url>
+      <description>
+        <ul>
+          <li>Confirm with user before clearing history</li>
+          <li>Fix audio profile switching</li>
+          <li>Return to dialer page after call</li>
+          <li>Support choosing of phone number for contacts</li>
+          <li>Pause media player on incoming call</li>
+          <li>General user interface improvements</li>
+        </ul>
+      </description>
+    </release>
     <release version="21.12" date="2021-12-07">
       <description>
         <ul>
