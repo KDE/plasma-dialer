@@ -59,47 +59,21 @@ Kirigami.Page {
             margins: Kirigami.Units.largeSpacing
         }
 
-        Flickable {
-            id: topFlickable
+        Controls.SwipeView {
+            id: activeCallSwipeView
+
             Layout.fillWidth: true
             Layout.fillHeight: true
             Layout.minimumHeight: parent.height / 2
 
-            contentWidth: topContents.width
-            contentHeight: topContents.height
-            interactive: callActive
-            RowLayout {
-                id: topContents
-
-                ActiveCallView {
-                    Layout.minimumWidth: topFlickable.width
-                    Layout.minimumHeight: topFlickable.height
-                }
-                
-                Dialpad {
-                    Layout.minimumWidth: topFlickable.width
-                    Layout.minimumHeight: topFlickable.height
-                    showBottomRow: false
-                    focus: true
-                }
+            ActiveCallView {
+                id: activeCallView
             }
 
-            onMovingChanged: {
-                var checked = contentX > topFlickable.width/2;
-
-                if (checked) {
-                    topSlideAnim.to = topFlickable.width;
-                } else {
-                    topSlideAnim.to = 0;
-                }
-                topSlideAnim.running = true;
-            }
-            PropertyAnimation {
-                id: topSlideAnim
-                target: topFlickable
-                properties: "contentX"
-                duration: Kirigami.Units.longDuration
-                easing.type: Easing.InOutQuad
+            Dialpad {
+                id: dialPad
+                showBottomRow: false
+                focus: true
             }
         }
 
@@ -152,15 +126,16 @@ Kirigami.Page {
                 iconSource: "input-dialpad-symbolic"
                 text: i18n("Keypad")
                 
-                onClicked: toggledOn = !toggledOn
-                
-                onToggledOnChanged: {
+                onClicked: switchToogle()
+                toggledOn: (activeCallSwipeView.currentIndex == 1)
+
+                function switchToogle() {
+                    // activeCallSwipeView: 0 is ActiveCallView, 1 is Dialpad
                     if (toggledOn) {
-                        topSlideAnim.to = topFlickable.width;
+                        activeCallSwipeView.currentIndex = 0
                     } else {
-                        topSlideAnim.to = 0;
+                        activeCallSwipeView.currentIndex = 1
                     }
-                    topSlideAnim.running = true;
                 }
             }
             CallPageButton {
