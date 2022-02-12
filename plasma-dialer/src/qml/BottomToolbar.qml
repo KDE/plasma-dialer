@@ -9,7 +9,7 @@ import org.kde.kirigami 2.19 as Kirigami
 
 Kirigami.NavigationTabBar {
     id: navigationTabBar
-    
+
     property bool shouldShow: pageStack.layers.depth <= 1 && pageStack.depth <= 1
     onShouldShowChanged: {
         if (shouldShow) {
@@ -20,8 +20,22 @@ Kirigami.NavigationTabBar {
             hideAnim.restart();
         }
     }
-    
+
     visible: height !== 0
+
+    function currentPage() {
+        return applicationWindow().pageStack.currentItem
+    }
+    
+    function getHistoryPage() {
+        return applicationWindow().getPage("History");
+    }
+    function getContactsPage() {
+        return applicationWindow().getPage("Contacts");
+    }
+    function getDialerPage() {
+        return applicationWindow().getPage("Dialer");
+    }
     
     // animate showing and hiding of navbar
     ParallelAnimation {
@@ -65,33 +79,33 @@ Kirigami.NavigationTabBar {
         Kirigami.Action {
             iconName: "clock"
             text: i18n("History")
-            property bool opened: applicationWindow().getPage("History") === applicationWindow().pageStack.currentItem
+            property bool opened: getHistoryPage() === currentPage()
             checked: opened
             onTriggered: {
                 if (!opened) {
-                    applicationWindow().switchToPage(applicationWindow().getPage("History"), 0);
+                    applicationWindow().switchToPage(getHistoryPage(), 0);
                 }
             }
         },
         Kirigami.Action {
             iconName: "view-pim-contacts"
             text: i18n("Contacts")
-            property bool opened: applicationWindow().getPage("Contacts") === applicationWindow().pageStack.currentItem
+            property bool opened: getContactsPage() === currentPage()
             checked: opened
             onTriggered: {
                 if (!opened) {
-                    applicationWindow().switchToPage(applicationWindow().getPage("Contacts"), 0);
+                    applicationWindow().switchToPage(getContactsPage(), 0);
                 }
             }
         },
         Kirigami.Action {
             iconName: "call-start"
             text: i18n("Dialer")
-            property bool opened: applicationWindow().getPage("Dialer") === applicationWindow().pageStack.currentItem
+            property bool opened: getDialerPage() === currentPage()
             checked: opened
             onTriggered: {
                 if (!opened) {
-                    applicationWindow().switchToPage(applicationWindow().getPage("Dialer"), 0);
+                    applicationWindow().switchToPage(getDialerPage(), 0);
                 }
             }
         }
