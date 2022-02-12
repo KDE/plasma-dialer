@@ -15,7 +15,7 @@ import "Call"
 
 Kirigami.ApplicationWindow {
     wideScreen: false
-    id: appWindow
+    id: root
     
     pageStack.globalToolBar.canContainHandles: true
     pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.ToolBar
@@ -29,7 +29,7 @@ Kirigami.ApplicationWindow {
 
     title: i18n("Phone")
 
-    readonly property bool smallMode: appWindow.height < Kirigami.Units.gridUnit * 20
+    readonly property bool smallMode: applicationWindow().height < Kirigami.Units.gridUnit * 20
 
     // pop pages when not in use
     Connections {
@@ -64,7 +64,7 @@ Kirigami.ApplicationWindow {
         }
     }
 
-    property bool isWidescreen: appWindow.width >= appWindow.height
+    property bool isWidescreen: applicationWindow().width >= applicationWindow().height
     onIsWidescreenChanged: changeNav(!isWidescreen);
 
     function switchToPage(page, depth) {
@@ -79,7 +79,7 @@ Kirigami.ApplicationWindow {
             globalDrawer = null;
 
             let bottomToolbar = Qt.createComponent("qrc:/BottomToolbar.qml")
-            footer = bottomToolbar.createObject(appWindow);
+            footer = bottomToolbar.createObject(root);
         } else {
             if (footer != null) {
                 footer.destroy();
@@ -116,7 +116,7 @@ Kirigami.ApplicationWindow {
 
     contextDrawer: Kirigami.ContextDrawer {
         id: contextDrawer
-        handle.anchors.bottomMargin: appWindow.footer ? (appWindow.footer.height + Kirigami.Units.largeSpacing) : 0
+        handle.anchors.bottomMargin: applicationWindow().footer ? (applicationWindow().footer.height + Kirigami.Units.largeSpacing) : 0
     }
 
     Loader {

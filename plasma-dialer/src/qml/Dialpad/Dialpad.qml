@@ -25,7 +25,7 @@ GridLayout {
     property bool callActive: ActiveCallModel.active
 
     function sendDtmf(tones) {
-        const deviceUni = appWindow.selectModem()
+        const deviceUni = applicationWindow().selectModem()
         const callUni = ActiveCallModel.activeCallUni()
         CallUtils.sendDtmf(deviceUni, callUni, tones)
     }
@@ -66,7 +66,7 @@ GridLayout {
     }
 
     function onCallButtonPressed(number) {
-        const deviceUni = appWindow.selectModem()
+        const deviceUni = applicationWindow().selectModem()
         if (isSpecialCode(number)) {
             UssdUtils.initiate(deviceUni, number)
         } else if (number === "*#06#") {
@@ -83,7 +83,7 @@ GridLayout {
         } else {
             pad.voicemailFail = false;
             // voicemail number is real phone number and should not be a MMI code
-            var device = appWindow.selectModem()
+            var device = applicationWindow().selectModem()
             CallUtils.dial(device, number)
         }
     }

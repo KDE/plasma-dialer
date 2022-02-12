@@ -83,7 +83,7 @@ Kirigami.Page {
             contentWidth: -1 // no horizontal scrolling necessary
             Layout.minimumWidth: dialer.width
             Layout.maximumWidth: dialer.width
-            Layout.preferredHeight: appWindow.smallMode ? implicitHeight : parent.height * 0.3
+            Layout.preferredHeight: applicationWindow().smallMode ? implicitHeight : parent.height * 0.3
             
             QQC2.Label {
                 id: statusLabel
@@ -92,7 +92,7 @@ Kirigami.Page {
                 verticalAlignment: implicitHeight > scrollView.height ? Qt.AlignTop : Qt.AlignVCenter
                 width: dialer.width
                 height: scrollView.height
-                font.pixelSize: appWindow.smallMode ? Kirigami.Units.gridUnit * 1.6 : Kirigami.Units.gridUnit * 2.3
+                font.pixelSize: applicationWindow().smallMode ? Kirigami.Units.gridUnit * 1.6 : Kirigami.Units.gridUnit * 2.3
                 font.weight: Font.Light
                 wrapMode: QQC2.Label.WrapAnywhere
 

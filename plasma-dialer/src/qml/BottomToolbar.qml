@@ -65,33 +65,33 @@ Kirigami.NavigationTabBar {
         Kirigami.Action {
             iconName: "clock"
             text: i18n("History")
-            property bool opened: appWindow.getPage("History") === appWindow.pageStack.currentItem
+            property bool opened: applicationWindow().getPage("History") === applicationWindow().pageStack.currentItem
             checked: opened
             onTriggered: {
                 if (!opened) {
-                    appWindow.switchToPage(appWindow.getPage("History"), 0);
+                    applicationWindow().switchToPage(applicationWindow().getPage("History"), 0);
                 }
             }
         },
         Kirigami.Action {
             iconName: "view-pim-contacts"
             text: i18n("Contacts")
-            property bool opened: appWindow.getPage("Contacts") === appWindow.pageStack.currentItem
+            property bool opened: applicationWindow().getPage("Contacts") === applicationWindow().pageStack.currentItem
             checked: opened
             onTriggered: {
                 if (!opened) {
-                    appWindow.switchToPage(appWindow.getPage("Contacts"), 0);
+                    applicationWindow().switchToPage(applicationWindow().getPage("Contacts"), 0);
                 }
             }
         },
         Kirigami.Action {
             iconName: "call-start"
             text: i18n("Dialer")
-            property bool opened: appWindow.getPage("Dialer") === appWindow.pageStack.currentItem
+            property bool opened: applicationWindow().getPage("Dialer") === applicationWindow().pageStack.currentItem
             checked: opened
             onTriggered: {
                 if (!opened) {
-                    appWindow.switchToPage(appWindow.getPage("Dialer"), 0);
+                    applicationWindow().switchToPage(applicationWindow().getPage("Dialer"), 0);
                 }
             }
         }

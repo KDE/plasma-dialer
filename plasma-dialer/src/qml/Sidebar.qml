@@ -10,7 +10,7 @@ Kirigami.OverlayDrawer {
     id: drawer
     modal: false
     width: 200
-    height: appWindow.height
+    height: applicationWindow().height
 
     Kirigami.Theme.colorSet: Kirigami.Theme.Window
     Kirigami.Theme.inherit: false
@@ -51,12 +51,12 @@ Kirigami.OverlayDrawer {
                 Layout.minimumHeight: Kirigami.Units.gridUnit * 2
                 Layout.bottomMargin: Kirigami.Units.smallSpacing
                 checked: pageStack.currentItem === page
-                property var page: appWindow.getPage("History")
+                property var page: applicationWindow().getPage("History")
                 onClicked: {
-                    if (appWindow.pageStack.currentItem !== page) {
-                        appWindow.switchToPage(page, 0);
+                    if (applicationWindow().pageStack.currentItem !== page) {
+                        applicationWindow().switchToPage(page, 0);
                     } else {
-                        checked = Qt.binding(function() { return appWindow.pageStack.currentItem === page; });
+                        checked = Qt.binding(function() { return applicationWindow().pageStack.currentItem === page; });
                     }
                 }
             }
@@ -68,12 +68,12 @@ Kirigami.OverlayDrawer {
                 Layout.minimumHeight: Kirigami.Units.gridUnit * 2
                 Layout.bottomMargin: Kirigami.Units.smallSpacing
                 checked: pageStack.currentItem === page
-                property var page: appWindow.getPage("Contacts")
+                property var page: applicationWindow().getPage("Contacts")
                 onClicked: {
-                    if (appWindow.pageStack.currentItem !== page) {
-                        appWindow.switchToPage(page, 0);
+                    if (applicationWindow().pageStack.currentItem !== page) {
+                        applicationWindow().switchToPage(page, 0);
                     } else {
-                        checked = Qt.binding(function() { return appWindow.pageStack.currentItem === page; });
+                        checked = Qt.binding(function() { return applicationWindow().pageStack.currentItem === page; });
                     }
                 }
             }
@@ -85,12 +85,12 @@ Kirigami.OverlayDrawer {
                 Layout.minimumHeight: Kirigami.Units.gridUnit * 2
                 Layout.bottomMargin: Kirigami.Units.smallSpacing
                 checked: pageStack.currentItem === page
-                property var page: appWindow.getPage("Dialer")
+                property var page: applicationWindow().getPage("Dialer")
                 onClicked: {
-                    if (appWindow.pageStack.currentItem !== page) {
-                        appWindow.switchToPage(page, 0);
+                    if (applicationWindow().pageStack.currentItem !== page) {
+                        applicationWindow().switchToPage(page, 0);
                     } else {
-                        checked = Qt.binding(function() { return appWindow.pageStack.currentItem === page; });
+                        checked = Qt.binding(function() { return applicationWindow().pageStack.currentItem === page; });
                     }
                 }
             }
@@ -107,12 +107,12 @@ Kirigami.OverlayDrawer {
                 Layout.fillWidth: true
                 Layout.minimumHeight: Kirigami.Units.gridUnit * 2
                 checked: pageStack.currentItem === page
-                property var page: appWindow.getPage("Settings")
+                property var page: applicationWindow().getPage("Settings")
                 onClicked: {
-                    if (appWindow.pageStack.currentItem !== page) {
-                        appWindow.switchToPage(page, 0);
+                    if (applicationWindow().pageStack.currentItem !== page) {
+                        applicationWindow().switchToPage(page, 0);
                     } else {
-                        checked = Qt.binding(function() { return appWindow.pageStack.currentItem === page; });
+                        checked = Qt.binding(function() { return applicationWindow().pageStack.currentItem === page; });
                     }
                 }
             }

@@ -76,10 +76,10 @@ Kirigami.ScrollablePage {
             onClicked: {
                 const phoneNumbers = ContactUtils.phoneNumbers(model.personUri)
                 if (phoneNumbers.length === 1) {
-                    appWindow.call(phoneNumbers[0].normalizedNumber)
+                    applicationWindow().call(phoneNumbers[0].normalizedNumber)
                 } else {
                     const pop = callPopup.createObject(parent, {numbers: phoneNumbers, title: i18n("Select number to call")})
-                    pop.onNumberSelected.connect(number => appWindow.call(number))
+                    pop.onNumberSelected.connect(number => applicationWindow().call(number))
                     pop.open()
                 }
             }

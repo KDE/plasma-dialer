@@ -19,7 +19,7 @@ Kirigami.Page {
     id: callPage
 
     function activeDeviceUni() {
-        return appWindow.selectModem()
+        return applicationWindow().selectModem()
     }
     function activeCallUni() {
         return ActiveCallModel.activeCallUni()
