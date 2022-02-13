@@ -67,7 +67,7 @@ Kirigami.ScrollablePage {
         }
         delegate: HistoryDelegate {}
     }
-    
+
     Kirigami.PromptDialog {
         id: promptDialog
         title: "Clear history?"
@@ -75,5 +75,6 @@ Kirigami.ScrollablePage {
         standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
         onAccepted: CallHistoryModel.clear()
         onRejected: close()
+        maximumHeight: applicationWindow().height
     }
 }
