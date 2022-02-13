@@ -30,6 +30,8 @@ Kirigami.ApplicationWindow {
 
     title: i18n("Phone")
 
+    contextDrawer: Kirigami.ContextDrawer {}
+
     readonly property bool smallMode: applicationWindow().height < Kirigami.Units.gridUnit * 20
 
     // pop pages when not in use
@@ -65,7 +67,7 @@ Kirigami.ApplicationWindow {
         }
     }
 
-    property bool isWidescreen: applicationWindow().width >= applicationWindow().height
+    property bool isWidescreen: root.width >= root.height
     onIsWidescreenChanged: changeNav(!isWidescreen);
 
     function switchToPage(page, depth) {
@@ -74,20 +76,21 @@ Kirigami.ApplicationWindow {
         page.forceActiveFocus()
     }
 
-    function changeNav(toNarrow) {
-        if (toNarrow) {
-            sidebarLoader.active = false;
-            globalDrawer = null;
-
-            let bottomToolbar = Qt.createComponent("qrc:/components/BottomToolbar.qml")
-            footer = bottomToolbar.createObject(root);
-        } else {
+    // switch between bottom toolbar and sidebar
+    function changeNav(toWidescreen) {
+        if (toWidescreen) {
             if (footer != null) {
                 footer.destroy();
                 footer = null;
             }
             sidebarLoader.active = true;
             globalDrawer = sidebarLoader.item;
+        } else {
+            sidebarLoader.active = false;
+            globalDrawer = null;
+
+            let bottomToolbar = Qt.createComponent("qrc:/components/BottomToolbar.qml")
+            footer = bottomToolbar.createObject(root);
         }
     }
 
@@ -113,11 +116,6 @@ Kirigami.ApplicationWindow {
         // initial page and nav type
         switchToPage(getPage("Dialer"), 1);
         changeNav(!isWidescreen);
-    }
-
-    contextDrawer: Kirigami.ContextDrawer {
-        id: contextDrawer
-        handle.anchors.bottomMargin: applicationWindow().footer ? (applicationWindow().footer.height + Kirigami.Units.largeSpacing) : 0
     }
 
     Loader {
