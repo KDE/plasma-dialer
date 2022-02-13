@@ -12,8 +12,9 @@ import QtQuick.Layouts 1.1
 
 import org.kde.kirigami 2.12 as Kirigami
 
-import "../Dialpad"
 import org.kde.telephony 1.0
+
+import "../dialpad"
 
 Kirigami.Page {
     id: callPage

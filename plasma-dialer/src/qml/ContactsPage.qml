@@ -12,6 +12,8 @@ import org.kde.people 1.0 as KPeople
 
 import org.kde.telephony 1.0
 
+import "call"
+
 Kirigami.ScrollablePage {
     title: i18n("Contacts")
     icon.name: "view-pim-contacts"

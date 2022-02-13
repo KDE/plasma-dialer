@@ -7,10 +7,11 @@ import QtQuick.Layouts 1.1
 import QtGraphicalEffects 1.12
 import QtQml.Models 2.15
 
-import ".."
-
 import org.kde.kirigami 2.13 as Kirigami
+
 import org.kde.telephony 1.0
+
+import ".."
 
 Item {
 

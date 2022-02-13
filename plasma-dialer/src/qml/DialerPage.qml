@@ -9,8 +9,11 @@ import QtQuick 2.0
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.5 as QQC2
 import org.kde.kirigami 2.9 as Kirigami
-import "Dialpad"
+
 import org.kde.telephony 1.0
+
+import "call"
+import "dialpad"
 
 Kirigami.Page {
     id: dialer

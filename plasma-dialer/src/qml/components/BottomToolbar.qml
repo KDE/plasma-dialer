@@ -55,7 +55,7 @@ Kirigami.NavigationTabBar {
             easing.type: Easing.InOutQuad
         }
     }
-    
+
     SequentialAnimation {
         id: hideAnim
         NumberAnimation {

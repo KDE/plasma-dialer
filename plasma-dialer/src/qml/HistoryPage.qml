@@ -9,6 +9,9 @@ import org.kde.kirigami 2.19 as Kirigami
 
 import org.kde.telephony 1.0
 
+import "call"
+import "history"
+
 Kirigami.ScrollablePage {
     title: i18n("Call History")
     icon.name: "clock"

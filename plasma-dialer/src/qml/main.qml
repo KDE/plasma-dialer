@@ -11,7 +11,8 @@ import QtQuick.LocalStorage 2.0
 import org.kde.kirigami 2.19 as Kirigami
 
 import org.kde.telephony 1.0
-import "Call"
+
+import "call"
 
 Kirigami.ApplicationWindow {
     wideScreen: false
@@ -58,7 +59,7 @@ Kirigami.ApplicationWindow {
         case "History": return pagePool.loadPage("qrc:/HistoryPage.qml");
         case "Contacts": return pagePool.loadPage("qrc:/ContactsPage.qml");
         case "Dialer": return pagePool.loadPage("qrc:/DialerPage.qml");
-        case "Call": return pagePool.loadPage("qrc:/Call/CallPage.qml");
+        case "Call": return pagePool.loadPage("qrc:/call/CallPage.qml");
         case "Settings": return pagePool.loadPage("qrc:/SettingsPage.qml");
         case "About": return pagePool.loadPage("qrc:/AboutPage.qml");
         }
@@ -78,7 +79,7 @@ Kirigami.ApplicationWindow {
             sidebarLoader.active = false;
             globalDrawer = null;
 
-            let bottomToolbar = Qt.createComponent("qrc:/BottomToolbar.qml")
+            let bottomToolbar = Qt.createComponent("qrc:/components/BottomToolbar.qml")
             footer = bottomToolbar.createObject(root);
         } else {
             if (footer != null) {
@@ -121,7 +122,7 @@ Kirigami.ApplicationWindow {
 
     Loader {
         id: sidebarLoader
-        source: "qrc:/Sidebar.qml"
+        source: "qrc:/components/Sidebar.qml"
         active: false
     }
 
