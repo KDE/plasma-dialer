@@ -68,7 +68,7 @@ Kirigami.ApplicationWindow {
     }
 
     property bool isWidescreen: root.width >= root.height
-    onIsWidescreenChanged: changeNav(!isWidescreen);
+    onIsWidescreenChanged: changeNav(isWidescreen);
 
     function switchToPage(page, depth) {
         while (pageStack.depth > depth) pageStack.pop()
@@ -115,7 +115,7 @@ Kirigami.ApplicationWindow {
     Component.onCompleted: {
         // initial page and nav type
         switchToPage(getPage("Dialer"), 1);
-        changeNav(!isWidescreen);
+        changeNav(isWidescreen);
     }
 
     Loader {
