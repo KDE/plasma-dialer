@@ -144,7 +144,7 @@ GridLayout {
         
         background: Rectangle {
             anchors.centerIn: parent
-            height: Kirigami.Units.gridUnit * 3.5
+            height: parent.height
             width: height
             radius: height / 2
             
@@ -154,7 +154,7 @@ GridLayout {
             Kirigami.Icon {
                 source: "call-start"
                 anchors.fill: parent
-                anchors.margins: Kirigami.Units.largeSpacing
+                anchors.margins: applicationWindow().smallMode ? Kirigami.Units.smallSpacing : Kirigami.Units.largeSpacing
                 color: "white"
                 isMask: true
             }

@@ -32,7 +32,7 @@ Kirigami.ApplicationWindow {
 
     contextDrawer: Kirigami.ContextDrawer {}
 
-    readonly property bool smallMode: applicationWindow().height < Kirigami.Units.gridUnit * 20
+    readonly property bool smallMode: applicationWindow().height < Kirigami.Units.gridUnit * 28
 
     // pop pages when not in use
     Connections {
