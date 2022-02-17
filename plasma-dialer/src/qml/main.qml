@@ -71,9 +71,15 @@ Kirigami.ApplicationWindow {
     onIsWidescreenChanged: changeNav(isWidescreen);
 
     function switchToPage(page, depth) {
-        while (pageStack.depth > depth) pageStack.pop()
-        pageStack.push(page)
-        page.forceActiveFocus()
+        // pop pages above depth
+        while (pageStack.depth > depth) pageStack.pop();
+        while (pageStack.layers.depth > 1) pageStack.layers.pop();
+
+        pageStack.push(page);
+    }
+
+    function switchToDialer() {
+        switchToPage(getPage("Dialer"), 0)
     }
 
     // switch between bottom toolbar and sidebar
@@ -109,13 +115,13 @@ Kirigami.ApplicationWindow {
 
     function call(number) {
         getPage("Dialer").pad.number = number
-        switchToPage(getPage("Dialer"), 0)
+        switchToDialer()
     }
 
     Component.onCompleted: {
         // initial page and nav type
-        switchToPage(getPage("Dialer"), 1);
         changeNav(isWidescreen);
+        switchToDialer();
     }
 
     Loader {
