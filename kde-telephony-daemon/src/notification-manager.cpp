@@ -100,8 +100,6 @@ void NotificationManager::openRingingNotification(const QString &deviceUni, cons
     if (!_ringingNotification) {
         qDebug() << Q_FUNC_INFO << "new notification";
         _ringingNotification = new KNotification(QStringLiteral("ringing"), KNotification::Persistent | KNotification::LoopSound, nullptr);
-        void (KNotification::*activation)(unsigned int) = &KNotification::activated;
-        connect(_ringingNotification, activation, this, &NotificationManager::onNotificationAction);
     }
     _ringingNotification->setUrgency(KNotification::CriticalUrgency);
     _ringingNotification->setComponentName(QStringLiteral("plasma_dialer"));
@@ -114,6 +112,7 @@ void NotificationManager::openRingingNotification(const QString &deviceUni, cons
     _ringingNotification->setActions(actions);
     _ringingNotification->addContext(QStringLiteral("deviceUni"), deviceUni);
     _ringingNotification->addContext(QStringLiteral("callUni"), callUni);
+    connect(_ringingNotification, QOverload<unsigned int>::of(&KNotification::activated), this, &NotificationManager::onNotificationAction);
     _ringingNotification->sendEvent();
 }
 
