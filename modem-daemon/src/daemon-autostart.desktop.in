@@ -9,6 +9,7 @@ Comment[eu]=@MODEM_SUBSYSTEM@ gertakariak maneiatzeko Qt Modem daimona
 Comment[fi]=Qt:n modeemipalvelu @MODEM_SUBSYSTEM@-tapahtumien käsittelyyn
 Comment[fr]=Démon de modems sous Qt en charge de la gestion des évènements « @MODEM_SUBSYSTEM@ ».
 Comment[hu]=Qt Modem démon @MODEM_SUBSYSTEM@ események kezeléséhez
+Comment[id]=Qt Modem Daemon menangani peristiwa @MODEM_SUBSYSTEM@
 Comment[it]=Demone Qt per modem per gestire gli eventi @MODEM_SUBSYSTEM@
 Comment[ko]=@MODEM_SUBSYSTEM@ 이벤트를 처리하는 Qt 모뎀 데몬
 Comment[nl]=Qt modemdaemon om gebeurtenissen van @MODEM_SUBSYSTEM@ te behandelen

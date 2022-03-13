@@ -9,6 +9,7 @@ Comment[eu]=Modem daimonaren gertakizunak maneiatzeko KDE daimona
 Comment[fi]=KDE:n palvelu modeemipalvelutapahtumien käsittelyyn
 Comment[fr]=Démon de KDE en charge de la gestion des évènements du démon de modem.
 Comment[hu]=KDE démon a modem démon eseményeinek kezeléséhez
+Comment[id]=KDE Daemon menangani peristiwa daemon modem
 Comment[it]=Demone di KDE per gestire gli eventi del modem
 Comment[ko]=모뎀 데몬 이벤트를 처리하는 KDE 데몬
 Comment[nl]=KDE-daemon om gebeurtenissen in modem-daemon te behandelen
