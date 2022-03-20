@@ -33,6 +33,8 @@ ecm_setup_version(${PROJECT_VERSION}
     VERSION_HEADER ${CMAKE_CURRENT_BINARY_DIR}/version.h
 )
 
+find_package(PkgConfig QUIET)
+pkg_check_modules(LIBCALLAUDIO libcallaudio-0.1 REQUIRED IMPORTED_TARGET)
 #set(DBUS_INTERFACES_PATH "${CMAKE_INSTALL_PREFIX}/${DBUS_INTERFACES_INSTALL_DIR}/")
 
 add_subdirectory(kde-telephony-meta)
