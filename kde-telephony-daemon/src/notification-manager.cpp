@@ -6,17 +6,19 @@
 
 #include "notification-manager.h"
 
+#include <AmberMpris/MprisController>
+#include <AmberMpris/MprisPlayer>
 #include <KLocalizedString>
-#include <MprisQt/MprisController>
 #include <QTimer>
 
-static void waitForControllerInit(MprisController *mprisController)
+// since the better lambda-based mpris library is not there
+static void waitForPlayerInit(Amber::MprisController *mprisPlayer)
 {
-    qDebug() << Q_FUNC_INFO << mprisController->service() << mprisController->isValid();
+    qDebug() << Q_FUNC_INFO << mprisPlayer->availableServices();
     QTimer timer; // as a precaution
     timer.setSingleShot(true);
     QEventLoop loop;
-    QObject::connect(mprisController, &MprisController::playbackStatusChanged, &loop, &QEventLoop::quit);
+    QObject::connect(mprisPlayer, &Amber::MprisController::playbackStatusChanged, &loop, &QEventLoop::quit);
     QObject::connect(&timer, &QTimer::timeout, &loop, &QEventLoop::quit);
     timer.start(300);
     loop.exec();
@@ -25,7 +27,7 @@ static void waitForControllerInit(MprisController *mprisController)
 NotificationManager::NotificationManager(QObject *parent)
     : QObject(parent)
     , _ringEffect(std::make_unique<QFeedbackHapticsEffect>())
-    , _mprisManager(this)
+    , _mprisController(this)
 {
     _ringEffect->setAttackIntensity(0.1);
     _ringEffect->setAttackTime(420);
@@ -100,6 +102,8 @@ void NotificationManager::openRingingNotification(const QString &deviceUni, cons
     if (!_ringingNotification) {
         qDebug() << Q_FUNC_INFO << "new notification";
         _ringingNotification = new KNotification(QStringLiteral("ringing"), KNotification::Persistent | KNotification::LoopSound, nullptr);
+        void (KNotification::*activation)(unsigned int) = &KNotification::activated;
+        connect(_ringingNotification, activation, this, &NotificationManager::onNotificationAction);
     }
     _ringingNotification->setUrgency(KNotification::CriticalUrgency);
     _ringingNotification->setComponentName(QStringLiteral("plasma_dialer"));
@@ -112,7 +116,6 @@ void NotificationManager::openRingingNotification(const QString &deviceUni, cons
     _ringingNotification->setActions(actions);
     _ringingNotification->addContext(QStringLiteral("deviceUni"), deviceUni);
     _ringingNotification->addContext(QStringLiteral("callUni"), callUni);
-    connect(_ringingNotification, QOverload<unsigned int>::of(&KNotification::activated), this, &NotificationManager::onNotificationAction);
     _ringingNotification->sendEvent();
 }
 
@@ -161,20 +164,21 @@ void NotificationManager::handleRejectedCall()
 
 void NotificationManager::pauseMedia()
 {
-    if (_mprisManager.playbackStatus() != Mpris::Playing) {
+    if (_mprisController.playbackStatus() != Amber::Mpris::Playing) {
         return;
     }
 
-    auto services = _mprisManager.availableServices();
+    auto services = _mprisController.availableServices();
     for (auto service : services) {
         qDebug() << service;
         if (service.contains(QLatin1String("kdeconnect"))) {
             qDebug() << Q_FUNC_INFO << "Skip players connected over KDE Connect. KDE Connect pauses them itself";
             continue;
         }
-        MprisController mprisController(service, QDBusConnection::sessionBus(), this);
-        waitForControllerInit(&mprisController);
-        if (mprisController.playbackStatus() == Mpris::Playing) {
+        Amber::MprisController mprisController(this);
+        mprisController.setServiceName(service);
+        waitForPlayerInit(&mprisController);
+        if (mprisController.playbackStatus() == Amber::Mpris::Playing) {
             if (!_pausedSources.contains(service)) {
                 _pausedSources.insert(service);
                 if (mprisController.canPause()) {
@@ -190,9 +194,10 @@ void NotificationManager::pauseMedia()
 void NotificationManager::unpauseMedia()
 {
     for (const QString &service : qAsConst(_pausedSources)) {
-        MprisController mprisController(service, QDBusConnection::sessionBus(), this);
-        waitForControllerInit(&mprisController);
-        mprisController.play();
+        Amber::MprisPlayer mprisPlayer;
+        mprisPlayer.setServiceName(service);
+        waitForPlayerInit(&mprisPlayer);
+        mprisPlayer.play();
     }
     _pausedSources.clear();
 }

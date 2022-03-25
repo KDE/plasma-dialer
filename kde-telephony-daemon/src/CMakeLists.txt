@@ -24,7 +24,7 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS I18n ModemManagerQt Noti
 find_package(KF5PulseAudioQt 1.3 REQUIRED)
 
 find_package(PkgConfig REQUIRED)
-pkg_check_modules(MPRISQT REQUIRED mpris-qt5) # https://github.com/sailfishos/qtmpris
+pkg_check_modules(AMBERMPRIS REQUIRED ambermpris) # https://github.com/sailfishos/amber-mpris
 
 qt5_add_dbus_interface(ktelephonyd_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.DeviceUtils.xml"
     deviceutilsinterface)
@@ -60,8 +60,8 @@ target_link_libraries(kde-telephony-daemon
     contactphonenumbermapper
     )
 
-target_link_libraries(kde-telephony-daemon ${MPRISQT_LIBRARIES})
-target_include_directories(kde-telephony-daemon PUBLIC ${MPRISQT_INCLUDE_DIRS})
+target_link_libraries(kde-telephony-daemon ${AMBERMPRIS_LIBRARIES})
+target_include_directories(kde-telephony-daemon PUBLIC ${AMBERMPRIS_INCLUDE_DIRS})
 
 configure_file(daemon-autostart.desktop.in ${CMAKE_CURRENT_BINARY_DIR}/daemon-autostart.desktop)
 

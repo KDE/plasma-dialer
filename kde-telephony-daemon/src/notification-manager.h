@@ -4,8 +4,8 @@
 
 #pragma once
 
+#include <AmberMpris/MprisController>
 #include <KNotification>
-#include <MprisQt/MprisManager>
 #include <QtFeedback/QFeedbackEffect>
 
 #include "callutilsinterface.h"
@@ -55,6 +55,6 @@ private:
 
     std::unique_ptr<QFeedbackHapticsEffect> _ringEffect;
 
-    MprisManager _mprisManager;
+    Amber::MprisController _mprisController;
     QSet<QString> _pausedSources;
 };
