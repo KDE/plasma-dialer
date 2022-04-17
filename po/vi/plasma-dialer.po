@@ -1,0 +1,213 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the plasma-dialer package.
+#
+# Phu Hung Nguyen <phu.nguyen@kdemail.net>, 2021, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-dialer\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-02-14 00:46+0000\n"
+"PO-Revision-Date: 2022-02-09 18:14+0100\n"
+"Last-Translator: Phu Hung Nguyen <phu.nguyen@kdemail.net>\n"
+"Language-Team: Vietnamese <kde-l10n-vi@kde.org>\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 20.12.2\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Nguyễn Hùng Phú"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "phu.nguyen@kdemail.net"
+
+#: src/main.cpp:57 src/qml/components/Sidebar.qml:34 src/qml/main.qml:31
+#, kde-format
+msgid "Phone"
+msgstr "Điện thoại"
+
+#: src/main.cpp:57
+#, kde-format
+msgid "Plasma phone dialer"
+msgstr "Trình quay số điện thoại Plasma"
+
+#: src/qml/call/CallPage.qml:32 src/qml/call/InCallInlineMessage.qml:14
+#, kde-format
+msgid "Active call list"
+msgstr "Danh sách gọi hoạt động"
+
+#: src/qml/call/CallPage.qml:102
+#, kde-format
+msgid "Calling..."
+msgstr "Đang gọi..."
+
+#: src/qml/call/CallPage.qml:128
+#, kde-format
+msgid "Keypad"
+msgstr "Bàn phím"
+
+#: src/qml/call/CallPage.qml:148
+#, kde-format
+msgid "Speaker"
+msgstr "Loa"
+
+#: src/qml/call/CallPage.qml:162
+#, kde-format
+msgid "Mute"
+msgstr "Tắt tiếng"
+
+#: src/qml/call/InCallInlineMessage.qml:18
+#, kde-format
+msgid "View"
+msgstr "Xem"
+
+#: src/qml/components/BottomToolbar.qml:81 src/qml/components/Sidebar.qml:48
+#, kde-format
+msgid "History"
+msgstr "Lịch sử"
+
+#: src/qml/components/BottomToolbar.qml:92 src/qml/components/Sidebar.qml:65
+#: src/qml/ContactsPage.qml:18
+#, kde-format
+msgid "Contacts"
+msgstr "Liên hệ"
+
+#: src/qml/components/BottomToolbar.qml:103 src/qml/components/Sidebar.qml:82
+#: src/qml/DialerPage.qml:24
+#, kde-format
+msgid "Dialer"
+msgstr "Trình quay số"
+
+#: src/qml/components/Sidebar.qml:105 src/qml/ContactsPage.qml:25
+#: src/qml/DialerPage.qml:50 src/qml/HistoryPage.qml:36
+#: src/qml/SettingsPage.qml:15
+#, kde-format
+msgid "Settings"
+msgstr "Thiết lập"
+
+#: src/qml/ContactsPage.qml:83
+#, kde-format
+msgid "Select number to call"
+msgstr "Chọn số để gọi"
+
+#: src/qml/ContactsPage.qml:92
+#, kde-format
+msgid "No contacts have a phone number set"
+msgstr "Không có liên hệ nào đã đặt số điện thoại"
+
+#: src/qml/DialerPage.qml:63
+#, kde-format
+msgid "Modem devices are not found"
+msgstr "Không tìm thấy các thiết bị điều giải"
+
+#: src/qml/DialerPage.qml:72
+#, kde-format
+msgid "Voicemail number couldn't be found"
+msgstr "Không tìm được số hộp thư thoại"
+
+#: src/qml/history/HistoryDelegate.qml:59
+#, kde-format
+msgid "Duration: %1"
+msgstr "Thời lượng: %1"
+
+#: src/qml/HistoryPage.qml:16
+#, kde-format
+msgid "Call History"
+msgstr "Lịch sử gọi"
+
+#: src/qml/HistoryPage.qml:27
+#, kde-format
+msgid "Clear history"
+msgstr "Xoá lịch sử"
+
+#: src/qml/HistoryPage.qml:53
+#, kde-format
+msgid "No recent calls"
+msgstr "Không có cuộc gọi nào gần đây"
+
+#: src/qml/ImeiSheet.qml:18
+#, kde-format
+msgid "IMEI"
+msgid_plural "IMEIs"
+msgstr[0] "IMEI"
+
+#: src/qml/ImeiSheet.qml:30
+#, kde-format
+msgid "No IMEIs found"
+msgstr "Không tìm thấy IMEI nào"
+
+#: src/qml/SettingsPage.qml:33
+#, kde-format
+msgid "More Info:"
+msgstr "Thông tin thêm:"
+
+#: src/qml/SettingsPage.qml:34
+#, kde-format
+msgid "About"
+msgstr "Thông tin"
+
+#: src/qml/USSDSheet.qml:32
+#, kde-format
+msgid "USSD Message"
+msgstr "Tin nhắn USSD"
+
+#: src/qml/USSDSheet.qml:37
+#, kde-format
+msgid "Write response..."
+msgstr "Viết lời hồi đáp..."
+
+#: src/qml/USSDSheet.qml:42
+#, kde-format
+msgid "Send"
+msgstr "Gửi"
+
+#~ msgid "Accept"
+#~ msgstr "Nhận"
+
+#~ msgid "Reject"
+#~ msgstr "Từ chối"
+
+#~ msgid "Incoming call"
+#~ msgstr "Cuộc gọi đến"
+
+#~ msgid "Voicemail"
+#~ msgstr "Thư thoại"
+
+#~ msgid "Active call inhibits system suspend"
+#~ msgstr "Cuộc gọi đang diễn ra đã ngăn cản hệ thống tạm ngừng"
+
+#~ msgid "Missed call from %1"
+#~ msgstr "Cuộc gọi nhỡ từ %1"
+
+#~ msgid "%1 calls missed"
+#~ msgstr "%1 cuộc gọi nhỡ"
+
+#~ msgid "Last call: %1"
+#~ msgstr "Cuộc gọi cuối: %1"
+
+#~ msgid "Plasma Phone Dialer"
+#~ msgstr "Trình quay số điện thoại Plasma"
+
+#~ msgid "Daemon mode. run without displaying anything."
+#~ msgstr "Chế độ chạy nền. chạy mà không hiển thị gì."
+
+#~ msgid "Call the given number"
+#~ msgstr "Gọi số đã chọn"
+
+#~ msgid "Calling %1"
+#~ msgstr "Đang gọi %1"
+
+#~ msgid "Unable to make a call at this moment"
+#~ msgstr "Hiện tại không thể thực hiện cuộc gọi"
+
+#~ msgid "In call with %1."
+#~ msgstr "Trong cuộc gọi với %1."
+
+#~ msgid "No contacts"
+#~ msgstr "Không có liên hệ nào"

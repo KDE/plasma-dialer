@@ -1,0 +1,220 @@
+# Translation of plasma-dialer.po to Catalan
+# Copyright (C) 2020-2022 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# Josep M. Ferrer <txemaq@gmail.com>, 2020, 2021, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-dialer\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-02-14 00:46+0000\n"
+"PO-Revision-Date: 2022-01-25 09:51+0100\n"
+"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
+"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Accelerator-Marker: &\n"
+"X-Generator: Lokalize 20.12.0\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Josep M. Ferrer"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "txemaq@gmail.com"
+
+#: src/main.cpp:57 src/qml/components/Sidebar.qml:34 src/qml/main.qml:31
+#, kde-format
+msgid "Phone"
+msgstr "Telèfon"
+
+#: src/main.cpp:57
+#, kde-format
+msgid "Plasma phone dialer"
+msgstr "Marcador de telèfon del Plasma"
+
+#: src/qml/call/CallPage.qml:32 src/qml/call/InCallInlineMessage.qml:14
+#, kde-format
+msgid "Active call list"
+msgstr "Llista de trucades actives"
+
+#: src/qml/call/CallPage.qml:102
+#, kde-format
+msgid "Calling..."
+msgstr "S'està trucant..."
+
+#: src/qml/call/CallPage.qml:128
+#, kde-format
+msgid "Keypad"
+msgstr "Teclat numèric"
+
+#: src/qml/call/CallPage.qml:148
+#, kde-format
+msgid "Speaker"
+msgstr "Altaveu"
+
+#: src/qml/call/CallPage.qml:162
+#, kde-format
+msgid "Mute"
+msgstr "Silencia"
+
+#: src/qml/call/InCallInlineMessage.qml:18
+#, kde-format
+msgid "View"
+msgstr "Visualitza"
+
+#: src/qml/components/BottomToolbar.qml:81 src/qml/components/Sidebar.qml:48
+#, kde-format
+msgid "History"
+msgstr "Historial"
+
+#: src/qml/components/BottomToolbar.qml:92 src/qml/components/Sidebar.qml:65
+#: src/qml/ContactsPage.qml:18
+#, kde-format
+msgid "Contacts"
+msgstr "Contactes"
+
+#: src/qml/components/BottomToolbar.qml:103 src/qml/components/Sidebar.qml:82
+#: src/qml/DialerPage.qml:24
+#, kde-format
+msgid "Dialer"
+msgstr "Marcador"
+
+#: src/qml/components/Sidebar.qml:105 src/qml/ContactsPage.qml:25
+#: src/qml/DialerPage.qml:50 src/qml/HistoryPage.qml:36
+#: src/qml/SettingsPage.qml:15
+#, kde-format
+msgid "Settings"
+msgstr "Configuració"
+
+#: src/qml/ContactsPage.qml:83
+#, kde-format
+msgid "Select number to call"
+msgstr "Seleccioneu el número a trucar"
+
+#: src/qml/ContactsPage.qml:92
+#, kde-format
+msgid "No contacts have a phone number set"
+msgstr "Cap contacte té definit un número de telèfon"
+
+#: src/qml/DialerPage.qml:63
+#, kde-format
+msgid "Modem devices are not found"
+msgstr "No s'ha trobat cap dispositiu de mòdem"
+
+#: src/qml/DialerPage.qml:72
+#, kde-format
+msgid "Voicemail number couldn't be found"
+msgstr "No s'ha pogut trobar el número de la bústia de veu"
+
+#: src/qml/history/HistoryDelegate.qml:59
+#, kde-format
+msgid "Duration: %1"
+msgstr "Durada: %1"
+
+#: src/qml/HistoryPage.qml:16
+#, kde-format
+msgid "Call History"
+msgstr "Historial de trucades"
+
+#: src/qml/HistoryPage.qml:27
+#, kde-format
+msgid "Clear history"
+msgstr "Neteja l'historial"
+
+#: src/qml/HistoryPage.qml:53
+#, kde-format
+msgid "No recent calls"
+msgstr "No hi ha cap trucada recent"
+
+#: src/qml/ImeiSheet.qml:18
+#, kde-format
+msgid "IMEI"
+msgid_plural "IMEIs"
+msgstr[0] "IMEI"
+msgstr[1] "IMEI"
+
+#: src/qml/ImeiSheet.qml:30
+#, kde-format
+msgid "No IMEIs found"
+msgstr "No s'ha trobat cap IMEI"
+
+#: src/qml/SettingsPage.qml:33
+#, kde-format
+msgid "More Info:"
+msgstr "Més informació:"
+
+#: src/qml/SettingsPage.qml:34
+#, kde-format
+msgid "About"
+msgstr "Quant a"
+
+#: src/qml/USSDSheet.qml:32
+#, kde-format
+msgid "USSD Message"
+msgstr "Missatge USSD"
+
+#: src/qml/USSDSheet.qml:37
+#, kde-format
+msgid "Write response..."
+msgstr "Escriu una resposta..."
+
+#: src/qml/USSDSheet.qml:42
+#, kde-format
+msgid "Send"
+msgstr "Envia"
+
+#~ msgid "Accept"
+#~ msgstr "Accepta"
+
+#~ msgid "Reject"
+#~ msgstr "Rebutja"
+
+#~ msgid "Incoming call"
+#~ msgstr "Trucada entrant"
+
+#~ msgid "Voicemail"
+#~ msgstr "Bústia de veu"
+
+#~ msgid "Active call inhibits system suspend"
+#~ msgstr "Una trucada activa inhibeix la suspensió del sistema"
+
+#~ msgid "Missed call from %1"
+#~ msgstr "Trucada perduda de %1"
+
+#~ msgid "%1 calls missed"
+#~ msgstr "%1 trucades perdudes"
+
+#~ msgid "Last call: %1"
+#~ msgstr "Última trucada: %1"
+
+#~ msgid "Plasma Phone Dialer"
+#~ msgstr "Marcador de telèfon del Plasma"
+
+#~ msgid "Daemon mode. run without displaying anything."
+#~ msgstr "Mode dimoni. S'executa sense mostrar res."
+
+#~ msgid "Call the given number"
+#~ msgstr "Truca al número indicat"
+
+#~ msgid "Calling %1"
+#~ msgstr "S'està trucant a %1"
+
+#~ msgid "Unable to make a call at this moment"
+#~ msgstr "No es pot fer cap trucada en aquest moment"
+
+#~ msgid "In call with %1."
+#~ msgstr "En una trucada amb %1."
+
+#~ msgid "view-pim-contacts"
+#~ msgstr "Mostra els contactes del PIM"
+
+#~ msgid "No contacts"
+#~ msgstr "No hi ha cap contacte"

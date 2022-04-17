@@ -1,0 +1,172 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the plasma-dialer package.
+#
+# Matjaž Jeran <matjaz.jeran@amis.net>, 2020, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-dialer\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-02-14 00:46+0000\n"
+"PO-Revision-Date: 2022-01-29 09:35+0100\n"
+"Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
+"Language-Team: Slovenian <lugos-slo@lugos.si>\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Matjaž Jeran"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "matjaz.jeran@amis.net"
+
+#: src/main.cpp:57 src/qml/components/Sidebar.qml:34 src/qml/main.qml:31
+#, kde-format
+msgid "Phone"
+msgstr "Telefon"
+
+#: src/main.cpp:57
+#, kde-format
+msgid "Plasma phone dialer"
+msgstr "Plasma phone dialer"
+
+#: src/qml/call/CallPage.qml:32 src/qml/call/InCallInlineMessage.qml:14
+#, kde-format
+msgid "Active call list"
+msgstr "Aktivni seznam klicev"
+
+#: src/qml/call/CallPage.qml:102
+#, kde-format
+msgid "Calling..."
+msgstr "Kličem..."
+
+#: src/qml/call/CallPage.qml:128
+#, kde-format
+msgid "Keypad"
+msgstr "Tipkovnica"
+
+#: src/qml/call/CallPage.qml:148
+#, kde-format
+msgid "Speaker"
+msgstr "Zvočnik"
+
+#: src/qml/call/CallPage.qml:162
+#, kde-format
+msgid "Mute"
+msgstr "Nemo"
+
+#: src/qml/call/InCallInlineMessage.qml:18
+#, kde-format
+msgid "View"
+msgstr "Pogled"
+
+#: src/qml/components/BottomToolbar.qml:81 src/qml/components/Sidebar.qml:48
+#, kde-format
+msgid "History"
+msgstr "Zgodovina"
+
+#: src/qml/components/BottomToolbar.qml:92 src/qml/components/Sidebar.qml:65
+#: src/qml/ContactsPage.qml:18
+#, kde-format
+msgid "Contacts"
+msgstr "Stiki"
+
+#: src/qml/components/BottomToolbar.qml:103 src/qml/components/Sidebar.qml:82
+#: src/qml/DialerPage.qml:24
+#, kde-format
+msgid "Dialer"
+msgstr "Klicalnik"
+
+#: src/qml/components/Sidebar.qml:105 src/qml/ContactsPage.qml:25
+#: src/qml/DialerPage.qml:50 src/qml/HistoryPage.qml:36
+#: src/qml/SettingsPage.qml:15
+#, kde-format
+msgid "Settings"
+msgstr "Nastavitve"
+
+#: src/qml/ContactsPage.qml:83
+#, kde-format
+msgid "Select number to call"
+msgstr "Izberite številko, ki jo želite poklicati"
+
+#: src/qml/ContactsPage.qml:92
+#, kde-format
+msgid "No contacts have a phone number set"
+msgstr "Ni še nobenih stikov s telefonsko številko"
+
+#: src/qml/DialerPage.qml:63
+#, kde-format
+msgid "Modem devices are not found"
+msgstr "Ni najdenih modemskih naprav"
+
+#: src/qml/DialerPage.qml:72
+#, kde-format
+msgid "Voicemail number couldn't be found"
+msgstr "Številke telefonskega odzivnika ni bilo mogoče najti"
+
+#: src/qml/history/HistoryDelegate.qml:59
+#, kde-format
+msgid "Duration: %1"
+msgstr "Trajanje: %1"
+
+#: src/qml/HistoryPage.qml:16
+#, kde-format
+msgid "Call History"
+msgstr "Zgodovina klicev"
+
+#: src/qml/HistoryPage.qml:27
+#, kde-format
+msgid "Clear history"
+msgstr "Počisti zgodovino"
+
+#: src/qml/HistoryPage.qml:53
+#, kde-format
+msgid "No recent calls"
+msgstr "Ni nedavnih klicev"
+
+#: src/qml/ImeiSheet.qml:18
+#, kde-format
+msgid "IMEI"
+msgid_plural "IMEIs"
+msgstr[0] "IMEI"
+msgstr[1] "IMEI"
+msgstr[2] "IMEI"
+msgstr[3] "IMEI"
+
+#: src/qml/ImeiSheet.qml:30
+#, kde-format
+msgid "No IMEIs found"
+msgstr "Ni mogoče najti IMEI"
+
+#: src/qml/SettingsPage.qml:33
+#, kde-format
+msgid "More Info:"
+msgstr "Več informacij:"
+
+#: src/qml/SettingsPage.qml:34
+#, kde-format
+msgid "About"
+msgstr "O programu"
+
+#: src/qml/USSDSheet.qml:32
+#, kde-format
+msgid "USSD Message"
+msgstr "Sporočilo USSD"
+
+#: src/qml/USSDSheet.qml:37
+#, kde-format
+msgid "Write response..."
+msgstr "Piši odgovor ..."
+
+#: src/qml/USSDSheet.qml:42
+#, kde-format
+msgid "Send"
+msgstr "Pošlji"

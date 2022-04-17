@@ -1,0 +1,214 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the plasma-dialer package.
+# Tommi Nieminen <translator@legisign.org>, 2021, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-dialer\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-02-14 00:46+0000\n"
+"PO-Revision-Date: 2022-02-11 14:58+0200\n"
+"Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
+"Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 20.04.2\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Tommi Nieminen"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "translator@legisign.org"
+
+#: src/main.cpp:57 src/qml/components/Sidebar.qml:34 src/qml/main.qml:31
+#, kde-format
+msgid "Phone"
+msgstr "Puhelin"
+
+#: src/main.cpp:57
+#, kde-format
+msgid "Plasma phone dialer"
+msgstr "Plasman numerovalitsin"
+
+#: src/qml/call/CallPage.qml:32 src/qml/call/InCallInlineMessage.qml:14
+#, kde-format
+msgid "Active call list"
+msgstr "Aktiivisten puhelujen luettelo"
+
+#: src/qml/call/CallPage.qml:102
+#, kde-format
+msgid "Calling..."
+msgstr "Soitetaan…"
+
+#: src/qml/call/CallPage.qml:128
+#, kde-format
+msgid "Keypad"
+msgstr "Numeronäppäimistö"
+
+#: src/qml/call/CallPage.qml:148
+#, kde-format
+msgid "Speaker"
+msgstr "Kaiutin"
+
+#: src/qml/call/CallPage.qml:162
+#, kde-format
+msgid "Mute"
+msgstr "Vaimenna"
+
+#: src/qml/call/InCallInlineMessage.qml:18
+#, kde-format
+msgid "View"
+msgstr "Näkymä"
+
+#: src/qml/components/BottomToolbar.qml:81 src/qml/components/Sidebar.qml:48
+#, kde-format
+msgid "History"
+msgstr "Historia"
+
+#: src/qml/components/BottomToolbar.qml:92 src/qml/components/Sidebar.qml:65
+#: src/qml/ContactsPage.qml:18
+#, kde-format
+msgid "Contacts"
+msgstr "Yhteystiedot"
+
+#: src/qml/components/BottomToolbar.qml:103 src/qml/components/Sidebar.qml:82
+#: src/qml/DialerPage.qml:24
+#, kde-format
+msgid "Dialer"
+msgstr "Numerovalitsin"
+
+#: src/qml/components/Sidebar.qml:105 src/qml/ContactsPage.qml:25
+#: src/qml/DialerPage.qml:50 src/qml/HistoryPage.qml:36
+#: src/qml/SettingsPage.qml:15
+#, kde-format
+msgid "Settings"
+msgstr "Asetukset"
+
+#: src/qml/ContactsPage.qml:83
+#, kde-format
+msgid "Select number to call"
+msgstr "Valitse numero, johon soitetaan"
+
+#: src/qml/ContactsPage.qml:92
+#, kde-format
+msgid "No contacts have a phone number set"
+msgstr "Puhelinnumeroa ei ole asetettu yhdellekään yhteystiedolle"
+
+#: src/qml/DialerPage.qml:63
+#, kde-format
+msgid "Modem devices are not found"
+msgstr "Modeemilaitteita ei löytynyt"
+
+#: src/qml/DialerPage.qml:72
+#, kde-format
+msgid "Voicemail number couldn't be found"
+msgstr "Vastaajan numeroa ei löytynyt"
+
+#: src/qml/history/HistoryDelegate.qml:59
+#, kde-format
+msgid "Duration: %1"
+msgstr "Kesto: %1"
+
+#: src/qml/HistoryPage.qml:16
+#, kde-format
+msgid "Call History"
+msgstr "Puheluhistoria"
+
+#: src/qml/HistoryPage.qml:27
+#, kde-format
+msgid "Clear history"
+msgstr "Tyhjennä historia"
+
+#: src/qml/HistoryPage.qml:53
+#, kde-format
+msgid "No recent calls"
+msgstr "Ei viimeaikaisia puheluja"
+
+#: src/qml/ImeiSheet.qml:18
+#, kde-format
+msgid "IMEI"
+msgid_plural "IMEIs"
+msgstr[0] "IMEI"
+msgstr[1] "IMEIt"
+
+#: src/qml/ImeiSheet.qml:30
+#, kde-format
+msgid "No IMEIs found"
+msgstr "IMEItä ei löytynyt"
+
+#: src/qml/SettingsPage.qml:33
+#, kde-format
+msgid "More Info:"
+msgstr "Lisätietoa:"
+
+#: src/qml/SettingsPage.qml:34
+#, kde-format
+msgid "About"
+msgstr "Tietoa"
+
+#: src/qml/USSDSheet.qml:32
+#, kde-format
+msgid "USSD Message"
+msgstr "USSD-viesti"
+
+#: src/qml/USSDSheet.qml:37
+#, kde-format
+msgid "Write response..."
+msgstr "Kirjoita vastaus…"
+
+#: src/qml/USSDSheet.qml:42
+#, kde-format
+msgid "Send"
+msgstr "Lähetä"
+
+#~ msgid "Accept"
+#~ msgstr "Hyväksy"
+
+#~ msgid "Reject"
+#~ msgstr "Hylkää"
+
+#~ msgid "Incoming call"
+#~ msgstr "Saapuva puhelu"
+
+#~ msgid "Voicemail"
+#~ msgstr "Vastaaja"
+
+#~ msgid "Active call inhibits system suspend"
+#~ msgstr "Käynnissä oleva puhelu estää järjestelmän valmiustilan"
+
+#~ msgid "Missed call from %1"
+#~ msgstr "Vastaamaton puhelu: %1"
+
+#~ msgid "%1 calls missed"
+#~ msgstr "%1 vastaamatonta puhelua"
+
+#~ msgid "Last call: %1"
+#~ msgstr "Viimeisin puhelu: %1"
+
+#~ msgid "Plasma Phone Dialer"
+#~ msgstr "Plasman numerovalitsin"
+
+#~ msgid "Daemon mode. run without displaying anything."
+#~ msgstr "Palvelutila: pysy käynnissä näyttämättä mitään."
+
+#~ msgid "Call the given number"
+#~ msgstr "Soita annettuun numeroon"
+
+#~ msgid "Calling %1"
+#~ msgstr "Soitetaan: %1"
+
+#~ msgid "Unable to make a call at this moment"
+#~ msgstr "Juuri nyt ei voi soittaa"
+
+#~ msgid "In call with %1."
+#~ msgstr "Puhelu käynnissä: %1."
+
+#~ msgid "No contacts"
+#~ msgstr "Ei yhteystietoja"

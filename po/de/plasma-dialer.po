@@ -1,0 +1,209 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the plasma-dialer package.
+# Burkhard Lück <lueck@hube-lueck.de>, 2021.
+# Frederik Schwarzer <schwarzer@kde.org>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-dialer\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-02-14 00:46+0000\n"
+"PO-Revision-Date: 2022-02-26 03:10+0100\n"
+"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 21.08.0\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Deutsches KDE-Übersetzerteam"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kde-i18n-de@kde.org"
+
+#: src/main.cpp:57 src/qml/components/Sidebar.qml:34 src/qml/main.qml:31
+#, kde-format
+msgid "Phone"
+msgstr "Telefon"
+
+#: src/main.cpp:57
+#, kde-format
+msgid "Plasma phone dialer"
+msgstr ""
+
+#: src/qml/call/CallPage.qml:32 src/qml/call/InCallInlineMessage.qml:14
+#, kde-format
+msgid "Active call list"
+msgstr "Liste aktiver Anrufe"
+
+#: src/qml/call/CallPage.qml:102
+#, kde-format
+msgid "Calling..."
+msgstr "Anruf ..."
+
+#: src/qml/call/CallPage.qml:128
+#, kde-format
+msgid "Keypad"
+msgstr "Tastenfeld"
+
+#: src/qml/call/CallPage.qml:148
+#, kde-format
+msgid "Speaker"
+msgstr "Lautsprecher"
+
+#: src/qml/call/CallPage.qml:162
+#, kde-format
+msgid "Mute"
+msgstr "Stummschalten"
+
+#: src/qml/call/InCallInlineMessage.qml:18
+#, kde-format
+msgid "View"
+msgstr "Ansicht"
+
+#: src/qml/components/BottomToolbar.qml:81 src/qml/components/Sidebar.qml:48
+#, kde-format
+msgid "History"
+msgstr "Anrufliste"
+
+#: src/qml/components/BottomToolbar.qml:92 src/qml/components/Sidebar.qml:65
+#: src/qml/ContactsPage.qml:18
+#, kde-format
+msgid "Contacts"
+msgstr "Kontakte"
+
+#: src/qml/components/BottomToolbar.qml:103 src/qml/components/Sidebar.qml:82
+#: src/qml/DialerPage.qml:24
+#, kde-format
+msgid "Dialer"
+msgstr ""
+
+#: src/qml/components/Sidebar.qml:105 src/qml/ContactsPage.qml:25
+#: src/qml/DialerPage.qml:50 src/qml/HistoryPage.qml:36
+#: src/qml/SettingsPage.qml:15
+#, kde-format
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: src/qml/ContactsPage.qml:83
+#, kde-format
+msgid "Select number to call"
+msgstr "Anzurufende Nummer auswählen"
+
+#: src/qml/ContactsPage.qml:92
+#, kde-format
+msgid "No contacts have a phone number set"
+msgstr ""
+
+#: src/qml/DialerPage.qml:63
+#, kde-format
+msgid "Modem devices are not found"
+msgstr ""
+
+#: src/qml/DialerPage.qml:72
+#, kde-format
+msgid "Voicemail number couldn't be found"
+msgstr ""
+
+#: src/qml/history/HistoryDelegate.qml:59
+#, kde-format
+msgid "Duration: %1"
+msgstr "Dauer: %1"
+
+#: src/qml/HistoryPage.qml:16
+#, kde-format
+msgid "Call History"
+msgstr "Anrufliste"
+
+#: src/qml/HistoryPage.qml:27
+#, kde-format
+msgid "Clear history"
+msgstr "Anrufliste leeren"
+
+#: src/qml/HistoryPage.qml:53
+#, kde-format
+msgid "No recent calls"
+msgstr "Keine aktuellen Anrufe"
+
+#: src/qml/ImeiSheet.qml:18
+#, kde-format
+msgid "IMEI"
+msgid_plural "IMEIs"
+msgstr[0] "IMEI"
+msgstr[1] "IMEIs"
+
+#: src/qml/ImeiSheet.qml:30
+#, kde-format
+msgid "No IMEIs found"
+msgstr "Keine IMEIs gefunden"
+
+#: src/qml/SettingsPage.qml:33
+#, kde-format
+msgid "More Info:"
+msgstr "Weitere Informationen:"
+
+#: src/qml/SettingsPage.qml:34
+#, kde-format
+msgid "About"
+msgstr "Über"
+
+#: src/qml/USSDSheet.qml:32
+#, kde-format
+msgid "USSD Message"
+msgstr "USSD-Nachricht"
+
+#: src/qml/USSDSheet.qml:37
+#, kde-format
+msgid "Write response..."
+msgstr "Antwort schreiben ..."
+
+#: src/qml/USSDSheet.qml:42
+#, kde-format
+msgid "Send"
+msgstr "Senden"
+
+#~ msgid "Accept"
+#~ msgstr "Annehmen"
+
+#~ msgid "Reject"
+#~ msgstr "Ablehnen"
+
+#~ msgid "Incoming call"
+#~ msgstr "Eingehender Anruf"
+
+#~ msgid "Voicemail"
+#~ msgstr "Voicemail"
+
+#~ msgid "Active call inhibits system suspend"
+#~ msgstr "Ein aktiver Anruf blockiert den Standby-Modus"
+
+#~ msgid "Missed call from %1"
+#~ msgstr "Verpasster Anruf von %1"
+
+#~ msgid "%1 calls missed"
+#~ msgstr "%1 Anrufe verpasst"
+
+#~ msgid "Last call: %1"
+#~ msgstr "Letzter Anruf: %1"
+
+#~ msgid "Daemon mode. run without displaying anything."
+#~ msgstr "Dienst-Modus, ohne Anzeige ausgeführt."
+
+#~ msgid "Call the given number"
+#~ msgstr "Angegebene Nummer anrufen"
+
+#~ msgid "Calling %1"
+#~ msgstr "%1 wird angerufen"
+
+#~ msgid "Unable to make a call at this moment"
+#~ msgstr "Ein Anruf ist im Moment nicht möglich"
+
+#~ msgid "In call with %1."
+#~ msgstr "Beim Telefonat mit %1."

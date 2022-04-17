@@ -1,0 +1,219 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the plasma-dialer package.
+#
+# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2021, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-dialer\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-02-14 00:46+0000\n"
+"PO-Revision-Date: 2022-02-12 16:03+0100\n"
+"Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
+"Language-Team: Polish <kde-i18n-doc@kde.org>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 22.03.70\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Łukasz Wojniłowicz"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "lukasz.wojnilowicz@gmail.com"
+
+#: src/main.cpp:57 src/qml/components/Sidebar.qml:34 src/qml/main.qml:31
+#, kde-format
+msgid "Phone"
+msgstr "Telefon"
+
+#: src/main.cpp:57
+#, kde-format
+msgid "Plasma phone dialer"
+msgstr "Wybieranie numerów telefonicznych Plazmy"
+
+#: src/qml/call/CallPage.qml:32 src/qml/call/InCallInlineMessage.qml:14
+#, kde-format
+msgid "Active call list"
+msgstr "Lista trwających połączeń"
+
+#: src/qml/call/CallPage.qml:102
+#, kde-format
+msgid "Calling..."
+msgstr "Dzwonienie..."
+
+#: src/qml/call/CallPage.qml:128
+#, kde-format
+msgid "Keypad"
+msgstr "Klawiatura numeryczna"
+
+#: src/qml/call/CallPage.qml:148
+#, kde-format
+msgid "Speaker"
+msgstr "Głośnik"
+
+#: src/qml/call/CallPage.qml:162
+#, kde-format
+msgid "Mute"
+msgstr "Wycisz"
+
+#: src/qml/call/InCallInlineMessage.qml:18
+#, kde-format
+msgid "View"
+msgstr "Widok"
+
+#: src/qml/components/BottomToolbar.qml:81 src/qml/components/Sidebar.qml:48
+#, kde-format
+msgid "History"
+msgstr "Historia"
+
+#: src/qml/components/BottomToolbar.qml:92 src/qml/components/Sidebar.qml:65
+#: src/qml/ContactsPage.qml:18
+#, kde-format
+msgid "Contacts"
+msgstr "Kontakty"
+
+#: src/qml/components/BottomToolbar.qml:103 src/qml/components/Sidebar.qml:82
+#: src/qml/DialerPage.qml:24
+#, kde-format
+msgid "Dialer"
+msgstr "Wybieranie numerów"
+
+#: src/qml/components/Sidebar.qml:105 src/qml/ContactsPage.qml:25
+#: src/qml/DialerPage.qml:50 src/qml/HistoryPage.qml:36
+#: src/qml/SettingsPage.qml:15
+#, kde-format
+msgid "Settings"
+msgstr "Ustawienia"
+
+#: src/qml/ContactsPage.qml:83
+#, kde-format
+msgid "Select number to call"
+msgstr "Wybierz numer, na który zadzwonić"
+
+#: src/qml/ContactsPage.qml:92
+#, kde-format
+msgid "No contacts have a phone number set"
+msgstr "Żaden z kontaktów nie ma ustawionego numeru telefonu"
+
+#: src/qml/DialerPage.qml:63
+#, kde-format
+msgid "Modem devices are not found"
+msgstr "Nie znaleziono żadnego urządzenia modemu"
+
+#: src/qml/DialerPage.qml:72
+#, kde-format
+msgid "Voicemail number couldn't be found"
+msgstr "Nie można znaleźć numeru automatycznej sekretarki"
+
+#: src/qml/history/HistoryDelegate.qml:59
+#, kde-format
+msgid "Duration: %1"
+msgstr "Czas trwania: %1"
+
+#: src/qml/HistoryPage.qml:16
+#, kde-format
+msgid "Call History"
+msgstr "Historia połączeń"
+
+#: src/qml/HistoryPage.qml:27
+#, kde-format
+msgid "Clear history"
+msgstr "Wyczyść historię"
+
+#: src/qml/HistoryPage.qml:53
+#, kde-format
+msgid "No recent calls"
+msgstr "Brak niedawnych połączeń"
+
+#: src/qml/ImeiSheet.qml:18
+#, kde-format
+msgid "IMEI"
+msgid_plural "IMEIs"
+msgstr[0] "IMEI"
+msgstr[1] "IMEI"
+msgstr[2] "IMEI"
+
+#: src/qml/ImeiSheet.qml:30
+#, kde-format
+msgid "No IMEIs found"
+msgstr "Nie znaleziono żadnych numerów IMEI"
+
+#: src/qml/SettingsPage.qml:33
+#, kde-format
+msgid "More Info:"
+msgstr "Więcej szczegółów:"
+
+#: src/qml/SettingsPage.qml:34
+#, kde-format
+msgid "About"
+msgstr "O programie"
+
+#: src/qml/USSDSheet.qml:32
+#, kde-format
+msgid "USSD Message"
+msgstr "Wiadomość USSD"
+
+#: src/qml/USSDSheet.qml:37
+#, kde-format
+msgid "Write response..."
+msgstr "Napisz odpowiedź..."
+
+#: src/qml/USSDSheet.qml:42
+#, kde-format
+msgid "Send"
+msgstr "Wyślij"
+
+#~ msgid "Accept"
+#~ msgstr "Przyjmij"
+
+#~ msgid "Reject"
+#~ msgstr "Odrzuć"
+
+#~ msgid "Incoming call"
+#~ msgstr "Rozmowa przychodząca"
+
+#~ msgid "Voicemail"
+#~ msgstr "Poczta głosowa"
+
+#~ msgid "Active call inhibits system suspend"
+#~ msgstr "Prowadzona rozmowa powstrzymuje uśpienie systemu"
+
+#~ msgid "Missed call from %1"
+#~ msgstr "Nieodebrane połączenie od %1"
+
+#~ msgid "%1 calls missed"
+#~ msgstr "nie odebrano %1 połączeń"
+
+#~ msgid "Last call: %1"
+#~ msgstr "Ostatnie połączenie: %1"
+
+#~ msgid "Plasma Phone Dialer"
+#~ msgstr "Wybieranie numerów telefonicznych Plazmy"
+
+#~ msgid "Daemon mode. run without displaying anything."
+#~ msgstr "Tryb usługi. Uruchom bez wyświetlania czegokolwiek."
+
+#~ msgid "Call the given number"
+#~ msgstr "Zadzwoń na dany numer"
+
+#~ msgid "Calling %1"
+#~ msgstr "Dzwonienie %1"
+
+#~ msgid "Unable to make a call at this moment"
+#~ msgstr "Nie można wykonać połączenia w tej chwili"
+
+#~ msgid "In call with %1."
+#~ msgstr "W rozmowie z %1."
+
+#~ msgid "view-pim-contacts"
+#~ msgstr "pokaż-kontakty-zio"
+
+#~ msgid "No contacts"
+#~ msgstr "Brak kontaktów"

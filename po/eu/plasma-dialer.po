@@ -1,0 +1,217 @@
+# Translation for plasma-dialer.po to Euskara/Basque (eu).
+# Copyright (C) 2020-2022, This file is copyright:
+# This file is distributed under the same license as the plasma-dialer package.
+# KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>.
+#
+# Translators:
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2020, 2021, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-dialer\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-02-14 00:46+0000\n"
+"PO-Revision-Date: 2022-02-20 22:33+0100\n"
+"Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
+"Language-Team: Basque <kde-i18n-eu@kde.org>\n"
+"Language: eu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 21.12.2\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Iñigo Salvador Azurmendi"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "xalba@ni.eus"
+
+#: src/main.cpp:57 src/qml/components/Sidebar.qml:34 src/qml/main.qml:31
+#, kde-format
+msgid "Phone"
+msgstr "Telefonoa"
+
+#: src/main.cpp:57
+#, kde-format
+msgid "Plasma phone dialer"
+msgstr "Plasmarako telefono markatzailea"
+
+#: src/qml/call/CallPage.qml:32 src/qml/call/InCallInlineMessage.qml:14
+#, kde-format
+msgid "Active call list"
+msgstr "Dei aktiboen zerrenda"
+
+#: src/qml/call/CallPage.qml:102
+#, kde-format
+msgid "Calling..."
+msgstr "Deitzen..."
+
+#: src/qml/call/CallPage.qml:128
+#, kde-format
+msgid "Keypad"
+msgstr "Zenbakizko teklatua"
+
+#: src/qml/call/CallPage.qml:148
+#, kde-format
+msgid "Speaker"
+msgstr "Bozgorailua"
+
+#: src/qml/call/CallPage.qml:162
+#, kde-format
+msgid "Mute"
+msgstr "Isilarazi"
+
+#: src/qml/call/InCallInlineMessage.qml:18
+#, kde-format
+msgid "View"
+msgstr "Ikusi"
+
+#: src/qml/components/BottomToolbar.qml:81 src/qml/components/Sidebar.qml:48
+#, kde-format
+msgid "History"
+msgstr "Historia"
+
+#: src/qml/components/BottomToolbar.qml:92 src/qml/components/Sidebar.qml:65
+#: src/qml/ContactsPage.qml:18
+#, kde-format
+msgid "Contacts"
+msgstr "Kontaktuak"
+
+#: src/qml/components/BottomToolbar.qml:103 src/qml/components/Sidebar.qml:82
+#: src/qml/DialerPage.qml:24
+#, kde-format
+msgid "Dialer"
+msgstr "Markatzailea"
+
+#: src/qml/components/Sidebar.qml:105 src/qml/ContactsPage.qml:25
+#: src/qml/DialerPage.qml:50 src/qml/HistoryPage.qml:36
+#: src/qml/SettingsPage.qml:15
+#, kde-format
+msgid "Settings"
+msgstr "Ezarpenak"
+
+#: src/qml/ContactsPage.qml:83
+#, kde-format
+msgid "Select number to call"
+msgstr "Hautatu deitu beharreko zenbakia"
+
+#: src/qml/ContactsPage.qml:92
+#, kde-format
+msgid "No contacts have a phone number set"
+msgstr "Ez dago telefono zenbakirik ezarrita duen kontakturik"
+
+#: src/qml/DialerPage.qml:63
+#, kde-format
+msgid "Modem devices are not found"
+msgstr "Ez da moden gailurik aurkitu"
+
+#: src/qml/DialerPage.qml:72
+#, kde-format
+msgid "Voicemail number couldn't be found"
+msgstr "Ahots-posta zenbakia ezin izan da aurkitu"
+
+#: src/qml/history/HistoryDelegate.qml:59
+#, kde-format
+msgid "Duration: %1"
+msgstr "Iraupena: %1"
+
+#: src/qml/HistoryPage.qml:16
+#, kde-format
+msgid "Call History"
+msgstr "Deien historia:"
+
+#: src/qml/HistoryPage.qml:27
+#, kde-format
+msgid "Clear history"
+msgstr "Garbitu historia"
+
+#: src/qml/HistoryPage.qml:53
+#, kde-format
+msgid "No recent calls"
+msgstr "Ez dago azken deirik"
+
+#: src/qml/ImeiSheet.qml:18
+#, kde-format
+msgid "IMEI"
+msgid_plural "IMEIs"
+msgstr[0] "IMEIa"
+msgstr[1] "IMEIak"
+
+#: src/qml/ImeiSheet.qml:30
+#, kde-format
+msgid "No IMEIs found"
+msgstr "Ez da IMEIrik aurkitu"
+
+#: src/qml/SettingsPage.qml:33
+#, kde-format
+msgid "More Info:"
+msgstr "Informazio gehiago:"
+
+#: src/qml/SettingsPage.qml:34
+#, kde-format
+msgid "About"
+msgstr "Honi buruz"
+
+#: src/qml/USSDSheet.qml:32
+#, kde-format
+msgid "USSD Message"
+msgstr "«USSD» mezua"
+
+#: src/qml/USSDSheet.qml:37
+#, kde-format
+msgid "Write response..."
+msgstr "Idatzi erantzuna..."
+
+#: src/qml/USSDSheet.qml:42
+#, kde-format
+msgid "Send"
+msgstr "Bidali"
+
+#~ msgid "Accept"
+#~ msgstr "Onartu"
+
+#~ msgid "Reject"
+#~ msgstr "Errefusatu"
+
+#~ msgid "Incoming call"
+#~ msgstr "Sarrerako deia"
+
+#~ msgid "Voicemail"
+#~ msgstr "Ahots-posta"
+
+#~ msgid "Active call inhibits system suspend"
+#~ msgstr "Dei aktiboak sistema egonean ipintzea eragozten du"
+
+#~ msgid "Missed call from %1"
+#~ msgstr "%1(r)en dei galdua"
+
+#~ msgid "%1 calls missed"
+#~ msgstr "%1 dei galdu"
+
+#~ msgid "Last call: %1"
+#~ msgstr "Azken deia: %1"
+
+#~ msgid "Plasma Phone Dialer"
+#~ msgstr "Plasmarako telefono markatzailea"
+
+#~ msgid "Daemon mode. run without displaying anything."
+#~ msgstr "Daimon modua. Ezer erakutsi gabe ibiltzen da."
+
+#~ msgid "Call the given number"
+#~ msgstr "Deitu adierazitako zenbakiari"
+
+#~ msgid "Calling %1"
+#~ msgstr "%1(e)ri deitzen"
+
+#~ msgid "Unable to make a call at this moment"
+#~ msgstr "Oraintxe ezin da deirik egin"
+
+#~ msgid "In call with %1."
+#~ msgstr "%1(r)ekin dei batean."
+
+#~ msgid "No contacts"
+#~ msgstr "Kontakturik ez"

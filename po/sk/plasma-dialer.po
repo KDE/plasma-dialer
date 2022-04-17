@@ -1,0 +1,212 @@
+# translation of plasma-dialer.po Slovak
+# Roman Paholik <wizzardsk@gmail.com>, 2020.
+# Matej Mrenica <matejm98mthw@gmail.com>, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-dialer\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-02-14 00:46+0000\n"
+"PO-Revision-Date: 2021-01-30 11:03+0100\n"
+"Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
+"Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 20.12.1\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Roman Paholík"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "wizzardsk@gmail.com"
+
+#: src/main.cpp:57 src/qml/components/Sidebar.qml:34 src/qml/main.qml:31
+#, kde-format
+msgid "Phone"
+msgstr ""
+
+#: src/main.cpp:57
+#, kde-format
+msgid "Plasma phone dialer"
+msgstr "Plasma vytáčanie telefónu"
+
+#: src/qml/call/CallPage.qml:32 src/qml/call/InCallInlineMessage.qml:14
+#, kde-format
+msgid "Active call list"
+msgstr ""
+
+#: src/qml/call/CallPage.qml:102
+#, kde-format
+msgid "Calling..."
+msgstr "Volanie..."
+
+#: src/qml/call/CallPage.qml:128
+#, kde-format
+msgid "Keypad"
+msgstr "Klávesnica"
+
+#: src/qml/call/CallPage.qml:148
+#, kde-format
+msgid "Speaker"
+msgstr "Reproduktor"
+
+#: src/qml/call/CallPage.qml:162
+#, kde-format
+msgid "Mute"
+msgstr "Stlmiť"
+
+#: src/qml/call/InCallInlineMessage.qml:18
+#, kde-format
+msgid "View"
+msgstr "Zobraziť"
+
+#: src/qml/components/BottomToolbar.qml:81 src/qml/components/Sidebar.qml:48
+#, fuzzy, kde-format
+#| msgid "Call History"
+msgid "History"
+msgstr "História hovorov"
+
+#: src/qml/components/BottomToolbar.qml:92 src/qml/components/Sidebar.qml:65
+#: src/qml/ContactsPage.qml:18
+#, kde-format
+msgid "Contacts"
+msgstr "Kontakty"
+
+#: src/qml/components/BottomToolbar.qml:103 src/qml/components/Sidebar.qml:82
+#: src/qml/DialerPage.qml:24
+#, kde-format
+msgid "Dialer"
+msgstr "Vytáčanie"
+
+#: src/qml/components/Sidebar.qml:105 src/qml/ContactsPage.qml:25
+#: src/qml/DialerPage.qml:50 src/qml/HistoryPage.qml:36
+#: src/qml/SettingsPage.qml:15
+#, kde-format
+msgid "Settings"
+msgstr ""
+
+#: src/qml/ContactsPage.qml:83
+#, kde-format
+msgid "Select number to call"
+msgstr ""
+
+#: src/qml/ContactsPage.qml:92
+#, kde-format
+msgid "No contacts have a phone number set"
+msgstr ""
+
+#: src/qml/DialerPage.qml:63
+#, kde-format
+msgid "Modem devices are not found"
+msgstr ""
+
+#: src/qml/DialerPage.qml:72
+#, kde-format
+msgid "Voicemail number couldn't be found"
+msgstr ""
+
+#: src/qml/history/HistoryDelegate.qml:59
+#, kde-format
+msgid "Duration: %1"
+msgstr "Trvanie: %1"
+
+#: src/qml/HistoryPage.qml:16
+#, kde-format
+msgid "Call History"
+msgstr "História hovorov"
+
+#: src/qml/HistoryPage.qml:27
+#, kde-format
+msgid "Clear history"
+msgstr "Vyčistiť históriu"
+
+#: src/qml/HistoryPage.qml:53
+#, kde-format
+msgid "No recent calls"
+msgstr "Žiadne nedávne hovory"
+
+#: src/qml/ImeiSheet.qml:18
+#, kde-format
+msgid "IMEI"
+msgid_plural "IMEIs"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: src/qml/ImeiSheet.qml:30
+#, kde-format
+msgid "No IMEIs found"
+msgstr ""
+
+#: src/qml/SettingsPage.qml:33
+#, kde-format
+msgid "More Info:"
+msgstr ""
+
+#: src/qml/SettingsPage.qml:34
+#, kde-format
+msgid "About"
+msgstr ""
+
+#: src/qml/USSDSheet.qml:32
+#, kde-format
+msgid "USSD Message"
+msgstr ""
+
+#: src/qml/USSDSheet.qml:37
+#, kde-format
+msgid "Write response..."
+msgstr ""
+
+#: src/qml/USSDSheet.qml:42
+#, kde-format
+msgid "Send"
+msgstr ""
+
+#~ msgid "Accept"
+#~ msgstr "Prijať"
+
+#~ msgid "Reject"
+#~ msgstr "Odmietnuť"
+
+#~ msgid "Incoming call"
+#~ msgstr "Prichádzajúci hovor"
+
+#~ msgid "Active call inhibits system suspend"
+#~ msgstr "Aktívne volanie blokuje pozastavenie systému"
+
+#~ msgid "Missed call from %1"
+#~ msgstr "Zmeškaný hovor od %1"
+
+#~ msgid "%1 calls missed"
+#~ msgstr "%1 zmeškaných hovorov"
+
+#~ msgid "Last call: %1"
+#~ msgstr "Posledný hovor: %1"
+
+#~ msgid "Plasma Phone Dialer"
+#~ msgstr "Plasma vytáčanie telefónu"
+
+#~ msgid "Daemon mode. run without displaying anything."
+#~ msgstr "Režim démona. Beží bez zobrazenia čohokoľvek."
+
+#~ msgid "Call the given number"
+#~ msgstr "Volať dané číslo"
+
+#~ msgid "Calling %1"
+#~ msgstr "Volanie %1"
+
+#~ msgid "Unable to make a call at this moment"
+#~ msgstr "V tejto chvíli nemôžem vykonať hovor"
+
+#~ msgid "In call with %1."
+#~ msgstr "Hovor s %1."
+
+#~ msgid "No contacts"
+#~ msgstr "Žiadne kontakty"

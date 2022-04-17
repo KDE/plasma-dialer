@@ -1,0 +1,217 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the plasma-dialer package.
+#
+# Kheyyam Gojayev <xxmn77@gmail.com>, 2021, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-dialer\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-02-14 00:46+0000\n"
+"PO-Revision-Date: 2022-01-27 18:59+0400\n"
+"Last-Translator: Kheyyam Gojayev <xxmn77@gmail.com>\n"
+"Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
+"Language: az\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 21.12.1\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Xəyyam Qocayev"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "xxmn77@gmail.com"
+
+#: src/main.cpp:57 src/qml/components/Sidebar.qml:34 src/qml/main.qml:31
+#, kde-format
+msgid "Phone"
+msgstr "Telefon"
+
+#: src/main.cpp:57
+#, kde-format
+msgid "Plasma phone dialer"
+msgstr "Plasma nömrə yığımı"
+
+#: src/qml/call/CallPage.qml:32 src/qml/call/InCallInlineMessage.qml:14
+#, kde-format
+msgid "Active call list"
+msgstr "Aktiv zəng siyahısı"
+
+#: src/qml/call/CallPage.qml:102
+#, kde-format
+msgid "Calling..."
+msgstr "Zəng olunur..."
+
+#: src/qml/call/CallPage.qml:128
+#, kde-format
+msgid "Keypad"
+msgstr "Klaviatura"
+
+#: src/qml/call/CallPage.qml:148
+#, kde-format
+msgid "Speaker"
+msgstr "Səsucaldıcı"
+
+#: src/qml/call/CallPage.qml:162
+#, kde-format
+msgid "Mute"
+msgstr "Susdurun"
+
+#: src/qml/call/InCallInlineMessage.qml:18
+#, kde-format
+msgid "View"
+msgstr "Görünüş"
+
+#: src/qml/components/BottomToolbar.qml:81 src/qml/components/Sidebar.qml:48
+#, kde-format
+msgid "History"
+msgstr "Tarixçə"
+
+#: src/qml/components/BottomToolbar.qml:92 src/qml/components/Sidebar.qml:65
+#: src/qml/ContactsPage.qml:18
+#, kde-format
+msgid "Contacts"
+msgstr "Əlaqələr"
+
+#: src/qml/components/BottomToolbar.qml:103 src/qml/components/Sidebar.qml:82
+#: src/qml/DialerPage.qml:24
+#, kde-format
+msgid "Dialer"
+msgstr "Nömrə yığımı"
+
+#: src/qml/components/Sidebar.qml:105 src/qml/ContactsPage.qml:25
+#: src/qml/DialerPage.qml:50 src/qml/HistoryPage.qml:36
+#: src/qml/SettingsPage.qml:15
+#, kde-format
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: src/qml/ContactsPage.qml:83
+#, kde-format
+msgid "Select number to call"
+msgstr "Zəng edəcəyiniz nömrəni seçin"
+
+#: src/qml/ContactsPage.qml:92
+#, kde-format
+msgid "No contacts have a phone number set"
+msgstr "Telefon nömrəsi olan əlaqələr yoxdur"
+
+#: src/qml/DialerPage.qml:63
+#, kde-format
+msgid "Modem devices are not found"
+msgstr "Modem cihazları tapılmadı"
+
+#: src/qml/DialerPage.qml:72
+#, kde-format
+msgid "Voicemail number couldn't be found"
+msgstr "Səsli poçt nömrəsi tapılmadı"
+
+#: src/qml/history/HistoryDelegate.qml:59
+#, kde-format
+msgid "Duration: %1"
+msgstr "Müddət: %1"
+
+#: src/qml/HistoryPage.qml:16
+#, kde-format
+msgid "Call History"
+msgstr "Zəng Tarixçəsi"
+
+#: src/qml/HistoryPage.qml:27
+#, kde-format
+msgid "Clear history"
+msgstr "Tarixçəni təmizləyin"
+
+#: src/qml/HistoryPage.qml:53
+#, kde-format
+msgid "No recent calls"
+msgstr "Son zənglər yoxdur"
+
+#: src/qml/ImeiSheet.qml:18
+#, kde-format
+msgid "IMEI"
+msgid_plural "IMEIs"
+msgstr[0] "IMEI"
+msgstr[1] "IMEI-lər"
+
+#: src/qml/ImeiSheet.qml:30
+#, kde-format
+msgid "No IMEIs found"
+msgstr "İMEİ'lər tapılmadı"
+
+#: src/qml/SettingsPage.qml:33
+#, kde-format
+msgid "More Info:"
+msgstr "Daha çox məlumat:"
+
+#: src/qml/SettingsPage.qml:34
+#, kde-format
+msgid "About"
+msgstr "Haqqında"
+
+#: src/qml/USSDSheet.qml:32
+#, kde-format
+msgid "USSD Message"
+msgstr "USSD ismarıcı"
+
+#: src/qml/USSDSheet.qml:37
+#, kde-format
+msgid "Write response..."
+msgstr "Cavab yazın..."
+
+#: src/qml/USSDSheet.qml:42
+#, kde-format
+msgid "Send"
+msgstr "Göndərin"
+
+#~ msgid "Accept"
+#~ msgstr "Qəbul etmək"
+
+#~ msgid "Reject"
+#~ msgstr "Ayırmaq"
+
+#~ msgid "Incoming call"
+#~ msgstr "Gələn Zəng"
+
+#~ msgid "Voicemail"
+#~ msgstr "Səsli ismarıc"
+
+#~ msgid "Active call inhibits system suspend"
+#~ msgstr "Aktiv zəng sistemin dayandırılmasına mane olur"
+
+#~ msgid "Missed call from %1"
+#~ msgstr "%1, buraxılmış zəng"
+
+#~ msgid "%1 calls missed"
+#~ msgstr "%1 zəng buraxılıb"
+
+#~ msgid "Last call: %1"
+#~ msgstr "Sonuncu zəng: %1"
+
+#~ msgid "Plasma Phone Dialer"
+#~ msgstr "Plasma Nömrə Yığımı"
+
+#~ msgid "Daemon mode. run without displaying anything."
+#~ msgstr "Arxa fon rejimi, heç nə göstərmədən başlatmaq."
+
+#~ msgid "Call the given number"
+#~ msgstr "Verilmiş nömrəyə zəng"
+
+#~ msgid "Calling %1"
+#~ msgstr "Zəng edilir %1"
+
+#~ msgid "Unable to make a call at this moment"
+#~ msgstr "Bu anda zəng etmək mümkün deyil"
+
+#~ msgid "In call with %1."
+#~ msgstr "%1 ilə zəng"
+
+#~ msgid "view-pim-contacts"
+#~ msgstr "pim-əlaqələrə-baxış"
+
+#~ msgid "No contacts"
+#~ msgstr "Kontaktlar yoxdur"

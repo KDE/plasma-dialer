@@ -1,0 +1,33 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the plasma-dialer package.
+# Wantoyek <wantoyek@gmail.com>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-dialer\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-07 00:45+0000\n"
+"PO-Revision-Date: 2022-03-12 18:47+0700\n"
+"Last-Translator: Wantoyek <wantoyek@gmail.com>\n"
+"Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
+"Language: id\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 21.12.3\n"
+
+#: src/notification-manager.cpp:98
+#, kde-format
+msgid "Accept"
+msgstr "Terima"
+
+#: src/notification-manager.cpp:98
+#, kde-format
+msgid "Reject"
+msgstr "Tolak"
+
+#: src/notification-manager.cpp:107
+#, kde-format
+msgid "Incoming call"
+msgstr "Panggilan masuk"
