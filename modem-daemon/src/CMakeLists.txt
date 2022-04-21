@@ -52,7 +52,7 @@ configure_file(daemon-autostart.desktop.in ${CMAKE_CURRENT_BINARY_DIR}/daemon-au
 
 set(SERV_EXEC ${KDE_INSTALL_FULL_LIBEXECDIR}/modem-daemon)
 configure_file(org.kde.modemdaemon.service.in ${CMAKE_CURRENT_BINARY_DIR}/org.kde.modemdaemon.service)
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.modemdaemon.service DESTINATION ${DBUS_SERVICES_INSTALL_DIR})
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.modemdaemon.service DESTINATION ${KDE_INSTALL_DBUSSERVICEDIR})
 
 install(TARGETS modem-daemon DESTINATION ${KDE_INSTALL_FULL_LIBEXECDIR})
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/daemon-autostart.desktop DESTINATION ${KDE_INSTALL_AUTOSTARTDIR} RENAME org.kde.modem.daemon.desktop)

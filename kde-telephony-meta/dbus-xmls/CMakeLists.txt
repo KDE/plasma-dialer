@@ -17,7 +17,7 @@ set(DBUS_XML_FILES ${CMAKE_CURRENT_SOURCE_DIR}/manual/org.kde.telephony.CallHist
 )
 
 # install DBus interface xml to dbus interface directory
-install(FILES ${DBUS_XML_FILES} DESTINATION ${DBUS_INTERFACES_INSTALL_DIR})
+install(FILES ${DBUS_XML_FILES} DESTINATION ${KDE_INSTALL_DBUSINTERFACEDIR})
 
 # for Qt Creator IDE:
 add_custom_target(dbus-xml-files SOURCES ${DBUS_XML_FILES})

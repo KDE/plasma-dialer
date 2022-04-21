@@ -6,6 +6,6 @@
 
 add_subdirectory(src)
 
-install(FILES org.kde.phone.dialer.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
+install(FILES org.kde.phone.dialer.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 install(FILES dialer.svg DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/hicolor/scalable/apps/)
 install(FILES org.kde.phone.dialer.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})

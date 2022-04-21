@@ -62,7 +62,7 @@ configure_file(daemon-autostart.desktop.in ${CMAKE_CURRENT_BINARY_DIR}/daemon-au
 
 set(SERV_EXEC ${KDE_INSTALL_FULL_LIBEXECDIR}/kde-telephony-daemon)
 configure_file(org.kde.telephony.service.in ${CMAKE_CURRENT_BINARY_DIR}/org.kde.telephony.service)
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.telephony.service DESTINATION ${DBUS_SERVICES_INSTALL_DIR})
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.telephony.service DESTINATION ${KDE_INSTALL_DBUSSERVICEDIR})
 
 install(TARGETS kde-telephony-daemon DESTINATION ${KDE_INSTALL_FULL_LIBEXECDIR})
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/daemon-autostart.desktop DESTINATION ${KDE_INSTALL_AUTOSTARTDIR} RENAME org.kde.telephony.daemon.desktop)
