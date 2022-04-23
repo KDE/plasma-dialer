@@ -5,7 +5,7 @@
 cmake_minimum_required (VERSION 3.16)
 
 project(plasma-dialer-with-subprojects)
-set(PROJECT_VERSION "22.02")
+set(PROJECT_VERSION "22.04")
 
 set(QT_MIN_VERSION "5.15.0")
 set(KF5_MIN_VERSION "5.89.0")
