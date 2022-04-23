@@ -271,6 +271,16 @@ SPDX-License-Identifier: CC0-1.0
   </provides>
   <launchable type="desktop-id">org.kde.phone.dialer.desktop</launchable>
   <releases>
+    <release version="22.04" date="2022-04-26">
+      <url>https://www.plasma-mobile.org/2022/04/26/plasma-mobile-gear-22-04/</url>
+      <description>
+        <ul>
+          <li>Port audio handling to use callaudiod, this allows Plasma Dialer to work on wide range of devices.</li>
+          <li>Improve interaction with dialpad</li>
+          <li>General user interface improvements</li>
+        </ul>
+      </description>
+    </release>
     <release version="22.02" date="2022-02-09">
       <url>https://www.plasma-mobile.org/2022/02/09/plasma-mobile-gear-22-02/</url>
       <description>
