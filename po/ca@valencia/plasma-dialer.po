@@ -43,12 +43,12 @@ msgstr "Marcador de telèfon de Plasma"
 #: src/qml/call/CallPage.qml:32 src/qml/call/InCallInlineMessage.qml:14
 #, kde-format
 msgid "Active call list"
-msgstr "Llista de trucades actives"
+msgstr "Llista de tocades actives"
 
 #: src/qml/call/CallPage.qml:102
 #, kde-format
 msgid "Calling..."
-msgstr "S'està trucant..."
+msgstr "S'està tocant..."
 
 #: src/qml/call/CallPage.qml:128
 #, kde-format
@@ -97,7 +97,7 @@ msgstr "Configuració"
 #: src/qml/ContactsPage.qml:83
 #, kde-format
 msgid "Select number to call"
-msgstr "Seleccioneu el número a trucar"
+msgstr "Seleccioneu el número a tocar"
 
 #: src/qml/ContactsPage.qml:92
 #, kde-format
@@ -122,7 +122,7 @@ msgstr "Duració: %1"
 #: src/qml/HistoryPage.qml:16
 #, kde-format
 msgid "Call History"
-msgstr "Historial de trucades"
+msgstr "Historial de tocades"
 
 #: src/qml/HistoryPage.qml:27
 #, kde-format
@@ -132,7 +132,7 @@ msgstr "Neteja l'historial"
 #: src/qml/HistoryPage.qml:53
 #, kde-format
 msgid "No recent calls"
-msgstr "No hi ha cap trucada recent"
+msgstr "No hi ha cap tocada recent"
 
 #: src/qml/ImeiSheet.qml:18
 #, kde-format

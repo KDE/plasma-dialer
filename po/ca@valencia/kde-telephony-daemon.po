@@ -32,4 +32,4 @@ msgstr "Rebutja"
 #: src/notification-manager.cpp:107
 #, kde-format
 msgid "Incoming call"
-msgstr "Trucada entrant"
+msgstr "Tocada entrant"
