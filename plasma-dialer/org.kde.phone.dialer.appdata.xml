@@ -37,7 +37,7 @@ SPDX-License-Identifier: CC0-1.0
   <summary>Send and receive phone calls</summary>
   <summary xml:lang="az">Zəng etmək və zəngləri qəbul etmək</summary>
   <summary xml:lang="ca">Envia i rep trucades de telèfon</summary>
-  <summary xml:lang="ca-valencia">Envia i rep trucades de telèfon</summary>
+  <summary xml:lang="ca-valencia">Envia i rep tocades de telèfon</summary>
   <summary xml:lang="cs">Začínejte a přijímejte telefonní hovory</summary>
   <summary xml:lang="de">Senden und Empfangen von Telefonanrufen</summary>
   <summary xml:lang="en-GB">Send and receive phone calls</summary>
@@ -103,7 +103,7 @@ SPDX-License-Identifier: CC0-1.0
     <p>The Phone app lets you easily send and receive phone calls from your smartphone.</p>
     <p xml:lang="az">Telefon, smartfonunuzdan asanlıqla zəng etməyə və zəngləri qəbul etməyə imkan verir.</p>
     <p xml:lang="ca">L'aplicació Telèfon permet enviar i rebre fàcilment trucades de telèfon en el vostre telèfon intel·ligent.</p>
-    <p xml:lang="ca-valencia">L'aplicació Telèfon permet enviar i rebre fàcilment trucades de telèfon en el vostre telèfon intel·ligent.</p>
+    <p xml:lang="ca-valencia">L'aplicació Telèfon permet enviar i rebre fàcilment tocades de telèfon en el vostre telèfon intel·ligent.</p>
     <p xml:lang="en-GB">The Phone app lets you easily send and receive phone calls from your smartphone.</p>
     <p xml:lang="es">La aplicación de teléfono le permite enviar y recibir llamadas de teléfono de manera fácil desde su teléfono móvil.</p>
     <p xml:lang="eu">Telefono aplikazioak zure telefono adimendunetik telefono deiak erraz egin eta jasotzen uzten dizu.</p>
@@ -158,7 +158,7 @@ SPDX-License-Identifier: CC0-1.0
       <li>See your call history and easily call the same number again</li>
       <li xml:lang="az">Zəng tarixçəsinə baxın və həmin nömrəyə asanlıqla yenidən zəng edin</li>
       <li xml:lang="ca">Vegeu l'historial de trucades i torneu a trucar al mateix número amb facilitat</li>
-      <li xml:lang="ca-valencia">Vegeu l'historial de trucades i torneu a trucar al mateix número amb facilitat</li>
+      <li xml:lang="ca-valencia">Vejau l'historial de tocades i torneu a tocar al mateix número amb facilitat</li>
       <li xml:lang="en-GB">See your call history and easily call the same number again</li>
       <li xml:lang="es">Vea su histórico de llamadas y llame fácilmente de nuevo a un número</li>
       <li xml:lang="eu">Begiratu zure deien historia eta zenbaki berdinari erraz deitu iezaiozu</li>
@@ -242,7 +242,7 @@ SPDX-License-Identifier: CC0-1.0
       <caption>Calling voicemail</caption>
       <caption xml:lang="az">Səsli poçt nömrəsinə zəng edin</caption>
       <caption xml:lang="ca">Trucada a la bústia de veu</caption>
-      <caption xml:lang="ca-valencia">Trucada a la bústia de veu</caption>
+      <caption xml:lang="ca-valencia">Tocada a la bústia de veu</caption>
       <caption xml:lang="en-GB">Calling voicemail</caption>
       <caption xml:lang="es">Llamando al buzón de voz</caption>
       <caption xml:lang="eu">Ahots-postara deitzea</caption>
