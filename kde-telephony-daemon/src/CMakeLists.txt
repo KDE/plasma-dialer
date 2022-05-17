@@ -22,7 +22,7 @@ find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED Core DBus Sql Sql Feedback)
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS I18n ModemManagerQt Notifications)
 
 find_package(PkgConfig REQUIRED)
-pkg_check_modules(MPRISQT REQUIRED mpris-qt5) # https://github.com/sailfishos/qtmpris
+pkg_check_modules(MPRISQT REQUIRED mpris-qt5 IMPORTED_TARGET) # https://github.com/sailfishos/qtmpris
 
 qt5_add_dbus_interface(ktelephonyd_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.DeviceUtils.xml"
     deviceutilsinterface)
@@ -54,12 +54,10 @@ target_link_libraries(kde-telephony-daemon
     KF5::Notifications
     KF5::ModemManagerQt
     PkgConfig::LIBCALLAUDIO
+    PkgConfig::MPRISQT
     ktelephonymetatypes # FIXME: KF5 cmake files
     contactphonenumbermapper
     )
-
-target_link_libraries(kde-telephony-daemon ${MPRISQT_LIBRARIES})
-target_include_directories(kde-telephony-daemon PUBLIC ${MPRISQT_INCLUDE_DIRS})
 
 configure_file(daemon-autostart.desktop.in ${CMAKE_CURRENT_BINARY_DIR}/daemon-autostart.desktop)
 
