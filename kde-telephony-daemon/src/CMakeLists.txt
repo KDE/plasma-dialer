@@ -18,7 +18,7 @@ set_source_files_properties(
     INCLUDE "kTelephonyMetaTypes/dialer-types.h"
 )
 
-find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED Core DBus Sql Sql Feedback)
+find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED Core DBus Feedback)
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS I18n ModemManagerQt Notifications)
 
 find_package(PkgConfig REQUIRED)
@@ -48,7 +48,6 @@ target_include_directories(kde-telephony-daemon PRIVATE ${CMAKE_BINARY_DIR})
 target_link_libraries(kde-telephony-daemon
     Qt5::Core
     Qt5::DBus
-    Qt5::Sql
     Qt5::Feedback
     KF5::I18n
     KF5::Notifications
