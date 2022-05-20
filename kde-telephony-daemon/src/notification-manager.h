@@ -5,7 +5,6 @@
 #pragma once
 
 #include <KNotification>
-#include <MprisQt/MprisManager>
 #ifdef HAVE_QT5_FEEDBACK
 #include <QtFeedback/QFeedbackEffect>
 #endif // HAVE_QT5_FEEDBACK
@@ -46,9 +45,6 @@ private:
     void accept(const QString &deviceUni, const QString &callUni);
     void hangUp(const QString &deviceUni, const QString &callUni);
 
-    void pauseMedia();
-    void unpauseMedia();
-
     void handleIncomingCall(const QString &deviceUni, const QString &callUni, const QString communicationWith);
     void handleRejectedCall();
 
@@ -58,7 +54,4 @@ private:
 #ifdef HAVE_QT5_FEEDBACK
     std::unique_ptr<QFeedbackHapticsEffect> _ringEffect;
 #endif // HAVE_QT5_FEEDBACK
-
-    MprisManager _mprisManager;
-    QSet<QString> _pausedSources;
 };

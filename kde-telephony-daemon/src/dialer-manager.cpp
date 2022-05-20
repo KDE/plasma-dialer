@@ -16,6 +16,8 @@
 
 #include <QDebug>
 
+#include "mprisplayerinterface.h"
+
 static void enable_callmode()
 {
     GError *err = nullptr;
@@ -52,6 +54,8 @@ void DialerManager::setCallUtils(org::kde::telephony::CallUtils *callUtils)
 {
     _callUtils = callUtils;
 
+    connect(_callUtils, &org::kde::telephony::CallUtils::callAdded, this, &DialerManager::onCallAdded);
+    connect(_callUtils, &org::kde::telephony::CallUtils::fetchedCallsChanged, this, &DialerManager::onFetchedCallsChanged);
     connect(_callUtils, &org::kde::telephony::CallUtils::callStateChanged, this, &DialerManager::onCallStateChanged);
 }
 
@@ -65,6 +69,32 @@ void DialerManager::setDialerUtils(DialerUtils *dialerUtils)
 
     connect(_dialerUtils, &DialerUtils::speakerModeFetched, this, &DialerManager::onSpeakerModeFetched);
     connect(_dialerUtils, &DialerUtils::muteFetched, this, &DialerManager::onMuteFetched);
+}
+
+void DialerManager::onCallAdded(const QString &deviceUni,
+                                const QString &callUni,
+                                const DialerTypes::CallDirection &callDirection,
+                                const DialerTypes::CallState &callState,
+                                const DialerTypes::CallStateReason &callStateReason,
+                                const QString communicationWith)
+{
+    if (!_callUtils) {
+        qCritical() << Q_FUNC_INFO;
+    }
+    qDebug() << Q_FUNC_INFO << "call added" << deviceUni << callUni << callDirection << callState << callStateReason << communicationWith;
+
+    if (callDirection == DialerTypes::CallDirection::Incoming) {
+        if (callState == DialerTypes::CallState::RingingIn) {
+            pauseMedia();
+        }
+    }
+}
+
+void DialerManager::onFetchedCallsChanged(const DialerTypes::CallDataVector &fetchedCalls)
+{
+    if (fetchedCalls.isEmpty()) {
+        unpauseMedia();
+    }
 }
 
 void DialerManager::onCallStateChanged(const QString &deviceUni,
@@ -120,4 +150,43 @@ void DialerManager::onSetMuteRequested(bool muted)
     if (!call_audio_mute_mic(muted, &err)) {
         qWarning() << "Failed to set mute mode" << muted;
     }
+}
+
+void DialerManager::pauseMedia()
+{
+    auto sessionBus = QDBusConnection::sessionBus();
+    const QStringList interfaces = sessionBus.interface()->registeredServiceNames().value();
+    for (const QString &iface : interfaces) {
+        if (iface.startsWith(QLatin1String("org.mpris.MediaPlayer2"))) {
+            if (iface.contains(QLatin1String("kdeconnect"))) {
+                qDebug() << Q_FUNC_INFO << "Skip players connected over KDE Connect. KDE Connect pauses them itself";
+                continue;
+            }
+            qDebug() << Q_FUNC_INFO << "Found player:" << iface;
+
+            org::mpris::MediaPlayer2::Player mprisInterface(iface, QStringLiteral("/org/mpris/MediaPlayer2"), sessionBus);
+            QString status = mprisInterface.playbackStatus();
+            qDebug() << Q_FUNC_INFO << "Found player status:" << iface << status;
+            if (status == QLatin1String("Playing")) {
+                if (!_pausedSources.contains(iface)) {
+                    _pausedSources.insert(iface);
+                    if (mprisInterface.canPause()) {
+                        mprisInterface.Pause();
+                    } else {
+                        mprisInterface.Stop();
+                    }
+                }
+            }
+        }
+    }
+}
+
+void DialerManager::unpauseMedia()
+{
+    auto sessionBus = QDBusConnection::sessionBus();
+    for (const QString &iface : qAsConst(_pausedSources)) {
+        org::mpris::MediaPlayer2::Player mprisInterface(iface, QStringLiteral("/org/mpris/MediaPlayer2"), sessionBus);
+        mprisInterface.Play();
+    }
+    _pausedSources.clear();
 }

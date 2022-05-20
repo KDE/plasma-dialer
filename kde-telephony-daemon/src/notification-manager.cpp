@@ -8,7 +8,7 @@
 
 #include <KIO/ApplicationLauncherJob>
 #include <KLocalizedString>
-#include <MprisQt/MprisController>
+#include <QDBusConnection>
 #include <QTimer>
 
 static bool getScreenSaverActive()
@@ -23,18 +23,6 @@ static bool getScreenSaverActive()
     active = response.isValid() ? response.value() : false;
 #endif // DIALER_BUILD_SHELL_OVERLAY
     return active;
-}
-
-static void waitForControllerInit(MprisController *mprisController)
-{
-    qDebug() << Q_FUNC_INFO << mprisController->service() << mprisController->isValid();
-    QTimer timer; // as a precaution
-    timer.setSingleShot(true);
-    QEventLoop loop;
-    QObject::connect(mprisController, &MprisController::playbackStatusChanged, &loop, &QEventLoop::quit);
-    QObject::connect(&timer, &QTimer::timeout, &loop, &QEventLoop::quit);
-    timer.start(300);
-    loop.exec();
 }
 
 static void launchPlasmaDialerDesktopFile()
@@ -54,7 +42,6 @@ NotificationManager::NotificationManager(QObject *parent)
 #ifdef HAVE_QT5_FEEDBACK
     , _ringEffect(std::make_unique<QFeedbackHapticsEffect>())
 #endif // HAVE_QT5_FEEDBACK
-    , _mprisManager(this)
 {
 #ifdef HAVE_QT5_FEEDBACK
     _ringEffect->setAttackIntensity(0.1);
@@ -183,7 +170,6 @@ void NotificationManager::hangUp(const QString &deviceUni, const QString &callUn
 
 void NotificationManager::handleIncomingCall(const QString &deviceUni, const QString &callUni, const QString communicationWith)
 {
-    pauseMedia();
     bool screenLocked = getScreenSaverActive();
     if (screenLocked) {
         launchPlasmaDialerDesktopFile();
@@ -195,45 +181,6 @@ void NotificationManager::handleIncomingCall(const QString &deviceUni, const QSt
 void NotificationManager::handleRejectedCall()
 {
     closeRingingNotification();
-    unpauseMedia();
-}
-
-void NotificationManager::pauseMedia()
-{
-    if (_mprisManager.playbackStatus() != Mpris::Playing) {
-        return;
-    }
-
-    auto services = _mprisManager.availableServices();
-    for (auto service : services) {
-        qDebug() << service;
-        if (service.contains(QLatin1String("kdeconnect"))) {
-            qDebug() << Q_FUNC_INFO << "Skip players connected over KDE Connect. KDE Connect pauses them itself";
-            continue;
-        }
-        MprisController mprisController(service, QDBusConnection::sessionBus(), this);
-        waitForControllerInit(&mprisController);
-        if (mprisController.playbackStatus() == Mpris::Playing) {
-            if (!_pausedSources.contains(service)) {
-                _pausedSources.insert(service);
-                if (mprisController.canPause()) {
-                    mprisController.pause();
-                } else {
-                    mprisController.stop();
-                }
-            }
-        }
-    }
-}
-
-void NotificationManager::unpauseMedia()
-{
-    for (const QString &service : qAsConst(_pausedSources)) {
-        MprisController mprisController(service, QDBusConnection::sessionBus(), this);
-        waitForControllerInit(&mprisController);
-        mprisController.play();
-    }
-    _pausedSources.clear();
 }
 
 void NotificationManager::onNotificationAction(unsigned int action)

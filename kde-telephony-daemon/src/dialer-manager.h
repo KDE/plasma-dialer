@@ -23,6 +23,13 @@ public:
     void setDialerUtils(DialerUtils *dialerUtils);
 
 private Q_SLOTS:
+    void onCallAdded(const QString &deviceUni,
+                     const QString &callUni,
+                     const DialerTypes::CallDirection &callDirection,
+                     const DialerTypes::CallState &callState,
+                     const DialerTypes::CallStateReason &callStateReason,
+                     const QString communicationWith);
+    void onFetchedCallsChanged(const DialerTypes::CallDataVector &fetchedCalls);
     void onCallStateChanged(const QString &deviceUni,
                             const QString &callUni,
                             const DialerTypes::CallDirection &callDirection,
@@ -34,8 +41,12 @@ private Q_SLOTS:
     void onSetMuteRequested(bool muted);
 
 private:
+    void pauseMedia();
+    void unpauseMedia();
+
     org::kde::telephony::CallUtils *_callUtils;
     DialerUtils *_dialerUtils;
+    QSet<QString> _pausedSources;
 };
 
 #endif // CALL_MANAGER_H
