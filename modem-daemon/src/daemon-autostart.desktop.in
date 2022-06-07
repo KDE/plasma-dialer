@@ -2,7 +2,7 @@
 Comment=Qt Modem Daemon to handle @MODEM_SUBSYSTEM@ events
 Comment[az]=Qt Modem Deamon, @MODEM_SUBSYSTEM@ fəaliyyətlərini idarə edəcək
 Comment[ca]=Dimoni de mòdem Qt per a gestionar esdeveniments @MODEM_SUBSYSTEM@
-Comment[ca@valencia]=Dimoni de mòdem Qt per a gestionar esdeveniments @MODEM_SUBSYSTEM@
+Comment[ca@valencia]=Dimoni de mòdem Qt per a gestionar successos @MODEM_SUBSYSTEM@
 Comment[en_GB]=Qt Modem Daemon to handle @MODEM_SUBSYSTEM@ events
 Comment[es]=Demonio de módem Qt para administrar eventos del subsistema módem.
 Comment[eu]=@MODEM_SUBSYSTEM@ gertakariak maneiatzeko Qt Modem daimona
