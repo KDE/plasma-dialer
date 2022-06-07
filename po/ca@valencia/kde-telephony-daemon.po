@@ -27,7 +27,7 @@ msgstr "Accepta"
 #: src/notification-manager.cpp:98
 #, kde-format
 msgid "Reject"
-msgstr "Rebutja"
+msgstr "Rebuja"
 
 #: src/notification-manager.cpp:107
 #, kde-format
