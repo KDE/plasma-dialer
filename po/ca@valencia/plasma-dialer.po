@@ -68,7 +68,7 @@ msgstr "Silencia"
 #: src/qml/call/InCallInlineMessage.qml:18
 #, kde-format
 msgid "View"
-msgstr "Visualisa"
+msgstr "Visualitza"
 
 #: src/qml/components/BottomToolbar.qml:81 src/qml/components/Sidebar.qml:48
 #, kde-format
