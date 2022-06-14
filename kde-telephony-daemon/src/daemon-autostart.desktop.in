@@ -2,7 +2,7 @@
 Comment=KDE Daemon to handle modem daemon events
 Comment[az]=KDE Deamon, modemin arxa plandakı fəaliyyətini idarə edəcək
 Comment[ca]=Dimoni del KDE per a gestionar esdeveniments de dimoni de mòdem
-Comment[ca@valencia]=Dimoni de KDE per a gestionar successos de dimoni de mòdem
+Comment[ca@valencia]=Dimoni de KDE per a gestionar esdeveniments de dimoni de mòdem
 Comment[en_GB]=KDE Daemon to handle modem daemon events
 Comment[es]=Demonio KDE para administrar eventos de demonio del módem
 Comment[eu]=Modem daimonaren gertakizunak maneiatzeko KDE daimona
