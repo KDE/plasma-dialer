@@ -37,7 +37,10 @@ Kirigami.Page {
                 applicationWindow().pageStack.layers.push(callPage, 1)
             } else {
                 if (pageStack.layers.currentItem === callPage) {
-                     pageStack.layers.pop()
+                    pageStack.layers.pop()
+                    if (ScreenSaverUtils.getActive()) {
+                        Qt.quit()
+                    }
                 }
             }
         }

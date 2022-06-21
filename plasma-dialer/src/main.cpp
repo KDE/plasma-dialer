@@ -45,6 +45,25 @@ static void inputCallNumber(QWindow *window, const QString &number)
     QMetaObject::invokeMethod(window, "call", Q_ARG(QVariant, number));
 }
 
+struct ScreenSaverUtils {
+    Q_GADGET
+public:
+    Q_INVOKABLE static bool getActive()
+    {
+        bool active = false;
+#ifdef DIALER_BUILD_SHELL_OVERLAY
+        QDBusMessage request = QDBusMessage::createMethodCall(QStringLiteral("org.freedesktop.ScreenSaver"),
+                                                              QStringLiteral("/ScreenSaver"),
+                                                              QStringLiteral("org.freedesktop.ScreenSaver"),
+                                                              QStringLiteral("GetActive"));
+        const QDBusReply<bool> response = QDBusConnection::sessionBus().call(request);
+        active = response.isValid() ? response.value() : false;
+#endif // DIALER_BUILD_SHELL_OVERLAY
+        return active;
+    }
+};
+Q_DECLARE_METATYPE(ScreenSaverUtils)
+
 #ifdef DIALER_BUILD_SHELL_OVERLAY
 class WaylandAboveLockscreen : public QWaylandClientExtensionTemplate<WaylandAboveLockscreen>, public QtWayland::kde_lockscreenallowed_v1
 {
@@ -100,6 +119,10 @@ int main(int argc, char **argv)
     KDBusService service(KDBusService::Unique, &app);
 
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
+
+    ScreenSaverUtils screenSaverUtils;
+    engine.rootContext()->setContextProperty(QStringLiteral("ScreenSaverUtils"), QVariant::fromValue<ScreenSaverUtils>(screenSaverUtils));
+
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
 
     if (engine.rootObjects().isEmpty()) {
@@ -113,13 +136,7 @@ int main(int argc, char **argv)
     WaylandAboveLockscreen aboveLockscreen;
     Q_ASSERT(aboveLockscreen.isInitialized());
 
-    bool screenLocked = false;
-    QDBusMessage request = QDBusMessage::createMethodCall(QStringLiteral("org.freedesktop.ScreenSaver"),
-                                                          QStringLiteral("/ScreenSaver"),
-                                                          QStringLiteral("org.freedesktop.ScreenSaver"),
-                                                          QStringLiteral("GetActive"));
-    const QDBusReply<bool> response = QDBusConnection::sessionBus().call(request);
-    screenLocked = response.isValid() ? response.value() : false;
+    bool screenLocked = ScreenSaverUtils::getActive();
     if (screenLocked) {
         aboveLockscreen.allowWindow(window);
     }
@@ -157,3 +174,5 @@ int main(int argc, char **argv)
 
     return app.exec();
 }
+
+#include "main.moc"
