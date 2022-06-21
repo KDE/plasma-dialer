@@ -6,6 +6,8 @@
 
 #include "notification-manager.h"
 
+#include <KIO/JobUiDelegate>
+#include <KIO/OpenUrlJob>
 #include <KLocalizedString>
 #include <MprisQt/MprisController>
 #include <QTimer>
@@ -20,6 +22,15 @@ static void waitForControllerInit(MprisController *mprisController)
     QObject::connect(&timer, &QTimer::timeout, &loop, &QEventLoop::quit);
     timer.start(300);
     loop.exec();
+}
+
+static void launchPlasmaDialerDesktopFile()
+{
+    const QString &desktopFile = QStandardPaths::locate(QStandardPaths::ApplicationsLocation, QStringLiteral("org.kde.phone.dialer.desktop"));
+    KIO::OpenUrlJob job(QUrl::fromLocalFile(desktopFile), QStringLiteral("application/x-desktop"));
+    job.setShowOpenOrExecuteDialog(false);
+    job.setRunExecutables(true);
+    job.start();
 }
 
 NotificationManager::NotificationManager(QObject *parent)
@@ -214,7 +225,7 @@ void NotificationManager::onNotificationAction(unsigned int action)
     switch (action) {
     case 1:
         accept(deviceUni, callUni);
-        QProcess::startDetached(QStringLiteral("plasmaphonedialer"), QStringList{});
+        launchPlasmaDialerDesktopFile();
         break;
     case 2:
         hangUp(deviceUni, callUni);
