@@ -7,6 +7,11 @@ cmake_minimum_required (VERSION 3.16)
 project(plasma-dialer-with-subprojects)
 set(PROJECT_VERSION "22.06")
 
+option(DIALER_BUILD_SHELL_OVERLAY "Enable building of Dialer lockscreen functionality" ON)
+if (DIALER_BUILD_SHELL_OVERLAY)
+    add_definitions(-DDIALER_BUILD_SHELL_OVERLAY)
+endif() # DIALER_BUILD_SHELL_OVERLAY
+
 set(QT_MIN_VERSION "5.15.0")
 set(KF5_MIN_VERSION "5.89.0")
 set(KDE_COMPILERSETTINGS_LEVEL "5.82.0")

@@ -6,9 +6,7 @@ add_executable(plasmaphonedialer
 find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED Core Quick Qml QuickControls2)
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS CoreAddons I18n DBusAddons WindowSystem)
 
-option(DIALER_BUILD_SHELL_OVERLAY "Enable building of Dialer lockscreen functionality" ON)
 if (DIALER_BUILD_SHELL_OVERLAY)
-    add_definitions(-DDIALER_BUILD_SHELL_OVERLAY)
     find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED WaylandClient)
     find_package(Wayland REQUIRED)
     find_package(PlasmaWaylandProtocols 1.8 CONFIG)
