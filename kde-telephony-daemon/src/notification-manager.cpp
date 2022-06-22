@@ -86,6 +86,7 @@ void NotificationManager::onCallAdded(const QString &deviceUni,
     qDebug() << Q_FUNC_INFO << "call added" << deviceUni << callUni << callDirection << callState << callStateReason << communicationWith;
     if (callDirection == DialerTypes::CallDirection::Incoming) {
         if (callState == DialerTypes::CallState::RingingIn) {
+            _ringEffect->start();
             handleIncomingCall(deviceUni, callUni, communicationWith);
         }
     }
@@ -94,6 +95,7 @@ void NotificationManager::onCallAdded(const QString &deviceUni,
 void NotificationManager::onCallDeleted(const QString &deviceUni, const QString &callUni)
 {
     qDebug() << Q_FUNC_INFO << "call deleted" << deviceUni << callUni;
+    _ringEffect->stop();
     closeRingingNotification();
 }
 
@@ -113,8 +115,6 @@ void NotificationManager::onCallStateChanged(const QString &deviceUni,
 
 void NotificationManager::openRingingNotification(const QString &deviceUni, const QString &callUni, const QString communicationWith)
 {
-    _ringEffect->start();
-
     QString contactName = _contactUtils->displayString(communicationWith);
     QString callerDisplayString =
         (contactName == communicationWith) ? communicationWith : communicationWith + QStringLiteral("<br>") + QStringLiteral("<b>%1</b>").arg(contactName);
@@ -149,7 +149,6 @@ void NotificationManager::closeRingingNotification()
     _ringingNotification->disconnect();
     _ringingNotification->close();
     _ringingNotification = nullptr;
-    _ringEffect->stop();
 }
 
 void NotificationManager::accept(const QString &deviceUni, const QString &callUni)
