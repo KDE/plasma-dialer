@@ -12,6 +12,20 @@
 #include <MprisQt/MprisController>
 #include <QTimer>
 
+static bool getScreenSaverActive()
+{
+    bool active = false;
+#ifdef DIALER_BUILD_SHELL_OVERLAY
+    QDBusMessage request = QDBusMessage::createMethodCall(QStringLiteral("org.freedesktop.ScreenSaver"),
+                                                          QStringLiteral("/ScreenSaver"),
+                                                          QStringLiteral("org.freedesktop.ScreenSaver"),
+                                                          QStringLiteral("GetActive"));
+    const QDBusReply<bool> response = QDBusConnection::sessionBus().call(request);
+    active = response.isValid() ? response.value() : false;
+#endif // DIALER_BUILD_SHELL_OVERLAY
+    return active;
+}
+
 static void waitForControllerInit(MprisController *mprisController)
 {
     qDebug() << Q_FUNC_INFO << mprisController->service() << mprisController->isValid();
@@ -161,7 +175,12 @@ void NotificationManager::hangUp(const QString &deviceUni, const QString &callUn
 void NotificationManager::handleIncomingCall(const QString &deviceUni, const QString &callUni, const QString communicationWith)
 {
     pauseMedia();
-    openRingingNotification(deviceUni, callUni, communicationWith);
+    bool screenLocked = getScreenSaverActive();
+    if (screenLocked) {
+        launchPlasmaDialerDesktopFile();
+    } else {
+        openRingingNotification(deviceUni, callUni, communicationWith);
+    }
 }
 
 void NotificationManager::handleRejectedCall()
