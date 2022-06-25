@@ -20,15 +20,17 @@ Kirigami.AbstractListItem {
             height: width
             source: {
                 if (model.direction == DialerTypes.CallDirection.Incoming) {
-                    if (model.stateReason == DialerTypes.CallStateReason.Accepted) {
+                    if (model.duration > 0) {
                         return "call-incoming"
                     } else {
-                        return "call-stop"
+                        return "call-missed"
                     }
-                } else if (model.direction == DialerTypes.CallDirection.Outgoing) {
-                    return "call-outgoing";
                 } else {
-                    return "call-start";
+                    if (model.direction == DialerTypes.CallDirection.Outgoing) {
+                        return "call-outgoing";
+                    } else {
+                        return "call-start";
+                    }
                 }
             }
         }
