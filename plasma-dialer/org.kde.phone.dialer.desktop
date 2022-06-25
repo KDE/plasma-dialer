@@ -2,7 +2,7 @@
 Comment=Plasma phone dialer
 Comment[az]=Plasma nömrə yığımı
 Comment[ca]=Marcador de telèfon del Plasma
-Comment[ca@valencia]=Marcador de teléfon de Plasma
+Comment[ca@valencia]=Marcador de telèfon de Plasma
 Comment[el]=Plasma επιλογέας τηλεφώνου
 Comment[en_GB]=Plasma phone dialer
 Comment[es]=Marcador de teléfono de Plasma
@@ -38,7 +38,7 @@ Keywords=
 Name=Phone
 Name[az]=Telefon
 Name[ca]=Telèfon
-Name[ca@valencia]=Teléfon
+Name[ca@valencia]=Telèfon
 Name[cs]=Telefon
 Name[da]=Telefon
 Name[de]=Telefon
