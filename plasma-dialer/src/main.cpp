@@ -90,7 +90,8 @@ int main(int argc, char **argv)
                 break;
             }
         }
-        KWindowSystem::raiseWindow(window->winId());
+        KWindowSystem::updateStartupId(window);
+        KWindowSystem::activateWindow(window);
     });
 
     if (!parser.positionalArguments().isEmpty()) {

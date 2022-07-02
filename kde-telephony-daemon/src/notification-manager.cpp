@@ -6,7 +6,10 @@
 
 #include "notification-manager.h"
 
+#include <KIO/CommandLauncherJob>
 #include <KLocalizedString>
+#include <KService>
+
 #include <MprisQt/MprisController>
 #include <QTimer>
 
@@ -212,10 +215,14 @@ void NotificationManager::onNotificationAction(unsigned int action)
         }
     }
     switch (action) {
-    case 1:
+    case 1: {
+        auto *job = new KIO::CommandLauncherJob(QStringLiteral("plasmaphonedialer"));
+        job->setDesktopName(QStringLiteral("org.kde.phone.dialer"));
+        job->setStartupId(_ringingNotification->xdgActivationToken().toUtf8());
+        job->start();
         accept(deviceUni, callUni);
-        QProcess::startDetached(QStringLiteral("plasmaphonedialer"), QStringList{});
         break;
+    }
     case 2:
         hangUp(deviceUni, callUni);
         break;

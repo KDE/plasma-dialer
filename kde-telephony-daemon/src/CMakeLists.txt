@@ -19,7 +19,7 @@ set_source_files_properties(
 )
 
 find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED Core DBus Feedback)
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS I18n ModemManagerQt Notifications)
+find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS I18n ModemManagerQt Notifications KIO)
 
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(MPRISQT REQUIRED mpris-qt5 IMPORTED_TARGET) # https://github.com/sailfishos/qtmpris
@@ -52,6 +52,7 @@ target_link_libraries(kde-telephony-daemon
     KF5::I18n
     KF5::Notifications
     KF5::ModemManagerQt
+    KF5::KIOGui
     PkgConfig::LIBCALLAUDIO
     PkgConfig::MPRISQT
     ktelephonymetatypes # FIXME: KF5 cmake files
