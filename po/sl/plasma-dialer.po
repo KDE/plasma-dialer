@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-02-14 00:46+0000\n"
+"POT-Creation-Date: 2022-07-02 00:51+0000\n"
 "PO-Revision-Date: 2022-01-29 09:35+0100\n"
 "Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -112,7 +112,7 @@ msgstr "Ni najdenih modemskih naprav"
 msgid "Voicemail number couldn't be found"
 msgstr "Številke telefonskega odzivnika ni bilo mogoče najti"
 
-#: src/qml/history/HistoryDelegate.qml:59
+#: src/qml/history/HistoryDelegate.qml:61
 #, kde-format
 msgid "Duration: %1"
 msgstr "Trajanje: %1"

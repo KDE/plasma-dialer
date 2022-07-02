@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-02-14 00:46+0000\n"
+"POT-Creation-Date: 2022-07-02 00:51+0000\n"
 "PO-Revision-Date: 2022-02-11 14:58+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -111,7 +111,7 @@ msgstr "Modeemilaitteita ei löytynyt"
 msgid "Voicemail number couldn't be found"
 msgstr "Vastaajan numeroa ei löytynyt"
 
-#: src/qml/history/HistoryDelegate.qml:59
+#: src/qml/history/HistoryDelegate.qml:61
 #, kde-format
 msgid "Duration: %1"
 msgstr "Kesto: %1"

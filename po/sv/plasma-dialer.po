@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-02-14 00:46+0000\n"
+"POT-Creation-Date: 2022-07-02 00:51+0000\n"
 "PO-Revision-Date: 2022-01-26 18:43+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -111,7 +111,7 @@ msgstr "Modemenheter hittades inte"
 msgid "Voicemail number couldn't be found"
 msgstr "Röstbrevlådans nummer kunde inte hittas"
 
-#: src/qml/history/HistoryDelegate.qml:59
+#: src/qml/history/HistoryDelegate.qml:61
 #, kde-format
 msgid "Duration: %1"
 msgstr "Längd: %1"

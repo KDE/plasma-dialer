@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-02-14 00:46+0000\n"
+"POT-Creation-Date: 2022-07-02 00:51+0000\n"
 "PO-Revision-Date: 2022-02-20 22:33+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -114,7 +114,7 @@ msgstr "Ez da moden gailurik aurkitu"
 msgid "Voicemail number couldn't be found"
 msgstr "Ahots-posta zenbakia ezin izan da aurkitu"
 
-#: src/qml/history/HistoryDelegate.qml:59
+#: src/qml/history/HistoryDelegate.qml:61
 #, kde-format
 msgid "Duration: %1"
 msgstr "Iraupena: %1"
