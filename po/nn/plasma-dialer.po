@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-02-14 00:46+0000\n"
+"POT-Creation-Date: 2022-07-02 00:51+0000\n"
 "PO-Revision-Date: 2022-02-13 14:42+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -113,7 +113,7 @@ msgstr "Fann ingen modemeiningar"
 msgid "Voicemail number couldn't be found"
 msgstr "Fann ikkje telefonnummeret til talepostkassen"
 
-#: src/qml/history/HistoryDelegate.qml:59
+#: src/qml/history/HistoryDelegate.qml:61
 #, kde-format
 msgid "Duration: %1"
 msgstr "Tid: %1"
