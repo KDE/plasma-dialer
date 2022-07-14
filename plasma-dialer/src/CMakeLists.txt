@@ -42,12 +42,12 @@ if (DIALER_BUILD_SHELL_OVERLAY)
         Qt5::WaylandClientPrivate
         Wayland::Client
     )
-endif() # DIALER_BUILD_SHELL_OVERLAY
 
-ecm_add_qtwayland_client_protocol(plasmaphonedialer
-    PROTOCOL ${PLASMA_WAYLAND_PROTOCOLS_DIR}/kde-lockscreenallowed-v1.xml
-    BASENAME kde-lockscreenallowed-v1
-)
+    ecm_add_qtwayland_client_protocol(plasmaphonedialer
+        PROTOCOL ${PLASMA_WAYLAND_PROTOCOLS_DIR}/kde-lockscreenallowed-v1.xml
+        BASENAME kde-lockscreenallowed-v1
+    )
+endif() # DIALER_BUILD_SHELL_OVERLAY
 
 install(TARGETS plasmaphonedialer ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES plasma_dialer.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFY5RCDIR})
