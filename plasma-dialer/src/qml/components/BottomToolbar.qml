@@ -81,6 +81,7 @@ Kirigami.NavigationTabBar {
             text: i18n("History")
             property bool opened: getHistoryPage() === currentPage()
             checked: opened
+            enabled: !applicationWindow().lockscreenMode
             onTriggered: {
                 if (!opened) {
                     applicationWindow().switchToPage(getHistoryPage(), 0);
@@ -92,6 +93,7 @@ Kirigami.NavigationTabBar {
             text: i18n("Contacts")
             property bool opened: getContactsPage() === currentPage()
             checked: opened
+            enabled: !applicationWindow().lockscreenMode
             onTriggered: {
                 if (!opened) {
                     applicationWindow().switchToPage(getContactsPage(), 0);

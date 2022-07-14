@@ -51,6 +51,7 @@ Kirigami.OverlayDrawer {
                 Layout.minimumHeight: Kirigami.Units.gridUnit * 2
                 Layout.bottomMargin: Kirigami.Units.smallSpacing
                 checked: pageStack.currentItem === page
+                enabled: !applicationWindow().lockscreenMode
                 property var page: applicationWindow().getPage("History")
                 onClicked: {
                     if (applicationWindow().pageStack.currentItem !== page) {
@@ -68,6 +69,7 @@ Kirigami.OverlayDrawer {
                 Layout.minimumHeight: Kirigami.Units.gridUnit * 2
                 Layout.bottomMargin: Kirigami.Units.smallSpacing
                 checked: pageStack.currentItem === page
+                enabled: !applicationWindow().lockscreenMode
                 property var page: applicationWindow().getPage("Contacts")
                 onClicked: {
                     if (applicationWindow().pageStack.currentItem !== page) {
@@ -107,6 +109,7 @@ Kirigami.OverlayDrawer {
                 Layout.fillWidth: true
                 Layout.minimumHeight: Kirigami.Units.gridUnit * 2
                 checked: pageStack.currentItem === page
+                enabled: !applicationWindow().lockscreenMode
                 property var page: applicationWindow().getPage("Settings")
                 onClicked: {
                     if (applicationWindow().pageStack.currentItem !== page) {

@@ -49,6 +49,7 @@ Kirigami.Page {
     mainAction: Kirigami.Action {
         displayHint: Kirigami.Action.IconOnly
         visible: !applicationWindow().isWidescreen
+        enabled: !applicationWindow().lockscreenMode
         iconName: "settings-configure"
         text: i18n("Settings")
         onTriggered: applicationWindow().pageStack.push(applicationWindow().getPage("Settings"))
