@@ -27,13 +27,14 @@ Kirigami.ApplicationWindow {
     minimumHeight: minimumWidth + 1
     width: Kirigami.Settings.isMobile ? 400 : 650
     height: Kirigami.Settings.isMobile ? 650 : 500
-    visibility: ScreenSaverUtils.getActive() ? "FullScreen" : "Windowed"
+    visibility: lockscreenMode ? "FullScreen" : "Windowed"
 
     title: i18n("Phone")
 
     contextDrawer: Kirigami.ContextDrawer {}
 
     readonly property bool smallMode: applicationWindow().height < Kirigami.Units.gridUnit * 28
+    readonly property bool lockscreenMode: ScreenSaverUtils.getActive()
 
     // pop pages when not in use
     Connections {
