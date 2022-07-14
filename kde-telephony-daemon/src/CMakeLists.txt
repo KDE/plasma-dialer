@@ -50,7 +50,7 @@ target_link_libraries(kde-telephony-daemon
     Qt5::DBus
     Qt5::Feedback
     KF5::I18n
-    KF5::KIOWidgets
+    KF5::KIOGui
     KF5::Notifications
     KF5::ModemManagerQt
     PkgConfig::LIBCALLAUDIO

@@ -6,8 +6,7 @@
 
 #include "notification-manager.h"
 
-#include <KIO/JobUiDelegate>
-#include <KIO/OpenUrlJob>
+#include <KIO/ApplicationLauncherJob>
 #include <KLocalizedString>
 #include <MprisQt/MprisController>
 #include <QTimer>
@@ -40,10 +39,13 @@ static void waitForControllerInit(MprisController *mprisController)
 
 static void launchPlasmaDialerDesktopFile()
 {
-    const QString &desktopFile = QStandardPaths::locate(QStandardPaths::ApplicationsLocation, QStringLiteral("org.kde.phone.dialer.desktop"));
-    KIO::OpenUrlJob job(QUrl::fromLocalFile(desktopFile), QStringLiteral("application/x-desktop"));
-    job.setShowOpenOrExecuteDialog(false);
-    job.setRunExecutables(true);
+    const auto desktopName = QStringLiteral("org.kde.phone.dialer");
+    const KService::Ptr appService = KService::serviceByDesktopName(desktopName);
+    if (!appService) {
+        qWarning() << "Could not find" << desktopName;
+        return;
+    }
+    KIO::ApplicationLauncherJob job(appService);
     job.start();
 }
 
