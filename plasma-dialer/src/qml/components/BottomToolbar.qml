@@ -112,4 +112,13 @@ Kirigami.NavigationTabBar {
             }
         }
     ]
+
+    bottomPadding: applicationWindow().lockscreenMode ? (Kirigami.Units.gridUnit * 2) : 0
+
+    Component.onCompleted: {
+        if (applicationWindow().lockscreenMode) {
+            let closeButtonBackground = Qt.createComponent("qrc:/components/CloseButtonBackground.qml")
+            background = closeButtonBackground.createObject(root);
+        }
+    }
 } 

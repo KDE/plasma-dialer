@@ -4,6 +4,7 @@
         <file alias="components/SidebarButton.qml">qml/components/SidebarButton.qml</file>
         <file alias="components/Sidebar.qml">qml/components/Sidebar.qml</file>
         <file alias="components/BottomToolbar.qml">qml/components/BottomToolbar.qml</file>
+        <file alias="components/CloseButtonBackground.qml">qml/components/CloseButtonBackground.qml</file>
         <file alias="DialerPage.qml">qml/DialerPage.qml</file>
         <file alias="ContactsPage.qml">qml/ContactsPage.qml</file>
         <file alias="HistoryPage.qml">qml/HistoryPage.qml</file>
