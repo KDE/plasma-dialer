@@ -47,4 +47,5 @@ Q_SIGNALS:
                           const DialerTypes::CallDirection &callDirection,
                           const DialerTypes::CallState &callState,
                           const DialerTypes::CallStateReason &callStateReason);
+    void callDurationChanged(const int duration);
 };

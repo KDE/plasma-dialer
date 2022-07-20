@@ -6,6 +6,7 @@
 #pragma once
 
 #include <QObject>
+#include <QTimer>
 #include <kTelephonyMetaTypes/dialer-types.h>
 
 class ModemController;
@@ -39,4 +40,5 @@ private Q_SLOTS:
 private:
     ModemController *_modemController;
     CallUtils *_callUtils;
+    QTimer _callTimer;
 };

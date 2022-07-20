@@ -215,6 +215,19 @@ void ModemManagerController::deleteCall(const QString &deviceUni, const QString 
     voiceInterface->deleteCall(callUni);
 }
 
+int ModemManagerController::getCallDuration()
+{
+    auto calls = _calls;
+    for (auto callObject : calls) {
+        auto callData = _voiceCallData(callObject);
+        // TODO (Alexander Trofimov): Now returning just the first found callObject
+        // Need to add deviceUni and callUni and fined the call by id
+        return callData.duration;
+    }
+
+    return 0;
+}
+
 void ModemManagerController::onServiceAppeared()
 {
 }

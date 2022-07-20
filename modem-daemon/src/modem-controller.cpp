@@ -106,3 +106,8 @@ void ModemController::deleteCall(const QString &deviceUni, const QString &callUn
     Q_UNUSED(deviceUni);
     Q_UNUSED(callUni);
 }
+
+int ModemController::getCallDuration()
+{
+    return 0;
+}

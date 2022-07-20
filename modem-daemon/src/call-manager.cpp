@@ -13,6 +13,8 @@
 #include "call-utils.h"
 #include "modem-controller.h"
 
+constexpr int CALL_DURATION_UPDATE_DELAY = 1000;
+
 CallManager::CallManager(ModemController *modemController, CallUtils *callUtils, QObject *parent)
     : QObject(parent)
 {
@@ -28,6 +30,13 @@ CallManager::CallManager(ModemController *modemController, CallUtils *callUtils,
     connect(_callUtils, &CallUtils::hungUp, this, &CallManager::onHungUp);
     connect(_callUtils, &CallUtils::sentDtmf, this, &CallManager::onSendDtmfRequested);
     connect(_callUtils, &CallUtils::fetchedCalls, this, &CallManager::onFetchedCalls);
+
+    // TODO (Alexander Trofimov): Timer should not be created in CallManager
+    // Call Manager should receive signal CallTimeChanged and react on it with onCallTimeChanged
+    _callTimer.setInterval(CALL_DURATION_UPDATE_DELAY);
+    connect(&_callTimer, &QTimer::timeout, this, [this]() {
+        Q_EMIT _callUtils->callDurationChanged(_modemController->getCallDuration());
+    });
 }
 
 void CallManager::onCallAdded(const QString &deviceUni,
@@ -54,6 +63,12 @@ void CallManager::onCallStateChanged(const QString &deviceUni,
                                      const DialerTypes::CallStateReason &callStateReason)
 {
     qDebug() << "new call state:" << deviceUni << callUni << callDirection << callState << callStateReason;
+
+    if (callState == DialerTypes::CallState::Active) {
+        _callTimer.start();
+    } else if (callState == DialerTypes::CallState::Terminated) {
+        _callTimer.stop();
+    }
     Q_EMIT _callUtils->callStateChanged(deviceUni, callUni, callDirection, callState, callStateReason);
 }
 
