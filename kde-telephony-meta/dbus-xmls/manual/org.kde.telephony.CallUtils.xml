@@ -47,6 +47,9 @@
       <arg name="callState" type="(i)" direction="out"/>
       <arg name="callStateReason" type="(i)" direction="out"/>
     </signal>
+    <signal name="callDurationChanged">
+      <arg name="duration" type="i" direction="out"/>
+    </signal>
     <method name="formatNumber">
       <arg type="s" direction="out"/>
       <arg name="number" type="s" direction="in"/>

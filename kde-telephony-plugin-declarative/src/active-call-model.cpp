@@ -20,6 +20,7 @@ ActiveCallModel::ActiveCallModel(QObject *parent)
     connect(_callUtils, &DeclarativeCallUtils::callAdded, this, &ActiveCallModel::onCallAdded);
     connect(_callUtils, &DeclarativeCallUtils::callDeleted, this, &ActiveCallModel::onCallDeleted);
     connect(_callUtils, &DeclarativeCallUtils::fetchedCallsChanged, this, &ActiveCallModel::onFetchedCallsChanged);
+    connect(_callUtils, &DeclarativeCallUtils::callDurationChanged, this, &ActiveCallModel::onCallDurationChanged);
 
     _callsTimer.setInterval(CALL_DURATION_UPDATE_DELAY);
     connect(&_callsTimer, &QTimer::timeout, this, [this]() {
@@ -61,6 +62,7 @@ QString ActiveCallModel::activeCallUni()
 QVariant ActiveCallModel::data(const QModelIndex &index, int role) const
 {
     int row = index.row();
+
     switch (role) {
     case Roles::EventRole:
         return _calls[row].id;
@@ -121,6 +123,13 @@ void ActiveCallModel::onCallStateChanged(const QString &deviceUni,
 {
     qDebug() << Q_FUNC_INFO << deviceUni << callUni << callDirection << callState << callStateReason;
     _callUtils->fetchCalls();
+
+    if (callState == DialerTypes::CallState::Terminated) {
+        _callDuration = 0;
+        Q_EMIT callDurationChanged();
+    }
+
+    setCallState(callState);
 }
 
 void ActiveCallModel::onFetchedCallsChanged(const DialerTypes::CallDataVector &fetchedCalls)
@@ -131,6 +140,12 @@ void ActiveCallModel::onFetchedCallsChanged(const DialerTypes::CallDataVector &f
     endResetModel();
     bool active = (_calls.size() > 0);
     setActive(active);
+}
+
+void ActiveCallModel::onCallDurationChanged(const int duration)
+{
+    _callDuration = duration;
+    Q_EMIT callDurationChanged();
 }
 
 bool ActiveCallModel::active() const
@@ -145,4 +160,30 @@ void ActiveCallModel::setActive(bool newActive)
     _active = newActive;
     qDebug() << Q_FUNC_INFO;
     Q_EMIT activeChanged();
+}
+
+DialerTypes::CallState ActiveCallModel::callState() const
+{
+    return _callState;
+}
+
+void ActiveCallModel::setCallState(const DialerTypes::CallState state)
+{
+    if (_callState == state)
+        return;
+    _callState = state;
+    qDebug() << Q_FUNC_INFO;
+    Q_EMIT callStateChanged();
+}
+
+uint ActiveCallModel::callDuration() const
+{
+    return _callDuration;
+}
+
+void ActiveCallModel::setCallDuration(uint duration)
+{
+    _callDuration = duration;
+    qDebug() << Q_FUNC_INFO;
+    Q_EMIT callDurationChanged();
 }

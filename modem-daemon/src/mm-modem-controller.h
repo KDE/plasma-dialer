@@ -39,6 +39,7 @@ public Q_SLOTS:
     DialerTypes::CallDataVector fetchCalls() override;
     DialerTypes::CallData getCall(const QString &deviceUni, const QString &callUni) override;
     void deleteCall(const QString &deviceUni, const QString &callUni) override;
+    int getCallDuration() override;
 
 private Q_SLOTS:
     void onServiceAppeared();

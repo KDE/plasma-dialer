@@ -55,6 +55,7 @@ public Q_SLOTS:
     virtual DialerTypes::CallDataVector fetchCalls();
     virtual DialerTypes::CallData getCall(const QString &deviceUni, const QString &callUni);
     virtual void deleteCall(const QString &deviceUni, const QString &callUni);
+    virtual int getCallDuration();
 
 private:
     QStringList _deviceUniList;
