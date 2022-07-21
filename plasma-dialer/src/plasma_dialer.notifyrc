@@ -194,3 +194,6 @@ Comment[zh_TW]=手機正在鈴響
 Action=Popup|Sound
 Sound=Oxygen-Im-Phone-Ring.ogg
 
+[Event/ringing-silent]
+Name=Ringing-slient
+Action=Popup

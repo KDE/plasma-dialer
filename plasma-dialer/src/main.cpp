@@ -5,6 +5,7 @@
 
 #include <QGuiApplication>
 
+#include "config.h"
 #include "version.h"
 
 #include <KAboutData>
@@ -114,6 +115,11 @@ int main(int argc, char **argv)
     QString telNumber = parser.value(telSchemeOption);
 
     QQmlApplicationEngine engine;
+
+    auto config = Config::self();
+
+    qmlRegisterSingletonInstance("org.kde.phone.dialer", 1, 0, "Config", config);
+
     engine.rootContext()->setContextProperty(QStringLiteral("DialerAboutData"), QVariant::fromValue(aboutData));
 
     KDBusService service(KDBusService::Unique, &app);

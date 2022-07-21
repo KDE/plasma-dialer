@@ -19,7 +19,7 @@ set_source_files_properties(
 )
 
 find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED Core DBus Feedback)
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS I18n ModemManagerQt Notifications KIO)
+find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Config I18n ModemManagerQt Notifications KIO)
 
 qt5_add_dbus_interface(ktelephonyd_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.DeviceUtils.xml"
     deviceutilsinterface)
@@ -46,6 +46,7 @@ qt5_add_dbus_interface(mpris_srcs "${DBUS_INTERFACES_PATH}/org.mpris.MediaPlayer
 target_sources(kde-telephony-daemon PRIVATE ${mpris_srcs})
 
 target_link_libraries(kde-telephony-daemon
+    KF5::ConfigGui
     Qt5::Core
     Qt5::DBus
     KF5::I18n
@@ -70,5 +71,6 @@ set(SERV_EXEC ${KDE_INSTALL_FULL_LIBEXECDIR}/kde-telephony-daemon)
 configure_file(org.kde.telephony.service.in ${CMAKE_CURRENT_BINARY_DIR}/org.kde.telephony.service)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.telephony.service DESTINATION ${KDE_INSTALL_DBUSSERVICEDIR})
 
+kconfig_add_kcfg_files(kde-telephony-daemon ../../plasma-dialer/src/config.kcfgc GENERATE_MOC)
 install(TARGETS kde-telephony-daemon DESTINATION ${KDE_INSTALL_FULL_LIBEXECDIR})
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/daemon-autostart.desktop DESTINATION ${KDE_INSTALL_AUTOSTARTDIR} RENAME org.kde.telephony.daemon.desktop)

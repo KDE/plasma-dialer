@@ -8,7 +8,6 @@
 
 #include "version.h"
 
-#include "callhistorydatabaseinterface.h"
 #include "contact-utils.h"
 #include "dialer-utils.h"
 

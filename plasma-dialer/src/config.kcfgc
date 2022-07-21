@@ -1,0 +1,7 @@
+File=config.kcfg
+ClassName=Config
+Mutators=true
+DefaultValueGetters=true
+GenerateProperties=true
+ParentInConstructor=true
+Singleton=true

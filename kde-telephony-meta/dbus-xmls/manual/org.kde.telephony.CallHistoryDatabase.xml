@@ -19,5 +19,10 @@
     <method name="lastId">
       <arg type="i" direction="out"/>
     </method>
+    <method name="lastCall">
+      <arg name="number" type="s" direction="in"/>
+      <arg name="direction" type="i" direction="in"/>
+      <arg name="lastTime" type="s" direction="out"/>
+    </method>
   </interface>
 </node>

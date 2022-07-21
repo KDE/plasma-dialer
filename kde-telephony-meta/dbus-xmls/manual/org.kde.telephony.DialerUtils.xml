@@ -23,5 +23,6 @@
     <method name="setMute">
       <arg name="muted" type="b" direction="in"/>
     </method>
+    <method name="syncSettings"></method>
   </interface>
 </node>

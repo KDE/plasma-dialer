@@ -9,6 +9,7 @@
 #include <QtFeedback/QFeedbackEffect>
 #endif // HAVE_QT5_FEEDBACK
 
+#include "callhistorydatabaseinterface.h"
 #include "callutilsinterface.h"
 #include "contact-utils.h"
 
@@ -39,14 +40,16 @@ private Q_SLOTS:
 private:
     KNotification *_ringingNotification = nullptr;
 
-    void openRingingNotification(const QString &deviceUni, const QString &callUni, const QString communicationWith);
+    void openRingingNotification(const QString &deviceUni, const QString &callUni, const QString callerDisplay, const QString notificationEvent);
     void closeRingingNotification();
 
     void accept(const QString &deviceUni, const QString &callUni);
     void hangUp(const QString &deviceUni, const QString &callUni);
 
-    void handleIncomingCall(const QString &deviceUni, const QString &callUni, const QString communicationWith);
+    void handleIncomingCall(const QString &deviceUni, const QString &callUni, const QString &communicationWith);
     void handleRejectedCall();
+
+    org::kde::telephony::CallHistoryDatabase *_databaseInterface;
 
     org::kde::telephony::CallUtils *_callUtils;
     ContactUtils *_contactUtils;

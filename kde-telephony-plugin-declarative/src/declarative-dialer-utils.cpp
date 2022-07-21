@@ -83,3 +83,8 @@ void DeclarativeDialerUtils::_onSpeakerModeChanged(bool speakerMode)
         Q_EMIT declarativeSpeakerModeChanged(_speakerMode);
     }
 }
+
+void DeclarativeDialerUtils::syncSettings()
+{
+    QDBusPendingReply<> reply = org::kde::telephony::DialerUtils::syncSettings();
+}

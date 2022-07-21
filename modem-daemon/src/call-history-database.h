@@ -30,6 +30,7 @@ public Q_SLOTS:
     void clear();
     void remove(const QString &id);
     int lastId() const;
+    QString lastCall(const QString &number, int direction) const;
 
 private:
     uint _guessPreHistoricRevision();

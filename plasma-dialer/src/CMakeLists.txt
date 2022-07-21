@@ -4,7 +4,7 @@ add_executable(plasmaphonedialer
 )
 
 find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED Core Quick Qml QuickControls2)
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS CoreAddons I18n DBusAddons WindowSystem)
+find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Config CoreAddons I18n DBusAddons WindowSystem)
 
 if (DIALER_BUILD_SHELL_OVERLAY)
     find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED WaylandClient)
@@ -31,6 +31,7 @@ target_link_libraries(plasmaphonedialer
     Qt5::Quick
     Qt5::Qml
     Qt5::QuickControls2
+    KF5::ConfigGui
     KF5::CoreAddons
     KF5::I18n
     KF5::DBusAddons
@@ -49,5 +50,6 @@ if (DIALER_BUILD_SHELL_OVERLAY)
     )
 endif() # DIALER_BUILD_SHELL_OVERLAY
 
+kconfig_add_kcfg_files(plasmaphonedialer config.kcfgc GENERATE_MOC)
 install(TARGETS plasmaphonedialer ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES plasma_dialer.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFY5RCDIR})

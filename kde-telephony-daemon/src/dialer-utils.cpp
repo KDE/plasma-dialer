@@ -7,6 +7,7 @@
 
 #include <QDebug>
 
+#include "config.h"
 #include "phonenumbers/asyoutypeformatter.h"
 #include "phonenumbers/phonenumberutil.h"
 
@@ -33,4 +34,9 @@ void DialerUtils::setSpeakerMode(bool enabled)
 void DialerUtils::setMute(bool muted)
 {
     Q_EMIT muteChanged(muted);
+}
+
+void DialerUtils::syncSettings()
+{
+    Config::self()->load();
 }

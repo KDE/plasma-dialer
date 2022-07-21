@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+      http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
+    <kcfgfile name="plasmadialerrc" />
+    <group name="Adaptive blocking">
+        <entry name="adaptiveBlocking" type="Bool">
+            <label>Ignore calls from unknown numbers</label>
+            <default>false</default>
+        </entry>
+        <entry name="ringOption" type="Int">
+            <label>Hang up, Without notification, Silent notification</label>
+            <default>0</default>
+        </entry>
+        <entry name="allowAnonymous" type="Bool">
+            <label>Anonymous numbers</label>
+            <default>false</default>
+        </entry>
+        <entry name="allowPreviousOutgoing" type="Bool">
+            <label>Existing outgoing call to number</label>
+            <default>false</default>
+        </entry>
+        <entry name="allowCallback" type="Bool">
+            <label>Callback within</label>
+            <default>false</default>
+        </entry>
+        <entry name="callbackInterval" type="Int">
+            <label>Interval to allow</label>
+            <default>5</default>
+        </entry>
+        <entry name="allowedPatterns" type="StringList">
+            <label>Allowed patterns</label>
+            <default></default>
+        </entry>
+    </group>
+</kcfg>

@@ -5,6 +5,7 @@
 // SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 
 #include "notification-manager.h"
+#include "config.h"
 
 #include <KIO/ApplicationLauncherJob>
 #include <KLocalizedString>
@@ -52,6 +53,16 @@ NotificationManager::NotificationManager(QObject *parent)
     _ringEffect->setFadeIntensity(0.07);
     _ringEffect->setPeriod(1300);
 #endif // HAVE_QT5_FEEDBACK
+
+    _databaseInterface = new org::kde::telephony::CallHistoryDatabase(QString::fromLatin1(_databaseInterface->staticInterfaceName()),
+                                                                      QStringLiteral("/org/kde/telephony/CallHistoryDatabase/tel/mm"),
+                                                                      QDBusConnection::sessionBus(),
+                                                                      this);
+
+    if (!_databaseInterface->isValid()) {
+        qDebug() << Q_FUNC_INFO << "Could not initiate CallHistoryDatabase interface";
+        return;
+    }
 }
 
 void NotificationManager::setCallUtils(org::kde::telephony::CallUtils *callUtils)
@@ -79,9 +90,6 @@ void NotificationManager::onCallAdded(const QString &deviceUni,
     qDebug() << Q_FUNC_INFO << "call added" << deviceUni << callUni << callDirection << callState << callStateReason << communicationWith;
     if (callDirection == DialerTypes::CallDirection::Incoming) {
         if (callState == DialerTypes::CallState::RingingIn) {
-#ifdef HAVE_QT5_FEEDBACK
-            _ringEffect->start();
-#endif // HAVE_QT5_FEEDBACK
             handleIncomingCall(deviceUni, callUni, communicationWith);
         }
     }
@@ -110,24 +118,23 @@ void NotificationManager::onCallStateChanged(const QString &deviceUni,
     }
 }
 
-void NotificationManager::openRingingNotification(const QString &deviceUni, const QString &callUni, const QString communicationWith)
+void NotificationManager::openRingingNotification(const QString &deviceUni,
+                                                  const QString &callUni,
+                                                  const QString callerDisplay,
+                                                  const QString notificationEvent)
 {
-    QString contactName = _contactUtils->displayString(communicationWith);
-    QString callerDisplayString =
-        (contactName == communicationWith) ? communicationWith : communicationWith + QStringLiteral("<br>") + QStringLiteral("<b>%1</b>").arg(contactName);
-
     QStringList actions;
     actions << i18n("Accept") << i18n("Reject");
     qDebug() << Q_FUNC_INFO << _ringingNotification;
     if (!_ringingNotification) {
         qDebug() << Q_FUNC_INFO << "new notification";
-        _ringingNotification = new KNotification(QStringLiteral("ringing"), KNotification::Persistent | KNotification::LoopSound, nullptr);
+        _ringingNotification = new KNotification(notificationEvent, KNotification::Persistent | KNotification::LoopSound, nullptr);
     }
     _ringingNotification->setUrgency(KNotification::CriticalUrgency);
     _ringingNotification->setComponentName(QStringLiteral("plasma_dialer"));
     // _ringingNotification->setPixmap(person.photo());
     _ringingNotification->setTitle(i18n("Incoming call"));
-    _ringingNotification->setText(callerDisplayString);
+    _ringingNotification->setText(callerDisplay);
     // this will be used by the notification applet to show custom notification UI
     // with swipe decision.
     _ringingNotification->setHint(QStringLiteral("category"), QStringLiteral("x-kde.incoming-call"));
@@ -168,13 +175,75 @@ void NotificationManager::hangUp(const QString &deviceUni, const QString &callUn
     closeRingingNotification();
 }
 
-void NotificationManager::handleIncomingCall(const QString &deviceUni, const QString &callUni, const QString communicationWith)
+void NotificationManager::handleIncomingCall(const QString &deviceUni, const QString &callUni, const QString &communicationWith)
 {
+    const QString contactName = _contactUtils->displayString(communicationWith);
+
+    bool allowed = true;
+
+    if (Config::self()->adaptiveBlocking() && contactName == communicationWith) {
+        allowed = false;
+
+        if (Config::self()->allowAnonymous() && communicationWith.isEmpty()) {
+            allowed = true;
+        }
+
+        if (Config::self()->allowPreviousOutgoing()) {
+            QString lastOutgoing = _databaseInterface->lastCall(communicationWith, static_cast<int>(DialerTypes::CallDirection::Outgoing));
+            if (!lastOutgoing.isEmpty()) {
+                allowed = true;
+            }
+        }
+
+        if (Config::self()->allowCallback()) {
+            QString lastIncoming = _databaseInterface->lastCall(communicationWith, static_cast<int>(DialerTypes::CallDirection::Incoming));
+            QDateTime lastTime = QDateTime::fromString(lastIncoming, QStringLiteral("yyyy-MM-ddThh:mm:ss.zzz"));
+            qint64 diff = lastTime.msecsTo(QDateTime::currentDateTime());
+            if (diff / 1000 / 60 < Config::self()->callbackInterval()) {
+                allowed = true;
+            }
+        }
+
+        if (Config::self()->allowedPatterns().length() > 0) {
+            for (const auto &pattern : Config::self()->allowedPatterns()) {
+                if (communicationWith.indexOf(pattern) >= 0) {
+                    allowed = true;
+                    break;
+                }
+            }
+        }
+    }
+
+    QString notificationEvent = QStringLiteral("ringing");
+
+    if (!allowed) {
+        if (Config::self()->ringOption() == 0) {
+            hangUp(deviceUni, callUni);
+            return;
+        } else if (Config::self()->ringOption() == 1) {
+            return;
+        }
+        notificationEvent = QStringLiteral("ringing-silent");
+    }
+
+#ifdef HAVE_QT5_FEEDBACK
+    if (allowed) {
+        _ringEffect->start();
+    }
+#endif // HAVE_QT5_FEEDBACK
+
+    QString callerDisplay =
+        (contactName == communicationWith) ? communicationWith : communicationWith + QStringLiteral("<br>") + QStringLiteral("<b>%1</b>").arg(contactName);
+
+    if (callerDisplay.isEmpty()) {
+        callerDisplay = i18n("No Caller ID");
+    }
+
     bool screenLocked = getScreenSaverActive();
     if (screenLocked) {
         launchPlasmaDialerDesktopFile();
     } else {
-        openRingingNotification(deviceUni, callUni, communicationWith);
+        openRingingNotification(deviceUni, callUni, callerDisplay, notificationEvent);
     }
 }
 

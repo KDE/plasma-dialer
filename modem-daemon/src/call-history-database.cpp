@@ -143,6 +143,18 @@ int CallHistoryDatabase::lastId() const
     return fetch.value(0).toInt();
 }
 
+QString CallHistoryDatabase::lastCall(const QString &number, int direction) const
+{
+    QSqlQuery fetch(_database);
+    fetch.prepare(QStringLiteral("SELECT startedAt FROM History WHERE communicationWith=:number and direction = :direction ORDER BY startedAt DESC LIMIT 1"));
+    fetch.bindValue(QStringLiteral(":number"), number);
+    fetch.bindValue(QStringLiteral(":direction"), direction);
+    exec(fetch);
+    fetch.first();
+
+    return fetch.value(0).toString();
+}
+
 uint CallHistoryDatabase::_guessPreHistoricRevision()
 {
     uint result = 0;

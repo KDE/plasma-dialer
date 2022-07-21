@@ -21,6 +21,7 @@ public:
     Q_INVOKABLE void setMute(bool muted);
     bool mute() const;
     bool speakerMode() const;
+    Q_INVOKABLE void syncSettings();
 
 Q_SIGNALS:
     void declarativeMuteChanged(bool mute);

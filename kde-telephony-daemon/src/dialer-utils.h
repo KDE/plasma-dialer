@@ -20,6 +20,7 @@ public Q_SLOTS:
     Q_INVOKABLE void fetchMute();
     Q_INVOKABLE void setSpeakerMode(bool enabled);
     Q_INVOKABLE void setMute(bool muted);
+    Q_INVOKABLE void syncSettings();
 
 Q_SIGNALS:
     void speakerModeFetched();
