@@ -28,8 +28,12 @@ Item {
         anchors.fill: parent
         z: -1
         color: Kirigami.Theme.highlightColor
-        radius: Kirigami.Units.smallSpacing
-        opacity: mouse.pressed ? 0.4 : 0
+        radius: 5
+        opacity: mouse.pressed ? 0.4 : 1
+        gradient: Gradient {
+            GradientStop { position: 0.0; color: "#E3E3E4" }
+            GradientStop { position: 1.0; color: "#FFFFFF" }
+        }
     }
 
     Controls.AbstractButton {

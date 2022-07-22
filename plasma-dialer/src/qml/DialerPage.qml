@@ -112,6 +112,8 @@ Kirigami.Page {
             Layout.fillHeight: true
             Kirigami.Theme.colorSet: Kirigami.Theme.View
             Kirigami.Theme.inherit: false
+            Kirigami.Theme.backgroundColor: "#437431"
+            Kirigami.Theme.highlightColor: "#E3E3E4"
             color: Kirigami.Theme.backgroundColor
 
             Dialpad {
