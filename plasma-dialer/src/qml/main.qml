@@ -15,6 +15,8 @@ import org.kde.telephony 1.0
 import "call"
 
 Kirigami.ApplicationWindow {
+    FontLoader { id: webFont; source: "qrc:/font-manrope" }
+
     wideScreen: false
     id: root
     

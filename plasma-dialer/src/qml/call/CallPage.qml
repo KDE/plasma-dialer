@@ -13,11 +13,26 @@ import QtQuick.Layouts 1.1
 import org.kde.kirigami 2.12 as Kirigami
 
 import org.kde.telephony 1.0
+import org.kde.people 1.0 as KPeople
 
 import "../dialpad"
 
 Kirigami.Page {
     id: callPage
+
+    leftPadding: 0
+    rightPadding: 0
+    topPadding: 0
+    bottomPadding: 0
+
+    KPeople.PersonsSortFilterProxyModel {
+        id: contactsSearch
+        sourceModel: KPeople.PersonsModel {
+        }
+        filterRole: KPeople.PersonsModel.PhoneNumberRole
+        sortRole: Qt.DisplayRole
+        filterCaseSensitivity: Qt.CaseInsensitive
+    }
 
     function activeDeviceUni() {
         return applicationWindow().selectModem()
@@ -30,7 +45,7 @@ Kirigami.Page {
     property int callState: ActiveCallModel.callState
     property int callDuration: ActiveCallModel.callDuration
 
-    title: i18n("Active call list")
+    title: i18n("")
 
     function secondsToTimeString(seconds) {
         var h = Math.floor(seconds / 3600);
@@ -40,6 +55,19 @@ Kirigami.Page {
         if(s < 10) s = '0' + s;
         if(h === 0) return '' + m + ':' + s;
         return '' + h + ':' + m + ':' + s;
+    }
+
+    function getColorForContact(ch) {
+        var colors = {
+            0: "green",
+            1: "red",
+            2: "yellow",
+            3: "blue",
+            4: "orange",
+            5: "olive",
+            6: "violet",
+        };
+        return colors[ch.charCodeAt(0) % 7];
     }
 
     Connections {
@@ -54,81 +82,200 @@ Kirigami.Page {
 
     ColumnLayout {
         id: activeCallUi
-        spacing: Kirigami.Units.largeSpacing
 
         anchors {
             fill: parent
-            margins: Kirigami.Units.largeSpacing
         }
 
-        Controls.SwipeView {
-            id: activeCallSwipeView
-
+        Rectangle {
+            id: info
             Layout.fillWidth: true
-            Layout.fillHeight: true
-            Layout.minimumHeight: parent.height / 2
+            height: 690
 
-            ActiveCallView {
-                id: activeCallView
-            }
+            Rectangle {
+                color: getColorForContact(contact.text.substr(0, 1).toUpperCase())
+                y: 87
+                width: 172
+                height: 172
 
-            Dialpad {
-                id: dialPad
-                focus: true
-            }
-        }
-
-        // phone number/alias
-        Controls.Label {
-            Layout.fillWidth: true
-            Layout.minimumHeight: implicitHeight
-            horizontalAlignment: Qt.AlignHCenter
-            verticalAlignment: Qt.AlignVCenter
-            font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.15
-            text: ContactUtils.displayString("")
-            font.bold: true
-            visible: text != ""
-        }
-        
-        // time spent on call
-        Controls.Label {
-            Layout.fillWidth: true
-            Layout.minimumHeight: implicitHeight
-            horizontalAlignment: Qt.AlignHCenter
-            verticalAlignment: Qt.AlignVCenter
-            font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.1
-            text: {
-                if (callState === DialerTypes.CallState.Dialing || callState === DialerTypes.CallState.RingingOut) {
-                    return i18n("Calling...");
-                } else if (callDuration > 0) {
-                    return secondsToTimeString(callDuration);
-                } else {
-                    return '';
+                anchors.horizontalCenter: info.horizontalCenter
+                Controls.Label {
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.verticalCenter: parent.verticalCenter
+                    font.family: "Manrope"
+                    font.pixelSize: 120
+                    color: "#FFFFFF"
+                    text: {
+                        return contact.text.substr(0, 1).toUpperCase();
+                    }
                 }
             }
-            visible: text !== ""
+            // time spent on call
+            Controls.Label {
+                Layout.fillWidth: true
+                Layout.minimumHeight: implicitHeight
+                horizontalAlignment: Qt.AlignHCenter
+                verticalAlignment: Qt.AlignVCenter
+                text: {
+                        return i18n("Вызов...");
+                }
+                font.family: "Manrope"
+                font.pixelSize: 26
+                color: "#444444"
+                y: 312
+                anchors.horizontalCenter: info.horizontalCenter
+            }
+            // phone number/alias
+            Controls.Label {
+                id: phone
+                Layout.fillWidth: true
+                Layout.minimumHeight: implicitHeight
+                horizontalAlignment: Qt.AlignHCenter
+                verticalAlignment: Qt.AlignVCenter
+                font.family: "Manrope"
+                font.pixelSize: 56
+                lineHeight: 48
+                minimumPixelSize: 56
+                maximumLineCount: 3
+                text: getPage("Dialer").pad.number
+                color: "#444444"
+                width: 620
+                height: 120
+                y: 402
+                anchors.horizontalCenter: info.horizontalCenter
+                Component.onCompleted: {
+                    contactsSearch.setFilterFixedString(getPage("Dialer").pad.number);
+                    contact.text = contactsSearch.data(contactsSearch.index(0, 0));
+                }
+            }
+            // contact name
+            Controls.Label {
+                id: contact
+                Layout.minimumHeight: implicitHeight
+                horizontalAlignment: Qt.AlignHCenter
+                verticalAlignment: Qt.AlignVCenter
+                maximumLineCount: 3
+
+                width: 620
+                height: 120
+
+                font.family: "Manrope"
+                font.pixelSize: 40
+                color: "#444444"
+
+                text: ContactUtils.displayString(phone.text)
+                y: 503
+                anchors.horizontalCenter: info.horizontalCenter
+                wrapMode: Text.WordWrap
+                elide: Text.ElideMiddle
+            }
         }
 
         // controls
-        RowLayout {
-            opacity: callActive ? 1 : 0
-            Layout.alignment: Qt.AlignHCenter
-            Layout.maximumWidth: Kirigami.Units.gridUnit * 16
-            Layout.minimumHeight: Kirigami.Units.gridUnit * 3.5
-            id: buttonRow
-            
-            spacing: Kirigami.Units.smallSpacing
-            
+        Rectangle {
+            color: "#437431"
+
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+
+            CallPageButton {
+                id: muteButton
+
+                width: 296
+                height: 164
+                x: 50
+                y: 75
+
+                //iconSource: ":icons-mic"
+                iconSource: ":btn-mic-on"
+                text: i18n("Mute")
+
+                onClicked: {
+                    const micMute = !toggledOn;
+                    DialerUtils.setMute(micMute);
+                    iconSource = toggledOn ? ":btn-mic-off" : ":btn-mic-on";
+                    muteLabel.text = toggledOn ? "Включить\nмикрофон" : "Выключить\nмикрофон";
+                }
+            }
+            Controls.Label {
+                id: muteLabel
+
+                x: 50
+                y: 253
+                height: 80
+                width: 296
+                color: "#FFFFFF"
+
+                font.family: "Manrope"
+                font.pixelSize: 26
+                text: {
+                    "Выключить\nмикрофон"
+                }
+
+                anchors.horizontalCenter: info.horizontalCenter
+                wrapMode: Text.WordWrap
+                elide: Text.ElideMiddle
+                maximumLineCount: 2
+                Layout.minimumHeight: implicitHeight
+                horizontalAlignment: Qt.AlignHCenter
+                verticalAlignment: Qt.AlignVCenter
+            }
+
+            CallPageButton {
+                id: speakerButton
+                width: 296
+                height: 164
+                x: 374
+                y: 75
+                
+                //iconSource: ":icons-vol-mute"
+                iconSource: ":btn-vol"
+                text: i18n("Speaker")
+                
+                onClicked: {
+                    const speakerMode = !toggledOn;
+                    DialerUtils.setSpeakerMode(speakerMode);
+                    iconSource = toggledOn ? ":btn-vol-on" : ":btn-vol";
+                    speakerLabel.text = toggledOn ? "Выключить\nгромкую связь" : "Включить\nгромкую связь";
+                }
+            }
+
+            Controls.Label {
+                id: speakerLabel
+                x: 374
+                y: 253
+                height: 80
+                width: 296
+                color: "#FFFFFF"
+
+                font.family: "Manrope"
+                font.pixelSize: 26
+                text: {
+                    "Включить\nгромкую связь"
+                }
+                anchors.horizontalCenter: info.horizontalCenter
+                wrapMode: Text.WordWrap
+                elide: Text.ElideMiddle
+                maximumLineCount: 2
+                Layout.minimumHeight: implicitHeight
+                horizontalAlignment: Qt.AlignHCenter
+                verticalAlignment: Qt.AlignVCenter
+            }
+
             CallPageButton {
                 id: dialerButton
-                Layout.fillHeight: true
-                Layout.fillWidth: true
-                
-                iconSource: "input-dialpad-symbolic"
+
+                width: 187
+                height: 164
+                x: 50
+                y: 481
+
+                //iconSource: ":icon-dialer"
+                iconSource: ":btn-dialercontact-all"
                 text: i18n("Keypad")
-                
+
                 onClicked: switchToogle()
-                toggledOn: (activeCallSwipeView.currentIndex == 1)
+                toggledOn: false
 
                 function switchToogle() {
                     // activeCallSwipeView: 0 is ActiveCallView, 1 is Dialpad
@@ -140,78 +287,19 @@ Kirigami.Page {
                 }
             }
             CallPageButton {
-                id: speakerButton
-                Layout.fillHeight: true
-                Layout.fillWidth: true
-                
-                iconSource: "audio-speakers-symbolic"
-                text: i18n("Speaker")
-                
-                onClicked: {
-                    const speakerMode = !toggledOn
-                    DialerUtils.setSpeakerMode(speakerMode);
-                }
-            }
-            CallPageButton {
-                id: muteButton
-
-                Layout.fillHeight: true
-                Layout.fillWidth: true
-
-                iconSource: toggledOn ? "microphone-sensitivity-muted-symbolic" : "microphone-sensitivity-high-symbolic"
-                text: i18n("Mute")
-
-                onClicked: {
-                    const micMute = !toggledOn
-                    DialerUtils.setMute(micMute)
-                }
-            }
-        }
-
-        Item {
-            Layout.minimumHeight: Kirigami.Units.gridUnit * 5
-            Layout.fillWidth: true
-
-            AnswerSwipe {
-                anchors.fill: parent
-                visible: false // TODO
-                onAccepted: {
-                    CallUtils.accept(activeDeviceUni(), activeCallUni());
-                }
-                onRejected: {
-                    CallUtils.hangUp(activeDeviceUni(), activeCallUni());
-                }
-            }
-            
-            // end call button
-            Controls.AbstractButton {
                 id: endCallButton
+
+                width: 404
+                height: 164
+                x: 266
+                y: 481
+
+                //iconSource: ":icon-handset-hangup"
+                iconSource: ":btn-call-hangup"
                 visible: callActive
                 
-                anchors.centerIn: parent
-                width: Kirigami.Units.gridUnit * 3.5
-                height: Kirigami.Units.gridUnit * 3.5
-                
                 onClicked: {
                     CallUtils.hangUp(activeDeviceUni(), activeCallUni());
-                }
-                
-                background: Rectangle {
-                    anchors.centerIn: parent
-                    height: Kirigami.Units.gridUnit * 3.5
-                    width: height
-                    radius: height / 2
-                    
-                    color: "red"
-                    opacity: endCallButton.pressed ? 0.5 : 1
-                    
-                    Kirigami.Icon {
-                        source: "call-stop"
-                        anchors.fill: parent
-                        anchors.margins: Kirigami.Units.largeSpacing
-                        color: "white"
-                        isMask: true
-                    }
                 }
             }
         }

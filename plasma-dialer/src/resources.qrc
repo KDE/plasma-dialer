@@ -68,6 +68,14 @@
         <file alias="Contact-id-add">icons/Contact-id-add.png</file>
         <file alias="Contact-id-noname">icons/Contact-id-noname.png</file>
 
+        <file alias="btn-mic-on">icons/btn-mic-on.png</file>
+        <file alias="btn-mic-off">icons/btn-mic-off.png</file>
+        <file alias="btn-vol">icons/btn-vol.png</file>
+        <file alias="btn-vol-on">icons/btn-vol-on.png</file>
+        <file alias="btn-dialercontact-all">icons/btn-dialercontact-all.png</file>
+
+        <file alias="font-manrope">fonts/Manrope-Regular.ttf</file>
+
         <file alias="main.qml">qml/main.qml</file>
         <file alias="components/SidebarButton.qml">qml/components/SidebarButton.qml</file>
         <file alias="components/Sidebar.qml">qml/components/Sidebar.qml</file>
