@@ -89,9 +89,7 @@ void NotificationManager::onCallStateChanged(const QString &deviceUni,
 void NotificationManager::openRingingNotification(const QString &deviceUni, const QString &callUni, const QString communicationWith)
 {
     _ringEffect->start();
-    QProcess::startDetached(QStringLiteral("plasmaphonedialer"), QStringList{});
-    //for our research goals for now we don't need nothing of below code
-    /*
+
     QString contactName = _contactUtils->displayString(communicationWith);
     QString callerDisplayString =
         (contactName == communicationWith) ? communicationWith : communicationWith + QStringLiteral("<br>") + QStringLiteral("<b>%1</b>").arg(contactName);
@@ -116,7 +114,6 @@ void NotificationManager::openRingingNotification(const QString &deviceUni, cons
     _ringingNotification->addContext(QStringLiteral("callUni"), callUni);
     connect(_ringingNotification, QOverload<unsigned int>::of(&KNotification::activated), this, &NotificationManager::onNotificationAction);
     _ringingNotification->sendEvent();
-    */
 }
 
 void NotificationManager::closeRingingNotification()

@@ -12,7 +12,6 @@
         <file alias="call/InCallInlineMessage.qml">qml/call/InCallInlineMessage.qml</file>
         <file alias="call/AnswerSwipe.qml">qml/call/AnswerSwipe.qml</file>
         <file alias="call/CallPage.qml">qml/call/CallPage.qml</file>
-        <file alias="call/IncomingPage.qml">qml/call/IncomingPage.qml</file>
         <file alias="call/Avatar.qml">qml/call/Avatar.qml</file>
         <file alias="call/ActiveCallView.qml">qml/call/ActiveCallView.qml</file>
         <file alias="call/CallPageButton.qml">qml/call/CallPageButton.qml</file>
