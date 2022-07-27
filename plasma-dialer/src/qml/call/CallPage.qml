@@ -74,7 +74,6 @@ Kirigami.Page {
 
             Dialpad {
                 id: dialPad
-                showBottomRow: false
                 focus: true
             }
         }

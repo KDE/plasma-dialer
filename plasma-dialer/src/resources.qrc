@@ -52,6 +52,7 @@
         <file alias="dialpad/Dialpad.qml">qml/dialpad/Dialpad.qml</file>
         <file alias="dialpad/DialerButton.qml">qml/dialpad/DialerButton.qml</file>
         <file alias="dialpad/DialerIconButton.qml">qml/dialpad/DialerIconButton.qml</file>
+        <file alias="dialpad/DialerRosaButton.qml">qml/dialpad/DialerRosaButton.qml</file>
         <file alias="USSDSheet.qml">qml/USSDSheet.qml</file>
         <file alias="ImeiSheet.qml">qml/ImeiSheet.qml</file>
         <file alias="PhoneNumberDialog.qml">qml/PhoneNumberDialog.qml</file>

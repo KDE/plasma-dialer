@@ -20,7 +20,6 @@ GridLayout {
     columnSpacing: 10
 
     property string number
-    property bool showBottomRow: true
     property bool voicemailFail: false
     property bool callActive: ActiveCallModel.active
 
@@ -88,34 +87,11 @@ GridLayout {
         }
     }
 
-    DialerButton {
-        id: one
-        text: "1"
-        onClicked: onPadNumberPressed(text)
-        voicemail: showBottomRow // TODO: only show voicemail icon if voicemail number exists
-        onHeld: !callActive && callVoicemail()
-    }
-    DialerButton { text: "2"; sub: "ABC"; onClicked: onPadNumberPressed(text) }
-    DialerButton { text: "3"; sub: "DEF"; onClicked: onPadNumberPressed(text) }
-
-    DialerButton { text: "4"; sub: "GHI"; onClicked: onPadNumberPressed(text) }
-    DialerButton { text: "5"; sub: "JKL"; onClicked: onPadNumberPressed(text) }
-    DialerButton { text: "6"; sub: "MNO"; onClicked: onPadNumberPressed(text) }
-
-    DialerButton { text: "7"; sub: "PQRS"; onClicked: onPadNumberPressed(text) }
-    DialerButton { text: "8"; sub: "TUV"; onClicked: onPadNumberPressed(text) }
-    DialerButton { text: "9"; sub: "WXYZ"; onClicked: onPadNumberPressed(text) }
-
-    DialerButton { display: "＊"; text: "*"; special: true; onClicked: onPadNumberPressed(text); onHeld: onPadNumberPressed(text) }
-    DialerButton { text: "0"; subdisplay: "＋"; sub: "+"; onClicked: onPadNumberPressed(text); onHeld: onPadNumberPressed("+") }
-    DialerButton { display: "＃"; text: "#"; special: true; onClicked: onPadNumberPressed(text); onHeld: onPadNumberPressed(text) }
-
     Keys.onPressed: {
         if (event.key === Qt.Key_Backspace) {
             pad.number = pad.number.slice(0, -1)
         } else if (
             (event.key === Qt.Key_Enter || event.key === Qt.Key_Return) &&
-            pad.showBottomRow &&
             statusLabel.text.length > 0
         ) {
             onCallButtonPressed(pad.number)
@@ -124,59 +100,54 @@ GridLayout {
         }
     }
 
+    DialerRosaButton { iconSource: ":btn-1"; iconSourcePressed: ":btn-1gr"; onPressed: onPadNumberPressed("1") }
+    DialerRosaButton { iconSource: ":btn-2"; iconSourcePressed: ":btn-2gr"; onPressed: onPadNumberPressed("2") }
+    DialerRosaButton { iconSource: ":btn-3"; iconSourcePressed: ":btn-3gr"; onPressed: onPadNumberPressed("3") }
+
+    DialerRosaButton { iconSource: ":btn-4"; iconSourcePressed: ":btn-4gr"; onPressed: onPadNumberPressed("4") }
+    DialerRosaButton { iconSource: ":btn-5"; iconSourcePressed: ":btn-5gr"; onPressed: onPadNumberPressed("5") }
+    DialerRosaButton { iconSource: ":btn-6"; iconSourcePressed: ":btn-6gr"; onPressed: onPadNumberPressed("6") }
+
+    DialerRosaButton { iconSource: ":btn-7"; iconSourcePressed: ":btn-7gr"; onPressed: onPadNumberPressed("7") }
+    DialerRosaButton { iconSource: ":btn-8"; iconSourcePressed: ":btn-8gr"; onPressed: onPadNumberPressed("8") }
+    DialerRosaButton { iconSource: ":btn-9"; iconSourcePressed: ":btn-9gr"; onPressed: onPadNumberPressed("9") }
+
+    DialerRosaButton { iconSource: ":btn-star"; iconSourcePressed: ":btn-stargr"; onPressed: onPadNumberPressed("*") }
+    DialerRosaButton { iconSource: ":btn-0"; iconSourcePressed: ":btn-0gr"; onPressed: onPadNumberPressed("0"); onPressAndHold: onPadNumberPressed("+") }
+    DialerRosaButton { iconSource: ":btn-sharp"; iconSourcePressed: ":btn-sharpgr"; onPressed: onPadNumberPressed("#") }
+
+    DialerRosaButton { iconSource: ":btn-contact-recent"; iconSourcePressed: ":btn-contact-recentgr"; onPressed: applicationWindow().switchToPage(applicationWindow().getPage("History"), 0) }
+
     Item {
-        visible: pad.showBottomRow
-        Layout.fillWidth: true
-        Layout.fillHeight: true
-    }
+        id: buttonRoot
 
-    // call button
-    Controls.AbstractButton {
-        visible: pad.showBottomRow
-        
-        id: callButton
+        Layout.columnSpan: 2
+        Layout.rowSpan: 1
+
         Layout.fillWidth: true
         Layout.fillHeight: true
-        
-        enabled: pad.showBottomRow && statusLabel.text.length > 0
-        opacity: enabled ? 1 : 0.8
-        onClicked: onCallButtonPressed(pad.number)
-        
-        background: Rectangle {
-            anchors.centerIn: parent
-            height: parent.height
-            width: height
-            radius: height / 2
-            
+
+        Rectangle {
+            anchors.fill: parent
+            z: -1
             color: Kirigami.Theme.highlightColor
-            opacity: callButton.pressed ? 0.7 : 1
-            
-            Kirigami.Icon {
-                source: "call-start"
-                anchors.fill: parent
-                anchors.margins: applicationWindow().smallMode ? Kirigami.Units.smallSpacing : Kirigami.Units.largeSpacing
-                color: "white"
-                isMask: true
-            }
+            opacity: 0
         }
-    }
-    
-    DialerIconButton {
-        visible: pad.showBottomRow
-        
-        id: delButton
-        Layout.fillWidth: true
-        Layout.fillHeight: true
 
-        enabled: pad.showBottomRow && statusLabel.text.length > 0
-        opacity: enabled ? 1 : 0.5
-        source: "edit-clear"
-        size: Kirigami.Units.gridUnit * 2
-        onPressed: {
-            pad.number = pad.number.slice(0, -1)
+        Kirigami.Icon {
+            id: icon
+            source: mouse.pressed ? ":btn-callgr" : ":btn-call"
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+            width: 404
+            height: 164
         }
-        onPressAndHold: { // clear
-            pad.number = ""
+
+        Controls.AbstractButton {
+            id: mouse
+            anchors.fill: parent
+            enabled: statusLabel.text.length > 0
+            onClicked: onCallButtonPressed(pad.number)
         }
     }
 }
