@@ -22,12 +22,6 @@ Kirigami.ApplicationWindow {
     pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.ToolBar
     pageStack.globalToolBar.showNavigationButtons: Kirigami.ApplicationHeaderStyle.ShowBackButton;
     
-    // needs to work with 360x720 (+ panel heights)
-    minimumWidth: 300
-    minimumHeight: minimumWidth + 1
-    width: Kirigami.Settings.isMobile ? 400 : 650
-    height: Kirigami.Settings.isMobile ? 650 : 500
-
     title: i18n("Phone")
 
     contextDrawer: Kirigami.ContextDrawer {}
@@ -68,30 +62,11 @@ Kirigami.ApplicationWindow {
     }
 
     property bool isWidescreen: root.width >= root.height
-    onIsWidescreenChanged: changeNav(isWidescreen);
 
     function switchToPage(page, depth) {
         while (pageStack.depth > depth) pageStack.pop()
         pageStack.push(page)
         page.forceActiveFocus()
-    }
-
-    // switch between bottom toolbar and sidebar
-    function changeNav(toWidescreen) {
-        if (toWidescreen) {
-            if (footer != null) {
-                footer.destroy();
-                footer = null;
-            }
-            sidebarLoader.active = true;
-            globalDrawer = sidebarLoader.item;
-        } else {
-            sidebarLoader.active = false;
-            globalDrawer = null;
-
-            let bottomToolbar = Qt.createComponent("qrc:/components/BottomToolbar.qml")
-            footer = bottomToolbar.createObject(root);
-        }
     }
 
     function selectModem() {
@@ -115,7 +90,6 @@ Kirigami.ApplicationWindow {
     Component.onCompleted: {
         // initial page and nav type
         switchToPage(getPage("Dialer"), 1);
-        changeNav(isWidescreen);
     }
 
     Loader {
