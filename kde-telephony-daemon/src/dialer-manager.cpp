@@ -84,6 +84,7 @@ void DialerManager::onCallStateChanged(const QString &deviceUni,
     qDebug() << Q_FUNC_INFO << "new call state:" << callState;
     switch (callState) {
     case DialerTypes::CallState::Active:
+    case DialerTypes::CallState::RingingOut:
         enable_callmode();
         break;
     case DialerTypes::CallState::Terminated:
