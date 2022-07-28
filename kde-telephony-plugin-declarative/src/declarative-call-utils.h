@@ -15,6 +15,7 @@ public:
     DeclarativeCallUtils(QObject *parent = nullptr);
 
     void fetchCalls();
+    Q_INVOKABLE void accept(const QString &deviceUni, const QString &callUni);
     Q_INVOKABLE void dial(const QString &deviceUni, const QString &number);
     Q_INVOKABLE QString formatNumber(const QString &number);
     Q_INVOKABLE void hangUp(const QString &deviceUni, const QString &callUni);

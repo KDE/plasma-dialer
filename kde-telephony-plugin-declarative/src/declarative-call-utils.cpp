@@ -25,6 +25,15 @@ void DeclarativeCallUtils::fetchCalls()
     }
 }
 
+void DeclarativeCallUtils::accept(const QString &deviceUni, const QString &callUni)
+{
+    QDBusPendingReply<> reply = org::kde::telephony::CallUtils::accept(deviceUni, callUni);
+    reply.waitForFinished();
+    if (reply.isError()) {
+        qDebug() << Q_FUNC_INFO << reply.error();
+    }
+}
+
 void DeclarativeCallUtils::dial(const QString &deviceUni, const QString &number)
 {
     QDBusPendingReply<> reply = org::kde::telephony::CallUtils::dial(deviceUni, number);
