@@ -27,6 +27,7 @@ Kirigami.ApplicationWindow {
     minimumHeight: minimumWidth + 1
     width: Kirigami.Settings.isMobile ? 400 : 650
     height: Kirigami.Settings.isMobile ? 650 : 500
+    visibility: ScreenSaverUtils.getActive() ? "FullScreen" : "Windowed"
 
     title: i18n("Phone")
 

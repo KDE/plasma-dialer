@@ -79,3 +79,4 @@ Categories=Qt;KDE;Telephony;Network;
 
 MimeType=x-scheme-handler/tel;x-scheme-handler/callto;
 X-KDE-Protocols=tel;callto;
+X-KDE-Wayland-Interfaces=kde_lockscreenallowed_v1
