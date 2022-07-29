@@ -97,7 +97,7 @@ msgstr "Configuració"
 #: src/qml/ContactsPage.qml:83
 #, kde-format
 msgid "Select number to call"
-msgstr "Seleccioneu el número a tocar"
+msgstr "Seleccioneu el número que es tocarà"
 
 #: src/qml/ContactsPage.qml:92
 #, kde-format
