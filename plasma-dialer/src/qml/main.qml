@@ -60,6 +60,7 @@ Kirigami.ApplicationWindow {
         case "Call": return pagePool.loadPage("qrc:/call/CallPage.qml");
         case "Settings": return pagePool.loadPage("qrc:/SettingsPage.qml");
         case "About": return pagePool.loadPage("qrc:/AboutPage.qml");
+        case "Incoming": return pagePool.loadPage("qrc:/call/IncomingPage.qml");
         }
     }
 

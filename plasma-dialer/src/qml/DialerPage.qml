@@ -31,6 +31,16 @@ Kirigami.Page {
     Connections {
         target: ActiveCallModel
         function onActiveChanged() {
+
+            const incomingPage = getPage("Incoming")
+            if (ActiveCallModel.active) {
+                applicationWindow().pageStack.layers.push(incomingPage, 1)
+            } else {
+                if (pageStack.layers.currentItem === incomingPage) {
+                     pageStack.layers.pop()
+                }
+            }
+            /*
             const callPage = getPage("Call")
             if (ActiveCallModel.active) {
                 applicationWindow().pageStack.layers.push(callPage, 1)
@@ -39,9 +49,10 @@ Kirigami.Page {
                      pageStack.layers.pop()
                 }
             }
+            */
         }
     }
-
+    
     ColumnLayout {
         id: dialPadArea
         anchors.fill: parent
