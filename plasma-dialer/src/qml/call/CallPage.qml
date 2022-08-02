@@ -117,7 +117,13 @@ Kirigami.Page {
                 horizontalAlignment: Qt.AlignHCenter
                 verticalAlignment: Qt.AlignVCenter
                 text: {
-                        return i18n("Вызов...");
+                    if (callState === DialerTypes.CallState.Dialing || callState === DialerTypes.CallState.RingingOut) {
+                        return "Вызов...";
+                    } else if (callDuration > 0) {
+                        return secondsToTimeString(callDuration);
+                    } else {
+                        return '';
+                    }
                 }
                 font.family: "Manrope"
                 font.pixelSize: 26
