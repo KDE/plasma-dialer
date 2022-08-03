@@ -70,18 +70,18 @@ Kirigami.Page {
 
                 RowLayout {
                     Layout.topMargin: 87
-                    Layout.leftMargin: 107
+//                    Layout.leftMargin: 107
 
                     QQC2.Label {
                         id: statusLabel
                         horizontalAlignment: Qt.AlignHCenter
                         verticalAlignment: Qt.AlignVCenter
-                        width: 506
+                        width: 620
                         height: 38
                         Layout.maximumWidth: width
                         Layout.minimumWidth: width
                         font.family: "Manrope"
-                        font.pointSize: 20
+                        font.pointSize: 26
                         font.weight: Font.Light
                         wrapMode: QQC2.Label.WrapAnywhere
                         maximumLineCount: 1
