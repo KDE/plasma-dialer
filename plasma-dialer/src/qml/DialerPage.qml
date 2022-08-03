@@ -80,6 +80,7 @@ Kirigami.Page {
                         height: 38
                         Layout.maximumWidth: width
                         Layout.minimumWidth: width
+                        font.family: "Manrope"
                         font.pointSize: 20
                         font.weight: Font.Light
                         wrapMode: QQC2.Label.WrapAnywhere

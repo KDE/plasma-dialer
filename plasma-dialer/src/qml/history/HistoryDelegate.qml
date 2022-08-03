@@ -37,12 +37,14 @@ Kirigami.AbstractListItem {
             Layout.fillWidth: true
             Controls.Label {
                 id: callContactDisplayLabel
+                font.family: "Manrope"
                 text: model.communicationWith
                 Layout.fillWidth: true
             }
             Controls.Label {
                 id: numberLabel
                 visible: callContactDisplayLabel.text !== text
+                font.family: "Manrope"
                 text: ContactUtils.displayString(model.communicationWith)
                 Layout.fillWidth: true
             }
@@ -52,10 +54,12 @@ Kirigami.AbstractListItem {
             Layout.fillWidth: true
             Controls.Label {
                 Layout.alignment: Qt.AlignRight
+                font.family: "Manrope"
                 text: Qt.formatDateTime(model.startedAt, Qt.locale().dateTimeFormat(Locale.ShortFormat));
             }
             Controls.Label {
                 Layout.alignment: Qt.AlignRight
+                font.family: "Manrope"
                 text: i18n("Duration: %1", secondsToTimeString(model.duration));
                 visible: model.duration > 0
             }
