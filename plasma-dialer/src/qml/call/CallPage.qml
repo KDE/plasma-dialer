@@ -143,7 +143,7 @@ Kirigami.Page {
                 lineHeight: 48
                 minimumPixelSize: 56
                 maximumLineCount: 3
-                text: getPage("Dialer").pad.number
+                text: CallUtils.formatNumber(getPage("Dialer").pad.number)
                 color: "#444444"
                 width: 620
                 height: 120
