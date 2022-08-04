@@ -169,12 +169,12 @@ Kirigami.Page {
         }
 
         Item {
-            Layout.minimumHeight: Kirigami.Units.gridUnit * 5
+            Layout.minimumHeight: Kirigami.Units.gridUnit * 3.5
             Layout.fillWidth: true
 
             AnswerSwipe {
                 anchors.fill: parent
-                visible: false // TODO
+                visible: callActive // TODO
                 onAccepted: {
                     CallUtils.accept(activeDeviceUni(), activeCallUni());
                 }
@@ -186,7 +186,7 @@ Kirigami.Page {
             // end call button
             Controls.AbstractButton {
                 id: endCallButton
-                visible: callActive
+                visible: false
                 
                 anchors.centerIn: parent
                 width: Kirigami.Units.gridUnit * 3.5
