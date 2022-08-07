@@ -36,10 +36,21 @@ Item {
                 color: Kirigami.Theme.negativeBackgroundColor
                 opacity: endCallButton.pressed ? 0.5 : 1
                 Kirigami.Icon {
+                    id: endCallIcon
                     anchors.verticalCenter: parent.verticalCenter
                     anchors.right: parent.right
                     anchors.rightMargin: Kirigami.Units.largeSpacing * 2
                     source: "call-end-symbolic"
+
+                    SequentialAnimation {
+                        running: true
+                        loops: Animation.Infinite
+                        NumberAnimation { target: endCallIcon; property: "rotation"
+                            from: -8; to: 8;
+                            easing.type: Easing.OutInElastic; duration: Kirigami.Units.veryLongDuration * 3
+                        }
+                        PauseAnimation { duration: Kirigami.Units.shortDuration}
+                    }
                 }
             }
             onClicked: {
@@ -56,36 +67,33 @@ Item {
 
             property bool swipeAccepted: false
 
-            gradient: Gradient {
-                orientation: Gradient.Horizontal
-                GradientStop { position: 0.0; color: Kirigami.Theme.positiveBackgroundColor }
-                GradientStop {
-                    position: acceptRectangle.swipeAccepted ?
-                                  1 :
-                                  acceptMouseArea.mouseX / acceptRectangle.width
-                    color: Qt.lighter(Qt.lighter(Kirigami.Theme.positiveBackgroundColor))
-                    ParallelAnimation on position
-                    {
-                        loops: Animation.Infinite
-                        running: !acceptMouseArea.pressed && !acceptRectangle.swipeAccepted
-
-                        NumberAnimation {
-                            from: 0.7
-                            to: 1
-                            duration: Kirigami.Units.veryLongDuration * 2
-                        }
-                    }
-                }
-            }
+            color: Qt.lighter(Kirigami.Theme.positiveBackgroundColor, 1 + acceptMouseArea.swipePath)
 
             QQC2.Label {
-                anchors.horizontalCenter: parent.horizontalCenter
-                anchors.horizontalCenterOffset: -parent.height / 4
+                id: acceptLabel
+                property real startX: callAcceptIcon.leftSpacing + callAcceptIcon.width + Kirigami.Units.smallSpacing
+                property real parentWidth: parent.width
+
                 anchors.verticalCenter: parent.verticalCenter
                 color: Kirigami.Theme.highlightedTextColor
                 font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.2
                 text: i18n("Swipe right to accept")
-                visible: !acceptMouseArea.pressed && !acceptRectangle.swipeAccepted
+                property bool resting: acceptMouseArea.swipePath == 0
+                visible: resting
+
+                SequentialAnimation {
+                    running: acceptLabel.resting
+                    loops: Animation.Infinite
+                    NumberAnimation { target: acceptLabel; property: "x"
+                        from: acceptLabel.startX; to: acceptLabel.startX + acceptLabel.parentWidth / 2
+                        easing.type: Easing.InBounce; duration: Kirigami.Units.veryLongDuration * 2
+                    }
+                    NumberAnimation { target: acceptLabel; property: "x";
+                        from: acceptLabel.startX + acceptLabel.parentWidth / 2; to: acceptLabel.startX
+                        easing.type: Easing.OutBounce; duration: Kirigami.Units.veryLongDuration * 2
+                    }
+                    PauseAnimation { duration: Kirigami.Units.shortDuration}
+                }
             }
 
             Kirigami.Icon {
@@ -95,6 +103,14 @@ Item {
                 property real leftSpacing: Kirigami.Units.largeSpacing * 2
                 x: leftSpacing
                 source: "call-start-symbolic"
+                opacity: 1 - acceptMouseArea.swipePath
+
+                SequentialAnimation {
+                    running: true
+                    loops: Animation.Infinite
+                    NumberAnimation { target: callAcceptIcon; property: "rotation"; from: -8; to: 8; easing.type: Easing.OutInElastic; duration: Kirigami.Units.veryLongDuration * 3}
+                    PauseAnimation { duration: Kirigami.Units.shortDuration}
+                }
 
                 Connections {
                     target: acceptMouseArea
