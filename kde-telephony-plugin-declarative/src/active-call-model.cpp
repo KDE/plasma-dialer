@@ -106,6 +106,7 @@ void ActiveCallModel::onCallAdded(const QString &deviceUni,
     Q_UNUSED(deviceUni);
     Q_UNUSED(callUni);
     _callUtils->fetchCalls();
+    setCommunicationWith(communicationWith);
 }
 
 void ActiveCallModel::onCallDeleted(const QString &deviceUni, const QString &callUni)
@@ -179,14 +180,14 @@ void ActiveCallModel::setCallState(const DialerTypes::CallState state)
     Q_EMIT callStateChanged();
 }
 
-uint ActiveCallModel::callDuration() const
+uint ActiveCallModelQString ActiveCallModel::communicationWith() const
 {
-    return _callDuration;
+    return _communicationWith;
 }
 
-void ActiveCallModel::setCallDuration(uint duration)
+void ActiveCallModel::setCommunicationWith(QString communicationWith)
 {
-    _callDuration = duration;
+    _communicationWith = communicationWith;
     qDebug() << Q_FUNC_INFO;
-    Q_EMIT callDurationChanged();
+    Q_EMIT communicationWithChanged();
 }
