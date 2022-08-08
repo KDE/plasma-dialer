@@ -30,6 +30,19 @@ Kirigami.Page {
 
     Connections {
         target: ActiveCallModel
+
+        function onCallStateChanged() {
+            if (ActiveCallModel.callState === DialerTypes.CallState.Active ||
+                ActiveCallModel.callState === DialerTypes.CallState.Terminated) {
+                if (pageStack.layers.currentItem === getPage("Incoming")) {
+                    pageStack.layers.pop()
+                    if (ActiveCallModel.callState === DialerTypes.CallState.Active) {
+                        applicationWindow().pageStack.layers.push(getPage("Call"), 1)
+                    }
+                }
+            }
+        }
+
         function onActiveChanged() {
             if (ActiveCallModel.callState === DialerTypes.CallState.RingingIn) {
                 const incomingPage = getPage("Incoming")
