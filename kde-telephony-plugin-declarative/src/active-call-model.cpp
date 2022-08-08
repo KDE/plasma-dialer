@@ -180,6 +180,18 @@ void ActiveCallModel::setCallState(const DialerTypes::CallState state)
     Q_EMIT callStateChanged();
 }
 
+uint ActiveCallModel::callDuration() const
+{
+    return _callDuration;
+}
+
+void ActiveCallModel::setCallDuration(uint duration)
+{
+    _callDuration = duration;
+    qDebug() << Q_FUNC_INFO;
+    Q_EMIT callDurationChanged();
+}
+
 uint ActiveCallModelQString ActiveCallModel::communicationWith() const
 {
     return _communicationWith;
