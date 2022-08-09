@@ -80,7 +80,6 @@ Kirigami.Page {
                     radius: 10
 
                     Kirigami.Icon {
-                        color: "#FFFFFF"
                         parent: callingLabel
                         anchors.bottom: parent.top
                         anchors.horizontalCenter: parent.horizontalCenter
@@ -101,8 +100,7 @@ Kirigami.Page {
                     anchors.horizontalCenter: parent.horizontalCenter
                     font.family: "Manrope"
                     font.pixelSize: 56
-                    color: "#999999"
-                    text: "8-800-555-35-35"
+                    text: ActiveCallModel.communicationWith
                 }
 
                 // alias
@@ -114,7 +112,6 @@ Kirigami.Page {
                     anchors.horizontalCenter: parent.horizontalCenter
                     font.family: "Manrope"
                     font.pixelSize: 40
-                    color: "#999999"
                     text: "Неизвестный номер"
 
                     Component.onCompleted: {
