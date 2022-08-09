@@ -120,6 +120,7 @@ Kirigami.Page {
             id: info
             Layout.fillWidth: true
             height: 1050
+            color: "#EAE9E9"
 
             Kirigami.Icon {
                 anchors.horizontalCenter: parent.horizontalCenter
