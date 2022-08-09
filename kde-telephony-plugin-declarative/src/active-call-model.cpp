@@ -140,9 +140,11 @@ void ActiveCallModel::onFetchedCallsChanged(const DialerTypes::CallDataVector &f
     _calls = fetchedCalls;
     endResetModel();
     bool active = (_calls.size() > 0);
-    // TODO (Alexander Trofimov): Set Call State to get incoming call RingingIn state if application was not launched
-    if (_calls[0].state == DialerTypes::CallState::RingingIn)
+    // TODO (Alexander Trofimov): Set Call State and communicationWith to get incoming call RingingIn state if application was not launched
+    if (_calls[0].state == DialerTypes::CallState::RingingIn) {
         setCallState(_calls[0].state);
+        setCommunicationWith(_calls[0].communicationWith);
+    }
     setActive(active);
 }
 
