@@ -194,7 +194,7 @@ void ActiveCallModel::setCallDuration(uint duration)
     Q_EMIT callDurationChanged();
 }
 
-uint ActiveCallModelQString ActiveCallModel::communicationWith() const
+QString ActiveCallModel::communicationWith() const
 {
     return _communicationWith;
 }
