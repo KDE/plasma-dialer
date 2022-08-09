@@ -70,6 +70,7 @@ Kirigami.Page {
         return colors[ch.charCodeAt(0) % 7];
     }
 
+/*
     Connections {
         target: DialerUtils
         function onMuteChanged(muted) {
@@ -79,6 +80,7 @@ Kirigami.Page {
             speakerButton.toggledOn = enabled
         }
     }
+*/
 
     ColumnLayout {
         id: activeCallUi
@@ -139,20 +141,23 @@ Kirigami.Page {
                 horizontalAlignment: Qt.AlignHCenter
                 verticalAlignment: Qt.AlignVCenter
                 font.family: "Manrope"
-                font.pixelSize: 56
+                font.pixelSize: {
+                    // If contact name is the same as phone number, then remove contact name and make phone number text bigger
+                    if (ActiveCallModel.communicationWith === ContactUtils.displayString(ActiveCallModel.communicationWith)) {
+                        return 72;
+                    } else {
+                        return 56;
+                    }
+                }
                 lineHeight: 48
                 minimumPixelSize: 56
                 maximumLineCount: 3
-                text: getPage("Dialer").pad.number
+                text: CallUtils.formatNumber(ActiveCallModel.communicationWith)
                 color: "#444444"
                 width: 620
                 height: 120
                 y: 402
                 anchors.horizontalCenter: info.horizontalCenter
-                Component.onCompleted: {
-                    contactsSearch.setFilterFixedString(getPage("Dialer").pad.number);
-                    contact.text = contactsSearch.data(contactsSearch.index(0, 0));
-                }
             }
             // contact name
             Controls.Label {
@@ -169,7 +174,14 @@ Kirigami.Page {
                 font.pixelSize: 40
                 color: "#444444"
 
-                text: ContactUtils.displayString(phone.text)
+                text: {
+                    // If contact name is the same as phone number, then remove contact name and make phone number text bigger
+                    if (ActiveCallModel.communicationWith === ContactUtils.displayString(ActiveCallModel.communicationWith)) {
+                        return '';
+                    } else {
+                        return ContactUtils.displayString(phone.text);
+                    }
+                }
                 y: 503
                 anchors.horizontalCenter: info.horizontalCenter
                 wrapMode: Text.WordWrap
