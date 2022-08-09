@@ -92,7 +92,7 @@ Kirigami.Page {
         Rectangle {
             id: info
             Layout.fillWidth: true
-            height: 690
+            height: 1050
 
             Rectangle {
                 color: getColorForContact(contact.text.substr(0, 1).toUpperCase())
@@ -195,7 +195,7 @@ Kirigami.Page {
 
             Layout.fillWidth: true
             Layout.fillHeight: true
-
+/*
             CallPageButton {
                 id: muteButton
 
@@ -284,7 +284,6 @@ Kirigami.Page {
                 visible: false
             }
 
-/*
             CallPageButton {
                 id: dialerButton
 
@@ -315,9 +314,8 @@ Kirigami.Page {
 
                 width: 404
                 height: 164
-//                x: 266
                 x: 158
-                y: 481
+                y: 137
 
                 //iconSource: ":icon-handset-hangup"
                 iconSource: ":btn-call-hangup"
