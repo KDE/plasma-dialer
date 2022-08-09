@@ -30,18 +30,42 @@ Kirigami.Page {
 
     Connections {
         target: ActiveCallModel
+
+        function onCallStateChanged() {
+            if (ActiveCallModel.callState === DialerTypes.CallState.Active ||
+                ActiveCallModel.callState === DialerTypes.CallState.Terminated) {
+                if (pageStack.layers.currentItem === getPage("Incoming")) {
+                    pageStack.layers.pop()
+                    if (ActiveCallModel.callState === DialerTypes.CallState.Active) {
+                        applicationWindow().pageStack.layers.push(getPage("Call"), 1)
+                    }
+                }
+            }
+        }
+
         function onActiveChanged() {
-            const callPage = getPage("Call")
-            if (ActiveCallModel.active) {
-                applicationWindow().pageStack.layers.push(callPage, 1)
+            if (ActiveCallModel.callState === DialerTypes.CallState.RingingIn) {
+                const incomingPage = getPage("Incoming")
+                if (ActiveCallModel.active) {
+                    applicationWindow().pageStack.layers.push(incomingPage, 1)
+                } else {
+                    if (pageStack.layers.currentItem === incomingPage) {
+                        pageStack.layers.pop()
+                    }
+                }
             } else {
-                if (pageStack.layers.currentItem === callPage) {
-                     pageStack.layers.pop()
+                const callPage = getPage("Call")
+                if (ActiveCallModel.active) {
+                    applicationWindow().pageStack.layers.push(callPage, 1)
+                } else {
+                    if (pageStack.layers.currentItem === callPage) {
+                        pageStack.layers.pop()
+                    }
                 }
             }
         }
     }
-
+    
     ColumnLayout {
         id: dialPadArea
         anchors.fill: parent

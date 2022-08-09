@@ -106,6 +106,7 @@ void ActiveCallModel::onCallAdded(const QString &deviceUni,
     Q_UNUSED(deviceUni);
     Q_UNUSED(callUni);
     _callUtils->fetchCalls();
+    setCommunicationWith(communicationWith);
 }
 
 void ActiveCallModel::onCallDeleted(const QString &deviceUni, const QString &callUni)
@@ -139,6 +140,11 @@ void ActiveCallModel::onFetchedCallsChanged(const DialerTypes::CallDataVector &f
     _calls = fetchedCalls;
     endResetModel();
     bool active = (_calls.size() > 0);
+    // TODO (Alexander Trofimov): Set Call State and communicationWith to get incoming call RingingIn state if application was not launched
+    if (_calls[0].state == DialerTypes::CallState::RingingIn) {
+        setCallState(_calls[0].state);
+        setCommunicationWith(_calls[0].communicationWith);
+    }
     setActive(active);
 }
 
@@ -186,4 +192,16 @@ void ActiveCallModel::setCallDuration(uint duration)
     _callDuration = duration;
     qDebug() << Q_FUNC_INFO;
     Q_EMIT callDurationChanged();
+}
+
+uint ActiveCallModelQString ActiveCallModel::communicationWith() const
+{
+    return _communicationWith;
+}
+
+void ActiveCallModel::setCommunicationWith(QString communicationWith)
+{
+    _communicationWith = communicationWith;
+    qDebug() << Q_FUNC_INFO;
+    Q_EMIT communicationWithChanged();
 }
