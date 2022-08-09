@@ -95,6 +95,7 @@ Kirigami.Page {
             case "Я": return ":Contact-id-33";
             default: return ":Contact-id-noname";
         }
+    }
 
 /*
     Connections {
