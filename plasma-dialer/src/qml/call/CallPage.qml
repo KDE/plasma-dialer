@@ -57,18 +57,44 @@ Kirigami.Page {
         return '' + h + ':' + m + ':' + s;
     }
 
-    function getColorForContact(ch) {
-        var colors = {
-            0: "green",
-            1: "red",
-            2: "yellow",
-            3: "blue",
-            4: "orange",
-            5: "olive",
-            6: "violet",
-        };
-        return colors[ch.charCodeAt(0) % 7];
-    }
+    function getContactIcon(name) {
+        console.log("getContactIcon", name);
+        switch (name.substr(0, 1).toUpperCase()) {
+            case "А": return ":Contact-id-1";
+            case "Б": return ":Contact-id-2";
+            case "В": return ":Contact-id-3";
+            case "Г": return ":Contact-id-4";
+            case "Д": return ":Contact-id-5";
+            case "Е": return ":Contact-id-6";
+            case "Ё": return ":Contact-id-7";
+            case "Ж": return ":Contact-id-8";
+            case "З": return ":Contact-id-9";
+            case "И": return ":Contact-id-10";
+            case "Й": return ":Contact-id-11";
+            case "К": return ":Contact-id-12";
+            case "Л": return ":Contact-id-13";
+            case "М": return ":Contact-id-14";
+            case "Н": return ":Contact-id-15";
+            case "О": return ":Contact-id-16";
+            case "П": return ":Contact-id-17";
+            case "Р": return ":Contact-id-18";
+            case "С": return ":Contact-id-19";
+            case "Т": return ":Contact-id-20";
+            case "У": return ":Contact-id-21";
+            case "Ф": return ":Contact-id-22";
+            case "Х": return ":Contact-id-23";
+            case "Ц": return ":Contact-id-24";
+            case "Ч": return ":Contact-id-25";
+            case "Ш": return ":Contact-id-26";
+            case "Щ": return ":Contact-id-27";
+            case "Ъ": return ":Contact-id-28";
+            case "Ь": return ":Contact-id-29";
+            case "Ы": return ":Contact-id-30";
+            case "Э": return ":Contact-id-31";
+            case "Ю": return ":Contact-id-32";
+            case "Я": return ":Contact-id-33";
+            default: return ":Contact-id-noname";
+        }
 
 /*
     Connections {
@@ -94,24 +120,14 @@ Kirigami.Page {
             Layout.fillWidth: true
             height: 1050
 
-            Rectangle {
-                color: getColorForContact(contact.text.substr(0, 1).toUpperCase())
+            Kirigami.Icon {
+                anchors.horizontalCenter: parent.horizontalCenter
                 y: 87
                 width: 172
                 height: 172
-
-                anchors.horizontalCenter: info.horizontalCenter
-                Controls.Label {
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    anchors.verticalCenter: parent.verticalCenter
-                    font.family: "Manrope"
-                    font.pixelSize: 120
-                    color: "#FFFFFF"
-                    text: {
-                        return contact.text.substr(0, 1).toUpperCase();
-                    }
-                }
+                source: getContactIcon(contact.text)
             }
+
             // time spent on call
             Controls.Label {
                 Layout.fillWidth: true
