@@ -326,21 +326,19 @@ Kirigami.Page {
                 }
             }
 */
-            CallPageButton {
+            Kirigami.Icon {
                 id: endCallButton
-
                 width: 404
                 height: 164
                 x: 158
                 y: 137
+                source: mouse.pressed ? ":btn-call-hangupgr" : ":btn-call-hangup"
+            }
 
-                //iconSource: ":icon-handset-hangup"
-                iconSource: ":btn-call-hangup"
-                visible: callActive
-                
-                onClicked: {
-                    CallUtils.hangUp(activeDeviceUni(), activeCallUni());
-                }
+            Controls.AbstractButton {
+                id: mouse
+                anchors.fill: endCallButton
+                onClicked: CallUtils.hangUp(activeDeviceUni(), activeCallUni())
             }
         }
     }
