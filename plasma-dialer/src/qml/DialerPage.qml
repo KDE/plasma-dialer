@@ -71,10 +71,10 @@ Kirigami.Page {
         anchors.fill: parent
         spacing: 0
 
-
         Rectangle {
             width: 720
             height: 405
+            color: "#EAE9E9"
 
             ColumnLayout {
                 RowLayout {
