@@ -112,12 +112,13 @@ Kirigami.Page {
                     anchors.horizontalCenter: parent.horizontalCenter
                     font.family: "Manrope"
                     font.pixelSize: 40
-                    text: "Неизвестный номер"
-
-                    Component.onCompleted: {
-                        contactsSearch.setFilterFixedString(numberLabel.text);
-                        if (contactsSearch.rowCount() > 0)
-                            aliasLabel.text = contactsSearch.data(contactsSearch.index(0, 0));
+                    text: {
+                        // If contact name is the same as phone number, then display "Unknown number"
+                        if (ActiveCallModel.communicationWith === ContactUtils.displayString(ActiveCallModel.communicationWith)) {
+                            return "Неизвестный номер";
+                        } else {
+                            return ContactUtils.displayString(ActiveCallModel.communicationWith);
+                        }
                     }
                 }
             } //somebody calls label
