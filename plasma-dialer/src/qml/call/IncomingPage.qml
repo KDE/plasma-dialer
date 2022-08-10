@@ -43,6 +43,46 @@ Kirigami.Page {
         filterCaseSensitivity: Qt.CaseInsensitive
     }
 
+    function getContactIcon(name) {
+        console.log("getContactIcon", name);
+        switch (name.substr(0, 1).toUpperCase()) {
+            case "А": return ":Contact-id-1";
+            case "Б": return ":Contact-id-2";
+            case "В": return ":Contact-id-3";
+            case "Г": return ":Contact-id-4";
+            case "Д": return ":Contact-id-5";
+            case "Е": return ":Contact-id-6";
+            case "Ё": return ":Contact-id-7";
+            case "Ж": return ":Contact-id-8";
+            case "З": return ":Contact-id-9";
+            case "И": return ":Contact-id-10";
+            case "Й": return ":Contact-id-11";
+            case "К": return ":Contact-id-12";
+            case "Л": return ":Contact-id-13";
+            case "М": return ":Contact-id-14";
+            case "Н": return ":Contact-id-15";
+            case "О": return ":Contact-id-16";
+            case "П": return ":Contact-id-17";
+            case "Р": return ":Contact-id-18";
+            case "С": return ":Contact-id-19";
+            case "Т": return ":Contact-id-20";
+            case "У": return ":Contact-id-21";
+            case "Ф": return ":Contact-id-22";
+            case "Х": return ":Contact-id-23";
+            case "Ц": return ":Contact-id-24";
+            case "Ч": return ":Contact-id-25";
+            case "Ш": return ":Contact-id-26";
+            case "Щ": return ":Contact-id-27";
+            case "Ъ": return ":Contact-id-28";
+            case "Ь": return ":Contact-id-29";
+            case "Ы": return ":Contact-id-30";
+            case "Э": return ":Contact-id-31";
+            case "Ю": return ":Contact-id-32";
+            case "Я": return ":Contact-id-33";
+            default: return ":Contact-id-noname";
+        }
+    }
+
     Rectangle {
         id:mainRect
         anchors.fill: parent
@@ -86,7 +126,7 @@ Kirigami.Page {
                         anchors.bottomMargin: 20
                         width: 172
                         height: 172
-                        source: ":Contact-id-noname"
+                        source: getContactIcon(ContactUtils.displayString(ActiveCallModel.communicationWith))
                     }
                 }
 
