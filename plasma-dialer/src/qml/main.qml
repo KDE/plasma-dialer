@@ -19,12 +19,8 @@ Kirigami.ApplicationWindow {
 
     wideScreen: false
     id: root
-    
-    pageStack.globalToolBar.canContainHandles: true
-    pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.ToolBar
-    pageStack.globalToolBar.showNavigationButtons: Kirigami.ApplicationHeaderStyle.ShowBackButton;
-    
-    title: i18n("Phone")
+
+    pageStack.globalToolBar.preferredHeight : 0
 
     contextDrawer: Kirigami.ContextDrawer {}
 
