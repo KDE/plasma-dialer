@@ -30,8 +30,17 @@
         <file alias="btn-sharpgr">icons/btn-sharpgr.png</file>
         <file alias="btn-star">icons/btn-star.png</file>
         <file alias="btn-stargr">icons/btn-stargr.png</file>
+        <file alias="btn-recgr">icons/btn-recgr.png</file>
+        <file alias="btn-contrecent">icons/btn-contrecent.png</file>
+        <file alias="btn-dialercontact-all">icons/btn-dialercontact-all.png</file>
+        <file alias="btn-contrecent-notpressed">icons/btn-contrecent-notpressed.png</file> 
+        <file alias="btn-dialercontact-all-pressed">icons/btn-dialercontact-all-pressed.png</file>
+        
         <file alias="icon-clear">icons/icon-clear.png</file>
         <file alias="icon-plus">icons/icon-plus.png</file>
+        <file alias="icon-call-missed">icons/icon-call-missed.png</file>
+        <file alias="icon-call-received">icons/icon-call-received.png</file>
+
         <file alias="Contact-id-1">icons/Contact-id-1.png</file>
         <file alias="Contact-id-2">icons/Contact-id-2.png</file>
         <file alias="Contact-id-3">icons/Contact-id-3.png</file>
@@ -67,7 +76,7 @@
         <file alias="Contact-id-33">icons/Contact-id-33.png</file>
         <file alias="Contact-id-add">icons/Contact-id-add.png</file>
         <file alias="Contact-id-noname">icons/Contact-id-noname.png</file>
-
+        
         <file alias="btn-mic-on">icons/btn-mic-on.png</file>
         <file alias="btn-mic-off">icons/btn-mic-off.png</file>
         <file alias="btn-vol">icons/btn-vol.png</file>
