@@ -365,7 +365,12 @@ CallObject *ModemManagerController::_voiceCallObject(const QSharedPointer<ModemM
     callObject->setProtocol(QStringLiteral("tel"));
     callObject->setProvider(device->sim()->operatorIdentifier());
     callObject->setAccount(device->sim()->simIdentifier());
-    callObject->setCommunicationWith(call->number());
+    // TODO (Alexander Trofimov): Hack to add + to incoming calls starting from 7
+    if (call->number().front() == QStringLiteral("7")  && static_cast<DialerTypes::CallDirection>(call->direction()) == DialerTypes::CallDirection::Incoming) {
+        callObject->setCommunicationWith(QStringLiteral("+") + call->number());
+    } else {
+        callObject->setCommunicationWith(call->number());
+    }
     callObject->setDirection(static_cast<DialerTypes::CallDirection>(call->direction()));
     callObject->setState(static_cast<DialerTypes::CallState>(call->state()));
     callObject->setStateReason(static_cast<DialerTypes::CallStateReason>(call->stateReason()));
