@@ -44,8 +44,8 @@ if (DIALER_BUILD_SHELL_OVERLAY)
     )
 
     ecm_add_qtwayland_client_protocol(plasmaphonedialer
-        PROTOCOL ${PLASMA_WAYLAND_PROTOCOLS_DIR}/kde-lockscreenallowed-v1.xml
-        BASENAME kde-lockscreenallowed-v1
+        PROTOCOL ${PLASMA_WAYLAND_PROTOCOLS_DIR}/kde-lockscreen-overlay-v1.xml
+        BASENAME kde-lockscreen-overlay-v1
     )
 endif() # DIALER_BUILD_SHELL_OVERLAY
 

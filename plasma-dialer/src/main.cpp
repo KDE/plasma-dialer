@@ -20,7 +20,7 @@
 #include <QtQml>
 
 #ifdef DIALER_BUILD_SHELL_OVERLAY
-#include "qwayland-kde-lockscreenallowed-v1.h"
+#include "qwayland-kde-lockscreen-overlay-v1.h"
 #include <QDBusConnection>
 #include <QDBusMessage>
 #include <QDBusReply>
@@ -65,7 +65,7 @@ public:
 Q_DECLARE_METATYPE(ScreenSaverUtils)
 
 #ifdef DIALER_BUILD_SHELL_OVERLAY
-class WaylandAboveLockscreen : public QWaylandClientExtensionTemplate<WaylandAboveLockscreen>, public QtWayland::kde_lockscreenallowed_v1
+class WaylandAboveLockscreen : public QWaylandClientExtensionTemplate<WaylandAboveLockscreen>, public QtWayland::kde_lockscreen_overlay_v1
 {
 public:
     WaylandAboveLockscreen()
