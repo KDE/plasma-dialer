@@ -23,6 +23,7 @@ SPDX-License-Identifier: CC0-1.0
   <name xml:lang="ka">ტელეფონი</name>
   <name xml:lang="ko">전화</name>
   <name xml:lang="nl">Telefoon</name>
+  <name xml:lang="nn">Telefon</name>
   <name xml:lang="pl">Telefon</name>
   <name xml:lang="pt">Telefone</name>
   <name xml:lang="pt-BR">Celular</name>
@@ -53,6 +54,7 @@ SPDX-License-Identifier: CC0-1.0
   <summary xml:lang="ka">სატელეფონო ზარების განხორციელება</summary>
   <summary xml:lang="ko">전화 걸고 받기</summary>
   <summary xml:lang="nl">Telefoonoproepen verzenden en ontvangen</summary>
+  <summary xml:lang="nn">Send og ta imot telefonsamtalar</summary>
   <summary xml:lang="pl">Nawiązuj rozmowy telefoniczne</summary>
   <summary xml:lang="pt">Enviar a receber chamadas telefónicas</summary>
   <summary xml:lang="pt-BR">Enviar e receber chamadas telefônicas</summary>
@@ -84,6 +86,7 @@ SPDX-License-Identifier: CC0-1.0
   <developer_name xml:lang="ka">KDE Community</developer_name>
   <developer_name xml:lang="ko">KDE 커뮤니티</developer_name>
   <developer_name xml:lang="nl">KDE-gemeenschap</developer_name>
+  <developer_name xml:lang="nn">KDE-fellesskapet</developer_name>
   <developer_name xml:lang="pl">Społeczność KDE</developer_name>
   <developer_name xml:lang="pt">Comunidade do KDE</developer_name>
   <developer_name xml:lang="pt-BR">Comunidade KDE</developer_name>
@@ -147,6 +150,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="ka">თვისებები:</p>
     <p xml:lang="ko">기능:</p>
     <p xml:lang="nl">Mogelijkheden:</p>
+    <p xml:lang="nn">Funksjonar:</p>
     <p xml:lang="pl">Możliwości:</p>
     <p xml:lang="pt">Funcionalidades:</p>
     <p xml:lang="pt-BR">Funcionalidades:</p>
