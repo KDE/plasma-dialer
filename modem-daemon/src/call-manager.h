@@ -5,6 +5,9 @@
 
 #pragma once
 
+#include <optional>
+
+#include <QDBusUnixFileDescriptor>
 #include <QObject>
 #include <kTelephonyMetaTypes/dialer-types.h>
 
@@ -39,4 +42,6 @@ private Q_SLOTS:
 private:
     ModemController *_modemController;
     CallUtils *_callUtils;
+
+    std::optional<QDBusUnixFileDescriptor> m_inhibitSleepFd;
 };

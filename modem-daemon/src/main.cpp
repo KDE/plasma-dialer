@@ -24,6 +24,7 @@ int main(int argc, char **argv)
 
     app.setApplicationVersion(QStringLiteral(PLASMADIALER_VERSION_STRING));
     app.setOrganizationDomain(QStringLiteral("kde.org"));
+    app.setApplicationName(QStringLiteral("modem-daemon"));
 
     ModemManagerController modemController;
     DialerTypes::registerMetaTypes();

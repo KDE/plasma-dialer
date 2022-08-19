@@ -2,6 +2,11 @@
 #
 # SPDX-License-Identifier: LicenseRef-KDE-Accepted-GPL
 
+include(ECMPoQmTools)
+ecm_install_po_files_as_qm(po)
+
+ecm_create_qm_loader(modem-daemon_QM_LOADER modem-daemon_qt)
+
 set(modemd_SRCS
     main.cpp
     call-history-database.cpp
@@ -15,6 +20,7 @@ set(modemd_SRCS
     device-manager.cpp
     modem-controller.cpp
     mm-modem-controller.cpp
+    ${modem-daemon_QM_LOADER}
     )
 
 find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED Core Gui DBus Sql)

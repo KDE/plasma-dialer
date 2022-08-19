@@ -5,10 +5,12 @@
 
 #include "call-manager.h"
 
+#include <QCoreApplication>
 #include <QDBusConnection>
-#include <QDBusMessage>
+#include <QDBusInterface>
+#include <QDBusReply>
 #include <QDebug>
-#include <optional>
+#include <QStringLiteral>
 
 #include "call-utils.h"
 #include "modem-controller.h"
@@ -55,6 +57,61 @@ void CallManager::onCallStateChanged(const QString &deviceUni,
 {
     qDebug() << "new call state:" << deviceUni << callUni << callDirection << callState << callStateReason;
     Q_EMIT _callUtils->callStateChanged(deviceUni, callUni, callDirection, callState, callStateReason);
+
+    // Add inhibition in logind when call is active.
+    // Otherwise if powerdevil is configured to suspend device afer few minutes,
+    // it will happily put it to suspend, freezing calls.
+    //
+    // For XDG spec, see also:
+    // https://gitlab.freedesktop.org/xdg/xdg-specs/-/issues/99
+    //
+    // For Solid support state, see also:
+    // https://invent.kde.org/frameworks/solid/-/blob/79bdd41abcd479f486976596fcca40b388caa9b2/CMakeLists.txt#L97-L104
+    switch (callState) {
+    case DialerTypes::CallState::Active: {
+        qDebug() << "logind sleep inhibitor: starting";
+
+        if (m_inhibitSleepFd) {
+            qDebug() << "logind sleep inhibitor: already inhibited";
+            break;
+        }
+
+        auto bus = QDBusConnection::systemBus();
+
+        if (!bus.isConnected()) {
+            qDebug() << "logind sleep inhibitor: error: D-Bus system bus is not connected";
+            break;
+        }
+
+        QDBusMessage sleepInhibitCall = QDBusMessage::createMethodCall(QStringLiteral("org.freedesktop.login1"),
+                                                                       QStringLiteral("/org/freedesktop/login1"),
+                                                                       QStringLiteral("org.freedesktop.login1.Manager"),
+                                                                       QStringLiteral("Inhibit"));
+        sleepInhibitCall.setArguments(
+            {QStringLiteral("sleep"), QCoreApplication::instance()->applicationName(), tr("Active call inhibits system suspend"), QStringLiteral("block")});
+        QDBusReply<QDBusUnixFileDescriptor> reply = bus.call(sleepInhibitCall);
+
+        if (!reply.isValid()) {
+            qDebug() << "logind sleep inhibitor: error: call failed";
+            break;
+        }
+
+        auto const fd = reply.value();
+        if (!fd.isValid()) {
+            qDebug() << "logind sleep inhibitor: error: call returned an invalid file descriptor";
+            break;
+        }
+        m_inhibitSleepFd = fd;
+        qDebug() << "logind sleep inhibitor: success";
+        break;
+    }
+    case DialerTypes::CallState::Terminated:
+        m_inhibitSleepFd.reset();
+        qDebug() << "logind sleep inhibitor: turned off";
+        break;
+    default:
+        break;
+    }
 }
 
 void CallManager::onCreatedCall(const QString &deviceUni, const QString &callUni)
