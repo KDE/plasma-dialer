@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-07-02 00:51+0000\n"
+"POT-Creation-Date: 2022-08-20 00:47+0000\n"
 "PO-Revision-Date: 2022-02-12 16:03+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -28,12 +28,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "lukasz.wojnilowicz@gmail.com"
 
-#: src/main.cpp:57 src/qml/components/Sidebar.qml:34 src/qml/main.qml:31
+#: src/main.cpp:103 src/qml/components/Sidebar.qml:34 src/qml/main.qml:32
 #, kde-format
 msgid "Phone"
 msgstr "Telefon"
 
-#: src/main.cpp:57
+#: src/main.cpp:103
 #, kde-format
 msgid "Plasma phone dialer"
 msgstr "Wybieranie numerów telefonicznych Plazmy"
@@ -73,41 +73,41 @@ msgstr "Widok"
 msgid "History"
 msgstr "Historia"
 
-#: src/qml/components/BottomToolbar.qml:92 src/qml/components/Sidebar.qml:65
+#: src/qml/components/BottomToolbar.qml:93 src/qml/components/Sidebar.qml:66
 #: src/qml/ContactsPage.qml:18
 #, kde-format
 msgid "Contacts"
 msgstr "Kontakty"
 
-#: src/qml/components/BottomToolbar.qml:103 src/qml/components/Sidebar.qml:82
+#: src/qml/components/BottomToolbar.qml:105 src/qml/components/Sidebar.qml:84
 #: src/qml/DialerPage.qml:24
 #, kde-format
 msgid "Dialer"
 msgstr "Wybieranie numerów"
 
-#: src/qml/components/Sidebar.qml:105 src/qml/ContactsPage.qml:25
-#: src/qml/DialerPage.qml:50 src/qml/HistoryPage.qml:36
+#: src/qml/components/Sidebar.qml:107 src/qml/ContactsPage.qml:26
+#: src/qml/DialerPage.qml:54 src/qml/HistoryPage.qml:37
 #: src/qml/SettingsPage.qml:15
 #, kde-format
 msgid "Settings"
 msgstr "Ustawienia"
 
-#: src/qml/ContactsPage.qml:83
+#: src/qml/ContactsPage.qml:84
 #, kde-format
 msgid "Select number to call"
 msgstr "Wybierz numer, na który zadzwonić"
 
-#: src/qml/ContactsPage.qml:92
+#: src/qml/ContactsPage.qml:93
 #, kde-format
 msgid "No contacts have a phone number set"
 msgstr "Żaden z kontaktów nie ma ustawionego numeru telefonu"
 
-#: src/qml/DialerPage.qml:63
+#: src/qml/DialerPage.qml:67
 #, kde-format
 msgid "Modem devices are not found"
 msgstr "Nie znaleziono żadnego urządzenia modemu"
 
-#: src/qml/DialerPage.qml:72
+#: src/qml/DialerPage.qml:76
 #, kde-format
 msgid "Voicemail number couldn't be found"
 msgstr "Nie można znaleźć numeru automatycznej sekretarki"
@@ -127,7 +127,7 @@ msgstr "Historia połączeń"
 msgid "Clear history"
 msgstr "Wyczyść historię"
 
-#: src/qml/HistoryPage.qml:53
+#: src/qml/HistoryPage.qml:54
 #, kde-format
 msgid "No recent calls"
 msgstr "Brak niedawnych połączeń"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-07-02 00:51+0000\n"
+"POT-Creation-Date: 2022-08-20 00:47+0000\n"
 "PO-Revision-Date: 2022-08-13 03:53\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -27,12 +27,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "tysontan@tysontan.com"
 
-#: src/main.cpp:57 src/qml/components/Sidebar.qml:34 src/qml/main.qml:31
+#: src/main.cpp:103 src/qml/components/Sidebar.qml:34 src/qml/main.qml:32
 #, kde-format
 msgid "Phone"
 msgstr "电话"
 
-#: src/main.cpp:57
+#: src/main.cpp:103
 #, kde-format
 msgid "Plasma phone dialer"
 msgstr "Plasma 手机拨号器"
@@ -72,41 +72,41 @@ msgstr "查看"
 msgid "History"
 msgstr "历史记录"
 
-#: src/qml/components/BottomToolbar.qml:92 src/qml/components/Sidebar.qml:65
+#: src/qml/components/BottomToolbar.qml:93 src/qml/components/Sidebar.qml:66
 #: src/qml/ContactsPage.qml:18
 #, kde-format
 msgid "Contacts"
 msgstr "联系人"
 
-#: src/qml/components/BottomToolbar.qml:103 src/qml/components/Sidebar.qml:82
+#: src/qml/components/BottomToolbar.qml:105 src/qml/components/Sidebar.qml:84
 #: src/qml/DialerPage.qml:24
 #, kde-format
 msgid "Dialer"
 msgstr "拨号器"
 
-#: src/qml/components/Sidebar.qml:105 src/qml/ContactsPage.qml:25
-#: src/qml/DialerPage.qml:50 src/qml/HistoryPage.qml:36
+#: src/qml/components/Sidebar.qml:107 src/qml/ContactsPage.qml:26
+#: src/qml/DialerPage.qml:54 src/qml/HistoryPage.qml:37
 #: src/qml/SettingsPage.qml:15
 #, kde-format
 msgid "Settings"
 msgstr "设置"
 
-#: src/qml/ContactsPage.qml:83
+#: src/qml/ContactsPage.qml:84
 #, kde-format
 msgid "Select number to call"
 msgstr "选择要拨打的号码"
 
-#: src/qml/ContactsPage.qml:92
+#: src/qml/ContactsPage.qml:93
 #, kde-format
 msgid "No contacts have a phone number set"
 msgstr "没有已设置电话号码的联系人"
 
-#: src/qml/DialerPage.qml:63
+#: src/qml/DialerPage.qml:67
 #, kde-format
 msgid "Modem devices are not found"
 msgstr "未找到调制解调器设备"
 
-#: src/qml/DialerPage.qml:72
+#: src/qml/DialerPage.qml:76
 #, kde-format
 msgid "Voicemail number couldn't be found"
 msgstr "无法找到语音信箱号码"
@@ -126,7 +126,7 @@ msgstr "通话记录"
 msgid "Clear history"
 msgstr "清除记录"
 
-#: src/qml/HistoryPage.qml:53
+#: src/qml/HistoryPage.qml:54
 #, kde-format
 msgid "No recent calls"
 msgstr "无最近通话"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-07-02 00:51+0000\n"
+"POT-Creation-Date: 2022-08-20 00:47+0000\n"
 "PO-Revision-Date: 2022-02-04 16:31+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian\n"
@@ -28,12 +28,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "sergiu@cip.md"
 
-#: src/main.cpp:57 src/qml/components/Sidebar.qml:34 src/qml/main.qml:31
+#: src/main.cpp:103 src/qml/components/Sidebar.qml:34 src/qml/main.qml:32
 #, kde-format
 msgid "Phone"
 msgstr "Telefon"
 
-#: src/main.cpp:57
+#: src/main.cpp:103
 #, kde-format
 msgid "Plasma phone dialer"
 msgstr "Apelator telefonic Plasma"
@@ -73,41 +73,41 @@ msgstr "Vezi"
 msgid "History"
 msgstr "Istoric"
 
-#: src/qml/components/BottomToolbar.qml:92 src/qml/components/Sidebar.qml:65
+#: src/qml/components/BottomToolbar.qml:93 src/qml/components/Sidebar.qml:66
 #: src/qml/ContactsPage.qml:18
 #, kde-format
 msgid "Contacts"
 msgstr "Contacte"
 
-#: src/qml/components/BottomToolbar.qml:103 src/qml/components/Sidebar.qml:82
+#: src/qml/components/BottomToolbar.qml:105 src/qml/components/Sidebar.qml:84
 #: src/qml/DialerPage.qml:24
 #, kde-format
 msgid "Dialer"
 msgstr "Apelator"
 
-#: src/qml/components/Sidebar.qml:105 src/qml/ContactsPage.qml:25
-#: src/qml/DialerPage.qml:50 src/qml/HistoryPage.qml:36
+#: src/qml/components/Sidebar.qml:107 src/qml/ContactsPage.qml:26
+#: src/qml/DialerPage.qml:54 src/qml/HistoryPage.qml:37
 #: src/qml/SettingsPage.qml:15
 #, kde-format
 msgid "Settings"
 msgstr "Configurări"
 
-#: src/qml/ContactsPage.qml:83
+#: src/qml/ContactsPage.qml:84
 #, kde-format
 msgid "Select number to call"
 msgstr "Alegeți numărul de apelat"
 
-#: src/qml/ContactsPage.qml:92
+#: src/qml/ContactsPage.qml:93
 #, kde-format
 msgid "No contacts have a phone number set"
 msgstr "Niciun contact nu are număr de telefon înregistrat"
 
-#: src/qml/DialerPage.qml:63
+#: src/qml/DialerPage.qml:67
 #, kde-format
 msgid "Modem devices are not found"
 msgstr "Dispozitivele modem nu sunt găsite"
 
-#: src/qml/DialerPage.qml:72
+#: src/qml/DialerPage.qml:76
 #, kde-format
 msgid "Voicemail number couldn't be found"
 msgstr "Numărul mesageriei vocale nu a fost găsit"
@@ -127,7 +127,7 @@ msgstr "Istoric apeluri"
 msgid "Clear history"
 msgstr "Șterge istoricul"
 
-#: src/qml/HistoryPage.qml:53
+#: src/qml/HistoryPage.qml:54
 #, kde-format
 msgid "No recent calls"
 msgstr "Niciun apel recent"
