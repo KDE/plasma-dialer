@@ -48,7 +48,6 @@ target_include_directories(kde-telephony-daemon PRIVATE ${CMAKE_BINARY_DIR})
 target_link_libraries(kde-telephony-daemon
     Qt5::Core
     Qt5::DBus
-    Qt5::Feedback
     KF5::I18n
     KF5::KIOGui
     KF5::Notifications
@@ -58,6 +57,13 @@ target_link_libraries(kde-telephony-daemon
     ktelephonymetatypes # FIXME: KF5 cmake files
     contactphonenumbermapper
     )
+
+if (Qt5Feedback_FOUND)
+    target_link_libraries(kde-telephony-daemon Qt5::Feedback)
+    target_compile_definitions(kde-telephony-daemon PUBLIC HAVE_QT5_FEEDBACK)
+else()
+    message(WARNING "Qt Feedback dependency is not found. While it is optional since unmaintained, haptics feedback functionality is not supported without it.")
+endif()
 
 configure_file(daemon-autostart.desktop.in ${CMAKE_CURRENT_BINARY_DIR}/daemon-autostart.desktop)
 

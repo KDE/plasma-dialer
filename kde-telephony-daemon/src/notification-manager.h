@@ -6,7 +6,9 @@
 
 #include <KNotification>
 #include <MprisQt/MprisManager>
+#ifdef HAVE_QT5_FEEDBACK
 #include <QtFeedback/QFeedbackEffect>
+#endif // HAVE_QT5_FEEDBACK
 
 #include "callutilsinterface.h"
 #include "contact-utils.h"
@@ -53,7 +55,9 @@ private:
     org::kde::telephony::CallUtils *_callUtils;
     ContactUtils *_contactUtils;
 
+#ifdef HAVE_QT5_FEEDBACK
     std::unique_ptr<QFeedbackHapticsEffect> _ringEffect;
+#endif // HAVE_QT5_FEEDBACK
 
     MprisManager _mprisManager;
     QSet<QString> _pausedSources;

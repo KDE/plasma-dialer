@@ -51,9 +51,12 @@ static void launchPlasmaDialerDesktopFile()
 
 NotificationManager::NotificationManager(QObject *parent)
     : QObject(parent)
+#ifdef HAVE_QT5_FEEDBACK
     , _ringEffect(std::make_unique<QFeedbackHapticsEffect>())
+#endif // HAVE_QT5_FEEDBACK
     , _mprisManager(this)
 {
+#ifdef HAVE_QT5_FEEDBACK
     _ringEffect->setAttackIntensity(0.1);
     _ringEffect->setAttackTime(420);
     _ringEffect->setIntensity(0.7);
@@ -61,6 +64,7 @@ NotificationManager::NotificationManager(QObject *parent)
     _ringEffect->setFadeTime(700);
     _ringEffect->setFadeIntensity(0.07);
     _ringEffect->setPeriod(1300);
+#endif // HAVE_QT5_FEEDBACK
 }
 
 void NotificationManager::setCallUtils(org::kde::telephony::CallUtils *callUtils)
@@ -88,7 +92,9 @@ void NotificationManager::onCallAdded(const QString &deviceUni,
     qDebug() << Q_FUNC_INFO << "call added" << deviceUni << callUni << callDirection << callState << callStateReason << communicationWith;
     if (callDirection == DialerTypes::CallDirection::Incoming) {
         if (callState == DialerTypes::CallState::RingingIn) {
+#ifdef HAVE_QT5_FEEDBACK
             _ringEffect->start();
+#endif // HAVE_QT5_FEEDBACK
             handleIncomingCall(deviceUni, callUni, communicationWith);
         }
     }
@@ -97,7 +103,9 @@ void NotificationManager::onCallAdded(const QString &deviceUni,
 void NotificationManager::onCallDeleted(const QString &deviceUni, const QString &callUni)
 {
     qDebug() << Q_FUNC_INFO << "call deleted" << deviceUni << callUni;
+#ifdef HAVE_QT5_FEEDBACK
     _ringEffect->stop();
+#endif // HAVE_QT5_FEEDBACK
     closeRingingNotification();
 }
 
