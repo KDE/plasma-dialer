@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2022 Alexey Andreyev <aa13q@ya.ru>
+#
+# SPDX-License-Identifier: LicenseRef-KDE-Accepted-GPL
+
 add_executable(plasmaphonedialer
     main.cpp
     resources.qrc   

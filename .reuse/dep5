@@ -1,0 +1,55 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Plasma Dialer
+Upstream-Contact: Alexey Andreyev <aa13q@ya.ru>
+
+Files: logo.png plasma-dialer/dialer.svg
+Copyright: 2020 =?UTF-8?q?Mathis=20Br=C3=BCchert?= <mbb-mail@gmx.de>
+License: CC0-1.0
+
+Files: */qmldir .gitignore
+Copyright: None
+License: CC0-1.0
+
+FILES: .git-blame-ignore-revs
+Copyright: None
+License: CC0-1.0
+
+Files: po/*
+Copyright: KDE Translation Contributors <kde-i18n-doc@kde.org>
+License: CC0-1.0
+
+Files: *Messages.sh
+Copyright: KDE Translation Contributors <kde-i18n-doc@kde.org>
+License: BSD-3-Clause
+
+Files: *README.md
+Copyright: Alexey Andreyev <aa13q@ya.ru>
+License: CC0-1.0
+
+Files: plasma-dialer/src/resources.qrc
+Copyright: None
+License: CC0-1.0
+
+Files: *.desktop*
+Copyright: None
+License: BSD-3-Clause
+
+Files: *.service.in
+Copyright: None
+License: BSD-3-Clause
+
+Files: plasma-dialer/src/config.kcfg plasma-dialer/src/config.kcfgc
+Copyright: None
+License: BSD-3-Clause
+
+Files: plasma-dialer/src/plasma_dialer.notifyrc
+Copyright: 2015 Marco Martin <notmart@gmail.com>
+License: BSD-3-Clause
+
+Files: kde-telephony-meta/dbus-xmls/manual/org.kde.telephony*
+Copyright: Alexey Andreyev <aa13q@ya.ru>
+License: BSD-3-Clause
+
+Files: kde-telephony-meta/dbus-xmls/manual/org.mpris.MediaPlayer2.Player.xml
+Copyright: 1991, 1999 Free Software Foundation, Inc
+License: LGPL-2.1-or-later

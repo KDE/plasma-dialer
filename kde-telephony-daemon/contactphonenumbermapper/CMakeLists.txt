@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2018 Volker Krause <vkrause@kde.org>
+# SPDX-FileCopyrightText: 2022 Alexey Andreyev <aa13q@ya.ru>
+#
+# SPDX-License-Identifier: LicenseRef-KDE-Accepted-GPL
+
 find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED Core Quick)
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Contacts People ModemManagerQt)
 find_package(PhoneNumber COMPONENTS PhoneNumber REQUIRED)
