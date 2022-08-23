@@ -195,5 +195,5 @@ Action=Popup|Sound
 Sound=Oxygen-Im-Phone-Ring.ogg
 
 [Event/ringing-silent]
-Name=Ringing-slient
+Name=Ringing-silent
 Action=Popup
