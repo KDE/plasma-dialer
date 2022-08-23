@@ -18,20 +18,24 @@
 
 #include "mprisplayerinterface.h"
 
-static void enable_callmode()
+static void enable_call_mode()
 {
-    GError *err = nullptr;
-    if (!call_audio_select_mode(CALL_AUDIO_MODE_CALL, &err)) {
-        qWarning() << "Failed to set call mode to earpiece";
-    }
+    call_audio_select_mode_async(CALL_AUDIO_MODE_CALL, nullptr, nullptr);
 }
 
-static void enable_normal()
+static void enable_default_mode()
 {
-    GError *err = nullptr;
-    if (!call_audio_select_mode(CALL_AUDIO_MODE_DEFAULT, &err)) {
-        qWarning() << "Failed to set default callaudio mode";
-    }
+    call_audio_select_mode_async(CALL_AUDIO_MODE_DEFAULT, nullptr, nullptr);
+}
+
+static void mute_mic(bool want_mute)
+{
+    call_audio_mute_mic_async(want_mute, nullptr, nullptr);
+}
+
+static void enable_speaker(bool want_speaker)
+{
+    call_audio_enable_speaker_async(want_speaker, nullptr, nullptr);
 }
 
 DialerManager::DialerManager(QObject *parent)
@@ -45,7 +49,7 @@ DialerManager::DialerManager(QObject *parent)
 
 DialerManager::~DialerManager()
 {
-    enable_normal();
+    enable_default_mode();
     call_audio_deinit();
     qDebug() << "Deleting DialerManager";
 }
@@ -114,10 +118,10 @@ void DialerManager::onCallStateChanged(const QString &deviceUni,
     qDebug() << Q_FUNC_INFO << "new call state:" << callState;
     switch (callState) {
     case DialerTypes::CallState::Active:
-        enable_callmode();
+        enable_call_mode();
         break;
     case DialerTypes::CallState::Terminated:
-        enable_normal();
+        enable_default_mode();
         break;
     default:
         break;
@@ -138,18 +142,12 @@ void DialerManager::onMuteFetched()
 
 void DialerManager::onSetSpeakerModeRequested(bool enabled)
 {
-    GError *err = nullptr;
-    if (!call_audio_enable_speaker(enabled, &err)) {
-        qWarning() << "Failed to set speaker mode" << enabled;
-    }
+    enable_speaker(enabled);
 }
 
 void DialerManager::onSetMuteRequested(bool muted)
 {
-    GError *err = nullptr;
-    if (!call_audio_mute_mic(muted, &err)) {
-        qWarning() << "Failed to set mute mode" << muted;
-    }
+    mute_mic(muted);
 }
 
 void DialerManager::pauseMedia()
