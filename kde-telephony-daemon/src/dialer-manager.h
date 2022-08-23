@@ -47,6 +47,8 @@ private:
     org::kde::telephony::CallUtils *_callUtils;
     DialerUtils *_dialerUtils;
     QSet<QString> _pausedSources;
+
+    bool _needsDefaultAudioMode;
 };
 
 #endif // CALL_MANAGER_H

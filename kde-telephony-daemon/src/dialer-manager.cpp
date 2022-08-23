@@ -40,6 +40,7 @@ static void enable_speaker(bool want_speaker)
 
 DialerManager::DialerManager(QObject *parent)
     : QObject(parent)
+    , _needsDefaultAudioMode(false)
 {
     GError *err = nullptr;
     if (!call_audio_init(&err)) {
@@ -119,9 +120,14 @@ void DialerManager::onCallStateChanged(const QString &deviceUni,
     switch (callState) {
     case DialerTypes::CallState::Active:
         enable_call_mode();
+        _needsDefaultAudioMode = true;
         break;
     case DialerTypes::CallState::Terminated:
-        enable_default_mode();
+        if (_needsDefaultAudioMode) {
+            enable_default_mode();
+            _needsDefaultAudioMode = false;
+        }
+
         break;
     default:
         break;
