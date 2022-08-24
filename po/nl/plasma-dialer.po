@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-23 00:48+0000\n"
-"PO-Revision-Date: 2022-01-25 11:49+0100\n"
+"POT-Creation-Date: 2022-08-24 00:49+0000\n"
+"PO-Revision-Date: 2022-08-23 16:13+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.1\n"
+"X-Generator: Lokalize 22.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -36,6 +36,11 @@ msgstr "Telefoon"
 #, kde-format
 msgid "Plasma phone dialer"
 msgstr "Telefoonkiezer van Plasma"
+
+#: src/qml/call/AnswerSwipe.qml:80
+#, kde-format
+msgid "Swipe right to accept"
+msgstr ""
 
 #: src/qml/call/CallPage.qml:32 src/qml/call/InCallInlineMessage.qml:14
 #, kde-format
@@ -146,67 +151,67 @@ msgstr "Geen IMEI's gevonden"
 #: src/qml/SettingsPage.qml:46
 #, kde-format
 msgid "Adaptive blocking"
-msgstr ""
+msgstr "Aanpasbare blokkering"
 
 #: src/qml/SettingsPage.qml:52
 #, kde-format
 msgid "Ignore calls from unknown numbers"
-msgstr ""
+msgstr "Oproepen van onbekende nummers negeren"
 
 #: src/qml/SettingsPage.qml:65
 #, kde-format
 msgid "Immediately hang up"
-msgstr ""
+msgstr "Onmiddellijk ophangen"
 
 #: src/qml/SettingsPage.qml:70
 #, kde-format
 msgid "Ring without notification"
-msgstr ""
+msgstr "Bel laten klinken zonder melding"
 
 #: src/qml/SettingsPage.qml:75
 #, kde-format
 msgid "Ring with silent notification"
-msgstr ""
+msgstr "Bel laten klinken met stille melding"
 
 #: src/qml/SettingsPage.qml:83
 #, kde-format
 msgid "Allowed exceptions"
-msgstr ""
+msgstr "Uitzonderingen toegestaan"
 
 #: src/qml/SettingsPage.qml:94
 #, kde-format
 msgid "Anonymous numbers"
-msgstr ""
+msgstr "Anonieme nummers"
 
 #: src/qml/SettingsPage.qml:101
 #, kde-format
 msgid "Existing outgoing call to number"
-msgstr ""
+msgstr "Bestaande uitgaande oproep naar nummer"
 
 #: src/qml/SettingsPage.qml:111
 #, kde-format
 msgid "Callback within"
-msgstr ""
+msgstr "Terugbellen binnen"
 
 #: src/qml/SettingsPage.qml:126
 #, kde-format
 msgid "minutes"
-msgstr ""
+msgstr "minuten"
 
 #: src/qml/SettingsPage.qml:136
 #, kde-format
 msgid "Numbers matching a pattern:"
-msgstr ""
+msgstr "Nummers overeenkomend met een patroon:"
 
 #: src/qml/SettingsPage.qml:150 src/qml/SettingsPage.qml:171
 #, kde-format
 msgid "Add new pattern"
-msgstr ""
+msgstr "Nieuwe patronen toevoegen"
 
 #: src/qml/SettingsPage.qml:193
 #, kde-format
 msgid "Other"
-msgstr ""
+msgstr "Overig"
 
 #: src/qml/SettingsPage.qml:197
 #, kde-format

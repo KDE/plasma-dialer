@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-23 00:48+0000\n"
-"PO-Revision-Date: 2022-01-25 08:41+0200\n"
+"POT-Creation-Date: 2022-08-24 00:49+0000\n"
+"PO-Revision-Date: 2022-08-23 17:15+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -39,6 +39,11 @@ msgstr "Телефон"
 #, kde-format
 msgid "Plasma phone dialer"
 msgstr "Засіб набирання номеру Плазми"
+
+#: src/qml/call/AnswerSwipe.qml:80
+#, kde-format
+msgid "Swipe right to accept"
+msgstr ""
 
 #: src/qml/call/CallPage.qml:32 src/qml/call/InCallInlineMessage.qml:14
 #, kde-format
@@ -151,67 +156,67 @@ msgstr "Записів IMEI не знайдено"
 #: src/qml/SettingsPage.qml:46
 #, kde-format
 msgid "Adaptive blocking"
-msgstr ""
+msgstr "Адаптивне блокування"
 
 #: src/qml/SettingsPage.qml:52
 #, kde-format
 msgid "Ignore calls from unknown numbers"
-msgstr ""
+msgstr "Ігнорувати дзвінки з невідомих номерів"
 
 #: src/qml/SettingsPage.qml:65
 #, kde-format
 msgid "Immediately hang up"
-msgstr ""
+msgstr "Негайно відповідати на дзвінок"
 
 #: src/qml/SettingsPage.qml:70
 #, kde-format
 msgid "Ring without notification"
-msgstr ""
+msgstr "Дзвінок без сповіщення"
 
 #: src/qml/SettingsPage.qml:75
 #, kde-format
 msgid "Ring with silent notification"
-msgstr ""
+msgstr "Дзвінок із сповіщенням без звуку"
 
 #: src/qml/SettingsPage.qml:83
 #, kde-format
 msgid "Allowed exceptions"
-msgstr ""
+msgstr "Дозволені виключення"
 
 #: src/qml/SettingsPage.qml:94
 #, kde-format
 msgid "Anonymous numbers"
-msgstr ""
+msgstr "Анонімні номери"
 
 #: src/qml/SettingsPage.qml:101
 #, kde-format
 msgid "Existing outgoing call to number"
-msgstr ""
+msgstr "Наявний вихідний дзвінок на номер"
 
 #: src/qml/SettingsPage.qml:111
 #, kde-format
 msgid "Callback within"
-msgstr ""
+msgstr "Зворотний виклик за"
 
 #: src/qml/SettingsPage.qml:126
 #, kde-format
 msgid "minutes"
-msgstr ""
+msgstr "хвилин"
 
 #: src/qml/SettingsPage.qml:136
 #, kde-format
 msgid "Numbers matching a pattern:"
-msgstr ""
+msgstr "Номери, які відповідають такому взірцю:"
 
 #: src/qml/SettingsPage.qml:150 src/qml/SettingsPage.qml:171
 #, kde-format
 msgid "Add new pattern"
-msgstr ""
+msgstr "Додати новий взірець"
 
 #: src/qml/SettingsPage.qml:193
 #, kde-format
 msgid "Other"
-msgstr ""
+msgstr "Інше"
 
 #: src/qml/SettingsPage.qml:197
 #, kde-format

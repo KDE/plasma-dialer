@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the plasma-dialer package.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2021.
+# Yuri Chornoivan <yurchor@ukr.net>, 2021, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-08-23 00:48+0000\n"
-"PO-Revision-Date: 2021-12-03 08:45+0200\n"
+"PO-Revision-Date: 2022-08-23 17:12+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -36,4 +36,4 @@ msgstr "Вхідний виклик"
 #: src/notification-manager.cpp:239
 #, kde-format
 msgid "No Caller ID"
-msgstr ""
+msgstr "Немає ідентифікатора виклику"

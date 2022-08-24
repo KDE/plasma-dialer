@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-23 00:48+0000\n"
+"POT-Creation-Date: 2022-08-24 00:49+0000\n"
 "PO-Revision-Date: 2022-08-22 17:20+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -36,6 +36,11 @@ msgstr "Sími"
 #, kde-format
 msgid "Plasma phone dialer"
 msgstr "Plasma símhringingar"
+
+#: src/qml/call/AnswerSwipe.qml:80
+#, kde-format
+msgid "Swipe right to accept"
+msgstr ""
 
 #: src/qml/call/CallPage.qml:32 src/qml/call/InCallInlineMessage.qml:14
 #, kde-format

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-23 00:48+0000\n"
-"PO-Revision-Date: 2022-01-25 09:51+0100\n"
+"POT-Creation-Date: 2022-08-24 00:49+0000\n"
+"PO-Revision-Date: 2022-08-23 19:56+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -39,6 +39,11 @@ msgstr "Telèfon"
 #, kde-format
 msgid "Plasma phone dialer"
 msgstr "Marcador de telèfon del Plasma"
+
+#: src/qml/call/AnswerSwipe.qml:80
+#, kde-format
+msgid "Swipe right to accept"
+msgstr ""
 
 #: src/qml/call/CallPage.qml:32 src/qml/call/InCallInlineMessage.qml:14
 #, kde-format
@@ -149,67 +154,67 @@ msgstr "No s'ha trobat cap IMEI"
 #: src/qml/SettingsPage.qml:46
 #, kde-format
 msgid "Adaptive blocking"
-msgstr ""
+msgstr "Bloqueig adaptatiu"
 
 #: src/qml/SettingsPage.qml:52
 #, kde-format
 msgid "Ignore calls from unknown numbers"
-msgstr ""
+msgstr "Ignora les trucades des de números desconeguts"
 
 #: src/qml/SettingsPage.qml:65
 #, kde-format
 msgid "Immediately hang up"
-msgstr ""
+msgstr "Penja immediatament"
 
 #: src/qml/SettingsPage.qml:70
 #, kde-format
 msgid "Ring without notification"
-msgstr ""
+msgstr "Trucada sense notificació"
 
 #: src/qml/SettingsPage.qml:75
 #, kde-format
 msgid "Ring with silent notification"
-msgstr ""
+msgstr "Trucada amb notificació silenciosa"
 
 #: src/qml/SettingsPage.qml:83
 #, kde-format
 msgid "Allowed exceptions"
-msgstr ""
+msgstr "Excepcions permeses"
 
 #: src/qml/SettingsPage.qml:94
 #, kde-format
 msgid "Anonymous numbers"
-msgstr ""
+msgstr "Números anònims"
 
 #: src/qml/SettingsPage.qml:101
 #, kde-format
 msgid "Existing outgoing call to number"
-msgstr ""
+msgstr "Trucada sortint existent al número"
 
 #: src/qml/SettingsPage.qml:111
 #, kde-format
 msgid "Callback within"
-msgstr ""
+msgstr "Trucada de retorn en"
 
 #: src/qml/SettingsPage.qml:126
 #, kde-format
 msgid "minutes"
-msgstr ""
+msgstr "minuts"
 
 #: src/qml/SettingsPage.qml:136
 #, kde-format
 msgid "Numbers matching a pattern:"
-msgstr ""
+msgstr "Números que coincideixin amb un patró:"
 
 #: src/qml/SettingsPage.qml:150 src/qml/SettingsPage.qml:171
 #, kde-format
 msgid "Add new pattern"
-msgstr ""
+msgstr "Afegeix un patró nou"
 
 #: src/qml/SettingsPage.qml:193
 #, kde-format
 msgid "Other"
-msgstr ""
+msgstr "Altres"
 
 #: src/qml/SettingsPage.qml:197
 #, kde-format
@@ -230,54 +235,3 @@ msgstr "Escriu una resposta..."
 #, kde-format
 msgid "Send"
 msgstr "Envia"
-
-#~ msgid "More Info:"
-#~ msgstr "Més informació:"
-
-#~ msgid "Accept"
-#~ msgstr "Accepta"
-
-#~ msgid "Reject"
-#~ msgstr "Rebutja"
-
-#~ msgid "Incoming call"
-#~ msgstr "Trucada entrant"
-
-#~ msgid "Voicemail"
-#~ msgstr "Bústia de veu"
-
-#~ msgid "Active call inhibits system suspend"
-#~ msgstr "Una trucada activa inhibeix la suspensió del sistema"
-
-#~ msgid "Missed call from %1"
-#~ msgstr "Trucada perduda de %1"
-
-#~ msgid "%1 calls missed"
-#~ msgstr "%1 trucades perdudes"
-
-#~ msgid "Last call: %1"
-#~ msgstr "Última trucada: %1"
-
-#~ msgid "Plasma Phone Dialer"
-#~ msgstr "Marcador de telèfon del Plasma"
-
-#~ msgid "Daemon mode. run without displaying anything."
-#~ msgstr "Mode dimoni. S'executa sense mostrar res."
-
-#~ msgid "Call the given number"
-#~ msgstr "Truca al número indicat"
-
-#~ msgid "Calling %1"
-#~ msgstr "S'està trucant a %1"
-
-#~ msgid "Unable to make a call at this moment"
-#~ msgstr "No es pot fer cap trucada en aquest moment"
-
-#~ msgid "In call with %1."
-#~ msgstr "En una trucada amb %1."
-
-#~ msgid "view-pim-contacts"
-#~ msgstr "Mostra els contactes del PIM"
-
-#~ msgid "No contacts"
-#~ msgstr "No hi ha cap contacte"
