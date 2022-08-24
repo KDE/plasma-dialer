@@ -63,7 +63,7 @@ SPDX-License-Identifier: CC0-1.0
   <summary xml:lang="ro">Trimite și primește apeluri telefonice</summary>
   <summary xml:lang="sl">Pošilja in sprejema telefonske klice</summary>
   <summary xml:lang="sv">Ring och ta emot telefonsamtal</summary>
-  <summary xml:lang="tr">Arama yapın ve gelen aramaları kabul edin</summary>
+  <summary xml:lang="tr">Arama yapın ve gelen aramaları alın</summary>
   <summary xml:lang="uk">Надсилання і отримання телефонних дзвінків</summary>
   <summary xml:lang="vi">Gửi và nhận các cuộc gọi điện thoại</summary>
   <summary xml:lang="x-test">xxSend and receive phone callsxx</summary>
@@ -131,7 +131,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="ro">Aplicația Telefon vă permite să faceți și să primiți apeluri telefonice de pe telefonul inteligent.</p>
     <p xml:lang="sl">Aplikacija Phone vam omogoča pošiljanje in sprejemanje telefonskih klicev vašega pametnega telefona.</p>
     <p xml:lang="sv">Telefonprogrammet låter dig enkelt ringa och ta emot telefonsamtal på din smarta telefon.</p>
-    <p xml:lang="tr">Telefon uygulaması, akıllı telefonunuzdan kolaylıkla ""aramalar yapmanızı ve almanızı sağlar.</p>
+    <p xml:lang="tr">Telefon uygulaması, akıllı telefonunuzdan kolaylıkla aramalar yapmanızı ve almanızı sağlar.</p>
     <p xml:lang="uk">Програма «Телефон» надає вам змогу без проблем виконувати та отримувати телефонні дзвінки на вашому смартфоні.</p>
     <p xml:lang="vi">Ứng dụng Điện thoại cho phép bạn dễ dàng gửi và nhận các cuộc gọi từ điện thoại của bạn.</p>
     <p xml:lang="x-test">xxThe Phone app lets you easily send and receive phone calls from your smartphone.xx</p>
@@ -191,7 +191,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="ro">Vedeți istoricul apelurilor și sunați același număr din nou</li>
       <li xml:lang="sl">Ogled zgodovine klicev in enostavno ponovno klicanje iste številke</li>
       <li xml:lang="sv">Se din samtalshistorik och ring enkelt samma nummer igen</li>
-      <li xml:lang="tr">Arama geçmişinizi görün ve aynı numarayı kolaylıkla yeniden ""arayın</li>
+      <li xml:lang="tr">Arama geçmişinizi görün ve aynı numarayı kolaylıkla yeniden arayın</li>
       <li xml:lang="uk">Перегляд журналу дзвінків та просте повторне набирання номерів</li>
       <li xml:lang="vi">Xem lịch sử gọi và dễ dàng gọi lại cùng số đó</li>
       <li xml:lang="x-test">xxSee your call history and easily call the same number againxx</li>
