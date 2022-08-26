@@ -197,7 +197,7 @@ msgstr ""
 #: src/qml/SettingsPage.qml:126
 #, kde-format
 msgid "minutes"
-msgstr ""
+msgstr "minutos"
 
 #: src/qml/SettingsPage.qml:136
 #, kde-format
