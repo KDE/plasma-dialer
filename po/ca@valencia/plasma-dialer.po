@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-08-24 00:49+0000\n"
-"PO-Revision-Date: 2022-01-25 09:51+0100\n"
+"PO-Revision-Date: 2022-08-24 09:50+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -43,7 +43,7 @@ msgstr "Marcador de telèfon de Plasma"
 #: src/qml/call/AnswerSwipe.qml:80
 #, kde-format
 msgid "Swipe right to accept"
-msgstr ""
+msgstr "Llisca cap a la dreta per a acceptar"
 
 #: src/qml/call/CallPage.qml:32 src/qml/call/InCallInlineMessage.qml:14
 #, kde-format
@@ -154,67 +154,67 @@ msgstr "No s'ha trobat cap IMEI"
 #: src/qml/SettingsPage.qml:46
 #, kde-format
 msgid "Adaptive blocking"
-msgstr ""
+msgstr "Bloqueig adaptatiu"
 
 #: src/qml/SettingsPage.qml:52
 #, kde-format
 msgid "Ignore calls from unknown numbers"
-msgstr ""
+msgstr "Ignora les tocades des de números desconeguts"
 
 #: src/qml/SettingsPage.qml:65
 #, kde-format
 msgid "Immediately hang up"
-msgstr ""
+msgstr "Penja immediatament"
 
 #: src/qml/SettingsPage.qml:70
 #, kde-format
 msgid "Ring without notification"
-msgstr ""
+msgstr "Tocada sense notificació"
 
 #: src/qml/SettingsPage.qml:75
 #, kde-format
 msgid "Ring with silent notification"
-msgstr ""
+msgstr "Tocada amb notificació silenciosa"
 
 #: src/qml/SettingsPage.qml:83
 #, kde-format
 msgid "Allowed exceptions"
-msgstr ""
+msgstr "Excepcions permeses"
 
 #: src/qml/SettingsPage.qml:94
 #, kde-format
 msgid "Anonymous numbers"
-msgstr ""
+msgstr "Números anònims"
 
 #: src/qml/SettingsPage.qml:101
 #, kde-format
 msgid "Existing outgoing call to number"
-msgstr ""
+msgstr "Tocada eixint existent al número"
 
 #: src/qml/SettingsPage.qml:111
 #, kde-format
 msgid "Callback within"
-msgstr ""
+msgstr "Tocada de retorn en"
 
 #: src/qml/SettingsPage.qml:126
 #, kde-format
 msgid "minutes"
-msgstr ""
+msgstr "minuts"
 
 #: src/qml/SettingsPage.qml:136
 #, kde-format
 msgid "Numbers matching a pattern:"
-msgstr ""
+msgstr "Números que coincidisquen amb un patró:"
 
 #: src/qml/SettingsPage.qml:150 src/qml/SettingsPage.qml:171
 #, kde-format
 msgid "Add new pattern"
-msgstr ""
+msgstr "Afig un patró nou"
 
 #: src/qml/SettingsPage.qml:193
 #, kde-format
 msgid "Other"
-msgstr ""
+msgstr "Altres"
 
 #: src/qml/SettingsPage.qml:197
 #, kde-format
@@ -235,6 +235,3 @@ msgstr "Escriu una resposta..."
 #, kde-format
 msgid "Send"
 msgstr "Envia"
-
-#~ msgid "More Info:"
-#~ msgstr "Més informació:"
