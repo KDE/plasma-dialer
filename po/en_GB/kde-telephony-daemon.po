@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-08-23 00:48+0000\n"
-"PO-Revision-Date: 2022-01-01 15:42+0000\n"
+"PO-Revision-Date: 2022-08-29 12:17+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English <kde-l10n-en_gb@kde.org>\n"
 "Language: en_GB\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.0\n"
+"X-Generator: Lokalize 22.08.0\n"
 
 #: src/notification-manager.cpp:127
 #, kde-format
@@ -35,4 +35,4 @@ msgstr "Incoming call"
 #: src/notification-manager.cpp:239
 #, kde-format
 msgid "No Caller ID"
-msgstr ""
+msgstr "No Caller ID"
