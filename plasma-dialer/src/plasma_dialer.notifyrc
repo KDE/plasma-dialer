@@ -198,6 +198,7 @@ Sound=Oxygen-Im-Phone-Ring.ogg
 Name=Ringing-silent
 Name[ca]=Trucada en silenci
 Name[ca@valencia]=Tocada en silenci
+Name[en_GB]=Ringing-silent
 Name[es]=Llamada silenciosa
 Name[eu]=Jotzen-isila
 Name[fr]=Sonnerie silencieuse
