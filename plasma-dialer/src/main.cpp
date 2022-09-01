@@ -79,10 +79,33 @@ public:
     {
         QPlatformNativeInterface *native = qGuiApp->platformNativeInterface();
         wl_surface *surface = reinterpret_cast<wl_surface *>(native->nativeResourceForWindow(QByteArrayLiteral("surface"), window));
+
+        Q_ASSERT(surface);
         allow(surface);
     }
 };
+
 #endif // DIALER_BUILD_SHELL_OVERLAY
+
+// raiseWindow with lockscreen support if possible
+static void raiseWindow(QWindow *window)
+{
+#ifdef DIALER_BUILD_SHELL_OVERLAY
+    bool screenLocked = ScreenSaverUtils::getActive();
+    if (screenLocked) {
+        window->setVisibility(QWindow::Visibility::FullScreen);
+        KWindowSystem::requestXdgActivationToken(window, 0, QStringLiteral("org.kde.phone.dialer.desktop"));
+        QObject::connect(KWindowSystem::self(), &KWindowSystem::xdgActivationTokenArrived, window, [window](int, const QString &token) {
+            KWindowSystem::setCurrentXdgActivationToken(token);
+            KWindowSystem::activateWindow(window->winId());
+        });
+    } else {
+        KWindowSystem::raiseWindow(window->winId());
+    }
+#else // DIALER_BUILD_SHELL_OVERLAY
+    KWindowSystem::raiseWindow(window->winId());
+#endif // DIALER_BUILD_SHELL_OVERLAY
+}
 
 int main(int argc, char **argv)
 {
@@ -139,17 +162,14 @@ int main(int argc, char **argv)
     Q_ASSERT(window);
 
 #ifdef DIALER_BUILD_SHELL_OVERLAY
+    Q_ASSERT(!window->isVisible());
     WaylandAboveLockscreen aboveLockscreen;
     Q_ASSERT(aboveLockscreen.isInitialized());
-
-    bool screenLocked = ScreenSaverUtils::getActive();
-    if (screenLocked) {
-        aboveLockscreen.allowWindow(window);
-    }
-    QObject::connect(&service, &KDBusService::activateRequested, window, [&window, &aboveLockscreen](const QStringList &arguments) {
-#else // DIALER_BUILD_SHELL_OVERLAY
-    QObject::connect(&service, &KDBusService::activateRequested, window, [&window](const QStringList &arguments) {
+    aboveLockscreen.allowWindow(window);
 #endif // DIALER_BUILD_SHELL_OVERLAY
+
+    raiseWindow(window);
+    QObject::connect(&service, &KDBusService::activateRequested, window, [&window](const QStringList &arguments) {
         for (const auto &arg : arguments) {
             QString numberArg = parseTelArgument(arg);
             if (!numberArg.isEmpty()) {
@@ -157,14 +177,7 @@ int main(int argc, char **argv)
                 break;
             }
         }
-#ifdef DIALER_BUILD_SHELL_OVERLAY
-        bool screenLocked = ScreenSaverUtils::getActive();
-        if (screenLocked) {
-            aboveLockscreen.allowWindow(window);
-            window->setVisibility(QWindow::Visibility::FullScreen);
-        }
-#endif // DIALER_BUILD_SHELL_OVERLAY
-        KWindowSystem::raiseWindow(window->winId());
+        raiseWindow(window);
     });
 
     if (!parser.positionalArguments().isEmpty()) {
