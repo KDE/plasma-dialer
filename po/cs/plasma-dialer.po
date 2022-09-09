@@ -197,7 +197,7 @@ msgstr ""
 #: src/qml/SettingsPage.qml:126
 #, kde-format
 msgid "minutes"
-msgstr ""
+msgstr "minut"
 
 #: src/qml/SettingsPage.qml:136
 #, kde-format
@@ -212,7 +212,7 @@ msgstr ""
 #: src/qml/SettingsPage.qml:193
 #, kde-format
 msgid "Other"
-msgstr ""
+msgstr "Jiné"
 
 #: src/qml/SettingsPage.qml:197
 #, kde-format
@@ -233,6 +233,3 @@ msgstr ""
 #, kde-format
 msgid "Send"
 msgstr "Odeslat"
-
-#~ msgid "More Info:"
-#~ msgstr "Více informací:"
