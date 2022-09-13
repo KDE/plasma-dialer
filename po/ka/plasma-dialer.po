@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-08-24 00:49+0000\n"
-"PO-Revision-Date: 2022-08-24 12:57+0200\n"
+"PO-Revision-Date: 2022-09-12 20:25+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -138,10 +138,11 @@ msgid "No recent calls"
 msgstr "უახლესი ზარები არ არსებობს"
 
 #: src/qml/ImeiSheet.qml:18
-#, fuzzy, kde-format
+#, kde-format
 msgid "IMEI"
 msgid_plural "IMEIs"
 msgstr[0] "IMEI"
+msgstr[1] "IMEI"
 
 #: src/qml/ImeiSheet.qml:30
 #, kde-format
