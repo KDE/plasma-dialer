@@ -18,7 +18,7 @@ set_source_files_properties(
     INCLUDE "kTelephonyMetaTypes/dialer-types.h"
 )
 
-find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED Core DBus Feedback)
+find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED Core DBus OPTIONAL_COMPONENTS Feedback)
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Config I18n ModemManagerQt Notifications KIO)
 
 qt5_add_dbus_interface(ktelephonyd_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.DeviceUtils.xml"
