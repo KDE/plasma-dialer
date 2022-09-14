@@ -46,10 +46,12 @@ static void inputCallNumber(QWindow *window, const QString &number)
     QMetaObject::invokeMethod(window, "call", Q_ARG(QVariant, number));
 }
 
+#ifdef DIALER_BUILD_SHELL_OVERLAY
 static void updateLockscreenMode(QWindow *window, bool mode)
 {
     QMetaObject::invokeMethod(window, "updateLockscreenMode", Q_ARG(QVariant, mode));
 }
+#endif // DIALER_BUILD_SHELL_OVERLAY
 
 struct ScreenSaverUtils {
     Q_GADGET
