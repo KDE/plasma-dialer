@@ -46,6 +46,11 @@ static void inputCallNumber(QWindow *window, const QString &number)
     QMetaObject::invokeMethod(window, "call", Q_ARG(QVariant, number));
 }
 
+static void updateLockscreenMode(QWindow *window, bool mode)
+{
+    QMetaObject::invokeMethod(window, "updateLockscreenMode", Q_ARG(QVariant, mode));
+}
+
 struct ScreenSaverUtils {
     Q_GADGET
 public:
@@ -92,6 +97,7 @@ static void raiseWindow(QWindow *window)
 {
 #ifdef DIALER_BUILD_SHELL_OVERLAY
     bool screenLocked = ScreenSaverUtils::getActive();
+    updateLockscreenMode(window, screenLocked);
     if (screenLocked) {
         window->setVisibility(QWindow::Visibility::FullScreen);
         KWindowSystem::requestXdgActivationToken(window, 0, QStringLiteral("org.kde.phone.dialer.desktop"));

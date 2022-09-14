@@ -34,7 +34,11 @@ Kirigami.ApplicationWindow {
     contextDrawer: Kirigami.ContextDrawer {}
 
     readonly property bool smallMode: applicationWindow().height < Kirigami.Units.gridUnit * 28
-    readonly property bool lockscreenMode: ScreenSaverUtils.getActive()
+    property bool lockscreenMode: ScreenSaverUtils.getActive()
+    
+    function updateLockscreenMode(mode) {
+        root.lockscreenMode = mode
+    }
 
     // pop pages when not in use
     Connections {
