@@ -7,7 +7,6 @@
 
 #include <glib.h>
 
-#include <libcallaudio-enums.h>
 #include <libcallaudio.h>
 
 #include <KLocalizedString>
