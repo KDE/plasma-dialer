@@ -11,6 +11,7 @@
 class ActiveCallModel : public CallModel
 {
     Q_OBJECT
+    Q_PROPERTY(bool incoming READ incoming NOTIFY incomingChanged)
     Q_PROPERTY(bool active READ active NOTIFY activeChanged)
 
 public:
@@ -18,6 +19,9 @@ public:
 
     bool active() const;
     void setActive(bool newActive);
+
+    bool incoming() const;
+    void setIncoming(bool newIncoming);
 
 public Q_SLOTS:
     Q_INVOKABLE void sendDtmf(const QString &tones);
@@ -29,6 +33,7 @@ public Q_SLOTS:
 
 Q_SIGNALS:
     void activeChanged();
+    void incomingChanged();
 
 private Q_SLOTS:
     void onCallAdded(const QString &deviceUni,
@@ -50,4 +55,5 @@ private:
     DialerTypes::CallDataVector _calls;
     QTimer _callsTimer;
     bool _active = false;
+    bool _incoming = false;
 };

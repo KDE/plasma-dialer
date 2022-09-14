@@ -131,6 +131,17 @@ void ActiveCallModel::onFetchedCallsChanged(const DialerTypes::CallDataVector &f
     endResetModel();
     bool active = (_calls.size() > 0);
     setActive(active);
+    bool incoming = false;
+    for (int i = 0; i < _calls.size(); i++) {
+        const auto call = _calls.at(i);
+        if (call.direction == DialerTypes::CallDirection::Incoming) {
+            if (call.state == DialerTypes::CallState::RingingIn) {
+                incoming = true;
+                break;
+            }
+        }
+    }
+    setIncoming(incoming);
 }
 
 bool ActiveCallModel::active() const
@@ -145,4 +156,17 @@ void ActiveCallModel::setActive(bool newActive)
     _active = newActive;
     qDebug() << Q_FUNC_INFO;
     Q_EMIT activeChanged();
+}
+
+bool ActiveCallModel::incoming() const
+{
+    return _incoming;
+}
+
+void ActiveCallModel::setIncoming(bool newIncoming)
+{
+    if (_incoming == newIncoming)
+        return;
+    _incoming = newIncoming;
+    Q_EMIT incomingChanged();
 }
