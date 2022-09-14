@@ -26,6 +26,7 @@ Kirigami.Page {
         return ActiveCallModel.activeCallUni()
     }
 
+    property bool callIncoming: ActiveCallModel.incoming
     property bool callActive: ActiveCallModel.active
     property int callDuration: ActiveCallModel.callDuration
     
@@ -174,7 +175,7 @@ Kirigami.Page {
 
             AnswerSwipe {
                 anchors.fill: parent
-                visible: callActive // TODO
+                visible: callIncoming
                 onAccepted: {
                     CallUtils.accept(activeDeviceUni(), activeCallUni());
                 }
@@ -186,7 +187,7 @@ Kirigami.Page {
             // end call button
             Controls.AbstractButton {
                 id: endCallButton
-                visible: false
+                visible: callActive && !callIncoming
                 
                 anchors.centerIn: parent
                 width: Kirigami.Units.gridUnit * 3.5
