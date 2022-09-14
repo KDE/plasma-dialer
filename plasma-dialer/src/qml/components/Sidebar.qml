@@ -119,6 +119,17 @@ Kirigami.OverlayDrawer {
                     }
                 }
             }
+            
+            SidebarButton {
+                visible: applicationWindow().lockscreenMode
+                text: i18n("Quit")
+                icon.name: "window-close-symbolic"
+                Layout.fillWidth: true
+                Layout.minimumHeight: Kirigami.Units.gridUnit * 2
+                onClicked: {
+                    Qt.quit()
+                }
+            }
         }
     }
 }
