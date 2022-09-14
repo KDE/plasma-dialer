@@ -115,6 +115,9 @@ void NotificationManager::onCallStateChanged(const QString &deviceUni,
         if (callState == DialerTypes::CallState::Terminated) {
             handleRejectedCall();
         }
+        if (callState == DialerTypes::CallState::Active) {
+            closeRingingNotification();
+        }
     }
 }
 
