@@ -42,8 +42,6 @@ ecm_setup_version(${PROJECT_VERSION}
 find_package(KF5I18n NO_MODULE)
 ki18n_install(po)
 
-find_package(PkgConfig QUIET)
-pkg_check_modules(LIBCALLAUDIO libcallaudio-0.1 REQUIRED IMPORTED_TARGET)
 #set(DBUS_INTERFACES_PATH "${CMAKE_INSTALL_PREFIX}/${KDE_INSTALL_DBUSINTERFACEDIR}/")
 
 add_subdirectory(kde-telephony-meta)

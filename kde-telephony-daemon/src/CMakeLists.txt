@@ -46,6 +46,9 @@ target_include_directories(kde-telephony-daemon PRIVATE ${CMAKE_BINARY_DIR})
 qt5_add_dbus_interface(mpris_srcs "${DBUS_INTERFACES_PATH}/org.mpris.MediaPlayer2.Player.xml" mprisplayerinterface)
 target_sources(kde-telephony-daemon PRIVATE ${mpris_srcs})
 
+find_package(PkgConfig QUIET)
+pkg_check_modules(LIBCALLAUDIO libcallaudio-0.1 REQUIRED IMPORTED_TARGET)
+
 target_link_libraries(kde-telephony-daemon
     KF5::ConfigGui
     Qt5::Core
