@@ -49,7 +49,7 @@ QString ActiveCallModel::activeCallUni()
         qDebug() << Q_FUNC_INFO << "empty active calls list";
         return activeCallUni;
     }
-    for (int i = 0; i <= _calls.size(); i++) {
+    for (int i = 0; i < _calls.size(); i++) {
         const auto call = _calls.at(i);
         if (call.state != DialerTypes::CallState::Terminated) {
             return call.id;
