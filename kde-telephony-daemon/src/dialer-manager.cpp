@@ -7,7 +7,9 @@
 
 #include <glib.h>
 
+#ifndef LOWER_LIBCALLAUDIO_VERSION
 #include <libcallaudio-enums.h>
+#endif // LOWER_LIBCALLAUDIO_VERSION
 #include <libcallaudio.h>
 
 #include <KLocalizedString>
@@ -20,21 +22,37 @@
 
 static void enable_call_mode()
 {
+#ifdef LOWER_LIBCALLAUDIO_VERSION
+    qWarning() << "callaudio version is not supported";
+    return;
+#endif // LOWER_LIBCALLAUDIO_VERSION
     call_audio_select_mode_async(CALL_AUDIO_MODE_CALL, nullptr, nullptr);
 }
 
 static void enable_default_mode()
 {
+#ifdef LOWER_LIBCALLAUDIO_VERSION
+    qWarning() << "callaudio version is not supported";
+    return;
+#endif // LOWER_LIBCALLAUDIO_VERSION
     call_audio_select_mode_async(CALL_AUDIO_MODE_DEFAULT, nullptr, nullptr);
 }
 
 static void mute_mic(bool want_mute)
 {
+#ifdef LOWER_LIBCALLAUDIO_VERSION
+    qWarning() << "callaudio version is not supported";
+    return;
+#endif // LOWER_LIBCALLAUDIO_VERSION
     call_audio_mute_mic_async(want_mute, nullptr, nullptr);
 }
 
 static void enable_speaker(bool want_speaker)
 {
+#ifdef LOWER_LIBCALLAUDIO_VERSION
+    qWarning() << "callaudio version is not supported";
+    return;
+#endif // LOWER_LIBCALLAUDIO_VERSION
     call_audio_enable_speaker_async(want_speaker, nullptr, nullptr);
 }
 
@@ -136,14 +154,24 @@ void DialerManager::onCallStateChanged(const QString &deviceUni,
 
 void DialerManager::onSpeakerModeFetched()
 {
+#ifdef LOWER_LIBCALLAUDIO_VERSION
+    qWarning() << "callaudio version is not supported";
+    return;
+#else // LOWER_LIBCALLAUDIO_VERSION
     bool speakerMode = call_audio_get_speaker_state() == CALL_AUDIO_SPEAKER_ON;
     Q_EMIT _dialerUtils->speakerModeChanged(speakerMode);
+#endif // LOWER_LIBCALLAUDIO_VERSION
 }
 
 void DialerManager::onMuteFetched()
 {
+#ifdef LOWER_LIBCALLAUDIO_VERSION
+    qWarning() << "callaudio version is not supported";
+    return;
+#else // LOWER_LIBCALLAUDIO_VERSION
     auto micMute = call_audio_get_mic_state() == CALL_AUDIO_MIC_OFF;
     Q_EMIT _dialerUtils->muteChanged(micMute);
+#endif // LOWER_LIBCALLAUDIO_VERSION
 }
 
 void DialerManager::onSetSpeakerModeRequested(bool enabled)
