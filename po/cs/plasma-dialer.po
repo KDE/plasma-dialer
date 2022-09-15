@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-24 00:49+0000\n"
+"POT-Creation-Date: 2022-09-15 00:47+0000\n"
 "PO-Revision-Date: 2022-01-05 12:25+0100\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -27,12 +27,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "vit@pelcak.org"
 
-#: src/main.cpp:104 src/qml/components/Sidebar.qml:34 src/qml/main.qml:32
+#: src/main.cpp:135 src/qml/components/Sidebar.qml:34 src/qml/main.qml:32
 #, kde-format
 msgid "Phone"
 msgstr "Telefon"
 
-#: src/main.cpp:104
+#: src/main.cpp:135
 #, kde-format
 msgid "Plasma phone dialer"
 msgstr ""
@@ -42,27 +42,27 @@ msgstr ""
 msgid "Swipe right to accept"
 msgstr ""
 
-#: src/qml/call/CallPage.qml:32 src/qml/call/InCallInlineMessage.qml:14
+#: src/qml/call/CallPage.qml:33 src/qml/call/InCallInlineMessage.qml:14
 #, kde-format
 msgid "Active call list"
 msgstr ""
 
-#: src/qml/call/CallPage.qml:102
+#: src/qml/call/CallPage.qml:103
 #, kde-format
 msgid "Calling..."
 msgstr "Volání..."
 
-#: src/qml/call/CallPage.qml:128
+#: src/qml/call/CallPage.qml:129
 #, kde-format
 msgid "Keypad"
 msgstr ""
 
-#: src/qml/call/CallPage.qml:148
+#: src/qml/call/CallPage.qml:149
 #, kde-format
 msgid "Speaker"
 msgstr "Reproduktor"
 
-#: src/qml/call/CallPage.qml:162
+#: src/qml/call/CallPage.qml:163
 #, kde-format
 msgid "Mute"
 msgstr "Ztlumit"
@@ -95,6 +95,11 @@ msgstr ""
 #, kde-format
 msgid "Settings"
 msgstr "Nastavení"
+
+#: src/qml/components/Sidebar.qml:125
+#, kde-format
+msgid "Quit"
+msgstr ""
 
 #: src/qml/ContactsPage.qml:84
 #, kde-format

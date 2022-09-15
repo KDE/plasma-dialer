@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-24 00:49+0000\n"
+"POT-Creation-Date: 2022-09-15 00:47+0000\n"
 "PO-Revision-Date: 2022-08-24 09:50+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -30,12 +30,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "txemaq@gmail.com"
 
-#: src/main.cpp:104 src/qml/components/Sidebar.qml:34 src/qml/main.qml:32
+#: src/main.cpp:135 src/qml/components/Sidebar.qml:34 src/qml/main.qml:32
 #, kde-format
 msgid "Phone"
 msgstr "Telèfon"
 
-#: src/main.cpp:104
+#: src/main.cpp:135
 #, kde-format
 msgid "Plasma phone dialer"
 msgstr "Marcador de telèfon del Plasma"
@@ -45,27 +45,27 @@ msgstr "Marcador de telèfon del Plasma"
 msgid "Swipe right to accept"
 msgstr "Llisca cap a la dreta per acceptar"
 
-#: src/qml/call/CallPage.qml:32 src/qml/call/InCallInlineMessage.qml:14
+#: src/qml/call/CallPage.qml:33 src/qml/call/InCallInlineMessage.qml:14
 #, kde-format
 msgid "Active call list"
 msgstr "Llista de trucades actives"
 
-#: src/qml/call/CallPage.qml:102
+#: src/qml/call/CallPage.qml:103
 #, kde-format
 msgid "Calling..."
 msgstr "S'està trucant..."
 
-#: src/qml/call/CallPage.qml:128
+#: src/qml/call/CallPage.qml:129
 #, kde-format
 msgid "Keypad"
 msgstr "Teclat numèric"
 
-#: src/qml/call/CallPage.qml:148
+#: src/qml/call/CallPage.qml:149
 #, kde-format
 msgid "Speaker"
 msgstr "Altaveu"
 
-#: src/qml/call/CallPage.qml:162
+#: src/qml/call/CallPage.qml:163
 #, kde-format
 msgid "Mute"
 msgstr "Silencia"
@@ -98,6 +98,11 @@ msgstr "Marcador"
 #, kde-format
 msgid "Settings"
 msgstr "Configuració"
+
+#: src/qml/components/Sidebar.qml:125
+#, kde-format
+msgid "Quit"
+msgstr ""
 
 #: src/qml/ContactsPage.qml:84
 #, kde-format

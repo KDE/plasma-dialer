@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-24 00:49+0000\n"
+"POT-Creation-Date: 2022-09-15 00:47+0000\n"
 "PO-Revision-Date: 2022-01-27 18:59+0400\n"
 "Last-Translator: Kheyyam Gojayev <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -27,12 +27,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "xxmn77@gmail.com"
 
-#: src/main.cpp:104 src/qml/components/Sidebar.qml:34 src/qml/main.qml:32
+#: src/main.cpp:135 src/qml/components/Sidebar.qml:34 src/qml/main.qml:32
 #, kde-format
 msgid "Phone"
 msgstr "Telefon"
 
-#: src/main.cpp:104
+#: src/main.cpp:135
 #, kde-format
 msgid "Plasma phone dialer"
 msgstr "Plasma nömrə yığımı"
@@ -42,27 +42,27 @@ msgstr "Plasma nömrə yığımı"
 msgid "Swipe right to accept"
 msgstr ""
 
-#: src/qml/call/CallPage.qml:32 src/qml/call/InCallInlineMessage.qml:14
+#: src/qml/call/CallPage.qml:33 src/qml/call/InCallInlineMessage.qml:14
 #, kde-format
 msgid "Active call list"
 msgstr "Aktiv zəng siyahısı"
 
-#: src/qml/call/CallPage.qml:102
+#: src/qml/call/CallPage.qml:103
 #, kde-format
 msgid "Calling..."
 msgstr "Zəng olunur..."
 
-#: src/qml/call/CallPage.qml:128
+#: src/qml/call/CallPage.qml:129
 #, kde-format
 msgid "Keypad"
 msgstr "Klaviatura"
 
-#: src/qml/call/CallPage.qml:148
+#: src/qml/call/CallPage.qml:149
 #, kde-format
 msgid "Speaker"
 msgstr "Səsucaldıcı"
 
-#: src/qml/call/CallPage.qml:162
+#: src/qml/call/CallPage.qml:163
 #, kde-format
 msgid "Mute"
 msgstr "Susdurun"
@@ -95,6 +95,11 @@ msgstr "Nömrə yığımı"
 #, kde-format
 msgid "Settings"
 msgstr "Ayarlar"
+
+#: src/qml/components/Sidebar.qml:125
+#, kde-format
+msgid "Quit"
+msgstr ""
 
 #: src/qml/ContactsPage.qml:84
 #, kde-format

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-telephony-daemon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-23 00:48+0000\n"
+"POT-Creation-Date: 2022-09-15 00:47+0000\n"
 "PO-Revision-Date: 2021-12-05 11:55+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -15,22 +15,22 @@ msgstr ""
 "X-Generator: Lokalize 21.11.90\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: src/notification-manager.cpp:127
+#: src/notification-manager.cpp:130
 #, kde-format
 msgid "Accept"
 msgstr "Prijať"
 
-#: src/notification-manager.cpp:127
+#: src/notification-manager.cpp:130
 #, kde-format
 msgid "Reject"
 msgstr "Odmietnuť"
 
-#: src/notification-manager.cpp:136
+#: src/notification-manager.cpp:139
 #, kde-format
 msgid "Incoming call"
 msgstr "Prichádzajúci hovor"
 
-#: src/notification-manager.cpp:239
+#: src/notification-manager.cpp:242
 #, kde-format
 msgid "No Caller ID"
 msgstr ""
