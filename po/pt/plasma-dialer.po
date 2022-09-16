@@ -100,7 +100,7 @@ msgstr "Configuração"
 #: src/qml/components/Sidebar.qml:125
 #, kde-format
 msgid "Quit"
-msgstr ""
+msgstr "Sair"
 
 #: src/qml/ContactsPage.qml:84
 #, kde-format
