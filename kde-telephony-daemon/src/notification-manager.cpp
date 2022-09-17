@@ -116,7 +116,9 @@ void NotificationManager::onCallStateChanged(const QString &deviceUni,
             handleRejectedCall();
         }
         if (callState == DialerTypes::CallState::Active) {
-            closeRingingNotification();
+#ifdef HAVE_QT5_FEEDBACK
+            _ringEffect->stop();
+#endif // HAVE_QT5_FEEDBACK
         }
     }
 }
