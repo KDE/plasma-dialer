@@ -29,6 +29,11 @@ int main(int argc, char **argv)
 
     KLocalizedString::setApplicationDomain("kde-telephony-daemon");
 
+    // Disable app quit lock during KIO jobs usage via NetworkManager
+    // > The application will quit when there are no more QEventLoopLockers operating on it
+    // https://doc.qt.io/qt-6/qeventlooplocker.html#QEventLoopLocker
+    // see also:
+    // https://invent.kde.org/plasma/kwin/-/merge_requests/1267/diffs#620b62637a901cceddbd29857f98b9a970caf8f0_149_164
     app.setQuitLockEnabled(false); // prevent a finishing KJob from closing the app
 
     auto deviceUtils = new org::kde::telephony::DeviceUtils(QString::fromLatin1(org::kde::telephony::DeviceUtils::staticInterfaceName()),
