@@ -29,6 +29,8 @@ int main(int argc, char **argv)
 
     KLocalizedString::setApplicationDomain("kde-telephony-daemon");
 
+    app.setQuitLockEnabled(false); // workaround to skip KIO messing with event loop
+
     auto deviceUtils = new org::kde::telephony::DeviceUtils(QString::fromLatin1(org::kde::telephony::DeviceUtils::staticInterfaceName()),
                                                             QStringLiteral("/org/kde/telephony/DeviceUtils/tel/mm"),
                                                             QDBusConnection::sessionBus(),
