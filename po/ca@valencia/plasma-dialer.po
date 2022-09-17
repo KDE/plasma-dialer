@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-09-15 00:47+0000\n"
-"PO-Revision-Date: 2022-08-24 09:50+0200\n"
+"PO-Revision-Date: 2022-09-15 10:18+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -102,7 +102,7 @@ msgstr "Configuració"
 #: src/qml/components/Sidebar.qml:125
 #, kde-format
 msgid "Quit"
-msgstr ""
+msgstr "Ix"
 
 #: src/qml/ContactsPage.qml:84
 #, kde-format
