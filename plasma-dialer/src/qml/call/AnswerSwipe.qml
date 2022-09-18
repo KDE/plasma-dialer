@@ -75,6 +75,13 @@ Item {
                 }
             }
 
+            // re-init after the previous show
+            onVisibleChanged: {
+                if (visible) {
+                    swipeAccepted = false
+                }
+            }
+
             QQC2.Label {
                 id: acceptLabel
                 property real startX: callAcceptIcon.leftSpacing + callAcceptIcon.width + Kirigami.Units.smallSpacing
@@ -118,6 +125,13 @@ Item {
                     PauseAnimation { duration: Kirigami.Units.shortDuration}
                 }
 
+                // re-init after the previous show
+                onVisibleChanged: {
+                    if (visible) {
+                        x = leftSpacing
+                    }
+                }
+
                 Connections {
                     target: acceptMouseArea
                     function onMouseXChanged(mouse) {
@@ -141,7 +155,7 @@ Item {
                         callAcceptIcon.x = callAcceptIcon.leftSpacing
                     }
                     function onSwipeAccepted() {
-                        callAcceptIcon.x = callAcceptIcon.x = acceptRectangle.width
+                        callAcceptIcon.x = acceptRectangle.width + callAcceptIcon.width
                     }
                 }
             }
