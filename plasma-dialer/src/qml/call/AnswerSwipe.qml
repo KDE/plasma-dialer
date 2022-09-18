@@ -69,6 +69,12 @@ Item {
 
             color: Qt.lighter(Kirigami.Theme.positiveBackgroundColor, 1 + acceptMouseArea.swipePath)
 
+            onSwipeAcceptedChanged: {
+                if (swipeAccepted) {
+                    root.accepted()
+                }
+            }
+
             QQC2.Label {
                 id: acceptLabel
                 property real startX: callAcceptIcon.leftSpacing + callAcceptIcon.width + Kirigami.Units.smallSpacing
@@ -164,7 +170,6 @@ Item {
                 }
                 onSwipeAccepted: {
                     acceptRectangle.swipeAccepted = true
-                    root.accepted()
                 }
             }
         }
