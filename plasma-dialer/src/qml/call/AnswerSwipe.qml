@@ -153,6 +153,11 @@ Item {
                 property real swipePath: 0
                 property real swipeAcceptThreshold: 0.33
                 signal swipeAccepted()
+                function resetSwipePathVars() {
+                    swipePath = 0
+                    swipePathStart = 0
+                }
+
                 onMouseXChanged: {
                     swipePath = mouseX / width
                 }
@@ -160,7 +165,7 @@ Item {
                     swipePathStart = mouseX / width
                 }
                 onReleased: {
-                    swipePath = 0
+                    resetSwipePathVars()
                     acceptRectangle.swipeAccepted = false
                 }
                 onSwipePathChanged: {
@@ -170,6 +175,7 @@ Item {
                 }
                 onSwipeAccepted: {
                     acceptRectangle.swipeAccepted = true
+                    resetSwipePathVars()
                 }
             }
         }
