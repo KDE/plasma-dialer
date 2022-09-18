@@ -98,11 +98,11 @@ Item {
                     running: acceptLabel.resting
                     loops: Animation.Infinite
                     NumberAnimation { target: acceptLabel; property: "x"
-                        from: acceptLabel.startX; to: acceptLabel.startX + acceptLabel.parentWidth / 2
+                        from: acceptLabel.startX; to: acceptLabel.startX + Kirigami.Units.gridUnit * 2
                         easing.type: Easing.InBounce; duration: Kirigami.Units.veryLongDuration * 2
                     }
                     NumberAnimation { target: acceptLabel; property: "x";
-                        from: acceptLabel.startX + acceptLabel.parentWidth / 2; to: acceptLabel.startX
+                        from: acceptLabel.startX + Kirigami.Units.gridUnit * 2; to: acceptLabel.startX
                         easing.type: Easing.OutBounce; duration: Kirigami.Units.veryLongDuration * 2
                     }
                     PauseAnimation { duration: Kirigami.Units.shortDuration}
