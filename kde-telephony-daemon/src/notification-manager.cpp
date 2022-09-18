@@ -40,6 +40,8 @@ static void launchPlasmaDialerDesktopFile()
 
 NotificationManager::NotificationManager(QObject *parent)
     : QObject(parent)
+    , _ringingNotification(std::make_unique<KNotification>(QStringLiteral("ringing"), KNotification::Persistent | KNotification::LoopSound, nullptr))
+
 #ifdef HAVE_QT5_FEEDBACK
     , _ringEffect(std::make_unique<QFeedbackHapticsEffect>())
 #endif // HAVE_QT5_FEEDBACK
@@ -63,6 +65,7 @@ NotificationManager::NotificationManager(QObject *parent)
         qDebug() << Q_FUNC_INFO << "Could not initiate CallHistoryDatabase interface";
         return;
     }
+    _ringingNotification->setAutoDelete(false);
 }
 
 void NotificationManager::setCallUtils(org::kde::telephony::CallUtils *callUtils)
@@ -98,10 +101,7 @@ void NotificationManager::onCallAdded(const QString &deviceUni,
 void NotificationManager::onCallDeleted(const QString &deviceUni, const QString &callUni)
 {
     qDebug() << Q_FUNC_INFO << "call deleted" << deviceUni << callUni;
-#ifdef HAVE_QT5_FEEDBACK
-    _ringEffect->stop();
-#endif // HAVE_QT5_FEEDBACK
-    closeRingingNotification();
+    handleCallInteraction();
 }
 
 void NotificationManager::onCallStateChanged(const QString &deviceUni,
@@ -113,12 +113,10 @@ void NotificationManager::onCallStateChanged(const QString &deviceUni,
     qDebug() << Q_FUNC_INFO << "call state changed:" << deviceUni << callUni << callDirection << callState << callStateReason;
     if (callDirection == DialerTypes::CallDirection::Incoming) {
         if (callState == DialerTypes::CallState::Terminated) {
-            handleRejectedCall();
+            handleCallInteraction();
         }
         if (callState == DialerTypes::CallState::Active) {
-#ifdef HAVE_QT5_FEEDBACK
-            _ringEffect->stop();
-#endif // HAVE_QT5_FEEDBACK
+            handleCallInteraction();
         }
     }
 }
@@ -130,13 +128,11 @@ void NotificationManager::openRingingNotification(const QString &deviceUni,
 {
     QStringList actions;
     actions << i18n("Accept") << i18n("Reject");
-    qDebug() << Q_FUNC_INFO << _ringingNotification;
-    if (!_ringingNotification) {
-        qDebug() << Q_FUNC_INFO << "new notification";
-        _ringingNotification = new KNotification(notificationEvent, KNotification::Persistent | KNotification::LoopSound, nullptr);
-    }
+
+    _ringingNotification->setEventId(notificationEvent);
     _ringingNotification->setUrgency(KNotification::CriticalUrgency);
     _ringingNotification->setComponentName(QStringLiteral("plasma_dialer"));
+
     // _ringingNotification->setPixmap(person.photo());
     _ringingNotification->setTitle(i18n("Incoming call"));
     _ringingNotification->setText(callerDisplay);
@@ -146,18 +142,14 @@ void NotificationManager::openRingingNotification(const QString &deviceUni,
     _ringingNotification->setActions(actions);
     _ringingNotification->addContext(QStringLiteral("deviceUni"), deviceUni);
     _ringingNotification->addContext(QStringLiteral("callUni"), callUni);
-    connect(_ringingNotification, QOverload<unsigned int>::of(&KNotification::activated), this, &NotificationManager::onNotificationAction);
+    connect(_ringingNotification.get(), QOverload<unsigned int>::of(&KNotification::activated), this, &NotificationManager::onNotificationAction);
     _ringingNotification->sendEvent();
 }
 
 void NotificationManager::closeRingingNotification()
 {
-    if (!_ringingNotification) {
-        return;
-    }
     _ringingNotification->disconnect();
     _ringingNotification->close();
-    _ringingNotification = nullptr;
 }
 
 void NotificationManager::accept(const QString &deviceUni, const QString &callUni)
@@ -231,11 +223,9 @@ void NotificationManager::handleIncomingCall(const QString &deviceUni, const QSt
         notificationEvent = QStringLiteral("ringing-silent");
     }
 
-#ifdef HAVE_QT5_FEEDBACK
     if (allowed) {
-        _ringEffect->start();
+        startHapticsFeedback();
     }
-#endif // HAVE_QT5_FEEDBACK
 
     QString callerDisplay =
         (contactName == communicationWith) ? communicationWith : communicationWith + QStringLiteral("<br>") + QStringLiteral("<b>%1</b>").arg(contactName);
@@ -252,9 +242,24 @@ void NotificationManager::handleIncomingCall(const QString &deviceUni, const QSt
     }
 }
 
-void NotificationManager::handleRejectedCall()
+void NotificationManager::handleCallInteraction()
 {
+    stopHapticsFeedback();
     closeRingingNotification();
+}
+
+void NotificationManager::startHapticsFeedback()
+{
+#ifdef HAVE_QT5_FEEDBACK
+    _ringEffect->start();
+#endif // HAVE_QT5_FEEDBACK
+}
+
+void NotificationManager::stopHapticsFeedback()
+{
+#ifdef HAVE_QT5_FEEDBACK
+    _ringEffect->stop();
+#endif // HAVE_QT5_FEEDBACK
 }
 
 void NotificationManager::onNotificationAction(unsigned int action)

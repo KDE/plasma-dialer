@@ -38,7 +38,7 @@ private Q_SLOTS:
                             const DialerTypes::CallStateReason &callStateReason);
 
 private:
-    KNotification *_ringingNotification = nullptr;
+    std::unique_ptr<KNotification> _ringingNotification;
 
     void openRingingNotification(const QString &deviceUni, const QString &callUni, const QString callerDisplay, const QString notificationEvent);
     void closeRingingNotification();
@@ -47,13 +47,15 @@ private:
     void hangUp(const QString &deviceUni, const QString &callUni);
 
     void handleIncomingCall(const QString &deviceUni, const QString &callUni, const QString &communicationWith);
-    void handleRejectedCall();
+    void handleCallInteraction();
 
     org::kde::telephony::CallHistoryDatabase *_databaseInterface;
 
     org::kde::telephony::CallUtils *_callUtils;
     ContactUtils *_contactUtils;
 
+    void startHapticsFeedback();
+    void stopHapticsFeedback();
 #ifdef HAVE_QT5_FEEDBACK
     std::unique_ptr<QFeedbackHapticsEffect> _ringEffect;
 #endif // HAVE_QT5_FEEDBACK
