@@ -68,6 +68,7 @@ GridLayout {
     function onCallButtonPressed(number) {
         const deviceUni = applicationWindow().selectModem()
         if (isSpecialCode(number)) {
+            applicationWindow().ussdUserInitiated()
             UssdUtils.initiate(deviceUni, number)
         } else if (number === "*#06#") {
             imeiSheet.show()

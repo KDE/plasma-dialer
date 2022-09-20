@@ -118,6 +118,8 @@ Kirigami.ApplicationWindow {
         switchToPage(getPage("Dialer"), 0)
     }
 
+    signal ussdUserInitiated()
+
     Component.onCompleted: {
         // initial page and nav type
         switchToPage(getPage("Dialer"), 1);
@@ -175,5 +177,9 @@ Kirigami.ApplicationWindow {
         function onInitiated(deviceUni, command) {
             ussdSheet.open()
         }
+    }
+
+    onUssdUserInitiated: {
+        ussdSheet.open() // open it already since async interaction is not immediate
     }
 }
