@@ -135,8 +135,11 @@ Kirigami.ApplicationWindow {
     USSDSheet {
         id: ussdSheet
         onResponseReady: {
-            // TODO: debug
-            // USSDUtils.respond(response)
+            UssdUtils.respond(response)
+        }
+        onCancelSessionRequested: {
+            const deviceUni = applicationWindow().selectModem()
+            UssdUtils.cancel(deviceUni)
         }
     }
 
@@ -172,6 +175,10 @@ Kirigami.ApplicationWindow {
 
         function onRequestReceived(deviceUni, message) {
             ussdSheet.showNotification(message, true)
+        }
+
+        function onErrorReceived(deviceUni, error) {
+            ussdSheet.showError(error)
         }
 
         function onInitiated(deviceUni, command) {

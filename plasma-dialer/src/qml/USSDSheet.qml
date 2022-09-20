@@ -12,49 +12,77 @@ Kirigami.OverlaySheet {
 
     id: ussdSheet
 
-    property string notificationText
+    property bool isError: false
+    property string messageText
     property bool replyRequested: false
 
     signal responseReady(string response)
+    signal cancelSessionRequested()
 
     function showNotification(text, requestReply = false) {
+        isError = false
         ussdSheet.replyRequested = requestReply
-        ussdSheet.notificationText = text
+        ussdSheet.messageText = text
+    }
+
+    function showError(errorMessage) {
+        isError = true
+        ussdSheet.messageText = errorMessage
     }
 
     onSheetOpenChanged: {
         if (!sheetOpen) {
-            ussdSheet.notificationText = ""
+            ussdSheet.messageText = ""
         }
     }
 
     header: Kirigami.Heading {
-        text: i18n("USSD Message")
+        text: isError ? i18n("USSD Error") : i18n("USSD Message")
     }
-    footer: Kirigami.ActionTextField {
-        id: responseField
-        visible: ussdSheet.replyRequested
-        placeholderText: i18n("Write response...")
-        onAccepted: text !== "" && sendAction.triggered()
-        rightActions: [
-            Kirigami.Action {
-                id: sendAction
-                text: i18n("Send")
-                icon.name: "document-send"
-                enabled: responseField.text !== ""
-                onTriggered: {
-                    ussdSheet.responseReady(responseField.text)
-                    responseField.text = ""
+
+    footer: Loader {
+        Component {
+            id: responseFieldComponent
+            Kirigami.ActionTextField {
+                id: responseField
+                visible: ussdSheet.replyRequested
+                placeholderText: i18n("Write response...")
+                onAccepted: text !== "" && sendAction.triggered()
+                rightActions: [
+                    Kirigami.Action {
+                        id: sendAction
+                        text: i18n("Send")
+                        icon.name: "document-send"
+                        enabled: responseField.text !== ""
+                        onTriggered: {
+                            ussdSheet.responseReady(responseField.text)
+                            responseField.text = ""
+                        }
+                    }
+                ]
+            }
+        }
+
+        Component {
+            id: cancelButtonComponent
+            Controls.Button {
+                icon.name: "dialog-close"
+                text: i18n("Cancel USSD session")
+                onClicked: {
+                    ussdSheet.cancelSessionRequested()
+                    ussdSheet.close()
                 }
             }
-        ]
+        }
+
+        sourceComponent: ussdSheet.isError ? cancelButtonComponent : responseFieldComponent
     }
 
     Controls.BusyIndicator {
         anchors.centerIn: columnLayout
         width: Kirigami.Units.gridUnit * 2
         height: width
-        visible: (ussdSheet.notificationText === "") && sheetOpen
+        visible: (ussdSheet.messageText === "") && sheetOpen
     }
 
     ColumnLayout {
@@ -65,7 +93,7 @@ Kirigami.OverlaySheet {
         Controls.Label {
             Layout.fillWidth: true
             wrapMode: Text.WordWrap
-            text: ussdSheet.notificationText
+            text: ussdSheet.messageText
         }
     }
 }
