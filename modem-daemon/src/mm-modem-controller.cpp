@@ -39,6 +39,7 @@ void ModemManagerController::ussdInitiate(const QString &deviceUni, const QStrin
     const auto modem = ModemManager::findModemDevice(deviceUni);
     if (modem.isNull()) {
         qDebug() << Q_FUNC_INFO << "deviceUni not found:" << deviceUni;
+        Q_EMIT ussdErrorReceived(deviceUni, tr("deviceUni not found"));
         return;
     }
     const auto modem3gppUssdInterface = _modem3gppUssdInterface(modem);
@@ -46,6 +47,7 @@ void ModemManagerController::ussdInitiate(const QString &deviceUni, const QStrin
     reply.waitForFinished();
     if (reply.isError()) {
         qDebug() << Q_FUNC_INFO << reply.error();
+        Q_EMIT ussdErrorReceived(deviceUni, reply.error().message());
         return;
     }
     Q_EMIT ussdInitiateComplete(deviceUni, reply.value());
@@ -56,10 +58,17 @@ void ModemManagerController::ussdRespond(const QString &deviceUni, const QString
     const auto modem = ModemManager::findModemDevice(deviceUni);
     if (modem.isNull()) {
         qDebug() << Q_FUNC_INFO << "deviceUni not found:" << deviceUni;
+        Q_EMIT ussdErrorReceived(deviceUni, tr("deviceUni not found"));
         return;
     }
     const auto modem3gppUssdInterface = _modem3gppUssdInterface(modem);
-    modem3gppUssdInterface->respond(reply);
+    QDBusPendingReply<QString> dbusReply = modem3gppUssdInterface->respond(reply);
+    dbusReply.waitForFinished();
+    if (dbusReply.isError()) {
+        qDebug() << Q_FUNC_INFO << dbusReply.error();
+        Q_EMIT ussdErrorReceived(deviceUni, dbusReply.error().message());
+        return;
+    }
 }
 
 void ModemManagerController::ussdCancel(const QString &deviceUni)
@@ -67,6 +76,7 @@ void ModemManagerController::ussdCancel(const QString &deviceUni)
     const auto modem = ModemManager::findModemDevice(deviceUni);
     if (modem.isNull()) {
         qDebug() << Q_FUNC_INFO << "deviceUni not found:" << deviceUni;
+        Q_EMIT ussdErrorReceived(deviceUni, tr("deviceUni not found"));
         return;
     }
     const auto modem3gppUssdInterface = _modem3gppUssdInterface(modem);
