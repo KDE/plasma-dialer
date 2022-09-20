@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-18 00:47+0000\n"
+"POT-Creation-Date: 2022-09-19 00:47+0000\n"
 "PO-Revision-Date: 2022-02-04 16:31+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian\n"
@@ -38,7 +38,7 @@ msgstr "Telefon"
 msgid "Plasma phone dialer"
 msgstr "Apelator telefonic Plasma"
 
-#: src/qml/call/AnswerSwipe.qml:86
+#: src/qml/call/AnswerSwipe.qml:93
 #, kde-format
 msgid "Swipe right to accept"
 msgstr ""
