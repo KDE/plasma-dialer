@@ -18,27 +18,15 @@ DeclarativeUssdUtils::DeclarativeUssdUtils(QObject *parent)
 
 void DeclarativeUssdUtils::initiate(const QString &deviceUni, const QString &command)
 {
-    QDBusPendingReply<> reply = org::kde::telephony::UssdUtils::initiate(deviceUni, command);
-    reply.waitForFinished();
-    if (reply.isError()) {
-        qDebug() << Q_FUNC_INFO << reply.error();
-    }
+    org::kde::telephony::UssdUtils::initiate(deviceUni, command);
 }
 
 void DeclarativeUssdUtils::respond(const QString &deviceUni, const QString &reply)
 {
-    QDBusPendingReply<> dbusReply = org::kde::telephony::UssdUtils::respond(deviceUni, reply);
-    dbusReply.waitForFinished();
-    if (dbusReply.isError()) {
-        qDebug() << Q_FUNC_INFO << dbusReply.error();
-    }
+    org::kde::telephony::UssdUtils::respond(deviceUni, reply);
 }
 
 void DeclarativeUssdUtils::cancel(const QString &deviceUni)
 {
-    QDBusPendingReply<> reply = org::kde::telephony::UssdUtils::cancel(deviceUni);
-    reply.waitForFinished();
-    if (reply.isError()) {
-        qDebug() << Q_FUNC_INFO << reply.error();
-    }
+    org::kde::telephony::UssdUtils::cancel(deviceUni);
 }
