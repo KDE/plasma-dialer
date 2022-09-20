@@ -18,6 +18,7 @@ UssdManager::UssdManager(ModemController *modemController, UssdUtils *ussdUtils,
     _ussdUtils = ussdUtils;
     _modemController = modemController;
 
+    connect(_modemController, &ModemController::ussdErrorReceived, _ussdUtils, &UssdUtils::errorReceived);
     connect(_modemController, &ModemController::ussdNotificationReceived, _ussdUtils, &UssdUtils::notificationReceived);
     connect(_modemController, &ModemController::ussdRequestReceived, _ussdUtils, &UssdUtils::requestReceived);
     connect(_modemController, &ModemController::ussdInitiateComplete, this, &UssdManager::onInitiateComplete);

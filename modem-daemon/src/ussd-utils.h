@@ -23,6 +23,7 @@ Q_SIGNALS:
     void initiated(const QString &deviceUni, const QString &command);
     void responded(const QString &deviceUni, const QString &reply);
     void cancelled(const QString &deviceUni);
+    void errorReceived(const QString &deviceUni, const QString &error);
     void notificationReceived(const QString &deviceUni, const QString &message);
     void requestReceived(const QString &deviceUni, const QString &message);
 };

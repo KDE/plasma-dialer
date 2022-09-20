@@ -18,6 +18,7 @@ Q_SIGNALS:
     // SMS/MMS
     void messageAdded(const QString &deviceUni, const QVariantMap &message, bool received);
     // USSD
+    void ussdErrorReceived(const QString &deviceUni, const QString &error);
     void ussdNotificationReceived(const QString &deviceUni, const QString &message);
     void ussdRequestReceived(const QString &deviceUni, const QString &message);
     void ussdInitiateComplete(const QString &deviceUni, const QString &command);
