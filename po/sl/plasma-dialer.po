@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-19 00:47+0000\n"
+"POT-Creation-Date: 2022-09-21 00:48+0000\n"
 "PO-Revision-Date: 2022-09-16 06:29+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -226,20 +226,30 @@ msgstr "Ostalo"
 msgid "About"
 msgstr "O programu"
 
-#: src/qml/USSDSheet.qml:32
+#: src/qml/USSDSheet.qml:40
+#, kde-format
+msgid "USSD Error"
+msgstr ""
+
+#: src/qml/USSDSheet.qml:40
 #, kde-format
 msgid "USSD Message"
 msgstr "Sporočilo USSD"
 
-#: src/qml/USSDSheet.qml:37
+#: src/qml/USSDSheet.qml:49
 #, kde-format
 msgid "Write response..."
 msgstr "Piši odgovor ..."
 
-#: src/qml/USSDSheet.qml:42
+#: src/qml/USSDSheet.qml:54
 #, kde-format
 msgid "Send"
 msgstr "Pošlji"
+
+#: src/qml/USSDSheet.qml:70
+#, kde-format
+msgid "Cancel USSD session"
+msgstr ""
 
 #~ msgid "More Info:"
 #~ msgstr "Več informacij:"

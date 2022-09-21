@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-24 00:49+0000\n"
+"POT-Creation-Date: 2022-09-19 00:47+0000\n"
 "PO-Revision-Date: 2022-02-13 14:42+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -29,42 +29,42 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "karl@huftis.org"
 
-#: src/main.cpp:104 src/qml/components/Sidebar.qml:34 src/qml/main.qml:32
+#: src/main.cpp:135 src/qml/components/Sidebar.qml:34 src/qml/main.qml:32
 #, kde-format
 msgid "Phone"
 msgstr "Telefon"
 
-#: src/main.cpp:104
+#: src/main.cpp:135
 #, kde-format
 msgid "Plasma phone dialer"
 msgstr "Telefonringjar for Plasma"
 
-#: src/qml/call/AnswerSwipe.qml:80
+#: src/qml/call/AnswerSwipe.qml:93
 #, kde-format
 msgid "Swipe right to accept"
 msgstr ""
 
-#: src/qml/call/CallPage.qml:32 src/qml/call/InCallInlineMessage.qml:14
+#: src/qml/call/CallPage.qml:33 src/qml/call/InCallInlineMessage.qml:14
 #, kde-format
 msgid "Active call list"
 msgstr "Pågåande oppringingar"
 
-#: src/qml/call/CallPage.qml:102
+#: src/qml/call/CallPage.qml:103
 #, kde-format
 msgid "Calling..."
 msgstr "Ringjer …"
 
-#: src/qml/call/CallPage.qml:128
+#: src/qml/call/CallPage.qml:129
 #, kde-format
 msgid "Keypad"
 msgstr "Taltastatur"
 
-#: src/qml/call/CallPage.qml:148
+#: src/qml/call/CallPage.qml:149
 #, kde-format
 msgid "Speaker"
 msgstr "Høgtalar"
 
-#: src/qml/call/CallPage.qml:162
+#: src/qml/call/CallPage.qml:163
 #, kde-format
 msgid "Mute"
 msgstr "Demp"
@@ -97,6 +97,11 @@ msgstr "Telefonringjar"
 #, kde-format
 msgid "Settings"
 msgstr "Innstillingar"
+
+#: src/qml/components/Sidebar.qml:125
+#, kde-format
+msgid "Quit"
+msgstr ""
 
 #: src/qml/ContactsPage.qml:84
 #, kde-format
