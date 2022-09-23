@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-09-21 00:48+0000\n"
-"PO-Revision-Date: 2022-08-26 02:34+0100\n"
+"PO-Revision-Date: 2022-09-22 16:05+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -227,7 +227,7 @@ msgstr "Acerca"
 #: src/qml/USSDSheet.qml:40
 #, kde-format
 msgid "USSD Error"
-msgstr ""
+msgstr "Erro do USSD"
 
 #: src/qml/USSDSheet.qml:40
 #, kde-format
@@ -247,4 +247,4 @@ msgstr "Enviar"
 #: src/qml/USSDSheet.qml:70
 #, kde-format
 msgid "Cancel USSD session"
-msgstr ""
+msgstr "Cancelar a sessão do USSD"

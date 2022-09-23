@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-19 00:47+0000\n"
+"POT-Creation-Date: 2022-09-21 00:48+0000\n"
 "PO-Revision-Date: 2022-02-13 14:42+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -225,17 +225,27 @@ msgstr ""
 msgid "About"
 msgstr "Om"
 
-#: src/qml/USSDSheet.qml:32
+#: src/qml/USSDSheet.qml:40
+#, kde-format
+msgid "USSD Error"
+msgstr ""
+
+#: src/qml/USSDSheet.qml:40
 #, kde-format
 msgid "USSD Message"
 msgstr "USSD-melding"
 
-#: src/qml/USSDSheet.qml:37
+#: src/qml/USSDSheet.qml:49
 #, kde-format
 msgid "Write response..."
 msgstr "Skriv svar …"
 
-#: src/qml/USSDSheet.qml:42
+#: src/qml/USSDSheet.qml:54
 #, kde-format
 msgid "Send"
 msgstr "Send"
+
+#: src/qml/USSDSheet.qml:70
+#, kde-format
+msgid "Cancel USSD session"
+msgstr ""
