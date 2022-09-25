@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-09-21 00:48+0000\n"
-"PO-Revision-Date: 2022-05-18 12:59+0300\n"
+"PO-Revision-Date: 2022-09-24 14:46+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -41,7 +41,7 @@ msgstr "Номеронабиратель Plasma"
 #: src/qml/call/AnswerSwipe.qml:93
 #, kde-format
 msgid "Swipe right to accept"
-msgstr ""
+msgstr "Чтобы ответить смахните вправо"
 
 #: src/qml/call/CallPage.qml:33 src/qml/call/InCallInlineMessage.qml:14
 #, kde-format
@@ -100,7 +100,7 @@ msgstr "Параметры"
 #: src/qml/components/Sidebar.qml:125
 #, kde-format
 msgid "Quit"
-msgstr ""
+msgstr "Выйти"
 
 #: src/qml/ContactsPage.qml:84
 #, kde-format
@@ -159,17 +159,17 @@ msgstr "Номер IMEI не найден"
 #: src/qml/SettingsPage.qml:46
 #, kde-format
 msgid "Adaptive blocking"
-msgstr ""
+msgstr "Адаптивная блокировка"
 
 #: src/qml/SettingsPage.qml:52
 #, kde-format
 msgid "Ignore calls from unknown numbers"
-msgstr ""
+msgstr "Игнорировать звонки с неизвестных номеров"
 
 #: src/qml/SettingsPage.qml:65
 #, kde-format
 msgid "Immediately hang up"
-msgstr ""
+msgstr "Немедленно вешать трубку"
 
 #: src/qml/SettingsPage.qml:70
 #, kde-format
@@ -229,7 +229,7 @@ msgstr "О программе"
 #: src/qml/USSDSheet.qml:40
 #, kde-format
 msgid "USSD Error"
-msgstr ""
+msgstr "Ошибка USSD"
 
 #: src/qml/USSDSheet.qml:40
 #, kde-format
@@ -249,7 +249,7 @@ msgstr "Отправить"
 #: src/qml/USSDSheet.qml:70
 #, kde-format
 msgid "Cancel USSD session"
-msgstr ""
+msgstr "Отменить сеанс USSD"
 
 #~ msgid "More Info:"
 #~ msgstr "Дополнительная информация:"
