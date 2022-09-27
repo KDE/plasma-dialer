@@ -5,7 +5,7 @@
 cmake_minimum_required (VERSION 3.16)
 
 project(plasma-dialer-with-subprojects)
-set(PROJECT_VERSION "22.06")
+set(PROJECT_VERSION "22.09")
 
 option(DIALER_BUILD_SHELL_OVERLAY "Enable building of Dialer lockscreen functionality" ON)
 if (DIALER_BUILD_SHELL_OVERLAY)
