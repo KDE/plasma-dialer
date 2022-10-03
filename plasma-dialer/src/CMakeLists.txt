@@ -27,7 +27,6 @@ if (DIALER_BUILD_SHELL_OVERLAY)
             PURPOSE "Required for building with Wayland above-lock-screen support"
         )
     endif()
-    find_package(KWinEffects)
     set_package_properties(KWinEffects PROPERTIES DESCRIPTION "KWin (Effects)"
         TYPE RECOMMENDED
         PURPOSE "Appropriate KWin version is expected to support above lockscreen mode (shell overlay)"
