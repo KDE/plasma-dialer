@@ -39,7 +39,7 @@ void CallManager::onCallAdded(const QString &deviceUni,
                               const DialerTypes::CallStateReason &callStateReason,
                               const QString communicationWith)
 {
-    qDebug() << "call added:" << deviceUni << callUni << communicationWith;
+    qDebug() << "call added:" << deviceUni << callUni;
     Q_EMIT _callUtils->callAdded(deviceUni, callUni, callDirection, callState, callStateReason, communicationWith);
 }
 

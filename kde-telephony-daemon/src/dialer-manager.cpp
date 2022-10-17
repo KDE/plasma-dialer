@@ -104,7 +104,7 @@ void DialerManager::onCallAdded(const QString &deviceUni,
     if (!_callUtils) {
         qCritical() << Q_FUNC_INFO;
     }
-    qDebug() << Q_FUNC_INFO << "call added" << deviceUni << callUni << callDirection << callState << callStateReason << communicationWith;
+    qDebug() << Q_FUNC_INFO << "call added" << deviceUni << callUni << callDirection << callState << callStateReason;
 
     if (callDirection == DialerTypes::CallDirection::Incoming) {
         if (callState == DialerTypes::CallState::RingingIn) {

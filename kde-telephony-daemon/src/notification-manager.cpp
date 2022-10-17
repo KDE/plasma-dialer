@@ -90,7 +90,7 @@ void NotificationManager::onCallAdded(const QString &deviceUni,
                                       const DialerTypes::CallStateReason &callStateReason,
                                       const QString communicationWith)
 {
-    qDebug() << Q_FUNC_INFO << "call added" << deviceUni << callUni << callDirection << callState << callStateReason << communicationWith;
+    qDebug() << Q_FUNC_INFO << "call added" << deviceUni << callUni << callDirection << callState << callStateReason;
     if (callDirection == DialerTypes::CallDirection::Incoming) {
         if (callState == DialerTypes::CallState::RingingIn) {
             handleIncomingCall(deviceUni, callUni, communicationWith);
