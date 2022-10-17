@@ -107,7 +107,7 @@ msgstr "Ix"
 #: src/qml/ContactsPage.qml:84
 #, kde-format
 msgid "Select number to call"
-msgstr "Seleccioneu el número que es tocarà"
+msgstr "Seleccioneu el número al que s'ha de tocar"
 
 #: src/qml/ContactsPage.qml:93
 #, kde-format
