@@ -173,7 +173,7 @@ Kirigami.Page {
             Layout.minimumHeight: Kirigami.Units.gridUnit * 3.5
             Layout.fillWidth: true
 
-            AnswerSwipe {
+            AsymmetricAnswerSwipe {
                 anchors.fill: parent
                 visible: callIncoming
                 onAccepted: {

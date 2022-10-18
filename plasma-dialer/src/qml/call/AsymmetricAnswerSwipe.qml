@@ -60,25 +60,18 @@ Item {
 
         Rectangle {
             id: acceptRectangle
+
             Layout.minimumWidth: parent.width * 0.6
             Layout.fillWidth: true
             Layout.fillHeight: true
             radius: height
+            color: Qt.lighter(Kirigami.Theme.positiveBackgroundColor, 1 + dragHandler.distance / dragHandler.swipeAcceptThreshold)
 
             property bool swipeAccepted: false
-
-            color: Qt.lighter(Kirigami.Theme.positiveBackgroundColor, 1 + acceptMouseArea.swipePath)
 
             onSwipeAcceptedChanged: {
                 if (swipeAccepted) {
                     root.accepted()
-                }
-            }
-
-            // re-init after the previous show
-            onVisibleChanged: {
-                if (visible) {
-                    swipeAccepted = false
                 }
             }
 
@@ -90,8 +83,8 @@ Item {
                 anchors.verticalCenter: parent.verticalCenter
                 color: Kirigami.Theme.highlightedTextColor
                 font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.2
-                text: i18n("Swipe right to accept")
-                property bool resting: acceptMouseArea.swipePath == 0
+                text: i18n("Swipe to accept")
+                property bool resting: callAcceptIcon.resting
                 visible: resting
 
                 SequentialAnimation {
@@ -112,84 +105,80 @@ Item {
             Kirigami.Icon {
                 id: callAcceptIcon
 
-                anchors.verticalCenter: parent.verticalCenter
                 property real leftSpacing: Kirigami.Units.largeSpacing * 2
+                property bool resting: x === leftSpacing
+
+                anchors.verticalCenter: parent.verticalCenter
                 x: leftSpacing
                 source: "call-start-symbolic"
-                opacity: 1 - acceptMouseArea.swipePath
+
+                function resetXPosition() {
+                    x = leftSpacing
+                }
+
+                onXChanged: {
+                    if (!dragHandler.active) {
+                        resetXPosition()
+                    }
+                }
 
                 SequentialAnimation {
                     running: true
                     loops: Animation.Infinite
-                    NumberAnimation { target: callAcceptIcon; property: "rotation"; from: -8; to: 8; easing.type: Easing.OutInElastic; duration: Kirigami.Units.veryLongDuration * 3}
+                    NumberAnimation {
+                        target: callAcceptIcon;
+                        property: "rotation";
+                        from: -8; to: 8;
+                        easing.type: Easing.OutInElastic;
+                        duration: Kirigami.Units.veryLongDuration * 3
+                    }
                     PauseAnimation { duration: Kirigami.Units.shortDuration}
-                }
-
-                // re-init after the previous show
-                onVisibleChanged: {
-                    if (visible) {
-                        x = leftSpacing
-                    }
-                }
-
-                Connections {
-                    target: acceptMouseArea
-                    function onMouseXChanged(mouse) {
-                        if (mouse.x < callAcceptIcon.leftSpacing) {
-                            return
-                        }
-                        if (mouse.x > acceptRectangle.width - callAcceptIcon.width) {
-                            return
-                        }
-                        if (acceptRectangle.swipeAccepted) {
-                            return
-                        }
-
-                        callAcceptIcon.x = mouse.x - (callAcceptIcon.width / 2)
-                    }
-                    function onReleased() {
-                        if (acceptRectangle.swipeAccepted) {
-                            return
-                        }
-
-                        callAcceptIcon.x = callAcceptIcon.leftSpacing
-                    }
-                    function onSwipeAccepted() {
-                        callAcceptIcon.x = acceptRectangle.width + callAcceptIcon.width
-                    }
                 }
             }
 
-            MouseArea {
-                id: acceptMouseArea
-                anchors.fill: parent
-                property real swipePathStart: 0
-                property real swipePath: 0
+            DragHandler {
+                id: dragHandler
+
+                property var dragAreaItem: acceptRectangle
+                property var dragItem: callAcceptIcon
+
                 property real swipeAcceptThreshold: 0.33
-                signal swipeAccepted()
-                function resetSwipePathVars() {
-                    swipePath = 0
-                    swipePathStart = 0
+                property real distance: 0
+
+                target: null
+
+                function syncDragItemX() {
+                    const positionX = dragHandler.centroid.position.x
+                    if (positionX < dragItem.leftSpacing) {
+                        return
+                    }
+                    dragItem.x = positionX - dragItem.width / 2
                 }
 
-                onMouseXChanged: {
-                    swipePath = mouseX / width
-                }
-                onPressed: {
-                    swipePathStart = mouseX / width
-                }
-                onReleased: {
-                    resetSwipePathVars()
-                    acceptRectangle.swipeAccepted = false
-                }
-                onSwipePathChanged: {
-                    if ((swipePath - swipePathStart) >= swipeAcceptThreshold) {
-                        swipeAccepted()
+                onDistanceChanged: {
+                    if (distance === 0) {
+                        dragItem.resetXPosition()
+                        dragAreaItem.swipeAccepted = false
                     }
                 }
-                onSwipeAccepted: {
-                    acceptRectangle.swipeAccepted = true
-                    resetSwipePathVars()
+
+                onTranslationChanged: {
+                    syncDragItemX()
+
+                    distance = Math.abs(translation["x"]) / dragAreaItem.width
+
+                    if (distance > swipeAcceptThreshold) {
+                        dragAreaItem.swipeAccepted = true
+                        dragItem.resetXPosition()
+                    }
+                }
+
+                onGrabChanged: {
+                    syncDragItemX()
+                }
+
+                onActiveChanged: {
+                    distance = 0
                 }
             }
         }
