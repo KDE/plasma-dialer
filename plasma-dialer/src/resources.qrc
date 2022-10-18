@@ -11,7 +11,6 @@
         <file alias="SettingsPage.qml">qml/SettingsPage.qml</file>
         <file alias="AboutPage.qml">qml/AboutPage.qml</file>
         <file alias="call/InCallInlineMessage.qml">qml/call/InCallInlineMessage.qml</file>
-        <file alias="call/AnswerSwipe.qml">qml/call/AnswerSwipe.qml</file>
         <file alias="call/AsymmetricAnswerSwipe.qml">qml/call/AsymmetricAnswerSwipe.qml</file>
         <file alias="call/CallPage.qml">qml/call/CallPage.qml</file>
         <file alias="call/Avatar.qml">qml/call/Avatar.qml</file>
