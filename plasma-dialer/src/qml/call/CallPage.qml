@@ -29,6 +29,7 @@ Kirigami.Page {
     property bool callIncoming: ActiveCallModel.incoming
     property bool callActive: ActiveCallModel.active
     property int callDuration: ActiveCallModel.callDuration
+    property string callCommunicationWith: ActiveCallModel.communicationWith
     
     title: i18n("Active call list")
 
@@ -86,9 +87,9 @@ Kirigami.Page {
             horizontalAlignment: Qt.AlignHCenter
             verticalAlignment: Qt.AlignVCenter
             font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.15
-            text: ContactUtils.displayString("")
+            text: ContactUtils.displayString(callCommunicationWith)
             font.bold: true
-            visible: text != ""
+            visible: callActive
         }
         
         // time spent on call
