@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-19 00:48+0000\n"
-"PO-Revision-Date: 2022-09-21 04:55+0300\n"
+"PO-Revision-Date: 2022-10-19 12:23+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -38,10 +38,9 @@ msgid "Plasma phone dialer"
 msgstr "Plasma telefon çeviricisi"
 
 #: src/qml/call/AsymmetricAnswerSwipe.qml:86
-#, fuzzy, kde-format
-#| msgid "Swipe right to accept"
+#, kde-format
 msgid "Swipe to accept"
-msgstr "Kabul etmek için sağa kaydırın"
+msgstr "Kabul etmek için kaydırın"
 
 #: src/qml/call/CallPage.qml:33 src/qml/call/InCallInlineMessage.qml:14
 #, kde-format
@@ -115,7 +114,7 @@ msgstr "Numarası kayıtlı olan kimse yok"
 #: src/qml/DialerPage.qml:67
 #, kde-format
 msgid "Modem devices are not found"
-msgstr "Modem aygıtları bulunamadı"
+msgstr "Modem aygıtı bulunamadı"
 
 #: src/qml/DialerPage.qml:76
 #, kde-format
