@@ -104,6 +104,7 @@ void ActiveCallModel::onCallAdded(const QString &deviceUni,
     Q_UNUSED(deviceUni);
     Q_UNUSED(callUni);
     _callUtils->fetchCalls();
+    setCommunicationWith(communicationWith);
 }
 
 void ActiveCallModel::onCallDeleted(const QString &deviceUni, const QString &callUni)
@@ -131,9 +132,19 @@ void ActiveCallModel::onFetchedCallsChanged(const DialerTypes::CallDataVector &f
     endResetModel();
     bool active = (_calls.size() > 0);
     setActive(active);
+    if (!active) {
+        return;
+    }
     bool incoming = false;
     for (int i = 0; i < _calls.size(); i++) {
         const auto call = _calls.at(i);
+        // trying to determine current active call
+        // should be checked could it be improved
+        // with with DialerTypes::CallDirection
+        if ((call.state != DialerTypes::CallState::Unknown) && (call.state != DialerTypes::CallState::Held) && (call.state != DialerTypes::CallState::Waiting)
+            && (call.state != DialerTypes::CallState::Terminated)) {
+            setCommunicationWith(call.communicationWith);
+        }
         if (call.direction == DialerTypes::CallDirection::Incoming) {
             if (call.state == DialerTypes::CallState::RingingIn) {
                 incoming = true;
@@ -169,4 +180,17 @@ void ActiveCallModel::setIncoming(bool newIncoming)
         return;
     _incoming = newIncoming;
     Q_EMIT incomingChanged();
+}
+
+QString ActiveCallModel::communicationWith() const
+{
+    return _communicationWith;
+}
+
+void ActiveCallModel::setCommunicationWith(const QString communicationWith)
+{
+    if (_communicationWith == communicationWith)
+        return;
+    _communicationWith = communicationWith;
+    Q_EMIT communicationWithChanged();
 }
