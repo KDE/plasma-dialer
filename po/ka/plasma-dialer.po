@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-19 00:48+0000\n"
-"PO-Revision-Date: 2022-09-12 20:25+0200\n"
+"PO-Revision-Date: 2022-10-20 06:05+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -39,10 +39,9 @@ msgid "Plasma phone dialer"
 msgstr "Plasma-ის ტელეფონი"
 
 #: src/qml/call/AsymmetricAnswerSwipe.qml:86
-#, fuzzy, kde-format
-#| msgid "Swipe right to accept"
+#, kde-format
 msgid "Swipe to accept"
-msgstr "ზარის მისაღებად გადაუსვით მარჯვნივ"
+msgstr "მისაღებად გადაუსვით"
 
 #: src/qml/call/CallPage.qml:33 src/qml/call/InCallInlineMessage.qml:14
 #, kde-format
@@ -101,7 +100,7 @@ msgstr "პარამეტრები"
 #: src/qml/components/Sidebar.qml:125
 #, kde-format
 msgid "Quit"
-msgstr ""
+msgstr "გამოსვლა"
 
 #: src/qml/ContactsPage.qml:84
 #, kde-format
@@ -228,7 +227,7 @@ msgstr "შესახებ"
 #: src/qml/USSDSheet.qml:40
 #, kde-format
 msgid "USSD Error"
-msgstr ""
+msgstr "USSD შეცდომა"
 
 #: src/qml/USSDSheet.qml:40
 #, kde-format
@@ -248,7 +247,7 @@ msgstr "გაგზავნა"
 #: src/qml/USSDSheet.qml:70
 #, kde-format
 msgid "Cancel USSD session"
-msgstr ""
+msgstr "USSD სესიის გაუქმება"
 
 #~ msgid "More Info:"
 #~ msgstr "მეტი ინფორმაცია:"
