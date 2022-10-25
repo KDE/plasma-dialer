@@ -13,6 +13,7 @@ import QtQuick.Layouts 1.1
 import org.kde.kirigami 2.12 as Kirigami
 
 import org.kde.telephony 1.0
+import org.kde.phone.dialer 1.0 // Config
 
 import "../dialpad"
 
@@ -177,14 +178,39 @@ Kirigami.Page {
             Layout.minimumHeight: Kirigami.Units.gridUnit * 3.5
             Layout.fillWidth: true
 
-            AsymmetricAnswerSwipe {
+            Loader {
+                id: answerControlLoader
                 anchors.fill: parent
-                visible: callIncoming
-                onAccepted: {
-                    CallUtils.accept(activeDeviceUni(), activeCallUni());
+                active: callIncoming
+                sourceComponent: (Config.answerControl === 2) ?
+                                     asymmetricAnswerSwipe
+                                   : (Config.answerControl === 1) ?
+                                         symmetricAnswerSwipe
+                                       : answerButtons
+
+                Connections {
+                    target: answerControlLoader.item
+                    onAccepted: {
+                        CallUtils.accept(activeDeviceUni(), activeCallUni());
+                    }
+                    onRejected: {
+                        CallUtils.hangUp(activeDeviceUni(), activeCallUni());
+                    }
                 }
-                onRejected: {
-                    CallUtils.hangUp(activeDeviceUni(), activeCallUni());
+
+                Component {
+                    id: answerButtons
+                    AnswerButtons {}
+                }
+
+                Component {
+                    id: symmetricAnswerSwipe
+                    SymmetricAnswerSwipe {}
+                }
+
+                Component {
+                    id: asymmetricAnswerSwipe
+                    AsymmetricAnswerSwipe {}
                 }
             }
             

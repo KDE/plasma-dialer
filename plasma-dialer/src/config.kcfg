@@ -34,4 +34,13 @@
             <default></default>
         </entry>
     </group>
+    <group name="Answer control for the incoming screen">
+        <entry name="answerControl" type="Enum">
+            <choices name="Types">
+                <choice name="Buttons"/>
+                <choice name="SyncSwipe"/>
+                <choice name="AsyncSwipe"/>
+            </choices>
+        </entry>
+    </group>
 </kcfg>

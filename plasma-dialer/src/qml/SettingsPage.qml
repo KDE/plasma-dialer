@@ -190,6 +190,21 @@ Kirigami.ScrollablePage {
 
         Kirigami.Heading {
             Kirigami.FormData.isSection: true
+            text: i18n("Answer control for the incoming screen")
+        }
+
+        Controls.ComboBox {
+            model: ["Buttons", "Symmetric Swipe", "Asymmetric Swipe"]
+            Layout.alignment: Qt.AlignHCenter
+            currentIndex: Config.answerControl
+            onCurrentIndexChanged: {
+                console.log(currentIndex)
+                Config.answerControl = currentIndex
+            }
+        }
+
+        Kirigami.Heading {
+            Kirigami.FormData.isSection: true
             text: i18n("Other")
         }
 
