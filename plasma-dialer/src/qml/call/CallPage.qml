@@ -190,10 +190,10 @@ Kirigami.Page {
 
                 Connections {
                     target: answerControlLoader.item
-                    onAccepted: {
+                    function onAccepted() {
                         CallUtils.accept(activeDeviceUni(), activeCallUni());
                     }
-                    onRejected: {
+                    function onRejected() {
                         CallUtils.hangUp(activeDeviceUni(), activeCallUni());
                     }
                 }
