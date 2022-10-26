@@ -16,23 +16,12 @@ Item {
     signal accepted
     signal rejected
 
-    Rectangle {
+    Item {
         id: controlRectangle
 
         anchors.fill: parent
         anchors.leftMargin: Kirigami.Units.gridUnit
         anchors.rightMargin: Kirigami.Units.gridUnit
-        radius: height
-
-        property color controlColor: Kirigami.Theme.highlightColor
-        property color positiveColor: Kirigami.Theme.positiveBackgroundColor
-        property color negativeColor: Kirigami.Theme.negativeBackgroundColor
-
-        color: Qt.hsla(controlColor.hslHue -
-                       Math.abs(controlColor.hslHue - positiveColor.hslHue) * dragHandler.progress,
-                       controlColor.hslSaturation,
-                       controlColor.hslLightness,
-                       controlColor.a)
 
         property bool swipeAccepted: false
 
@@ -46,8 +35,42 @@ Item {
             }
         }
 
+        Rectangle {
+            anchors.left: (dragHandler.distance < 0) ? parent.left : callControlIcon.left
+            anchors.right: (dragHandler.distance <= 0) ? callControlIcon.right : parent.right
+            radius: height
+            anchors.verticalCenter: parent.verticalCenter
+            height: (dragHandler.distance === 0) ? width : parent.height
+            property color controlColor: Kirigami.Theme.highlightColor
+            property color positiveColor: Kirigami.Theme.positiveBackgroundColor
+            property color negativeColor: Kirigami.Theme.negativeBackgroundColor
+            color: Qt.hsla(controlColor.hslHue -
+                           Math.abs(controlColor.hslHue - positiveColor.hslHue) * dragHandler.progress,
+                           controlColor.hslSaturation,
+                           controlColor.hslLightness,
+                           controlColor.a)
+        }
+
+        Rectangle {
+            anchors.centerIn: callControlIcon
+            width: height
+            height: Kirigami.Units.gridUnit * 3
+            radius: height
+            property color controlColor: Kirigami.Theme.highlightColor
+            property color positiveColor: Kirigami.Theme.positiveBackgroundColor
+            property color negativeColor: Kirigami.Theme.negativeBackgroundColor
+            color: Qt.hsla(controlColor.hslHue -
+                           Math.abs(controlColor.hslHue - positiveColor.hslHue) * dragHandler.progress,
+                           controlColor.hslSaturation,
+                           controlColor.hslLightness,
+                           controlColor.a)
+        }
+
         Kirigami.Icon {
             id: callControlIcon
+
+            width: height
+            height: Kirigami.Units.gridUnit * 3
 
             property real leftSpacing: (controlRectangle.width - width) / 2
 
@@ -56,7 +79,7 @@ Item {
             anchors.verticalCenter: parent.verticalCenter
             x: leftSpacing
 
-            source: "drag-handle-symbolic"
+            source: "transform-move-horizontal"
 
             function resetXPosition() {
                 if (x !== leftSpacing) {
@@ -144,22 +167,15 @@ Item {
         anchors.leftMargin: Kirigami.Units.gridUnit
         anchors.rightMargin: Kirigami.Units.gridUnit
 
-        Rectangle {
+        Item {
             Layout.minimumWidth: height
             Layout.fillHeight: true
-            radius: height
             visible: dragHandler.distance <= 0
-            property color callEndColor: Kirigami.Theme.negativeBackgroundColor
-            color: Qt.hsla(callEndColor.hslHue,
-                           callEndColor.hslSaturation,
-                           callEndColor.hslLightness,
-                           dragHandler.distance < 0 ?
-                               callEndColor.a + dragHandler.progress :
-                               callEndColor.a
-                           )
             Kirigami.Icon {
                 anchors.centerIn: parent
-                source: "call-end-symbolic"
+                property color callEndColor: Kirigami.Theme.negativeBackgroundColor
+                source: (dragHandler.distance === 0) ? "call-stop" : "call-stop-symbolic"
+                color: (dragHandler.distance === 0) ? callEndColor : Kirigami.Theme.textColor
             }
         }
 
@@ -168,22 +184,17 @@ Item {
             Layout.fillHeight: true
         }
 
-        Rectangle {
+        Item {
             Layout.minimumWidth: height
             Layout.fillHeight: true
-            radius: height
             visible: dragHandler.distance >= 0
-            property color callStartColor: Kirigami.Theme.positiveBackgroundColor
-            color: Qt.hsla(callStartColor.hslHue,
-                           callStartColor.hslSaturation,
-                           callStartColor.hslLightness,
-                           dragHandler.distance > 0 ?
-                               callStartColor.a - dragHandler.progress :
-                               callStartColor.a
-                           )
             Kirigami.Icon {
                 anchors.centerIn: parent
-                source: "call-start-symbolic"
+                property color callStartColor: Kirigami.Theme.positiveBackgroundColor
+                // Workaround since positiveBackgroundColor is too dark for the dark theme
+                property color callStartColorWA: Qt.lighter(callStartColor, 3)
+                source: (dragHandler.distance === 0) ? "call-start" : "call-start-symbolic"
+                color: (dragHandler.distance === 0) ? callStartColorWA : Kirigami.Theme.textColor
             }
         }
     }
