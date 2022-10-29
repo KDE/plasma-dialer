@@ -23,20 +23,20 @@ set(modemd_SRCS
     ${modem-daemon_QM_LOADER}
     )
 
-find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED Core Gui DBus Sql)
+find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED Core Gui DBus Sql)
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS ModemManagerQt)
 find_package(PhoneNumber COMPONENTS PhoneNumber REQUIRED)
 
-qt5_add_dbus_adaptor(modemd_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.DeviceUtils.xml"
+qt_add_dbus_adaptor(modemd_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.DeviceUtils.xml"
     device-utils.h DeviceUtils)
 
-qt5_add_dbus_adaptor(modemd_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.UssdUtils.xml"
+qt_add_dbus_adaptor(modemd_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.UssdUtils.xml"
     ussd-utils.h UssdUtils)
 
-qt5_add_dbus_adaptor(modemd_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.CallUtils.xml"
+qt_add_dbus_adaptor(modemd_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.CallUtils.xml"
     call-utils.h CallUtils)
 
-qt5_add_dbus_adaptor(modemd_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.CallHistoryDatabase.xml"
+qt_add_dbus_adaptor(modemd_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.CallHistoryDatabase.xml"
     call-history-database.h CallHistoryDatabase)
 
 add_executable(modem-daemon
@@ -46,9 +46,9 @@ add_executable(modem-daemon
 target_include_directories(modem-daemon PRIVATE ${CMAKE_BINARY_DIR})
 
 target_link_libraries(modem-daemon
-    Qt5::Core
-    Qt5::DBus
-    Qt5::Sql
+    Qt::Core
+    Qt::DBus
+    Qt::Sql
     KF5::ModemManagerQt
     PhoneNumber::PhoneNumber
     ktelephonymetatypes # FIXME: KF5 cmake files

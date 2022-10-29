@@ -18,23 +18,23 @@ set_source_files_properties(
     INCLUDE "kTelephonyMetaTypes/dialer-types.h"
 )
 
-find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED Core DBus)
-find_package(Qt5 ${QT_MIN_VERSION} OPTIONAL_COMPONENTS Feedback)
+find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED Core DBus)
+find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} OPTIONAL_COMPONENTS Feedback)
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Config I18n ModemManagerQt Notifications KIO)
 
-qt5_add_dbus_interface(ktelephonyd_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.DeviceUtils.xml"
+qt_add_dbus_interface(ktelephonyd_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.DeviceUtils.xml"
     deviceutilsinterface)
 
-qt5_add_dbus_interface(ktelephonyd_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.CallUtils.xml"
+qt_add_dbus_interface(ktelephonyd_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.CallUtils.xml"
     callutilsinterface)
 
-qt5_add_dbus_interface(ktelephonyd_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.CallHistoryDatabase.xml"
+qt_add_dbus_interface(ktelephonyd_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.CallHistoryDatabase.xml"
     callhistorydatabaseinterface)
 
-qt5_add_dbus_adaptor(ktelephonyd_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.ContactUtils.xml"
+qt_add_dbus_adaptor(ktelephonyd_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.ContactUtils.xml"
     contact-utils.h ContactUtils)
 
-qt5_add_dbus_adaptor(ktelephonyd_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.DialerUtils.xml"
+qt_add_dbus_adaptor(ktelephonyd_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.DialerUtils.xml"
     dialer-utils.h DialerUtils)
 
 add_executable(kde-telephony-daemon
@@ -43,7 +43,7 @@ add_executable(kde-telephony-daemon
 
 target_include_directories(kde-telephony-daemon PRIVATE ${CMAKE_BINARY_DIR})
 
-qt5_add_dbus_interface(mpris_srcs "${DBUS_INTERFACES_PATH}/org.mpris.MediaPlayer2.Player.xml" mprisplayerinterface)
+qt_add_dbus_interface(mpris_srcs "${DBUS_INTERFACES_PATH}/org.mpris.MediaPlayer2.Player.xml" mprisplayerinterface)
 target_sources(kde-telephony-daemon PRIVATE ${mpris_srcs})
 
 find_package(PkgConfig QUIET)
@@ -66,8 +66,8 @@ endif()
 
 target_link_libraries(kde-telephony-daemon
     KF5::ConfigGui
-    Qt5::Core
-    Qt5::DBus
+    Qt::Core
+    Qt::DBus
     KF5::I18n
     KF5::KIOGui
     KF5::Notifications

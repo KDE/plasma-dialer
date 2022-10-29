@@ -27,33 +27,33 @@ set_source_files_properties(
     INCLUDE "kTelephonyMetaTypes/dialer-types.h"
 )
 
-find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED Core Quick Qml Sql DBus)
+find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED Core Quick Qml Sql DBus)
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS CoreAddons I18n DBusAddons Contacts People)
 find_package(PhoneNumber COMPONENTS PhoneNumber REQUIRED)
 
 # calls-daemon
 
-qt5_add_dbus_interface(PLUGIN_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.DeviceUtils.xml"
+qt_add_dbus_interface(PLUGIN_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.DeviceUtils.xml"
     deviceutilsinterface)
 
-qt5_add_dbus_interface(PLUGIN_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.VoiceMailUtils.xml"
+qt_add_dbus_interface(PLUGIN_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.VoiceMailUtils.xml"
     voicemailutilsinterface)
 
-qt5_add_dbus_interface(PLUGIN_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.UssdUtils.xml"
+qt_add_dbus_interface(PLUGIN_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.UssdUtils.xml"
     ussdutilsinterface)
 
-qt5_add_dbus_interface(PLUGIN_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.CallHistoryDatabase.xml"
+qt_add_dbus_interface(PLUGIN_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.CallHistoryDatabase.xml"
     callhistorydatabaseinterface)
 
-qt5_add_dbus_interface(PLUGIN_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.CallUtils.xml"
+qt_add_dbus_interface(PLUGIN_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.CallUtils.xml"
     callutilsinterface)
 
 # kde-telephony-daemon
 
-qt5_add_dbus_interface(PLUGIN_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.DialerUtils.xml"
+qt_add_dbus_interface(PLUGIN_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.DialerUtils.xml"
     dialerutilsinterface)
 
-qt5_add_dbus_interface(PLUGIN_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.ContactUtils.xml"
+qt_add_dbus_interface(PLUGIN_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.ContactUtils.xml"
     contactutilsinterface)
 
 add_library(KTelephonyPluginDeclarative SHARED
@@ -63,11 +63,11 @@ add_library(KTelephonyPluginDeclarative SHARED
     )
 
 target_link_libraries(KTelephonyPluginDeclarative
-    Qt5::Core
-    Qt5::Quick
-    Qt5::Qml
-    Qt5::Sql
-    Qt5::DBus
+    Qt::Core
+    Qt::Quick
+    Qt::Qml
+    Qt::Sql
+    Qt::DBus
     KF5::CoreAddons
     KF5::I18n
     KF5::DBusAddons
