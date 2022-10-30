@@ -102,7 +102,7 @@ SPDX-License-Identifier: CC0-1.0
   <developer_name xml:lang="vi">Cộng đồng KDE</developer_name>
   <developer_name xml:lang="x-test">xxKDE Communityxx</developer_name>
   <developer_name xml:lang="zh-CN">KDE 社区</developer_name>
-  <url type="bugtracker">https://invent.kde.org/plasma-mobile/plasma-dialer/-/issues</url>
+  <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?product=Plasma%20Mobile%20Dialer</url>
   <url type="donation">https://www.kde.org/community/donations/?app=plasmaphonedialer</url>
   <recommends>
     <control>touch</control>
