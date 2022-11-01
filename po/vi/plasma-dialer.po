@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-19 00:48+0000\n"
-"PO-Revision-Date: 2022-09-28 18:37+0200\n"
+"PO-Revision-Date: 2022-10-31 11:51+0100\n"
 "Last-Translator: Phu Hung Nguyen <phu.nguyen@kdemail.net>\n"
 "Language-Team: Vietnamese <kde-l10n-vi@kde.org>\n"
 "Language: vi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 22.04.1\n"
+"X-Generator: Lokalize 22.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -38,10 +38,9 @@ msgid "Plasma phone dialer"
 msgstr "Trình quay số điện thoại Plasma"
 
 #: src/qml/call/AsymmetricAnswerSwipe.qml:86
-#, fuzzy, kde-format
-#| msgid "Swipe right to accept"
+#, kde-format
 msgid "Swipe to accept"
-msgstr "Hất sang phải để nhận"
+msgstr "Hất để nhận"
 
 #: src/qml/call/CallPage.qml:33 src/qml/call/InCallInlineMessage.qml:14
 #, kde-format
