@@ -36,6 +36,15 @@ Item {
         }
 
         Rectangle {
+            anchors.left: parent.left
+            anchors.right: parent.right
+            radius: height
+            anchors.verticalCenter: parent.verticalCenter
+            height: parent.height
+            color: Qt.darker(Kirigami.Theme.alternateBackgroundColor, 1.5)
+        }
+
+        Rectangle {
             anchors.left: (dragHandler.distance < 0) ? parent.left : callControlIcon.left
             anchors.right: (dragHandler.distance <= 0) ? callControlIcon.right : parent.right
             radius: height
