@@ -57,7 +57,7 @@ void CallHistoryModel::addCall(const DialerTypes::CallData &callData)
     _databaseInterface->addCall(callData);
 
     DialerTypes::CallData data;
-    data.id = databaseLastId;
+    data.id = QString::number(databaseLastId);
 
     _calls.push_front(callData); // insert latest calls at the top of the list
 
