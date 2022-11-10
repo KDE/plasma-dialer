@@ -28,7 +28,7 @@ Kirigami.Page {
 
     property bool callIncoming: ActiveCallModel.incoming
     property bool callActive: ActiveCallModel.active
-    property int callDuration: ActiveCallModel.callDuration
+    property int callDuration: ActiveCallModel.duration
     property string callCommunicationWith: ActiveCallModel.communicationWith
     
     title: i18n("Active call list")
@@ -100,13 +100,16 @@ Kirigami.Page {
             verticalAlignment: Qt.AlignVCenter
             font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.1
             text: {
-                if (callActive) {
-                    return i18n("Calling...");
-                } else if (callDuration > 0) {
-                    return secondsToTimeString(callDuration);
-                } else {
-                    return '';
+                if (callDuration > 0) {
+                    return secondsToTimeString(callDuration)
                 }
+                if (callIncoming) {
+                    return i18n("Incoming...")
+                }
+                if (callActive) {
+                    return i18n("Calling...")
+                }
+                return ''
             }
             visible: text !== ""
         }
