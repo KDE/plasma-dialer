@@ -14,6 +14,7 @@ class ActiveCallModel : public CallModel
     Q_PROPERTY(bool incoming READ incoming NOTIFY incomingChanged)
     Q_PROPERTY(bool active READ active NOTIFY activeChanged)
     Q_PROPERTY(QString communicationWith READ communicationWith NOTIFY communicationWithChanged)
+    Q_PROPERTY(qulonglong duration READ duration NOTIFY durationChanged)
 
 public:
     ActiveCallModel(QObject *parent = nullptr);
@@ -27,6 +28,9 @@ public:
     QString communicationWith() const;
     void setCommunicationWith(const QString communicationWith);
 
+    qulonglong duration() const;
+    void setDuration(qulonglong duration);
+
 public Q_SLOTS:
     Q_INVOKABLE void sendDtmf(const QString &tones);
     Q_INVOKABLE void dial(const QString &deviceUni, const QString &number);
@@ -39,6 +43,7 @@ Q_SIGNALS:
     void activeChanged();
     void incomingChanged();
     void communicationWithChanged();
+    void durationChanged();
 
 private Q_SLOTS:
     void onCallAdded(const QString &deviceUni,
@@ -62,4 +67,5 @@ private:
     bool _active = false;
     bool _incoming = false;
     QString _communicationWith;
+    qulonglong _duration;
 };

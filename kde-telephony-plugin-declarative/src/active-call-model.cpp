@@ -26,7 +26,6 @@ ActiveCallModel::ActiveCallModel(QObject *parent)
         _callUtils->fetchCalls();
         Q_EMIT dataChanged(index(0), index(rowCount()), {DurationRole, CallAttemptDurationRole});
     });
-
     _callUtils->fetchCalls();
 }
 
@@ -105,6 +104,7 @@ void ActiveCallModel::onCallAdded(const QString &deviceUni,
     Q_UNUSED(callUni);
     _callUtils->fetchCalls();
     setCommunicationWith(communicationWith);
+    _callsTimer.start();
 }
 
 void ActiveCallModel::onCallDeleted(const QString &deviceUni, const QString &callUni)
@@ -112,6 +112,7 @@ void ActiveCallModel::onCallDeleted(const QString &deviceUni, const QString &cal
     Q_UNUSED(deviceUni);
     Q_UNUSED(callUni);
     _callUtils->fetchCalls();
+    _callsTimer.stop();
 }
 
 void ActiveCallModel::onCallStateChanged(const QString &deviceUni,
@@ -144,6 +145,7 @@ void ActiveCallModel::onFetchedCallsChanged(const DialerTypes::CallDataVector &f
         if ((call.state != DialerTypes::CallState::Unknown) && (call.state != DialerTypes::CallState::Held) && (call.state != DialerTypes::CallState::Waiting)
             && (call.state != DialerTypes::CallState::Terminated)) {
             setCommunicationWith(call.communicationWith);
+            setDuration(call.duration);
         }
         if (call.direction == DialerTypes::CallDirection::Incoming) {
             if (call.state == DialerTypes::CallState::RingingIn) {
@@ -193,4 +195,17 @@ void ActiveCallModel::setCommunicationWith(const QString communicationWith)
         return;
     _communicationWith = communicationWith;
     Q_EMIT communicationWithChanged();
+}
+
+qulonglong ActiveCallModel::duration() const
+{
+    return _duration;
+}
+
+void ActiveCallModel::setDuration(qulonglong duration)
+{
+    if (_duration == duration)
+        return;
+    _duration = duration;
+    Q_EMIT durationChanged();
 }
