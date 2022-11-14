@@ -88,6 +88,9 @@ Item {
             function resetXPosition() {
                 if (x !== leftSpacing) {
                     x = leftSpacing
+                    if (!dragAreaZone.pressed) {
+                        dragHandler.enabled = false
+                    }
                 }
             }
 
@@ -127,6 +130,17 @@ Item {
             }
         }
 
+
+    }
+
+    Item {
+        id: dragAreaZone
+        anchors.fill: parent
+        property real thresholdScale: 1
+        property bool pressed: mouseArea.pressed
+        anchors.leftMargin: Kirigami.Units.gridUnit + height * thresholdScale
+        anchors.rightMargin: Kirigami.Units.gridUnit + height * thresholdScale
+
         DragHandler {
             id: dragHandler
 
@@ -139,13 +153,15 @@ Item {
             property real progress: dragHandler.distance % dragHandler.swipeAcceptThreshold / dragHandler.swipeAcceptThreshold
 
             target: null
+            enabled: false
+            yAxis.enabled: false
 
             function syncDragItemX() {
                 const positionX = dragHandler.centroid.position.x
                 if (Math.abs(progress) > 1) {
                     return
                 }
-                dragItem.x = positionX - dragItem.width / 2
+                dragItem.x = positionX + dragItem.width / 2
             }
 
             onDistanceChanged: {
@@ -172,6 +188,18 @@ Item {
 
             onActiveChanged: {
                 distance = 0
+            }
+        }
+
+        MouseArea {
+            id: mouseArea
+            anchors.fill: parent
+
+            onPressed: {
+                dragHandler.enabled = true
+            }
+            onReleased: {
+                dragHandler.enabled = false
             }
         }
     }
