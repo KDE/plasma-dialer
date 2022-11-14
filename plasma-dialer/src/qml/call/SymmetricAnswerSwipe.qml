@@ -45,8 +45,10 @@ Item {
         }
 
         Rectangle {
-            anchors.left: (dragHandler.distance < 0) ? parent.left : callControlIcon.left
-            anchors.right: (dragHandler.distance <= 0) ? callControlIcon.right : parent.right
+            visible: dragHandler.active
+            property var dragItem: callControlItem
+            anchors.left: (dragHandler.distance < 0) ? parent.left : dragItem.left
+            anchors.right: (dragHandler.distance <= 0) ? dragItem.right : parent.right
             radius: height
             anchors.verticalCenter: parent.verticalCenter
             height: (dragHandler.distance === 0) ? width : parent.height
@@ -60,35 +62,28 @@ Item {
                            controlColor.a)
         }
 
-        Rectangle {
-            anchors.centerIn: callControlIcon
+        Item {
+            id: callControlItem
             width: height
             height: Kirigami.Units.gridUnit * 3
-            radius: height
-            property color controlColor: Kirigami.Theme.highlightColor
-            property color positiveColor: Kirigami.Theme.positiveBackgroundColor
-            property color negativeColor: Kirigami.Theme.negativeBackgroundColor
-            color: Qt.hsla(controlColor.hslHue -
-                           Math.abs(controlColor.hslHue - positiveColor.hslHue) * dragHandler.progress,
-                           controlColor.hslSaturation,
-                           controlColor.hslLightness,
-                           controlColor.a)
-        }
-
-        Kirigami.Icon {
-            id: callControlIcon
-
-            width: height
-            height: Kirigami.Units.gridUnit * 3
+            property real shakeX: 0
 
             property real leftSpacing: (controlRectangle.width - width) / 2
 
             property bool resting: x === leftSpacing
 
-            anchors.verticalCenter: parent.verticalCenter
-            x: leftSpacing
-
-            source: "transform-move-horizontal"
+            SequentialAnimation {
+                running: !dragHandler.active
+                loops: Animation.Infinite
+                NumberAnimation {
+                    target: callControlItem;
+                    property: "shakeX";
+                    from: -4; to: 4;
+                    easing.type: Easing.OutInElastic;
+                    duration: Kirigami.Units.veryLongDuration * 3
+                }
+                PauseAnimation { duration: Kirigami.Units.shortDuration}
+            }
 
             function resetXPosition() {
                 if (x !== leftSpacing) {
@@ -107,18 +102,28 @@ Item {
                     resetXPosition()
                 }
             }
+        }
 
-            SequentialAnimation {
-                running: true
-                loops: Animation.Infinite
-                NumberAnimation {
-                    target: callControlIcon;
-                    property: "rotation";
-                    from: -8; to: 8;
-                    easing.type: Easing.OutInElastic;
-                    duration: Kirigami.Units.veryLongDuration * 3
-                }
-                PauseAnimation { duration: Kirigami.Units.shortDuration}
+        Rectangle {
+            x: callControlItem.x + callControlItem.shakeX
+            anchors.verticalCenter: parent.verticalCenter
+            width: height
+            height: callControlItem.height
+            radius: height
+            property color controlColor: Kirigami.Theme.highlightColor
+            property color positiveColor: Kirigami.Theme.positiveBackgroundColor
+            property color negativeColor: Kirigami.Theme.negativeBackgroundColor
+            color: Qt.hsla(controlColor.hslHue -
+                           Math.abs(controlColor.hslHue - positiveColor.hslHue) * dragHandler.progress,
+                           controlColor.hslSaturation,
+                           controlColor.hslLightness,
+                           controlColor.a)
+
+            Kirigami.Icon {
+                id: callControlIcon
+                anchors.fill: parent
+                anchors.centerIn: parent
+                source: "transform-move-horizontal"
             }
         }
 
@@ -126,7 +131,7 @@ Item {
             id: dragHandler
 
             property var dragAreaItem: controlRectangle
-            property var dragItem: callControlIcon
+            property var dragItem: callControlItem
 
             property real swipeAcceptThreshold: 0.25
             property real distance: 0
