@@ -213,6 +213,7 @@ void NotificationManager::handleIncomingCall(const QString &deviceUni, const QSt
 
     QString notificationEvent = QStringLiteral("ringing");
 
+    bool silent = false;
     if (!allowed) {
         if (Config::self()->ringOption() == 0) {
             hangUp(deviceUni, callUni);
@@ -221,6 +222,17 @@ void NotificationManager::handleIncomingCall(const QString &deviceUni, const QSt
             return;
         }
         notificationEvent = QStringLiteral("ringing-silent");
+        silent = true;
+    }
+
+    bool screenLocked = getScreenSaverActive();
+
+    bool skipNotification = false;
+    if (screenLocked) {
+        notificationEvent = QStringLiteral("ringing-without-popup");
+        if (silent) {
+            skipNotification = true;
+        }
     }
 
     if (allowed) {
@@ -234,11 +246,12 @@ void NotificationManager::handleIncomingCall(const QString &deviceUni, const QSt
         callerDisplay = i18n("No Caller ID");
     }
 
-    bool screenLocked = getScreenSaverActive();
+    if (!skipNotification) {
+        openRingingNotification(deviceUni, callUni, callerDisplay, notificationEvent);
+    }
+
     if (screenLocked) {
         launchPlasmaDialerDesktopFile();
-    } else {
-        openRingingNotification(deviceUni, callUni, callerDisplay, notificationEvent);
     }
 }
 
