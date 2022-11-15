@@ -214,3 +214,8 @@ Name[uk]=Дзвінок без звуку
 Name[vi]=Đang đổ chuông - im lặng
 Name[x-test]=xxRinging-silentxx
 Action=Popup
+
+[Event/ringing-without-popup]
+Name=Ringing-without-popup
+Action=Sound
+Sound=Oxygen-Im-Phone-Ring.ogg
