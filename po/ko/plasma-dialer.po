@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-19 00:48+0000\n"
+"POT-Creation-Date: 2022-11-16 00:49+0000\n"
 "PO-Revision-Date: 2022-10-03 16:25+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-i18n-doc@kde.org>\n"
@@ -43,27 +43,33 @@ msgstr "Plasma 전화 다이얼"
 msgid "Swipe to accept"
 msgstr "오른쪽으로 밀어서 받기"
 
-#: src/qml/call/CallPage.qml:33 src/qml/call/InCallInlineMessage.qml:14
+#: src/qml/call/CallPage.qml:35 src/qml/call/InCallInlineMessage.qml:14
 #, kde-format
 msgid "Active call list"
 msgstr "활성 통화 목록"
 
-#: src/qml/call/CallPage.qml:103
+#: src/qml/call/CallPage.qml:108
+#, fuzzy, kde-format
+#| msgid "Incoming call"
+msgid "Incoming..."
+msgstr "전화 걸려옴"
+
+#: src/qml/call/CallPage.qml:111
 #, kde-format
 msgid "Calling..."
 msgstr "전화 거는 중..."
 
-#: src/qml/call/CallPage.qml:129
+#: src/qml/call/CallPage.qml:134
 #, kde-format
 msgid "Keypad"
 msgstr "키패드"
 
-#: src/qml/call/CallPage.qml:149
+#: src/qml/call/CallPage.qml:154
 #, kde-format
 msgid "Speaker"
 msgstr "스피커"
 
-#: src/qml/call/CallPage.qml:163
+#: src/qml/call/CallPage.qml:168
 #, kde-format
 msgid "Mute"
 msgstr "음소거"
@@ -215,10 +221,15 @@ msgstr "새 패턴 추가"
 
 #: src/qml/SettingsPage.qml:193
 #, kde-format
+msgid "Answer control for the incoming screen"
+msgstr ""
+
+#: src/qml/SettingsPage.qml:208
+#, kde-format
 msgid "Other"
 msgstr "기타"
 
-#: src/qml/SettingsPage.qml:197
+#: src/qml/SettingsPage.qml:212
 #, kde-format
 msgid "About"
 msgstr "정보"
@@ -256,9 +267,6 @@ msgstr "USSD 세션 취소"
 
 #~ msgid "Reject"
 #~ msgstr "거부"
-
-#~ msgid "Incoming call"
-#~ msgstr "전화 걸려옴"
 
 #~ msgid "Voicemail"
 #~ msgstr "음성 사서함"

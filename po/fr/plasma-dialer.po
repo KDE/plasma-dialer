@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-19 00:48+0000\n"
+"POT-Creation-Date: 2022-11-16 00:49+0000\n"
 "PO-Revision-Date: 2022-10-19 18:41+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -39,27 +39,33 @@ msgstr "Composeur de téléphone de Plasma"
 msgid "Swipe to accept"
 msgstr "Balayer à droite pour accepter"
 
-#: src/qml/call/CallPage.qml:33 src/qml/call/InCallInlineMessage.qml:14
+#: src/qml/call/CallPage.qml:35 src/qml/call/InCallInlineMessage.qml:14
 #, kde-format
 msgid "Active call list"
 msgstr "Liste active d'appels"
 
-#: src/qml/call/CallPage.qml:103
+#: src/qml/call/CallPage.qml:108
+#, fuzzy, kde-format
+#| msgid "Incoming call"
+msgid "Incoming..."
+msgstr "Appel entrant"
+
+#: src/qml/call/CallPage.qml:111
 #, kde-format
 msgid "Calling..."
 msgstr "Appel en cours..."
 
-#: src/qml/call/CallPage.qml:129
+#: src/qml/call/CallPage.qml:134
 #, kde-format
 msgid "Keypad"
 msgstr "Pavé numérique"
 
-#: src/qml/call/CallPage.qml:149
+#: src/qml/call/CallPage.qml:154
 #, kde-format
 msgid "Speaker"
 msgstr "Haut-parleur"
 
-#: src/qml/call/CallPage.qml:163
+#: src/qml/call/CallPage.qml:168
 #, kde-format
 msgid "Mute"
 msgstr "Couper le son"
@@ -212,10 +218,15 @@ msgstr "Ajouter un nouveau motif"
 
 #: src/qml/SettingsPage.qml:193
 #, kde-format
+msgid "Answer control for the incoming screen"
+msgstr ""
+
+#: src/qml/SettingsPage.qml:208
+#, kde-format
 msgid "Other"
 msgstr "Autre"
 
-#: src/qml/SettingsPage.qml:197
+#: src/qml/SettingsPage.qml:212
 #, kde-format
 msgid "About"
 msgstr "À propos"
@@ -253,9 +264,6 @@ msgstr "Annuler la session « USSD »"
 
 #~ msgid "Reject"
 #~ msgstr "Rejeter"
-
-#~ msgid "Incoming call"
-#~ msgstr "Appel entrant"
 
 #~ msgid "Voicemail"
 #~ msgstr "Messagerie vocale"

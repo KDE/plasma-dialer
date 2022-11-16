@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-19 00:48+0000\n"
+"POT-Creation-Date: 2022-11-16 00:49+0000\n"
 "PO-Revision-Date: 2022-10-19 14:20+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -45,27 +45,33 @@ msgstr "Засіб набирання номеру Плазми"
 msgid "Swipe to accept"
 msgstr "Проведіть, щоб прийняти"
 
-#: src/qml/call/CallPage.qml:33 src/qml/call/InCallInlineMessage.qml:14
+#: src/qml/call/CallPage.qml:35 src/qml/call/InCallInlineMessage.qml:14
 #, kde-format
 msgid "Active call list"
 msgstr "Список активних викликів"
 
-#: src/qml/call/CallPage.qml:103
+#: src/qml/call/CallPage.qml:108
+#, fuzzy, kde-format
+#| msgid "Incoming call"
+msgid "Incoming..."
+msgstr "Вхідний дзвінок"
+
+#: src/qml/call/CallPage.qml:111
 #, kde-format
 msgid "Calling..."
 msgstr "Виклик…"
 
-#: src/qml/call/CallPage.qml:129
+#: src/qml/call/CallPage.qml:134
 #, kde-format
 msgid "Keypad"
 msgstr "Цифрова клавіатура"
 
-#: src/qml/call/CallPage.qml:149
+#: src/qml/call/CallPage.qml:154
 #, kde-format
 msgid "Speaker"
 msgstr "Гучномовець"
 
-#: src/qml/call/CallPage.qml:163
+#: src/qml/call/CallPage.qml:168
 #, kde-format
 msgid "Mute"
 msgstr "Вимкнути звук"
@@ -220,10 +226,15 @@ msgstr "Додати новий взірець"
 
 #: src/qml/SettingsPage.qml:193
 #, kde-format
+msgid "Answer control for the incoming screen"
+msgstr ""
+
+#: src/qml/SettingsPage.qml:208
+#, kde-format
 msgid "Other"
 msgstr "Інше"
 
-#: src/qml/SettingsPage.qml:197
+#: src/qml/SettingsPage.qml:212
 #, kde-format
 msgid "About"
 msgstr "Про програму"
@@ -261,9 +272,6 @@ msgstr "Скасувати сеанс USSD"
 
 #~ msgid "Reject"
 #~ msgstr "Відхилити"
-
-#~ msgid "Incoming call"
-#~ msgstr "Вхідний дзвінок"
 
 #~ msgid "Voicemail"
 #~ msgstr "Голосова пошта"

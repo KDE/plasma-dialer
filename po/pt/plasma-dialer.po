@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-19 00:48+0000\n"
+"POT-Creation-Date: 2022-11-16 00:49+0000\n"
 "PO-Revision-Date: 2022-10-19 09:21+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -43,27 +43,32 @@ msgstr "Teclado de telefone do Plasma"
 msgid "Swipe to accept"
 msgstr "Deslize para aceitar"
 
-#: src/qml/call/CallPage.qml:33 src/qml/call/InCallInlineMessage.qml:14
+#: src/qml/call/CallPage.qml:35 src/qml/call/InCallInlineMessage.qml:14
 #, kde-format
 msgid "Active call list"
 msgstr "Lista de chamadas activas"
 
-#: src/qml/call/CallPage.qml:103
+#: src/qml/call/CallPage.qml:108
+#, kde-format
+msgid "Incoming..."
+msgstr ""
+
+#: src/qml/call/CallPage.qml:111
 #, kde-format
 msgid "Calling..."
 msgstr "A chamar..."
 
-#: src/qml/call/CallPage.qml:129
+#: src/qml/call/CallPage.qml:134
 #, kde-format
 msgid "Keypad"
 msgstr "Teclado"
 
-#: src/qml/call/CallPage.qml:149
+#: src/qml/call/CallPage.qml:154
 #, kde-format
 msgid "Speaker"
 msgstr "Altifalante"
 
-#: src/qml/call/CallPage.qml:163
+#: src/qml/call/CallPage.qml:168
 #, kde-format
 msgid "Mute"
 msgstr "Silenciar"
@@ -216,10 +221,15 @@ msgstr "Adicionar um novo padrão"
 
 #: src/qml/SettingsPage.qml:193
 #, kde-format
+msgid "Answer control for the incoming screen"
+msgstr ""
+
+#: src/qml/SettingsPage.qml:208
+#, kde-format
 msgid "Other"
 msgstr "Outro"
 
-#: src/qml/SettingsPage.qml:197
+#: src/qml/SettingsPage.qml:212
 #, kde-format
 msgid "About"
 msgstr "Acerca"

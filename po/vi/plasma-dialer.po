@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-19 00:48+0000\n"
+"POT-Creation-Date: 2022-11-16 00:49+0000\n"
 "PO-Revision-Date: 2022-10-31 11:51+0100\n"
 "Last-Translator: Phu Hung Nguyen <phu.nguyen@kdemail.net>\n"
 "Language-Team: Vietnamese <kde-l10n-vi@kde.org>\n"
@@ -42,27 +42,33 @@ msgstr "Trình quay số điện thoại Plasma"
 msgid "Swipe to accept"
 msgstr "Hất để nhận"
 
-#: src/qml/call/CallPage.qml:33 src/qml/call/InCallInlineMessage.qml:14
+#: src/qml/call/CallPage.qml:35 src/qml/call/InCallInlineMessage.qml:14
 #, kde-format
 msgid "Active call list"
 msgstr "Danh sách gọi hoạt động"
 
-#: src/qml/call/CallPage.qml:103
+#: src/qml/call/CallPage.qml:108
+#, fuzzy, kde-format
+#| msgid "Incoming call"
+msgid "Incoming..."
+msgstr "Cuộc gọi đến"
+
+#: src/qml/call/CallPage.qml:111
 #, kde-format
 msgid "Calling..."
 msgstr "Đang gọi..."
 
-#: src/qml/call/CallPage.qml:129
+#: src/qml/call/CallPage.qml:134
 #, kde-format
 msgid "Keypad"
 msgstr "Bàn phím"
 
-#: src/qml/call/CallPage.qml:149
+#: src/qml/call/CallPage.qml:154
 #, kde-format
 msgid "Speaker"
 msgstr "Loa"
 
-#: src/qml/call/CallPage.qml:163
+#: src/qml/call/CallPage.qml:168
 #, kde-format
 msgid "Mute"
 msgstr "Tắt tiếng"
@@ -214,10 +220,15 @@ msgstr "Thêm dạng mẫu mới"
 
 #: src/qml/SettingsPage.qml:193
 #, kde-format
+msgid "Answer control for the incoming screen"
+msgstr ""
+
+#: src/qml/SettingsPage.qml:208
+#, kde-format
 msgid "Other"
 msgstr "Khác"
 
-#: src/qml/SettingsPage.qml:197
+#: src/qml/SettingsPage.qml:212
 #, kde-format
 msgid "About"
 msgstr "Thông tin"
@@ -255,9 +266,6 @@ msgstr "Hủy phiên USSD"
 
 #~ msgid "Reject"
 #~ msgstr "Từ chối"
-
-#~ msgid "Incoming call"
-#~ msgstr "Cuộc gọi đến"
 
 #~ msgid "Voicemail"
 #~ msgstr "Thư thoại"

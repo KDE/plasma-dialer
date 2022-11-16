@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-19 00:48+0000\n"
-"PO-Revision-Date: 2022-10-17 18:48+0200\n"
+"POT-Creation-Date: 2022-11-16 00:49+0000\n"
+"PO-Revision-Date: 2022-11-06 15:16+0100\n"
 "Last-Translator: Paolo Zamponi <zapaolo@email.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.08.2\n"
+"X-Generator: Lokalize 22.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -38,32 +38,37 @@ msgid "Plasma phone dialer"
 msgstr "Combinatore telefonico di Plasma"
 
 #: src/qml/call/AsymmetricAnswerSwipe.qml:86
-#, fuzzy, kde-format
-#| msgid "Swipe right to accept"
+#, kde-format
 msgid "Swipe to accept"
-msgstr "Scorri a destra per accettare"
+msgstr "Scorri per accettare"
 
-#: src/qml/call/CallPage.qml:33 src/qml/call/InCallInlineMessage.qml:14
+#: src/qml/call/CallPage.qml:35 src/qml/call/InCallInlineMessage.qml:14
 #, kde-format
 msgid "Active call list"
 msgstr "Elenco chiamate attive"
 
-#: src/qml/call/CallPage.qml:103
+#: src/qml/call/CallPage.qml:108
+#, fuzzy, kde-format
+#| msgid "Incoming call"
+msgid "Incoming..."
+msgstr "Chiamata in ingresso"
+
+#: src/qml/call/CallPage.qml:111
 #, kde-format
 msgid "Calling..."
 msgstr "Chiamata..."
 
-#: src/qml/call/CallPage.qml:129
+#: src/qml/call/CallPage.qml:134
 #, kde-format
 msgid "Keypad"
 msgstr "Tastiera"
 
-#: src/qml/call/CallPage.qml:149
+#: src/qml/call/CallPage.qml:154
 #, kde-format
 msgid "Speaker"
 msgstr "Altoparlante"
 
-#: src/qml/call/CallPage.qml:163
+#: src/qml/call/CallPage.qml:168
 #, kde-format
 msgid "Mute"
 msgstr "Silenzia"
@@ -216,10 +221,15 @@ msgstr "Aggiungi nuovo modello"
 
 #: src/qml/SettingsPage.qml:193
 #, kde-format
+msgid "Answer control for the incoming screen"
+msgstr ""
+
+#: src/qml/SettingsPage.qml:208
+#, kde-format
 msgid "Other"
 msgstr "Altro"
 
-#: src/qml/SettingsPage.qml:197
+#: src/qml/SettingsPage.qml:212
 #, kde-format
 msgid "About"
 msgstr "Informazioni su"
@@ -257,9 +267,6 @@ msgstr ""
 
 #~ msgid "Reject"
 #~ msgstr "Rifiuta"
-
-#~ msgid "Incoming call"
-#~ msgstr "Chiamata in ingresso"
 
 #~ msgid "Voicemail"
 #~ msgstr "Casella vocale"
