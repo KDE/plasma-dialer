@@ -28,6 +28,6 @@ qt_wrap_cpp(PROCESSED_MOCS
 
 target_sources(ktelephonymetatypes PRIVATE ${PROCESSED_MOCS})
 
-install(FILES ${metatypes_SRCS} DESTINATION "${KDE_INSTALL_INCLUDEDIR_KF}/kTelephonyMetaTypes")
-install(TARGETS ktelephonymetatypes DESTINATION "${KDE_INSTALL_LIBDIR}")
+install(FILES ${metatypes_SRCS} DESTINATION "${KDE_INSTALL_INCLUDEDIR_KF}/kTelephonyMetaTypes" COMPONENT Devel)
+install(TARGETS ktelephonymetatypes DESTINATION "${KDE_INSTALL_LIBDIR}" COMPONENT Devel)
 # TODO: install KF5 cmake files
