@@ -4,6 +4,7 @@
 
 set(metatypes_SRCS
     include/kTelephonyMetaTypes/dialer-types.h
+    include/kTelephonyMetaTypes/DialerTypes
     )
 
 add_library(ktelephonymetatypes STATIC ${metatypes_SRCS})
