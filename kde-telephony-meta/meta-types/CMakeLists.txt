@@ -7,7 +7,9 @@ set(metatypes_SRCS
     include/kTelephonyMetaTypes/DialerTypes
     )
 
-add_library(ktelephonymetatypes STATIC ${metatypes_SRCS})
+set(CMAKE_AUTOMOC ON)
+
+add_library(ktelephonymetatypes SHARED ${metatypes_SRCS})
 
 find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED Core DBus)
 
@@ -20,15 +22,5 @@ target_link_libraries(ktelephonymetatypes PRIVATE
     Qt::DBus
     )
 
-file(GLOB HEADERS_TO_MOC include/*.h)
-
-qt_wrap_cpp(PROCESSED_MOCS
-    ${HEADERS_TO_MOC}
-    TARGET ktelephonymetatypes
-    OPTIONS --no-notes)
-
-target_sources(ktelephonymetatypes PRIVATE ${PROCESSED_MOCS})
-
 install(FILES ${metatypes_SRCS} DESTINATION "${KDE_INSTALL_INCLUDEDIR_KF}/kTelephonyMetaTypes" COMPONENT Devel)
 install(TARGETS ktelephonymetatypes DESTINATION "${KDE_INSTALL_LIBDIR}" COMPONENT Devel)
-# TODO: install KF5 cmake files
