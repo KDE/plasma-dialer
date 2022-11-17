@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-16 00:49+0000\n"
-"PO-Revision-Date: 2022-10-19 09:21+0100\n"
+"PO-Revision-Date: 2022-11-16 09:41+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -51,7 +51,7 @@ msgstr "Lista de chamadas activas"
 #: src/qml/call/CallPage.qml:108
 #, kde-format
 msgid "Incoming..."
-msgstr ""
+msgstr "A receber..."
 
 #: src/qml/call/CallPage.qml:111
 #, kde-format
@@ -222,7 +222,7 @@ msgstr "Adicionar um novo padrão"
 #: src/qml/SettingsPage.qml:193
 #, kde-format
 msgid "Answer control for the incoming screen"
-msgstr ""
+msgstr "Controlo de resposta para o ecrã de recepção"
 
 #: src/qml/SettingsPage.qml:208
 #, kde-format

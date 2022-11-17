@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-16 00:49+0000\n"
-"PO-Revision-Date: 2022-10-19 14:20+0300\n"
+"PO-Revision-Date: 2022-11-16 18:43+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -51,10 +51,9 @@ msgid "Active call list"
 msgstr "Список активних викликів"
 
 #: src/qml/call/CallPage.qml:108
-#, fuzzy, kde-format
-#| msgid "Incoming call"
+#, kde-format
 msgid "Incoming..."
-msgstr "Вхідний дзвінок"
+msgstr "Вхідні…"
 
 #: src/qml/call/CallPage.qml:111
 #, kde-format
@@ -227,7 +226,7 @@ msgstr "Додати новий взірець"
 #: src/qml/SettingsPage.qml:193
 #, kde-format
 msgid "Answer control for the incoming screen"
-msgstr ""
+msgstr "Керування відповіддю для вікна вхідних викликів"
 
 #: src/qml/SettingsPage.qml:208
 #, kde-format
