@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-16 00:49+0000\n"
-"PO-Revision-Date: 2022-10-20 06:05+0200\n"
+"PO-Revision-Date: 2022-11-17 08:11+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -51,7 +51,7 @@ msgstr "აქტიური ზარების სია"
 #: src/qml/call/CallPage.qml:108
 #, kde-format
 msgid "Incoming..."
-msgstr ""
+msgstr "შემომავალი..."
 
 #: src/qml/call/CallPage.qml:111
 #, kde-format
@@ -222,7 +222,7 @@ msgstr "ახალი შაბლონის დამატება"
 #: src/qml/SettingsPage.qml:193
 #, kde-format
 msgid "Answer control for the incoming screen"
-msgstr ""
+msgstr "პასუხის კონტროლი შემომავალი ეკრანისთვის"
 
 #: src/qml/SettingsPage.qml:208
 #, kde-format
