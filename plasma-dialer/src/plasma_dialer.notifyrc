@@ -217,5 +217,12 @@ Action=Popup
 
 [Event/ringing-without-popup]
 Name=Ringing-without-popup
+Name[ca]=Trucada sense finestra emergent
+Name[eu]=Gainerakorrik-gabe-hots-egiten
+Name[ka]=ზარი-მხტუნარას-გარეშე
+Name[nl]=Bel gaat over zonder pop-up
+Name[tr]=Açılır Penceresiz Çalma
+Name[uk]=Дзвінок без контекстної панелі
+Name[x-test]=xxRinging-without-popupxx
 Action=Sound
 Sound=Oxygen-Im-Phone-Ring.ogg
