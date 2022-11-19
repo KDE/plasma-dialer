@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-16 00:49+0000\n"
-"PO-Revision-Date: 2022-10-19 09:49+0200\n"
+"PO-Revision-Date: 2022-11-16 09:51+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -53,7 +53,7 @@ msgstr "Llista de tocades actives"
 #: src/qml/call/CallPage.qml:108
 #, kde-format
 msgid "Incoming..."
-msgstr ""
+msgstr "Tocada entrant..."
 
 #: src/qml/call/CallPage.qml:111
 #, kde-format
@@ -224,7 +224,7 @@ msgstr "Afig un patró nou"
 #: src/qml/SettingsPage.qml:193
 #, kde-format
 msgid "Answer control for the incoming screen"
-msgstr ""
+msgstr "Control de la resposta per a la pantalla de tocada entrant"
 
 #: src/qml/SettingsPage.qml:208
 #, kde-format

@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-16 00:49+0000\n"
-"PO-Revision-Date: 2022-10-19 18:41+0200\n"
+"PO-Revision-Date: 2022-11-18 06:51+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
 "Language: fr\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.08.2\n"
+"X-Generator: Lokalize 22.11.80\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -45,10 +45,9 @@ msgid "Active call list"
 msgstr "Liste active d'appels"
 
 #: src/qml/call/CallPage.qml:108
-#, fuzzy, kde-format
-#| msgid "Incoming call"
+#, kde-format
 msgid "Incoming..."
-msgstr "Appel entrant"
+msgstr "Appel entrant..."
 
 #: src/qml/call/CallPage.qml:111
 #, kde-format
@@ -219,7 +218,7 @@ msgstr "Ajouter un nouveau motif"
 #: src/qml/SettingsPage.qml:193
 #, kde-format
 msgid "Answer control for the incoming screen"
-msgstr ""
+msgstr "Contrôle des réponses pour l’écran entrant"
 
 #: src/qml/SettingsPage.qml:208
 #, kde-format
