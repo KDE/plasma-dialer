@@ -218,9 +218,13 @@ Action=Popup
 [Event/ringing-without-popup]
 Name=Ringing-without-popup
 Name[ca]=Trucada sense finestra emergent
+Name[ca@valencia]=Tocada sense finestra emergent
 Name[eu]=Gainerakorrik-gabe-hots-egiten
+Name[fr]=Sonnerie-sans-infobulles
 Name[ka]=ზარი-მხტუნარას-გარეშე
 Name[nl]=Bel gaat over zonder pop-up
+Name[pt]=A tocar - sem mensagem
+Name[sl]=Zvonjenje-brez-poj-okna
 Name[tr]=Açılır Penceresiz Çalma
 Name[uk]=Дзвінок без контекстної панелі
 Name[x-test]=xxRinging-without-popupxx
