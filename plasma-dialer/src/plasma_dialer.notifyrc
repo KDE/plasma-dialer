@@ -219,6 +219,7 @@ Action=Popup
 Name=Ringing-without-popup
 Name[ca]=Trucada sense finestra emergent
 Name[ca@valencia]=Tocada sense finestra emergent
+Name[es]=Llamar-sin-ventana-emergente
 Name[eu]=Gainerakorrik-gabe-hots-egiten
 Name[fr]=Sonnerie-sans-infobulles
 Name[ka]=ზარი-მხტუნარას-გარეშე
