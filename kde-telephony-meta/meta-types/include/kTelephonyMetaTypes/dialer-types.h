@@ -10,6 +10,7 @@
 #include <QDBusMetaType>
 #include <QDateTime>
 #include <QObject>
+#include <QPixmap>
 #include <QString>
 
 namespace DialerTypes

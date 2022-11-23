@@ -8,7 +8,7 @@ set(metatypes_SRCS
 
 add_library(ktelephonymetatypes STATIC ${metatypes_SRCS})
 
-find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED Core DBus)
+find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED Core DBus Gui)
 
 include_directories(${QtCore_INCLUDE_DIRS})
 include_directories(${QtDBus_INCLUDE_DIRS})
@@ -17,6 +17,8 @@ target_include_directories(ktelephonymetatypes PUBLIC include)
 target_link_libraries(ktelephonymetatypes PRIVATE
     Qt::Core
     Qt::DBus
+PUBLIC
+    Qt::Gui
     )
 
 file(GLOB HEADERS_TO_MOC include/*.h)
