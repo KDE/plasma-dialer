@@ -65,6 +65,8 @@ if (DIALER_BUILD_SHELL_OVERLAY)
     endif()
 endif() # DIALER_BUILD_SHELL_OVERLAY
 
+ecm_find_qmlmodule(org.kde.kirigamiaddons.labs.mobileform 0.1)
+
 kconfig_add_kcfg_files(plasmaphonedialer config.kcfgc GENERATE_MOC)
 install(TARGETS plasmaphonedialer ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES plasma_dialer.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})

@@ -8,8 +8,9 @@
         <file alias="DialerPage.qml">qml/DialerPage.qml</file>
         <file alias="ContactsPage.qml">qml/ContactsPage.qml</file>
         <file alias="HistoryPage.qml">qml/HistoryPage.qml</file>
-        <file alias="SettingsPage.qml">qml/SettingsPage.qml</file>
         <file alias="AboutPage.qml">qml/AboutPage.qml</file>
+        <file alias="settings/SettingsPage.qml">qml/settings/SettingsPage.qml</file>
+        <file alias="settings/CallBlockSettingsPage.qml">qml/settings/CallBlockSettingsPage.qml</file>
         <file alias="call/InCallInlineMessage.qml">qml/call/InCallInlineMessage.qml</file>
         <file alias="call/AsymmetricAnswerSwipe.qml">qml/call/AsymmetricAnswerSwipe.qml</file>
         <file alias="call/SymmetricAnswerSwipe.qml">qml/call/SymmetricAnswerSwipe.qml</file>

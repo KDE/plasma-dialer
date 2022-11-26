@@ -68,7 +68,8 @@ Kirigami.ApplicationWindow {
         case "Contacts": return pagePool.loadPage("qrc:/ContactsPage.qml");
         case "Dialer": return pagePool.loadPage("qrc:/DialerPage.qml");
         case "Call": return pagePool.loadPage("qrc:/call/CallPage.qml");
-        case "Settings": return pagePool.loadPage("qrc:/SettingsPage.qml");
+        case "Settings": return pagePool.loadPage("qrc:/settings/SettingsPage.qml");
+        case "CallBlockSettings": return pagePool.loadPage("qrc:/settings/CallBlockSettingsPage.qml");
         case "About": return pagePool.loadPage("qrc:/AboutPage.qml");
         }
     }

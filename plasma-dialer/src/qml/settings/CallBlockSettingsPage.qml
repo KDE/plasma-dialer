@@ -10,14 +10,14 @@ import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as Controls
 
 import org.kde.kirigami 2.19 as Kirigami
+import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
 
 import org.kde.phone.dialer 1.0
 import org.kde.telephony 1.0
 
 Kirigami.ScrollablePage {
     id: page
-    title: i18n("Settings")
-    topPadding: 0
+    title: i18n("Adaptive Call Blocking")
 
     function saveConfig() {
         Config.save()
@@ -31,81 +31,95 @@ Kirigami.ScrollablePage {
         }
     }
 
-    width: applicationWindow().width
-    Kirigami.ColumnView.fillWidth: true
+    Kirigami.Theme.colorSet: Kirigami.Theme.Window
+    Kirigami.Theme.inherit: false
 
-    Kirigami.FormLayout {
-        MouseArea {
-            anchors.fill: parent
-            propagateComposedEvents: true
-            onPressed: parent.forceActiveFocus()
+    leftPadding: 0
+    rightPadding: 0
+    topPadding: Kirigami.Units.gridUnit
+    bottomPadding: Kirigami.Units.gridUnit
+
+    ColumnLayout {
+        spacing: 0
+        width: page.width
+
+        MobileForm.FormCard {
+            Layout.fillWidth: true
+
+            contentItem: ColumnLayout {
+                spacing: 0
+
+                MobileForm.FormSwitchDelegate {
+                    id: adaptiveBlocking
+                    checked: Config.adaptiveBlocking
+                    text: i18n("Ignore calls from unknown numbers")
+                    onToggled: Config.adaptiveBlocking = checked
+                }
+                
+            }
         }
-
-        Kirigami.Heading {
-            Kirigami.FormData.isSection: true
-            text: i18n("Adaptive blocking")
-        }
-
-        Controls.Switch {
-            id: adaptiveBlocking
-            checked: Config.adaptiveBlocking
-            text: i18n("Ignore calls from unknown numbers")
-            onToggled: Config.adaptiveBlocking = checked
-        }
-
-        ColumnLayout {
+        
+        MobileForm.FormCard {
             visible: Config.adaptiveBlocking == true
-
-            Column {
-                leftPadding: Kirigami.Units.gridUnit
-                bottomPadding: Kirigami.Units.gridUnit
-                spacing: Kirigami.Units.largeSpacing
-
-                Controls.RadioButton {
+            Layout.fillWidth: true
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            
+            contentItem: ColumnLayout {
+                spacing: 0
+                
+                MobileForm.FormCardHeader {
+                    title: i18n("When a call is an incoming from an unknown number")
+                }
+                
+                MobileForm.FormRadioDelegate {
                     text: i18n("Immediately hang up")
                     checked: Config.ringOption == 0
                     onToggled: Config.ringOption = 0
                 }
-                Controls.RadioButton {
+                MobileForm.FormRadioDelegate {
                     text: i18n("Ring without notification")
                     checked: Config.ringOption == 1
                     onToggled: Config.ringOption = 1
                 }
-                Controls.RadioButton {
+                MobileForm.FormRadioDelegate {
                     text: i18n("Ring with silent notification")
                     checked: Config.ringOption == 2
                     onToggled: Config.ringOption = 2
                 }
             }
-
-            Kirigami.Heading {
-                Kirigami.FormData.isSection: true
-                text: i18n("Allowed exceptions")
-                level: 3
-            }
-
-            Column {
-                leftPadding: Kirigami.Units.gridUnit
-                spacing: Kirigami.Units.largeSpacing
-
-                Controls.Switch {
+        }
+        
+        MobileForm.FormCard {
+            visible: Config.adaptiveBlocking == true
+            Layout.fillWidth: true
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            
+            contentItem: ColumnLayout {
+                spacing: 0
+                
+                MobileForm.FormCardHeader {
+                    title: i18n("Allowed exceptions")
+                }
+                
+                MobileForm.FormCheckDelegate {
                     id: allowAnonymous
                     checked: Config.allowAnonymous
                     text: i18n("Anonymous numbers")
                     onToggled: Config.allowAnonymous = checked
                 }
 
-                Controls.Switch {
+                MobileForm.FormCheckDelegate {
                     id: allowPreviousOutgoing
                     checked: Config.allowPreviousOutgoing
                     text: i18n("Existing outgoing call to number")
                     onToggled: Config.allowPreviousOutgoing = checked
                 }
-
-                Row {
+                
+                RowLayout {
+                    Layout.fillWidth: true
                     spacing: Kirigami.Units.smallSpacing
 
-                    Controls.Switch {
+                    MobileForm.FormCheckDelegate {
                         id: allowCallback
                         checked: Config.allowCallback
                         text: i18n("Callback within")
@@ -113,6 +127,7 @@ Kirigami.ScrollablePage {
                     }
 
                     Controls.SpinBox {
+                        Layout.alignment: Qt.AlignVCenter
                         id: callbackInterval
                         value: Config.callbackInterval
                         from: 1
@@ -122,29 +137,35 @@ Kirigami.ScrollablePage {
                     }
 
                     Text {
-                        anchors.verticalCenter: parent.verticalCenter
+                        Layout.alignment: Qt.AlignVCenter
+                        Layout.rightMargin: Kirigami.Units.gridUnit
                         text: i18n("minutes")
                         font: Kirigami.Theme.defaultFont
                         color: Kirigami.Theme.textColor
                     }
                 }
-
-
-                Kirigami.Heading {
-                    topPadding: Kirigami.Units.largeSpacing
-                    Kirigami.FormData.isSection: true
-                    text: i18n("Numbers matching a pattern:")
-                    level: 4
+            }
+        }
+        
+        MobileForm.FormCard {
+            visible: Config.adaptiveBlocking == true
+            Layout.fillWidth: true
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            
+            contentItem: ColumnLayout {
+                spacing: 0
+                
+                MobileForm.FormCardHeader {
+                    title: i18n("Allowed phone number exceptions")
                 }
+                
+                Repeater {
+                    model: Config.allowedPatterns
 
-                Column {
-                    leftPadding: Kirigami.Units.gridUnit
-                    spacing: Kirigami.Units.largeSpacing
-
-                    Repeater {
-                        model: Config.allowedPatterns
-
-                        delegate: RowLayout {
+                    delegate: MobileForm.AbstractFormDelegate {
+                        background: Item {}
+                        
+                        contentItem: RowLayout {
                             Controls.TextField {
                                 id: phoneField
                                 placeholderText: i18n("Add new pattern")
@@ -163,8 +184,12 @@ Kirigami.ScrollablePage {
                             }
                         }
                     }
-
-                    RowLayout {
+                }
+                
+                MobileForm.AbstractFormDelegate {
+                    background: Item {}
+                    
+                    contentItem: RowLayout {
                         Controls.TextField {
                             id: toAddPattern
                             Layout.fillWidth: true
@@ -187,31 +212,6 @@ Kirigami.ScrollablePage {
                 }
             }
         }
-
-        Kirigami.Heading {
-            Kirigami.FormData.isSection: true
-            text: i18n("Answer control for the incoming screen")
-        }
-
-        Controls.ComboBox {
-            model: ["Buttons", "Symmetric Swipe", "Asymmetric Swipe"]
-            Layout.alignment: Qt.AlignHCenter
-            currentIndex: Config.answerControl
-            onCurrentIndexChanged: {
-                console.log(currentIndex)
-                Config.answerControl = currentIndex
-            }
-        }
-
-        Kirigami.Heading {
-            Kirigami.FormData.isSection: true
-            text: i18n("Other")
-        }
-
-        Controls.Button {
-            text: i18n("About")
-            icon.name: "help-about-symbolic"
-            onClicked: applicationWindow().pageStack.push(applicationWindow().getPage("About"))
-        }
     }
 }
+
