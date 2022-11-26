@@ -20,6 +20,9 @@ Kirigami.Page {
 
     property alias numberEntryText: statusLabel.text
     property alias pad: dialPad
+    
+    // page animation
+    property real yTranslate: 0
 
     title: i18n("Dialer")
     icon.name: "call-start"
@@ -82,6 +85,7 @@ Kirigami.Page {
 
     ColumnLayout {
         id: dialPadArea
+        transform: Translate { y: yTranslate }
         anchors.fill: parent
         spacing: 0
 

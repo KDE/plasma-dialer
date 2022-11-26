@@ -16,6 +16,9 @@ Kirigami.ScrollablePage {
     title: i18n("Call History")
     icon.name: "clock"
     
+    // page animation
+    property real yTranslate: 0
+    
     header: ColumnLayout {
         anchors.margins: Kirigami.Units.smallSpacing
         spacing: Kirigami.Units.smallSpacing
@@ -49,16 +52,10 @@ Kirigami.ScrollablePage {
         return '' + h + ':' + m + ':' + s;
     }
 
-    Kirigami.PlaceholderMessage {
-        anchors.centerIn: parent
-        text: i18n("No recent calls")
-        icon.name: "call-outgoing"
-        visible: view.count == 0
-    }
-
 
     ListView {
         id: view
+        transform: Translate { y: yTranslate }
         model: CallHistoryModel
         section {
             property: "date"
@@ -67,6 +64,13 @@ Kirigami.ScrollablePage {
             }
         }
         delegate: HistoryDelegate {}
+        
+        Kirigami.PlaceholderMessage {
+            anchors.centerIn: parent
+            text: i18n("No recent calls")
+            icon.name: "call-outgoing"
+            visible: view.count == 0
+        }
     }
 
     Kirigami.PromptDialog {

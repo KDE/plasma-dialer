@@ -79,6 +79,18 @@ Kirigami.ApplicationWindow {
 
     function switchToPage(page, depth) {
         while (pageStack.depth > depth) pageStack.pop()
+            
+        // page switch animation
+        yAnim.target = page;
+        yAnim.properties = "yTranslate";
+        anim.target = page;
+        anim.properties = "contentItem.opacity";
+        if (page.header) {
+            anim.properties += ",header.opacity";
+        }
+        yAnim.restart();
+        anim.restart();
+            
         pageStack.push(page)
         page.forceActiveFocus()
     }
@@ -125,6 +137,22 @@ Kirigami.ApplicationWindow {
         // initial page and nav type
         switchToPage(getPage("Dialer"), 1);
         changeNav(isWidescreen);
+    }
+    
+    // page switch animation
+    NumberAnimation {
+        id: anim
+        from: 0
+        to: 1
+        duration: Kirigami.Units.longDuration * 2
+        easing.type: Easing.InOutQuad
+    }
+    NumberAnimation {
+        id: yAnim
+        from: Kirigami.Units.gridUnit * 3
+        to: 0
+        duration: Kirigami.Units.longDuration * 3
+        easing.type: Easing.OutQuint
     }
 
     Loader {

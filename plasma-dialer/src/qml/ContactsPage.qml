@@ -18,6 +18,9 @@ Kirigami.ScrollablePage {
     title: i18n("Contacts")
     icon.name: "view-pim-contacts"
 
+    // page animation
+    property real yTranslate: 0
+    
     mainAction: Kirigami.Action {
         displayHint: Kirigami.Action.IconOnly
         visible: !applicationWindow().isWidescreen
@@ -49,6 +52,7 @@ Kirigami.ScrollablePage {
 
     ListView {
         id: contactsList
+        transform: Translate { y: yTranslate }
 
         section.property: "display"
         section.criteria: ViewSection.FirstCharacter
