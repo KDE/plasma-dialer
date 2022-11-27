@@ -41,7 +41,6 @@ Kirigami.ScrollablePage {
 
     ColumnLayout {
         spacing: 0
-        width: page.width
 
         MobileForm.FormCard {
             Layout.fillWidth: true
@@ -115,33 +114,31 @@ Kirigami.ScrollablePage {
                     onToggled: Config.allowPreviousOutgoing = checked
                 }
                 
-                RowLayout {
-                    Layout.fillWidth: true
-                    spacing: Kirigami.Units.smallSpacing
+                MobileForm.FormCheckDelegate {
+                    id: allowCallback
+                    checked: Config.allowCallback
+                    text: i18n("Callback within")
+                    onToggled: Config.allowCallback = checked
+                    
+                    trailing: RowLayout {
+                        spacing: Kirigami.Units.smallSpacing
+                        
+                        Controls.SpinBox {
+                            Layout.alignment: Qt.AlignVCenter
+                            id: callbackInterval
+                            value: Config.callbackInterval
+                            from: 1
+                            to: 90
+                            onValueModified: Config.callbackInterval = value
+                            enabled: Config.allowCallback == true
+                        }
 
-                    MobileForm.FormCheckDelegate {
-                        id: allowCallback
-                        checked: Config.allowCallback
-                        text: i18n("Callback within")
-                        onToggled: Config.allowCallback = checked
-                    }
-
-                    Controls.SpinBox {
-                        Layout.alignment: Qt.AlignVCenter
-                        id: callbackInterval
-                        value: Config.callbackInterval
-                        from: 1
-                        to: 90
-                        onValueModified: Config.callbackInterval = value
-                        enabled: Config.allowCallback == true
-                    }
-
-                    Text {
-                        Layout.alignment: Qt.AlignVCenter
-                        Layout.rightMargin: Kirigami.Units.gridUnit
-                        text: i18n("minutes")
-                        font: Kirigami.Theme.defaultFont
-                        color: Kirigami.Theme.textColor
+                        Text {
+                            Layout.alignment: Qt.AlignVCenter
+                            text: i18n("minutes")
+                            font: Kirigami.Theme.defaultFont
+                            color: Kirigami.Theme.textColor
+                        }
                     }
                 }
             }

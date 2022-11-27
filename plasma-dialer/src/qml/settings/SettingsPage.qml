@@ -41,7 +41,6 @@ Kirigami.ScrollablePage {
 
     ColumnLayout {
         spacing: 0
-        width: page.width
 
         MobileForm.FormCard {
             Layout.fillWidth: true
