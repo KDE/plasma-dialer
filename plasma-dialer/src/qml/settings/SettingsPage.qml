@@ -77,7 +77,6 @@ Kirigami.ScrollablePage {
                     model: ["Buttons", "Symmetric Swipe", "Asymmetric Swipe"]
                     currentIndex: Config.answerControl
                     onCurrentIndexChanged: {
-                        console.log(currentIndex)
                         Config.answerControl = currentIndex
                     }
                 }
