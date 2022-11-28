@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-16 00:49+0000\n"
+"POT-Creation-Date: 2022-11-28 00:51+0000\n"
 "PO-Revision-Date: 2022-09-18 12:09+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English <kde-l10n-en_gb@kde.org>\n"
@@ -27,15 +27,25 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "steve.allewell@gmail.com"
 
-#: src/main.cpp:135 src/qml/components/Sidebar.qml:34 src/qml/main.qml:32
+#: src/main.cpp:136 src/qml/components/Sidebar.qml:34 src/qml/main.qml:32
 #, kde-format
 msgid "Phone"
 msgstr "Phone"
 
-#: src/main.cpp:135
+#: src/main.cpp:138
 #, kde-format
 msgid "Plasma phone dialer"
 msgstr "Plasma phone dialer"
+
+#: src/main.cpp:140
+#, kde-format
+msgid "© 2015-2022 KDE Community"
+msgstr ""
+
+#: src/main.cpp:143
+#, kde-format
+msgid "Alexey Andreyev"
+msgstr ""
 
 #: src/qml/call/AsymmetricAnswerSwipe.qml:86
 #, fuzzy, kde-format
@@ -91,14 +101,14 @@ msgid "Contacts"
 msgstr "Contacts"
 
 #: src/qml/components/BottomToolbar.qml:105 src/qml/components/Sidebar.qml:84
-#: src/qml/DialerPage.qml:24
+#: src/qml/DialerPage.qml:27
 #, kde-format
 msgid "Dialer"
 msgstr "Dialler"
 
-#: src/qml/components/Sidebar.qml:107 src/qml/ContactsPage.qml:26
-#: src/qml/DialerPage.qml:54 src/qml/HistoryPage.qml:37
-#: src/qml/SettingsPage.qml:19
+#: src/qml/components/Sidebar.qml:107 src/qml/ContactsPage.qml:29
+#: src/qml/DialerPage.qml:57 src/qml/HistoryPage.qml:40
+#: src/qml/settings/SettingsPage.qml:20
 #, kde-format
 msgid "Settings"
 msgstr "Settings"
@@ -108,22 +118,22 @@ msgstr "Settings"
 msgid "Quit"
 msgstr "Quit"
 
-#: src/qml/ContactsPage.qml:84
+#: src/qml/ContactsPage.qml:88
 #, kde-format
 msgid "Select number to call"
 msgstr "Select number to call"
 
-#: src/qml/ContactsPage.qml:93
+#: src/qml/ContactsPage.qml:97
 #, kde-format
 msgid "No contacts have a phone number set"
 msgstr "No contacts have a phone number set"
 
-#: src/qml/DialerPage.qml:67
+#: src/qml/DialerPage.qml:70
 #, kde-format
 msgid "Modem devices are not found"
 msgstr "Modem devices are not found"
 
-#: src/qml/DialerPage.qml:76
+#: src/qml/DialerPage.qml:79
 #, kde-format
 msgid "Voicemail number couldn't be found"
 msgstr "Voicemail number could not be found"
@@ -138,12 +148,12 @@ msgstr "Duration: %1"
 msgid "Call History"
 msgstr "Call History"
 
-#: src/qml/HistoryPage.qml:27
+#: src/qml/HistoryPage.qml:30
 #, kde-format
 msgid "Clear history"
 msgstr "Clear history"
 
-#: src/qml/HistoryPage.qml:54
+#: src/qml/HistoryPage.qml:70
 #, kde-format
 msgid "No recent calls"
 msgstr "No recent calls"
@@ -160,80 +170,90 @@ msgstr[1] "IMEIs"
 msgid "No IMEIs found"
 msgstr "No IMEIs found"
 
-#: src/qml/SettingsPage.qml:46
-#, kde-format
-msgid "Adaptive blocking"
+#: src/qml/settings/CallBlockSettingsPage.qml:20
+#, fuzzy, kde-format
+#| msgid "Adaptive blocking"
+msgid "Adaptive Call Blocking"
 msgstr "Adaptive blocking"
 
-#: src/qml/SettingsPage.qml:52
+#: src/qml/settings/CallBlockSettingsPage.qml:54
 #, kde-format
 msgid "Ignore calls from unknown numbers"
 msgstr "Ignore calls from unknown numbers"
 
-#: src/qml/SettingsPage.qml:65
+#: src/qml/settings/CallBlockSettingsPage.qml:70
+#, fuzzy, kde-format
+#| msgid "Ignore calls from unknown numbers"
+msgid "When a call is an incoming from an unknown number"
+msgstr "Ignore calls from unknown numbers"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:74
 #, kde-format
 msgid "Immediately hang up"
 msgstr "Immediately hang up"
 
-#: src/qml/SettingsPage.qml:70
+#: src/qml/settings/CallBlockSettingsPage.qml:79
 #, kde-format
 msgid "Ring without notification"
 msgstr "Ring without notification"
 
-#: src/qml/SettingsPage.qml:75
+#: src/qml/settings/CallBlockSettingsPage.qml:84
 #, kde-format
 msgid "Ring with silent notification"
 msgstr "Ring with silent notification"
 
-#: src/qml/SettingsPage.qml:83
+#: src/qml/settings/CallBlockSettingsPage.qml:100
 #, kde-format
 msgid "Allowed exceptions"
 msgstr "Allowed exceptions"
 
-#: src/qml/SettingsPage.qml:94
+#: src/qml/settings/CallBlockSettingsPage.qml:106
 #, kde-format
 msgid "Anonymous numbers"
 msgstr "Anonymous numbers"
 
-#: src/qml/SettingsPage.qml:101
+#: src/qml/settings/CallBlockSettingsPage.qml:113
 #, kde-format
 msgid "Existing outgoing call to number"
 msgstr "Existing outgoing call to number"
 
-#: src/qml/SettingsPage.qml:111
+#: src/qml/settings/CallBlockSettingsPage.qml:120
 #, kde-format
 msgid "Callback within"
 msgstr "Callback within"
 
-#: src/qml/SettingsPage.qml:126
+#: src/qml/settings/CallBlockSettingsPage.qml:138
 #, kde-format
 msgid "minutes"
 msgstr "minutes"
 
-#: src/qml/SettingsPage.qml:136
-#, kde-format
-msgid "Numbers matching a pattern:"
-msgstr "Numbers matching a pattern:"
+#: src/qml/settings/CallBlockSettingsPage.qml:156
+#, fuzzy, kde-format
+#| msgid "Allowed exceptions"
+msgid "Allowed phone number exceptions"
+msgstr "Allowed exceptions"
 
-#: src/qml/SettingsPage.qml:150 src/qml/SettingsPage.qml:171
+#: src/qml/settings/CallBlockSettingsPage.qml:168
+#: src/qml/settings/CallBlockSettingsPage.qml:193
 #, kde-format
 msgid "Add new pattern"
 msgstr "Add new pattern"
 
-#: src/qml/SettingsPage.qml:193
-#, kde-format
-msgid "Answer control for the incoming screen"
-msgstr ""
-
-#: src/qml/SettingsPage.qml:208
-#, kde-format
-msgid "Other"
-msgstr "Other"
-
-#: src/qml/SettingsPage.qml:212
+#: src/qml/settings/SettingsPage.qml:53
 #, kde-format
 msgid "About"
 msgstr "About"
+
+#: src/qml/settings/SettingsPage.qml:67
+#, fuzzy, kde-format
+#| msgid "Adaptive blocking"
+msgid "Adaptive call blocking"
+msgstr "Adaptive blocking"
+
+#: src/qml/settings/SettingsPage.qml:76
+#, kde-format
+msgid "Incoming call screen appearance"
+msgstr ""
 
 #: src/qml/USSDSheet.qml:40
 #, kde-format
@@ -259,6 +279,12 @@ msgstr "Send"
 #, kde-format
 msgid "Cancel USSD session"
 msgstr ""
+
+#~ msgid "Numbers matching a pattern:"
+#~ msgstr "Numbers matching a pattern:"
+
+#~ msgid "Other"
+#~ msgstr "Other"
 
 #~ msgid "More Info:"
 #~ msgstr "More Info:"

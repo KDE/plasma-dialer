@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-16 00:49+0000\n"
+"POT-Creation-Date: 2022-11-28 00:51+0000\n"
 "PO-Revision-Date: 2022-11-16 14:44+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -27,15 +27,25 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "freekdekruijf@kde.nl"
 
-#: src/main.cpp:135 src/qml/components/Sidebar.qml:34 src/qml/main.qml:32
+#: src/main.cpp:136 src/qml/components/Sidebar.qml:34 src/qml/main.qml:32
 #, kde-format
 msgid "Phone"
 msgstr "Telefoon"
 
-#: src/main.cpp:135
+#: src/main.cpp:138
 #, kde-format
 msgid "Plasma phone dialer"
 msgstr "Telefoonkiezer van Plasma"
+
+#: src/main.cpp:140
+#, kde-format
+msgid "© 2015-2022 KDE Community"
+msgstr ""
+
+#: src/main.cpp:143
+#, kde-format
+msgid "Alexey Andreyev"
+msgstr ""
 
 #: src/qml/call/AsymmetricAnswerSwipe.qml:86
 #, kde-format
@@ -89,14 +99,14 @@ msgid "Contacts"
 msgstr "Contactpersonen"
 
 #: src/qml/components/BottomToolbar.qml:105 src/qml/components/Sidebar.qml:84
-#: src/qml/DialerPage.qml:24
+#: src/qml/DialerPage.qml:27
 #, kde-format
 msgid "Dialer"
 msgstr "Telefoonkiezer"
 
-#: src/qml/components/Sidebar.qml:107 src/qml/ContactsPage.qml:26
-#: src/qml/DialerPage.qml:54 src/qml/HistoryPage.qml:37
-#: src/qml/SettingsPage.qml:19
+#: src/qml/components/Sidebar.qml:107 src/qml/ContactsPage.qml:29
+#: src/qml/DialerPage.qml:57 src/qml/HistoryPage.qml:40
+#: src/qml/settings/SettingsPage.qml:20
 #, kde-format
 msgid "Settings"
 msgstr "Instellingen"
@@ -106,22 +116,22 @@ msgstr "Instellingen"
 msgid "Quit"
 msgstr "Afsluiten"
 
-#: src/qml/ContactsPage.qml:84
+#: src/qml/ContactsPage.qml:88
 #, kde-format
 msgid "Select number to call"
 msgstr "Te bellen nummer selecteren"
 
-#: src/qml/ContactsPage.qml:93
+#: src/qml/ContactsPage.qml:97
 #, kde-format
 msgid "No contacts have a phone number set"
 msgstr "Geen contactpersoon heeft een telefoonnummer ingesteld"
 
-#: src/qml/DialerPage.qml:67
+#: src/qml/DialerPage.qml:70
 #, kde-format
 msgid "Modem devices are not found"
 msgstr "Modemapparaten zijn niet gevonden"
 
-#: src/qml/DialerPage.qml:76
+#: src/qml/DialerPage.qml:79
 #, kde-format
 msgid "Voicemail number couldn't be found"
 msgstr "Nummer van voicemail is niet te vinden"
@@ -136,12 +146,12 @@ msgstr "Duur: %1"
 msgid "Call History"
 msgstr "Oproepgeschiedenis"
 
-#: src/qml/HistoryPage.qml:27
+#: src/qml/HistoryPage.qml:30
 #, kde-format
 msgid "Clear history"
 msgstr "Geschiedenis wissen"
 
-#: src/qml/HistoryPage.qml:54
+#: src/qml/HistoryPage.qml:70
 #, kde-format
 msgid "No recent calls"
 msgstr "Geen recente oproepen"
@@ -158,80 +168,90 @@ msgstr[1] "IMEI's"
 msgid "No IMEIs found"
 msgstr "Geen IMEI's gevonden"
 
-#: src/qml/SettingsPage.qml:46
-#, kde-format
-msgid "Adaptive blocking"
+#: src/qml/settings/CallBlockSettingsPage.qml:20
+#, fuzzy, kde-format
+#| msgid "Adaptive blocking"
+msgid "Adaptive Call Blocking"
 msgstr "Aanpasbare blokkering"
 
-#: src/qml/SettingsPage.qml:52
+#: src/qml/settings/CallBlockSettingsPage.qml:54
 #, kde-format
 msgid "Ignore calls from unknown numbers"
 msgstr "Oproepen van onbekende nummers negeren"
 
-#: src/qml/SettingsPage.qml:65
+#: src/qml/settings/CallBlockSettingsPage.qml:70
+#, fuzzy, kde-format
+#| msgid "Ignore calls from unknown numbers"
+msgid "When a call is an incoming from an unknown number"
+msgstr "Oproepen van onbekende nummers negeren"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:74
 #, kde-format
 msgid "Immediately hang up"
 msgstr "Onmiddellijk ophangen"
 
-#: src/qml/SettingsPage.qml:70
+#: src/qml/settings/CallBlockSettingsPage.qml:79
 #, kde-format
 msgid "Ring without notification"
 msgstr "Bel laten klinken zonder melding"
 
-#: src/qml/SettingsPage.qml:75
+#: src/qml/settings/CallBlockSettingsPage.qml:84
 #, kde-format
 msgid "Ring with silent notification"
 msgstr "Bel laten klinken met stille melding"
 
-#: src/qml/SettingsPage.qml:83
+#: src/qml/settings/CallBlockSettingsPage.qml:100
 #, kde-format
 msgid "Allowed exceptions"
 msgstr "Uitzonderingen toegestaan"
 
-#: src/qml/SettingsPage.qml:94
+#: src/qml/settings/CallBlockSettingsPage.qml:106
 #, kde-format
 msgid "Anonymous numbers"
 msgstr "Anonieme nummers"
 
-#: src/qml/SettingsPage.qml:101
+#: src/qml/settings/CallBlockSettingsPage.qml:113
 #, kde-format
 msgid "Existing outgoing call to number"
 msgstr "Bestaande uitgaande oproep naar nummer"
 
-#: src/qml/SettingsPage.qml:111
+#: src/qml/settings/CallBlockSettingsPage.qml:120
 #, kde-format
 msgid "Callback within"
 msgstr "Terugbellen binnen"
 
-#: src/qml/SettingsPage.qml:126
+#: src/qml/settings/CallBlockSettingsPage.qml:138
 #, kde-format
 msgid "minutes"
 msgstr "minuten"
 
-#: src/qml/SettingsPage.qml:136
-#, kde-format
-msgid "Numbers matching a pattern:"
-msgstr "Nummers overeenkomend met een patroon:"
+#: src/qml/settings/CallBlockSettingsPage.qml:156
+#, fuzzy, kde-format
+#| msgid "Allowed exceptions"
+msgid "Allowed phone number exceptions"
+msgstr "Uitzonderingen toegestaan"
 
-#: src/qml/SettingsPage.qml:150 src/qml/SettingsPage.qml:171
+#: src/qml/settings/CallBlockSettingsPage.qml:168
+#: src/qml/settings/CallBlockSettingsPage.qml:193
 #, kde-format
 msgid "Add new pattern"
 msgstr "Nieuwe patronen toevoegen"
 
-#: src/qml/SettingsPage.qml:193
-#, kde-format
-msgid "Answer control for the incoming screen"
-msgstr "Besturing van antwoord voor het inkomende scherm"
-
-#: src/qml/SettingsPage.qml:208
-#, kde-format
-msgid "Other"
-msgstr "Overig"
-
-#: src/qml/SettingsPage.qml:212
+#: src/qml/settings/SettingsPage.qml:53
 #, kde-format
 msgid "About"
 msgstr "Info over"
+
+#: src/qml/settings/SettingsPage.qml:67
+#, fuzzy, kde-format
+#| msgid "Adaptive blocking"
+msgid "Adaptive call blocking"
+msgstr "Aanpasbare blokkering"
+
+#: src/qml/settings/SettingsPage.qml:76
+#, kde-format
+msgid "Incoming call screen appearance"
+msgstr ""
 
 #: src/qml/USSDSheet.qml:40
 #, kde-format
@@ -257,6 +277,15 @@ msgstr "Verzenden"
 #, kde-format
 msgid "Cancel USSD session"
 msgstr "USSD-sessie annuleren"
+
+#~ msgid "Numbers matching a pattern:"
+#~ msgstr "Nummers overeenkomend met een patroon:"
+
+#~ msgid "Answer control for the incoming screen"
+#~ msgstr "Besturing van antwoord voor het inkomende scherm"
+
+#~ msgid "Other"
+#~ msgstr "Overig"
 
 #~ msgid "More Info:"
 #~ msgstr "Meer informatie:"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-16 00:49+0000\n"
+"POT-Creation-Date: 2022-11-28 00:51+0000\n"
 "PO-Revision-Date: 2022-11-16 09:51+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -30,15 +30,25 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "txemaq@gmail.com"
 
-#: src/main.cpp:135 src/qml/components/Sidebar.qml:34 src/qml/main.qml:32
+#: src/main.cpp:136 src/qml/components/Sidebar.qml:34 src/qml/main.qml:32
 #, kde-format
 msgid "Phone"
 msgstr "Telèfon"
 
-#: src/main.cpp:135
+#: src/main.cpp:138
 #, kde-format
 msgid "Plasma phone dialer"
 msgstr "Marcador de telèfon de Plasma"
+
+#: src/main.cpp:140
+#, kde-format
+msgid "© 2015-2022 KDE Community"
+msgstr ""
+
+#: src/main.cpp:143
+#, kde-format
+msgid "Alexey Andreyev"
+msgstr ""
 
 #: src/qml/call/AsymmetricAnswerSwipe.qml:86
 #, kde-format
@@ -92,14 +102,14 @@ msgid "Contacts"
 msgstr "Contactes"
 
 #: src/qml/components/BottomToolbar.qml:105 src/qml/components/Sidebar.qml:84
-#: src/qml/DialerPage.qml:24
+#: src/qml/DialerPage.qml:27
 #, kde-format
 msgid "Dialer"
 msgstr "Marcador"
 
-#: src/qml/components/Sidebar.qml:107 src/qml/ContactsPage.qml:26
-#: src/qml/DialerPage.qml:54 src/qml/HistoryPage.qml:37
-#: src/qml/SettingsPage.qml:19
+#: src/qml/components/Sidebar.qml:107 src/qml/ContactsPage.qml:29
+#: src/qml/DialerPage.qml:57 src/qml/HistoryPage.qml:40
+#: src/qml/settings/SettingsPage.qml:20
 #, kde-format
 msgid "Settings"
 msgstr "Configuració"
@@ -109,22 +119,22 @@ msgstr "Configuració"
 msgid "Quit"
 msgstr "Ix"
 
-#: src/qml/ContactsPage.qml:84
+#: src/qml/ContactsPage.qml:88
 #, kde-format
 msgid "Select number to call"
 msgstr "Seleccioneu el número al que s'ha de tocar"
 
-#: src/qml/ContactsPage.qml:93
+#: src/qml/ContactsPage.qml:97
 #, kde-format
 msgid "No contacts have a phone number set"
 msgstr "Cap contacte té definit un número de telèfon"
 
-#: src/qml/DialerPage.qml:67
+#: src/qml/DialerPage.qml:70
 #, kde-format
 msgid "Modem devices are not found"
 msgstr "No s'ha trobat cap dispositiu de mòdem"
 
-#: src/qml/DialerPage.qml:76
+#: src/qml/DialerPage.qml:79
 #, kde-format
 msgid "Voicemail number couldn't be found"
 msgstr "No s'ha pogut trobar el número de la bústia de veu"
@@ -139,12 +149,12 @@ msgstr "Duració: %1"
 msgid "Call History"
 msgstr "Historial de tocades"
 
-#: src/qml/HistoryPage.qml:27
+#: src/qml/HistoryPage.qml:30
 #, kde-format
 msgid "Clear history"
 msgstr "Neteja l'historial"
 
-#: src/qml/HistoryPage.qml:54
+#: src/qml/HistoryPage.qml:70
 #, kde-format
 msgid "No recent calls"
 msgstr "No hi ha cap tocada recent"
@@ -161,80 +171,90 @@ msgstr[1] "IMEI"
 msgid "No IMEIs found"
 msgstr "No s'ha trobat cap IMEI"
 
-#: src/qml/SettingsPage.qml:46
-#, kde-format
-msgid "Adaptive blocking"
+#: src/qml/settings/CallBlockSettingsPage.qml:20
+#, fuzzy, kde-format
+#| msgid "Adaptive blocking"
+msgid "Adaptive Call Blocking"
 msgstr "Bloqueig adaptatiu"
 
-#: src/qml/SettingsPage.qml:52
+#: src/qml/settings/CallBlockSettingsPage.qml:54
 #, kde-format
 msgid "Ignore calls from unknown numbers"
 msgstr "Ignora les tocades des de números desconeguts"
 
-#: src/qml/SettingsPage.qml:65
+#: src/qml/settings/CallBlockSettingsPage.qml:70
+#, fuzzy, kde-format
+#| msgid "Ignore calls from unknown numbers"
+msgid "When a call is an incoming from an unknown number"
+msgstr "Ignora les tocades des de números desconeguts"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:74
 #, kde-format
 msgid "Immediately hang up"
 msgstr "Penja immediatament"
 
-#: src/qml/SettingsPage.qml:70
+#: src/qml/settings/CallBlockSettingsPage.qml:79
 #, kde-format
 msgid "Ring without notification"
 msgstr "Tocada sense notificació"
 
-#: src/qml/SettingsPage.qml:75
+#: src/qml/settings/CallBlockSettingsPage.qml:84
 #, kde-format
 msgid "Ring with silent notification"
 msgstr "Tocada amb notificació silenciosa"
 
-#: src/qml/SettingsPage.qml:83
+#: src/qml/settings/CallBlockSettingsPage.qml:100
 #, kde-format
 msgid "Allowed exceptions"
 msgstr "Excepcions permeses"
 
-#: src/qml/SettingsPage.qml:94
+#: src/qml/settings/CallBlockSettingsPage.qml:106
 #, kde-format
 msgid "Anonymous numbers"
 msgstr "Números anònims"
 
-#: src/qml/SettingsPage.qml:101
+#: src/qml/settings/CallBlockSettingsPage.qml:113
 #, kde-format
 msgid "Existing outgoing call to number"
 msgstr "Tocada eixint existent al número"
 
-#: src/qml/SettingsPage.qml:111
+#: src/qml/settings/CallBlockSettingsPage.qml:120
 #, kde-format
 msgid "Callback within"
 msgstr "Tocada de retorn en"
 
-#: src/qml/SettingsPage.qml:126
+#: src/qml/settings/CallBlockSettingsPage.qml:138
 #, kde-format
 msgid "minutes"
 msgstr "minuts"
 
-#: src/qml/SettingsPage.qml:136
-#, kde-format
-msgid "Numbers matching a pattern:"
-msgstr "Números que coincidisquen amb un patró:"
+#: src/qml/settings/CallBlockSettingsPage.qml:156
+#, fuzzy, kde-format
+#| msgid "Allowed exceptions"
+msgid "Allowed phone number exceptions"
+msgstr "Excepcions permeses"
 
-#: src/qml/SettingsPage.qml:150 src/qml/SettingsPage.qml:171
+#: src/qml/settings/CallBlockSettingsPage.qml:168
+#: src/qml/settings/CallBlockSettingsPage.qml:193
 #, kde-format
 msgid "Add new pattern"
 msgstr "Afig un patró nou"
 
-#: src/qml/SettingsPage.qml:193
-#, kde-format
-msgid "Answer control for the incoming screen"
-msgstr "Control de la resposta per a la pantalla de tocada entrant"
-
-#: src/qml/SettingsPage.qml:208
-#, kde-format
-msgid "Other"
-msgstr "Altres"
-
-#: src/qml/SettingsPage.qml:212
+#: src/qml/settings/SettingsPage.qml:53
 #, kde-format
 msgid "About"
 msgstr "Quant a"
+
+#: src/qml/settings/SettingsPage.qml:67
+#, fuzzy, kde-format
+#| msgid "Adaptive blocking"
+msgid "Adaptive call blocking"
+msgstr "Bloqueig adaptatiu"
+
+#: src/qml/settings/SettingsPage.qml:76
+#, kde-format
+msgid "Incoming call screen appearance"
+msgstr ""
 
 #: src/qml/USSDSheet.qml:40
 #, kde-format
@@ -260,3 +280,12 @@ msgstr "Envia"
 #, kde-format
 msgid "Cancel USSD session"
 msgstr "Cancel·la la sessió USSD"
+
+#~ msgid "Numbers matching a pattern:"
+#~ msgstr "Números que coincidisquen amb un patró:"
+
+#~ msgid "Answer control for the incoming screen"
+#~ msgstr "Control de la resposta per a la pantalla de tocada entrant"
+
+#~ msgid "Other"
+#~ msgstr "Altres"
