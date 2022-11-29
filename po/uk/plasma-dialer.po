@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-28 00:51+0000\n"
-"PO-Revision-Date: 2022-11-16 18:43+0200\n"
-"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"PO-Revision-Date: 2022-11-28 20:46+0200\n"
+"Last-Translator: Fracture dept <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
@@ -43,12 +43,12 @@ msgstr "Засіб набирання номеру Плазми"
 #: src/main.cpp:140
 #, kde-format
 msgid "© 2015-2022 KDE Community"
-msgstr ""
+msgstr "© Спільнота KDE, 2015–2022"
 
 #: src/main.cpp:143
 #, kde-format
 msgid "Alexey Andreyev"
-msgstr ""
+msgstr "Алєксєй Андрєєв"
 
 #: src/qml/call/AsymmetricAnswerSwipe.qml:86
 #, kde-format
@@ -174,10 +174,9 @@ msgid "No IMEIs found"
 msgstr "Записів IMEI не знайдено"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:20
-#, fuzzy, kde-format
-#| msgid "Adaptive blocking"
+#, kde-format
 msgid "Adaptive Call Blocking"
-msgstr "Адаптивне блокування"
+msgstr "Адаптивне блокування викликів"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:54
 #, kde-format
@@ -185,10 +184,9 @@ msgid "Ignore calls from unknown numbers"
 msgstr "Ігнорувати дзвінки з невідомих номерів"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:70
-#, fuzzy, kde-format
-#| msgid "Ignore calls from unknown numbers"
+#, kde-format
 msgid "When a call is an incoming from an unknown number"
-msgstr "Ігнорувати дзвінки з невідомих номерів"
+msgstr "Якщо виклик надходить із невідомого номера"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:74
 #, kde-format
@@ -231,10 +229,9 @@ msgid "minutes"
 msgstr "хвилин"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:156
-#, fuzzy, kde-format
-#| msgid "Allowed exceptions"
+#, kde-format
 msgid "Allowed phone number exceptions"
-msgstr "Дозволені виключення"
+msgstr "Дозволені виключення номерів"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:168
 #: src/qml/settings/CallBlockSettingsPage.qml:193
@@ -248,15 +245,14 @@ msgid "About"
 msgstr "Про програму"
 
 #: src/qml/settings/SettingsPage.qml:67
-#, fuzzy, kde-format
-#| msgid "Adaptive blocking"
+#, kde-format
 msgid "Adaptive call blocking"
-msgstr "Адаптивне блокування"
+msgstr "Адаптивне блокування викликів"
 
 #: src/qml/settings/SettingsPage.qml:76
 #, kde-format
 msgid "Incoming call screen appearance"
-msgstr ""
+msgstr "Вигляд вікна вхідного дзвінка"
 
 #: src/qml/USSDSheet.qml:40
 #, kde-format

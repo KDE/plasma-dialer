@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-28 00:51+0000\n"
-"PO-Revision-Date: 2022-11-16 09:51+0100\n"
+"PO-Revision-Date: 2022-11-28 09:10+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -43,12 +43,12 @@ msgstr "Marcador de telèfon de Plasma"
 #: src/main.cpp:140
 #, kde-format
 msgid "© 2015-2022 KDE Community"
-msgstr ""
+msgstr "© 2015-2022 Comunitat KDE"
 
 #: src/main.cpp:143
 #, kde-format
 msgid "Alexey Andreyev"
-msgstr ""
+msgstr "Alexey Andreyev"
 
 #: src/qml/call/AsymmetricAnswerSwipe.qml:86
 #, kde-format
@@ -172,10 +172,9 @@ msgid "No IMEIs found"
 msgstr "No s'ha trobat cap IMEI"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:20
-#, fuzzy, kde-format
-#| msgid "Adaptive blocking"
+#, kde-format
 msgid "Adaptive Call Blocking"
-msgstr "Bloqueig adaptatiu"
+msgstr "Bloqueig adaptatiu de tocades"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:54
 #, kde-format
@@ -183,10 +182,9 @@ msgid "Ignore calls from unknown numbers"
 msgstr "Ignora les tocades des de números desconeguts"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:70
-#, fuzzy, kde-format
-#| msgid "Ignore calls from unknown numbers"
+#, kde-format
 msgid "When a call is an incoming from an unknown number"
-msgstr "Ignora les tocades des de números desconeguts"
+msgstr "Quan és una tocada entrant d'un número desconegut"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:74
 #, kde-format
@@ -229,10 +227,9 @@ msgid "minutes"
 msgstr "minuts"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:156
-#, fuzzy, kde-format
-#| msgid "Allowed exceptions"
+#, kde-format
 msgid "Allowed phone number exceptions"
-msgstr "Excepcions permeses"
+msgstr "Excepcions permeses de números de telèfon"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:168
 #: src/qml/settings/CallBlockSettingsPage.qml:193
@@ -246,15 +243,14 @@ msgid "About"
 msgstr "Quant a"
 
 #: src/qml/settings/SettingsPage.qml:67
-#, fuzzy, kde-format
-#| msgid "Adaptive blocking"
+#, kde-format
 msgid "Adaptive call blocking"
-msgstr "Bloqueig adaptatiu"
+msgstr "Bloqueig adaptatiu de tocades"
 
 #: src/qml/settings/SettingsPage.qml:76
 #, kde-format
 msgid "Incoming call screen appearance"
-msgstr ""
+msgstr "Aparença de la pantalla de tocada entrant"
 
 #: src/qml/USSDSheet.qml:40
 #, kde-format
@@ -280,12 +276,3 @@ msgstr "Envia"
 #, kde-format
 msgid "Cancel USSD session"
 msgstr "Cancel·la la sessió USSD"
-
-#~ msgid "Numbers matching a pattern:"
-#~ msgstr "Números que coincidisquen amb un patró:"
-
-#~ msgid "Answer control for the incoming screen"
-#~ msgstr "Control de la resposta per a la pantalla de tocada entrant"
-
-#~ msgid "Other"
-#~ msgstr "Altres"
