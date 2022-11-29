@@ -9,6 +9,7 @@ add_executable(plasmaphonedialer
 
 find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED Core Quick Qml QuickControls2)
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Config CoreAddons I18n DBusAddons WindowSystem)
+find_package(KF5KirigamiAddons 0.6 REQUIRED)
 
 if (DIALER_BUILD_SHELL_OVERLAY)
     find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED WaylandClient)
@@ -64,8 +65,6 @@ if (DIALER_BUILD_SHELL_OVERLAY)
             ${PLASMA_WAYLAND_PROTOCOLS_DIR}/kde-lockscreen-overlay-v1.xml)
     endif()
 endif() # DIALER_BUILD_SHELL_OVERLAY
-
-ecm_find_qmlmodule(org.kde.kirigamiaddons.labs.mobileform 0.1)
 
 kconfig_add_kcfg_files(plasmaphonedialer config.kcfgc GENERATE_MOC)
 install(TARGETS plasmaphonedialer ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
