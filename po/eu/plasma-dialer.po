@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-28 00:51+0000\n"
-"PO-Revision-Date: 2022-11-16 06:24+0100\n"
+"PO-Revision-Date: 2022-11-29 05:39+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -43,12 +43,12 @@ msgstr "Plasmarako telefono markatzailea"
 #: src/main.cpp:140
 #, kde-format
 msgid "© 2015-2022 KDE Community"
-msgstr ""
+msgstr "© 2015-2022 KDE komunitatea"
 
 #: src/main.cpp:143
 #, kde-format
 msgid "Alexey Andreyev"
-msgstr ""
+msgstr "Alexey Andreyev"
 
 #: src/qml/call/AsymmetricAnswerSwipe.qml:86
 #, kde-format
@@ -172,10 +172,9 @@ msgid "No IMEIs found"
 msgstr "Ez da IMEIrik aurkitu"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:20
-#, fuzzy, kde-format
-#| msgid "Adaptive blocking"
+#, kde-format
 msgid "Adaptive Call Blocking"
-msgstr "Oztopatze moldakorra"
+msgstr "Dei oztopatze moldakorra"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:54
 #, kde-format
@@ -183,10 +182,9 @@ msgid "Ignore calls from unknown numbers"
 msgstr "Ezikusi zenbaki ezezagunetako deiak"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:70
-#, fuzzy, kde-format
-#| msgid "Ignore calls from unknown numbers"
+#, kde-format
 msgid "When a call is an incoming from an unknown number"
-msgstr "Ezikusi zenbaki ezezagunetako deiak"
+msgstr "Dei bat zenbaki ezezagun batetik datorrenean"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:74
 #, kde-format
@@ -229,10 +227,9 @@ msgid "minutes"
 msgstr "minutu"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:156
-#, fuzzy, kde-format
-#| msgid "Allowed exceptions"
+#, kde-format
 msgid "Allowed phone number exceptions"
-msgstr "Baimendutako salbuespenak"
+msgstr "Baimendutako telefono zenbaki salbuespenak"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:168
 #: src/qml/settings/CallBlockSettingsPage.qml:193
@@ -246,15 +243,14 @@ msgid "About"
 msgstr "Honi buruz"
 
 #: src/qml/settings/SettingsPage.qml:67
-#, fuzzy, kde-format
-#| msgid "Adaptive blocking"
+#, kde-format
 msgid "Adaptive call blocking"
-msgstr "Oztopatze moldakorra"
+msgstr "Dei oztopatze moldakorra"
 
 #: src/qml/settings/SettingsPage.qml:76
 #, kde-format
 msgid "Incoming call screen appearance"
-msgstr ""
+msgstr "Sarrerako deien pantailaren itxura"
 
 #: src/qml/USSDSheet.qml:40
 #, kde-format
