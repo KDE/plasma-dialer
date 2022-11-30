@@ -16,3 +16,4 @@ Dependencies:
     'frameworks/kpeople': '@stable'
     'frameworks/kwindowsystem': '@stable'
     'frameworks/modemmanager-qt': '@stable'
+    'libraries/kirigami-addons': '@latest'
