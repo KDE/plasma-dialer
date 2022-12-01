@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-28 00:51+0000\n"
-"PO-Revision-Date: 2022-11-06 15:16+0100\n"
+"PO-Revision-Date: 2022-11-19 08:10+0100\n"
 "Last-Translator: Paolo Zamponi <zapaolo@email.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -58,10 +58,9 @@ msgid "Active call list"
 msgstr "Elenco chiamate attive"
 
 #: src/qml/call/CallPage.qml:108
-#, fuzzy, kde-format
-#| msgid "Incoming call"
+#, kde-format
 msgid "Incoming..."
-msgstr "Chiamata in ingresso"
+msgstr "In arrivo..."
 
 #: src/qml/call/CallPage.qml:111
 #, kde-format
@@ -257,7 +256,7 @@ msgstr ""
 #: src/qml/USSDSheet.qml:40
 #, kde-format
 msgid "USSD Error"
-msgstr ""
+msgstr "Errore USSD"
 
 #: src/qml/USSDSheet.qml:40
 #, kde-format
@@ -277,7 +276,7 @@ msgstr "Invia"
 #: src/qml/USSDSheet.qml:70
 #, kde-format
 msgid "Cancel USSD session"
-msgstr ""
+msgstr "Annulla sessione USSD"
 
 #~ msgid "Numbers matching a pattern:"
 #~ msgstr "Numeri che corrispondono al modello:"
