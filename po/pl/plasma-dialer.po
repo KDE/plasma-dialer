@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-28 00:51+0000\n"
-"PO-Revision-Date: 2022-02-12 16:03+0100\n"
+"PO-Revision-Date: 2022-11-28 18:25+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 22.03.70\n"
+"X-Generator: Lokalize 22.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -39,19 +39,19 @@ msgid "Plasma phone dialer"
 msgstr "Wybieranie numerów telefonicznych Plazmy"
 
 #: src/main.cpp:140
-#, kde-format
+#, fuzzy, kde-format
 msgid "© 2015-2022 KDE Community"
-msgstr ""
+msgstr "Społeczność KDE"
 
 #: src/main.cpp:143
 #, kde-format
 msgid "Alexey Andreyev"
-msgstr ""
+msgstr "Alexey Andreyev"
 
 #: src/qml/call/AsymmetricAnswerSwipe.qml:86
 #, kde-format
 msgid "Swipe to accept"
-msgstr ""
+msgstr "Przeciągnij, aby zatwierdzić"
 
 #: src/qml/call/CallPage.qml:35 src/qml/call/InCallInlineMessage.qml:14
 #, kde-format
@@ -59,10 +59,9 @@ msgid "Active call list"
 msgstr "Lista trwających połączeń"
 
 #: src/qml/call/CallPage.qml:108
-#, fuzzy, kde-format
-#| msgid "Incoming call"
+#, kde-format
 msgid "Incoming..."
-msgstr "Rozmowa przychodząca"
+msgstr "Przychodzące..."
 
 #: src/qml/call/CallPage.qml:111
 #, kde-format
@@ -116,7 +115,7 @@ msgstr "Ustawienia"
 #: src/qml/components/Sidebar.qml:125
 #, kde-format
 msgid "Quit"
-msgstr ""
+msgstr "Zakończ"
 
 #: src/qml/ContactsPage.qml:88
 #, kde-format
@@ -172,71 +171,70 @@ msgid "No IMEIs found"
 msgstr "Nie znaleziono żadnych numerów IMEI"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:20
-#, fuzzy, kde-format
-#| msgid "Active call list"
+#, kde-format
 msgid "Adaptive Call Blocking"
-msgstr "Lista trwających połączeń"
+msgstr "Dostosowujące się blokowanie rozmów"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:54
 #, kde-format
 msgid "Ignore calls from unknown numbers"
-msgstr ""
+msgstr "Nie zważaj na telefony od nieznanych numerów"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:70
 #, kde-format
 msgid "When a call is an incoming from an unknown number"
-msgstr ""
+msgstr "Gdy ktoś dzwoni z nieznanego numeru"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:74
 #, kde-format
 msgid "Immediately hang up"
-msgstr ""
+msgstr "Natychmiastowo odwieś"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:79
 #, kde-format
 msgid "Ring without notification"
-msgstr ""
+msgstr "Zadzwoń bez powiadomienia"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:84
 #, kde-format
 msgid "Ring with silent notification"
-msgstr ""
+msgstr "Zadzwoń cichym powiadomieniem"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:100
 #, kde-format
 msgid "Allowed exceptions"
-msgstr ""
+msgstr "Dozwolone wyjątki"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:106
 #, kde-format
 msgid "Anonymous numbers"
-msgstr ""
+msgstr "Numery anonimowe"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:113
 #, kde-format
 msgid "Existing outgoing call to number"
-msgstr ""
+msgstr "Istniejąca rozmowa wychodząca na numer"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:120
 #, kde-format
 msgid "Callback within"
-msgstr ""
+msgstr "Oddzwoń w przeciągu"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:138
 #, kde-format
 msgid "minutes"
-msgstr ""
+msgstr "minuty"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:156
 #, kde-format
 msgid "Allowed phone number exceptions"
-msgstr ""
+msgstr "Wyjątkowo dozwolone numery telefonów"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:168
 #: src/qml/settings/CallBlockSettingsPage.qml:193
 #, kde-format
 msgid "Add new pattern"
-msgstr ""
+msgstr "Dodaj nowy wzorzec"
 
 #: src/qml/settings/SettingsPage.qml:53
 #, kde-format
@@ -244,20 +242,19 @@ msgid "About"
 msgstr "O programie"
 
 #: src/qml/settings/SettingsPage.qml:67
-#, fuzzy, kde-format
-#| msgid "Active call list"
+#, kde-format
 msgid "Adaptive call blocking"
-msgstr "Lista trwających połączeń"
+msgstr "Dostosowujące się blokowanie rozmów"
 
 #: src/qml/settings/SettingsPage.qml:76
 #, kde-format
 msgid "Incoming call screen appearance"
-msgstr ""
+msgstr "Wygląd ekranu rozmowy przychodzącej"
 
 #: src/qml/USSDSheet.qml:40
 #, kde-format
 msgid "USSD Error"
-msgstr ""
+msgstr "Błąd USSD"
 
 #: src/qml/USSDSheet.qml:40
 #, kde-format
@@ -277,7 +274,7 @@ msgstr "Wyślij"
 #: src/qml/USSDSheet.qml:70
 #, kde-format
 msgid "Cancel USSD session"
-msgstr ""
+msgstr "Zakończ sesję USSD"
 
 #~ msgid "More Info:"
 #~ msgstr "Więcej szczegółów:"
