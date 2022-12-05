@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-28 00:51+0000\n"
-"PO-Revision-Date: 2022-11-18 06:51+0100\n"
+"PO-Revision-Date: 2022-12-04 08:37+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
 "Language: fr\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.11.80\n"
+"X-Generator: Lokalize 22.11.90\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -37,12 +37,12 @@ msgstr "Composeur de téléphone de Plasma"
 #: src/main.cpp:140
 #, kde-format
 msgid "© 2015-2022 KDE Community"
-msgstr ""
+msgstr "© 2015 - 2022 Communauté de KDE"
 
 #: src/main.cpp:143
 #, kde-format
 msgid "Alexey Andreyev"
-msgstr ""
+msgstr "Alexey Andreyev"
 
 #: src/qml/call/AsymmetricAnswerSwipe.qml:86
 #, kde-format
@@ -166,10 +166,9 @@ msgid "No IMEIs found"
 msgstr "Aucun IMEI trouvé"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:20
-#, fuzzy, kde-format
-#| msgid "Adaptive blocking"
+#, kde-format
 msgid "Adaptive Call Blocking"
-msgstr "Blocage adaptatif"
+msgstr "Blocage adaptatif des appels"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:54
 #, kde-format
@@ -177,10 +176,9 @@ msgid "Ignore calls from unknown numbers"
 msgstr "Ignorer les appels provenant de numéros inconnus"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:70
-#, fuzzy, kde-format
-#| msgid "Ignore calls from unknown numbers"
+#, kde-format
 msgid "When a call is an incoming from an unknown number"
-msgstr "Ignorer les appels provenant de numéros inconnus"
+msgstr "Lorsqu'un appel entrant se produit avec un numéro inconnu"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:74
 #, kde-format
@@ -223,10 +221,9 @@ msgid "minutes"
 msgstr "minutes"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:156
-#, fuzzy, kde-format
-#| msgid "Allowed exceptions"
+#, kde-format
 msgid "Allowed phone number exceptions"
-msgstr "Exceptions autorisées"
+msgstr "Exceptions autorisées pour des numéros de téléphone"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:168
 #: src/qml/settings/CallBlockSettingsPage.qml:193
@@ -240,15 +237,14 @@ msgid "About"
 msgstr "À propos"
 
 #: src/qml/settings/SettingsPage.qml:67
-#, fuzzy, kde-format
-#| msgid "Adaptive blocking"
+#, kde-format
 msgid "Adaptive call blocking"
-msgstr "Blocage adaptatif"
+msgstr "Blocage adaptatif des appels"
 
 #: src/qml/settings/SettingsPage.qml:76
 #, kde-format
 msgid "Incoming call screen appearance"
-msgstr ""
+msgstr "Apparence de l'écran pour les appels entrants"
 
 #: src/qml/USSDSheet.qml:40
 #, kde-format
