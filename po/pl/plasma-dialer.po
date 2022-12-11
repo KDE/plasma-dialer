@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-28 00:51+0000\n"
-"PO-Revision-Date: 2022-11-28 18:25+0100\n"
+"PO-Revision-Date: 2022-12-10 11:40+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -39,9 +39,9 @@ msgid "Plasma phone dialer"
 msgstr "Wybieranie numerów telefonicznych Plazmy"
 
 #: src/main.cpp:140
-#, fuzzy, kde-format
+#, kde-format
 msgid "© 2015-2022 KDE Community"
-msgstr "Społeczność KDE"
+msgstr "© 2015-2022 Społeczność KDE"
 
 #: src/main.cpp:143
 #, kde-format
