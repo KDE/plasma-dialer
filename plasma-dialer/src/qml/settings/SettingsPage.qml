@@ -19,6 +19,9 @@ Kirigami.ScrollablePage {
     id: page
     title: i18n("Settings")
 
+    // page animation
+    property real yTranslate: 0
+
     function saveConfig() {
         Config.save()
         DialerUtils.syncSettings()
@@ -41,6 +44,8 @@ Kirigami.ScrollablePage {
 
     ColumnLayout {
         spacing: 0
+
+        transform: Translate { y: yTranslate }
 
         MobileForm.FormCard {
             Layout.fillWidth: true
