@@ -21,6 +21,8 @@ Kirigami.ApplicationWindow {
     pageStack.globalToolBar.canContainHandles: true
     pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.ToolBar
     pageStack.globalToolBar.showNavigationButtons: Kirigami.ApplicationHeaderStyle.ShowBackButton;
+
+    pageStack.columnView.columnResizeMode: Kirigami.ColumnView.SingleColumn
     
     // needs to work with 360x720 (+ panel heights)
     minimumWidth: 300
