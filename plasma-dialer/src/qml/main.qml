@@ -27,7 +27,7 @@ Kirigami.ApplicationWindow {
     // needs to work with 360x720 (+ panel heights)
     minimumWidth: 300
     minimumHeight: minimumWidth + 1
-    width: Kirigami.Settings.isMobile ? 400 : 650
+    width: Kirigami.Settings.isMobile ? 400 : 550
     height: Kirigami.Settings.isMobile ? 650 : 500
     visibility: lockscreenMode ? "FullScreen" : "Windowed"
 

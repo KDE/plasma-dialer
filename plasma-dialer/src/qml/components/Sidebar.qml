@@ -9,7 +9,7 @@ import org.kde.kirigami 2.19 as Kirigami
 Kirigami.OverlayDrawer {
     id: drawer
     modal: false
-    width: 200
+    width: 90
     height: applicationWindow().height
 
     Kirigami.Theme.colorSet: Kirigami.Theme.Window
@@ -23,33 +23,20 @@ Kirigami.OverlayDrawer {
     contentItem: ColumnLayout {
         spacing: 0
 
-        QQC2.ToolBar {
+        Kirigami.AbstractApplicationHeader {
             Layout.fillWidth: true
-            implicitHeight: applicationWindow().pageStack.globalToolBar.preferredHeight
-
-            Item {
-                anchors.fill: parent
-                Kirigami.Heading {
-                    level: 1
-                    text: i18n("Phone")
-                    anchors.left: parent.left
-                    anchors.leftMargin: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
-                    anchors.verticalCenter: parent.verticalCenter
-                }
-            }
         }
 
         ColumnLayout {
             id: column
             spacing: 0
-            Layout.margins: Kirigami.Units.smallSpacing
 
-            SidebarButton {
+            Kirigami.NavigationTabButton {
+                Layout.fillWidth: true
+                width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
+
                 text: i18n("History")
                 icon.name: "clock"
-                Layout.fillWidth: true
-                Layout.minimumHeight: Kirigami.Units.gridUnit * 2
-                Layout.bottomMargin: Kirigami.Units.smallSpacing
                 checked: pageStack.currentItem === page
                 enabled: !applicationWindow().lockscreenMode
                 property var page: applicationWindow().getPage("History")
@@ -62,12 +49,12 @@ Kirigami.OverlayDrawer {
                 }
             }
 
-            SidebarButton {
+            Kirigami.NavigationTabButton {
+                Layout.fillWidth: true
+                width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
+
                 text: i18n("Contacts")
                 icon.name: "view-pim-contacts"
-                Layout.fillWidth: true
-                Layout.minimumHeight: Kirigami.Units.gridUnit * 2
-                Layout.bottomMargin: Kirigami.Units.smallSpacing
                 checked: pageStack.currentItem === page
                 enabled: !applicationWindow().lockscreenMode
                 property var page: applicationWindow().getPage("Contacts")
@@ -80,12 +67,12 @@ Kirigami.OverlayDrawer {
                 }
             }
 
-            SidebarButton {
+            Kirigami.NavigationTabButton {
+                Layout.fillWidth: true
+                width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
+
                 text: i18n("Dialer")
                 icon.name: "call-start"
-                Layout.fillWidth: true
-                Layout.minimumHeight: Kirigami.Units.gridUnit * 2
-                Layout.bottomMargin: Kirigami.Units.smallSpacing
                 checked: pageStack.currentItem === page
                 property var page: applicationWindow().getPage("Dialer")
                 onClicked: {
@@ -100,14 +87,16 @@ Kirigami.OverlayDrawer {
             Item { Layout.fillHeight: true }
             Kirigami.Separator {
                 Layout.fillWidth: true
-                Layout.margins: Kirigami.Units.smallSpacing
+                Layout.rightMargin: Kirigami.Units.smallSpacing
+                Layout.leftMargin: Kirigami.Units.smallSpacing
             }
             
-            SidebarButton {
+            Kirigami.NavigationTabButton {
+                Layout.fillWidth: true
+                width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
+
                 text: i18n("Settings")
                 icon.name: "settings-configure"
-                Layout.fillWidth: true
-                Layout.minimumHeight: Kirigami.Units.gridUnit * 2
                 checked: pageStack.currentItem === page
                 enabled: !applicationWindow().lockscreenMode
                 property var page: applicationWindow().getPage("Settings")
@@ -120,12 +109,13 @@ Kirigami.OverlayDrawer {
                 }
             }
             
-            SidebarButton {
+            Kirigami.NavigationTabButton {
+                Layout.fillWidth: true
+                width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
+
                 visible: applicationWindow().lockscreenMode
                 text: i18n("Quit")
                 icon.name: "window-close-symbolic"
-                Layout.fillWidth: true
-                Layout.minimumHeight: Kirigami.Units.gridUnit * 2
                 onClicked: {
                     Qt.quit()
                 }
