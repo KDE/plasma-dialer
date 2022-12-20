@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-28 00:51+0000\n"
+"POT-Creation-Date: 2022-12-20 00:48+0000\n"
 "PO-Revision-Date: 2021-01-30 11:03+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -236,17 +236,17 @@ msgstr ""
 msgid "Add new pattern"
 msgstr ""
 
-#: src/qml/settings/SettingsPage.qml:53
+#: src/qml/settings/SettingsPage.qml:58
 #, kde-format
 msgid "About"
 msgstr ""
 
-#: src/qml/settings/SettingsPage.qml:67
+#: src/qml/settings/SettingsPage.qml:72
 #, kde-format
 msgid "Adaptive call blocking"
 msgstr ""
 
-#: src/qml/settings/SettingsPage.qml:76
+#: src/qml/settings/SettingsPage.qml:81
 #, kde-format
 msgid "Incoming call screen appearance"
 msgstr ""
