@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-20 00:48+0000\n"
-"PO-Revision-Date: 2022-02-02 08:47-0300\n"
+"PO-Revision-Date: 2022-12-20 11:05-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 20.04.2\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -40,12 +40,12 @@ msgstr "Discador de celular do Plasma"
 #: src/main.cpp:140
 #, kde-format
 msgid "© 2015-2022 KDE Community"
-msgstr ""
+msgstr "© 2015-2022 Comunidade KDE"
 
 #: src/main.cpp:143
 #, kde-format
 msgid "Alexey Andreyev"
-msgstr ""
+msgstr "Alexey Andreyev"
 
 #: src/qml/call/AsymmetricAnswerSwipe.qml:86
 #, kde-format
@@ -115,7 +115,7 @@ msgstr "Configurações"
 #: src/qml/components/Sidebar.qml:125
 #, kde-format
 msgid "Quit"
-msgstr ""
+msgstr "Sair"
 
 #: src/qml/ContactsPage.qml:88
 #, kde-format
@@ -208,7 +208,7 @@ msgstr ""
 #: src/qml/settings/CallBlockSettingsPage.qml:106
 #, kde-format
 msgid "Anonymous numbers"
-msgstr ""
+msgstr "Números anônimos"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:113
 #, kde-format
@@ -223,7 +223,7 @@ msgstr ""
 #: src/qml/settings/CallBlockSettingsPage.qml:138
 #, kde-format
 msgid "minutes"
-msgstr ""
+msgstr "minutos"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:156
 #, kde-format
@@ -234,7 +234,7 @@ msgstr ""
 #: src/qml/settings/CallBlockSettingsPage.qml:193
 #, kde-format
 msgid "Add new pattern"
-msgstr ""
+msgstr "Adicionar novo padrão"
 
 #: src/qml/settings/SettingsPage.qml:58
 #, kde-format
@@ -255,7 +255,7 @@ msgstr ""
 #: src/qml/USSDSheet.qml:40
 #, kde-format
 msgid "USSD Error"
-msgstr ""
+msgstr "Erro de USSD"
 
 #: src/qml/USSDSheet.qml:40
 #, kde-format
@@ -275,7 +275,7 @@ msgstr "Enviar"
 #: src/qml/USSDSheet.qml:70
 #, kde-format
 msgid "Cancel USSD session"
-msgstr ""
+msgstr "Cancelar sessão USSD"
 
 #~ msgid "More Info:"
 #~ msgstr "Mais informações:"
