@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-20 00:48+0000\n"
-"PO-Revision-Date: 2022-02-18 23:03+0100\n"
+"PO-Revision-Date: 2022-12-21 12:32+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.2\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -40,7 +40,7 @@ msgstr ""
 #: src/main.cpp:140
 #, kde-format
 msgid "© 2015-2022 KDE Community"
-msgstr ""
+msgstr "© 2015-2022 Communitate de KDE"
 
 #: src/main.cpp:143
 #, kde-format
@@ -58,10 +58,9 @@ msgid "Active call list"
 msgstr "Lista de appello active"
 
 #: src/qml/call/CallPage.qml:108
-#, fuzzy, kde-format
-#| msgid "Incoming call"
+#, kde-format
 msgid "Incoming..."
-msgstr "Appello in arrivata"
+msgstr "In arrivata..."
 
 #: src/qml/call/CallPage.qml:111
 #, kde-format
@@ -115,7 +114,7 @@ msgstr "Preferentias"
 #: src/qml/components/Sidebar.qml:125
 #, kde-format
 msgid "Quit"
-msgstr ""
+msgstr "Quita"
 
 #: src/qml/ContactsPage.qml:88
 #, kde-format
@@ -170,10 +169,9 @@ msgid "No IMEIs found"
 msgstr "Nulle IMEIs trovate"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:20
-#, fuzzy, kde-format
-#| msgid "Active call list"
+#, kde-format
 msgid "Adaptive Call Blocking"
-msgstr "Lista de appello active"
+msgstr "Blocar de appello adaptative"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:54
 #, kde-format
@@ -223,7 +221,7 @@ msgstr ""
 #: src/qml/settings/CallBlockSettingsPage.qml:138
 #, kde-format
 msgid "minutes"
-msgstr ""
+msgstr "minutas"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:156
 #, kde-format
@@ -242,10 +240,9 @@ msgid "About"
 msgstr "A proposito"
 
 #: src/qml/settings/SettingsPage.qml:72
-#, fuzzy, kde-format
-#| msgid "Active call list"
+#, kde-format
 msgid "Adaptive call blocking"
-msgstr "Lista de appello active"
+msgstr "Blocar de appello adaptative"
 
 #: src/qml/settings/SettingsPage.qml:81
 #, kde-format
