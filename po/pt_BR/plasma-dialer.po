@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-20 00:48+0000\n"
+"POT-Creation-Date: 2022-12-28 00:51+0000\n"
 "PO-Revision-Date: 2022-12-20 11:05-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -27,7 +27,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "elchevive@opensuse.org"
 
-#: src/main.cpp:136 src/qml/components/Sidebar.qml:34 src/qml/main.qml:32
+#: src/main.cpp:136 src/qml/main.qml:34
 #, kde-format
 msgid "Phone"
 msgstr "Celular"
@@ -88,31 +88,31 @@ msgstr "Sem áudio"
 msgid "View"
 msgstr "Exibir"
 
-#: src/qml/components/BottomToolbar.qml:81 src/qml/components/Sidebar.qml:48
+#: src/qml/components/BottomToolbar.qml:81 src/qml/components/Sidebar.qml:38
 #, kde-format
 msgid "History"
 msgstr "Histórico"
 
-#: src/qml/components/BottomToolbar.qml:93 src/qml/components/Sidebar.qml:66
+#: src/qml/components/BottomToolbar.qml:93 src/qml/components/Sidebar.qml:56
 #: src/qml/ContactsPage.qml:18
 #, kde-format
 msgid "Contacts"
 msgstr "Contatos"
 
-#: src/qml/components/BottomToolbar.qml:105 src/qml/components/Sidebar.qml:84
+#: src/qml/components/BottomToolbar.qml:105 src/qml/components/Sidebar.qml:74
 #: src/qml/DialerPage.qml:27
 #, kde-format
 msgid "Dialer"
 msgstr "Discador"
 
-#: src/qml/components/Sidebar.qml:107 src/qml/ContactsPage.qml:29
+#: src/qml/components/Sidebar.qml:98 src/qml/ContactsPage.qml:29
 #: src/qml/DialerPage.qml:57 src/qml/HistoryPage.qml:40
 #: src/qml/settings/SettingsPage.qml:20
 #, kde-format
 msgid "Settings"
 msgstr "Configurações"
 
-#: src/qml/components/Sidebar.qml:125
+#: src/qml/components/Sidebar.qml:117
 #, kde-format
 msgid "Quit"
 msgstr "Sair"

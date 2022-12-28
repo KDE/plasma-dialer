@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-20 00:48+0000\n"
+"POT-Creation-Date: 2022-12-28 00:51+0000\n"
 "PO-Revision-Date: 2022-01-25 10:17+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -28,7 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "ulysses@fsf.hu"
 
-#: src/main.cpp:136 src/qml/components/Sidebar.qml:34 src/qml/main.qml:32
+#: src/main.cpp:136 src/qml/main.qml:34
 #, kde-format
 msgid "Phone"
 msgstr "Telefon"
@@ -89,31 +89,31 @@ msgstr "Némítás"
 msgid "View"
 msgstr "Nézet"
 
-#: src/qml/components/BottomToolbar.qml:81 src/qml/components/Sidebar.qml:48
+#: src/qml/components/BottomToolbar.qml:81 src/qml/components/Sidebar.qml:38
 #, kde-format
 msgid "History"
 msgstr "Előzmények"
 
-#: src/qml/components/BottomToolbar.qml:93 src/qml/components/Sidebar.qml:66
+#: src/qml/components/BottomToolbar.qml:93 src/qml/components/Sidebar.qml:56
 #: src/qml/ContactsPage.qml:18
 #, kde-format
 msgid "Contacts"
 msgstr "Névjegyek"
 
-#: src/qml/components/BottomToolbar.qml:105 src/qml/components/Sidebar.qml:84
+#: src/qml/components/BottomToolbar.qml:105 src/qml/components/Sidebar.qml:74
 #: src/qml/DialerPage.qml:27
 #, kde-format
 msgid "Dialer"
 msgstr "Tárcsázó"
 
-#: src/qml/components/Sidebar.qml:107 src/qml/ContactsPage.qml:29
+#: src/qml/components/Sidebar.qml:98 src/qml/ContactsPage.qml:29
 #: src/qml/DialerPage.qml:57 src/qml/HistoryPage.qml:40
 #: src/qml/settings/SettingsPage.qml:20
 #, kde-format
 msgid "Settings"
 msgstr "Beállítások"
 
-#: src/qml/components/Sidebar.qml:125
+#: src/qml/components/Sidebar.qml:117
 #, kde-format
 msgid "Quit"
 msgstr ""
