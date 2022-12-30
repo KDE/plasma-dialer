@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-28 00:51+0000\n"
+"POT-Creation-Date: 2022-12-30 08:47+0000\n"
 "PO-Revision-Date: 2022-10-03 16:25+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-i18n-doc@kde.org>\n"
@@ -27,7 +27,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde@peremen.name"
 
-#: src/main.cpp:136 src/qml/main.qml:34
+#: src/main.cpp:136 src/qml/main.qml:35
 #, kde-format
 msgid "Phone"
 msgstr "전화"

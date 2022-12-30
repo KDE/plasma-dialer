@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-28 00:51+0000\n"
+"POT-Creation-Date: 2022-12-30 08:47+0000\n"
 "PO-Revision-Date: 2022-12-04 08:37+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -24,7 +24,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "xavier.besnard@neuf.fr"
 
-#: src/main.cpp:136 src/qml/main.qml:34
+#: src/main.cpp:136 src/qml/main.qml:35
 #, kde-format
 msgid "Phone"
 msgstr "Téléphone"
