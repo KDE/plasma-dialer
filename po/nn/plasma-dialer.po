@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-28 00:51+0000\n"
+"POT-Creation-Date: 2022-12-30 08:47+0000\n"
 "PO-Revision-Date: 2022-02-13 14:42+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -29,7 +29,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "karl@huftis.org"
 
-#: src/main.cpp:136 src/qml/components/Sidebar.qml:34 src/qml/main.qml:32
+#: src/main.cpp:136 src/qml/main.qml:35
 #, kde-format
 msgid "Phone"
 msgstr "Telefon"
@@ -89,31 +89,31 @@ msgstr "Demp"
 msgid "View"
 msgstr "Vis"
 
-#: src/qml/components/BottomToolbar.qml:81 src/qml/components/Sidebar.qml:48
+#: src/qml/components/BottomToolbar.qml:81 src/qml/components/Sidebar.qml:38
 #, kde-format
 msgid "History"
 msgstr "Logg"
 
-#: src/qml/components/BottomToolbar.qml:93 src/qml/components/Sidebar.qml:66
+#: src/qml/components/BottomToolbar.qml:93 src/qml/components/Sidebar.qml:56
 #: src/qml/ContactsPage.qml:18
 #, kde-format
 msgid "Contacts"
 msgstr "Kontaktar"
 
-#: src/qml/components/BottomToolbar.qml:105 src/qml/components/Sidebar.qml:84
+#: src/qml/components/BottomToolbar.qml:105 src/qml/components/Sidebar.qml:74
 #: src/qml/DialerPage.qml:27
 #, kde-format
 msgid "Dialer"
 msgstr "Telefonringjar"
 
-#: src/qml/components/Sidebar.qml:107 src/qml/ContactsPage.qml:29
+#: src/qml/components/Sidebar.qml:98 src/qml/ContactsPage.qml:29
 #: src/qml/DialerPage.qml:57 src/qml/HistoryPage.qml:40
 #: src/qml/settings/SettingsPage.qml:20
 #, kde-format
 msgid "Settings"
 msgstr "Innstillingar"
 
-#: src/qml/components/Sidebar.qml:125
+#: src/qml/components/Sidebar.qml:117
 #, kde-format
 msgid "Quit"
 msgstr ""
@@ -236,17 +236,17 @@ msgstr ""
 msgid "Add new pattern"
 msgstr ""
 
-#: src/qml/settings/SettingsPage.qml:53
+#: src/qml/settings/SettingsPage.qml:58
 #, kde-format
 msgid "About"
 msgstr "Om"
 
-#: src/qml/settings/SettingsPage.qml:67
+#: src/qml/settings/SettingsPage.qml:72
 #, kde-format
 msgid "Adaptive call blocking"
 msgstr ""
 
-#: src/qml/settings/SettingsPage.qml:76
+#: src/qml/settings/SettingsPage.qml:81
 #, kde-format
 msgid "Incoming call screen appearance"
 msgstr ""

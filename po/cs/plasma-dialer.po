@@ -274,6 +274,3 @@ msgstr "Odeslat"
 #, kde-format
 msgid "Cancel USSD session"
 msgstr ""
-
-#~ msgid "Other"
-#~ msgstr "Jiné"
