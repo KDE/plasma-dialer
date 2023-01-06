@@ -57,7 +57,7 @@ if("${LIBCALLAUDIO_VERSION}" STREQUAL "0.1.2")
     message(ERROR "libcallaudiod version 0.1.2 is not supported")
 endif()
 if("${LIBCALLAUDIO_VERSION}" STREQUAL "0.1.3")
-    message(WARNING "libcallaudiod version 0.1.3 is found, while 1.0.4 is expected." "\n"
+    message(WARNING "libcallaudiod version 0.1.3 is found, while 0.1.4 is expected." "\n"
         "This is a known issue in case of CI build, the workaround is skipping callaudiod logic for the build:" "\n"
         "https://build.opensuse.org/package/show/network:telephony/callaudiod#comment-1675259")
     target_compile_definitions(kde-telephony-daemon PUBLIC LOWER_LIBCALLAUDIO_VERSION)
