@@ -233,6 +233,7 @@ Name[pt]=A tocar - sem mensagem
 Name[sl]=Zvonjenje-brez-poj-okna
 Name[tr]=Açılır Penceresiz Çalma
 Name[uk]=Дзвінок без контекстної панелі
+Name[vi]=Đổ chuông không kèm ô bật lên
 Name[x-test]=xxRinging-without-popupxx
 Action=Sound
 Sound=Oxygen-Im-Phone-Ring.ogg
