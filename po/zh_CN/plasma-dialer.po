@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-30 08:47+0000\n"
-"PO-Revision-Date: 2023-01-02 07:11\n"
+"PO-Revision-Date: 2023-01-12 10:31\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -40,17 +40,17 @@ msgstr "Plasma 手机拨号器"
 #: src/main.cpp:140
 #, kde-format
 msgid "© 2015-2022 KDE Community"
-msgstr ""
+msgstr "© 2015-2022 KDE Community"
 
 #: src/main.cpp:143
 #, kde-format
 msgid "Alexey Andreyev"
-msgstr ""
+msgstr "Alexey Andreyev"
 
 #: src/qml/call/AsymmetricAnswerSwipe.qml:86
 #, kde-format
 msgid "Swipe to accept"
-msgstr ""
+msgstr "滑动接听"
 
 #: src/qml/call/CallPage.qml:35 src/qml/call/InCallInlineMessage.qml:14
 #, kde-format
@@ -60,7 +60,7 @@ msgstr "活动通话列表"
 #: src/qml/call/CallPage.qml:108
 #, kde-format
 msgid "Incoming..."
-msgstr ""
+msgstr "来电..."
 
 #: src/qml/call/CallPage.qml:111
 #, kde-format
@@ -114,7 +114,7 @@ msgstr "设置"
 #: src/qml/components/Sidebar.qml:117
 #, kde-format
 msgid "Quit"
-msgstr ""
+msgstr "退出"
 
 #: src/qml/ContactsPage.qml:88
 #, kde-format
@@ -170,68 +170,68 @@ msgstr "未找到 IMEI 码"
 #: src/qml/settings/CallBlockSettingsPage.qml:20
 #, kde-format
 msgid "Adaptive Call Blocking"
-msgstr ""
+msgstr "自适应电话屏蔽"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:54
 #, kde-format
 msgid "Ignore calls from unknown numbers"
-msgstr ""
+msgstr "忽略来自未知号码的来电"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:70
 #, kde-format
 msgid "When a call is an incoming from an unknown number"
-msgstr ""
+msgstr "当来电来自未知号码"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:74
 #, kde-format
 msgid "Immediately hang up"
-msgstr ""
+msgstr "立即挂断"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:79
 #, kde-format
 msgid "Ring without notification"
-msgstr ""
+msgstr "响铃但不通知"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:84
 #, kde-format
 msgid "Ring with silent notification"
-msgstr ""
+msgstr "响铃并发出静音通知"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:100
 #, kde-format
 msgid "Allowed exceptions"
-msgstr ""
+msgstr "允许的例外"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:106
 #, kde-format
 msgid "Anonymous numbers"
-msgstr ""
+msgstr "匿名号码"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:113
 #, kde-format
 msgid "Existing outgoing call to number"
-msgstr ""
+msgstr "存在的外拨号码"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:120
 #, kde-format
 msgid "Callback within"
-msgstr ""
+msgstr "回叫间隔"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:138
 #, kde-format
 msgid "minutes"
-msgstr ""
+msgstr " 分钟"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:156
 #, kde-format
 msgid "Allowed phone number exceptions"
-msgstr ""
+msgstr "允许的例外电话号码"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:168
 #: src/qml/settings/CallBlockSettingsPage.qml:193
 #, kde-format
 msgid "Add new pattern"
-msgstr ""
+msgstr "添加新模式"
 
 #: src/qml/settings/SettingsPage.qml:58
 #, kde-format
@@ -241,17 +241,17 @@ msgstr "关于"
 #: src/qml/settings/SettingsPage.qml:72
 #, kde-format
 msgid "Adaptive call blocking"
-msgstr ""
+msgstr "自适应电话屏蔽"
 
 #: src/qml/settings/SettingsPage.qml:81
 #, kde-format
 msgid "Incoming call screen appearance"
-msgstr ""
+msgstr "来电屏幕外观"
 
 #: src/qml/USSDSheet.qml:40
 #, kde-format
 msgid "USSD Error"
-msgstr ""
+msgstr "USSD 错误"
 
 #: src/qml/USSDSheet.qml:40
 #, kde-format
@@ -271,4 +271,4 @@ msgstr "发送"
 #: src/qml/USSDSheet.qml:70
 #, kde-format
 msgid "Cancel USSD session"
-msgstr ""
+msgstr "取消 USSD 会话"
