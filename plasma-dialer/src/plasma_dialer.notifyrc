@@ -215,6 +215,7 @@ Name[tr]=Sessizde çalıyor
 Name[uk]=Дзвінок без звуку
 Name[vi]=Đang đổ chuông - im lặng
 Name[x-test]=xxRinging-silentxx
+Name[zh_CN]=响铃-静音
 Action=Popup
 
 [Event/ringing-without-popup]
@@ -235,5 +236,6 @@ Name[tr]=Açılır Penceresiz Çalma
 Name[uk]=Дзвінок без контекстної панелі
 Name[vi]=Đổ chuông không kèm ô bật lên
 Name[x-test]=xxRinging-without-popupxx
+Name[zh_CN]=响铃-无弹窗
 Action=Sound
 Sound=Oxygen-Im-Phone-Ring.ogg
