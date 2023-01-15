@@ -196,6 +196,7 @@ Sound=Oxygen-Im-Phone-Ring.ogg
 
 [Event/ringing-silent]
 Name=Ringing-silent
+Name[az]=Zəng-səssiz
 Name[ca]=Trucada en silenci
 Name[ca@valencia]=Tocada en silenci
 Name[en_GB]=Ringing-silent
@@ -220,6 +221,7 @@ Action=Popup
 
 [Event/ringing-without-popup]
 Name=Ringing-without-popup
+Name[az]=Zəng-ani pəncərə olmadan
 Name[ca]=Trucada sense finestra emergent
 Name[ca@valencia]=Tocada sense finestra emergent
 Name[en_GB]=Ringing-without-popup
