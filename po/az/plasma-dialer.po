@@ -1,21 +1,21 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the plasma-dialer package.
 #
-# Kheyyam Gojayev <xxmn77@gmail.com>, 2021, 2022.
+# Kheyyam Gojayev <xxmn77@gmail.com>, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-30 08:47+0000\n"
-"PO-Revision-Date: 2022-01-27 18:59+0400\n"
-"Last-Translator: Kheyyam Gojayev <xxmn77@gmail.com>\n"
+"PO-Revision-Date: 2023-01-15 00:09+0400\n"
+"Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
 "Language: az\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 21.12.1\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -40,17 +40,17 @@ msgstr "Plasma nömrə yığımı"
 #: src/main.cpp:140
 #, kde-format
 msgid "© 2015-2022 KDE Community"
-msgstr ""
+msgstr "© 2015-2022 KDE Cəmiyyəti"
 
 #: src/main.cpp:143
 #, kde-format
 msgid "Alexey Andreyev"
-msgstr ""
+msgstr "Alexey Andreyev"
 
 #: src/qml/call/AsymmetricAnswerSwipe.qml:86
 #, kde-format
 msgid "Swipe to accept"
-msgstr ""
+msgstr "Qəbul etmək üçün sürüşdür"
 
 #: src/qml/call/CallPage.qml:35 src/qml/call/InCallInlineMessage.qml:14
 #, kde-format
@@ -58,10 +58,9 @@ msgid "Active call list"
 msgstr "Aktiv zəng siyahısı"
 
 #: src/qml/call/CallPage.qml:108
-#, fuzzy, kde-format
-#| msgid "Incoming call"
+#, kde-format
 msgid "Incoming..."
-msgstr "Gələn Zəng"
+msgstr "Gələn zəng..."
 
 #: src/qml/call/CallPage.qml:111
 #, kde-format
@@ -115,7 +114,7 @@ msgstr "Ayarlar"
 #: src/qml/components/Sidebar.qml:117
 #, kde-format
 msgid "Quit"
-msgstr ""
+msgstr "Çıxış"
 
 #: src/qml/ContactsPage.qml:88
 #, kde-format
@@ -170,71 +169,70 @@ msgid "No IMEIs found"
 msgstr "İMEİ'lər tapılmadı"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:20
-#, fuzzy, kde-format
-#| msgid "Active call list"
+#, kde-format
 msgid "Adaptive Call Blocking"
-msgstr "Aktiv zəng siyahısı"
+msgstr "Uyğun zəng əngəlləmə"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:54
 #, kde-format
 msgid "Ignore calls from unknown numbers"
-msgstr ""
+msgstr "Tanınmayan nömrələrdən zəngləri ötür"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:70
 #, kde-format
 msgid "When a call is an incoming from an unknown number"
-msgstr ""
+msgstr "Tanınmayan nömrədən zəng daxil olduğu zaman"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:74
 #, kde-format
 msgid "Immediately hang up"
-msgstr ""
+msgstr "Dərhal dəstəyi asmaq"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:79
 #, kde-format
 msgid "Ring without notification"
-msgstr ""
+msgstr "Bildiriş göstərilmədən zəng"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:84
 #, kde-format
 msgid "Ring with silent notification"
-msgstr ""
+msgstr "Səssiz bildiriş ilə zəng"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:100
 #, kde-format
 msgid "Allowed exceptions"
-msgstr ""
+msgstr "İcazə verilən istisnalar"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:106
 #, kde-format
 msgid "Anonymous numbers"
-msgstr ""
+msgstr "Anonim nömrələr"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:113
 #, kde-format
 msgid "Existing outgoing call to number"
-msgstr ""
+msgstr "Nömrəyə vurulan mövcud zəng"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:120
 #, kde-format
 msgid "Callback within"
-msgstr ""
+msgstr "Geriyə zəng üçün"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:138
 #, kde-format
 msgid "minutes"
-msgstr ""
+msgstr "dəqiqə"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:156
 #, kde-format
 msgid "Allowed phone number exceptions"
-msgstr ""
+msgstr "İcazə verilən telefon nömrələri üçün istisnalar"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:168
 #: src/qml/settings/CallBlockSettingsPage.qml:193
 #, kde-format
 msgid "Add new pattern"
-msgstr ""
+msgstr "Yeni forma əlavə edin"
 
 #: src/qml/settings/SettingsPage.qml:58
 #, kde-format
@@ -242,20 +240,19 @@ msgid "About"
 msgstr "Haqqında"
 
 #: src/qml/settings/SettingsPage.qml:72
-#, fuzzy, kde-format
-#| msgid "Active call list"
+#, kde-format
 msgid "Adaptive call blocking"
-msgstr "Aktiv zəng siyahısı"
+msgstr "Uyğun zəng əngəlləmə"
 
 #: src/qml/settings/SettingsPage.qml:81
 #, kde-format
 msgid "Incoming call screen appearance"
-msgstr ""
+msgstr "Gələn zəng pəncərəsinin görünüşü"
 
 #: src/qml/USSDSheet.qml:40
 #, kde-format
 msgid "USSD Error"
-msgstr ""
+msgstr "USSD xətası"
 
 #: src/qml/USSDSheet.qml:40
 #, kde-format
@@ -275,7 +272,7 @@ msgstr "Göndərin"
 #: src/qml/USSDSheet.qml:70
 #, kde-format
 msgid "Cancel USSD session"
-msgstr ""
+msgstr "USSD sesiyasını ləğv edin"
 
 #~ msgid "More Info:"
 #~ msgstr "Daha çox məlumat:"

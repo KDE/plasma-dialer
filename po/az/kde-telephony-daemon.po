@@ -1,31 +1,31 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the plasma-dialer package.
 #
-# Kheyyam Gojayev <xxmn77@gmail.com>, 2021.
+# Kheyyam Gojayev <xxmn77@gmail.com>, 2021, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-17 00:48+0000\n"
-"PO-Revision-Date: 2021-12-07 15:24+0400\n"
-"Last-Translator: Kheyyam Gojayev <xxmn77@gmail.com>\n"
+"PO-Revision-Date: 2023-01-14 23:58+0400\n"
+"Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
 "Language: az\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 21.08.3\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #: src/notification-manager.cpp:130
 #, kde-format
 msgid "Accept"
-msgstr "Qəbul edin"
+msgstr "Qəbul edirəm"
 
 #: src/notification-manager.cpp:130
 #, kde-format
 msgid "Reject"
-msgstr "İmtina edin"
+msgstr "İmtina edirəm"
 
 #: src/notification-manager.cpp:137
 #, kde-format
@@ -35,4 +35,4 @@ msgstr "Daxil olan zəng"
 #: src/notification-manager.cpp:246
 #, kde-format
 msgid "No Caller ID"
-msgstr ""
+msgstr "Zəng edənin İD-si yoxdur"
