@@ -36,6 +36,7 @@ Comment[zh_TW]=Plasma 電話撥號器
 Keywords=Telephone;Call;Phone;Dial;Dialer;PSTN;
 Keywords[az]=Telefon;Zəng;Yığım;Nömrəyığan;PSTN
 Keywords[ca]=Telèfon;Trucada;Marcar;Marcador;PSTN;
+Keywords[ca@valencia]=Telèfon;Tocada;Marcar;Marcador;PSTN;
 Keywords[eu]=Telefonoa;Deia;Markatu;Markatzaile;PSTN;
 Keywords[fr]=Téléphone ; appel ; numérotation ; numéroteur ; PSTN ; 
 Keywords[it]=Telefono;Chiamata,Componi,Composizione;PSTN;
