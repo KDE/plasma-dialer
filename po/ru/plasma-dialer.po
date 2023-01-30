@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the plasma-dialer package.
 #
-# Alexander Yavorsky <kekcuha@gmail.com>, 2021, 2022.
+# Alexander Yavorsky <kekcuha@gmail.com>, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-30 08:47+0000\n"
-"PO-Revision-Date: 2022-09-24 14:46+0300\n"
+"PO-Revision-Date: 2023-01-29 14:00+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -41,18 +41,17 @@ msgstr "Номеронабиратель Plasma"
 #: src/main.cpp:140
 #, kde-format
 msgid "© 2015-2022 KDE Community"
-msgstr ""
+msgstr "© Сообщество KDE, 2015-2022"
 
 #: src/main.cpp:143
 #, kde-format
 msgid "Alexey Andreyev"
-msgstr ""
+msgstr "Алексей Андреев"
 
 #: src/qml/call/AsymmetricAnswerSwipe.qml:86
-#, fuzzy, kde-format
-#| msgid "Swipe right to accept"
+#, kde-format
 msgid "Swipe to accept"
-msgstr "Чтобы ответить смахните вправо"
+msgstr "Смахните чтобы принять"
 
 #: src/qml/call/CallPage.qml:35 src/qml/call/InCallInlineMessage.qml:14
 #, kde-format
@@ -60,15 +59,14 @@ msgid "Active call list"
 msgstr "Список активных вызовов"
 
 #: src/qml/call/CallPage.qml:108
-#, fuzzy, kde-format
-#| msgid "Incoming call"
+#, kde-format
 msgid "Incoming..."
-msgstr "Входящий вызов"
+msgstr "Входящий…"
 
 #: src/qml/call/CallPage.qml:111
 #, kde-format
 msgid "Calling..."
-msgstr "Вызов..."
+msgstr "Вызов…"
 
 #: src/qml/call/CallPage.qml:134
 #, kde-format
@@ -174,10 +172,9 @@ msgid "No IMEIs found"
 msgstr "Номер IMEI не найден"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:20
-#, fuzzy, kde-format
-#| msgid "Adaptive blocking"
+#, kde-format
 msgid "Adaptive Call Blocking"
-msgstr "Адаптивная блокировка"
+msgstr "Адаптивная блокировка вызовов"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:54
 #, kde-format
@@ -185,10 +182,9 @@ msgid "Ignore calls from unknown numbers"
 msgstr "Игнорировать звонки с неизвестных номеров"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:70
-#, fuzzy, kde-format
-#| msgid "Ignore calls from unknown numbers"
+#, kde-format
 msgid "When a call is an incoming from an unknown number"
-msgstr "Игнорировать звонки с неизвестных номеров"
+msgstr "При вызове с незнакомого номера"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:74
 #, kde-format
@@ -198,48 +194,48 @@ msgstr "Немедленно вешать трубку"
 #: src/qml/settings/CallBlockSettingsPage.qml:79
 #, kde-format
 msgid "Ring without notification"
-msgstr ""
+msgstr "Звонить без уведомления"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:84
 #, kde-format
 msgid "Ring with silent notification"
-msgstr ""
+msgstr "Звонить с беззвучным уведомлением"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:100
 #, kde-format
 msgid "Allowed exceptions"
-msgstr ""
+msgstr "Разрешённые исключения"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:106
 #, kde-format
 msgid "Anonymous numbers"
-msgstr ""
+msgstr "Анонимные номера"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:113
 #, kde-format
 msgid "Existing outgoing call to number"
-msgstr ""
+msgstr "При существующем исходящем вызове на номер"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:120
 #, kde-format
 msgid "Callback within"
-msgstr ""
+msgstr "Перезванивать через"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:138
 #, kde-format
 msgid "minutes"
-msgstr ""
+msgstr "минут"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:156
 #, kde-format
 msgid "Allowed phone number exceptions"
-msgstr ""
+msgstr "Исключения"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:168
 #: src/qml/settings/CallBlockSettingsPage.qml:193
 #, kde-format
 msgid "Add new pattern"
-msgstr ""
+msgstr "Создать шаблон"
 
 #: src/qml/settings/SettingsPage.qml:58
 #, kde-format
@@ -247,15 +243,14 @@ msgid "About"
 msgstr "О программе"
 
 #: src/qml/settings/SettingsPage.qml:72
-#, fuzzy, kde-format
-#| msgid "Adaptive blocking"
+#, kde-format
 msgid "Adaptive call blocking"
-msgstr "Адаптивная блокировка"
+msgstr "Адаптивная блокировка вызовов"
 
 #: src/qml/settings/SettingsPage.qml:81
 #, kde-format
 msgid "Incoming call screen appearance"
-msgstr ""
+msgstr "Внешний вид экрана вызова"
 
 #: src/qml/USSDSheet.qml:40
 #, kde-format
