@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the plasma-dialer package.
 #
-# giovanni <g.sora@tiscali.it>, 2021, 2022.
+# giovanni <g.sora@tiscali.it>, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-30 08:47+0000\n"
-"PO-Revision-Date: 2022-12-21 12:32+0100\n"
+"PO-Revision-Date: 2023-02-02 23:23+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -45,12 +45,12 @@ msgstr "© 2015-2022 Communitate de KDE"
 #: src/main.cpp:143
 #, kde-format
 msgid "Alexey Andreyev"
-msgstr ""
+msgstr "Alexey Andreyev"
 
 #: src/qml/call/AsymmetricAnswerSwipe.qml:86
 #, kde-format
 msgid "Swipe to accept"
-msgstr ""
+msgstr "Glissa per acceptar"
 
 #: src/qml/call/CallPage.qml:35 src/qml/call/InCallInlineMessage.qml:14
 #, kde-format
@@ -119,12 +119,12 @@ msgstr "Quita"
 #: src/qml/ContactsPage.qml:88
 #, kde-format
 msgid "Select number to call"
-msgstr ""
+msgstr "Selige  numero de appellar"
 
 #: src/qml/ContactsPage.qml:97
 #, kde-format
 msgid "No contacts have a phone number set"
-msgstr ""
+msgstr "Nulle contactos ha un insimul de numero de telephono"
 
 #: src/qml/DialerPage.qml:70
 #, kde-format
@@ -191,22 +191,22 @@ msgstr ""
 #: src/qml/settings/CallBlockSettingsPage.qml:79
 #, kde-format
 msgid "Ring without notification"
-msgstr ""
+msgstr "Sona sin notification"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:84
 #, kde-format
 msgid "Ring with silent notification"
-msgstr ""
+msgstr "Sona con notification silente"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:100
 #, kde-format
 msgid "Allowed exceptions"
-msgstr ""
+msgstr "Exceptiones permittite"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:106
 #, kde-format
 msgid "Anonymous numbers"
-msgstr ""
+msgstr "Numeros anonyme"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:113
 #, kde-format
@@ -252,7 +252,7 @@ msgstr ""
 #: src/qml/USSDSheet.qml:40
 #, kde-format
 msgid "USSD Error"
-msgstr ""
+msgstr "Error de USSD"
 
 #: src/qml/USSDSheet.qml:40
 #, kde-format
@@ -272,7 +272,7 @@ msgstr "Vista"
 #: src/qml/USSDSheet.qml:70
 #, kde-format
 msgid "Cancel USSD session"
-msgstr ""
+msgstr "Cancella de USSD"
 
 #~ msgid "More Info:"
 #~ msgstr "Plus Information:"
