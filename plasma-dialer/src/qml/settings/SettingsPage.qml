@@ -7,7 +7,6 @@
 
 import QtQuick 2.15
 import QtQuick.Layouts 1.15
-import QtQuick.Controls 2.15 as Controls
 
 import org.kde.kirigami 2.19 as Kirigami
 import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
@@ -22,6 +21,14 @@ Kirigami.ScrollablePage {
     // page animation
     property real yTranslate: 0
 
+    leftPadding: 0
+    rightPadding: 0
+    topPadding: Kirigami.Units.gridUnit
+    bottomPadding: Kirigami.Units.gridUnit
+
+    Kirigami.Theme.colorSet: Kirigami.Theme.Window
+    Kirigami.Theme.inherit: false
+
     function saveConfig() {
         Config.save()
         DialerUtils.syncSettings()
@@ -33,14 +40,6 @@ Kirigami.ScrollablePage {
             page.saveConfig()
         }
     }
-
-    Kirigami.Theme.colorSet: Kirigami.Theme.Window
-    Kirigami.Theme.inherit: false
-
-    leftPadding: 0
-    rightPadding: 0
-    topPadding: Kirigami.Units.gridUnit
-    bottomPadding: Kirigami.Units.gridUnit
 
     ColumnLayout {
         spacing: 0
@@ -60,30 +59,28 @@ Kirigami.ScrollablePage {
                 }
             }
         }
-        
+
         MobileForm.FormCard {
             Layout.topMargin: Kirigami.Units.gridUnit
             Layout.fillWidth: true
             contentItem: ColumnLayout {
                 spacing: 0
-                
+
                 MobileForm.FormButtonDelegate {
                     id: adaptiveCallBlocking
                     text: i18n("Adaptive call blocking")
                     onClicked: applicationWindow().pageStack.push(applicationWindow().getPage("CallBlockSettings"))
                 }
-                
+
                 MobileForm.FormDelegateSeparator { above: adaptiveCallBlocking; below: callScreenAppearance }
-                
+
                 MobileForm.FormComboBoxDelegate {
                     id: callScreenAppearance
                     displayMode: MobileForm.FormComboBoxDelegate.Dialog
                     text: i18n("Incoming call screen appearance")
-                    model: ["Buttons", "Symmetric Swipe", "Asymmetric Swipe"]
+                    model: [i18n("Buttons"), i18n("Symmetric Swipe"), i18n("Asymmetric Swipe")]
                     currentIndex: Config.answerControl
-                    onCurrentIndexChanged: {
-                        Config.answerControl = currentIndex
-                    }
+                    onCurrentIndexChanged: Config.answerControl = currentIndex
                 }
             }
         }
