@@ -51,6 +51,7 @@ Keywords[ru]=Telephone;Call;Phone;Dial;Dialer;PSTN;Телефон;вызов;з�
 Keywords[sl]=Telefon;klic;telefon;zavrti;številčnica;PSTN;
 Keywords[tr]=Telefon;Arama;Çağrı;Çevir;Çevirici;PSTN;
 Keywords[uk]=Telephone;Call;Phone;Dial;Dialer;PSTN;телефон;виклик;дзвінок;набір;набирання;
+Keywords[vi]=Telephone;Call;Phone;Dial;Dialer;PSTN;điện thoại;gọi;quay số;trình quay số;
 Keywords[x-test]=xxTelephonexx;xxCallxx;xxPhonexx;xxDialxx;xxDialerxx;xxPSTNxx;
 Keywords[zh_CN]=Telephone;Call;Phone;Dial;Dialer;PSTN;电话;通话;拨号;
 Name=Phone
