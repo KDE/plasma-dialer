@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-30 08:47+0000\n"
-"PO-Revision-Date: 2023-02-22 21:26+0100\n"
+"PO-Revision-Date: 2023-02-23 18:29+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -52,7 +52,7 @@ msgstr "Alexey Andreyev"
 #: src/qml/call/AsymmetricAnswerSwipe.qml:86
 #, kde-format
 msgid "Swipe to accept"
-msgstr ""
+msgstr "Sveip for å godta"
 
 #: src/qml/call/CallPage.qml:35 src/qml/call/InCallInlineMessage.qml:14
 #, kde-format
@@ -62,7 +62,7 @@ msgstr "Pågåande oppringingar"
 #: src/qml/call/CallPage.qml:108
 #, kde-format
 msgid "Incoming..."
-msgstr ""
+msgstr "Innkommande …"
 
 #: src/qml/call/CallPage.qml:111
 #, kde-format
@@ -116,7 +116,7 @@ msgstr "Innstillingar"
 #: src/qml/components/Sidebar.qml:117
 #, kde-format
 msgid "Quit"
-msgstr ""
+msgstr "Avslutt"
 
 #: src/qml/ContactsPage.qml:88
 #, kde-format
@@ -173,68 +173,68 @@ msgstr "Fann ingen IMEI-ar"
 #: src/qml/settings/CallBlockSettingsPage.qml:20
 #, kde-format
 msgid "Adaptive Call Blocking"
-msgstr ""
+msgstr "Adaptiv oppringings­blokkering"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:54
 #, kde-format
 msgid "Ignore calls from unknown numbers"
-msgstr ""
+msgstr "Ignorer samtalar frå ukjende nummer"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:70
 #, kde-format
 msgid "When a call is an incoming from an unknown number"
-msgstr ""
+msgstr "Når det kjem ei oppringing frå eit ukjent nummer"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:74
 #, kde-format
 msgid "Immediately hang up"
-msgstr ""
+msgstr "Legg på med ein gong"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:79
 #, kde-format
 msgid "Ring without notification"
-msgstr ""
+msgstr "Ring utan varsling"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:84
 #, kde-format
 msgid "Ring with silent notification"
-msgstr ""
+msgstr "Ring med lydlaus varsling"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:100
 #, kde-format
 msgid "Allowed exceptions"
-msgstr ""
+msgstr "Unntak (tillat frå)"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:106
 #, kde-format
 msgid "Anonymous numbers"
-msgstr ""
+msgstr "Skjulte nummer"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:113
 #, kde-format
 msgid "Existing outgoing call to number"
-msgstr ""
+msgstr "Viss det finst utgåande samtalar til nummeret"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:120
 #, kde-format
 msgid "Callback within"
-msgstr ""
+msgstr "Ringt tilbake innan"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:138
 #, kde-format
 msgid "minutes"
-msgstr ""
+msgstr "minutt"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:156
 #, kde-format
 msgid "Allowed phone number exceptions"
-msgstr ""
+msgstr "Tillat frå enkelte nummer"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:168
 #: src/qml/settings/CallBlockSettingsPage.qml:193
 #, kde-format
 msgid "Add new pattern"
-msgstr ""
+msgstr "Legg til nytt mønster"
 
 #: src/qml/settings/SettingsPage.qml:58
 #, kde-format
@@ -244,17 +244,17 @@ msgstr "Om"
 #: src/qml/settings/SettingsPage.qml:72
 #, kde-format
 msgid "Adaptive call blocking"
-msgstr ""
+msgstr "Adaptiv oppringings­blokkering"
 
 #: src/qml/settings/SettingsPage.qml:81
 #, kde-format
 msgid "Incoming call screen appearance"
-msgstr ""
+msgstr "Utsjånad på oppringingsbilete"
 
 #: src/qml/USSDSheet.qml:40
 #, kde-format
 msgid "USSD Error"
-msgstr ""
+msgstr "USSD-feil"
 
 #: src/qml/USSDSheet.qml:40
 #, kde-format
@@ -274,4 +274,4 @@ msgstr "Send"
 #: src/qml/USSDSheet.qml:70
 #, kde-format
 msgid "Cancel USSD session"
-msgstr ""
+msgstr "Avbryt USSD-økt"
