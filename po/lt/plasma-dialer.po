@@ -1,290 +1,277 @@
-# Copyright (C) YEAR This file is copyright:
+# Lithuanian translations for plasma-dialer package.
+# Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the plasma-dialer package.
+# Automatically generated, 2023.
 #
-# Matjaž Jeran <matjaz.jeran@amis.net>, 2020, 2021, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-30 08:47+0000\n"
-"PO-Revision-Date: 2023-02-25 09:22+0100\n"
-"Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
-"Language-Team: Slovenian <lugos-slo@lugos.si>\n"
-"Language: sl\n"
+"PO-Revision-Date: 2022-12-30 08:47+0000\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
-"%100<=4 ? 2 : 3);\n"
-"X-Generator: Poedit 3.2.2\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
+"%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Matjaž Jeran"
+msgstr ""
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "matjaz.jeran@amis.net"
+msgstr ""
 
 #: src/main.cpp:136 src/qml/main.qml:35
 #, kde-format
 msgid "Phone"
-msgstr "Telefon"
+msgstr ""
 
 #: src/main.cpp:138
 #, kde-format
 msgid "Plasma phone dialer"
-msgstr "Plasma phone dialer"
+msgstr ""
 
 #: src/main.cpp:140
 #, kde-format
 msgid "© 2015-2022 KDE Community"
-msgstr "© 2015-2022 skupnost KDE"
+msgstr ""
 
 #: src/main.cpp:143
 #, kde-format
 msgid "Alexey Andreyev"
-msgstr "Alexey Andreyev"
+msgstr ""
 
 #: src/qml/call/AsymmetricAnswerSwipe.qml:86
 #, kde-format
 msgid "Swipe to accept"
-msgstr "S prstom potegni za sprejem"
+msgstr ""
 
 #: src/qml/call/CallPage.qml:35 src/qml/call/InCallInlineMessage.qml:14
 #, kde-format
 msgid "Active call list"
-msgstr "Aktivni seznam klicev"
+msgstr ""
 
 #: src/qml/call/CallPage.qml:108
 #, kde-format
 msgid "Incoming..."
-msgstr "Prihajajoče..."
+msgstr ""
 
 #: src/qml/call/CallPage.qml:111
 #, kde-format
 msgid "Calling..."
-msgstr "Kličem..."
+msgstr ""
 
 #: src/qml/call/CallPage.qml:134
 #, kde-format
 msgid "Keypad"
-msgstr "Tipkovnica"
+msgstr ""
 
 #: src/qml/call/CallPage.qml:154
 #, kde-format
 msgid "Speaker"
-msgstr "Zvočnik"
+msgstr ""
 
 #: src/qml/call/CallPage.qml:168
 #, kde-format
 msgid "Mute"
-msgstr "Nemo"
+msgstr ""
 
 #: src/qml/call/InCallInlineMessage.qml:18
 #, kde-format
 msgid "View"
-msgstr "Pogled"
+msgstr ""
 
 #: src/qml/components/BottomToolbar.qml:81 src/qml/components/Sidebar.qml:38
 #, kde-format
 msgid "History"
-msgstr "Zgodovina"
+msgstr ""
 
 #: src/qml/components/BottomToolbar.qml:93 src/qml/components/Sidebar.qml:56
 #: src/qml/ContactsPage.qml:18
 #, kde-format
 msgid "Contacts"
-msgstr "Stiki"
+msgstr ""
 
 #: src/qml/components/BottomToolbar.qml:105 src/qml/components/Sidebar.qml:74
 #: src/qml/DialerPage.qml:27
 #, kde-format
 msgid "Dialer"
-msgstr "Klicalnik"
+msgstr ""
 
 #: src/qml/components/Sidebar.qml:98 src/qml/ContactsPage.qml:29
 #: src/qml/DialerPage.qml:57 src/qml/HistoryPage.qml:40
 #: src/qml/settings/SettingsPage.qml:20
 #, kde-format
 msgid "Settings"
-msgstr "Nastavitve"
+msgstr ""
 
 #: src/qml/components/Sidebar.qml:117
 #, kde-format
 msgid "Quit"
-msgstr "Zapusti"
+msgstr ""
 
 #: src/qml/ContactsPage.qml:88
 #, kde-format
 msgid "Select number to call"
-msgstr "Izberite številko, ki jo želite poklicati"
+msgstr ""
 
 #: src/qml/ContactsPage.qml:97
 #, kde-format
 msgid "No contacts have a phone number set"
-msgstr "Ni še nobenih stikov s telefonsko številko"
+msgstr ""
 
 #: src/qml/DialerPage.qml:70
 #, kde-format
 msgid "Modem devices are not found"
-msgstr "Ni najdenih modemskih naprav"
+msgstr ""
 
 #: src/qml/DialerPage.qml:79
 #, kde-format
 msgid "Voicemail number couldn't be found"
-msgstr "Številke telefonskega odzivnika ni bilo mogoče najti"
+msgstr ""
 
 #: src/qml/history/HistoryDelegate.qml:61
 #, kde-format
 msgid "Duration: %1"
-msgstr "Trajanje: %1"
+msgstr ""
 
 #: src/qml/HistoryPage.qml:16
 #, kde-format
 msgid "Call History"
-msgstr "Zgodovina klicev"
+msgstr ""
 
 #: src/qml/HistoryPage.qml:30
 #, kde-format
 msgid "Clear history"
-msgstr "Počisti zgodovino"
+msgstr ""
 
 #: src/qml/HistoryPage.qml:70
 #, kde-format
 msgid "No recent calls"
-msgstr "Ni nedavnih klicev"
+msgstr ""
 
 #: src/qml/ImeiSheet.qml:18
 #, kde-format
 msgid "IMEI"
 msgid_plural "IMEIs"
-msgstr[0] "IMEI"
-msgstr[1] "IMEI"
-msgstr[2] "IMEI"
-msgstr[3] "IMEI"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: src/qml/ImeiSheet.qml:30
 #, kde-format
 msgid "No IMEIs found"
-msgstr "Ni mogoče najti IMEI"
+msgstr ""
 
 #: src/qml/settings/CallBlockSettingsPage.qml:20
 #, kde-format
 msgid "Adaptive Call Blocking"
-msgstr "Adaptivno blokiranje klicev"
+msgstr ""
 
 #: src/qml/settings/CallBlockSettingsPage.qml:54
 #, kde-format
 msgid "Ignore calls from unknown numbers"
-msgstr "Prezri klice iz neznanih številk"
+msgstr ""
 
 #: src/qml/settings/CallBlockSettingsPage.qml:70
 #, kde-format
 msgid "When a call is an incoming from an unknown number"
-msgstr "Kadar je klic iz neznane številke"
+msgstr ""
 
 #: src/qml/settings/CallBlockSettingsPage.qml:74
 #, kde-format
 msgid "Immediately hang up"
-msgstr "Takoj odloži slušalko"
+msgstr ""
 
 #: src/qml/settings/CallBlockSettingsPage.qml:79
 #, kde-format
 msgid "Ring without notification"
-msgstr "Zvoni brez obvestila"
+msgstr ""
 
 #: src/qml/settings/CallBlockSettingsPage.qml:84
 #, kde-format
 msgid "Ring with silent notification"
-msgstr "Zvoni s tihim obvestilom"
+msgstr ""
 
 #: src/qml/settings/CallBlockSettingsPage.qml:100
 #, kde-format
 msgid "Allowed exceptions"
-msgstr "Dovoljene izjeme"
+msgstr ""
 
 #: src/qml/settings/CallBlockSettingsPage.qml:106
 #, kde-format
 msgid "Anonymous numbers"
-msgstr "Anonimne številke"
+msgstr ""
 
 #: src/qml/settings/CallBlockSettingsPage.qml:113
 #, kde-format
 msgid "Existing outgoing call to number"
-msgstr "Obstaja klic navzven na številko"
+msgstr ""
 
 #: src/qml/settings/CallBlockSettingsPage.qml:120
 #, kde-format
 msgid "Callback within"
-msgstr "Povratni klic znotraj"
+msgstr ""
 
 #: src/qml/settings/CallBlockSettingsPage.qml:138
 #, kde-format
 msgid "minutes"
-msgstr "minute"
+msgstr ""
 
 #: src/qml/settings/CallBlockSettingsPage.qml:156
 #, kde-format
 msgid "Allowed phone number exceptions"
-msgstr "Dovoljene izjeme telefonskih številk"
+msgstr ""
 
 #: src/qml/settings/CallBlockSettingsPage.qml:168
 #: src/qml/settings/CallBlockSettingsPage.qml:193
 #, kde-format
 msgid "Add new pattern"
-msgstr "Dodaj nov vzorec"
+msgstr ""
 
 #: src/qml/settings/SettingsPage.qml:58
 #, kde-format
 msgid "About"
-msgstr "O programu"
+msgstr ""
 
 #: src/qml/settings/SettingsPage.qml:72
 #, kde-format
 msgid "Adaptive call blocking"
-msgstr "Adaptivno blokiranje klicev"
+msgstr ""
 
 #: src/qml/settings/SettingsPage.qml:81
 #, kde-format
 msgid "Incoming call screen appearance"
-msgstr "Prikaz klica na zaslonu"
+msgstr ""
 
 #: src/qml/USSDSheet.qml:40
 #, kde-format
 msgid "USSD Error"
-msgstr "Napaka USSD"
+msgstr ""
 
 #: src/qml/USSDSheet.qml:40
 #, kde-format
 msgid "USSD Message"
-msgstr "Sporočilo USSD"
+msgstr ""
 
 #: src/qml/USSDSheet.qml:49
 #, kde-format
 msgid "Write response..."
-msgstr "Piši odgovor ..."
+msgstr ""
 
 #: src/qml/USSDSheet.qml:54
 #, kde-format
 msgid "Send"
-msgstr "Pošlji"
+msgstr ""
 
 #: src/qml/USSDSheet.qml:70
 #, kde-format
 msgid "Cancel USSD session"
-msgstr "Prekliči sejo USSD"
-
-#~ msgid "Numbers matching a pattern:"
-#~ msgstr "Številke, ki ustrezajo vzorcu:"
-
-#~ msgid "Answer control for the incoming screen"
-#~ msgstr "Krmiljenje odziva za prihajajoči zaslon"
-
-#~ msgid "Other"
-#~ msgstr "Ostalo"
-
-#~ msgid "More Info:"
-#~ msgstr "Več informacij:"
+msgstr ""
