@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-30 08:47+0000\n"
-"PO-Revision-Date: 2023-02-23 18:29+0100\n"
+"PO-Revision-Date: 2023-02-26 09:47+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -210,6 +210,7 @@ msgstr "Unntak (tillat frå)"
 msgid "Anonymous numbers"
 msgstr "Skjulte nummer"
 
+# skip-rule: komma-leddsetning-viss
 #: src/qml/settings/CallBlockSettingsPage.qml:113
 #, kde-format
 msgid "Existing outgoing call to number"
