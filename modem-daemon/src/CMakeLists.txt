@@ -24,7 +24,7 @@ set(modemd_SRCS
     )
 
 find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED Core Gui DBus Sql)
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS ModemManagerQt)
+find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS ModemManagerQt)
 find_package(PhoneNumber COMPONENTS PhoneNumber REQUIRED)
 
 qt_add_dbus_adaptor(modemd_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.DeviceUtils.xml"
@@ -49,9 +49,9 @@ target_link_libraries(modem-daemon
     Qt::Core
     Qt::DBus
     Qt::Sql
-    KF5::ModemManagerQt
+    KF${QT_MAJOR_VERSION}::ModemManagerQt
     PhoneNumber::PhoneNumber
-    ktelephonymetatypes # FIXME: KF5 cmake files
+    ktelephonymetatypes # FIXME: KF${KF_MAJOR_VERSION} cmake files
     )
 
 configure_file(daemon-autostart.desktop.in ${CMAKE_CURRENT_BINARY_DIR}/daemon-autostart.desktop)

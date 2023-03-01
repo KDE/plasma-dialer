@@ -8,8 +8,8 @@ add_executable(plasmaphonedialer
 )
 
 find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED Core Quick Qml QuickControls2)
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Config CoreAddons I18n DBusAddons WindowSystem)
-find_package(KF5KirigamiAddons 0.6 REQUIRED)
+find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS Config CoreAddons I18n DBusAddons WindowSystem)
+find_package(KF${KF_MAJOR_VERSION}KirigamiAddons 0.6 REQUIRED)
 
 if (DIALER_BUILD_SHELL_OVERLAY)
     find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED WaylandClient)
@@ -42,11 +42,11 @@ target_link_libraries(plasmaphonedialer
     Qt::Quick
     Qt::Qml
     Qt::QuickControls2
-    KF5::ConfigGui
-    KF5::CoreAddons
-    KF5::I18n
-    KF5::DBusAddons
-    KF5::WindowSystem
+    KF${QT_MAJOR_VERSION}::ConfigGui
+    KF${QT_MAJOR_VERSION}::CoreAddons
+    KF${QT_MAJOR_VERSION}::I18n
+    KF${QT_MAJOR_VERSION}::DBusAddons
+    KF${QT_MAJOR_VERSION}::WindowSystem
 )
 if (DIALER_BUILD_SHELL_OVERLAY)
     target_link_libraries(plasmaphonedialer

@@ -30,4 +30,4 @@ target_sources(ktelephonymetatypes PRIVATE ${PROCESSED_MOCS})
 
 install(FILES ${metatypes_SRCS} DESTINATION "${KDE_INSTALL_INCLUDEDIR_KF}/kTelephonyMetaTypes")
 install(TARGETS ktelephonymetatypes DESTINATION "${KDE_INSTALL_LIBDIR}")
-# TODO: install KF5 cmake files
+# TODO: install KF${KF_MAJOR_VERSION} cmake files

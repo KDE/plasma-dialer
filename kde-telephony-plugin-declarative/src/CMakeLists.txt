@@ -28,7 +28,7 @@ set_source_files_properties(
 )
 
 find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED Core Quick Qml Sql DBus)
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS CoreAddons I18n DBusAddons Contacts People)
+find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS CoreAddons I18n DBusAddons Contacts People)
 find_package(PhoneNumber COMPONENTS PhoneNumber REQUIRED)
 
 # calls-daemon
@@ -68,13 +68,13 @@ target_link_libraries(KTelephonyPluginDeclarative
     Qt::Qml
     Qt::Sql
     Qt::DBus
-    KF5::CoreAddons
-    KF5::I18n
-    KF5::DBusAddons
-    KF5::Contacts
-    KF5::People
-    KF5::PeopleBackend
-    ktelephonymetatypes # TODO: KF5 cmake files
+    KF${QT_MAJOR_VERSION}::CoreAddons
+    KF${QT_MAJOR_VERSION}::I18n
+    KF${QT_MAJOR_VERSION}::DBusAddons
+    KF${QT_MAJOR_VERSION}::Contacts
+    KF${QT_MAJOR_VERSION}::People
+    KF${QT_MAJOR_VERSION}::PeopleBackend
+    ktelephonymetatypes # TODO: KF${KF_MAJOR_VERSION} cmake files
     )
 
 install(TARGETS KTelephonyPluginDeclarative DESTINATION "${KDE_INSTALL_QMLDIR}/org/kde/telephony")

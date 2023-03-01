@@ -4,6 +4,6 @@
 find_package(Qt${QT_MAJOR_VERSION}Test REQUIRED)
 
 find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED Test Sql)
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS People)
+find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS People)
 
-ecm_add_test(TEST_NAME contactmappertest contact-mapper-test.cpp fake-contact-source.cpp LINK_LIBRARIES Qt::Test Qt::Sql KF5::PeopleBackend contactphonenumbermapper)
+ecm_add_test(TEST_NAME contactmappertest contact-mapper-test.cpp fake-contact-source.cpp LINK_LIBRARIES Qt::Test Qt::Sql KF${QT_MAJOR_VERSION}::PeopleBackend contactphonenumbermapper)
