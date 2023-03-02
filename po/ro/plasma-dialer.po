@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-30 08:47+0000\n"
+"POT-Creation-Date: 2023-03-02 00:56+0000\n"
 "PO-Revision-Date: 2022-02-04 16:31+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian\n"
@@ -107,7 +107,7 @@ msgstr "Apelator"
 
 #: src/qml/components/Sidebar.qml:98 src/qml/ContactsPage.qml:29
 #: src/qml/DialerPage.qml:57 src/qml/HistoryPage.qml:40
-#: src/qml/settings/SettingsPage.qml:20
+#: src/qml/settings/SettingsPage.qml:19
 #, kde-format
 msgid "Settings"
 msgstr "Configurări"
@@ -237,20 +237,35 @@ msgstr ""
 msgid "Add new pattern"
 msgstr ""
 
-#: src/qml/settings/SettingsPage.qml:58
+#: src/qml/settings/SettingsPage.qml:57
 #, kde-format
 msgid "About"
 msgstr "Despre"
 
-#: src/qml/settings/SettingsPage.qml:72
+#: src/qml/settings/SettingsPage.qml:71
 #, fuzzy, kde-format
 #| msgid "Active call list"
 msgid "Adaptive call blocking"
 msgstr "Lista apelurilor active"
 
-#: src/qml/settings/SettingsPage.qml:81
+#: src/qml/settings/SettingsPage.qml:80
 #, kde-format
 msgid "Incoming call screen appearance"
+msgstr ""
+
+#: src/qml/settings/SettingsPage.qml:81
+#, kde-format
+msgid "Buttons"
+msgstr ""
+
+#: src/qml/settings/SettingsPage.qml:81
+#, kde-format
+msgid "Symmetric Swipe"
+msgstr ""
+
+#: src/qml/settings/SettingsPage.qml:81
+#, kde-format
+msgid "Asymmetric Swipe"
 msgstr ""
 
 #: src/qml/USSDSheet.qml:40

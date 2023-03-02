@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-30 08:47+0000\n"
+"POT-Creation-Date: 2023-03-02 00:56+0000\n"
 "PO-Revision-Date: 2022-06-11 09:41-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -107,7 +107,7 @@ msgstr "ਡਾਇਲਰ"
 
 #: src/qml/components/Sidebar.qml:98 src/qml/ContactsPage.qml:29
 #: src/qml/DialerPage.qml:57 src/qml/HistoryPage.qml:40
-#: src/qml/settings/SettingsPage.qml:20
+#: src/qml/settings/SettingsPage.qml:19
 #, kde-format
 msgid "Settings"
 msgstr "ਸੈਟਿੰਗਾਂ"
@@ -236,20 +236,35 @@ msgstr ""
 msgid "Add new pattern"
 msgstr ""
 
-#: src/qml/settings/SettingsPage.qml:58
+#: src/qml/settings/SettingsPage.qml:57
 #, kde-format
 msgid "About"
 msgstr "ਇਸ ਬਾਰੇ"
 
-#: src/qml/settings/SettingsPage.qml:72
+#: src/qml/settings/SettingsPage.qml:71
 #, fuzzy, kde-format
 #| msgid "Active call list"
 msgid "Adaptive call blocking"
 msgstr "ਐਕਟਿਵ ਕਾਲ ਸੂਚੀ"
 
-#: src/qml/settings/SettingsPage.qml:81
+#: src/qml/settings/SettingsPage.qml:80
 #, kde-format
 msgid "Incoming call screen appearance"
+msgstr ""
+
+#: src/qml/settings/SettingsPage.qml:81
+#, kde-format
+msgid "Buttons"
+msgstr ""
+
+#: src/qml/settings/SettingsPage.qml:81
+#, kde-format
+msgid "Symmetric Swipe"
+msgstr ""
+
+#: src/qml/settings/SettingsPage.qml:81
+#, kde-format
+msgid "Asymmetric Swipe"
 msgstr ""
 
 #: src/qml/USSDSheet.qml:40

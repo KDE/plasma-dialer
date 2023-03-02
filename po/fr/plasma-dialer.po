@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-30 08:47+0000\n"
+"POT-Creation-Date: 2023-03-02 00:56+0000\n"
 "PO-Revision-Date: 2023-01-05 17:48+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
@@ -104,7 +104,7 @@ msgstr "Composeur"
 
 #: src/qml/components/Sidebar.qml:98 src/qml/ContactsPage.qml:29
 #: src/qml/DialerPage.qml:57 src/qml/HistoryPage.qml:40
-#: src/qml/settings/SettingsPage.qml:20
+#: src/qml/settings/SettingsPage.qml:19
 #, kde-format
 msgid "Settings"
 msgstr "Configuration"
@@ -232,20 +232,35 @@ msgstr "Exceptions autorisées pour des numéros de téléphone"
 msgid "Add new pattern"
 msgstr "Ajouter un nouveau motif"
 
-#: src/qml/settings/SettingsPage.qml:58
+#: src/qml/settings/SettingsPage.qml:57
 #, kde-format
 msgid "About"
 msgstr "À propos"
 
-#: src/qml/settings/SettingsPage.qml:72
+#: src/qml/settings/SettingsPage.qml:71
 #, kde-format
 msgid "Adaptive call blocking"
 msgstr "Blocage adaptatif des appels"
 
-#: src/qml/settings/SettingsPage.qml:81
+#: src/qml/settings/SettingsPage.qml:80
 #, kde-format
 msgid "Incoming call screen appearance"
 msgstr "Apparence de l'écran pour les appels entrants"
+
+#: src/qml/settings/SettingsPage.qml:81
+#, kde-format
+msgid "Buttons"
+msgstr ""
+
+#: src/qml/settings/SettingsPage.qml:81
+#, kde-format
+msgid "Symmetric Swipe"
+msgstr ""
+
+#: src/qml/settings/SettingsPage.qml:81
+#, kde-format
+msgid "Asymmetric Swipe"
+msgstr ""
 
 #: src/qml/USSDSheet.qml:40
 #, kde-format
