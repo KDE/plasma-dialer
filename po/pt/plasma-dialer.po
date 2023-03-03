@@ -253,7 +253,7 @@ msgstr "Aparência do ecrã de chamada recebida"
 #: src/qml/settings/SettingsPage.qml:81
 #, kde-format
 msgid "Buttons"
-msgstr ""
+msgstr "Botões"
 
 #: src/qml/settings/SettingsPage.qml:81
 #, kde-format

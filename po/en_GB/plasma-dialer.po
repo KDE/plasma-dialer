@@ -1,21 +1,21 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the plasma-dialer package.
 #
-# Steve Allewell <steve.allewell@gmail.com>, 2021, 2022.
+# Steve Allewell <steve.allewell@gmail.com>, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-02 00:56+0000\n"
-"PO-Revision-Date: 2022-12-31 15:55+0000\n"
+"PO-Revision-Date: 2023-03-02 22:10+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
-"Language-Team: British English <kde-l10n-en_gb@kde.org>\n"
+"Language-Team: British English\n"
 "Language: en_GB\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 23.03.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -252,17 +252,17 @@ msgstr "Incoming call screen appearance"
 #: src/qml/settings/SettingsPage.qml:81
 #, kde-format
 msgid "Buttons"
-msgstr ""
+msgstr "Buttons"
 
 #: src/qml/settings/SettingsPage.qml:81
 #, kde-format
 msgid "Symmetric Swipe"
-msgstr ""
+msgstr "Symmetric Swipe"
 
 #: src/qml/settings/SettingsPage.qml:81
 #, kde-format
 msgid "Asymmetric Swipe"
-msgstr ""
+msgstr "Asymmetric Swipe"
 
 #: src/qml/USSDSheet.qml:40
 #, kde-format
