@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-02 00:56+0000\n"
-"PO-Revision-Date: 2022-11-28 16:22+0000\n"
+"PO-Revision-Date: 2023-03-06 15:45+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -258,12 +258,12 @@ msgstr "Botões"
 #: src/qml/settings/SettingsPage.qml:81
 #, kde-format
 msgid "Symmetric Swipe"
-msgstr ""
+msgstr "Deslize Simétrico"
 
 #: src/qml/settings/SettingsPage.qml:81
 #, kde-format
 msgid "Asymmetric Swipe"
-msgstr ""
+msgstr "Deslize Assimétrico"
 
 #: src/qml/USSDSheet.qml:40
 #, kde-format
