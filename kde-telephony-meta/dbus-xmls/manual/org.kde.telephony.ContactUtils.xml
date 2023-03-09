@@ -5,10 +5,9 @@
       <arg name="contact" type="s" direction="in"/>
       <arg name="displayString" type="s" direction="out"/>
     </method>
-    <method name="picture">
-      <annotation name="org.qtproject.QtDBus.QtTypeName.Out0" value="QPixmap"/>
+    <method name="imageSource">
       <arg name="contact" type="s" direction="in"/>
-      <arg name="picture" type="a(iiay)" direction="out"/>
+      <arg name="imageSource" type="s" direction="out"/>
     </method>
   </interface>
 </node>
