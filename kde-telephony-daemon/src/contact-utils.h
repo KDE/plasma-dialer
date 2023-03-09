@@ -17,6 +17,6 @@ public:
 
 public Q_SLOTS:
     QString displayString(const QString &contact);
-    QPixmap picture(const QString &contact);
+    QString imageSource(const QString &contact);
     void changeCountryCode(const QString &countryCode);
 };

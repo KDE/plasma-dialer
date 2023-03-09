@@ -8,7 +8,6 @@
 #include <QSharedPointer>
 
 #include "contact-phone-number-mapper.h"
-#include "deviceutilsinterface.h"
 
 static QSharedPointer<KPeople::PersonData> contactData(const QString &contact)
 {
@@ -31,10 +30,11 @@ QString ContactUtils::displayString(const QString &contact)
     return contact;
 }
 
-QPixmap ContactUtils::picture(const QString &contact)
+QString ContactUtils::imageSource(const QString &contact)
 {
     auto person = contactData(contact);
-    return person->photo();
+    // TODO: implement photo sharing via image source
+    return QString();
 }
 
 void ContactUtils::changeCountryCode(const QString &countryCode)
