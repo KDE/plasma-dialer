@@ -105,7 +105,7 @@ static void raiseWindow(QWindow *window)
         KWindowSystem::requestXdgActivationToken(window, 0, QStringLiteral("org.kde.phone.dialer.desktop"));
         QObject::connect(KWindowSystem::self(), &KWindowSystem::xdgActivationTokenArrived, window, [window](int, const QString &token) {
             KWindowSystem::setCurrentXdgActivationToken(token);
-            KWindowSystem::activateWindow(window->winId());
+            KWindowSystem::activateWindow(window);
         });
     } else {
         KWindowSystem::raiseWindow(window->winId());
