@@ -46,5 +46,6 @@ Q_SIGNALS:
                           const QString &callUni,
                           const DialerTypes::CallDirection &callDirection,
                           const DialerTypes::CallState &callState,
-                          const DialerTypes::CallStateReason &callStateReason);
+                          const DialerTypes::CallStateReason &callStateReason,
+                          const QString &communicationWith);
 };

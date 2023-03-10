@@ -443,7 +443,7 @@ void ModemManagerController::_initAddedCall(const QSharedPointer<ModemManager::M
                 if (voiceCallObject) {
                     voiceCallObject->onCallStateChanged(device->uni(), call->uni(), callDirection, callState, callReason);
                 }
-                Q_EMIT callStateChanged(device->uni(), call->uni(), callDirection, callState, callReason);
+                Q_EMIT callStateChanged(device->uni(), call->uni(), callDirection, callState, callReason, call->number());
             });
     Q_EMIT callAdded(device->uni(),
                      call->uni(),

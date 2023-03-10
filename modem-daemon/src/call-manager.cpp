@@ -53,10 +53,11 @@ void CallManager::onCallStateChanged(const QString &deviceUni,
                                      const QString &callUni,
                                      const DialerTypes::CallDirection &callDirection,
                                      const DialerTypes::CallState &callState,
-                                     const DialerTypes::CallStateReason &callStateReason)
+                                     const DialerTypes::CallStateReason &callStateReason,
+                                     const QString &communicationWith)
 {
     qDebug() << "new call state:" << deviceUni << callUni << callDirection << callState << callStateReason;
-    Q_EMIT _callUtils->callStateChanged(deviceUni, callUni, callDirection, callState, callStateReason);
+    Q_EMIT _callUtils->callStateChanged(deviceUni, callUni, callDirection, callState, callStateReason, communicationWith);
 
     // Add inhibition in logind when call is active.
     // Otherwise if powerdevil is configured to suspend device afer few minutes,

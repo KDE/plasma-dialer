@@ -32,7 +32,8 @@ private Q_SLOTS:
                             const QString &callUni,
                             const DialerTypes::CallDirection &callDirection,
                             const DialerTypes::CallState &callState,
-                            const DialerTypes::CallStateReason &callStateReason);
+                            const DialerTypes::CallStateReason &callStateReason,
+                            const QString &communicationWith);
     void onCreatedCall(const QString &deviceUni, const QString &callUni);
     void onAccepted(const QString &deviceUni, const QString &callUni);
     void onHungUp(const QString &deviceUni, const QString &callUni);
