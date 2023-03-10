@@ -41,6 +41,7 @@ static void launchPlasmaDialerDesktopFile()
 NotificationManager::NotificationManager(QObject *parent)
     : QObject(parent)
     , _ringingNotification(std::make_unique<KNotification>(QStringLiteral("ringing"), KNotification::Persistent | KNotification::LoopSound, nullptr))
+    , _callStarted(false)
 
 #ifdef HAVE_QT5_FEEDBACK
     , _ringEffect(std::make_unique<QFeedbackHapticsEffect>())
@@ -94,6 +95,7 @@ void NotificationManager::onCallAdded(const QString &deviceUni,
     if (callDirection == DialerTypes::CallDirection::Incoming) {
         if (callState == DialerTypes::CallState::RingingIn) {
             handleIncomingCall(deviceUni, callUni, communicationWith);
+            _callStarted = false;
         }
     }
 }
@@ -108,15 +110,33 @@ void NotificationManager::onCallStateChanged(const QString &deviceUni,
                                              const QString &callUni,
                                              const DialerTypes::CallDirection &callDirection,
                                              const DialerTypes::CallState &callState,
-                                             const DialerTypes::CallStateReason &callStateReason)
+                                             const DialerTypes::CallStateReason &callStateReason,
+                                             const QString &communicationWith)
 {
     qDebug() << Q_FUNC_INFO << "call state changed:" << deviceUni << callUni << callDirection << callState << callStateReason;
+
+    const QString contactName = _contactUtils->displayString(communicationWith);
+    QString callerDisplay =
+        (contactName == communicationWith) ? communicationWith : communicationWith + QStringLiteral("<br>") + QStringLiteral("<b>%1</b>").arg(contactName);
+    if (callerDisplay.isEmpty()) {
+        callerDisplay = i18n("No Caller ID");
+    }
+
     if (callDirection == DialerTypes::CallDirection::Incoming) {
         if (callState == DialerTypes::CallState::Terminated) {
             handleCallInteraction();
+
+            if (callStateReason == DialerTypes::CallStateReason::Unknown && !_callStarted) {
+                auto _missedCallNotification = new KNotification(QStringLiteral("callMissed"));
+                _missedCallNotification->setComponentName(QStringLiteral("plasma_dialer"));
+                _missedCallNotification->setTitle(i18n("Missed call"));
+                _missedCallNotification->setText(i18n("Missed call from %1", callerDisplay));
+                _missedCallNotification->sendEvent();
+            }
         }
         if (callState == DialerTypes::CallState::Active) {
             handleCallInteraction();
+            _callStarted = true;
         }
     }
 }

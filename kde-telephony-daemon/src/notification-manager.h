@@ -35,10 +35,12 @@ private Q_SLOTS:
                             const QString &callUni,
                             const DialerTypes::CallDirection &callDirection,
                             const DialerTypes::CallState &callState,
-                            const DialerTypes::CallStateReason &callStateReason);
+                            const DialerTypes::CallStateReason &callStateReason,
+                            const QString &communicationWith);
 
 private:
     std::unique_ptr<KNotification> _ringingNotification;
+    std::unique_ptr<KNotification> _missedCallNotification;
 
     void openRingingNotification(const QString &deviceUni, const QString &callUni, const QString callerDisplay, const QString notificationEvent);
     void closeRingingNotification();
@@ -53,6 +55,8 @@ private:
 
     org::kde::telephony::CallUtils *_callUtils;
     ContactUtils *_contactUtils;
+
+    bool _callStarted;
 
     void startHapticsFeedback();
     void stopHapticsFeedback();
