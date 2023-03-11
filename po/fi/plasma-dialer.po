@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the plasma-dialer package.
-# Tommi Nieminen <translator@legisign.org>, 2021, 2022.
+# Tommi Nieminen <translator@legisign.org>, 2021, 2022, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-02 00:56+0000\n"
-"PO-Revision-Date: 2022-02-11 14:58+0200\n"
+"PO-Revision-Date: 2023-03-04 20:11+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 20.04.2\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -40,17 +40,17 @@ msgstr "Plasman numerovalitsin"
 #: src/main.cpp:140
 #, kde-format
 msgid "© 2015-2022 KDE Community"
-msgstr ""
+msgstr "© 2015–2022 KDE-yhteisö"
 
 #: src/main.cpp:143
 #, kde-format
 msgid "Alexey Andreyev"
-msgstr ""
+msgstr "Alexey Andreyev"
 
 #: src/qml/call/AsymmetricAnswerSwipe.qml:86
 #, kde-format
 msgid "Swipe to accept"
-msgstr ""
+msgstr "Hyväksy pyyhkäisemällä"
 
 #: src/qml/call/CallPage.qml:35 src/qml/call/InCallInlineMessage.qml:14
 #, kde-format
@@ -58,10 +58,9 @@ msgid "Active call list"
 msgstr "Aktiivisten puhelujen luettelo"
 
 #: src/qml/call/CallPage.qml:108
-#, fuzzy, kde-format
-#| msgid "Incoming call"
+#, kde-format
 msgid "Incoming..."
-msgstr "Saapuva puhelu"
+msgstr "Saapuva…"
 
 #: src/qml/call/CallPage.qml:111
 #, kde-format
@@ -115,7 +114,7 @@ msgstr "Asetukset"
 #: src/qml/components/Sidebar.qml:117
 #, kde-format
 msgid "Quit"
-msgstr ""
+msgstr "Lopeta"
 
 #: src/qml/ContactsPage.qml:88
 #, kde-format
@@ -170,71 +169,70 @@ msgid "No IMEIs found"
 msgstr "IMEItä ei löytynyt"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:20
-#, fuzzy, kde-format
-#| msgid "Active call list"
+#, kde-format
 msgid "Adaptive Call Blocking"
-msgstr "Aktiivisten puhelujen luettelo"
+msgstr "Mukautuva puheluesto"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:54
 #, kde-format
 msgid "Ignore calls from unknown numbers"
-msgstr ""
+msgstr "Ohita tuntemattomien numerojen puhelut"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:70
 #, kde-format
 msgid "When a call is an incoming from an unknown number"
-msgstr ""
+msgstr "Kun puhelu tulee tuntemattomasta numerosta"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:74
 #, kde-format
 msgid "Immediately hang up"
-msgstr ""
+msgstr "Katkaise välittömästi"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:79
 #, kde-format
 msgid "Ring without notification"
-msgstr ""
+msgstr "Soita ilmoituksetta"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:84
 #, kde-format
 msgid "Ring with silent notification"
-msgstr ""
+msgstr "Soita hiljaisella ilmoituksella"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:100
 #, kde-format
 msgid "Allowed exceptions"
-msgstr ""
+msgstr "Sallitut poikkeukset"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:106
 #, kde-format
 msgid "Anonymous numbers"
-msgstr ""
+msgstr "Nimettömät numerot"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:113
 #, kde-format
 msgid "Existing outgoing call to number"
-msgstr ""
+msgstr "Olemassa oleva lähtevä puhelu numeroon"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:120
 #, kde-format
 msgid "Callback within"
-msgstr ""
+msgstr "Soita takaisin ajassa"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:138
 #, kde-format
 msgid "minutes"
-msgstr ""
+msgstr "minuuttia"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:156
 #, kde-format
 msgid "Allowed phone number exceptions"
-msgstr ""
+msgstr "Sallitut puhelinnumeropoikkeukset"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:168
 #: src/qml/settings/CallBlockSettingsPage.qml:193
 #, kde-format
 msgid "Add new pattern"
-msgstr ""
+msgstr "Lisää uusi kuvio"
 
 #: src/qml/settings/SettingsPage.qml:57
 #, kde-format
@@ -242,35 +240,34 @@ msgid "About"
 msgstr "Tietoa"
 
 #: src/qml/settings/SettingsPage.qml:71
-#, fuzzy, kde-format
-#| msgid "Active call list"
+#, kde-format
 msgid "Adaptive call blocking"
-msgstr "Aktiivisten puhelujen luettelo"
+msgstr "Mukautuva puheluesto"
 
 #: src/qml/settings/SettingsPage.qml:80
 #, kde-format
 msgid "Incoming call screen appearance"
-msgstr ""
+msgstr "Saapuvan puhelun ulkoasu näytöllä"
 
 #: src/qml/settings/SettingsPage.qml:81
 #, kde-format
 msgid "Buttons"
-msgstr ""
+msgstr "Painikkeet"
 
 #: src/qml/settings/SettingsPage.qml:81
 #, kde-format
 msgid "Symmetric Swipe"
-msgstr ""
+msgstr "Symmetrinen pyyhkäisy"
 
 #: src/qml/settings/SettingsPage.qml:81
 #, kde-format
 msgid "Asymmetric Swipe"
-msgstr ""
+msgstr "Epäsymmetrinen pyyhkäisy"
 
 #: src/qml/USSDSheet.qml:40
 #, kde-format
 msgid "USSD Error"
-msgstr ""
+msgstr "USSD-virhe"
 
 #: src/qml/USSDSheet.qml:40
 #, kde-format
@@ -290,7 +287,7 @@ msgstr "Lähetä"
 #: src/qml/USSDSheet.qml:70
 #, kde-format
 msgid "Cancel USSD session"
-msgstr ""
+msgstr "Peru USSD-istunto"
 
 #~ msgid "More Info:"
 #~ msgstr "Lisätietoa:"
