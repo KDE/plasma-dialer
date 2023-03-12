@@ -125,6 +125,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="ka">ტელეფონის აპი საშუალებას გაძლევთ ადვილად მიიღოთ და განახორციელოთ ზარები თქვენი სმარტფონიდან.</p>
     <p xml:lang="ko">전화 앱을 사용하여 스마트폰에서 통화를 걸고 받을 수 있습니다.</p>
     <p xml:lang="nl">De toepassing Telefoon laat u gemakkelijk telefoonoproepen verzenden en ontvangen vanaf uw smartphone.</p>
+    <p xml:lang="nn">Med telefonappen kan du lett ringja opp eller verta oppringd via smarttelefonen.</p>
     <p xml:lang="pa">ਫ਼ੋਨ ਐਪ ਤੁਹਾਨੂੰ ਤੁਹਾਡੇ ਸਮਾਰਟ-ਫ਼ੋਨ ਤੋਂ ਸੌਖੀ ਤਰ੍ਹਾਂ ਫ਼ੋਨ ਕਾਲਾਂ ਕਰਨ ਤੇ ਲੈਣ ਲਈ ਸਹਾਇਕ ਹੈ।</p>
     <p xml:lang="pl">Aplikacja telefonu umożliwia łatwe nawiązywanie połączeń telefonicznych z twojego smartfonu.</p>
     <p xml:lang="pt">a aplicação de Telefone permite-lhe efectuar e receber facilmente chamadas telefónicas no seu telemóvel.</p>
@@ -186,6 +187,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="ka">იხილეთ ზარების თქვენი ისტორია და ადვილად გადარეკეთ იგივე ნომერზე</li>
       <li xml:lang="ko">통화 기록을 보고 같은 전화번호에 전화 다시 걸기</li>
       <li xml:lang="nl">Bekijk uw oproepgeschiedenis en maak opnieuw een oproep naar hetzelfde nummer</li>
+      <li xml:lang="nn">Sjå samtalelogg og ring opp att telefonnummer</li>
       <li xml:lang="pa">ਆਪਣੇ ਕਾਲ ਅਤੀਤ ਨੂੰ ਵੇਖੋ ਅਤੇ ਉਸ ਨੰਬਰ ਨੂੰ ਮੁੜ ਕੇ ਸੌਖੀ ਤਰ੍ਹਾਂ ਕਾਲ ਕਰੋ</li>
       <li xml:lang="pl">Zobacz swoją historię dzwonienia i łatwo dzwoń na te same numery ponownie</li>
       <li xml:lang="pt">Ver o seu histórico de chamadas e invocar o mesmo número de novo</li>
@@ -214,6 +216,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="ka">მართეთ კონტაქტები, რომლებსაც ტელეფონის ნომერი მითითებული აქვთ</li>
       <li xml:lang="ko">전화번호가 없는 연락처 관리</li>
       <li xml:lang="nl">Uw contactpersonen beheren die een telefoonnummer gezet hebben</li>
+      <li xml:lang="nn">Administrer kontaktar registrerte med telefonnummer</li>
       <li xml:lang="pa">ਆਪਣੇ ਸੰਪਰਕਾਂ ਦਾ ਇੰਤਜ਼ਾਮ ਕਰੋ, ਜਿੰਨ੍ਹਾਂ ਲਈ ਫ਼ੋਨ ਨੰਬਰ ਸੈੱਟ ਹੈ</li>
       <li xml:lang="pl">Zarządzaj swoimi kontaktami, które mają ustawiony numer telefonu</li>
       <li xml:lang="pt">Gerir os seus contactos que tenham números de telefone atribuídos</li>
@@ -248,6 +251,7 @@ SPDX-License-Identifier: CC0-1.0
       <caption xml:lang="ka">ღილაკების გვერდი</caption>
       <caption xml:lang="ko">다이얼 페이지</caption>
       <caption xml:lang="nl">De pagina met de kiezer</caption>
+      <caption xml:lang="nn">Ringjesida</caption>
       <caption xml:lang="pa">ਡਾਇਲਰ ਸਫ਼ਾ</caption>
       <caption xml:lang="pl">Strona dialera</caption>
       <caption xml:lang="pt">A página de marcação</caption>
@@ -279,6 +283,7 @@ SPDX-License-Identifier: CC0-1.0
       <caption xml:lang="ka">ხმოვანი ფოსტის გამოძახება</caption>
       <caption xml:lang="ko">음성 사서함 통화</caption>
       <caption xml:lang="nl">Voicemail aanroepen</caption>
+      <caption xml:lang="nn">Ringjer talepost</caption>
       <caption xml:lang="pa">ਵੋਆਇਸ-ਮੇਲ ਨੂੰ ਕਾਲ ਜਾ ਰਹੀ ਹੈ</caption>
       <caption xml:lang="pl">Dzwonienie na sekretarkę</caption>
       <caption xml:lang="pt">A ligar ao correio de voz</caption>
