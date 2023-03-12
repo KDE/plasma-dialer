@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the plasma-dialer package.
 #
-# Víctor Rodrigo Córdoba <vrcordoba@gmail.com>, 2021, 2022.
+# Víctor Rodrigo Córdoba <vrcordoba@gmail.com>, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-11 00:50+0000\n"
-"PO-Revision-Date: 2022-08-27 17:00+0200\n"
+"PO-Revision-Date: 2023-03-11 17:24+0100\n"
 "Last-Translator: Víctor Rodrigo Córdoba <vrcordoba@gmail.com>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -25,12 +25,12 @@ msgstr "Sin identificador de la persona que llama"
 #: src/notification-manager.cpp:132
 #, kde-format
 msgid "Missed call"
-msgstr ""
+msgstr "Llamada perdida"
 
 #: src/notification-manager.cpp:133
 #, kde-format
 msgid "Missed call from %1"
-msgstr ""
+msgstr "Llamada perdida de %1"
 
 #: src/notification-manager.cpp:150
 #, kde-format
