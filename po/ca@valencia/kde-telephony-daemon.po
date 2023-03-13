@@ -1,15 +1,15 @@
 # Translation of kde-telephony-daemon.po to Catalan (Valencian)
-# Copyright (C) 2021-2022 This_file_is_part_of_KDE
+# Copyright (C) 2021-2023 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Josep M. Ferrer <txemaq@gmail.com>, 2021, 2022.
+# Josep M. Ferrer <txemaq@gmail.com>, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-11 00:50+0000\n"
-"PO-Revision-Date: 2022-08-23 19:43+0200\n"
+"PO-Revision-Date: 2023-03-11 13:43+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -27,12 +27,12 @@ msgstr "Sense ID de tocada"
 #: src/notification-manager.cpp:132
 #, kde-format
 msgid "Missed call"
-msgstr ""
+msgstr "Tocada perduda"
 
 #: src/notification-manager.cpp:133
 #, kde-format
 msgid "Missed call from %1"
-msgstr ""
+msgstr "Tocada perduda de %1"
 
 #: src/notification-manager.cpp:150
 #, kde-format
