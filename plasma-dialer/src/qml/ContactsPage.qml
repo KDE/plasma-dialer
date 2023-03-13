@@ -15,19 +15,31 @@ import org.kde.telephony 1.0
 import "call"
 
 Kirigami.ScrollablePage {
+    id: contactsPage
     title: i18n("Contacts")
     icon.name: "view-pim-contacts"
 
     // page animation
     property real yTranslate: 0
     
-    mainAction: Kirigami.Action {
+    Kirigami.Action {
+        id: settingsAction
         displayHint: Kirigami.Action.IconOnly
         visible: !applicationWindow().isWidescreen
         enabled: !applicationWindow().lockscreenMode
         iconName: "settings-configure"
         text: i18n("Settings")
         onTriggered: applicationWindow().pageStack.push(applicationWindow().getPage("Settings"))
+    }
+
+    Component.onCompleted: {
+        // dynamic check could be dropped with KF6-only versions
+        // https://invent.kde.org/frameworks/kirigami/-/merge_requests/986
+        if (contactsPage.mainAction !== undefined) {
+            contactsPage.mainAction = settingsAction
+        } else {
+            contactsPage.actions = settingsAction
+        }
     }
 
     Component {

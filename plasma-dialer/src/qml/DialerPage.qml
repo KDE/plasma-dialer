@@ -16,7 +16,7 @@ import "call"
 import "dialpad"
 
 Kirigami.Page {
-    id: dialer
+    id: dialerPage
 
     property alias numberEntryText: statusLabel.text
     property alias pad: dialPad
@@ -48,14 +48,25 @@ Kirigami.Page {
             }
         }
     }
-    
-    mainAction: Kirigami.Action {
+
+    Kirigami.Action {
+        id: settingsAction
         displayHint: Kirigami.Action.IconOnly
         visible: !applicationWindow().isWidescreen
         enabled: !applicationWindow().lockscreenMode
         iconName: "settings-configure"
         text: i18n("Settings")
         onTriggered: applicationWindow().pageStack.push(applicationWindow().getPage("Settings"))
+    }
+
+    Component.onCompleted: {
+        // dynamic check could be dropped with KF6-only versions
+        // https://invent.kde.org/frameworks/kirigami/-/merge_requests/986
+        if (dialerPage.mainAction !== undefined) {
+            dialerPage.mainAction = settingsAction
+        } else {
+            dialerPage.actions = settingsAction
+        }
     }
 
     header: ColumnLayout {
@@ -92,8 +103,8 @@ Kirigami.Page {
         QQC2.ScrollView {
             id: scrollView
             contentWidth: -1 // no horizontal scrolling necessary
-            Layout.minimumWidth: dialer.width
-            Layout.maximumWidth: dialer.width
+            Layout.minimumWidth: dialerPage.width
+            Layout.maximumWidth: dialerPage.width
             Layout.preferredHeight: applicationWindow().smallMode ? implicitHeight : parent.height * 0.3
             
             QQC2.Label {
@@ -101,7 +112,7 @@ Kirigami.Page {
 
                 horizontalAlignment: Qt.AlignHCenter
                 verticalAlignment: implicitHeight > scrollView.height ? Qt.AlignTop : Qt.AlignVCenter
-                width: dialer.width
+                width: dialerPage.width
                 height: scrollView.height
                 font.pixelSize: applicationWindow().smallMode ? Kirigami.Units.gridUnit * 1.6 : Kirigami.Units.gridUnit * 2.3
                 font.weight: Font.Light

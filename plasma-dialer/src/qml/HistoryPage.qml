@@ -13,6 +13,8 @@ import "call"
 import "history"
 
 Kirigami.ScrollablePage {
+    id: historyPage
+
     title: i18n("Call History")
     icon.name: "clock"
     
@@ -24,23 +26,34 @@ Kirigami.ScrollablePage {
         spacing: Kirigami.Units.smallSpacing
         InCallInlineMessage {}
     }
-    
-    actions.main: Kirigami.Action {
+
+    Kirigami.Action {
+        id: clearHistoryAction
         onTriggered: promptDialog.open()
         text: i18n("Clear history")
         icon.name: "edit-clear-history"
     }
-    
-    actions.contextualActions: [
-        Kirigami.Action {
-            displayHint: Kirigami.Action.IconOnly
-            visible: !applicationWindow().isWidescreen
-            enabled: !applicationWindow().lockscreenMode
-            iconName: "settings-configure"
-            text: i18n("Settings")
-            onTriggered: applicationWindow().pageStack.push(applicationWindow().getPage("Settings"))
+
+    Kirigami.Action {
+        id: settingsAction
+        displayHint: Kirigami.Action.IconOnly
+        visible: !applicationWindow().isWidescreen
+        enabled: !applicationWindow().lockscreenMode
+        iconName: "settings-configure"
+        text: i18n("Settings")
+        onTriggered: applicationWindow().pageStack.push(applicationWindow().getPage("Settings"))
+    }
+
+    Component.onCompleted: {
+        // dynamic check could be dropped with KF6-only versions
+        // https://invent.kde.org/frameworks/kirigami/-/merge_requests/986
+        if (historyPage.mainAction !== undefined) {
+            historyPage.mainAction = clearHistoryAction
+            historyPage.actions.contextualActions = settingsAction
+        } else {
+            historyPage.actions = [clearHistoryAction, settingsAction]
         }
-    ]
+    }
 
     function secondsToTimeString(seconds) {
         var h = Math.floor(seconds / 3600);
