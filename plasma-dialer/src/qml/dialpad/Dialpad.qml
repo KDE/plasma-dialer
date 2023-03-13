@@ -111,7 +111,7 @@ GridLayout {
     DialerButton { text: "0"; subdisplay: "＋"; sub: "+"; onClicked: onPadNumberPressed(text); onHeld: onPadNumberPressed("+") }
     DialerButton { display: "＃"; text: "#"; special: true; onClicked: onPadNumberPressed(text); onHeld: onPadNumberPressed(text) }
 
-    Keys.onPressed: {
+    Keys.onPressed: (event)=> {
         if (event.key === Qt.Key_Backspace) {
             pad.number = pad.number.slice(0, -1)
         } else if (

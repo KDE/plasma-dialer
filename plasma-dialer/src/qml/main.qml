@@ -61,6 +61,10 @@ Kirigami.ApplicationWindow {
     onIsWidescreenChanged: changeNav(isWidescreen);
 
     function switchToPage(page, depth) {
+        if (!page) {
+            return
+        }
+
         while (pageStack.depth > depth) pageStack.pop()
             
         // page switch animation

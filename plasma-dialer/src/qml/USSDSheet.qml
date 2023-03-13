@@ -13,7 +13,7 @@ Kirigami.OverlaySheet {
     id: ussdSheet
 
     property bool isError: false
-    property string messageText
+    property string messageText: ""
     property bool replyRequested: false
 
     signal responseReady(string response)
@@ -30,8 +30,8 @@ Kirigami.OverlaySheet {
         ussdSheet.messageText = errorMessage
     }
 
-    onSheetOpenChanged: {
-        if (!sheetOpen) {
+    function onSheetOpenChanged() {
+        if (!ussdSheet.sheetOpen) {
             ussdSheet.messageText = ""
         }
     }
@@ -82,7 +82,7 @@ Kirigami.OverlaySheet {
         anchors.centerIn: columnLayout
         width: Kirigami.Units.gridUnit * 2
         height: width
-        visible: (ussdSheet.messageText === "") && sheetOpen
+        visible: (ussdSheet.messageText === "")
     }
 
     ColumnLayout {
