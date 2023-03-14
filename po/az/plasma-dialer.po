@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-02 00:56+0000\n"
-"PO-Revision-Date: 2023-01-15 00:09+0400\n"
+"POT-Creation-Date: 2023-03-14 00:48+0000\n"
+"PO-Revision-Date: 2023-03-12 18:41+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
 "Language: az\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 22.12.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -93,7 +93,7 @@ msgid "History"
 msgstr "Tarixçə"
 
 #: src/qml/components/BottomToolbar.qml:93 src/qml/components/Sidebar.qml:56
-#: src/qml/ContactsPage.qml:18
+#: src/qml/ContactsPage.qml:19
 #, kde-format
 msgid "Contacts"
 msgstr "Əlaqələr"
@@ -104,8 +104,8 @@ msgstr "Əlaqələr"
 msgid "Dialer"
 msgstr "Nömrə yığımı"
 
-#: src/qml/components/Sidebar.qml:98 src/qml/ContactsPage.qml:29
-#: src/qml/DialerPage.qml:57 src/qml/HistoryPage.qml:40
+#: src/qml/components/Sidebar.qml:98 src/qml/ContactsPage.qml:31
+#: src/qml/DialerPage.qml:58 src/qml/HistoryPage.qml:43
 #: src/qml/settings/SettingsPage.qml:19
 #, kde-format
 msgid "Settings"
@@ -116,22 +116,22 @@ msgstr "Ayarlar"
 msgid "Quit"
 msgstr "Çıxış"
 
-#: src/qml/ContactsPage.qml:88
+#: src/qml/ContactsPage.qml:100
 #, kde-format
 msgid "Select number to call"
 msgstr "Zəng edəcəyiniz nömrəni seçin"
 
-#: src/qml/ContactsPage.qml:97
+#: src/qml/ContactsPage.qml:109
 #, kde-format
 msgid "No contacts have a phone number set"
 msgstr "Telefon nömrəsi olan əlaqələr yoxdur"
 
-#: src/qml/DialerPage.qml:70
+#: src/qml/DialerPage.qml:81
 #, kde-format
 msgid "Modem devices are not found"
 msgstr "Modem cihazları tapılmadı"
 
-#: src/qml/DialerPage.qml:79
+#: src/qml/DialerPage.qml:90
 #, kde-format
 msgid "Voicemail number couldn't be found"
 msgstr "Səsli poçt nömrəsi tapılmadı"
@@ -141,17 +141,17 @@ msgstr "Səsli poçt nömrəsi tapılmadı"
 msgid "Duration: %1"
 msgstr "Müddət: %1"
 
-#: src/qml/HistoryPage.qml:16
+#: src/qml/HistoryPage.qml:18
 #, kde-format
 msgid "Call History"
 msgstr "Zəng Tarixçəsi"
 
-#: src/qml/HistoryPage.qml:30
+#: src/qml/HistoryPage.qml:33
 #, kde-format
 msgid "Clear history"
 msgstr "Tarixçəni təmizləyin"
 
-#: src/qml/HistoryPage.qml:70
+#: src/qml/HistoryPage.qml:83
 #, kde-format
 msgid "No recent calls"
 msgstr "Son zənglər yoxdur"
@@ -252,17 +252,17 @@ msgstr "Gələn zəng pəncərəsinin görünüşü"
 #: src/qml/settings/SettingsPage.qml:81
 #, kde-format
 msgid "Buttons"
-msgstr ""
+msgstr "Düymələr"
 
 #: src/qml/settings/SettingsPage.qml:81
 #, kde-format
 msgid "Symmetric Swipe"
-msgstr ""
+msgstr "Simmetrik sürüşdürmə"
 
 #: src/qml/settings/SettingsPage.qml:81
 #, kde-format
 msgid "Asymmetric Swipe"
-msgstr ""
+msgstr "Assimetrik sürüşdürmə"
 
 #: src/qml/USSDSheet.qml:40
 #, kde-format

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-02 00:56+0000\n"
+"POT-Creation-Date: 2023-03-14 00:48+0000\n"
 "PO-Revision-Date: 2022-12-20 11:05-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -94,7 +94,7 @@ msgid "History"
 msgstr "Histórico"
 
 #: src/qml/components/BottomToolbar.qml:93 src/qml/components/Sidebar.qml:56
-#: src/qml/ContactsPage.qml:18
+#: src/qml/ContactsPage.qml:19
 #, kde-format
 msgid "Contacts"
 msgstr "Contatos"
@@ -105,8 +105,8 @@ msgstr "Contatos"
 msgid "Dialer"
 msgstr "Discador"
 
-#: src/qml/components/Sidebar.qml:98 src/qml/ContactsPage.qml:29
-#: src/qml/DialerPage.qml:57 src/qml/HistoryPage.qml:40
+#: src/qml/components/Sidebar.qml:98 src/qml/ContactsPage.qml:31
+#: src/qml/DialerPage.qml:58 src/qml/HistoryPage.qml:43
 #: src/qml/settings/SettingsPage.qml:19
 #, kde-format
 msgid "Settings"
@@ -117,22 +117,22 @@ msgstr "Configurações"
 msgid "Quit"
 msgstr "Sair"
 
-#: src/qml/ContactsPage.qml:88
+#: src/qml/ContactsPage.qml:100
 #, kde-format
 msgid "Select number to call"
 msgstr "Selecionar número a chamar"
 
-#: src/qml/ContactsPage.qml:97
+#: src/qml/ContactsPage.qml:109
 #, kde-format
 msgid "No contacts have a phone number set"
 msgstr "Nenhum contato tem um número de telefone definido"
 
-#: src/qml/DialerPage.qml:70
+#: src/qml/DialerPage.qml:81
 #, kde-format
 msgid "Modem devices are not found"
 msgstr "Modem não encontrado"
 
-#: src/qml/DialerPage.qml:79
+#: src/qml/DialerPage.qml:90
 #, kde-format
 msgid "Voicemail number couldn't be found"
 msgstr "O número do correio de voz não pode ser encontrado"
@@ -142,17 +142,17 @@ msgstr "O número do correio de voz não pode ser encontrado"
 msgid "Duration: %1"
 msgstr "Duração: %1"
 
-#: src/qml/HistoryPage.qml:16
+#: src/qml/HistoryPage.qml:18
 #, kde-format
 msgid "Call History"
 msgstr "Histórico de chamadas"
 
-#: src/qml/HistoryPage.qml:30
+#: src/qml/HistoryPage.qml:33
 #, kde-format
 msgid "Clear history"
 msgstr "Limpar histórico"
 
-#: src/qml/HistoryPage.qml:70
+#: src/qml/HistoryPage.qml:83
 #, kde-format
 msgid "No recent calls"
 msgstr "Nenhuma chamada recente"

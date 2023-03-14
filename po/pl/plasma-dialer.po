@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-02 00:56+0000\n"
+"POT-Creation-Date: 2023-03-14 00:48+0000\n"
 "PO-Revision-Date: 2022-12-10 11:40+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -94,7 +94,7 @@ msgid "History"
 msgstr "Historia"
 
 #: src/qml/components/BottomToolbar.qml:93 src/qml/components/Sidebar.qml:56
-#: src/qml/ContactsPage.qml:18
+#: src/qml/ContactsPage.qml:19
 #, kde-format
 msgid "Contacts"
 msgstr "Kontakty"
@@ -105,8 +105,8 @@ msgstr "Kontakty"
 msgid "Dialer"
 msgstr "Wybieranie numerów"
 
-#: src/qml/components/Sidebar.qml:98 src/qml/ContactsPage.qml:29
-#: src/qml/DialerPage.qml:57 src/qml/HistoryPage.qml:40
+#: src/qml/components/Sidebar.qml:98 src/qml/ContactsPage.qml:31
+#: src/qml/DialerPage.qml:58 src/qml/HistoryPage.qml:43
 #: src/qml/settings/SettingsPage.qml:19
 #, kde-format
 msgid "Settings"
@@ -117,22 +117,22 @@ msgstr "Ustawienia"
 msgid "Quit"
 msgstr "Zakończ"
 
-#: src/qml/ContactsPage.qml:88
+#: src/qml/ContactsPage.qml:100
 #, kde-format
 msgid "Select number to call"
 msgstr "Wybierz numer, na który zadzwonić"
 
-#: src/qml/ContactsPage.qml:97
+#: src/qml/ContactsPage.qml:109
 #, kde-format
 msgid "No contacts have a phone number set"
 msgstr "Żaden z kontaktów nie ma ustawionego numeru telefonu"
 
-#: src/qml/DialerPage.qml:70
+#: src/qml/DialerPage.qml:81
 #, kde-format
 msgid "Modem devices are not found"
 msgstr "Nie znaleziono żadnego urządzenia modemu"
 
-#: src/qml/DialerPage.qml:79
+#: src/qml/DialerPage.qml:90
 #, kde-format
 msgid "Voicemail number couldn't be found"
 msgstr "Nie można znaleźć numeru automatycznej sekretarki"
@@ -142,17 +142,17 @@ msgstr "Nie można znaleźć numeru automatycznej sekretarki"
 msgid "Duration: %1"
 msgstr "Czas trwania: %1"
 
-#: src/qml/HistoryPage.qml:16
+#: src/qml/HistoryPage.qml:18
 #, kde-format
 msgid "Call History"
 msgstr "Historia połączeń"
 
-#: src/qml/HistoryPage.qml:30
+#: src/qml/HistoryPage.qml:33
 #, kde-format
 msgid "Clear history"
 msgstr "Wyczyść historię"
 
-#: src/qml/HistoryPage.qml:70
+#: src/qml/HistoryPage.qml:83
 #, kde-format
 msgid "No recent calls"
 msgstr "Brak niedawnych połączeń"
