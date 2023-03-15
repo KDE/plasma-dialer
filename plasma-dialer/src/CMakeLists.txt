@@ -12,7 +12,9 @@ find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS Config 
 find_package(KF${KF_MAJOR_VERSION}KirigamiAddons 0.11 REQUIRED)
 
 if (DIALER_BUILD_SHELL_OVERLAY)
-    find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED WaylandClient)
+    find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED Gui WaylandClient)
+    find_package(Qt${QT_MAJOR_VERSION}Gui ${QT_MIN_VERSION} CONFIG REQUIRED Private)
+    find_package(Qt${QT_MAJOR_VERSION}WaylandClient ${QT_MIN_VERSION} COMPONENTS CONFIG REQUIRED Private)
     find_package(Wayland REQUIRED)
     find_package(PlasmaWaylandProtocols 1.8 CONFIG)
     find_package(KWinEffects 5.26.0 CONFIG)
@@ -50,6 +52,7 @@ target_link_libraries(plasmaphonedialer
 )
 if (DIALER_BUILD_SHELL_OVERLAY)
     target_link_libraries(plasmaphonedialer
+        Qt::GuiPrivate
         Qt::WaylandClient
         Qt::WaylandClientPrivate
         Wayland::Client
