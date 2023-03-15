@@ -8,6 +8,8 @@ set(ktelephonyd_SRCS
     contact-utils.cpp
     dialer-manager.cpp
     notification-manager.cpp
+    call-history-database.cpp
+    call-history-manager.cpp
     )
 
 set_source_files_properties(
@@ -18,7 +20,7 @@ set_source_files_properties(
     INCLUDE "kTelephonyMetaTypes/dialer-types.h"
 )
 
-find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED Core DBus)
+find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED Core DBus Sql)
 find_package(Qt${QT_MAJOR_VERSION} OPTIONAL_COMPONENTS Feedback)
 find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS Config I18n Notifications KIO)
 
@@ -36,6 +38,9 @@ qt_add_dbus_adaptor(ktelephonyd_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.
 
 qt_add_dbus_adaptor(ktelephonyd_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.DialerUtils.xml"
     dialer-utils.h DialerUtils)
+
+qt_add_dbus_adaptor(ktelephonyd_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.CallHistoryDatabase.xml"
+    call-history-database.h CallHistoryDatabase)
 
 add_executable(kde-telephony-daemon
     ${ktelephonyd_SRCS}
@@ -68,6 +73,7 @@ target_link_libraries(kde-telephony-daemon
     KF${QT_MAJOR_VERSION}::ConfigGui
     Qt::Core
     Qt::DBus
+    Qt::Sql
     KF${QT_MAJOR_VERSION}::I18n
     KF${QT_MAJOR_VERSION}::KIOGui
     KF${QT_MAJOR_VERSION}::Notifications

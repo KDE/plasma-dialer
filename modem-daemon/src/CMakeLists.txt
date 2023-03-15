@@ -9,8 +9,6 @@ ecm_create_qm_loader(modem-daemon_QM_LOADER modem-daemon_qt)
 
 set(modemd_SRCS
     main.cpp
-    call-history-database.cpp
-    call-history-manager.cpp
     call-utils.cpp
     call-object.cpp
     call-manager.cpp
@@ -23,7 +21,7 @@ set(modemd_SRCS
     ${modem-daemon_QM_LOADER}
     )
 
-find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED Core Gui DBus Sql)
+find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED Core Gui DBus)
 find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS ModemManagerQt)
 find_package(PhoneNumber COMPONENTS PhoneNumber REQUIRED)
 
@@ -36,9 +34,6 @@ qt_add_dbus_adaptor(modemd_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.UssdU
 qt_add_dbus_adaptor(modemd_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.CallUtils.xml"
     call-utils.h CallUtils)
 
-qt_add_dbus_adaptor(modemd_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.CallHistoryDatabase.xml"
-    call-history-database.h CallHistoryDatabase)
-
 add_executable(modem-daemon
     ${modemd_SRCS}
     )
@@ -48,7 +43,6 @@ target_include_directories(modem-daemon PRIVATE ${CMAKE_BINARY_DIR})
 target_link_libraries(modem-daemon
     Qt::Core
     Qt::DBus
-    Qt::Sql
     KF${QT_MAJOR_VERSION}::ModemManagerQt
     PhoneNumber::PhoneNumber
     ktelephonymetatypes # FIXME: KF${KF_MAJOR_VERSION} cmake files

@@ -14,9 +14,11 @@
 #include "callutilsinterface.h"
 #include "deviceutilsinterface.h"
 
+#include "callhistorydatabaseadaptor.h"
 #include "contactutilsadaptor.h"
 #include "dialerutilsadaptor.h"
 
+#include "call-history-manager.h"
 #include "dialer-manager.h"
 #include "notification-manager.h"
 
@@ -48,12 +50,17 @@ int main(int argc, char **argv)
 
     auto contactUtils = new ContactUtils(&app);
     auto dialerUtils = new DialerUtils(&app);
+    auto callHistoryDatabase = new CallHistoryDatabase(&app);
 
     DialerTypes::registerMetaTypes();
 
     QObject::connect(deviceUtils, &org::kde::telephony::DeviceUtils::countryCodeChanged, contactUtils, &ContactUtils::changeCountryCode);
 
     QDBusConnection dbus = QDBusConnection::sessionBus();
+
+    CallHistoryManager callHistoryManager(&app);
+    callHistoryManager.setCallUtils(callUtils);
+    callHistoryManager.setCallHistoryDatabase(callHistoryDatabase);
 
     DialerManager dialerManager(&app);
     dialerManager.setDialerUtils(dialerUtils);
@@ -62,6 +69,10 @@ int main(int argc, char **argv)
     NotificationManager notificator(&app);
     notificator.setCallUtils(callUtils);
     notificator.setContactUtils(contactUtils);
+
+    new CallHistoryDatabaseAdaptor(callHistoryDatabase);
+    dbus.registerObject(QStringLiteral("/org/kde/telephony/CallHistoryDatabase/tel/mm"), callHistoryDatabase);
+    dbus.registerService(QStringLiteral("org.kde.telephony.CallHistoryDatabase"));
 
     new ContactUtilsAdaptor(contactUtils);
     dbus.registerObject(QStringLiteral("/org/kde/telephony/ContactUtils/tel/mm"), contactUtils);

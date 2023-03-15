@@ -6,12 +6,10 @@
 
 #include "version.h"
 
-#include "callhistorydatabaseadaptor.h"
 #include "callutilsadaptor.h"
 #include "deviceutilsadaptor.h"
 #include "ussdutilsadaptor.h"
 
-#include "call-history-manager.h"
 #include "call-manager.h"
 #include "device-manager.h"
 #include "ussd-manager.h"
@@ -31,12 +29,10 @@ int main(int argc, char **argv)
 
     auto deviceUtils = new DeviceUtils(&app);
     auto ussdUtils = new UssdUtils(&app);
-    auto callHistoryDatabase = new CallHistoryDatabase(&app);
     auto callUtils = new CallUtils(&app);
 
     DeviceManager deviceManager(&modemController, deviceUtils, &app);
     UssdManager ussdManager(&modemController, ussdUtils, &app);
-    CallHistoryManager callHistoryManager(&modemController, callHistoryDatabase, &app);
     CallManager callManager(&modemController, callUtils, &app);
 
     QDBusConnection dbus = QDBusConnection::sessionBus();
@@ -48,10 +44,6 @@ int main(int argc, char **argv)
     new UssdUtilsAdaptor(ussdUtils);
     dbus.registerObject(QStringLiteral("/org/kde/telephony/UssdUtils/tel/mm"), ussdUtils);
     dbus.registerService(QStringLiteral("org.kde.telephony.UssdUtils"));
-
-    new CallHistoryDatabaseAdaptor(callHistoryDatabase);
-    dbus.registerObject(QStringLiteral("/org/kde/telephony/CallHistoryDatabase/tel/mm"), callHistoryDatabase);
-    dbus.registerService(QStringLiteral("org.kde.telephony.CallHistoryDatabase"));
 
     new CallUtilsAdaptor(callUtils);
     dbus.registerObject(QStringLiteral("/org/kde/telephony/CallUtils/tel/mm"), callUtils);
