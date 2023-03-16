@@ -7,6 +7,7 @@ set(metatypes_SRCS
     )
 
 add_library(ktelephonymetatypes STATIC ${metatypes_SRCS})
+set_target_properties(ktelephonymetatypes PROPERTIES POSITION_INDEPENDENT_CODE ON)
 
 find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED Core DBus)
 
