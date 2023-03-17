@@ -40,15 +40,8 @@
       <arg name="callUni" type="s" direction="out"/>
     </signal>
     <signal name="callStateChanged">
-      <annotation name="org.qtproject.QtDBus.QtTypeName.Out2" value="DialerTypes::CallDirection"/>
-      <annotation name="org.qtproject.QtDBus.QtTypeName.Out3" value="DialerTypes::CallState"/>
-      <annotation name="org.qtproject.QtDBus.QtTypeName.Out4" value="DialerTypes::CallStateReason"/>
-      <arg name="deviceUni" type="s" direction="out"/>
-      <arg name="callUni" type="s" direction="out"/>
-      <arg name="callDirection" type="(i)" direction="out"/>
-      <arg name="callState" type="(i)" direction="out"/>
-      <arg name="callStateReason" type="(i)" direction="out"/>
-      <arg name="communicationWith" type="s" direction="out"/>
+      <annotation name="org.qtproject.QtDBus.QtTypeName.Out0" value="DialerTypes::CallData"/>
+      <arg name="callData" type="(sssss(i)(i)(i)ixi)" direction="out"/>
     </signal>
     <method name="formatNumber">
       <arg type="s" direction="out"/>
