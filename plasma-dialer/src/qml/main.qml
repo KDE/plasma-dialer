@@ -174,9 +174,9 @@ Kirigami.ApplicationWindow {
             root.visible = true;
         }
 
-        function onCallStateChanged(state) {
-            if (CallUtils.callState === DialerTypes.CallState.Active) {
-                getPage("Dialer").pad.number = ""
+        function onCallStateChanged(callData) {
+            if (callData.state === DialerTypes.CallState.Active) {
+                getPage("Dialer").pad.clear()
             }
             // TODO: also activate on Dialing state
         }

@@ -89,6 +89,10 @@ GridLayout {
         }
     }
 
+    function clear() {
+        number = ""
+    }
+
     DialerButton {
         id: one
         text: "1"
@@ -176,8 +180,8 @@ GridLayout {
         onPressed: {
             pad.number = pad.number.slice(0, -1)
         }
-        onPressAndHold: { // clear
-            pad.number = ""
+        onPressAndHold: {
+            clear()
         }
     }
 }
