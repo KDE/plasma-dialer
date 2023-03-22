@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the plasma-dialer package.
 #
-# Phu Hung Nguyen <phu.nguyen@kdemail.net>, 2021, 2022.
+# Phu Hung Nguyen <phu.nguyen@kdemail.net>, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-11 00:50+0000\n"
-"PO-Revision-Date: 2022-08-24 21:35+0200\n"
+"PO-Revision-Date: 2023-03-21 18:46+0100\n"
 "Last-Translator: Phu Hung Nguyen <phu.nguyen@kdemail.net>\n"
 "Language-Team: Vietnamese <kde-l10n-vi@kde.org>\n"
 "Language: vi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 22.04.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: src/notification-manager.cpp:122 src/notification-manager.cpp:266
 #, kde-format
@@ -25,12 +25,12 @@ msgstr "Không có mã định danh người gọi"
 #: src/notification-manager.cpp:132
 #, kde-format
 msgid "Missed call"
-msgstr ""
+msgstr "Cuộc gọi nhỡ"
 
 #: src/notification-manager.cpp:133
 #, kde-format
 msgid "Missed call from %1"
-msgstr ""
+msgstr "Cuộc gọi nhỡ từ %1"
 
 #: src/notification-manager.cpp:150
 #, kde-format

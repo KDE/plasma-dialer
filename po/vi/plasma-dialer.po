@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-14 00:48+0000\n"
-"PO-Revision-Date: 2023-01-08 17:44+0100\n"
+"PO-Revision-Date: 2023-03-21 18:45+0100\n"
 "Last-Translator: Phu Hung Nguyen <phu.nguyen@kdemail.net>\n"
 "Language-Team: Vietnamese <kde-l10n-vi@kde.org>\n"
 "Language: vi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -251,17 +251,17 @@ msgstr "Diện mạo màn hình cuộc gọi đến"
 #: src/qml/settings/SettingsPage.qml:81
 #, kde-format
 msgid "Buttons"
-msgstr ""
+msgstr "Nút"
 
 #: src/qml/settings/SettingsPage.qml:81
 #, kde-format
 msgid "Symmetric Swipe"
-msgstr ""
+msgstr "Hất đối xứng"
 
 #: src/qml/settings/SettingsPage.qml:81
 #, kde-format
 msgid "Asymmetric Swipe"
-msgstr ""
+msgstr "Hất bất đối xứng"
 
 #: src/qml/USSDSheet.qml:40
 #, kde-format
