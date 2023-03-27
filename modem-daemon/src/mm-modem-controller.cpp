@@ -18,6 +18,11 @@ ModemManagerController::ModemManagerController(QObject *parent)
     });
 }
 
+QString ModemManagerController::subsystem()
+{
+    return QStringLiteral("mm");
+}
+
 QString ModemManagerController::equipmentIdentifier(const QString &deviceUni)
 {
     QString equipmentIdentifier;

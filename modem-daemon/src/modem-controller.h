@@ -11,6 +11,10 @@ class ModemController : public QObject
 
 public:
     explicit ModemController(QObject *parent = nullptr);
+
+    QString protocol();
+    QString subsystem();
+
 Q_SIGNALS:
     // Modem/3GPP
     void deviceUniListChanged(const QStringList &deviceUniList);

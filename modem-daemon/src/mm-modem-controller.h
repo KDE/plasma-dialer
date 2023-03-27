@@ -23,6 +23,8 @@ class ModemManagerController : public ModemController
 public:
     explicit ModemManagerController(QObject *parent = nullptr);
 
+    QString subsystem();
+
 public Q_SLOTS:
     // Device
     QString equipmentIdentifier(const QString &deviceUni) override;

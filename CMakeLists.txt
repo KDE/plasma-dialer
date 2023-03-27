@@ -12,6 +12,17 @@ include(FeatureSummary)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# ModemManager, oFono
+set(MODEM_SUBSYSTEM "ModemManager" CACHE STRING "Modem subsystem (ModemManager or oFono)")
+set_property(CACHE MODEM_SUBSYSTEM PROPERTY STRINGS ModemManager oFono)
+if (MODEM_SUBSYSTEM STREQUAL "ModemManager")
+    add_definitions(-DMODEM_SUBSYSTEM_MM)
+    message(STATUS "Using ModemManager")
+elseif(MODEM_SUBSYSTEM STREQUAL "oFono")
+    add_definitions(-DMODEM_SUBSYSTEM_OFONO)
+    message(STATUS "Using oFono")
+endif()
+
 option(DIALER_BUILD_SHELL_OVERLAY "Enable building of Dialer lockscreen functionality" ON)
 if (DIALER_BUILD_SHELL_OVERLAY)
     add_definitions(-DDIALER_BUILD_SHELL_OVERLAY)
@@ -63,8 +74,6 @@ add_subdirectory(kde-telephony-meta)
 set(DBUS_INTERFACES_PATH "${CMAKE_INSTALL_PREFIX}/${KDE_INSTALL_DBUSINTERFACEDIR}/")
 set(DBUS_INTERFACES_PATH "${SHARED_DBUS_XML_DIR}")
 message("Using D-Bus interface descriptions from: ${DBUS_INTERFACES_PATH}")
-
-set(MODEM_SUBSYSTEM "ModemManager" CACHE INTERNAL "")
 
 add_subdirectory(modem-daemon)
 add_subdirectory(kde-telephony-daemon)

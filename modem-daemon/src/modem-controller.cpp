@@ -11,6 +11,16 @@ ModemController::ModemController(QObject *parent)
 {
 }
 
+QString ModemController::protocol()
+{
+    return QStringLiteral("tel");
+}
+
+QString ModemController::subsystem()
+{
+    return QStringLiteral("native");
+}
+
 QStringList ModemController::deviceUniList()
 {
     return _deviceUniList;
