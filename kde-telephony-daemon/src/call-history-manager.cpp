@@ -25,17 +25,10 @@ void CallHistoryManager::setCallUtils(org::kde::telephony::CallUtils *callUtils)
     connect(_callUtils, &org::kde::telephony::CallUtils::callStateChanged, this, &CallHistoryManager::onCallStateChanged);
 }
 
-void CallHistoryManager::onCallStateChanged(const QString &deviceUni,
-                                            const QString &callUni,
-                                            const DialerTypes::CallDirection &callDirection,
-                                            const DialerTypes::CallState &callState,
-                                            const DialerTypes::CallStateReason &callStateReason)
+void CallHistoryManager::onCallStateChanged(const DialerTypes::CallData &callData)
 {
-    qDebug() << "new call state:" << deviceUni << callUni << callDirection << callState << callStateReason;
-    if (callState == DialerTypes::CallState::Terminated) {
-        // FIXME: callUtils API with DialerTypes::CallData ?
-        // _callHistoryDatabase->addCall(_callUtils->getCall(deviceUni, callUni));
-        // FIXME: delete call via call-manager?
-        // _callUtils->deleteCall(deviceUni, callUni);
+    qDebug() << "new call state:" << callData.state << callData.stateReason;
+    if (callData.state == DialerTypes::CallState::Terminated) {
+        _callHistoryDatabase->addCall(callData);
     }
 }

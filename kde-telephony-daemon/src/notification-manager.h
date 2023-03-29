@@ -30,12 +30,7 @@ private Q_SLOTS:
                      const DialerTypes::CallStateReason &callStateReason,
                      const QString communicationWith);
     void onCallDeleted(const QString &deviceUni, const QString &callUni);
-    void onCallStateChanged(const QString &deviceUni,
-                            const QString &callUni,
-                            const DialerTypes::CallDirection &callDirection,
-                            const DialerTypes::CallState &callState,
-                            const DialerTypes::CallStateReason &callStateReason,
-                            const QString &communicationWith);
+    void onCallStateChanged(const DialerTypes::CallData &callData);
 
 private:
     std::unique_ptr<KNotification> _ringingNotification;

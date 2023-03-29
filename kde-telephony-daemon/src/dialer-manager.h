@@ -30,11 +30,7 @@ private Q_SLOTS:
                      const DialerTypes::CallStateReason &callStateReason,
                      const QString communicationWith);
     void onFetchedCallsChanged(const DialerTypes::CallDataVector &fetchedCalls);
-    void onCallStateChanged(const QString &deviceUni,
-                            const QString &callUni,
-                            const DialerTypes::CallDirection &callDirection,
-                            const DialerTypes::CallState &callState,
-                            const DialerTypes::CallStateReason &callStateReason);
+    void onCallStateChanged(const DialerTypes::CallData &callData);
     void onSpeakerModeFetched();
     void onMuteFetched();
     void onSetSpeakerModeRequested(bool enabled);

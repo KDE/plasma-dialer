@@ -120,22 +120,13 @@ void DialerManager::onFetchedCallsChanged(const DialerTypes::CallDataVector &fet
     }
 }
 
-void DialerManager::onCallStateChanged(const QString &deviceUni,
-                                       const QString &callUni,
-                                       const DialerTypes::CallDirection &callDirection,
-                                       const DialerTypes::CallState &callState,
-                                       const DialerTypes::CallStateReason &callStateReason)
+void DialerManager::onCallStateChanged(const DialerTypes::CallData &callData)
 {
-    Q_UNUSED(deviceUni)
-    Q_UNUSED(callUni)
-    Q_UNUSED(callDirection)
-    Q_UNUSED(callStateReason)
-
     if (!_callUtils) {
         qCritical() << Q_FUNC_INFO;
     }
-    qDebug() << Q_FUNC_INFO << "new call state:" << callState;
-    switch (callState) {
+    qDebug() << Q_FUNC_INFO << "new call state:" << callData.state;
+    switch (callData.state) {
     case DialerTypes::CallState::Active:
         enable_call_mode();
         _needsDefaultAudioMode = true;

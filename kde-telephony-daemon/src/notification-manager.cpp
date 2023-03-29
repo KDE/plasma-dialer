@@ -106,27 +106,23 @@ void NotificationManager::onCallDeleted(const QString &deviceUni, const QString 
     handleCallInteraction();
 }
 
-void NotificationManager::onCallStateChanged(const QString &deviceUni,
-                                             const QString &callUni,
-                                             const DialerTypes::CallDirection &callDirection,
-                                             const DialerTypes::CallState &callState,
-                                             const DialerTypes::CallStateReason &callStateReason,
-                                             const QString &communicationWith)
+void NotificationManager::onCallStateChanged(const DialerTypes::CallData &callData)
 {
-    qDebug() << Q_FUNC_INFO << "call state changed:" << deviceUni << callUni << callDirection << callState << callStateReason;
+    qDebug() << Q_FUNC_INFO << "call state changed:" << callData.state << callData.stateReason;
 
-    const QString contactName = _contactUtils->displayString(communicationWith);
-    QString callerDisplay =
-        (contactName == communicationWith) ? communicationWith : communicationWith + QStringLiteral("<br>") + QStringLiteral("<b>%1</b>").arg(contactName);
+    const QString contactName = _contactUtils->displayString(callData.communicationWith);
+    QString callerDisplay = (contactName == callData.communicationWith)
+        ? callData.communicationWith
+        : callData.communicationWith + QStringLiteral("<br>") + QStringLiteral("<b>%1</b>").arg(contactName);
     if (callerDisplay.isEmpty()) {
         callerDisplay = i18n("No Caller ID");
     }
 
-    if (callDirection == DialerTypes::CallDirection::Incoming) {
-        if (callState == DialerTypes::CallState::Terminated) {
+    if (callData.direction == DialerTypes::CallDirection::Incoming) {
+        if (callData.state == DialerTypes::CallState::Terminated) {
             handleCallInteraction();
 
-            if (callStateReason == DialerTypes::CallStateReason::Unknown && !_callStarted) {
+            if (callData.stateReason == DialerTypes::CallStateReason::Unknown && !_callStarted) {
                 auto _missedCallNotification = new KNotification(QStringLiteral("callMissed"));
                 _missedCallNotification->setComponentName(QStringLiteral("plasma_dialer"));
                 _missedCallNotification->setTitle(i18n("Missed call"));
@@ -134,7 +130,7 @@ void NotificationManager::onCallStateChanged(const QString &deviceUni,
                 _missedCallNotification->sendEvent();
             }
         }
-        if (callState == DialerTypes::CallState::Active) {
+        if (callData.state == DialerTypes::CallState::Active) {
             handleCallInteraction();
             _callStarted = true;
         }

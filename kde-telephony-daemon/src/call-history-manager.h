@@ -22,11 +22,7 @@ public:
     void setCallUtils(org::kde::telephony::CallUtils *callUtils);
 
 private Q_SLOTS:
-    void onCallStateChanged(const QString &deviceUni,
-                            const QString &callUni,
-                            const DialerTypes::CallDirection &callDirection,
-                            const DialerTypes::CallState &callState,
-                            const DialerTypes::CallStateReason &callStateReason);
+    void onCallStateChanged(const DialerTypes::CallData &callData);
 
 private:
     org::kde::telephony::CallUtils *_callUtils;
