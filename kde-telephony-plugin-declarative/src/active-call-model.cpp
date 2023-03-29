@@ -115,13 +115,9 @@ void ActiveCallModel::onCallDeleted(const QString &deviceUni, const QString &cal
     _callsTimer.stop();
 }
 
-void ActiveCallModel::onCallStateChanged(const QString &deviceUni,
-                                         const QString &callUni,
-                                         const DialerTypes::CallDirection &callDirection,
-                                         const DialerTypes::CallState &callState,
-                                         const DialerTypes::CallStateReason &callStateReason)
+void ActiveCallModel::onCallStateChanged(const DialerTypes::CallData &callData)
 {
-    qDebug() << Q_FUNC_INFO << deviceUni << callUni << callDirection << callState << callStateReason;
+    qDebug() << Q_FUNC_INFO << callData.state << callData.stateReason;
     _callUtils->fetchCalls();
 }
 

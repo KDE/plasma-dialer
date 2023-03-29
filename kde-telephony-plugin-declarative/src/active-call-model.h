@@ -53,11 +53,7 @@ private Q_SLOTS:
                      const DialerTypes::CallStateReason &callStateReason,
                      const QString communicationWith);
     void onCallDeleted(const QString &deviceUni, const QString &callUni);
-    void onCallStateChanged(const QString &deviceUni,
-                            const QString &callUni,
-                            const DialerTypes::CallDirection &callDirection,
-                            const DialerTypes::CallState &callState,
-                            const DialerTypes::CallStateReason &callStateReason);
+    void onCallStateChanged(const DialerTypes::CallData &callData);
     void onFetchedCallsChanged(const DialerTypes::CallDataVector &fetchedCalls);
 
 private:
