@@ -64,4 +64,6 @@ private:
     bool _incoming = false;
     QString _communicationWith;
     qulonglong _duration;
+
+    void _updateTimers();
 };

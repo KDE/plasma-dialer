@@ -23,8 +23,10 @@ ActiveCallModel::ActiveCallModel(QObject *parent)
 
     _callsTimer.setInterval(CALL_DURATION_UPDATE_DELAY);
     connect(&_callsTimer, &QTimer::timeout, this, [this]() {
-        _callUtils->fetchCalls();
-        Q_EMIT dataChanged(index(0), index(rowCount()), {DurationRole, CallAttemptDurationRole});
+        // minimize the number of method calls by incrementing the duration on the client side too
+        // see also (D-Bus API Design Guidelines):
+        // https://dbus.freedesktop.org/doc/dbus-api-design.html
+        _updateTimers();
     });
     _callUtils->fetchCalls();
 }
@@ -118,7 +120,27 @@ void ActiveCallModel::onCallDeleted(const QString &deviceUni, const QString &cal
 void ActiveCallModel::onCallStateChanged(const DialerTypes::CallData &callData)
 {
     qDebug() << Q_FUNC_INFO << callData.state << callData.stateReason;
-    _callUtils->fetchCalls();
+    auto callState = callData.state;
+
+    if (callState == DialerTypes::CallState::Active) {
+        _callsTimer.start();
+    }
+    if (callState == DialerTypes::CallState::RingingIn) {
+        _callsTimer.start();
+    }
+    if (callState == DialerTypes::CallState::Terminated) {
+        _callsTimer.stop();
+    }
+
+    // find call by id and update all the stuff including the duration
+    for (int i = 0; i < _calls.size(); i++) {
+        auto call = _calls.at(i);
+        if (call.id == callData.id) {
+            call = callData;
+            Q_EMIT dataChanged(index(i), index(i));
+            return;
+        }
+    }
 }
 
 void ActiveCallModel::onFetchedCallsChanged(const DialerTypes::CallDataVector &fetchedCalls)
@@ -204,4 +226,24 @@ void ActiveCallModel::setDuration(qulonglong duration)
         return;
     _duration = duration;
     Q_EMIT durationChanged();
+}
+
+void ActiveCallModel::_updateTimers()
+{
+    for (int i = 0; i < _calls.size(); i++) {
+        auto call = _calls.at(i);
+        auto callState = call.state;
+
+        if (callState == DialerTypes::CallState::RingingIn) {
+            qDebug() << "incoming call";
+            call.callAttemptDuration++;
+            Q_EMIT dataChanged(index(i), index(i), {CallAttemptDurationRole});
+        }
+        if (callState == DialerTypes::CallState::Active) {
+            qDebug() << "call started";
+            call.duration++;
+            setDuration(call.duration);
+            Q_EMIT dataChanged(index(i), index(i), {DurationRole});
+        }
+    }
 }
