@@ -20,7 +20,7 @@ set_source_files_properties(
 
 find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED Core DBus)
 find_package(Qt${QT_MAJOR_VERSION} OPTIONAL_COMPONENTS Feedback)
-find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS Config I18n ModemManagerQt Notifications KIO)
+find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS Config I18n Notifications KIO)
 
 qt_add_dbus_interface(ktelephonyd_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.DeviceUtils.xml"
     deviceutilsinterface)
@@ -71,7 +71,6 @@ target_link_libraries(kde-telephony-daemon
     KF${QT_MAJOR_VERSION}::I18n
     KF${QT_MAJOR_VERSION}::KIOGui
     KF${QT_MAJOR_VERSION}::Notifications
-    KF${QT_MAJOR_VERSION}::ModemManagerQt
     PkgConfig::LIBCALLAUDIO
     ktelephonymetatypes # FIXME: KF${KF_MAJOR_VERSION} cmake files
     contactphonenumbermapper

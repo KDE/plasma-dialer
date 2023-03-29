@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: LicenseRef-KDE-Accepted-GPL
 
 find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED Core Quick)
-find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS Contacts People ModemManagerQt)
+find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS Contacts People)
 find_package(PhoneNumber COMPONENTS PhoneNumber REQUIRED)
 
 add_library(contactphonenumbermapper STATIC phone-number-utils.cpp contact-phone-number-mapper.cpp)
