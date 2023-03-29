@@ -211,6 +211,8 @@ DialerTypes::CallData ModemManagerController::getCall(const QString &deviceUni, 
 
 void ModemManagerController::deleteCall(const QString &deviceUni, const QString &callUni)
 {
+    // TODO: get device uni by some simIdentifier or something
+    // or maybe reconsider the whole arch
     const auto modem = ModemManager::findModemDevice(deviceUni);
     if (modem.isNull()) {
         qDebug() << Q_FUNC_INFO << "deviceUni not found:" << deviceUni;
@@ -443,7 +445,7 @@ void ModemManagerController::_initAddedCall(const QSharedPointer<ModemManager::M
                 if (voiceCallObject) {
                     voiceCallObject->onCallStateChanged(device->uni(), call->uni(), callDirection, callState, callReason);
                 }
-                Q_EMIT callStateChanged(device->uni(), call->uni(), callDirection, callState, callReason, call->number());
+                Q_EMIT callStateChanged(_voiceCallData(voiceCallObject));
             });
     Q_EMIT callAdded(device->uni(),
                      call->uni(),

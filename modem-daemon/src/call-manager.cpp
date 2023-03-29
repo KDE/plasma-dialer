@@ -49,15 +49,10 @@ void CallManager::onCallDeleted(const QString &deviceUni, const QString &callUni
     Q_EMIT _callUtils->callDeleted(deviceUni, callUni);
 }
 
-void CallManager::onCallStateChanged(const QString &deviceUni,
-                                     const QString &callUni,
-                                     const DialerTypes::CallDirection &callDirection,
-                                     const DialerTypes::CallState &callState,
-                                     const DialerTypes::CallStateReason &callStateReason,
-                                     const QString &communicationWith)
+void CallManager::onCallStateChanged(const DialerTypes::CallData &callData)
 {
-    qDebug() << "new call state:" << deviceUni << callUni << callDirection << callState << callStateReason;
-    Q_EMIT _callUtils->callStateChanged(deviceUni, callUni, callDirection, callState, callStateReason, communicationWith);
+    qDebug() << "new call state:" << callData.state << callData.stateReason;
+    Q_EMIT _callUtils->callStateChanged(callData);
 
     // Add inhibition in logind when call is active.
     // Otherwise if powerdevil is configured to suspend device afer few minutes,
@@ -68,7 +63,7 @@ void CallManager::onCallStateChanged(const QString &deviceUni,
     //
     // For Solid support state, see also:
     // https://invent.kde.org/frameworks/solid/-/blob/79bdd41abcd479f486976596fcca40b388caa9b2/CMakeLists.txt#L97-L104
-    switch (callState) {
+    switch (callData.state) {
     case DialerTypes::CallState::Active: {
         qDebug() << "logind sleep inhibitor: starting";
 
@@ -106,10 +101,14 @@ void CallManager::onCallStateChanged(const QString &deviceUni,
         qDebug() << "logind sleep inhibitor: success";
         break;
     }
-    case DialerTypes::CallState::Terminated:
+    case DialerTypes::CallState::Terminated: {
+        // TODO: FIXME: not cool yet
+        auto deviceUni = _modemController->deviceUni(callData.provider);
+        _modemController->deleteCall(deviceUni, callData.id);
         _inhibitSleepFd.reset();
         qDebug() << "logind sleep inhibitor: turned off";
         break;
+    }
     default:
         break;
     }

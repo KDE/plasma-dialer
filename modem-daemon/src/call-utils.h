@@ -42,10 +42,5 @@ Q_SIGNALS:
                    const DialerTypes::CallStateReason &callStateReason,
                    const QString communicationWith);
     void callDeleted(const QString &deviceUni, const QString &callUni);
-    void callStateChanged(const QString &deviceUni,
-                          const QString &callUni,
-                          const DialerTypes::CallDirection &callDirection,
-                          const DialerTypes::CallState &callState,
-                          const DialerTypes::CallStateReason &callStateReason,
-                          const QString &communicationWith);
+    void callStateChanged(const DialerTypes::CallData &callData);
 };
