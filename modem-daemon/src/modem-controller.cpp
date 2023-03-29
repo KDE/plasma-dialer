@@ -39,6 +39,17 @@ QString ModemController::equipmentIdentifier(const QString &deviceUni)
     return QString();
 }
 
+QString ModemController::deviceUni(const QString &equipmentIdentifier)
+{
+    for (const auto &deviceUni : qAsConst(_deviceUniList)) {
+        if (equipmentIdentifier == ModemController::equipmentIdentifier(deviceUni)) {
+            return deviceUni;
+        }
+    }
+
+    return QString();
+}
+
 void ModemController::ussdInitiate(const QString &deviceUni, const QString &command)
 {
     Q_UNUSED(deviceUni);

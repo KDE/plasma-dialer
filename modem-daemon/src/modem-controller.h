@@ -44,6 +44,7 @@ public Q_SLOTS:
     void appendDeviceUni(const QString &deviceUni);
     void setDeviceUniList(const QStringList &newDeviceUniList);
     virtual QString equipmentIdentifier(const QString &deviceUni);
+    QString deviceUni(const QString &equipmentIdentifier);
     // USSD
     virtual void ussdInitiate(const QString &deviceUni, const QString &command);
     virtual void ussdRespond(const QString &deviceUni, const QString &reply);
