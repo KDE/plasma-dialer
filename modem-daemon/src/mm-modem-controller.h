@@ -47,7 +47,7 @@ private Q_SLOTS:
     void onModemRemoved(const QString &udi);
 
 private:
-    void init();
+    void _init();
 
     QVector<CallObject *> _calls;
     void _removeCall(const QString &callId);

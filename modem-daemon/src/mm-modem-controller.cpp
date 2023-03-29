@@ -7,14 +7,14 @@
 ModemManagerController::ModemManagerController(QObject *parent)
     : ModemController(parent)
 {
-    init();
+    _init();
     connect(ModemManager::notifier(), &ModemManager::Notifier::modemAdded, this, [this](const QString &udi) {
         Q_UNUSED(udi);
-        init();
+        _init();
     });
     connect(ModemManager::notifier(), &ModemManager::Notifier::modemRemoved, this, [this](const QString &udi) {
         Q_UNUSED(udi);
-        init();
+        _init();
     });
 }
 
@@ -243,7 +243,7 @@ void ModemManagerController::onModemRemoved(const QString &udi)
     Q_UNUSED(udi);
 }
 
-void ModemManagerController::init()
+void ModemManagerController::_init()
 {
     setDeviceUniList(QStringList());
     const auto modemDevices = ModemManager::modemDevices();

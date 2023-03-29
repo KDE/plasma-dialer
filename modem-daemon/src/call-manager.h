@@ -44,5 +44,5 @@ private:
     ModemController *_modemController;
     CallUtils *_callUtils;
 
-    std::optional<QDBusUnixFileDescriptor> m_inhibitSleepFd;
+    std::optional<QDBusUnixFileDescriptor> _inhibitSleepFd;
 };

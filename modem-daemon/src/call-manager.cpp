@@ -72,7 +72,7 @@ void CallManager::onCallStateChanged(const QString &deviceUni,
     case DialerTypes::CallState::Active: {
         qDebug() << "logind sleep inhibitor: starting";
 
-        if (m_inhibitSleepFd) {
+        if (_inhibitSleepFd) {
             qDebug() << "logind sleep inhibitor: already inhibited";
             break;
         }
@@ -102,12 +102,12 @@ void CallManager::onCallStateChanged(const QString &deviceUni,
             qDebug() << "logind sleep inhibitor: error: call returned an invalid file descriptor";
             break;
         }
-        m_inhibitSleepFd = fd;
+        _inhibitSleepFd = fd;
         qDebug() << "logind sleep inhibitor: success";
         break;
     }
     case DialerTypes::CallState::Terminated:
-        m_inhibitSleepFd.reset();
+        _inhibitSleepFd.reset();
         qDebug() << "logind sleep inhibitor: turned off";
         break;
     default:
