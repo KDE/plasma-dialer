@@ -160,6 +160,8 @@ void NotificationManager::openRingingNotification(const QString &deviceUni,
     // with swipe decision.
     _ringingNotification->setHint(QStringLiteral("category"), QStringLiteral("x-kde.incoming-call"));
     _ringingNotification->setActions(actions);
+    _ringingNotification->addContext(QStringLiteral("deviceUni"), deviceUni);
+    _ringingNotification->addContext(QStringLiteral("callUni"), callUni);
     connect(_ringingNotification.get(), QOverload<unsigned int>::of(&KNotification::activated), this, &NotificationManager::onNotificationAction);
     _ringingNotification->sendEvent();
 }
