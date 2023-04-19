@@ -160,8 +160,8 @@ void NotificationManager::openRingingNotification(const QString &deviceUni,
     // with swipe decision.
     _ringingNotification->setHint(QStringLiteral("category"), QStringLiteral("x-kde.incoming-call"));
     _ringingNotification->setActions(actions);
-    _ringingNotification->addContext(QStringLiteral("deviceUni"), deviceUni);
-    _ringingNotification->addContext(QStringLiteral("callUni"), callUni);
+    _ringingNotification->setProperty("deviceUni", deviceUni);
+    _ringingNotification->setProperty("callUni", callUni);
     connect(_ringingNotification.get(), QOverload<unsigned int>::of(&KNotification::activated), this, &NotificationManager::onNotificationAction);
     _ringingNotification->sendEvent();
 }
@@ -298,17 +298,8 @@ void NotificationManager::stopHapticsFeedback()
 void NotificationManager::onNotificationAction(unsigned int action)
 {
     qDebug() << Q_FUNC_INFO << action;
-    QString deviceUni;
-    QString callUni;
-    KNotification::ContextList notificationContexts = _ringingNotification->contexts();
-    for (const auto &context : notificationContexts) {
-        if (context.first == QStringLiteral("deviceUni")) {
-            deviceUni = context.second;
-        }
-        if (context.first == QStringLiteral("callUni")) {
-            callUni = context.second;
-        }
-    }
+    const QString deviceUni = _ringingNotification->property("deviceUni").toString();
+    const QString callUni = _ringingNotification->property("callUni").toString();
     switch (action) {
     case 1:
         accept(deviceUni, callUni);
