@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-14 00:48+0000\n"
-"PO-Revision-Date: 2023-03-01 00:18+0100\n"
+"PO-Revision-Date: 2023-04-22 00:15+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -251,17 +251,17 @@ msgstr "수신 통화 화면 표시"
 #: src/qml/settings/SettingsPage.qml:81
 #, kde-format
 msgid "Buttons"
-msgstr ""
+msgstr "단추"
 
 #: src/qml/settings/SettingsPage.qml:81
 #, kde-format
 msgid "Symmetric Swipe"
-msgstr ""
+msgstr "대칭 스와이프"
 
 #: src/qml/settings/SettingsPage.qml:81
 #, kde-format
 msgid "Asymmetric Swipe"
-msgstr ""
+msgstr "비대칭 스와이프"
 
 #: src/qml/USSDSheet.qml:40
 #, kde-format
