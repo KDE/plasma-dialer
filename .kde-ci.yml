@@ -17,6 +17,7 @@ Dependencies:
     'frameworks/kwindowsystem': '@latest-kf6'
     'frameworks/modemmanager-qt': '@latest-kf6'
     'libraries/kirigami-addons': '@latest-kf6'
+    'third-party/wayland': '@latest'
 
 - 'on': ['Linux/Qt5', 'FreeBSD/Qt5', 'Windows/Qt5', 'Android/Qt5']
   'require':
@@ -33,3 +34,4 @@ Dependencies:
     'frameworks/kwindowsystem': '@stable'
     'frameworks/modemmanager-qt': '@stable'
     'libraries/kirigami-addons': '@latest'
+    'third-party/wayland': '@latest'
