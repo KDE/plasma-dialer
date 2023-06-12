@@ -1,0 +1,290 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the plasma-dialer package.
+# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-dialer\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-03-14 00:48+0000\n"
+"PO-Revision-Date: 2023-06-11 15:57+0200\n"
+"Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
+"Language-Team: Galician <proxecto@trasno.gal>\n"
+"Language: gl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 23.04.2\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Adrian Chaves (Gallaecio)"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "adrian@chaves.io"
+
+#: src/main.cpp:136 src/qml/main.qml:35
+#, kde-format
+msgid "Phone"
+msgstr "Teléfono"
+
+#: src/main.cpp:138
+#, kde-format
+msgid "Plasma phone dialer"
+msgstr "Marcador de números de teléfono de Plasma."
+
+#: src/main.cpp:140
+#, kde-format
+msgid "© 2015-2022 KDE Community"
+msgstr "© 2015-2022 Comunidade KDE"
+
+#: src/main.cpp:143
+#, kde-format
+msgid "Alexey Andreyev"
+msgstr "Alexey Andreyev"
+
+#: src/qml/call/AsymmetricAnswerSwipe.qml:86
+#, kde-format
+msgid "Swipe to accept"
+msgstr "Pase para aceptar"
+
+#: src/qml/call/CallPage.qml:35 src/qml/call/InCallInlineMessage.qml:14
+#, kde-format
+msgid "Active call list"
+msgstr "Lista de chamadas activas"
+
+#: src/qml/call/CallPage.qml:108
+#, kde-format
+msgid "Incoming..."
+msgstr "Entrante…"
+
+#: src/qml/call/CallPage.qml:111
+#, kde-format
+msgid "Calling..."
+msgstr "Chamando…"
+
+#: src/qml/call/CallPage.qml:134
+#, kde-format
+msgid "Keypad"
+msgstr "Teclado numérico"
+
+#: src/qml/call/CallPage.qml:154
+#, kde-format
+msgid "Speaker"
+msgstr "Altofalante"
+
+#: src/qml/call/CallPage.qml:168
+#, kde-format
+msgid "Mute"
+msgstr "Silenciar"
+
+#: src/qml/call/InCallInlineMessage.qml:18
+#, kde-format
+msgid "View"
+msgstr "Vista"
+
+#: src/qml/components/BottomToolbar.qml:81 src/qml/components/Sidebar.qml:38
+#, kde-format
+msgid "History"
+msgstr "Historial"
+
+#: src/qml/components/BottomToolbar.qml:93 src/qml/components/Sidebar.qml:56
+#: src/qml/ContactsPage.qml:19
+#, kde-format
+msgid "Contacts"
+msgstr "Contactos"
+
+#: src/qml/components/BottomToolbar.qml:105 src/qml/components/Sidebar.qml:74
+#: src/qml/DialerPage.qml:27
+#, kde-format
+msgid "Dialer"
+msgstr "Marcador"
+
+#: src/qml/components/Sidebar.qml:98 src/qml/ContactsPage.qml:31
+#: src/qml/DialerPage.qml:58 src/qml/HistoryPage.qml:43
+#: src/qml/settings/SettingsPage.qml:19
+#, kde-format
+msgid "Settings"
+msgstr "Configuración"
+
+#: src/qml/components/Sidebar.qml:117
+#, kde-format
+msgid "Quit"
+msgstr "Saír"
+
+#: src/qml/ContactsPage.qml:100
+#, kde-format
+msgid "Select number to call"
+msgstr "Seleccione o número ao que chamar"
+
+#: src/qml/ContactsPage.qml:109
+#, kde-format
+msgid "No contacts have a phone number set"
+msgstr "Non ten contactos con número de teléfono definido"
+
+#: src/qml/DialerPage.qml:81
+#, kde-format
+msgid "Modem devices are not found"
+msgstr "Non se atoparon dispositivos de módem."
+
+#: src/qml/DialerPage.qml:90
+#, kde-format
+msgid "Voicemail number couldn't be found"
+msgstr "Non se atopou o número de caixa de entrada de voz."
+
+#: src/qml/history/HistoryDelegate.qml:61
+#, kde-format
+msgid "Duration: %1"
+msgstr "Duración: %1"
+
+#: src/qml/HistoryPage.qml:18
+#, kde-format
+msgid "Call History"
+msgstr "Historial de chamadas"
+
+#: src/qml/HistoryPage.qml:33
+#, kde-format
+msgid "Clear history"
+msgstr "Borrar o historial"
+
+#: src/qml/HistoryPage.qml:83
+#, kde-format
+msgid "No recent calls"
+msgstr "Non hai chamadas recentes."
+
+#: src/qml/ImeiSheet.qml:18
+#, kde-format
+msgid "IMEI"
+msgid_plural "IMEIs"
+msgstr[0] "IMEI"
+msgstr[1] "IMEI"
+
+#: src/qml/ImeiSheet.qml:30
+#, kde-format
+msgid "No IMEIs found"
+msgstr "Non se atoparon IMEI."
+
+#: src/qml/settings/CallBlockSettingsPage.qml:20
+#, kde-format
+msgid "Adaptive Call Blocking"
+msgstr "Bloqueo de chamada adaptábel"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:54
+#, kde-format
+msgid "Ignore calls from unknown numbers"
+msgstr "Ignorar as chamadas de números descoñecidos."
+
+#: src/qml/settings/CallBlockSettingsPage.qml:70
+#, kde-format
+msgid "When a call is an incoming from an unknown number"
+msgstr "Cando unha chamada chega dun número descoñecido"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:74
+#, kde-format
+msgid "Immediately hang up"
+msgstr "Colgar inmediatamente"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:79
+#, kde-format
+msgid "Ring without notification"
+msgstr "Deixar soar sen notificar"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:84
+#, kde-format
+msgid "Ring with silent notification"
+msgstr "Deixar soar cunha notificación silenciosa"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:100
+#, kde-format
+msgid "Allowed exceptions"
+msgstr "Excepcións"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:106
+#, kde-format
+msgid "Anonymous numbers"
+msgstr "Números anónimos"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:113
+#, kde-format
+msgid "Existing outgoing call to number"
+msgstr "Números aos que se chamase"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:120
+#, kde-format
+msgid "Callback within"
+msgstr "Devolución de chamada en"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:138
+#, kde-format
+msgid "minutes"
+msgstr "minutos"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:156
+#, kde-format
+msgid "Allowed phone number exceptions"
+msgstr "Excepcións de números de teléfono permitidos"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:168
+#: src/qml/settings/CallBlockSettingsPage.qml:193
+#, kde-format
+msgid "Add new pattern"
+msgstr "Engadir un novo padrón"
+
+#: src/qml/settings/SettingsPage.qml:57
+#, kde-format
+msgid "About"
+msgstr "Sobre"
+
+#: src/qml/settings/SettingsPage.qml:71
+#, kde-format
+msgid "Adaptive call blocking"
+msgstr "Bloqueo de chamada adaptábel"
+
+#: src/qml/settings/SettingsPage.qml:80
+#, kde-format
+msgid "Incoming call screen appearance"
+msgstr "Aparencia na pantalla das chamadas entrantes"
+
+#: src/qml/settings/SettingsPage.qml:81
+#, kde-format
+msgid "Buttons"
+msgstr "Botóns"
+
+#: src/qml/settings/SettingsPage.qml:81
+#, kde-format
+msgid "Symmetric Swipe"
+msgstr "Pase simétrico"
+
+#: src/qml/settings/SettingsPage.qml:81
+#, kde-format
+msgid "Asymmetric Swipe"
+msgstr "Pase asimétrico"
+
+#: src/qml/USSDSheet.qml:40
+#, kde-format
+msgid "USSD Error"
+msgstr "Erro de USSD"
+
+#: src/qml/USSDSheet.qml:40
+#, kde-format
+msgid "USSD Message"
+msgstr "Mensaxe de USSD"
+
+#: src/qml/USSDSheet.qml:49
+#, kde-format
+msgid "Write response..."
+msgstr "Escribir unha resposta…"
+
+#: src/qml/USSDSheet.qml:54
+#, kde-format
+msgid "Send"
+msgstr "Enviar"
+
+#: src/qml/USSDSheet.qml:70
+#, kde-format
+msgid "Cancel USSD session"
+msgstr "Cancelar a sesión de USSD"
