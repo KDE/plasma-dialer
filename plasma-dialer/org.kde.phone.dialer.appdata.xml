@@ -16,6 +16,7 @@ SPDX-License-Identifier: CC0-1.0
   <name xml:lang="eu">Telefonoa</name>
   <name xml:lang="fi">Phone</name>
   <name xml:lang="fr">Phone</name>
+  <name xml:lang="gl">Teléfono</name>
   <name xml:lang="hu">Telefon</name>
   <name xml:lang="ia">Phone (Telephono)</name>
   <name xml:lang="id">Telepon</name>
@@ -48,6 +49,7 @@ SPDX-License-Identifier: CC0-1.0
   <summary xml:lang="eu">Egin eta jaso telefono deiak</summary>
   <summary xml:lang="fi">Soita ja vastaanota puheluja</summary>
   <summary xml:lang="fr">Réaliser et recevoir des appels téléphoniques</summary>
+  <summary xml:lang="gl">Faga e reciba chamadas.</summary>
   <summary xml:lang="hu">Telefonhívások indítása és fogadása</summary>
   <summary xml:lang="ia">Invia e recipe telephonatas</summary>
   <summary xml:lang="id">Kirim dan terima panggilan telepon</summary>
@@ -81,6 +83,7 @@ SPDX-License-Identifier: CC0-1.0
   <developer_name xml:lang="eu">KDE komunitatea</developer_name>
   <developer_name xml:lang="fi">KDE-yhteisö</developer_name>
   <developer_name xml:lang="fr">Communauté de KDE</developer_name>
+  <developer_name xml:lang="gl">Comunidade KDE</developer_name>
   <developer_name xml:lang="hu">A KDE Közösség</developer_name>
   <developer_name xml:lang="ia">Communitate de KDE</developer_name>
   <developer_name xml:lang="id">KDE Community</developer_name>
@@ -118,6 +121,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="eu">Telefono aplikazioak zure telefono adimendunetik telefono deiak erraz egin eta jasotzen uzten dizu.</p>
     <p xml:lang="fi">Phone-sovelluksella voit helposti soittaa ja vastaanottaa puheluja älypuhelimessasi.</p>
     <p xml:lang="fr">L'application Phone vous permet facilement de réaliser et recevoir des appels téléphoniques à partir de votre téléphone portable.</p>
+    <p xml:lang="gl">A aplicación Teléfono permítelle facer e recibir facilmente chamadas de teléfono desde un teléfono intelixente.</p>
     <p xml:lang="hu">A Telefon alkalmazás lehetővé teszi hívások egyszerű indítását és fogadását okostelefonján.</p>
     <p xml:lang="ia">Le app de Phone (Telephono) lassa que tu facilemente  invia e recipe appellos de telephono ab tu smartphone.</p>
     <p xml:lang="id">Aplikasi telepon memungkinkanmu secara mudah mengirim dan menerima panggilan telepon dari smartphone-mu.</p>
@@ -149,6 +153,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="eu">Ezaugarriak:</p>
     <p xml:lang="fi">Ominaisuuksia:</p>
     <p xml:lang="fr">Fonctionnalités :</p>
+    <p xml:lang="gl">Funcionalidades:</p>
     <p xml:lang="hu">Szolgáltatások:</p>
     <p xml:lang="ia">Characteristicas:</p>
     <p xml:lang="id">Fitur:</p>
@@ -180,6 +185,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="eu">Begiratu zure deien historia eta zenbaki berdinari erraz deitu iezaiozu</li>
       <li xml:lang="fi">Tarkastele puheluhistoriaasi ja soita helposti uudelleen samaan numeroon</li>
       <li xml:lang="fr">Consulter l'historique de vos appels et rappeler facilement le même numéro.</li>
+      <li xml:lang="gl">Consulte o historial de chamadas e devolva chamadas facilmente.</li>
       <li xml:lang="hu">Híváselőzmények megtekintése és egy korábbi szám gyors újrahívása</li>
       <li xml:lang="ia">Vide tu chronologia de appello e facilemente le mesme numero novemente</li>
       <li xml:lang="id">Lihat histori panggilanmu dan secara mudah memanggil nomor yang sama lagi</li>
@@ -209,6 +215,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="eu">Kudeatu telefono zenbaki bat ezarrita duten zure kontaktuak</li>
       <li xml:lang="fi">Hallitse yhteystietojasi, joiden puhelinnumero on asetettu</li>
       <li xml:lang="fr">Gérer vos contacts ayant un numéro de téléphone saisi.</li>
+      <li xml:lang="gl">Xestione os contactos cun número de teléfono.</li>
       <li xml:lang="hu">Több telefonszámmal rendelkező névjegyek kezelése</li>
       <li xml:lang="ia">Gere tu contactos que ha un insimul de numero de telephono</li>
       <li xml:lang="id">Kelola kontakmu yang memiliki kumpulan nomor telepon</li>
@@ -244,6 +251,7 @@ SPDX-License-Identifier: CC0-1.0
       <caption xml:lang="eu">Markatzailea-orria</caption>
       <caption xml:lang="fi">Näppäimistösivu</caption>
       <caption xml:lang="fr">La page du numéroteur.</caption>
+      <caption xml:lang="gl">A páxina para marcar.</caption>
       <caption xml:lang="hu">A tárcsázó oldal</caption>
       <caption xml:lang="ia">Le pagina de Combinator (Dialer)</caption>
       <caption xml:lang="id">Halaman dial</caption>
@@ -276,6 +284,7 @@ SPDX-License-Identifier: CC0-1.0
       <caption xml:lang="eu">Ahots-postara deitzea</caption>
       <caption xml:lang="fi">Soitetaan vastaajaan</caption>
       <caption xml:lang="fr">Appel de la messagerie vocale</caption>
+      <caption xml:lang="gl">Chamando a unha caixa de entrada de voz.</caption>
       <caption xml:lang="hu">Hangposta hívása</caption>
       <caption xml:lang="ia">Appellante voicemail (posta vocal)</caption>
       <caption xml:lang="id">Memanggil surat suara</caption>
