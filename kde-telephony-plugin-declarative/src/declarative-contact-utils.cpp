@@ -5,7 +5,7 @@
 #include "declarative-contact-utils.h"
 
 #include <KContacts/VCardConverter>
-#include <KPeople/KPeopleBackend/AbstractContact>
+#include <KPeopleBackend/AbstractContact>
 #include <KPeople/PersonData>
 
 #include "callutilsinterface.h"
