@@ -54,7 +54,6 @@ Kirigami.Page {
         displayHint: Kirigami.Action.IconOnly
         visible: !applicationWindow().isWidescreen
         enabled: !applicationWindow().lockscreenMode
-        iconName: "settings-configure"
         text: i18n("Settings")
         onTriggered: applicationWindow().pageStack.push(applicationWindow().getPage("Settings"))
     }
@@ -66,6 +65,14 @@ Kirigami.Page {
             dialerPage.mainAction = settingsAction
         } else {
             dialerPage.actions = settingsAction
+        }
+
+        // https://invent.kde.org/frameworks/kirigami/-/merge_requests/942
+        const name = "settings-configure"
+        if (settingsAction.iconName !== undefined) {
+            settingsAction.iconName = name
+        } else {
+            settingsAction.icon.name = name
         }
     }
 
