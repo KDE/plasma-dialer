@@ -36,7 +36,7 @@ Kirigami.ScrollablePage {
 
     Kirigami.Action {
         id: settingsAction
-        displayHint: Kirigami.Action.IconOnly
+        displayHint: Kirigami.DisplayHint.IconOnly
         visible: !applicationWindow().isWidescreen
         enabled: !applicationWindow().lockscreenMode
         text: i18n("Settings")

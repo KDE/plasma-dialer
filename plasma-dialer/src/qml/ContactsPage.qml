@@ -7,7 +7,7 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.2 as Controls
 import QtQuick.Layouts 1.1
-import org.kde.kirigami 2.12 as Kirigami
+import org.kde.kirigami 2.14 as Kirigami
 import org.kde.people 1.0 as KPeople
 
 import org.kde.telephony 1.0
@@ -24,7 +24,7 @@ Kirigami.ScrollablePage {
     
     Kirigami.Action {
         id: settingsAction
-        displayHint: Kirigami.Action.IconOnly
+        displayHint: Kirigami.DisplayHint.IconOnly
         visible: !applicationWindow().isWidescreen
         enabled: !applicationWindow().lockscreenMode
         text: i18n("Settings")
