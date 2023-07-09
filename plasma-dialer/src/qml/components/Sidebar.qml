@@ -9,16 +9,9 @@ import org.kde.kirigami 2.19 as Kirigami
 Kirigami.OverlayDrawer {
     id: drawer
     modal: false
-    width: 100
-    height: applicationWindow().height
 
     Kirigami.Theme.colorSet: Kirigami.Theme.Window
     Kirigami.Theme.inherit: false
-
-    leftPadding: 0
-    rightPadding: 0
-    topPadding: 0
-    bottomPadding: 0
 
     contentItem: ColumnLayout {
         spacing: 0

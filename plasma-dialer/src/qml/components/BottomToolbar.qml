@@ -10,19 +10,6 @@ import org.kde.kirigami 2.19 as Kirigami
 Kirigami.NavigationTabBar {
     id: navigationTabBar
 
-    property bool shouldShow: pageStack.layers.depth <= 1 && pageStack.depth <= 1
-    onShouldShowChanged: {
-        if (shouldShow) {
-            hideAnim.stop();
-            showAnim.restart();
-        } else {
-            showAnim.stop();
-            hideAnim.restart();
-        }
-    }
-
-    visible: height !== 0
-
     function currentPage() {
         return applicationWindow().pageStack.currentItem
     }
@@ -35,43 +22,6 @@ Kirigami.NavigationTabBar {
     }
     function getDialerPage() {
         return applicationWindow().getPage("Dialer");
-    }
-
-    // animate showing and hiding of navbar
-    ParallelAnimation {
-        id: showAnim
-        NumberAnimation {
-            target: navigationTabBar
-            property: "height"
-            to: navigationTabBar.implicitHeight
-            duration: Kirigami.Units.longDuration
-            easing.type: Easing.InOutQuad
-        }
-        NumberAnimation {
-            target: navigationTabBar
-            property: "opacity"
-            to: 1
-            duration: Kirigami.Units.longDuration
-            easing.type: Easing.InOutQuad
-        }
-    }
-
-    SequentialAnimation {
-        id: hideAnim
-        NumberAnimation {
-            target: navigationTabBar
-            property: "opacity"
-            to: 0
-            duration: Kirigami.Units.longDuration
-            easing.type: Easing.InOutQuad
-        }
-        NumberAnimation {
-            target: navigationTabBar
-            property: "height"
-            to: 0
-            duration: Kirigami.Units.longDuration
-            easing.type: Easing.InOutQuad
-        }
     }
 
     actions: [
