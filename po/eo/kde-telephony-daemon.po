@@ -1,0 +1,48 @@
+# translation of kde-telephony-daemon.pot to esperanto
+# Copyright (C) 2023 Free Software Foundation, Inc.
+# This file is distributed under the same license as the plasma-dialer package.
+# Oliver Kellogg <okellogg@users.sourceforge.net, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-dialer\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-03-11 00:50+0000\n"
+"PO-Revision-Date: 2023-07-13 21:47+0100\n"
+"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
+"Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
+"Language: eo\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: src/notification-manager.cpp:122 src/notification-manager.cpp:266
+#, kde-format
+msgid "No Caller ID"
+msgstr "Neniu Vokant-ID"
+
+#: src/notification-manager.cpp:132
+#, kde-format
+msgid "Missed call"
+msgstr "Maltrafita voko"
+
+#: src/notification-manager.cpp:133
+#, kde-format
+msgid "Missed call from %1"
+msgstr "Maltrafita voko de %1"
+
+#: src/notification-manager.cpp:150
+#, kde-format
+msgid "Accept"
+msgstr "Akcepti"
+
+#: src/notification-manager.cpp:150
+#, kde-format
+msgid "Reject"
+msgstr "Malakcepti"
+
+#: src/notification-manager.cpp:157
+#, kde-format
+msgid "Incoming call"
+msgstr "Envenanta voko"
