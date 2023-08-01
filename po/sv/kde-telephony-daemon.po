@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the plasma-dialer package.
 #
-# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2021, 2022.
+# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-11 00:50+0000\n"
-"PO-Revision-Date: 2022-09-24 15:54+0200\n"
+"PO-Revision-Date: 2023-07-31 11:02+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -25,12 +25,12 @@ msgstr "Ingen nummerpresentation"
 #: src/notification-manager.cpp:132
 #, kde-format
 msgid "Missed call"
-msgstr ""
+msgstr "Missat samtal"
 
 #: src/notification-manager.cpp:133
 #, kde-format
 msgid "Missed call from %1"
-msgstr ""
+msgstr "Missat samtal från %1"
 
 #: src/notification-manager.cpp:150
 #, kde-format
