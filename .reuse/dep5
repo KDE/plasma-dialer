@@ -2,21 +2,31 @@ Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Plasma Dialer
 Upstream-Contact: Alexey Andreyev <aa13q@ya.ru>
 
-Files: logo.png plasma-dialer/dialer.svg
-Copyright: 2020 =?UTF-8?q?Mathis=20Br=C3=BCchert?= <mbb-mail@gmx.de>
+Files: *
+Copyright: 2021 Alexey Andreyev <aa13q@ya.ru>
+License: LicenseRef-KDE-Accepted-GPL
+
+Files: logo.png
+       plasma-dialer/dialer.svg
+Copyright: 2020 Mathis Brüchert <mbb-mail@gmx.de>
 License: CC0-1.0
 
-Files: */qmldir .gitignore
-Copyright: None
-License: CC0-1.0
-
-FILES: .git-blame-ignore-revs
+Files: .git*
+       .kde-ci.yml
+       kde-telephony-plugin-declarative/src/qmldir
+       plasma-dialer/src/resources.qrc
 Copyright: None
 License: CC0-1.0
 
 Files: po/*
 Copyright: KDE Translation Contributors <kde-i18n-doc@kde.org>
-License: CC0-1.0
+License: LicenseRef-KDE-Accepted-GPL
+
+Files: po/ca*
+       po/uk/*
+Copyright: 2020-2022 Josep M. Ferrer <txemaq@gmail.com>
+           2020-2022 Yuri Chornoivan <yurchor@ukr.net>
+License: LGPL-2.1-or-later
 
 Files: *Messages.sh
 Copyright: KDE Translation Contributors <kde-i18n-doc@kde.org>
@@ -31,14 +41,8 @@ Copyright: None
 License: CC0-1.0
 
 Files: *.desktop*
-Copyright: None
-License: BSD-3-Clause
-
-Files: *.service.in
-Copyright: None
-License: BSD-3-Clause
-
-Files: plasma-dialer/src/config.kcfg plasma-dialer/src/config.kcfgc
+       *.service.in
+       plasma-dialer/src/config.kcfg*
 Copyright: None
 License: BSD-3-Clause
 
