@@ -23,7 +23,6 @@ public:
     void setContactUtils(ContactUtils *contactUtils);
 
 private Q_SLOTS:
-    void onNotificationAction(unsigned int action);
     void onCallAdded(const QString &deviceUni,
                      const QString &callUni,
                      const DialerTypes::CallDirection &callDirection,

@@ -146,9 +146,6 @@ void NotificationManager::openRingingNotification(const QString &deviceUni,
                                                   const QString callerDisplay,
                                                   const QString notificationEvent)
 {
-    QStringList actions;
-    actions << i18n("Accept") << i18n("Reject");
-
     _ringingNotification->setEventId(notificationEvent);
     _ringingNotification->setUrgency(KNotification::CriticalUrgency);
     _ringingNotification->setComponentName(QStringLiteral("plasma_dialer"));
@@ -159,10 +156,40 @@ void NotificationManager::openRingingNotification(const QString &deviceUni,
     // this will be used by the notification applet to show custom notification UI
     // with swipe decision.
     _ringingNotification->setHint(QStringLiteral("category"), QStringLiteral("x-kde.incoming-call"));
+
+#if QT_VERSION_MAJOR == 6
+    auto acceptAction = new KNotificationAction(i18n("Accept"));
+    connect(acceptAction, &KNotificationAction::activated, this, [this, deviceUni, callUni] {
+        accept(deviceUni, callUni);
+        launchPlasmaDialerDesktopFile();
+    });
+
+    auto rejectAction = new KNotificationAction(i18n("Reject"));
+    connect(rejectAction, &KNotificationAction::activated, this, [this, deviceUni, callUni] {
+        hangUp(deviceUni, callUni);
+    });
+
+    _ringingNotification->setActions({acceptAction, rejectAction});
+#else
+    QStringList actions;
+    actions << i18n("Accept") << i18n("Reject");
+    connect(_ringingNotification.get(), QOverload<unsigned int>::of(&KNotification::activated), this, [this, deviceUni, callUni] {
+        switch (action) {
+        case 1:
+            accept(deviceUni, callUni);
+            launchPlasmaDialerDesktopFile();
+            break;
+        case 2:
+            hangUp(deviceUni, callUni);
+            break;
+        default:
+            Q_UNREACHABLE();
+            break;
+        }
+    });
     _ringingNotification->setActions(actions);
-    _ringingNotification->setProperty("deviceUni", deviceUni);
-    _ringingNotification->setProperty("callUni", callUni);
-    connect(_ringingNotification.get(), QOverload<unsigned int>::of(&KNotification::activated), this, &NotificationManager::onNotificationAction);
+#endif
+
     _ringingNotification->sendEvent();
 }
 
@@ -293,23 +320,4 @@ void NotificationManager::stopHapticsFeedback()
 #ifdef HAVE_QT5_FEEDBACK
     _ringEffect->stop();
 #endif // HAVE_QT5_FEEDBACK
-}
-
-void NotificationManager::onNotificationAction(unsigned int action)
-{
-    qDebug() << Q_FUNC_INFO << action;
-    const QString deviceUni = _ringingNotification->property("deviceUni").toString();
-    const QString callUni = _ringingNotification->property("callUni").toString();
-    switch (action) {
-    case 1:
-        accept(deviceUni, callUni);
-        launchPlasmaDialerDesktopFile();
-        break;
-    case 2:
-        hangUp(deviceUni, callUni);
-        break;
-    default:
-        Q_UNREACHABLE();
-        break;
-    }
 }
