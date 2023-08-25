@@ -173,8 +173,8 @@ void NotificationManager::openRingingNotification(const QString &deviceUni,
 #else
     QStringList actions;
     actions << i18n("Accept") << i18n("Reject");
-    connect(_ringingNotification.get(), QOverload<unsigned int>::of(&KNotification::activated), this, [this, deviceUni, callUni] {
-        switch (actions) {
+    connect(_ringingNotification.get(), QOverload<unsigned int>::of(&KNotification::activated), this, [this, deviceUni, callUni](unsigned int action) {
+        switch (action) {
         case 1:
             accept(deviceUni, callUni);
             launchPlasmaDialerDesktopFile();
