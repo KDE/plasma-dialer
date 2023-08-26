@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-11 00:50+0000\n"
+"POT-Creation-Date: 2023-08-26 00:47+0000\n"
 "PO-Revision-Date: 2023-03-11 13:43+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 20.12.0\n"
 
-#: src/notification-manager.cpp:122 src/notification-manager.cpp:266
+#: src/notification-manager.cpp:122 src/notification-manager.cpp:293
 #, kde-format
 msgid "No Caller ID"
 msgstr "Sense ID de tocada"
@@ -34,17 +34,17 @@ msgstr "Tocada perduda"
 msgid "Missed call from %1"
 msgstr "Tocada perduda de %1"
 
-#: src/notification-manager.cpp:150
+#: src/notification-manager.cpp:154
+#, kde-format
+msgid "Incoming call"
+msgstr "Tocada entrant"
+
+#: src/notification-manager.cpp:161 src/notification-manager.cpp:175
 #, kde-format
 msgid "Accept"
 msgstr "Accepta"
 
-#: src/notification-manager.cpp:150
+#: src/notification-manager.cpp:167 src/notification-manager.cpp:175
 #, kde-format
 msgid "Reject"
 msgstr "Rebutja"
-
-#: src/notification-manager.cpp:157
-#, kde-format
-msgid "Incoming call"
-msgstr "Tocada entrant"

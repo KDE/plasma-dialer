@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-11 00:50+0000\n"
+"POT-Creation-Date: 2023-08-26 00:47+0000\n"
 "PO-Revision-Date: 2021-12-06 10:13+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 21.11.90\n"
 
-#: src/notification-manager.cpp:122 src/notification-manager.cpp:266
+#: src/notification-manager.cpp:122 src/notification-manager.cpp:293
 #, kde-format
 msgid "No Caller ID"
 msgstr ""
@@ -32,17 +32,17 @@ msgstr ""
 msgid "Missed call from %1"
 msgstr ""
 
-#: src/notification-manager.cpp:150
+#: src/notification-manager.cpp:154
+#, kde-format
+msgid "Incoming call"
+msgstr "Bejövő hívás"
+
+#: src/notification-manager.cpp:161 src/notification-manager.cpp:175
 #, kde-format
 msgid "Accept"
 msgstr "Fogadás"
 
-#: src/notification-manager.cpp:150
+#: src/notification-manager.cpp:167 src/notification-manager.cpp:175
 #, kde-format
 msgid "Reject"
 msgstr "Elutasítás"
-
-#: src/notification-manager.cpp:157
-#, kde-format
-msgid "Incoming call"
-msgstr "Bejövő hívás"

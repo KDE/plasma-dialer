@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-11 00:50+0000\n"
+"POT-Creation-Date: 2023-08-26 00:47+0000\n"
 "PO-Revision-Date: 2023-06-26 16:53-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: src/notification-manager.cpp:122 src/notification-manager.cpp:266
+#: src/notification-manager.cpp:122 src/notification-manager.cpp:293
 #, kde-format
 msgid "No Caller ID"
 msgstr "Sem ID de chamador"
@@ -32,17 +32,17 @@ msgstr "Chamada não atendida"
 msgid "Missed call from %1"
 msgstr "Chamada não atendida de %1"
 
-#: src/notification-manager.cpp:150
+#: src/notification-manager.cpp:154
+#, kde-format
+msgid "Incoming call"
+msgstr "Chamada recebida"
+
+#: src/notification-manager.cpp:161 src/notification-manager.cpp:175
 #, kde-format
 msgid "Accept"
 msgstr "Aceitar"
 
-#: src/notification-manager.cpp:150
+#: src/notification-manager.cpp:167 src/notification-manager.cpp:175
 #, kde-format
 msgid "Reject"
 msgstr "Rejeitar"
-
-#: src/notification-manager.cpp:157
-#, kde-format
-msgid "Incoming call"
-msgstr "Chamada recebida"

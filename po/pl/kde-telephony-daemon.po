@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-11 00:50+0000\n"
+"POT-Creation-Date: 2023-08-26 00:47+0000\n"
 "PO-Revision-Date: 2023-04-10 11:47+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: src/notification-manager.cpp:122 src/notification-manager.cpp:266
+#: src/notification-manager.cpp:122 src/notification-manager.cpp:293
 #, kde-format
 msgid "No Caller ID"
 msgstr "Nie ma ID dzwoniącego"
@@ -33,17 +33,17 @@ msgstr "Połączenie nieodebrane"
 msgid "Missed call from %1"
 msgstr "Nieodebrane połączenie od %1"
 
-#: src/notification-manager.cpp:150
+#: src/notification-manager.cpp:154
+#, kde-format
+msgid "Incoming call"
+msgstr "Rozmowa przychodząca"
+
+#: src/notification-manager.cpp:161 src/notification-manager.cpp:175
 #, kde-format
 msgid "Accept"
 msgstr "Przyjmij"
 
-#: src/notification-manager.cpp:150
+#: src/notification-manager.cpp:167 src/notification-manager.cpp:175
 #, kde-format
 msgid "Reject"
 msgstr "Odrzuć"
-
-#: src/notification-manager.cpp:157
-#, kde-format
-msgid "Incoming call"
-msgstr "Rozmowa przychodząca"
