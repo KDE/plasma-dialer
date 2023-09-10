@@ -1,0 +1,295 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the plasma-dialer package.
+#
+# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2023.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-dialer\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-03-14 00:48+0000\n"
+"PO-Revision-Date: 2023-09-09 19:47+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: ar\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 22.12.3\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "عبدالله الفضل"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "alfadhel.a@gmail.com"
+
+#: src/main.cpp:136 src/qml/main.qml:35
+#, kde-format
+msgid "Phone"
+msgstr "الهاتف"
+
+#: src/main.cpp:138
+#, kde-format
+msgid "Plasma phone dialer"
+msgstr "هاتف بلازما"
+
+#: src/main.cpp:140
+#, kde-format
+msgid "© 2015-2022 KDE Community"
+msgstr "© 2015-2022 مجتمع كِيدِي"
+
+#: src/main.cpp:143
+#, kde-format
+msgid "Alexey Andreyev"
+msgstr "أليكسي أندرييف"
+
+#: src/qml/call/AsymmetricAnswerSwipe.qml:86
+#, kde-format
+msgid "Swipe to accept"
+msgstr "اسحب للقبول"
+
+#: src/qml/call/CallPage.qml:35 src/qml/call/InCallInlineMessage.qml:14
+#, kde-format
+msgid "Active call list"
+msgstr "قائمة المكالمات النشطة"
+
+#: src/qml/call/CallPage.qml:108
+#, kde-format
+msgid "Incoming..."
+msgstr "قادم..."
+
+#: src/qml/call/CallPage.qml:111
+#, kde-format
+msgid "Calling..."
+msgstr "يتصل..."
+
+#: src/qml/call/CallPage.qml:134
+#, kde-format
+msgid "Keypad"
+msgstr "لوح المفاتيح"
+
+#: src/qml/call/CallPage.qml:154
+#, kde-format
+msgid "Speaker"
+msgstr "المكبر"
+
+#: src/qml/call/CallPage.qml:168
+#, kde-format
+msgid "Mute"
+msgstr "اكتم"
+
+#: src/qml/call/InCallInlineMessage.qml:18
+#, kde-format
+msgid "View"
+msgstr "عرض"
+
+#: src/qml/components/BottomToolbar.qml:81 src/qml/components/Sidebar.qml:38
+#, kde-format
+msgid "History"
+msgstr "السجل"
+
+#: src/qml/components/BottomToolbar.qml:93 src/qml/components/Sidebar.qml:56
+#: src/qml/ContactsPage.qml:19
+#, kde-format
+msgid "Contacts"
+msgstr "الأسماء"
+
+#: src/qml/components/BottomToolbar.qml:105 src/qml/components/Sidebar.qml:74
+#: src/qml/DialerPage.qml:27
+#, kde-format
+msgid "Dialer"
+msgstr "الهاتف"
+
+#: src/qml/components/Sidebar.qml:98 src/qml/ContactsPage.qml:31
+#: src/qml/DialerPage.qml:58 src/qml/HistoryPage.qml:43
+#: src/qml/settings/SettingsPage.qml:19
+#, kde-format
+msgid "Settings"
+msgstr "الإعدادات"
+
+#: src/qml/components/Sidebar.qml:117
+#, kde-format
+msgid "Quit"
+msgstr "أَنْهِ"
+
+#: src/qml/ContactsPage.qml:100
+#, kde-format
+msgid "Select number to call"
+msgstr "اختر رقم للاتصال"
+
+#: src/qml/ContactsPage.qml:109
+#, kde-format
+msgid "No contacts have a phone number set"
+msgstr "لم يعين رقم لأي جهة اتصال"
+
+#: src/qml/DialerPage.qml:81
+#, kde-format
+msgid "Modem devices are not found"
+msgstr "لا يوجد أجهزة مودم"
+
+#: src/qml/DialerPage.qml:90
+#, kde-format
+msgid "Voicemail number couldn't be found"
+msgstr "لا يوجد رقم البريد الصوتي"
+
+#: src/qml/history/HistoryDelegate.qml:61
+#, kde-format
+msgid "Duration: %1"
+msgstr "المدة: %1"
+
+#: src/qml/HistoryPage.qml:18
+#, kde-format
+msgid "Call History"
+msgstr "سجل المكالمة"
+
+#: src/qml/HistoryPage.qml:33
+#, kde-format
+msgid "Clear history"
+msgstr "مسح السجل"
+
+#: src/qml/HistoryPage.qml:83
+#, kde-format
+msgid "No recent calls"
+msgstr "لا يوجد مكالمات حديثة"
+
+#: src/qml/ImeiSheet.qml:18
+#, kde-format
+msgid "IMEI"
+msgid_plural "IMEIs"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: src/qml/ImeiSheet.qml:30
+#, kde-format
+msgid "No IMEIs found"
+msgstr "لا يوجد IMEI"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:20
+#, kde-format
+msgid "Adaptive Call Blocking"
+msgstr "حجب الاتصال المتكيف"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:54
+#, kde-format
+msgid "Ignore calls from unknown numbers"
+msgstr "تجاهل المكالمات من الأرقام غير المعروفة"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:70
+#, kde-format
+msgid "When a call is an incoming from an unknown number"
+msgstr "عندما تصل مكالمة من رقم غير معروف"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:74
+#, kde-format
+msgid "Immediately hang up"
+msgstr "أغلق مباشرة"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:79
+#, kde-format
+msgid "Ring without notification"
+msgstr "جرس دون تنبيه"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:84
+#, kde-format
+msgid "Ring with silent notification"
+msgstr "الجرس مع تنبيه صامت"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:100
+#, kde-format
+msgid "Allowed exceptions"
+msgstr "الاستثناءات المسموح بها"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:106
+#, kde-format
+msgid "Anonymous numbers"
+msgstr "الأرقام المجهولة"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:113
+#, kde-format
+msgid "Existing outgoing call to number"
+msgstr "مكالمة صادرة موجودة إلى رقم"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:120
+#, kde-format
+msgid "Callback within"
+msgstr "معاودة الاتصال في غضون"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:138
+#, kde-format
+msgid "minutes"
+msgstr "دقائق"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:156
+#, kde-format
+msgid "Allowed phone number exceptions"
+msgstr "استثناءات رقم الهاتف المسموح بها"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:168
+#: src/qml/settings/CallBlockSettingsPage.qml:193
+#, kde-format
+msgid "Add new pattern"
+msgstr "إضافة نمط جديد"
+
+#: src/qml/settings/SettingsPage.qml:57
+#, kde-format
+msgid "About"
+msgstr "حول"
+
+#: src/qml/settings/SettingsPage.qml:71
+#, kde-format
+msgid "Adaptive call blocking"
+msgstr "حجب الاتصال المتكيف"
+
+#: src/qml/settings/SettingsPage.qml:80
+#, kde-format
+msgid "Incoming call screen appearance"
+msgstr "ظهور شاشة المكالمة القادمة"
+
+#: src/qml/settings/SettingsPage.qml:81
+#, kde-format
+msgid "Buttons"
+msgstr "الأزرار"
+
+#: src/qml/settings/SettingsPage.qml:81
+#, kde-format
+msgid "Symmetric Swipe"
+msgstr "سحب متماثل"
+
+#: src/qml/settings/SettingsPage.qml:81
+#, kde-format
+msgid "Asymmetric Swipe"
+msgstr "سحب غير متماثل"
+
+#: src/qml/USSDSheet.qml:40
+#, kde-format
+msgid "USSD Error"
+msgstr "خطأ USSD"
+
+#: src/qml/USSDSheet.qml:40
+#, kde-format
+msgid "USSD Message"
+msgstr "رسالة USSD"
+
+#: src/qml/USSDSheet.qml:49
+#, kde-format
+msgid "Write response..."
+msgstr "كتابة رد..."
+
+#: src/qml/USSDSheet.qml:54
+#, kde-format
+msgid "Send"
+msgstr "أرسل"
+
+#: src/qml/USSDSheet.qml:70
+#, kde-format
+msgid "Cancel USSD session"
+msgstr "ألغ جلسة USSD"

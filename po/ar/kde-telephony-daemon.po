@@ -1,0 +1,49 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the plasma-dialer package.
+#
+# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2023.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-dialer\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-08-26 00:47+0000\n"
+"PO-Revision-Date: 2023-09-09 20:28+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: ar\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 22.12.3\n"
+
+#: src/notification-manager.cpp:122 src/notification-manager.cpp:293
+#, kde-format
+msgid "No Caller ID"
+msgstr "لا يوجد معرف متصل"
+
+#: src/notification-manager.cpp:132
+#, kde-format
+msgid "Missed call"
+msgstr "مكالمة فائتة"
+
+#: src/notification-manager.cpp:133
+#, kde-format
+msgid "Missed call from %1"
+msgstr "مكالمة فائتة من %1"
+
+#: src/notification-manager.cpp:154
+#, kde-format
+msgid "Incoming call"
+msgstr "مكالمة قادمة"
+
+#: src/notification-manager.cpp:161 src/notification-manager.cpp:175
+#, kde-format
+msgid "Accept"
+msgstr "اقبل"
+
+#: src/notification-manager.cpp:167 src/notification-manager.cpp:175
+#, kde-format
+msgid "Reject"
+msgstr "ارفض"
