@@ -6,6 +6,7 @@ SPDX-License-Identifier: CC0-1.0
 <component type="desktop-application">
   <id>org.kde.phone.dialer</id>
   <name>Phone</name>
+  <name xml:lang="ar">الهاتف</name>
   <name xml:lang="az">Telefon</name>
   <name xml:lang="ca">Telèfon</name>
   <name xml:lang="ca-valencia">Telèfon</name>
@@ -40,6 +41,7 @@ SPDX-License-Identifier: CC0-1.0
   <name xml:lang="x-test">xxPhonexx</name>
   <name xml:lang="zh-CN">电话</name>
   <summary>Send and receive phone calls</summary>
+  <summary xml:lang="ar">أرسل واستقبل مكالمات الهاتف</summary>
   <summary xml:lang="az">Zəng etmək və zəngləri qəbul etmək</summary>
   <summary xml:lang="ca">Envia i rep trucades de telèfon</summary>
   <summary xml:lang="ca-valencia">Envia i rep tocades de telèfon</summary>
@@ -75,6 +77,7 @@ SPDX-License-Identifier: CC0-1.0
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0-only</project_license>
   <developer_name>KDE Community</developer_name>
+  <developer_name xml:lang="ar">مجتمع كِيدِي</developer_name>
   <developer_name xml:lang="az">KDE İcması</developer_name>
   <developer_name xml:lang="ca">La comunitat KDE</developer_name>
   <developer_name xml:lang="ca-valencia">La comunitat KDE</developer_name>
@@ -116,6 +119,7 @@ SPDX-License-Identifier: CC0-1.0
   </recommends>
   <description>
     <p>The Phone app lets you easily send and receive phone calls from your smartphone.</p>
+    <p xml:lang="ar">تطبيق الهاتف يتيح لك إرسال واستقبال المكالمات من هاتفك بسهولة.</p>
     <p xml:lang="az">Telefon, smartfonunuzdan asanlıqla zəng etməyə və zəngləri qəbul etməyə imkan verir.</p>
     <p xml:lang="ca">L'aplicació Telèfon permet enviar i rebre fàcilment trucades de telèfon en el vostre telèfon intel·ligent.</p>
     <p xml:lang="ca-valencia">L'aplicació Telèfon permet enviar i rebre amb facilitat tocades de telèfon en el vostre telèfon intel·ligent.</p>
@@ -147,6 +151,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="x-test">xxThe Phone app lets you easily send and receive phone calls from your smartphone.xx</p>
     <p xml:lang="zh-CN">电话应用让您可以轻松地拨打和接听智能手机的电话。</p>
     <p>Features:</p>
+    <p xml:lang="ar">المزايا:</p>
     <p xml:lang="az">İmkanlar:</p>
     <p xml:lang="ca">Característiques:</p>
     <p xml:lang="ca-valencia">Característiques:</p>
@@ -182,6 +187,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="zh-CN">程序功能：</p>
     <ul>
       <li>See your call history and easily call the same number again</li>
+      <li xml:lang="ar">شاهد سجل مكالماتك واتصل بنفس الرقم مرة أخرى بسهولة</li>
       <li xml:lang="az">Zəng tarixçəsinə baxın və həmin nömrəyə asanlıqla yenidən zəng edin</li>
       <li xml:lang="ca">Vegeu l'historial de trucades i torneu a trucar al mateix número amb facilitat</li>
       <li xml:lang="ca-valencia">Vegeu l'historial de tocades i torneu a tocar al mateix número amb facilitat</li>
@@ -213,6 +219,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="x-test">xxSee your call history and easily call the same number againxx</li>
       <li xml:lang="zh-CN">查看通话记录，并轻松地再次呼叫相同的号码</li>
       <li>Manage your contacts that have a phone number set</li>
+      <li xml:lang="ar">أدر اتصالات التي لديها رقم هاتف</li>
       <li xml:lang="az">Telefon nömrəsini saxladığınız şəxslər siyahısını idarə edin</li>
       <li xml:lang="ca">Gestioneu els contactes que tenen un número de telèfon establert</li>
       <li xml:lang="ca-valencia">Gestioneu els contactes que tenen un número de telèfon establit</li>
@@ -250,6 +257,7 @@ SPDX-License-Identifier: CC0-1.0
     <screenshot type="default">
       <image>https://cdn.kde.org/screenshots/plasma-dialer/plasma-dialer.png</image>
       <caption>The dialer page</caption>
+      <caption xml:lang="ar">صفحة الهاتف</caption>
       <caption xml:lang="az">Nömrə yığma səhifəsi</caption>
       <caption xml:lang="ca">La pàgina del marcador</caption>
       <caption xml:lang="ca-valencia">La pàgina del marcador</caption>
@@ -284,6 +292,7 @@ SPDX-License-Identifier: CC0-1.0
     <screenshot>
       <image>https://cdn.kde.org/screenshots/plasma-dialer/calling-voicemail.png</image>
       <caption>Calling voicemail</caption>
+      <caption xml:lang="ar">جاري مكالمة البريد الصوتي</caption>
       <caption xml:lang="az">Səsli poçt nömrəsinə zəng edin</caption>
       <caption xml:lang="ca">Trucada a la bústia de veu</caption>
       <caption xml:lang="ca-valencia">Tocada a la bústia de veu</caption>
