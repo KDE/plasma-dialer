@@ -1,5 +1,6 @@
 [Desktop Entry]
 Comment=Plasma phone dialer
+Comment[ar]=هاتف بلازما
 Comment[az]=Plasma nömrə yığımı
 Comment[ca]=Marcador de telèfon del Plasma
 Comment[ca@valencia]=Marcador de telèfon de Plasma
@@ -37,6 +38,7 @@ Comment[x-test]=xxPlasma phone dialerxx
 Comment[zh_CN]=Plasma 电话拨号器
 Comment[zh_TW]=Plasma 電話撥號器
 Keywords=Telephone;Call;Phone;Dial;Dialer;PSTN;
+Keywords[ar]=هاتف;مكالمة;اتصال;متصل;PSTN;
 Keywords[az]=Telefon;Zəng;Yığım;Nömrəyığan;PSTN
 Keywords[ca]=Telèfon;Trucada;Marcar;Marcador;PSTN;
 Keywords[ca@valencia]=Telèfon;Tocada;Marcar;Marcador;PSTN;
@@ -65,6 +67,7 @@ Keywords[vi]=Telephone;Call;Phone;Dial;Dialer;PSTN;điện thoại;gọi;quay s�
 Keywords[x-test]=xxTelephonexx;xxCallxx;xxPhonexx;xxDialxx;xxDialerxx;xxPSTNxx;
 Keywords[zh_CN]=Telephone;Call;Phone;Dial;Dialer;PSTN;电话;通话;拨号;
 Name=Phone
+Name[ar]=الهاتف
 Name[az]=Telefon
 Name[ca]=Telèfon
 Name[ca@valencia]=Telèfon

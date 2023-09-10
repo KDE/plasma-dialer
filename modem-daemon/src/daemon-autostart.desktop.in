@@ -1,5 +1,6 @@
 [Desktop Entry]
 Comment=Qt Modem Daemon to handle @MODEM_SUBSYSTEM@ events
+Comment[ar]=خدمة مودم كيوت للتعامل مع أحداث @MODEM_SUBSYSTEM@
 Comment[az]=Qt Modem Deamon, @MODEM_SUBSYSTEM@ fəaliyyətlərini idarə edəcək
 Comment[ca]=Dimoni de mòdem Qt per a gestionar esdeveniments @MODEM_SUBSYSTEM@
 Comment[ca@valencia]=Dimoni de mòdem Qt per a gestionar esdeveniments @MODEM_SUBSYSTEM@
@@ -31,6 +32,7 @@ Comment[vi]=Trình nền bộ điều giải Qt để xử lí các sự kiện 
 Comment[x-test]=xxQt Modem Daemon to handle @MODEM_SUBSYSTEM@ eventsxx
 Comment[zh_CN]=用于处理 @MODEM_SUBSYSTEM@ 事件的 Qt 调制解调器守护进程
 Name=Modem Daemon Service
+Name[ar]=خدمة المودم
 Name[az]=Modemin arxa plan xidməti
 Name[ca]=Servei de domini de mòdem
 Name[ca@valencia]=Servei de domini de mòdem

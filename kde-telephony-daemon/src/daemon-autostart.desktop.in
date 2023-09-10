@@ -1,5 +1,6 @@
 [Desktop Entry]
 Comment=KDE Daemon to handle modem daemon events
+Comment[ar]=خدمة كيدي للتعامل مع أحداث المودم
 Comment[az]=KDE Deamon, modemin arxa plandakı fəaliyyətini idarə edəcək
 Comment[ca]=Dimoni del KDE per a gestionar esdeveniments de dimoni de mòdem
 Comment[ca@valencia]=Dimoni de KDE per a gestionar esdeveniments de dimoni de mòdem
@@ -31,6 +32,7 @@ Comment[vi]=Trình nền KDE để xử lí các sự kiện trình nền bộ �
 Comment[x-test]=xxKDE Daemon to handle modem daemon eventsxx
 Comment[zh_CN]=用于处理调制解调器守护事件的 KDE 守护进程
 Name=Telephony Daemon Service
+Name[ar]=خدمة المهاتفة
 Name[az]=Telefon arxa plan xidməti
 Name[ca]=Servei de domini de telefonia
 Name[ca@valencia]=Servei de domini de telefonia

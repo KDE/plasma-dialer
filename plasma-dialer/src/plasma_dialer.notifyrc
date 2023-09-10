@@ -1,6 +1,7 @@
 [Global]
 IconName=call-start
 Comment=Phone
+Comment[ar]=الهاتف
 Comment[az]=Telefon
 Comment[ca]=Telèfon
 Comment[ca@valencia]=Telèfon
@@ -43,6 +44,7 @@ Comment[zh_TW]=電話
 
 [Event/callMissed]
 Name=Missed Call
+Name[ar]=مكالمة فائتة
 Name[az]=Buraxılmış Zəng
 Name[ca]=Trucada perduda
 Name[ca@valencia]=Tocada perduda
@@ -82,6 +84,7 @@ Name[x-test]=xxMissed Callxx
 Name[zh_CN]=未接来电
 Name[zh_TW]=未接來電
 Comment=A call has been missed
+Comment[ar]=فاتتك مكالمة
 Comment[az]=Zəng buraxıldı
 Comment[ca]=S'ha perdut una trucada
 Comment[ca@valencia]=S'ha perdut una tocada
@@ -125,6 +128,7 @@ Action=Popup
 
 [Event/ringing]
 Name=Ringing
+Name[ar]=الجرس يرن
 Name[az]=Zəng çalır
 Name[ca]=Sonant
 Name[ca@valencia]=Sonant
@@ -164,6 +168,7 @@ Name[x-test]=xxRingingxx
 Name[zh_CN]=正在拨号
 Name[zh_TW]=鈴響
 Comment=The phone is ringing
+Comment[ar]=جرس الهاتف يرن
 Comment[az]=Telefon zəng çalır
 Comment[ca]=El telèfon està sonant
 Comment[ca@valencia]=El telèfon està sonant
@@ -208,6 +213,7 @@ Sound=Oxygen-Im-Phone-Ring.ogg
 
 [Event/ringing-silent]
 Name=Ringing-silent
+Name[ar]=الجرس-صامت
 Name[az]=Zəng-səssiz
 Name[ca]=Trucada en silenci
 Name[ca@valencia]=Tocada en silenci
@@ -238,6 +244,7 @@ Action=Popup
 
 [Event/ringing-without-popup]
 Name=Ringing-without-popup
+Name[ar]=جرس-دون-منبثقة
 Name[az]=Zəng-ani pəncərə olmadan
 Name[ca]=Trucada sense finestra emergent
 Name[ca@valencia]=Tocada sense finestra emergent
