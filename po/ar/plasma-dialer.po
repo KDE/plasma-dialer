@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-14 00:48+0000\n"
+"POT-Creation-Date: 2023-09-14 00:46+0000\n"
 "PO-Revision-Date: 2023-09-09 19:47+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -107,7 +107,7 @@ msgstr "الهاتف"
 
 #: src/qml/components/Sidebar.qml:98 src/qml/ContactsPage.qml:31
 #: src/qml/DialerPage.qml:58 src/qml/HistoryPage.qml:43
-#: src/qml/settings/SettingsPage.qml:19
+#: src/qml/settings/SettingsPage.qml:20
 #, kde-format
 msgid "Settings"
 msgstr "الإعدادات"
@@ -173,98 +173,98 @@ msgstr[5] ""
 msgid "No IMEIs found"
 msgstr "لا يوجد IMEI"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:20
+#: src/qml/settings/CallBlockSettingsPage.qml:21
 #, kde-format
 msgid "Adaptive Call Blocking"
 msgstr "حجب الاتصال المتكيف"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:54
+#: src/qml/settings/CallBlockSettingsPage.qml:39
 #, kde-format
 msgid "Ignore calls from unknown numbers"
 msgstr "تجاهل المكالمات من الأرقام غير المعروفة"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:70
+#: src/qml/settings/CallBlockSettingsPage.qml:45
 #, kde-format
 msgid "When a call is an incoming from an unknown number"
 msgstr "عندما تصل مكالمة من رقم غير معروف"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:74
+#: src/qml/settings/CallBlockSettingsPage.qml:53
 #, kde-format
 msgid "Immediately hang up"
 msgstr "أغلق مباشرة"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:79
+#: src/qml/settings/CallBlockSettingsPage.qml:58
 #, kde-format
 msgid "Ring without notification"
 msgstr "جرس دون تنبيه"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:84
+#: src/qml/settings/CallBlockSettingsPage.qml:63
 #, kde-format
 msgid "Ring with silent notification"
 msgstr "الجرس مع تنبيه صامت"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:100
+#: src/qml/settings/CallBlockSettingsPage.qml:71
 #, kde-format
 msgid "Allowed exceptions"
 msgstr "الاستثناءات المسموح بها"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:106
+#: src/qml/settings/CallBlockSettingsPage.qml:80
 #, kde-format
 msgid "Anonymous numbers"
 msgstr "الأرقام المجهولة"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:113
+#: src/qml/settings/CallBlockSettingsPage.qml:87
 #, kde-format
 msgid "Existing outgoing call to number"
 msgstr "مكالمة صادرة موجودة إلى رقم"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:120
+#: src/qml/settings/CallBlockSettingsPage.qml:94
 #, kde-format
 msgid "Callback within"
 msgstr "معاودة الاتصال في غضون"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:138
+#: src/qml/settings/CallBlockSettingsPage.qml:112
 #, kde-format
 msgid "minutes"
 msgstr "دقائق"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:156
+#: src/qml/settings/CallBlockSettingsPage.qml:122
 #, kde-format
 msgid "Allowed phone number exceptions"
 msgstr "استثناءات رقم الهاتف المسموح بها"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:168
-#: src/qml/settings/CallBlockSettingsPage.qml:193
+#: src/qml/settings/CallBlockSettingsPage.qml:142
+#: src/qml/settings/CallBlockSettingsPage.qml:171
 #, kde-format
 msgid "Add new pattern"
 msgstr "إضافة نمط جديد"
 
-#: src/qml/settings/SettingsPage.qml:57
+#: src/qml/settings/SettingsPage.qml:41
 #, kde-format
 msgid "About"
 msgstr "حول"
 
-#: src/qml/settings/SettingsPage.qml:71
+#: src/qml/settings/SettingsPage.qml:50
 #, kde-format
 msgid "Adaptive call blocking"
 msgstr "حجب الاتصال المتكيف"
 
-#: src/qml/settings/SettingsPage.qml:80
+#: src/qml/settings/SettingsPage.qml:59
 #, kde-format
 msgid "Incoming call screen appearance"
 msgstr "ظهور شاشة المكالمة القادمة"
 
-#: src/qml/settings/SettingsPage.qml:81
+#: src/qml/settings/SettingsPage.qml:60
 #, kde-format
 msgid "Buttons"
 msgstr "الأزرار"
 
-#: src/qml/settings/SettingsPage.qml:81
+#: src/qml/settings/SettingsPage.qml:60
 #, kde-format
 msgid "Symmetric Swipe"
 msgstr "سحب متماثل"
 
-#: src/qml/settings/SettingsPage.qml:81
+#: src/qml/settings/SettingsPage.qml:60
 #, kde-format
 msgid "Asymmetric Swipe"
 msgstr "سحب غير متماثل"

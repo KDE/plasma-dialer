@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-14 00:48+0000\n"
+"POT-Creation-Date: 2023-09-14 00:46+0000\n"
 "PO-Revision-Date: 2023-07-31 11:04+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -106,7 +106,7 @@ msgstr "Uppringning"
 
 #: src/qml/components/Sidebar.qml:98 src/qml/ContactsPage.qml:31
 #: src/qml/DialerPage.qml:58 src/qml/HistoryPage.qml:43
-#: src/qml/settings/SettingsPage.qml:19
+#: src/qml/settings/SettingsPage.qml:20
 #, kde-format
 msgid "Settings"
 msgstr "Inställningar"
@@ -168,98 +168,98 @@ msgstr[1] "IMEI:er"
 msgid "No IMEIs found"
 msgstr "Inga IMEI:er hittades"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:20
+#: src/qml/settings/CallBlockSettingsPage.qml:21
 #, kde-format
 msgid "Adaptive Call Blocking"
 msgstr "Adaptiv samtalsblockering"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:54
+#: src/qml/settings/CallBlockSettingsPage.qml:39
 #, kde-format
 msgid "Ignore calls from unknown numbers"
 msgstr "Ignorera samtal från okända nummer"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:70
+#: src/qml/settings/CallBlockSettingsPage.qml:45
 #, kde-format
 msgid "When a call is an incoming from an unknown number"
 msgstr "När ett samtal kommer från ett okänt nummer"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:74
+#: src/qml/settings/CallBlockSettingsPage.qml:53
 #, kde-format
 msgid "Immediately hang up"
 msgstr "Lägg på omedelbart"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:79
+#: src/qml/settings/CallBlockSettingsPage.qml:58
 #, kde-format
 msgid "Ring without notification"
 msgstr "Ring utan underrättelse"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:84
+#: src/qml/settings/CallBlockSettingsPage.qml:63
 #, kde-format
 msgid "Ring with silent notification"
 msgstr "Ring med tyst underrättelse"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:100
+#: src/qml/settings/CallBlockSettingsPage.qml:71
 #, kde-format
 msgid "Allowed exceptions"
 msgstr "Tillåtna undantag"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:106
+#: src/qml/settings/CallBlockSettingsPage.qml:80
 #, kde-format
 msgid "Anonymous numbers"
 msgstr "Anonyma nummer"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:113
+#: src/qml/settings/CallBlockSettingsPage.qml:87
 #, kde-format
 msgid "Existing outgoing call to number"
 msgstr "Tidigare uppringda samtal till nummer"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:120
+#: src/qml/settings/CallBlockSettingsPage.qml:94
 #, kde-format
 msgid "Callback within"
 msgstr "Ring tillbaka inom"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:138
+#: src/qml/settings/CallBlockSettingsPage.qml:112
 #, kde-format
 msgid "minutes"
 msgstr "minuter"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:156
+#: src/qml/settings/CallBlockSettingsPage.qml:122
 #, kde-format
 msgid "Allowed phone number exceptions"
 msgstr "Tillåtna telefonnummerundantag"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:168
-#: src/qml/settings/CallBlockSettingsPage.qml:193
+#: src/qml/settings/CallBlockSettingsPage.qml:142
+#: src/qml/settings/CallBlockSettingsPage.qml:171
 #, kde-format
 msgid "Add new pattern"
 msgstr "Lägg till nytt mönster"
 
-#: src/qml/settings/SettingsPage.qml:57
+#: src/qml/settings/SettingsPage.qml:41
 #, kde-format
 msgid "About"
 msgstr "Om"
 
-#: src/qml/settings/SettingsPage.qml:71
+#: src/qml/settings/SettingsPage.qml:50
 #, kde-format
 msgid "Adaptive call blocking"
 msgstr "Adaptiv samtalsblockering"
 
-#: src/qml/settings/SettingsPage.qml:80
+#: src/qml/settings/SettingsPage.qml:59
 #, kde-format
 msgid "Incoming call screen appearance"
 msgstr "Skärmutseende för inkommande samtal"
 
-#: src/qml/settings/SettingsPage.qml:81
+#: src/qml/settings/SettingsPage.qml:60
 #, kde-format
 msgid "Buttons"
 msgstr "Knappar"
 
-#: src/qml/settings/SettingsPage.qml:81
+#: src/qml/settings/SettingsPage.qml:60
 #, kde-format
 msgid "Symmetric Swipe"
 msgstr "Symmetriskt svep"
 
-#: src/qml/settings/SettingsPage.qml:81
+#: src/qml/settings/SettingsPage.qml:60
 #, kde-format
 msgid "Asymmetric Swipe"
 msgstr "Asymmetriskt svep"
