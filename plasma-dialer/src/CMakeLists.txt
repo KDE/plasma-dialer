@@ -68,4 +68,12 @@ endif() # DIALER_BUILD_SHELL_OVERLAY
 
 kconfig_add_kcfg_files(plasmaphonedialer config.kcfgc GENERATE_MOC)
 install(TARGETS plasmaphonedialer ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
-install(FILES plasma_dialer.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})
+set(RINGING_SOUND "phone-incoming-call")
+set(RINGING_WITHOUT_POPUP_SOUND "phone-incoming-call")
+if (QT_MAJOR_VERSION EQUAL "5")
+    set(RINGING_SOUND "Oxygen-Im-Phone-Ring.ogg")
+    set(RINGING_WITHOUT_POPUP_SOUND "Oxygen-Im-Phone-Ring.ogg")
+endif()
+
+configure_file(plasma_dialer.notifyrc.in ${CMAKE_CURRENT_BINARY_DIR}/plasma_dialer.notifyrc)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/plasma_dialer.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})

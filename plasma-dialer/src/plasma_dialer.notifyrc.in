@@ -209,7 +209,7 @@ Comment[x-test]=xxThe phone is ringingxx
 Comment[zh_CN]=手机正在拨号
 Comment[zh_TW]=手機正在鈴響
 Action=Popup|Sound
-Sound=Oxygen-Im-Phone-Ring.ogg
+Sound=@RINGING_SOUND@
 
 [Event/ringing-silent]
 Name=Ringing-silent
@@ -272,4 +272,4 @@ Name[vi]=Đổ chuông không kèm ô bật lên
 Name[x-test]=xxRinging-without-popupxx
 Name[zh_CN]=响铃-无弹窗
 Action=Sound
-Sound=Oxygen-Im-Phone-Ring.ogg
+Sound=@RINGING_WITHOUT_POPUP_SOUND@
