@@ -8,32 +8,46 @@
 #include <QDebug>
 
 #include "config.h"
-#include "phonenumbers/asyoutypeformatter.h"
-#include "phonenumbers/phonenumberutil.h"
 
 DialerUtils::DialerUtils(QObject *parent)
     : QObject(parent)
 {
 }
 
-void DialerUtils::fetchSpeakerMode()
+bool DialerUtils::mute()
 {
-    Q_EMIT speakerModeFetched();
+    return _mute;
 }
 
-void DialerUtils::fetchMute()
+bool DialerUtils::speakerMode()
 {
-    Q_EMIT muteFetched();
+    return _speakerMode;
 }
 
 void DialerUtils::setSpeakerMode(bool enabled)
 {
-    Q_EMIT speakerModeChanged(enabled);
+    if (_speakerMode != enabled) {
+        _speakerMode = enabled;
+        Q_EMIT speakerModeChanged(_speakerMode);
+    }
+}
+
+void DialerUtils::fetchMute()
+{
+    Q_EMIT muteRequested();
+}
+
+void DialerUtils::fetchSpeakerMode()
+{
+    Q_EMIT speakerModeRequested();
 }
 
 void DialerUtils::setMute(bool muted)
 {
-    Q_EMIT muteChanged(muted);
+    if (_mute != muted) {
+        _mute = muted;
+        Q_EMIT muteChanged(_mute);
+    }
 }
 
 void DialerUtils::syncSettings()

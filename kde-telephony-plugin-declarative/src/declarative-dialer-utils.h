@@ -11,30 +11,15 @@
 class DeclarativeDialerUtils : public org::kde::telephony::DialerUtils
 {
     Q_OBJECT
-    Q_PROPERTY(bool mute READ mute WRITE setMute NOTIFY declarativeMuteChanged)
-    Q_PROPERTY(bool speakerMode READ speakerMode WRITE setSpeakerMode NOTIFY declarativeSpeakerModeChanged)
+    Q_PROPERTY(bool mute READ mute WRITE setMute NOTIFY muteChanged)
+    Q_PROPERTY(bool speakerMode READ speakerMode WRITE setSpeakerMode NOTIFY speakerModeChanged)
 
 public:
     DeclarativeDialerUtils(QObject *parent = nullptr);
-
-    Q_INVOKABLE void setSpeakerMode(bool enabled);
-    Q_INVOKABLE void setMute(bool muted);
-    bool mute() const;
-    bool speakerMode() const;
     Q_INVOKABLE void syncSettings();
 
 Q_SIGNALS:
-    void declarativeMuteChanged(bool mute);
-    void declarativeSpeakerModeChanged(bool speakerMode);
-
-private Q_SLOTS:
-    void _onMuteChanged(bool mute);
-    void _onSpeakerModeChanged(bool speakerMode);
-
-private:
-    bool _mute;
-    bool _speakerMode;
-
-    void _fetchMute();
-    void _fetchSpeakerMode();
+    // empty parameter list is a moc limitation for NOTIFY
+    void muteChanged();
+    void speakerModeChanged();
 };

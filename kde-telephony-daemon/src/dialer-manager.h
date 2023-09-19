@@ -31,10 +31,10 @@ private Q_SLOTS:
                      const QString communicationWith);
     void onFetchedCallsChanged(const DialerTypes::CallDataVector &fetchedCalls);
     void onCallStateChanged(const DialerTypes::CallData &callData);
-    void onSpeakerModeFetched();
-    void onMuteFetched();
-    void onSetSpeakerModeRequested(bool enabled);
-    void onSetMuteRequested(bool muted);
+    void onUtilsMuteChanged(bool muted);
+    void onUtilsSpeakerModeChanged(bool enabled);
+    void onUtilsMuteRequested();
+    void onUtilsSpeakerModeRequested();
 
 private:
     void pauseMedia();

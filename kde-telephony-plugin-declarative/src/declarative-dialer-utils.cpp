@@ -14,77 +14,11 @@ DeclarativeDialerUtils::DeclarativeDialerUtils(QObject *parent)
         qDebug() << Q_FUNC_INFO << "Could not initiate DialerUtils interface";
         return;
     }
-
-    connect(this, &org::kde::telephony::DialerUtils::muteChanged, this, &DeclarativeDialerUtils::_onMuteChanged);
-    connect(this, &org::kde::telephony::DialerUtils::speakerModeChanged, this, &DeclarativeDialerUtils::_onSpeakerModeChanged);
-
-    _fetchMute();
-    _fetchSpeakerMode();
-}
-
-void DeclarativeDialerUtils::setSpeakerMode(bool enabled)
-{
-    QDBusPendingReply<> reply = org::kde::telephony::DialerUtils::setSpeakerMode(enabled);
-    reply.waitForFinished();
-    if (reply.isError()) {
-        qDebug() << Q_FUNC_INFO << reply.error();
-    }
-}
-
-void DeclarativeDialerUtils::setMute(bool muted)
-{
-    QDBusPendingReply<> reply = org::kde::telephony::DialerUtils::setMute(muted);
-    reply.waitForFinished();
-    if (reply.isError()) {
-        qDebug() << Q_FUNC_INFO << reply.error();
-    }
-}
-
-bool DeclarativeDialerUtils::mute() const
-{
-    return _mute;
-}
-
-bool DeclarativeDialerUtils::speakerMode() const
-{
-    return _speakerMode;
-}
-
-void DeclarativeDialerUtils::_fetchMute()
-{
-    QDBusPendingReply<> reply = org::kde::telephony::DialerUtils::fetchMute();
-    reply.waitForFinished();
-    if (reply.isError()) {
-        qDebug() << Q_FUNC_INFO << reply.error();
-    }
-}
-
-void DeclarativeDialerUtils::_fetchSpeakerMode()
-{
-    QDBusPendingReply<> reply = org::kde::telephony::DialerUtils::fetchSpeakerMode();
-    reply.waitForFinished();
-    if (reply.isError()) {
-        qDebug() << Q_FUNC_INFO << reply.error();
-    }
-}
-
-void DeclarativeDialerUtils::_onMuteChanged(bool mute)
-{
-    if (_mute != mute) {
-        _mute = mute;
-        Q_EMIT declarativeMuteChanged(_mute);
-    }
-}
-
-void DeclarativeDialerUtils::_onSpeakerModeChanged(bool speakerMode)
-{
-    if (_speakerMode != speakerMode) {
-        _speakerMode = speakerMode;
-        Q_EMIT declarativeSpeakerModeChanged(_speakerMode);
-    }
+    connect(this, &org::kde::telephony::DialerUtils::muteChanged, this, &DeclarativeDialerUtils::muteChanged);
+    connect(this, &org::kde::telephony::DialerUtils::speakerModeChanged, this, &DeclarativeDialerUtils::speakerModeChanged);
 }
 
 void DeclarativeDialerUtils::syncSettings()
 {
-    QDBusPendingReply<> reply = org::kde::telephony::DialerUtils::syncSettings();
+    org::kde::telephony::DialerUtils::syncSettings();
 }
