@@ -10,13 +10,15 @@
 
 #include "active-call-model.h"
 #include "call-history-model.h"
-#include "callutilsinterface.h"
+#include "declarative-call-utils.h"
 #include "declarative-contact-utils.h"
 #include "declarative-device-utils.h"
 #include "declarative-dialer-utils.h"
 #include "declarative-ussd-utils.h"
 
 static org::kde::telephony::DeviceUtils *deviceUtils = nullptr;
+
+static DeclarativeCallUtils *declarativeCallUtils = nullptr;
 
 static QObject *ussdUtilsTypeProvider(QQmlEngine *engine, QJSEngine *scriptEngine)
 {
@@ -48,8 +50,11 @@ static QObject *callUtilsTypeProvider(QQmlEngine *engine, QJSEngine *scriptEngin
     Q_UNUSED(engine)
     Q_UNUSED(scriptEngine)
 
-    auto callUtils = new DeclarativeCallUtils();
-    return callUtils;
+    if (declarativeCallUtils == nullptr) {
+        declarativeCallUtils = new DeclarativeCallUtils();
+    }
+
+    return declarativeCallUtils;
 }
 
 static QAbstractListModel *callHistoryModelTypeProvider(QQmlEngine *engine, QJSEngine *scriptEngine)
@@ -67,6 +72,13 @@ static QAbstractListModel *activeCallModelTypeProvider(QQmlEngine *engine, QJSEn
     Q_UNUSED(scriptEngine)
 
     auto activeCallModel = new ActiveCallModel();
+
+    if (declarativeCallUtils == nullptr) {
+        declarativeCallUtils = new DeclarativeCallUtils();
+    }
+    auto callUtils = qobject_cast<org::kde::telephony::CallUtils *>(declarativeCallUtils);
+
+    activeCallModel->setCallUtils(callUtils);
     return activeCallModel;
 }
 
@@ -94,24 +106,27 @@ void KTelephonyPluginDeclarative::registerTypes(const char *uri)
         return;
     }
 
+    int major = 1;
+    int minor = 0;
+
     DialerTypes::registerMetaTypes();
     qmlRegisterAnonymousType<QAbstractItemModel>(uri, 1);
-    qmlRegisterUncreatableMetaObject(DialerTypes::staticMetaObject, uri, 1, 0, "DialerTypes", QStringLiteral("is enum"));
+    qmlRegisterUncreatableMetaObject(DialerTypes::staticMetaObject, uri, major, minor, "DialerTypes", QStringLiteral("is enum"));
 
     // calls-daemon
 
-    qmlRegisterSingletonType<DeclarativeUssdUtils>(uri, 1, 0, "UssdUtils", ussdUtilsTypeProvider);
-    qmlRegisterSingletonType<DeclarativeDeviceUtils>(uri, 1, 0, "DeviceUtils", deviceUtilsTypeProvider);
-    qmlRegisterSingletonType<DeclarativeCallUtils>(uri, 1, 0, "CallUtils", callUtilsTypeProvider);
+    qmlRegisterSingletonType<DeclarativeUssdUtils>(uri, major, minor, "UssdUtils", ussdUtilsTypeProvider);
+    qmlRegisterSingletonType<DeclarativeDeviceUtils>(uri, major, minor, "DeviceUtils", deviceUtilsTypeProvider);
+    qmlRegisterSingletonType<DeclarativeCallUtils>(uri, major, minor, "CallUtils", callUtilsTypeProvider);
 
-    qmlRegisterSingletonType<CallHistoryModel>(uri, 1, 0, "CallHistoryModel", callHistoryModelTypeProvider);
-    qmlRegisterSingletonType<ActiveCallModel>(uri, 1, 0, "ActiveCallModel", activeCallModelTypeProvider);
+    qmlRegisterSingletonType<CallHistoryModel>(uri, major, minor, "CallHistoryModel", callHistoryModelTypeProvider);
+    qmlRegisterSingletonType<ActiveCallModel>(uri, major, minor, "ActiveCallModel", activeCallModelTypeProvider);
 
     // plugin-only KContacts-related utils
     qRegisterMetaType<KContacts::PhoneNumber>();
 
     // kde-telephony-daemon
 
-    qmlRegisterSingletonType<DeclarativeDialerUtils>(uri, 1, 0, "DialerUtils", dialerUtilsTypeProvider);
-    qmlRegisterSingletonType<DeclarativeContactUtils>(uri, 1, 0, "ContactUtils", contactUtilsTypeProvider);
+    qmlRegisterSingletonType<DeclarativeDialerUtils>(uri, major, minor, "DialerUtils", dialerUtilsTypeProvider);
+    qmlRegisterSingletonType<DeclarativeContactUtils>(uri, major, minor, "ContactUtils", contactUtilsTypeProvider);
 }

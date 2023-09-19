@@ -67,10 +67,30 @@ void CallUtils::sendDtmf(const QString &deviceUni, const QString &callUni, const
 
 void CallUtils::fetchCalls()
 {
-    Q_EMIT fetchedCalls();
+    Q_EMIT callsRequested();
 }
 
-void CallUtils::setFetchedCalls(const DialerTypes::CallDataVector &fetchedCalls)
+void CallUtils::setCalls(const DialerTypes::CallDataVector &calls)
 {
-    Q_EMIT fetchedCallsChanged(fetchedCalls);
+    Q_EMIT callsChanged(calls);
+}
+
+void CallUtils::addCall(const QString &deviceUni,
+                        const QString &callUni,
+                        const DialerTypes::CallDirection &callDirection,
+                        const DialerTypes::CallState &callState,
+                        const DialerTypes::CallStateReason &callStateReason,
+                        const QString communicationWith)
+{
+    Q_EMIT callAdded(deviceUni, callUni, callDirection, callState, callStateReason, communicationWith);
+}
+
+void CallUtils::deleteCall(const QString &deviceUni, const QString &callUni)
+{
+    Q_EMIT callDeleted(deviceUni, callUni);
+}
+
+void CallUtils::setCallState(const DialerTypes::CallData &callData)
+{
+    callStateChanged(callData);
 }

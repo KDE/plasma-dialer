@@ -51,6 +51,7 @@ QString ModemController::equipmentIdentifier(const QString &deviceUni)
 
 QString ModemController::deviceUni(const QString &equipmentIdentifier)
 {
+    // TODO: improve deviceUni getter
     for (const auto &deviceUni : qAsConst(_deviceUniList)) {
         if (equipmentIdentifier == ModemController::equipmentIdentifier(deviceUni)) {
             return deviceUni;

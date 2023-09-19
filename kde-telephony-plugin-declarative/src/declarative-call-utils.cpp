@@ -16,49 +16,24 @@ DeclarativeCallUtils::DeclarativeCallUtils(QObject *parent)
     }
 }
 
-void DeclarativeCallUtils::fetchCalls()
-{
-    QDBusPendingReply<> reply = org::kde::telephony::CallUtils::fetchCalls();
-    reply.waitForFinished();
-    if (reply.isError()) {
-        qDebug() << Q_FUNC_INFO << reply.error();
-    }
-}
-
 void DeclarativeCallUtils::accept(const QString &deviceUni, const QString &callUni)
 {
-    QDBusPendingReply<> reply = org::kde::telephony::CallUtils::accept(deviceUni, callUni);
-    reply.waitForFinished();
-    if (reply.isError()) {
-        qDebug() << Q_FUNC_INFO << reply.error();
-    }
+    org::kde::telephony::CallUtils::accept(deviceUni, callUni);
 }
 
 void DeclarativeCallUtils::dial(const QString &deviceUni, const QString &number)
 {
-    QDBusPendingReply<> reply = org::kde::telephony::CallUtils::dial(deviceUni, number);
-    reply.waitForFinished();
-    if (reply.isError()) {
-        qDebug() << Q_FUNC_INFO << reply.error();
-    }
+    org::kde::telephony::CallUtils::dial(deviceUni, number);
 }
 
 void DeclarativeCallUtils::hangUp(const QString &deviceUni, const QString &callUni)
 {
-    QDBusPendingReply<> reply = org::kde::telephony::CallUtils::hangUp(deviceUni, callUni);
-    reply.waitForFinished();
-    if (reply.isError()) {
-        qDebug() << Q_FUNC_INFO << reply.error();
-    }
+    org::kde::telephony::CallUtils::hangUp(deviceUni, callUni);
 }
 
 void DeclarativeCallUtils::sendDtmf(const QString &deviceUni, const QString &callUni, const QString &tones)
 {
-    QDBusPendingReply<> reply = org::kde::telephony::CallUtils::sendDtmf(deviceUni, callUni, tones);
-    reply.waitForFinished();
-    if (reply.isError()) {
-        qDebug() << Q_FUNC_INFO << reply.error();
-    }
+    org::kde::telephony::CallUtils::sendDtmf(deviceUni, callUni, tones);
 }
 
 QString DeclarativeCallUtils::formatNumber(const QString &number)

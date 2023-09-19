@@ -5,7 +5,7 @@
 #pragma once
 
 #include "call-model.h"
-#include "declarative-call-utils.h"
+#include "callutilsinterface.h"
 #include <QTimer>
 
 class ActiveCallModel : public CallModel
@@ -31,6 +31,8 @@ public:
     qulonglong duration() const;
     void setDuration(qulonglong duration);
 
+    void setCallUtils(org::kde::telephony::CallUtils *callUtils);
+
 public Q_SLOTS:
     Q_INVOKABLE void sendDtmf(const QString &tones);
     Q_INVOKABLE void dial(const QString &deviceUni, const QString &number);
@@ -46,18 +48,18 @@ Q_SIGNALS:
     void durationChanged();
 
 private Q_SLOTS:
-    void onCallAdded(const QString &deviceUni,
-                     const QString &callUni,
-                     const DialerTypes::CallDirection &callDirection,
-                     const DialerTypes::CallState &callState,
-                     const DialerTypes::CallStateReason &callStateReason,
-                     const QString communicationWith);
-    void onCallDeleted(const QString &deviceUni, const QString &callUni);
-    void onCallStateChanged(const DialerTypes::CallData &callData);
-    void onFetchedCallsChanged(const DialerTypes::CallDataVector &fetchedCalls);
+    void onUtilsCallAdded(const QString &deviceUni,
+                          const QString &callUni,
+                          const DialerTypes::CallDirection &callDirection,
+                          const DialerTypes::CallState &callState,
+                          const DialerTypes::CallStateReason &callStateReason,
+                          const QString communicationWith);
+    void onUtilsCallDeleted(const QString &deviceUni, const QString &callUni);
+    void onUtilsCallStateChanged(const DialerTypes::CallData &callData);
+    void onUtilsCallsChanged(const DialerTypes::CallDataVector &fetchedCalls);
 
 private:
-    DeclarativeCallUtils *_callUtils;
+    org::kde::telephony::CallUtils *_callUtils;
     DialerTypes::CallDataVector _calls;
     QTimer _callsTimer;
     bool _active = false;

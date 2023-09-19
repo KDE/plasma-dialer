@@ -18,11 +18,10 @@
       <arg name="callUni" type="s" direction="out"/>
       <arg name="tones" type="s" direction="out"/>
     </signal>
-    <signal name="fetchedCalls">
-    </signal>
-    <signal name="fetchedCallsChanged">
+    <signal name="callsRequested"></signal>
+    <signal name="callsChanged">
         <annotation name="org.qtproject.QtDBus.QtTypeName.Out0" value="DialerTypes::CallDataVector"/>
-        <arg name="fetchedCalls" type="a(sssss(i)(i)(i)ixi)" direction="out"/>
+        <arg name="calls" type="a(sssss(i)(i)(i)ixi)" direction="out"/>
     </signal>
     <signal name="callAdded">
       <annotation name="org.qtproject.QtDBus.QtTypeName.Out2" value="DialerTypes::CallDirection"/>
@@ -66,9 +65,28 @@
     </method>
     <method name="fetchCalls">
     </method>
-    <method name="setFetchedCalls">
+    <method name="setCalls">
       <annotation name="org.qtproject.QtDBus.QtTypeName.In0" value="DialerTypes::CallDataVector"/>
-      <arg name="fetchedCalls" type="a(sssss(i)(i)(i)ixi)" direction="in"/>
+      <arg name="calls" type="a(sssss(i)(i)(i)ixi)" direction="in"/>
+    </method>
+    <method name="addCall">
+      <annotation name="org.qtproject.QtDBus.QtTypeName.In2" value="DialerTypes::CallDirection"/>
+      <annotation name="org.qtproject.QtDBus.QtTypeName.In3" value="DialerTypes::CallState"/>
+      <annotation name="org.qtproject.QtDBus.QtTypeName.In4" value="DialerTypes::CallStateReason"/>
+      <arg name="deviceUni" type="s" direction="in"/>
+      <arg name="callUni" type="s" direction="in"/>
+      <arg name="callDirection" type="(i)" direction="in"/>
+      <arg name="callState" type="(i)" direction="in"/>
+      <arg name="callStateReason" type="(i)" direction="in"/>
+      <arg name="communicationWith" type="s" direction="in"/>
+    </method>
+    <method name="deleteCall">
+      <arg name="deviceUni" type="s" direction="in"/>
+      <arg name="callUni" type="s" direction="in"/>
+    </method>
+    <method name="setCallState">
+      <annotation name="org.qtproject.QtDBus.QtTypeName.In0" value="DialerTypes::CallData"/>
+      <arg name="callData" type="(sssss(i)(i)(i)ixi)" direction="in"/>
     </method>
   </interface>
 </node>

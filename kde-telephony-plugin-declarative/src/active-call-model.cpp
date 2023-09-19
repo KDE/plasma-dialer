@@ -9,26 +9,6 @@ constexpr int CALL_DURATION_UPDATE_DELAY = 1000;
 ActiveCallModel::ActiveCallModel(QObject *parent)
     : CallModel(parent)
 {
-    _callUtils = new DeclarativeCallUtils(this);
-
-    if (!_callUtils->isValid()) {
-        qDebug() << Q_FUNC_INFO << "Could not initiate CallUtils ModemManager interface";
-        return;
-    }
-
-    connect(_callUtils, &DeclarativeCallUtils::callStateChanged, this, &ActiveCallModel::onCallStateChanged);
-    connect(_callUtils, &DeclarativeCallUtils::callAdded, this, &ActiveCallModel::onCallAdded);
-    connect(_callUtils, &DeclarativeCallUtils::callDeleted, this, &ActiveCallModel::onCallDeleted);
-    connect(_callUtils, &DeclarativeCallUtils::fetchedCallsChanged, this, &ActiveCallModel::onFetchedCallsChanged);
-
-    _callsTimer.setInterval(CALL_DURATION_UPDATE_DELAY);
-    connect(&_callsTimer, &QTimer::timeout, this, [this]() {
-        // minimize the number of method calls by incrementing the duration on the client side too
-        // see also (D-Bus API Design Guidelines):
-        // https://dbus.freedesktop.org/doc/dbus-api-design.html
-        _updateTimers();
-    });
-    _callUtils->fetchCalls();
 }
 
 void ActiveCallModel::sendDtmf(const QString &tones)
@@ -95,12 +75,12 @@ int ActiveCallModel::rowCount(const QModelIndex &parent) const
     return _calls.size();
 }
 
-void ActiveCallModel::onCallAdded(const QString &deviceUni,
-                                  const QString &callUni,
-                                  const DialerTypes::CallDirection &callDirection,
-                                  const DialerTypes::CallState &callState,
-                                  const DialerTypes::CallStateReason &callStateReason,
-                                  const QString communicationWith)
+void ActiveCallModel::onUtilsCallAdded(const QString &deviceUni,
+                                       const QString &callUni,
+                                       const DialerTypes::CallDirection &callDirection,
+                                       const DialerTypes::CallState &callState,
+                                       const DialerTypes::CallStateReason &callStateReason,
+                                       const QString communicationWith)
 {
     Q_UNUSED(deviceUni);
     Q_UNUSED(callUni);
@@ -109,7 +89,7 @@ void ActiveCallModel::onCallAdded(const QString &deviceUni,
     _callsTimer.start();
 }
 
-void ActiveCallModel::onCallDeleted(const QString &deviceUni, const QString &callUni)
+void ActiveCallModel::onUtilsCallDeleted(const QString &deviceUni, const QString &callUni)
 {
     Q_UNUSED(deviceUni);
     Q_UNUSED(callUni);
@@ -117,7 +97,7 @@ void ActiveCallModel::onCallDeleted(const QString &deviceUni, const QString &cal
     _callsTimer.stop();
 }
 
-void ActiveCallModel::onCallStateChanged(const DialerTypes::CallData &callData)
+void ActiveCallModel::onUtilsCallStateChanged(const DialerTypes::CallData &callData)
 {
     qDebug() << Q_FUNC_INFO << callData.state << callData.stateReason;
     auto callState = callData.state;
@@ -143,7 +123,7 @@ void ActiveCallModel::onCallStateChanged(const DialerTypes::CallData &callData)
     }
 }
 
-void ActiveCallModel::onFetchedCallsChanged(const DialerTypes::CallDataVector &fetchedCalls)
+void ActiveCallModel::onUtilsCallsChanged(const DialerTypes::CallDataVector &fetchedCalls)
 {
     qDebug() << Q_FUNC_INFO << _calls.size() << fetchedCalls.size();
     beginResetModel();
@@ -226,6 +206,30 @@ void ActiveCallModel::setDuration(qulonglong duration)
         return;
     _duration = duration;
     Q_EMIT durationChanged();
+}
+
+void ActiveCallModel::setCallUtils(org::kde::telephony::CallUtils *callUtils)
+{
+    if (!callUtils->isValid()) {
+        qDebug() << Q_FUNC_INFO << "Could not initiate CallUtils interface";
+        return;
+    }
+    _callUtils = callUtils;
+
+    connect(_callUtils, &org::kde::telephony::CallUtils::callStateChanged, this, &ActiveCallModel::onUtilsCallStateChanged);
+    connect(_callUtils, &org::kde::telephony::CallUtils::callAdded, this, &ActiveCallModel::onUtilsCallAdded);
+    connect(_callUtils, &org::kde::telephony::CallUtils::callDeleted, this, &ActiveCallModel::onUtilsCallDeleted);
+    connect(_callUtils, &org::kde::telephony::CallUtils::callsChanged, this, &ActiveCallModel::onUtilsCallsChanged);
+
+    _callsTimer.setInterval(CALL_DURATION_UPDATE_DELAY);
+    connect(&_callsTimer, &QTimer::timeout, this, [this]() {
+        // minimize the number of method calls by incrementing the duration on the client side too
+        // see also (D-Bus API Design Guidelines):
+        // https://dbus.freedesktop.org/doc/dbus-api-design.html
+        _updateTimers();
+    });
+
+    callUtils->fetchCalls(); // TODO: simplify sync
 }
 
 void ActiveCallModel::_updateTimers()

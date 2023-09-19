@@ -25,11 +25,14 @@ CallManager::CallManager(ModemController *modemController, CallUtils *callUtils,
     connect(_modemController, &ModemController::callAdded, this, &CallManager::onCallAdded);
     connect(_modemController, &ModemController::callDeleted, this, &CallManager::onCallDeleted);
 
-    connect(_callUtils, &CallUtils::dialed, this, &CallManager::onCreatedCall);
-    connect(_callUtils, &CallUtils::accepted, this, &CallManager::onAccepted);
-    connect(_callUtils, &CallUtils::hungUp, this, &CallManager::onHungUp);
-    connect(_callUtils, &CallUtils::sentDtmf, this, &CallManager::onSendDtmfRequested);
-    connect(_callUtils, &CallUtils::fetchedCalls, this, &CallManager::onFetchedCalls);
+    connect(_callUtils, &CallUtils::dialed, this, &CallManager::onUtilsCreatedCall);
+    connect(_callUtils, &CallUtils::accepted, this, &CallManager::onUtilsAccepted);
+    connect(_callUtils, &CallUtils::hungUp, this, &CallManager::onUtilsHungUp);
+    connect(_callUtils, &CallUtils::sentDtmf, this, &CallManager::onUtilsSentDtmf);
+
+    connect(_callUtils, &CallUtils::callsRequested, this, &CallManager::onUtilsCallsRequested);
+
+    callUtils->fetchCalls();
 }
 
 void CallManager::onCallAdded(const QString &deviceUni,
@@ -40,19 +43,19 @@ void CallManager::onCallAdded(const QString &deviceUni,
                               const QString communicationWith)
 {
     qDebug() << "call added:" << deviceUni << callUni;
-    Q_EMIT _callUtils->callAdded(deviceUni, callUni, callDirection, callState, callStateReason, communicationWith);
+    _callUtils->addCall(deviceUni, callUni, callDirection, callState, callStateReason, communicationWith);
 }
 
 void CallManager::onCallDeleted(const QString &deviceUni, const QString &callUni)
 {
     qDebug() << "call deleted:" << deviceUni << callUni;
-    Q_EMIT _callUtils->callDeleted(deviceUni, callUni);
+    _callUtils->deleteCall(deviceUni, callUni);
 }
 
 void CallManager::onCallStateChanged(const DialerTypes::CallData &callData)
 {
     qDebug() << "new call state:" << callData.state << callData.stateReason;
-    Q_EMIT _callUtils->callStateChanged(callData);
+    _callUtils->setCallState(callData);
 
     // Add inhibition in logind when call is active.
     // Otherwise if powerdevil is configured to suspend device afer few minutes,
@@ -102,7 +105,6 @@ void CallManager::onCallStateChanged(const DialerTypes::CallData &callData)
         break;
     }
     case DialerTypes::CallState::Terminated: {
-        // TODO: FIXME: not cool yet
         auto deviceUni = _modemController->deviceUni(callData.provider);
         _modemController->deleteCall(deviceUni, callData.id);
         _inhibitSleepFd.reset();
@@ -114,27 +116,27 @@ void CallManager::onCallStateChanged(const DialerTypes::CallData &callData)
     }
 }
 
-void CallManager::onCreatedCall(const QString &deviceUni, const QString &callUni)
+void CallManager::onUtilsCreatedCall(const QString &deviceUni, const QString &callUni)
 {
     _modemController->createCall(deviceUni, callUni);
 }
 
-void CallManager::onAccepted(const QString &deviceUni, const QString &callUni)
+void CallManager::onUtilsAccepted(const QString &deviceUni, const QString &callUni)
 {
     _modemController->acceptCall(deviceUni, callUni);
 }
 
-void CallManager::onHungUp(const QString &deviceUni, const QString &callUni)
+void CallManager::onUtilsHungUp(const QString &deviceUni, const QString &callUni)
 {
     _modemController->hangUp(deviceUni, callUni);
 }
 
-void CallManager::onSendDtmfRequested(const QString &deviceUni, const QString &callUni, const QString &tones)
+void CallManager::onUtilsSentDtmf(const QString &deviceUni, const QString &callUni, const QString &tones)
 {
     _modemController->sendDtmf(deviceUni, callUni, tones);
 }
 
-void CallManager::onFetchedCalls()
+void CallManager::onUtilsCallsRequested()
 {
-    _callUtils->setFetchedCalls(_modemController->fetchCalls());
+    _callUtils->setCalls(_modemController->fetchCalls());
 }

@@ -77,9 +77,9 @@ void DialerManager::setCallUtils(org::kde::telephony::CallUtils *callUtils)
 {
     _callUtils = callUtils;
 
-    connect(_callUtils, &org::kde::telephony::CallUtils::callAdded, this, &DialerManager::onCallAdded);
-    connect(_callUtils, &org::kde::telephony::CallUtils::fetchedCallsChanged, this, &DialerManager::onFetchedCallsChanged);
-    connect(_callUtils, &org::kde::telephony::CallUtils::callStateChanged, this, &DialerManager::onCallStateChanged);
+    connect(_callUtils, &org::kde::telephony::CallUtils::callAdded, this, &DialerManager::onUtilsCallAdded);
+    connect(_callUtils, &org::kde::telephony::CallUtils::callsChanged, this, &DialerManager::onUtilsCallsChanged);
+    connect(_callUtils, &org::kde::telephony::CallUtils::callStateChanged, this, &DialerManager::onUtilsCallStateChanged);
 }
 
 void DialerManager::setDialerUtils(DialerUtils *dialerUtils)
@@ -97,12 +97,12 @@ void DialerManager::setDialerUtils(DialerUtils *dialerUtils)
     _dialerUtils->fetchSpeakerMode();
 }
 
-void DialerManager::onCallAdded(const QString &deviceUni,
-                                const QString &callUni,
-                                const DialerTypes::CallDirection &callDirection,
-                                const DialerTypes::CallState &callState,
-                                const DialerTypes::CallStateReason &callStateReason,
-                                const QString communicationWith)
+void DialerManager::onUtilsCallAdded(const QString &deviceUni,
+                                     const QString &callUni,
+                                     const DialerTypes::CallDirection &callDirection,
+                                     const DialerTypes::CallState &callState,
+                                     const DialerTypes::CallStateReason &callStateReason,
+                                     const QString communicationWith)
 {
     if (!_callUtils) {
         qCritical() << Q_FUNC_INFO;
@@ -116,14 +116,14 @@ void DialerManager::onCallAdded(const QString &deviceUni,
     }
 }
 
-void DialerManager::onFetchedCallsChanged(const DialerTypes::CallDataVector &fetchedCalls)
+void DialerManager::onUtilsCallsChanged(const DialerTypes::CallDataVector &calls)
 {
-    if (fetchedCalls.isEmpty()) {
+    if (calls.isEmpty()) {
         unpauseMedia();
     }
 }
 
-void DialerManager::onCallStateChanged(const DialerTypes::CallData &callData)
+void DialerManager::onUtilsCallStateChanged(const DialerTypes::CallData &callData)
 {
     if (!_callUtils) {
         qCritical() << Q_FUNC_INFO;

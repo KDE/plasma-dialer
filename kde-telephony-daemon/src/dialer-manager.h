@@ -23,14 +23,14 @@ public:
     void setDialerUtils(DialerUtils *dialerUtils);
 
 private Q_SLOTS:
-    void onCallAdded(const QString &deviceUni,
-                     const QString &callUni,
-                     const DialerTypes::CallDirection &callDirection,
-                     const DialerTypes::CallState &callState,
-                     const DialerTypes::CallStateReason &callStateReason,
-                     const QString communicationWith);
-    void onFetchedCallsChanged(const DialerTypes::CallDataVector &fetchedCalls);
-    void onCallStateChanged(const DialerTypes::CallData &callData);
+    void onUtilsCallAdded(const QString &deviceUni,
+                          const QString &callUni,
+                          const DialerTypes::CallDirection &callDirection,
+                          const DialerTypes::CallState &callState,
+                          const DialerTypes::CallStateReason &callStateReason,
+                          const QString communicationWith);
+    void onUtilsCallsChanged(const DialerTypes::CallDataVector &calls);
+    void onUtilsCallStateChanged(const DialerTypes::CallData &callData);
     void onUtilsMuteChanged(bool muted);
     void onUtilsSpeakerModeChanged(bool enabled);
     void onUtilsMuteRequested();
