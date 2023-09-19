@@ -157,7 +157,8 @@ void NotificationManager::openRingingNotification(const QString &deviceUni,
     // with swipe decision.
     _ringingNotification->setHint(QStringLiteral("category"), QStringLiteral("x-kde.incoming-call"));
 
-#if QT_VERSION_MAJOR == 6
+// https://invent.kde.org/frameworks/knotifications/-/merge_requests/97
+#ifdef KF_NOTIFICATION_VERSION_6
     auto acceptAction = new KNotificationAction(i18n("Accept"));
     connect(acceptAction, &KNotificationAction::activated, this, [this, deviceUni, callUni] {
         accept(deviceUni, callUni);
