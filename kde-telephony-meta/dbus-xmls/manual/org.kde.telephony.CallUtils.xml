@@ -1,6 +1,10 @@
 <!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
 <node>
   <interface name="org.kde.telephony.CallUtils">
+    <signal name="dialed">
+      <arg name="deviceUni" type="s" direction="out"/>
+      <arg name="number" type="s" direction="out"/>
+    </signal>
     <signal name="accepted">
       <arg name="deviceUni" type="s" direction="out"/>
       <arg name="callUni" type="s" direction="out"/>
