@@ -27,5 +27,4 @@ Q_SIGNALS:
     void muteFetched();
     void speakerModeChanged(bool enabled);
     void muteChanged(bool muted);
-    void missedCallsActionTriggered();
 };
