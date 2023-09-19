@@ -101,7 +101,7 @@ Kirigami.ApplicationWindow {
     }
 
     function selectModem() {
-        const deviceUniList = DeviceUtils.deviceUniList()
+        const deviceUniList = DeviceUtils.deviceUniList
         if (deviceUniList.length === 0) {
             console.warn("Modem devices not found")
             return ""

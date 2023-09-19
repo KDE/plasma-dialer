@@ -16,6 +16,8 @@
 #include "declarative-dialer-utils.h"
 #include "declarative-ussd-utils.h"
 
+static org::kde::telephony::DeviceUtils *deviceUtils = nullptr;
+
 static QObject *ussdUtilsTypeProvider(QQmlEngine *engine, QJSEngine *scriptEngine)
 {
     Q_UNUSED(engine)
@@ -30,8 +32,15 @@ static QObject *deviceUtilsTypeProvider(QQmlEngine *engine, QJSEngine *scriptEng
     Q_UNUSED(engine)
     Q_UNUSED(scriptEngine)
 
-    auto deviceUtils = new DeclarativeDeviceUtils();
-    return deviceUtils;
+    if (deviceUtils == nullptr) {
+        deviceUtils = new org::kde::telephony::DeviceUtils(QString::fromLatin1(org::kde::telephony::DeviceUtils::staticInterfaceName()),
+                                                           QStringLiteral("/org/kde/telephony/DeviceUtils/tel/mm"),
+                                                           QDBusConnection::sessionBus(),
+                                                           engine);
+    }
+    auto declDeviceUtils = new DeclarativeDeviceUtils();
+    declDeviceUtils->setDeviceUtils(deviceUtils);
+    return declDeviceUtils;
 }
 
 static QObject *callUtilsTypeProvider(QQmlEngine *engine, QJSEngine *scriptEngine)

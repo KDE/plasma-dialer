@@ -86,7 +86,7 @@ Kirigami.Page {
             Layout.rightMargin: Kirigami.Units.smallSpacing
             type: Kirigami.MessageType.Error
             text: i18n("Modem devices are not found")
-            visible: DeviceUtils.deviceUniList().length < 1
+            visible: DeviceUtils.deviceUniList.length < 1
         }
         Kirigami.InlineMessage {
             id: voicemailError
