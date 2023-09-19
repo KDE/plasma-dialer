@@ -170,10 +170,6 @@ Kirigami.ApplicationWindow {
     Connections {
         target: CallUtils
 
-        function onMissedCallsActionTriggered() {
-            root.visible = true;
-        }
-
         function onCallStateChanged(callData) {
             if (callData.state === DialerTypes.CallState.Active) {
                 getPage("Dialer").pad.clear()
