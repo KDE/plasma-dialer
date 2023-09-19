@@ -9,5 +9,8 @@
       <arg name="contact" type="s" direction="in"/>
       <arg name="imageSource" type="s" direction="out"/>
     </method>
+    <method name="changeCountryCode">
+      <arg name="countryCode" type="s" direction="in"/>
+    </method>
   </interface>
 </node>
