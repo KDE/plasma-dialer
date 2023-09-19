@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-14 00:46+0000\n"
+"POT-Creation-Date: 2023-09-19 00:47+0000\n"
 "PO-Revision-Date: 2023-03-02 11:07+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -90,51 +90,51 @@ msgstr "Silencia"
 msgid "View"
 msgstr "Visualitza"
 
-#: src/qml/components/BottomToolbar.qml:81 src/qml/components/Sidebar.qml:38
+#: src/qml/components/BottomToolbar.qml:30 src/qml/components/Sidebar.qml:31
 #, kde-format
 msgid "History"
 msgstr "Historial"
 
-#: src/qml/components/BottomToolbar.qml:93 src/qml/components/Sidebar.qml:56
+#: src/qml/components/BottomToolbar.qml:52 src/qml/components/Sidebar.qml:49
 #: src/qml/ContactsPage.qml:19
 #, kde-format
 msgid "Contacts"
 msgstr "Contactes"
 
-#: src/qml/components/BottomToolbar.qml:105 src/qml/components/Sidebar.qml:74
+#: src/qml/components/BottomToolbar.qml:74 src/qml/components/Sidebar.qml:67
 #: src/qml/DialerPage.qml:27
 #, kde-format
 msgid "Dialer"
 msgstr "Marcador"
 
-#: src/qml/components/Sidebar.qml:98 src/qml/ContactsPage.qml:31
-#: src/qml/DialerPage.qml:58 src/qml/HistoryPage.qml:43
+#: src/qml/components/Sidebar.qml:91 src/qml/ContactsPage.qml:30
+#: src/qml/DialerPage.qml:57 src/qml/HistoryPage.qml:42
 #: src/qml/settings/SettingsPage.qml:20
 #, kde-format
 msgid "Settings"
 msgstr "Configuració"
 
-#: src/qml/components/Sidebar.qml:117
+#: src/qml/components/Sidebar.qml:110
 #, kde-format
 msgid "Quit"
 msgstr "Surt"
 
-#: src/qml/ContactsPage.qml:100
+#: src/qml/ContactsPage.qml:106
 #, kde-format
 msgid "Select number to call"
 msgstr "Seleccioneu el número a trucar"
 
-#: src/qml/ContactsPage.qml:109
+#: src/qml/ContactsPage.qml:115
 #, kde-format
 msgid "No contacts have a phone number set"
 msgstr "Cap contacte té definit un número de telèfon"
 
-#: src/qml/DialerPage.qml:81
+#: src/qml/DialerPage.qml:88
 #, kde-format
 msgid "Modem devices are not found"
 msgstr "No s'ha trobat cap dispositiu de mòdem"
 
-#: src/qml/DialerPage.qml:90
+#: src/qml/DialerPage.qml:97
 #, kde-format
 msgid "Voicemail number couldn't be found"
 msgstr "No s'ha pogut trobar el número de la bústia de veu"
@@ -154,7 +154,7 @@ msgstr "Historial de trucades"
 msgid "Clear history"
 msgstr "Neteja l'historial"
 
-#: src/qml/HistoryPage.qml:83
+#: src/qml/HistoryPage.qml:89
 #, kde-format
 msgid "No recent calls"
 msgstr "No hi ha cap trucada recent"

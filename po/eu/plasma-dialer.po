@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-14 00:46+0000\n"
+"POT-Creation-Date: 2023-09-19 00:47+0000\n"
 "PO-Revision-Date: 2023-07-21 00:38+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -90,51 +90,51 @@ msgstr "Isilarazi"
 msgid "View"
 msgstr "Ikusi"
 
-#: src/qml/components/BottomToolbar.qml:81 src/qml/components/Sidebar.qml:38
+#: src/qml/components/BottomToolbar.qml:30 src/qml/components/Sidebar.qml:31
 #, kde-format
 msgid "History"
 msgstr "Historia"
 
-#: src/qml/components/BottomToolbar.qml:93 src/qml/components/Sidebar.qml:56
+#: src/qml/components/BottomToolbar.qml:52 src/qml/components/Sidebar.qml:49
 #: src/qml/ContactsPage.qml:19
 #, kde-format
 msgid "Contacts"
 msgstr "Kontaktuak"
 
-#: src/qml/components/BottomToolbar.qml:105 src/qml/components/Sidebar.qml:74
+#: src/qml/components/BottomToolbar.qml:74 src/qml/components/Sidebar.qml:67
 #: src/qml/DialerPage.qml:27
 #, kde-format
 msgid "Dialer"
 msgstr "Markatzailea"
 
-#: src/qml/components/Sidebar.qml:98 src/qml/ContactsPage.qml:31
-#: src/qml/DialerPage.qml:58 src/qml/HistoryPage.qml:43
+#: src/qml/components/Sidebar.qml:91 src/qml/ContactsPage.qml:30
+#: src/qml/DialerPage.qml:57 src/qml/HistoryPage.qml:42
 #: src/qml/settings/SettingsPage.qml:20
 #, kde-format
 msgid "Settings"
 msgstr "Ezarpenak"
 
-#: src/qml/components/Sidebar.qml:117
+#: src/qml/components/Sidebar.qml:110
 #, kde-format
 msgid "Quit"
 msgstr "Irten"
 
-#: src/qml/ContactsPage.qml:100
+#: src/qml/ContactsPage.qml:106
 #, kde-format
 msgid "Select number to call"
 msgstr "Hautatu deitu beharreko zenbakia"
 
-#: src/qml/ContactsPage.qml:109
+#: src/qml/ContactsPage.qml:115
 #, kde-format
 msgid "No contacts have a phone number set"
 msgstr "Ez dago telefono zenbakirik ezarrita duen kontakturik"
 
-#: src/qml/DialerPage.qml:81
+#: src/qml/DialerPage.qml:88
 #, kde-format
 msgid "Modem devices are not found"
 msgstr "Ez da moden gailurik aurkitu"
 
-#: src/qml/DialerPage.qml:90
+#: src/qml/DialerPage.qml:97
 #, kde-format
 msgid "Voicemail number couldn't be found"
 msgstr "Ahots-posta zenbakia ezin izan da aurkitu"
@@ -154,7 +154,7 @@ msgstr "Deien historia:"
 msgid "Clear history"
 msgstr "Garbitu historia"
 
-#: src/qml/HistoryPage.qml:83
+#: src/qml/HistoryPage.qml:89
 #, kde-format
 msgid "No recent calls"
 msgstr "Ez dago azken deirik"

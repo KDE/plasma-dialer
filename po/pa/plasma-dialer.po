@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-14 00:46+0000\n"
+"POT-Creation-Date: 2023-09-19 00:47+0000\n"
 "PO-Revision-Date: 2022-06-11 09:41-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -88,51 +88,51 @@ msgstr "ਚੁੱਪ"
 msgid "View"
 msgstr "ਵੇਖੋ"
 
-#: src/qml/components/BottomToolbar.qml:81 src/qml/components/Sidebar.qml:38
+#: src/qml/components/BottomToolbar.qml:30 src/qml/components/Sidebar.qml:31
 #, kde-format
 msgid "History"
 msgstr "ਅਤੀਤ"
 
-#: src/qml/components/BottomToolbar.qml:93 src/qml/components/Sidebar.qml:56
+#: src/qml/components/BottomToolbar.qml:52 src/qml/components/Sidebar.qml:49
 #: src/qml/ContactsPage.qml:19
 #, kde-format
 msgid "Contacts"
 msgstr "ਸੰਪਰਕ"
 
-#: src/qml/components/BottomToolbar.qml:105 src/qml/components/Sidebar.qml:74
+#: src/qml/components/BottomToolbar.qml:74 src/qml/components/Sidebar.qml:67
 #: src/qml/DialerPage.qml:27
 #, kde-format
 msgid "Dialer"
 msgstr "ਡਾਇਲਰ"
 
-#: src/qml/components/Sidebar.qml:98 src/qml/ContactsPage.qml:31
-#: src/qml/DialerPage.qml:58 src/qml/HistoryPage.qml:43
+#: src/qml/components/Sidebar.qml:91 src/qml/ContactsPage.qml:30
+#: src/qml/DialerPage.qml:57 src/qml/HistoryPage.qml:42
 #: src/qml/settings/SettingsPage.qml:20
 #, kde-format
 msgid "Settings"
 msgstr "ਸੈਟਿੰਗਾਂ"
 
-#: src/qml/components/Sidebar.qml:117
+#: src/qml/components/Sidebar.qml:110
 #, kde-format
 msgid "Quit"
 msgstr ""
 
-#: src/qml/ContactsPage.qml:100
+#: src/qml/ContactsPage.qml:106
 #, kde-format
 msgid "Select number to call"
 msgstr "ਕਾਲ ਕਰਨ ਲਈ ਨੰਬਰ ਚੁਣੋ"
 
-#: src/qml/ContactsPage.qml:109
+#: src/qml/ContactsPage.qml:115
 #, kde-format
 msgid "No contacts have a phone number set"
 msgstr "ਕਿਸੇ ਸੰਪਰਕ ਲਈ ਫ਼ੋਨ ਨੰਬਰ ਨਿਯਤ ਨਹੀਂ ਹੈ"
 
-#: src/qml/DialerPage.qml:81
+#: src/qml/DialerPage.qml:88
 #, kde-format
 msgid "Modem devices are not found"
 msgstr "ਮਾਡਮ ਡਿਵਾਈਸ ਨਹੀਂ ਲੱਭੇ ਹਨ"
 
-#: src/qml/DialerPage.qml:90
+#: src/qml/DialerPage.qml:97
 #, kde-format
 msgid "Voicemail number couldn't be found"
 msgstr "ਵੋਆਇਸ-ਮੇਲ ਨੰਬਰ ਲੱਭਿਆ ਨਹੀਂ ਜਾ ਸਕਿਆ"
@@ -152,7 +152,7 @@ msgstr "ਕਾਲ ਦਾ ਅਤੀਤ"
 msgid "Clear history"
 msgstr "ਅਤੀਤ ਨੂੰ ਮਿਟਾਓ"
 
-#: src/qml/HistoryPage.qml:83
+#: src/qml/HistoryPage.qml:89
 #, kde-format
 msgid "No recent calls"
 msgstr "ਕੋਈ ਤਾਜ਼ਾ ਕਾਲਾਂ ਨਹੀਂ ਹਨ"
