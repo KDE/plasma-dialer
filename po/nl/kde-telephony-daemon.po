@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-26 00:47+0000\n"
+"POT-Creation-Date: 2023-09-20 00:47+0000\n"
 "PO-Revision-Date: 2023-03-11 14:16+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: src/notification-manager.cpp:122 src/notification-manager.cpp:293
+#: src/notification-manager.cpp:122 src/notification-manager.cpp:294
 #, kde-format
 msgid "No Caller ID"
 msgstr "Geen ID van beller"
@@ -37,12 +37,12 @@ msgstr "Gemiste oproep van %1"
 msgid "Incoming call"
 msgstr "Inkomende oproep"
 
-#: src/notification-manager.cpp:161 src/notification-manager.cpp:175
+#: src/notification-manager.cpp:162 src/notification-manager.cpp:176
 #, kde-format
 msgid "Accept"
 msgstr "Accepteren"
 
-#: src/notification-manager.cpp:167 src/notification-manager.cpp:175
+#: src/notification-manager.cpp:168 src/notification-manager.cpp:176
 #, kde-format
 msgid "Reject"
 msgstr "Afwijzen"
