@@ -216,20 +216,16 @@ DialerTypes::CallData ModemManagerController::getCall(const QString &deviceUni, 
 
 void ModemManagerController::deleteCall(const QString &deviceUni, const QString &callUni)
 {
-    // TODO: get device uni by some simIdentifier or something
-    // or maybe reconsider the whole arch
-    const auto modem = ModemManager::findModemDevice(deviceUni);
-    if (modem.isNull()) {
-        qDebug() << Q_FUNC_INFO << "deviceUni not found:" << deviceUni;
-        return;
+    Q_UNUSED(deviceUni) // TODO: improve deviceUni getter
+    for (const QSharedPointer<ModemManager::ModemDevice> &modemDevice : ModemManager::modemDevices()) {
+        const auto voiceInterface = _voiceInterface(modemDevice);
+        if (voiceInterface.isNull()) {
+            qDebug() << Q_FUNC_INFO << "voiceInterface not found";
+            continue;
+        }
+        qDebug() << Q_FUNC_INFO << "deleting voice call" << callUni << "via" << modemDevice->uni();
+        voiceInterface->deleteCall(callUni);
     }
-    const auto voiceInterface = _voiceInterface(modem);
-    if (voiceInterface.isNull()) {
-        qDebug() << Q_FUNC_INFO << "voiceInterface not found";
-        return;
-    }
-    qDebug() << Q_FUNC_INFO << "deleting call" << deviceUni << callUni;
-    voiceInterface->deleteCall(callUni);
 }
 
 void ModemManagerController::onServiceAppeared()

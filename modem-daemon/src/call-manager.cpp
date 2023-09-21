@@ -105,7 +105,7 @@ void CallManager::onCallStateChanged(const DialerTypes::CallData &callData)
         break;
     }
     case DialerTypes::CallState::Terminated: {
-        auto deviceUni = _modemController->deviceUni(callData.provider);
+        QString deviceUni; // TODO: improve deviceUni getter
         _modemController->deleteCall(deviceUni, callData.id);
         _inhibitSleepFd.reset();
         qDebug() << "logind sleep inhibitor: turned off";
