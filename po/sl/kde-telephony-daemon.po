@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-20 00:47+0000\n"
+"POT-Creation-Date: 2023-09-22 00:45+0000\n"
 "PO-Revision-Date: 2023-03-12 08:30+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -18,32 +18,32 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 
-#: src/notification-manager.cpp:122 src/notification-manager.cpp:294
+#: src/notification-manager.cpp:118 src/notification-manager.cpp:290
 #, kde-format
 msgid "No Caller ID"
 msgstr "Ni določilnika klicatelja"
 
-#: src/notification-manager.cpp:132
+#: src/notification-manager.cpp:128
 #, kde-format
 msgid "Missed call"
 msgstr "Zgrešen klic"
 
-#: src/notification-manager.cpp:133
+#: src/notification-manager.cpp:129
 #, kde-format
 msgid "Missed call from %1"
 msgstr "Zgrešen klic od %1"
 
-#: src/notification-manager.cpp:154
+#: src/notification-manager.cpp:150
 #, kde-format
 msgid "Incoming call"
 msgstr "Dohodni klic"
 
-#: src/notification-manager.cpp:162 src/notification-manager.cpp:176
+#: src/notification-manager.cpp:158 src/notification-manager.cpp:172
 #, kde-format
 msgid "Accept"
 msgstr "Sprejmi"
 
-#: src/notification-manager.cpp:168 src/notification-manager.cpp:176
+#: src/notification-manager.cpp:164 src/notification-manager.cpp:172
 #, kde-format
 msgid "Reject"
 msgstr "Zavrni"

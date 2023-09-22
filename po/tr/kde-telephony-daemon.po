@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-20 00:47+0000\n"
+"POT-Creation-Date: 2023-09-22 00:45+0000\n"
 "PO-Revision-Date: 2023-03-11 15:58+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -18,32 +18,32 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: src/notification-manager.cpp:122 src/notification-manager.cpp:294
+#: src/notification-manager.cpp:118 src/notification-manager.cpp:290
 #, kde-format
 msgid "No Caller ID"
 msgstr "Arayan kimliği yok"
 
-#: src/notification-manager.cpp:132
+#: src/notification-manager.cpp:128
 #, kde-format
 msgid "Missed call"
 msgstr "Yanıtsız arama"
 
-#: src/notification-manager.cpp:133
+#: src/notification-manager.cpp:129
 #, kde-format
 msgid "Missed call from %1"
 msgstr "%1 kişisinden yanıtsız arama"
 
-#: src/notification-manager.cpp:154
+#: src/notification-manager.cpp:150
 #, kde-format
 msgid "Incoming call"
 msgstr "Gelen arama"
 
-#: src/notification-manager.cpp:162 src/notification-manager.cpp:176
+#: src/notification-manager.cpp:158 src/notification-manager.cpp:172
 #, kde-format
 msgid "Accept"
 msgstr "Kabul et"
 
-#: src/notification-manager.cpp:168 src/notification-manager.cpp:176
+#: src/notification-manager.cpp:164 src/notification-manager.cpp:172
 #, kde-format
 msgid "Reject"
 msgstr "Reddet"
