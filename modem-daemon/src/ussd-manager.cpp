@@ -47,7 +47,6 @@ void UssdManager::onInitiated(const QString &deviceUni, const QString &command)
 
 void UssdManager::onInitiateComplete(const QString &deviceUni, const QString &command)
 {
-    Q_EMIT _ussdUtils->initiated(deviceUni, command);
     if (state() == QStringLiteral("user-response")) {
         Q_EMIT _ussdUtils->requestReceived(deviceUni, command);
         return;
