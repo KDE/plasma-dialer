@@ -19,10 +19,13 @@ Kirigami.OverlaySheet {
     signal responseReady(string response)
     signal cancelSessionRequested()
 
-    function showNotification(text, requestReply = false) {
+    function showNotification(text) {
         isError = false
-        ussdSheet.replyRequested = requestReply
         ussdSheet.messageText = text
+    }
+
+    function changeState(state) {
+        ussdSheet.replyRequested = (state=="user-response")
     }
 
     function showError(errorMessage) {

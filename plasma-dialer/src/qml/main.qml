@@ -185,8 +185,8 @@ Kirigami.ApplicationWindow {
             ussdSheet.showNotification(message)
         }
 
-        function onRequestReceived(deviceUni, message) {
-            ussdSheet.showNotification(message, true)
+        function onStateChanged(deviceUni, state) {
+            ussdSheet.changeState(state)
         }
 
         function onErrorReceived(deviceUni, error) {

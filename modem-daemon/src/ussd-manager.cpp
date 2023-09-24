@@ -20,7 +20,7 @@ UssdManager::UssdManager(ModemController *modemController, UssdUtils *ussdUtils,
 
     connect(_modemController, &ModemController::ussdErrorReceived, _ussdUtils, &UssdUtils::errorReceived);
     connect(_modemController, &ModemController::ussdNotificationReceived, _ussdUtils, &UssdUtils::notificationReceived);
-    connect(_modemController, &ModemController::ussdRequestReceived, _ussdUtils, &UssdUtils::requestReceived);
+    connect(_modemController, &ModemController::ussdRequestReceived, _ussdUtils, &UssdUtils::notificationReceived);
     connect(_modemController, &ModemController::ussdInitiateComplete, this, &UssdManager::onInitiateComplete);
     connect(_modemController, &ModemController::ussdStateChanged, this, &UssdManager::onStateChanged);
 
@@ -47,10 +47,6 @@ void UssdManager::onInitiated(const QString &deviceUni, const QString &command)
 
 void UssdManager::onInitiateComplete(const QString &deviceUni, const QString &command)
 {
-    if (state() == QStringLiteral("user-response")) {
-        Q_EMIT _ussdUtils->requestReceived(deviceUni, command);
-        return;
-    }
     Q_EMIT _ussdUtils->notificationReceived(deviceUni, command);
 }
 
@@ -71,4 +67,5 @@ void UssdManager::onStateChanged(const QString &deviceUni, const QString &state)
     _state = state;
     Q_EMIT stateChanged(deviceUni, _state);
     Q_EMIT activeChanged(deviceUni);
+    Q_EMIT _ussdUtils->stateChanged(deviceUni, _state);
 }

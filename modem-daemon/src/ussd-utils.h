@@ -25,5 +25,5 @@ Q_SIGNALS:
     void cancelled(const QString &deviceUni);
     void errorReceived(const QString &deviceUni, const QString &error);
     void notificationReceived(const QString &deviceUni, const QString &message);
-    void requestReceived(const QString &deviceUni, const QString &message);
+    void stateChanged(const QString &deviceUni, const QString &state);
 };
