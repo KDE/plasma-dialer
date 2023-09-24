@@ -26,6 +26,10 @@ Kirigami.OverlaySheet {
 
     function changeState(state) {
         ussdSheet.replyRequested = (state=="user-response")
+        
+        if (ussdSheet.replyRequested) {
+            responseField.setFocus()          
+        }
     }
 
     function showError(errorMessage) {
