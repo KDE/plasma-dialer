@@ -24,7 +24,6 @@ public:
 
 private Q_SLOTS:
     void onInitiated(const QString &deviceUni, const QString &command);
-    void onInitiateComplete(const QString &deviceUni, const QString &command);
     void onResponded(const QString &deviceUni, const QString &reply);
     void onCanceled(const QString &deviceUni);
 
