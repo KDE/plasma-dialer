@@ -50,6 +50,7 @@ Kirigami.OverlaySheet {
                 id: responseField
                 visible: ussdSheet.replyRequested
                 placeholderText: i18n("Write response...")
+                inputMethodHints: Qt.ImhPreferNumbers
                 onAccepted: text !== "" && sendAction.triggered()
                 rightActions: [
                     Kirigami.Action {
