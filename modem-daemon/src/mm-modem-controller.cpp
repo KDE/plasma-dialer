@@ -49,6 +49,14 @@ void ModemManagerController::ussdInitiate(const QString &deviceUni, const QStrin
     }
     const auto modem3gppUssdInterface = _modem3gppUssdInterface(modem);
     QDBusPendingReply<QString> reply = modem3gppUssdInterface->initiate(command);
+    /*
+        During the following call to waitForFinished(), the DBus client waits for the DBus server to send a reply.
+        In the meantime, the ModemManager instance will send the USSD request and wait for an USSD response.
+        Once the ModemManager instance has received an USSD response, it will send a DBus response as well as a state update, in a possibly undefined order.
+        Even if the state update would be sent before the DBus response, it will be received from this code after the DBus response, as waitForFinished() waits for the correct DBus response and queues any other DBus activity (such as the state update).
+        Hence, the state update will always be received later than waitForFinished() returns.
+        Hence, the ussdInitiateComplete() call will contain the correct message, but the corresponding state update will only happen (milliseconds) later.
+    */
     reply.waitForFinished();
     if (reply.isError()) {
         qDebug() << Q_FUNC_INFO << reply.error();
