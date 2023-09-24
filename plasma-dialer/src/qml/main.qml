@@ -151,7 +151,8 @@ Kirigami.ApplicationWindow {
     USSDSheet {
         id: ussdSheet
         onResponseReady: {
-            UssdUtils.respond(response)
+            const deviceUni = applicationWindow().selectModem()
+            UssdUtils.respond(deviceUni,response)
         }
         onCancelSessionRequested: {
             const deviceUni = applicationWindow().selectModem()
