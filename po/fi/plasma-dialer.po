@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-19 00:47+0000\n"
+"POT-Creation-Date: 2023-09-26 00:44+0000\n"
 "PO-Revision-Date: 2023-03-04 20:11+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -264,27 +264,27 @@ msgstr "Symmetrinen pyyhkäisy"
 msgid "Asymmetric Swipe"
 msgstr "Epäsymmetrinen pyyhkäisy"
 
-#: src/qml/USSDSheet.qml:40
+#: src/qml/USSDSheet.qml:47
 #, kde-format
 msgid "USSD Error"
 msgstr "USSD-virhe"
 
-#: src/qml/USSDSheet.qml:40
+#: src/qml/USSDSheet.qml:47
 #, kde-format
 msgid "USSD Message"
 msgstr "USSD-viesti"
 
-#: src/qml/USSDSheet.qml:49
+#: src/qml/USSDSheet.qml:56
 #, kde-format
 msgid "Write response..."
 msgstr "Kirjoita vastaus…"
 
-#: src/qml/USSDSheet.qml:54
+#: src/qml/USSDSheet.qml:62
 #, kde-format
 msgid "Send"
 msgstr "Lähetä"
 
-#: src/qml/USSDSheet.qml:70
+#: src/qml/USSDSheet.qml:78
 #, kde-format
 msgid "Cancel USSD session"
 msgstr "Peru USSD-istunto"
