@@ -107,11 +107,7 @@ static void raiseWindow(QWindow *window)
             KWindowSystem::setCurrentXdgActivationToken(token);
             KWindowSystem::activateWindow(window);
         });
-    } else {
-        KWindowSystem::raiseWindow(window->winId());
     }
-#else // DIALER_BUILD_SHELL_OVERLAY
-    KWindowSystem::raiseWindow(window->winId());
 #endif // DIALER_BUILD_SHELL_OVERLAY
 }
 
