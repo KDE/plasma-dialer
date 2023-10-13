@@ -12,6 +12,7 @@
 #include <KDBusService>
 #include <KLocalizedContext>
 #include <KLocalizedString>
+#include <KWaylandExtras>
 #include <KWindowSystem>
 #include <QCommandLineParser>
 #include <QIcon>
@@ -102,8 +103,8 @@ static void raiseWindow(QWindow *window)
     updateLockscreenMode(window, screenLocked);
     if (screenLocked) {
         window->setVisibility(QWindow::Visibility::FullScreen);
-        KWindowSystem::requestXdgActivationToken(window, 0, QStringLiteral("org.kde.phone.dialer.desktop"));
-        QObject::connect(KWindowSystem::self(), &KWindowSystem::xdgActivationTokenArrived, window, [window](int, const QString &token) {
+        KWaylandExtras::requestXdgActivationToken(window, 0, QStringLiteral("org.kde.phone.dialer.desktop"));
+        QObject::connect(KWaylandExtras::self(), &KWaylandExtras::xdgActivationTokenArrived, window, [window](int, const QString &token) {
             KWindowSystem::setCurrentXdgActivationToken(token);
             KWindowSystem::activateWindow(window);
         });
