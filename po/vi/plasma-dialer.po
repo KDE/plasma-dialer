@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-26 00:44+0000\n"
+"POT-Creation-Date: 2023-10-15 00:43+0000\n"
 "PO-Revision-Date: 2023-03-21 18:45+0100\n"
 "Last-Translator: Phu Hung Nguyen <phu.nguyen@kdemail.net>\n"
 "Language-Team: Vietnamese <kde-l10n-vi@kde.org>\n"
@@ -27,22 +27,22 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "phu.nguyen@kdemail.net"
 
-#: src/main.cpp:136 src/qml/main.qml:35
+#: src/main.cpp:132 src/qml/main.qml:35
 #, kde-format
 msgid "Phone"
 msgstr "Điện thoại"
 
-#: src/main.cpp:138
+#: src/main.cpp:134
 #, kde-format
 msgid "Plasma phone dialer"
 msgstr "Trình quay số điện thoại Plasma"
 
-#: src/main.cpp:140
+#: src/main.cpp:136
 #, kde-format
 msgid "© 2015-2022 KDE Community"
 msgstr "© 2015-2022 Cộng đồng KDE"
 
-#: src/main.cpp:143
+#: src/main.cpp:139
 #, kde-format
 msgid "Alexey Andreyev"
 msgstr "Alexey Andreyev"
