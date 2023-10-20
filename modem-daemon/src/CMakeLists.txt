@@ -28,9 +28,9 @@ set(modemd_SRCS
     ${modem-daemon_QM_LOADER}
     )
 
-find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED Core Gui DBus)
+find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED Core Gui DBus)
 if (${MODEM_SUBSYSTEM} STREQUAL "ModemManager")
-    find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS ModemManagerQt)
+    find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS ModemManagerQt)
 elseif(${MODEM_SUBSYSTEM} STREQUAL "oFono")
     message(STATUS "oFono support is not implemented yet")
 endif()
@@ -55,11 +55,11 @@ target_link_libraries(modem-daemon
     Qt::Core
     Qt::DBus
     PhoneNumber::PhoneNumber
-    ktelephonymetatypes # FIXME: KF${KF_MAJOR_VERSION} cmake files
+    ktelephonymetatypes # FIXME: KF6 cmake files
     )
 
 if (${MODEM_SUBSYSTEM} STREQUAL "ModemManager")
-    target_link_libraries(modem-daemon KF${QT_MAJOR_VERSION}::ModemManagerQt)
+    target_link_libraries(modem-daemon KF6::ModemManagerQt)
 elseif(${MODEM_SUBSYSTEM} STREQUAL "oFono")
     message(STATUS "oFono support is not implemented yet")
 endif()

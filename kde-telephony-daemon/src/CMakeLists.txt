@@ -20,9 +20,9 @@ set_source_files_properties(
     INCLUDE "kTelephonyMetaTypes/dialer-types.h"
 )
 
-find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED Core DBus Sql)
-find_package(Qt${QT_MAJOR_VERSION} OPTIONAL_COMPONENTS Feedback)
-find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS Config I18n Notifications KIO)
+find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED Core DBus Sql)
+find_package(Qt6 OPTIONAL_COMPONENTS Feedback)
+find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Config I18n Notifications KIO)
 
 qt_add_dbus_interface(ktelephonyd_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.DeviceUtils.xml"
     deviceutilsinterface)
@@ -70,15 +70,15 @@ endif()
 
 
 target_link_libraries(kde-telephony-daemon
-    KF${QT_MAJOR_VERSION}::ConfigGui
+    KF6::ConfigGui
     Qt::Core
     Qt::DBus
     Qt::Sql
-    KF${QT_MAJOR_VERSION}::I18n
-    KF${QT_MAJOR_VERSION}::KIOGui
-    KF${QT_MAJOR_VERSION}::Notifications
+    KF6::I18n
+    KF6::KIOGui
+    KF6::Notifications
     PkgConfig::LIBCALLAUDIO
-    ktelephonymetatypes # FIXME: KF${KF_MAJOR_VERSION} cmake files
+    ktelephonymetatypes # FIXME: KF6 cmake files
     contactphonenumbermapper
     )
 

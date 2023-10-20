@@ -27,8 +27,8 @@ set_source_files_properties(
     INCLUDE "kTelephonyMetaTypes/dialer-types.h"
 )
 
-find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED Core Quick Qml Sql DBus)
-find_package(KF${KF_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS CoreAddons I18n DBusAddons Contacts People)
+find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED Core Quick Qml Sql DBus)
+find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS CoreAddons I18n DBusAddons Contacts People)
 find_package(PhoneNumber COMPONENTS PhoneNumber REQUIRED)
 
 # calls-daemon
@@ -68,13 +68,13 @@ target_link_libraries(KTelephonyPluginDeclarative
     Qt::Qml
     Qt::Sql
     Qt::DBus
-    KF${QT_MAJOR_VERSION}::CoreAddons
-    KF${QT_MAJOR_VERSION}::I18n
-    KF${QT_MAJOR_VERSION}::DBusAddons
-    KF${QT_MAJOR_VERSION}::Contacts
-    KF${QT_MAJOR_VERSION}::People
-    KF${QT_MAJOR_VERSION}::PeopleBackend
-    ktelephonymetatypes # TODO: KF${KF_MAJOR_VERSION} cmake files
+    KF6::CoreAddons
+    KF6::I18n
+    KF6::DBusAddons
+    KF6::Contacts
+    KF6::People
+    KF6::PeopleBackend
+    ktelephonymetatypes # TODO: KF6 cmake files
     )
 
 install(TARGETS KTelephonyPluginDeclarative DESTINATION "${KDE_INSTALL_QMLDIR}/org/kde/telephony")

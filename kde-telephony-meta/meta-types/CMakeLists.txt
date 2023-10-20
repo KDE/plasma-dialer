@@ -9,7 +9,7 @@ set(metatypes_SRCS
 add_library(ktelephonymetatypes STATIC ${metatypes_SRCS})
 set_target_properties(ktelephonymetatypes PROPERTIES POSITION_INDEPENDENT_CODE ON)
 
-find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED Core DBus)
+find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED Core DBus)
 
 include_directories(${QtCore_INCLUDE_DIRS})
 include_directories(${QtDBus_INCLUDE_DIRS})
@@ -31,4 +31,4 @@ target_sources(ktelephonymetatypes PRIVATE ${PROCESSED_MOCS})
 
 install(FILES ${metatypes_SRCS} DESTINATION "${KDE_INSTALL_INCLUDEDIR_KF}/kTelephonyMetaTypes")
 install(TARGETS ktelephonymetatypes DESTINATION "${KDE_INSTALL_LIBDIR}")
-# TODO: install KF${KF_MAJOR_VERSION} cmake files
+# TODO: install KF6 cmake files
