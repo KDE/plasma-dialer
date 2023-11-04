@@ -153,39 +153,16 @@ void NotificationManager::openRingingNotification(const QString &deviceUni,
     // with swipe decision.
     _ringingNotification->setHint(QStringLiteral("category"), QStringLiteral("x-kde.incoming-call"));
 
-// https://invent.kde.org/frameworks/knotifications/-/merge_requests/97
-#ifdef KF_NOTIFICATION_VERSION_6
-    auto acceptAction = new KNotificationAction(i18n("Accept"));
+    auto acceptAction = _ringingNotification->addAction(i18n("Accept"));
     connect(acceptAction, &KNotificationAction::activated, this, [this, deviceUni, callUni] {
         accept(deviceUni, callUni);
         launchPlasmaDialerDesktopFile();
     });
 
-    auto rejectAction = new KNotificationAction(i18n("Reject"));
+    auto rejectAction = _ringingNotification->addAction(i18n("Reject"));
     connect(rejectAction, &KNotificationAction::activated, this, [this, deviceUni, callUni] {
         hangUp(deviceUni, callUni);
     });
-
-    _ringingNotification->setActions({acceptAction, rejectAction});
-#else
-    QStringList actions;
-    actions << i18n("Accept") << i18n("Reject");
-    connect(_ringingNotification.get(), QOverload<unsigned int>::of(&KNotification::activated), this, [this, deviceUni, callUni](unsigned int action) {
-        switch (action) {
-        case 1:
-            accept(deviceUni, callUni);
-            launchPlasmaDialerDesktopFile();
-            break;
-        case 2:
-            hangUp(deviceUni, callUni);
-            break;
-        default:
-            Q_UNREACHABLE();
-            break;
-        }
-    });
-    _ringingNotification->setActions(actions);
-#endif
 
     _ringingNotification->sendEvent();
 }
