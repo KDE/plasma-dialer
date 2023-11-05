@@ -38,7 +38,6 @@ SPDX-License-Identifier: CC0-1.0
   <name xml:lang="tr">Telefon</name>
   <name xml:lang="uk">Телефон</name>
   <name xml:lang="vi">Điện thoại</name>
-  <name xml:lang="x-test">xxPhonexx</name>
   <name xml:lang="zh-CN">电话</name>
   <summary>Send and receive phone calls</summary>
   <summary xml:lang="ar">أرسل واستقبل مكالمات الهاتف</summary>
@@ -72,7 +71,6 @@ SPDX-License-Identifier: CC0-1.0
   <summary xml:lang="tr">Arama Yapma ve Gelen Aramaları Alma</summary>
   <summary xml:lang="uk">Надсилання і отримання телефонних дзвінків</summary>
   <summary xml:lang="vi">Gửi và nhận các cuộc gọi điện thoại</summary>
-  <summary xml:lang="x-test">xxSend and receive phone callsxx</summary>
   <summary xml:lang="zh-CN">拨打和接听电话</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0-only</project_license>
@@ -109,7 +107,6 @@ SPDX-License-Identifier: CC0-1.0
   <developer_name xml:lang="tr">KDE Topluluğu</developer_name>
   <developer_name xml:lang="uk">Спільнота KDE</developer_name>
   <developer_name xml:lang="vi">Cộng đồng KDE</developer_name>
-  <developer_name xml:lang="x-test">xxKDE Communityxx</developer_name>
   <developer_name xml:lang="zh-CN">KDE 社区</developer_name>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?product=Plasma%20Mobile%20Dialer</url>
   <url type="donation">https://www.kde.org/community/donations/?app=plasmaphonedialer</url>
@@ -148,7 +145,6 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="tr">Telefon uygulaması, akıllı telefonunuzdan kolaylıkla aramalar yapmanızı ve almanızı sağlar.</p>
     <p xml:lang="uk">Програма «Телефон» надає вам змогу без проблем виконувати та отримувати телефонні дзвінки на вашому смартфоні.</p>
     <p xml:lang="vi">Ứng dụng Điện thoại cho phép bạn dễ dàng gửi và nhận các cuộc gọi từ điện thoại của bạn.</p>
-    <p xml:lang="x-test">xxThe Phone app lets you easily send and receive phone calls from your smartphone.xx</p>
     <p xml:lang="zh-CN">电话应用让您可以轻松地拨打和接听智能手机的电话。</p>
     <p>Features:</p>
     <p xml:lang="ar">المزايا:</p>
@@ -183,7 +179,6 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="tr">Özellikler:</p>
     <p xml:lang="uk">Можливості:</p>
     <p xml:lang="vi">Tính năng:</p>
-    <p xml:lang="x-test">xxFeatures:xx</p>
     <p xml:lang="zh-CN">程序功能：</p>
     <ul>
       <li>See your call history and easily call the same number again</li>
@@ -216,7 +211,6 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="tr">Arama geçmişinizi görün ve aynı numarayı kolaylıkla yeniden arayın</li>
       <li xml:lang="uk">Перегляд журналу дзвінків та просте повторне набирання номерів</li>
       <li xml:lang="vi">Xem lịch sử gọi và dễ dàng gọi lại cùng số đó</li>
-      <li xml:lang="x-test">xxSee your call history and easily call the same number againxx</li>
       <li xml:lang="zh-CN">查看通话记录，并轻松地再次呼叫相同的号码</li>
       <li>Manage your contacts that have a phone number set</li>
       <li xml:lang="ar">أدر اتصالات التي لديها رقم هاتف</li>
@@ -248,7 +242,6 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="tr">Telefon numarası kayıtlı olan kişilerinizi yönetin</li>
       <li xml:lang="uk">Керування записами контактів, для яких встановлено номер телефону</li>
       <li xml:lang="vi">Quản lí các liên hệ đã đặt số điện thoại</li>
-      <li xml:lang="x-test">xxManage your contacts that have a phone number setxx</li>
       <li xml:lang="zh-CN">管理有电话号码的联系人</li>
     </ul>
   </description>
@@ -286,7 +279,6 @@ SPDX-License-Identifier: CC0-1.0
       <caption xml:lang="tr">Çevirici</caption>
       <caption xml:lang="uk">Сторінка набирання номеру</caption>
       <caption xml:lang="vi">Trang quay số</caption>
-      <caption xml:lang="x-test">xxThe dialer pagexx</caption>
       <caption xml:lang="zh-CN">拨号器页面</caption>
     </screenshot>
     <screenshot>
@@ -321,7 +313,6 @@ SPDX-License-Identifier: CC0-1.0
       <caption xml:lang="tr">Telesekreteri arama</caption>
       <caption xml:lang="uk">Голосова пошта</caption>
       <caption xml:lang="vi">Gọi hộp thư thoại</caption>
-      <caption xml:lang="x-test">xxCalling voicemailxx</caption>
       <caption xml:lang="zh-CN">呼叫语音信箱</caption>
     </screenshot>
   </screenshots>
