@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-22 00:45+0000\n"
+"POT-Creation-Date: 2023-11-05 12:36+0000\n"
 "PO-Revision-Date: 2023-09-09 20:28+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -18,7 +18,7 @@ msgstr ""
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: src/notification-manager.cpp:118 src/notification-manager.cpp:290
+#: src/notification-manager.cpp:118 src/notification-manager.cpp:267
 #, kde-format
 msgid "No Caller ID"
 msgstr "لا يوجد معرف متصل"
@@ -38,12 +38,12 @@ msgstr "مكالمة فائتة من %1"
 msgid "Incoming call"
 msgstr "مكالمة قادمة"
 
-#: src/notification-manager.cpp:158 src/notification-manager.cpp:172
+#: src/notification-manager.cpp:156
 #, kde-format
 msgid "Accept"
 msgstr "اقبل"
 
-#: src/notification-manager.cpp:164 src/notification-manager.cpp:172
+#: src/notification-manager.cpp:162
 #, kde-format
 msgid "Reject"
 msgstr "ارفض"

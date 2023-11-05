@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-22 00:45+0000\n"
+"POT-Creation-Date: 2023-11-05 12:36+0000\n"
 "PO-Revision-Date: 2023-04-01 06:54+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.2.2\n"
 
-#: src/notification-manager.cpp:118 src/notification-manager.cpp:290
+#: src/notification-manager.cpp:118 src/notification-manager.cpp:267
 #, kde-format
 msgid "No Caller ID"
 msgstr "აბონენტის ID-ის გარეშე"
@@ -38,12 +38,12 @@ msgstr "გამოტოვებული ზარი %1-დან"
 msgid "Incoming call"
 msgstr "შემომავალი ზარი"
 
-#: src/notification-manager.cpp:158 src/notification-manager.cpp:172
+#: src/notification-manager.cpp:156
 #, kde-format
 msgid "Accept"
 msgstr "დასტური"
 
-#: src/notification-manager.cpp:164 src/notification-manager.cpp:172
+#: src/notification-manager.cpp:162
 #, kde-format
 msgid "Reject"
 msgstr "უარყოფა"

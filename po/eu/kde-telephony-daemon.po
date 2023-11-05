@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-22 00:45+0000\n"
+"POT-Creation-Date: 2023-11-05 12:36+0000\n"
 "PO-Revision-Date: 2023-07-21 00:36+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 23.04.3\n"
 
-#: src/notification-manager.cpp:118 src/notification-manager.cpp:290
+#: src/notification-manager.cpp:118 src/notification-manager.cpp:267
 #, kde-format
 msgid "No Caller ID"
 msgstr "Ez du dei egilearen IDrik"
@@ -40,12 +40,12 @@ msgstr "%1(e)ren dei galdua"
 msgid "Incoming call"
 msgstr "Sarrerako deia"
 
-#: src/notification-manager.cpp:158 src/notification-manager.cpp:172
+#: src/notification-manager.cpp:156
 #, kde-format
 msgid "Accept"
 msgstr "Onartu"
 
-#: src/notification-manager.cpp:164 src/notification-manager.cpp:172
+#: src/notification-manager.cpp:162
 #, kde-format
 msgid "Reject"
 msgstr "Errefusatu"

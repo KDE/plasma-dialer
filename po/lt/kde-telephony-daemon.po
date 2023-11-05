@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-22 00:45+0000\n"
+"POT-Creation-Date: 2023-11-05 12:36+0000\n"
 "PO-Revision-Date: 2022-11-17 00:48+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
 
-#: src/notification-manager.cpp:118 src/notification-manager.cpp:290
+#: src/notification-manager.cpp:118 src/notification-manager.cpp:267
 #, kde-format
 msgid "No Caller ID"
 msgstr ""
@@ -38,12 +38,12 @@ msgstr ""
 msgid "Incoming call"
 msgstr ""
 
-#: src/notification-manager.cpp:158 src/notification-manager.cpp:172
+#: src/notification-manager.cpp:156
 #, kde-format
 msgid "Accept"
 msgstr ""
 
-#: src/notification-manager.cpp:164 src/notification-manager.cpp:172
+#: src/notification-manager.cpp:162
 #, kde-format
 msgid "Reject"
 msgstr ""
