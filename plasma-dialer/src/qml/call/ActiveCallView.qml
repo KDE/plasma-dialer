@@ -24,12 +24,9 @@ Item {
         spacing: Kirigami.Units.smallSpacing
 
         model: ActiveCallModel
-        delegate: Kirigami.AbstractListItem {
-            RowLayout {
-                Label {
-                    text: communicationWith
-                }
-            }
+        delegate: ItemDelegate {
+            text: communicationWith
+            width: ListView.view.width
         }
     }
 }

@@ -7,7 +7,7 @@
 import QtQuick 2.6
 import QtQuick.Controls 2.13
 import QtQuick.Layouts 1.2
-import org.kde.kirigami 2.10 as Kirigami
+import org.kde.kirigami as Kirigami
 
 Kirigami.OverlaySheet {
 
@@ -26,9 +26,16 @@ Kirigami.OverlaySheet {
         id: list
         implicitWidth: Kirigami.Units.gridUnit * 20
         model: 4
-        delegate: Kirigami.BasicListItem {
+        delegate: ItemDelegate {
+            id: delegate
             text: modelData.typeLabel
-            subtitle: modelData.number
+            width: ListView.view.width
+
+            contentItem: Kirigami.TitleSubtitle {
+                title: delegate.text
+                subtitle: modelData.number
+            }
+
             onClicked: {
                 close()
                 root.numberSelected(modelData.normalizedNumber)

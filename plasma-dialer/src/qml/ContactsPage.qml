@@ -94,9 +94,10 @@ Kirigami.ScrollablePage {
 
         boundsBehavior: Flickable.StopAtBounds
 
-        delegate: Kirigami.BasicListItem {
+        delegate: Controls.ItemDelegate {
             icon: model && model.decoration
-            label: model && model.display
+            text: model && model.display
+            width: ListView.view.width
 
             onClicked: {
                 const phoneNumbers = ContactUtils.phoneNumbers(model.personUri)

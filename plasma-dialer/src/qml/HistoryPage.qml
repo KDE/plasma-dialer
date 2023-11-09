@@ -82,7 +82,9 @@ Kirigami.ScrollablePage {
                 label: Qt.formatDate(section, Qt.locale().dateFormat(Locale.LongFormat));
             }
         }
-        delegate: HistoryDelegate {}
+        delegate: HistoryDelegate {
+            width: ListView.view.width
+        }
         
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent

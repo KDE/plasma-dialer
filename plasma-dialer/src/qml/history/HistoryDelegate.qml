@@ -8,13 +8,13 @@ import QtQuick.Controls 2.2 as Controls
 import org.kde.kirigami 2.2 as Kirigami
 import org.kde.telephony 1.0
 
-Kirigami.AbstractListItem {
+Controls.ItemDelegate {
     id: root
 
     highlighted: false
     onClicked: applicationWindow().call(model.communicationWith)
 
-    RowLayout {
+    contentItem: RowLayout {
         Kirigami.Icon {
             width: Kirigami.Units.iconSizes.medium
             height: width
