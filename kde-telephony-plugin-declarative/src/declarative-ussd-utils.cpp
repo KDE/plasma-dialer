@@ -18,15 +18,27 @@ DeclarativeUssdUtils::DeclarativeUssdUtils(QObject *parent)
 
 void DeclarativeUssdUtils::initiate(const QString &deviceUni, const QString &command)
 {
+    if (!isValid()) {
+        qDebug() << Q_FUNC_INFO << "UssdUtils is not initiated";
+        return;
+    }
     org::kde::telephony::UssdUtils::initiate(deviceUni, command);
 }
 
 void DeclarativeUssdUtils::respond(const QString &deviceUni, const QString &reply)
 {
+    if (!isValid()) {
+        qDebug() << Q_FUNC_INFO << "UssdUtils is not initiated";
+        return;
+    }
     org::kde::telephony::UssdUtils::respond(deviceUni, reply);
 }
 
 void DeclarativeUssdUtils::cancel(const QString &deviceUni)
 {
+    if (!isValid()) {
+        qDebug() << Q_FUNC_INFO << "UssdUtils is not initiated";
+        return;
+    }
     org::kde::telephony::UssdUtils::cancel(deviceUni);
 }

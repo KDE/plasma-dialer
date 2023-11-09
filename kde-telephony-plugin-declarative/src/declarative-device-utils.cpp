@@ -11,7 +11,7 @@ DeclarativeDeviceUtils::DeclarativeDeviceUtils(QObject *parent)
 
 void DeclarativeDeviceUtils::setDeviceUtils(org::kde::telephony::DeviceUtils *deviceUtils)
 {
-    if (!deviceUtils->isValid()) {
+    if (!deviceUtils) {
         qDebug() << Q_FUNC_INFO << "Could not initiate DeviceUtils interface";
         return;
     }
@@ -21,7 +21,12 @@ void DeclarativeDeviceUtils::setDeviceUtils(org::kde::telephony::DeviceUtils *de
 
 QStringList DeclarativeDeviceUtils::deviceUniList()
 {
-    QDBusPendingReply<QStringList> reply = _deviceUtils->deviceUniList();
+    QDBusPendingReply<QStringList> reply;
+    if (!_deviceUtils) {
+        qDebug() << Q_FUNC_INFO << "DeviceUtils is not initiated";
+        return reply.value();
+    }
+    reply = _deviceUtils->deviceUniList();
     reply.waitForFinished();
     if (reply.isError()) {
         qDebug() << Q_FUNC_INFO << reply.error();
@@ -31,7 +36,12 @@ QStringList DeclarativeDeviceUtils::deviceUniList()
 
 QStringList DeclarativeDeviceUtils::equipmentIdentifiers()
 {
-    QDBusPendingReply<QStringList> reply = _deviceUtils->equipmentIdentifiers();
+    QDBusPendingReply<QStringList> reply;
+    if (!_deviceUtils) {
+        qDebug() << Q_FUNC_INFO << "DeviceUtils is not initiated";
+        return reply.value();
+    }
+    reply = _deviceUtils->equipmentIdentifiers();
     reply.waitForFinished();
     if (reply.isError()) {
         qDebug() << Q_FUNC_INFO << reply.error();
@@ -41,5 +51,9 @@ QStringList DeclarativeDeviceUtils::equipmentIdentifiers()
 
 void DeclarativeDeviceUtils::setDeviceUniList(const QStringList &newDeviceUniList)
 {
+    if (!_deviceUtils) {
+        qDebug() << Q_FUNC_INFO << "DeviceUtils is not initiated";
+        return;
+    }
     _deviceUtils->setDeviceUniList(newDeviceUniList);
 }

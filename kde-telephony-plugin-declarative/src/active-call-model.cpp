@@ -13,6 +13,10 @@ ActiveCallModel::ActiveCallModel(QObject *parent)
 
 void ActiveCallModel::sendDtmf(const QString &tones)
 {
+    if (!_callUtils) {
+        qDebug() << Q_FUNC_INFO << "CallUtils is not initiated";
+        return;
+    }
     QString deviceUni;
     QString callUni;
     _callUtils->sendDtmf(deviceUni, callUni, tones);
@@ -20,6 +24,10 @@ void ActiveCallModel::sendDtmf(const QString &tones)
 
 void ActiveCallModel::dial(const QString &deviceUni, const QString &number)
 {
+    if (!_callUtils) {
+        qDebug() << Q_FUNC_INFO << "CallUtils is not initiated";
+        return;
+    }
     _callUtils->dial(deviceUni, number);
 }
 
@@ -84,6 +92,13 @@ void ActiveCallModel::onUtilsCallAdded(const QString &deviceUni,
 {
     Q_UNUSED(deviceUni);
     Q_UNUSED(callUni);
+    Q_UNUSED(callDirection);
+    Q_UNUSED(callState);
+    Q_UNUSED(callStateReason);
+    if (!_callUtils) {
+        qDebug() << Q_FUNC_INFO << "CallUtils is not initiated";
+        return;
+    }
     _callUtils->fetchCalls();
     setCommunicationWith(communicationWith);
     _callsTimer.start();
@@ -93,6 +108,10 @@ void ActiveCallModel::onUtilsCallDeleted(const QString &deviceUni, const QString
 {
     Q_UNUSED(deviceUni);
     Q_UNUSED(callUni);
+    if (!_callUtils) {
+        qDebug() << Q_FUNC_INFO << "CallUtils is not initiated";
+        return;
+    }
     _callUtils->fetchCalls();
     _callsTimer.stop();
 }
@@ -210,7 +229,7 @@ void ActiveCallModel::setDuration(qulonglong duration)
 
 void ActiveCallModel::setCallUtils(org::kde::telephony::CallUtils *callUtils)
 {
-    if (!callUtils->isValid()) {
+    if (!callUtils) {
         qDebug() << Q_FUNC_INFO << "Could not initiate CallUtils interface";
         return;
     }
