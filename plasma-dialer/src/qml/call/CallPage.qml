@@ -6,14 +6,14 @@
  *   SPDX-License-Identifier: LGPL-2.0-or-later
  */
 
-import QtQuick 2.0
-import QtQuick.Controls 2.7 as Controls
-import QtQuick.Layouts 1.1
+import QtQuick
+import QtQuick.Controls as Controls
+import QtQuick.Layouts
 
-import org.kde.kirigami 2.12 as Kirigami
+import org.kde.kirigami as Kirigami
 
-import org.kde.telephony 1.0
-import org.kde.phone.dialer 1.0 // Config
+import org.kde.telephony
+import org.kde.phone.dialer // Config
 
 import "../dialpad"
 

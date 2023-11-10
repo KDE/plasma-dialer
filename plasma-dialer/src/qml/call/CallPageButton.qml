@@ -4,11 +4,11 @@
  *   SPDX-License-Identifier: LGPL-2.0-or-later
  */ 
 
-import QtQuick 2.0
-import QtQuick.Controls 2.7 
-import QtQuick.Layouts 1.1
+import QtQuick
+import QtQuick.Controls 
+import QtQuick.Layouts
 
-import org.kde.kirigami 2.13 as Kirigami
+import org.kde.kirigami as Kirigami
 
 Rectangle {
     id: buttonRoot

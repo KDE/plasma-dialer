@@ -3,14 +3,14 @@
 // SPDX-FileCopyrightText: 2021 Alexey Andreyev <aa13q@ya.ru>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
-import QtQuick 2.3
-import QtQuick.Controls 2.3
-import QtQuick.Layouts 1.1
-import QtQuick.LocalStorage 2.0
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
+import QtQuick.LocalStorage
 
-import org.kde.kirigami 2.19 as Kirigami
+import org.kde.kirigami as Kirigami
 
-import org.kde.telephony 1.0
+import org.kde.telephony
 
 import "call"
 

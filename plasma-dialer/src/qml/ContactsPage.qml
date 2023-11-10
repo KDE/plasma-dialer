@@ -4,13 +4,13 @@
  *   SPDX-License-Identifier: LGPL-2.0-or-later
  */
 
-import QtQuick 2.15
-import QtQuick.Controls 2.2 as Controls
-import QtQuick.Layouts 1.1
-import org.kde.kirigami 2.14 as Kirigami
-import org.kde.people 1.0 as KPeople
+import QtQuick
+import QtQuick.Controls as Controls
+import QtQuick.Layouts
+import org.kde.kirigami as Kirigami
+import org.kde.people as KPeople
 
-import org.kde.telephony 1.0
+import org.kde.telephony
 
 import "call"
 

@@ -2,11 +2,11 @@
 //
 // SPDX-License-Identifier: LicenseRef-KDE-Accepted-GPL
 
-import QtQuick 2.0
-import QtQuick.Controls 2.7 as Controls
-import QtQuick.Layouts 1.1
+import QtQuick
+import QtQuick.Controls as Controls
+import QtQuick.Layouts
 
-import org.kde.kirigami 2.12 as Kirigami
+import org.kde.kirigami as Kirigami
 
 Kirigami.OverlaySheet {
 

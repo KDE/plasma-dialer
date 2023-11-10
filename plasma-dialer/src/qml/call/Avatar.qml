@@ -4,11 +4,11 @@
  *   SPDX-License-Identifier: LGPL-2.0-or-later
  */
 
-import QtQuick 2.0
-import QtQuick.Layouts 1.1
-import QtGraphicalEffects 1.12
+import QtQuick
+import QtQuick.Layouts
+import QtGraphicalEffects
 
-import org.kde.kirigami 2.13 as Kirigami
+import org.kde.kirigami as Kirigami
 
 Item {
 
