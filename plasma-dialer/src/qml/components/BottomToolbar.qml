@@ -26,7 +26,7 @@ Kirigami.NavigationTabBar {
 
     actions: [
         Kirigami.Action {
-            id: historyAction
+            icon.name: "clock"
             text: i18n("History")
             property bool opened: getHistoryPage() === currentPage()
             checked: opened
@@ -36,19 +36,9 @@ Kirigami.NavigationTabBar {
                     applicationWindow().switchToPage(getHistoryPage(), 0);
                 }
             }
-            Component.onCompleted: {
-                // dynamic check could be dropped with KF6-only versions
-                // https://invent.kde.org/frameworks/kirigami/-/merge_requests/942
-                const name = "clock"
-                if (historyAction.iconName !== undefined) {
-                    historyAction.iconName = name
-                } else {
-                    historyAction.icon.name = name
-                }
-            }
         },
         Kirigami.Action {
-            id: contactsAction
+            icon.name: "view-pim-contacts"
             text: i18n("Contacts")
             property bool opened: getContactsPage() === currentPage()
             checked: opened
@@ -58,35 +48,15 @@ Kirigami.NavigationTabBar {
                     applicationWindow().switchToPage(getContactsPage(), 0);
                 }
             }
-            Component.onCompleted: {
-                // dynamic check could be dropped with KF6-only versions
-                // https://invent.kde.org/frameworks/kirigami/-/merge_requests/942
-                const name = "view-pim-contacts"
-                if (contactsAction.iconName !== undefined) {
-                    contactsAction.iconName = name
-                } else {
-                    contactsAction.icon.name = name
-                }
-            }
         },
         Kirigami.Action {
-            id: dialerAction
+            icon.name: "call-start"
             text: i18n("Dialer")
             property bool opened: getDialerPage() === currentPage()
             checked: opened
             onTriggered: {
                 if (!opened) {
                     applicationWindow().switchToPage(getDialerPage(), 0);
-                }
-            }
-            Component.onCompleted: {
-                // dynamic check could be dropped with KF6-only versions
-                // https://invent.kde.org/frameworks/kirigami/-/merge_requests/942
-                const name = "call-start"
-                if (dialerAction.iconName !== undefined) {
-                    dialerAction.iconName = name
-                } else {
-                    dialerAction.icon.name = name
                 }
             }
         }

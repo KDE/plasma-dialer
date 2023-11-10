@@ -22,31 +22,16 @@ Kirigami.ScrollablePage {
     // page animation
     property real yTranslate: 0
     
-    Kirigami.Action {
-        id: settingsAction
-        displayHint: Kirigami.DisplayHint.IconOnly
-        visible: !applicationWindow().isWidescreen
-        enabled: !applicationWindow().lockscreenMode
-        text: i18n("Settings")
-        onTriggered: applicationWindow().pageStack.push(applicationWindow().getPage("Settings"))
-    }
-
-    Component.onCompleted: {
-        // dynamic check could be dropped with KF6-only versions
-        // https://invent.kde.org/frameworks/kirigami/-/merge_requests/986
-        if (contactsPage.mainAction !== undefined) {
-            contactsPage.mainAction = settingsAction
-        } else {
-            contactsPage.actions = settingsAction
+    actions: [
+        Kirigami.Action {
+            icon.name: "settings-configure"
+            displayHint: Kirigami.DisplayHint.IconOnly
+            visible: !applicationWindow().isWidescreen
+            enabled: !applicationWindow().lockscreenMode
+            text: i18n("Settings")
+            onTriggered: applicationWindow().pageStack.push(applicationWindow().getPage("Settings"))
         }
-        // https://invent.kde.org/frameworks/kirigami/-/merge_requests/942
-        const name = "settings-configure"
-        if (settingsAction.iconName !== undefined) {
-            settingsAction.iconName = name
-        } else {
-            settingsAction.icon.name = name
-        }
-    }
+    ]
 
     Component {
         id: callPopup

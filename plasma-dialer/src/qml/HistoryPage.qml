@@ -27,39 +27,21 @@ Kirigami.ScrollablePage {
         InCallInlineMessage {}
     }
 
-    Kirigami.Action {
-        id: clearHistoryAction
-        onTriggered: promptDialog.open()
-        text: i18n("Clear history")
-        icon.name: "edit-clear-history"
-    }
-
-    Kirigami.Action {
-        id: settingsAction
-        displayHint: Kirigami.DisplayHint.IconOnly
-        visible: !applicationWindow().isWidescreen
-        enabled: !applicationWindow().lockscreenMode
-        text: i18n("Settings")
-        onTriggered: applicationWindow().pageStack.push(applicationWindow().getPage("Settings"))
-    }
-
-    Component.onCompleted: {
-        // dynamic check could be dropped with KF6-only versions
-        // https://invent.kde.org/frameworks/kirigami/-/merge_requests/986
-        if (historyPage.mainAction !== undefined) {
-            historyPage.mainAction = clearHistoryAction
-            historyPage.actions.contextualActions = settingsAction
-        } else {
-            historyPage.actions = [clearHistoryAction, settingsAction]
+    actions: [
+        Kirigami.Action {
+            icon.name: "edit-clear-history"
+            onTriggered: promptDialog.open()
+            text: i18n("Clear history")
+        },
+        Kirigami.Action {
+            icon.name: "settings-configure"
+            displayHint: Kirigami.DisplayHint.IconOnly
+            visible: !applicationWindow().isWidescreen
+            enabled: !applicationWindow().lockscreenMode
+            text: i18n("Settings")
+            onTriggered: applicationWindow().pageStack.push(applicationWindow().getPage("Settings"))
         }
-        // https://invent.kde.org/frameworks/kirigami/-/merge_requests/942
-        const name = "settings-configure"
-        if (settingsAction.iconName !== undefined) {
-            settingsAction.iconName = name
-        } else {
-            settingsAction.icon.name = name
-        }
-    }
+    ]
 
     function secondsToTimeString(seconds) {
         var h = Math.floor(seconds / 3600);
