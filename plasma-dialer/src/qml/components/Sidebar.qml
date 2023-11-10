@@ -9,9 +9,21 @@ import org.kde.kirigami as Kirigami
 Kirigami.OverlayDrawer {
     id: drawer
     modal: false
+    width: Kirigami.Units.gridUnit * 5
+
+    height: applicationWindow().height
+
+    edge: Qt.application.layoutDirection === Qt.RightToLeft ? Qt.RightEdge : Qt.LeftEdge
+    parent: QQC2.Overlay.overlay
+    x: 0
 
     Kirigami.Theme.colorSet: Kirigami.Theme.Window
     Kirigami.Theme.inherit: false
+
+    leftPadding: 0
+    rightPadding: 0
+    topPadding: 0
+    bottomPadding: 0
 
     contentItem: ColumnLayout {
         spacing: 0
@@ -20,97 +32,109 @@ Kirigami.OverlayDrawer {
             Layout.fillWidth: true
         }
 
-        ColumnLayout {
-            id: column
-            spacing: 0
+        QQC2.ScrollView {
+            id: scrollView
+            Layout.fillWidth: true
+            Layout.fillHeight: true
 
-            Kirigami.NavigationTabButton {
-                Layout.fillWidth: true
-                width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
+            QQC2.ScrollBar.vertical.policy: QQC2.ScrollBar.AlwaysOff
+            QQC2.ScrollBar.horizontal.policy: QQC2.ScrollBar.AlwaysOff
+            contentWidth: -1 // disable horizontal scroll
 
-                text: i18n("History")
-                icon.name: "clock"
-                checked: pageStack.currentItem === page
-                enabled: !applicationWindow().lockscreenMode
-                property var page: applicationWindow().getPage("History")
-                onClicked: {
-                    if (applicationWindow().pageStack.currentItem !== page) {
-                        applicationWindow().switchToPage(page, 0);
-                    } else {
-                        checked = Qt.binding(function() { return applicationWindow().pageStack.currentItem === page; });
+            ColumnLayout {
+                id: column
+                width: scrollView.width
+                spacing: 0
+
+
+                Kirigami.NavigationTabButton {
+                    Layout.fillWidth: true
+                    width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
+
+                    text: i18n("History")
+                    icon.name: "clock"
+                    checked: pageStack.currentItem === page
+                    enabled: !applicationWindow().lockscreenMode
+                    property var page: applicationWindow().getPage("History")
+                    onClicked: {
+                        if (applicationWindow().pageStack.currentItem !== page) {
+                            applicationWindow().switchToPage(page, 0);
+                        } else {
+                            checked = Qt.binding(function() { return applicationWindow().pageStack.currentItem === page; });
+                        }
                     }
                 }
-            }
 
-            Kirigami.NavigationTabButton {
-                Layout.fillWidth: true
-                width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
+                Kirigami.NavigationTabButton {
+                    Layout.fillWidth: true
+                    width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
 
-                text: i18n("Contacts")
-                icon.name: "view-pim-contacts"
-                checked: pageStack.currentItem === page
-                enabled: !applicationWindow().lockscreenMode
-                property var page: applicationWindow().getPage("Contacts")
-                onClicked: {
-                    if (applicationWindow().pageStack.currentItem !== page) {
-                        applicationWindow().switchToPage(page, 0);
-                    } else {
-                        checked = Qt.binding(function() { return applicationWindow().pageStack.currentItem === page; });
+                    text: i18n("Contacts")
+                    icon.name: "view-pim-contacts"
+                    checked: pageStack.currentItem === page
+                    enabled: !applicationWindow().lockscreenMode
+                    property var page: applicationWindow().getPage("Contacts")
+                    onClicked: {
+                        if (applicationWindow().pageStack.currentItem !== page) {
+                            applicationWindow().switchToPage(page, 0);
+                        } else {
+                            checked = Qt.binding(function() { return applicationWindow().pageStack.currentItem === page; });
+                        }
                     }
                 }
-            }
 
-            Kirigami.NavigationTabButton {
-                Layout.fillWidth: true
-                width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
+                Kirigami.NavigationTabButton {
+                    Layout.fillWidth: true
+                    width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
 
-                text: i18n("Dialer")
-                icon.name: "call-start"
-                checked: pageStack.currentItem === page
-                property var page: applicationWindow().getPage("Dialer")
-                onClicked: {
-                    if (applicationWindow().pageStack.currentItem !== page) {
-                        applicationWindow().switchToPage(page, 0);
-                    } else {
-                        checked = Qt.binding(function() { return applicationWindow().pageStack.currentItem === page; });
+                    text: i18n("Dialer")
+                    icon.name: "call-start"
+                    checked: pageStack.currentItem === page
+                    property var page: applicationWindow().getPage("Dialer")
+                    onClicked: {
+                        if (applicationWindow().pageStack.currentItem !== page) {
+                            applicationWindow().switchToPage(page, 0);
+                        } else {
+                            checked = Qt.binding(function() { return applicationWindow().pageStack.currentItem === page; });
+                        }
                     }
                 }
-            }
 
-            Item { Layout.fillHeight: true }
-            Kirigami.Separator {
-                Layout.fillWidth: true
-                Layout.rightMargin: Kirigami.Units.smallSpacing
-                Layout.leftMargin: Kirigami.Units.smallSpacing
-            }
-            
-            Kirigami.NavigationTabButton {
-                Layout.fillWidth: true
-                width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
+                Item { Layout.fillHeight: true }
+                Kirigami.Separator {
+                    Layout.fillWidth: true
+                    Layout.rightMargin: Kirigami.Units.smallSpacing
+                    Layout.leftMargin: Kirigami.Units.smallSpacing
+                }
 
-                text: i18n("Settings")
-                icon.name: "settings-configure"
-                checked: pageStack.currentItem === page
-                enabled: !applicationWindow().lockscreenMode
-                property var page: applicationWindow().getPage("Settings")
-                onClicked: {
-                    if (applicationWindow().pageStack.currentItem !== page) {
-                        applicationWindow().switchToPage(page, 0);
-                    } else {
-                        checked = Qt.binding(function() { return applicationWindow().pageStack.currentItem === page; });
+                Kirigami.NavigationTabButton {
+                    Layout.fillWidth: true
+                    width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
+
+                    text: i18n("Settings")
+                    icon.name: "settings-configure"
+                    checked: pageStack.currentItem === page
+                    enabled: !applicationWindow().lockscreenMode
+                    property var page: applicationWindow().getPage("Settings")
+                    onClicked: {
+                        if (applicationWindow().pageStack.currentItem !== page) {
+                            applicationWindow().switchToPage(page, 0);
+                        } else {
+                            checked = Qt.binding(function() { return applicationWindow().pageStack.currentItem === page; });
+                        }
                     }
                 }
-            }
-            
-            Kirigami.NavigationTabButton {
-                Layout.fillWidth: true
-                width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
 
-                visible: applicationWindow().lockscreenMode
-                text: i18n("Quit")
-                icon.name: "window-close-symbolic"
-                onClicked: {
-                    Qt.quit()
+                Kirigami.NavigationTabButton {
+                    Layout.fillWidth: true
+                    width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
+
+                    visible: applicationWindow().lockscreenMode
+                    text: i18n("Quit")
+                    icon.name: "window-close-symbolic"
+                    onClicked: {
+                        Qt.quit()
+                    }
                 }
             }
         }

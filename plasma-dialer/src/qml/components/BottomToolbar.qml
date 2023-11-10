@@ -10,6 +10,8 @@ import org.kde.kirigami as Kirigami
 Kirigami.NavigationTabBar {
     id: navigationTabBar
 
+    visible: height !== 0
+
     function currentPage() {
         return applicationWindow().pageStack.currentItem
     }
