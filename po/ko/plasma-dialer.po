@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:36+0000\n"
+"POT-Creation-Date: 2023-11-10 00:43+0000\n"
 "PO-Revision-Date: 2023-04-22 00:15+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -116,12 +116,12 @@ msgstr "설정"
 msgid "Quit"
 msgstr "끝내기"
 
-#: src/qml/ContactsPage.qml:106
+#: src/qml/ContactsPage.qml:107
 #, kde-format
 msgid "Select number to call"
 msgstr "전화를 걸 번호 선택"
 
-#: src/qml/ContactsPage.qml:115
+#: src/qml/ContactsPage.qml:116
 #, kde-format
 msgid "No contacts have a phone number set"
 msgstr "전화번호가 있는 연락처 없음"
@@ -151,7 +151,7 @@ msgstr "통화 기록"
 msgid "Clear history"
 msgstr "기록 삭제"
 
-#: src/qml/HistoryPage.qml:89
+#: src/qml/HistoryPage.qml:91
 #, kde-format
 msgid "No recent calls"
 msgstr "최근 통화 없음"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:36+0000\n"
+"POT-Creation-Date: 2023-11-10 00:43+0000\n"
 "PO-Revision-Date: 2022-02-04 16:31+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian\n"
@@ -117,12 +117,12 @@ msgstr "Configurări"
 msgid "Quit"
 msgstr ""
 
-#: src/qml/ContactsPage.qml:106
+#: src/qml/ContactsPage.qml:107
 #, kde-format
 msgid "Select number to call"
 msgstr "Alegeți numărul de apelat"
 
-#: src/qml/ContactsPage.qml:115
+#: src/qml/ContactsPage.qml:116
 #, kde-format
 msgid "No contacts have a phone number set"
 msgstr "Niciun contact nu are număr de telefon înregistrat"
@@ -152,7 +152,7 @@ msgstr "Istoric apeluri"
 msgid "Clear history"
 msgstr "Șterge istoricul"
 
-#: src/qml/HistoryPage.qml:89
+#: src/qml/HistoryPage.qml:91
 #, kde-format
 msgid "No recent calls"
 msgstr "Niciun apel recent"

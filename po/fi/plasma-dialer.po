@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:36+0000\n"
+"POT-Creation-Date: 2023-11-10 00:43+0000\n"
 "PO-Revision-Date: 2023-03-04 20:11+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -116,12 +116,12 @@ msgstr "Asetukset"
 msgid "Quit"
 msgstr "Lopeta"
 
-#: src/qml/ContactsPage.qml:106
+#: src/qml/ContactsPage.qml:107
 #, kde-format
 msgid "Select number to call"
 msgstr "Valitse numero, johon soitetaan"
 
-#: src/qml/ContactsPage.qml:115
+#: src/qml/ContactsPage.qml:116
 #, kde-format
 msgid "No contacts have a phone number set"
 msgstr "Puhelinnumeroa ei ole asetettu yhdellekään yhteystiedolle"
@@ -151,7 +151,7 @@ msgstr "Puheluhistoria"
 msgid "Clear history"
 msgstr "Tyhjennä historia"
 
-#: src/qml/HistoryPage.qml:89
+#: src/qml/HistoryPage.qml:91
 #, kde-format
 msgid "No recent calls"
 msgstr "Ei viimeaikaisia puheluja"

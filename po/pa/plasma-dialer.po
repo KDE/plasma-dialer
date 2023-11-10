@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:36+0000\n"
+"POT-Creation-Date: 2023-11-10 00:43+0000\n"
 "PO-Revision-Date: 2022-06-11 09:41-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -117,12 +117,12 @@ msgstr "ਸੈਟਿੰਗਾਂ"
 msgid "Quit"
 msgstr ""
 
-#: src/qml/ContactsPage.qml:106
+#: src/qml/ContactsPage.qml:107
 #, kde-format
 msgid "Select number to call"
 msgstr "ਕਾਲ ਕਰਨ ਲਈ ਨੰਬਰ ਚੁਣੋ"
 
-#: src/qml/ContactsPage.qml:115
+#: src/qml/ContactsPage.qml:116
 #, kde-format
 msgid "No contacts have a phone number set"
 msgstr "ਕਿਸੇ ਸੰਪਰਕ ਲਈ ਫ਼ੋਨ ਨੰਬਰ ਨਿਯਤ ਨਹੀਂ ਹੈ"
@@ -152,7 +152,7 @@ msgstr "ਕਾਲ ਦਾ ਅਤੀਤ"
 msgid "Clear history"
 msgstr "ਅਤੀਤ ਨੂੰ ਮਿਟਾਓ"
 
-#: src/qml/HistoryPage.qml:89
+#: src/qml/HistoryPage.qml:91
 #, kde-format
 msgid "No recent calls"
 msgstr "ਕੋਈ ਤਾਜ਼ਾ ਕਾਲਾਂ ਨਹੀਂ ਹਨ"
