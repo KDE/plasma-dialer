@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-10 00:43+0000\n"
+"POT-Creation-Date: 2023-11-11 00:43+0000\n"
 "PO-Revision-Date: 2023-07-21 00:38+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -90,41 +90,41 @@ msgstr "Isilarazi"
 msgid "View"
 msgstr "Ikusi"
 
-#: src/qml/components/BottomToolbar.qml:30 src/qml/components/Sidebar.qml:31
+#: src/qml/components/BottomToolbar.qml:32 src/qml/components/Sidebar.qml:54
 #, kde-format
 msgid "History"
 msgstr "Historia"
 
-#: src/qml/components/BottomToolbar.qml:52 src/qml/components/Sidebar.qml:49
+#: src/qml/components/BottomToolbar.qml:44 src/qml/components/Sidebar.qml:72
 #: src/qml/ContactsPage.qml:19
 #, kde-format
 msgid "Contacts"
 msgstr "Kontaktuak"
 
-#: src/qml/components/BottomToolbar.qml:74 src/qml/components/Sidebar.qml:67
+#: src/qml/components/BottomToolbar.qml:56 src/qml/components/Sidebar.qml:90
 #: src/qml/DialerPage.qml:27
 #, kde-format
 msgid "Dialer"
 msgstr "Markatzailea"
 
-#: src/qml/components/Sidebar.qml:91 src/qml/ContactsPage.qml:30
-#: src/qml/DialerPage.qml:57 src/qml/HistoryPage.qml:42
+#: src/qml/components/Sidebar.qml:114 src/qml/ContactsPage.qml:31
+#: src/qml/DialerPage.qml:57 src/qml/HistoryPage.qml:41
 #: src/qml/settings/SettingsPage.qml:20
 #, kde-format
 msgid "Settings"
 msgstr "Ezarpenak"
 
-#: src/qml/components/Sidebar.qml:110
+#: src/qml/components/Sidebar.qml:133
 #, kde-format
 msgid "Quit"
 msgstr "Irten"
 
-#: src/qml/ContactsPage.qml:107
+#: src/qml/ContactsPage.qml:92
 #, kde-format
 msgid "Select number to call"
 msgstr "Hautatu deitu beharreko zenbakia"
 
-#: src/qml/ContactsPage.qml:116
+#: src/qml/ContactsPage.qml:101
 #, kde-format
 msgid "No contacts have a phone number set"
 msgstr "Ez dago telefono zenbakirik ezarrita duen kontakturik"
@@ -149,12 +149,12 @@ msgstr "Iraupena: %1"
 msgid "Call History"
 msgstr "Deien historia:"
 
-#: src/qml/HistoryPage.qml:33
+#: src/qml/HistoryPage.qml:34
 #, kde-format
 msgid "Clear history"
 msgstr "Garbitu historia"
 
-#: src/qml/HistoryPage.qml:91
+#: src/qml/HistoryPage.qml:73
 #, kde-format
 msgid "No recent calls"
 msgstr "Ez dago azken deirik"

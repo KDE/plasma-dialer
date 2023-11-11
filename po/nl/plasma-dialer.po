@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-10 00:43+0000\n"
+"POT-Creation-Date: 2023-11-11 00:43+0000\n"
 "PO-Revision-Date: 2023-11-01 11:00+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -87,41 +87,41 @@ msgstr "Dempen"
 msgid "View"
 msgstr "Beeld"
 
-#: src/qml/components/BottomToolbar.qml:30 src/qml/components/Sidebar.qml:31
+#: src/qml/components/BottomToolbar.qml:32 src/qml/components/Sidebar.qml:54
 #, kde-format
 msgid "History"
 msgstr "Geschiedenis"
 
-#: src/qml/components/BottomToolbar.qml:52 src/qml/components/Sidebar.qml:49
+#: src/qml/components/BottomToolbar.qml:44 src/qml/components/Sidebar.qml:72
 #: src/qml/ContactsPage.qml:19
 #, kde-format
 msgid "Contacts"
 msgstr "Contactpersonen"
 
-#: src/qml/components/BottomToolbar.qml:74 src/qml/components/Sidebar.qml:67
+#: src/qml/components/BottomToolbar.qml:56 src/qml/components/Sidebar.qml:90
 #: src/qml/DialerPage.qml:27
 #, kde-format
 msgid "Dialer"
 msgstr "Telefoonkiezer"
 
-#: src/qml/components/Sidebar.qml:91 src/qml/ContactsPage.qml:30
-#: src/qml/DialerPage.qml:57 src/qml/HistoryPage.qml:42
+#: src/qml/components/Sidebar.qml:114 src/qml/ContactsPage.qml:31
+#: src/qml/DialerPage.qml:57 src/qml/HistoryPage.qml:41
 #: src/qml/settings/SettingsPage.qml:20
 #, kde-format
 msgid "Settings"
 msgstr "Instellingen"
 
-#: src/qml/components/Sidebar.qml:110
+#: src/qml/components/Sidebar.qml:133
 #, kde-format
 msgid "Quit"
 msgstr "Afsluiten"
 
-#: src/qml/ContactsPage.qml:107
+#: src/qml/ContactsPage.qml:92
 #, kde-format
 msgid "Select number to call"
 msgstr "Te bellen nummer selecteren"
 
-#: src/qml/ContactsPage.qml:116
+#: src/qml/ContactsPage.qml:101
 #, kde-format
 msgid "No contacts have a phone number set"
 msgstr "Geen contactpersoon heeft een telefoonnummer ingesteld"
@@ -146,12 +146,12 @@ msgstr "Duur: %1"
 msgid "Call History"
 msgstr "Oproepgeschiedenis"
 
-#: src/qml/HistoryPage.qml:33
+#: src/qml/HistoryPage.qml:34
 #, kde-format
 msgid "Clear history"
 msgstr "Geschiedenis wissen"
 
-#: src/qml/HistoryPage.qml:91
+#: src/qml/HistoryPage.qml:73
 #, kde-format
 msgid "No recent calls"
 msgstr "Geen recente oproepen"
