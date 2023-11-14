@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:36+0000\n"
-"PO-Revision-Date: 2023-02-02 23:02+0100\n"
+"PO-Revision-Date: 2023-11-13 15:44+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: src/notification-manager.cpp:118 src/notification-manager.cpp:267
 #, kde-format
@@ -25,12 +25,12 @@ msgstr "No ID de Appellante"
 #: src/notification-manager.cpp:128
 #, kde-format
 msgid "Missed call"
-msgstr ""
+msgstr "Appello perdite"
 
 #: src/notification-manager.cpp:129
 #, kde-format
 msgid "Missed call from %1"
-msgstr ""
+msgstr "Appello perdite ab %1"
 
 #: src/notification-manager.cpp:150
 #, kde-format
