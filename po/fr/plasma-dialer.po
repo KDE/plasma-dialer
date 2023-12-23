@@ -1,12 +1,12 @@
-# Xavier Besnard <xavier.besnard@neuf.fr>, 2020, 2021, 2022.
-# Xavier BESNARD <xavier.besnard@neuf.fr>, 2023.
+# Xavier Besnard <xavier.besnard@kde.org>, 2020, 2021, 2022.
+# Xavier Besnard <xavier.besnard@kde.org>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-11 00:43+0000\n"
 "PO-Revision-Date: 2023-03-03 07:21+0100\n"
-"Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
+"Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgstr "Xavier Besnard"
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "xavier.besnard@neuf.fr"
+msgstr "xavier.besnard@kde.org"
 
 #: src/main.cpp:133 src/qml/main.qml:35
 #, kde-format
