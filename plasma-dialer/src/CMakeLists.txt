@@ -17,7 +17,7 @@ if (DIALER_BUILD_SHELL_OVERLAY)
     find_package(Qt6WaylandClient ${QT_MIN_VERSION} COMPONENTS CONFIG REQUIRED Private)
     find_package(Wayland REQUIRED)
     find_package(PlasmaWaylandProtocols 1.8 CONFIG)
-    find_package(KWinEffects 5.26.0 CONFIG)
+    find_package(KWin 5.26.0 CONFIG)
     set_package_properties(PlasmaWaylandProtocols PROPERTIES
         TYPE REQUIRED
         PURPOSE "Collection of Plasma-specific Wayland protocols"
@@ -28,8 +28,8 @@ if (DIALER_BUILD_SHELL_OVERLAY)
         TYPE REQUIRED
         PURPOSE "Required for building with Wayland above-lock-screen support"
     )
-    set_package_properties(KWinEffects PROPERTIES DESCRIPTION "KWin (Effects)"
-        TYPE RECOMMENDED
+    set_package_properties(KWin PROPERTIES DESCRIPTION "KWin"
+        TYPE RUNTIME
         PURPOSE "Appropriate KWin version is expected to support above lockscreen mode (shell overlay)"
         URL "https://invent.kde.org/plasma/kwin/"
     )
