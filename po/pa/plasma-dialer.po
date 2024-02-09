@@ -1,31 +1,31 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasma-dialer package.
 #
-# A S Alam <aalam.yellow@gmail.com>, 2021, 2022.
+# SPDX-FileCopyrightText: 2021, 2022, 2024 A S Alam <aalam.yellow@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-11 00:43+0000\n"
-"PO-Revision-Date: 2022-06-11 09:41-0700\n"
-"Last-Translator: A S Alam <aalam@satluj.org>\n"
-"Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
+"PO-Revision-Date: 2024-02-07 21:52-0600\n"
+"Last-Translator: A S Alam <aalam@punlinux.org>\n"
+"Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
 "Language: pa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.2\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "ਅ.ਸ.ਆਲਮ. ੨੦੦੯-੨੦੨੨"
+msgstr "ਅ.ਸ.ਆਲਮ. ੨੦੦੯-੨੦੨੪"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "alam.yellow@gmail.com"
+msgstr "aalam@punlinux.org"
 
 #: src/main.cpp:133 src/qml/main.qml:35
 #, kde-format
@@ -40,7 +40,7 @@ msgstr "ਪਲਾਜ਼ਮਾ ਫੋਨ ਡਾਇਲਰ"
 #: src/main.cpp:137
 #, kde-format
 msgid "© 2015-2022 KDE Community"
-msgstr ""
+msgstr "© 2015-2022 ਕੇਡੀਈ ਕਮਿਊਨਟੀ"
 
 #: src/main.cpp:140
 #, kde-format
@@ -50,7 +50,7 @@ msgstr ""
 #: src/qml/call/AsymmetricAnswerSwipe.qml:86
 #, kde-format
 msgid "Swipe to accept"
-msgstr ""
+msgstr "ਮਨਜ਼ੂਰ ਕਰਨ ਲਈ ਸਮੇਟੋ"
 
 #: src/qml/call/CallPage.qml:35 src/qml/call/InCallInlineMessage.qml:14
 #, kde-format
@@ -58,10 +58,9 @@ msgid "Active call list"
 msgstr "ਐਕਟਿਵ ਕਾਲ ਸੂਚੀ"
 
 #: src/qml/call/CallPage.qml:108
-#, fuzzy, kde-format
-#| msgid "Incoming call"
+#, kde-format
 msgid "Incoming..."
-msgstr "ਆ ਰਹੀ ਕਾਲ"
+msgstr "ਆਉਣ ਵਾਲੇ..."
 
 #: src/qml/call/CallPage.qml:111
 #, kde-format
@@ -115,7 +114,7 @@ msgstr "ਸੈਟਿੰਗਾਂ"
 #: src/qml/components/Sidebar.qml:133
 #, kde-format
 msgid "Quit"
-msgstr ""
+msgstr "ਬਾਹਰ"
 
 #: src/qml/ContactsPage.qml:92
 #, kde-format
@@ -170,15 +169,14 @@ msgid "No IMEIs found"
 msgstr "ਕੋਈ IMEI ਨਹੀਂ ਲੱਭੇ"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:21
-#, fuzzy, kde-format
-#| msgid "Active call list"
+#, kde-format
 msgid "Adaptive Call Blocking"
-msgstr "ਐਕਟਿਵ ਕਾਲ ਸੂਚੀ"
+msgstr "ਢਲਣਯੋਗ ਕਾਲ ਪਾਬੰਦੀ"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:39
 #, kde-format
 msgid "Ignore calls from unknown numbers"
-msgstr ""
+msgstr "ਅਣਪਛਾਤੇ ਨੰਬਰਾਂ ਤੋਂ ਕਾਲਾਂ ਨੂੰ ਅਣਡਿੱਠਾ ਕਰੋ"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:45
 #, kde-format
@@ -188,53 +186,53 @@ msgstr ""
 #: src/qml/settings/CallBlockSettingsPage.qml:53
 #, kde-format
 msgid "Immediately hang up"
-msgstr ""
+msgstr "ਫ਼ੌਰਨ ਕੱਟੋ"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:58
 #, kde-format
 msgid "Ring without notification"
-msgstr ""
+msgstr "ਬਿਨਾਂ ਨੋਟੀਫਿਕੇਸ਼ਨ ਦੇ ਘੰਟੀ"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:63
 #, kde-format
 msgid "Ring with silent notification"
-msgstr ""
+msgstr "ਮੌਨ ਨੋਟੀਫਿਕੇਸ਼ਨ ਨਾਲ ਘੰਟੀ"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:71
 #, kde-format
 msgid "Allowed exceptions"
-msgstr ""
+msgstr "ਮਨਜ਼ੂਰ ਕੀਤੀਆਂ ਛੋਟਾਂ"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:80
 #, kde-format
 msgid "Anonymous numbers"
-msgstr ""
+msgstr "ਅਣਪਛਾਤੇ ਨੰਬਰ"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:87
 #, kde-format
 msgid "Existing outgoing call to number"
-msgstr ""
+msgstr "ਇਸ ਨੰਬਰ ਲਈ ਮੌਜੂਦ ਕੀਤੀ ਜਾ ਰਹੀ ਕਾਲ"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:94
 #, kde-format
 msgid "Callback within"
-msgstr ""
+msgstr "ਵਾਪਸੀ ਕਾਲ"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:112
 #, kde-format
 msgid "minutes"
-msgstr ""
+msgstr "ਮਿੰਟਾਂ ਵਿੱਚ"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:122
 #, kde-format
 msgid "Allowed phone number exceptions"
-msgstr ""
+msgstr "ਮਨਜ਼ਰ ਕੀਤੇ ਫ਼ੋਨ ਨੰਬਰ ਛੋਟਾਂ"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:142
 #: src/qml/settings/CallBlockSettingsPage.qml:171
 #, kde-format
 msgid "Add new pattern"
-msgstr ""
+msgstr "ਨਵੀਂ ਤਰਤੀਬ ਜੋੜੋ"
 
 #: src/qml/settings/SettingsPage.qml:41
 #, kde-format
@@ -242,20 +240,19 @@ msgid "About"
 msgstr "ਇਸ ਬਾਰੇ"
 
 #: src/qml/settings/SettingsPage.qml:50
-#, fuzzy, kde-format
-#| msgid "Active call list"
+#, kde-format
 msgid "Adaptive call blocking"
-msgstr "ਐਕਟਿਵ ਕਾਲ ਸੂਚੀ"
+msgstr "ਢਲਣਯੋਗ ਕਾਲ ਪਾਬੰਦੀ"
 
 #: src/qml/settings/SettingsPage.qml:59
 #, kde-format
 msgid "Incoming call screen appearance"
-msgstr ""
+msgstr "ਆਉਣ ਵਾਲੀ ਕਾਲ ਸਕਰੀਨ ਦੀ ਦਿੱਖ"
 
 #: src/qml/settings/SettingsPage.qml:60
 #, kde-format
 msgid "Buttons"
-msgstr ""
+msgstr "ਬਟਨ"
 
 #: src/qml/settings/SettingsPage.qml:60
 #, kde-format
@@ -270,7 +267,7 @@ msgstr ""
 #: src/qml/USSDSheet.qml:47
 #, kde-format
 msgid "USSD Error"
-msgstr ""
+msgstr "USSD ਗਲਤੀ"
 
 #: src/qml/USSDSheet.qml:47
 #, kde-format
