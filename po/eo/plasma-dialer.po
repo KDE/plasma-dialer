@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-11 00:43+0000\n"
-"PO-Revision-Date: 2024-02-09 22:05+0100\n"
+"PO-Revision-Date: 2024-02-10 06:42+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo.org>\n"
 "Language: eo\n"
@@ -182,42 +182,42 @@ msgstr "Ignori vokojn de nekonataj numeroj"
 #: src/qml/settings/CallBlockSettingsPage.qml:45
 #, kde-format
 msgid "When a call is an incoming from an unknown number"
-msgstr ""
+msgstr "Kiam voko estas envena de nekonata numero"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:53
 #, kde-format
 msgid "Immediately hang up"
-msgstr ""
+msgstr "Tuj fini alvokon"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:58
 #, kde-format
 msgid "Ring without notification"
-msgstr ""
+msgstr "Sonori sen sciigo"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:63
 #, kde-format
 msgid "Ring with silent notification"
-msgstr ""
+msgstr "Sonori kun silenta sciigo"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:71
 #, kde-format
 msgid "Allowed exceptions"
-msgstr ""
+msgstr "Permesitaj esceptoj"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:80
 #, kde-format
 msgid "Anonymous numbers"
-msgstr ""
+msgstr "Anonimaj numeroj"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:87
 #, kde-format
 msgid "Existing outgoing call to number"
-msgstr ""
+msgstr "Ekzistanta elira voko al numero"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:94
 #, kde-format
 msgid "Callback within"
-msgstr ""
+msgstr "Retrovoko ena/duma"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:112
 #, kde-format
@@ -227,13 +227,13 @@ msgstr "minutoj"
 #: src/qml/settings/CallBlockSettingsPage.qml:122
 #, kde-format
 msgid "Allowed phone number exceptions"
-msgstr ""
+msgstr "Permesitaj "
 
 #: src/qml/settings/CallBlockSettingsPage.qml:142
 #: src/qml/settings/CallBlockSettingsPage.qml:171
 #, kde-format
 msgid "Add new pattern"
-msgstr ""
+msgstr "Aldoni novan ŝablonon"
 
 #: src/qml/settings/SettingsPage.qml:41
 #, kde-format
@@ -243,12 +243,12 @@ msgstr "Pri"
 #: src/qml/settings/SettingsPage.qml:50
 #, kde-format
 msgid "Adaptive call blocking"
-msgstr ""
+msgstr "Adaptema vokblokado"
 
 #: src/qml/settings/SettingsPage.qml:59
 #, kde-format
 msgid "Incoming call screen appearance"
-msgstr ""
+msgstr "Apero de envenvoka ekrano"
 
 #: src/qml/settings/SettingsPage.qml:60
 #, kde-format
@@ -258,12 +258,12 @@ msgstr "Butonoj"
 #: src/qml/settings/SettingsPage.qml:60
 #, kde-format
 msgid "Symmetric Swipe"
-msgstr ""
+msgstr "Simetria Ŝovumo"
 
 #: src/qml/settings/SettingsPage.qml:60
 #, kde-format
 msgid "Asymmetric Swipe"
-msgstr ""
+msgstr "Malsimetria Ŝovumo"
 
 #: src/qml/USSDSheet.qml:47
 #, kde-format
@@ -278,7 +278,7 @@ msgstr "USSD-Mesaĝo"
 #: src/qml/USSDSheet.qml:56
 #, kde-format
 msgid "Write response..."
-msgstr ""
+msgstr "Skribi respondon..."
 
 #: src/qml/USSDSheet.qml:62
 #, kde-format
