@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the plasma-dialer package.
 #
-# giovanni <g.sora@tiscali.it>, 2021, 2022, 2023.
+# giovanni <g.sora@tiscali.it>, 2021, 2022, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-11 00:43+0000\n"
-"PO-Revision-Date: 2023-04-06 11:59+0200\n"
+"PO-Revision-Date: 2024-02-13 16:57+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -129,12 +129,12 @@ msgstr "Nulle contactos ha un insimul de numero de telephono"
 #: src/qml/DialerPage.qml:88
 #, kde-format
 msgid "Modem devices are not found"
-msgstr ""
+msgstr "Le dispositivo de modem non es trovate"
 
 #: src/qml/DialerPage.qml:97
 #, kde-format
 msgid "Voicemail number couldn't be found"
-msgstr ""
+msgstr "Le numero de posta vocal nonpoteva esser trovate"
 
 #: src/qml/history/HistoryDelegate.qml:61
 #, kde-format
@@ -176,17 +176,17 @@ msgstr "Blocar de appello adaptative"
 #: src/qml/settings/CallBlockSettingsPage.qml:39
 #, kde-format
 msgid "Ignore calls from unknown numbers"
-msgstr ""
+msgstr "Ignora appellos ab numeros incognoscite"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:45
 #, kde-format
 msgid "When a call is an incoming from an unknown number"
-msgstr ""
+msgstr "Quando un appello es in arrivata ab un numero incognoscite"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:53
 #, kde-format
 msgid "Immediately hang up"
-msgstr ""
+msgstr "Appende immediatemente"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:58
 #, kde-format
@@ -211,12 +211,12 @@ msgstr "Numeros anonyme"
 #: src/qml/settings/CallBlockSettingsPage.qml:87
 #, kde-format
 msgid "Existing outgoing call to number"
-msgstr ""
+msgstr "Appello existente in exito a numero "
 
 #: src/qml/settings/CallBlockSettingsPage.qml:94
 #, kde-format
 msgid "Callback within"
-msgstr ""
+msgstr "Retro appello intra"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:112
 #, kde-format
@@ -226,7 +226,7 @@ msgstr "minutas"
 #: src/qml/settings/CallBlockSettingsPage.qml:122
 #, kde-format
 msgid "Allowed phone number exceptions"
-msgstr ""
+msgstr "Exceptiones de numero de telephono permittite"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:142
 #: src/qml/settings/CallBlockSettingsPage.qml:171
@@ -247,7 +247,7 @@ msgstr "Blocar de appello adaptative"
 #: src/qml/settings/SettingsPage.qml:59
 #, kde-format
 msgid "Incoming call screen appearance"
-msgstr ""
+msgstr "Apparentia deschermo de appello in arrivata"
 
 #: src/qml/settings/SettingsPage.qml:60
 #, kde-format
@@ -257,12 +257,12 @@ msgstr "Buttones"
 #: src/qml/settings/SettingsPage.qml:60
 #, kde-format
 msgid "Symmetric Swipe"
-msgstr ""
+msgstr "Glissa Symmetric"
 
 #: src/qml/settings/SettingsPage.qml:60
 #, kde-format
 msgid "Asymmetric Swipe"
-msgstr ""
+msgstr "Glissa Asymmetric"
 
 #: src/qml/USSDSheet.qml:47
 #, kde-format
