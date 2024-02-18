@@ -4,7 +4,6 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
-import QtGraphicalEffects
 import QtQml.Models
 
 import org.kde.kirigami as Kirigami

@@ -6,7 +6,7 @@
 
 import QtQuick
 import QtQuick.Layouts
-import QtGraphicalEffects
+import QtQuick.Effects
 
 import org.kde.kirigami as Kirigami
 
@@ -38,13 +38,13 @@ Item {
             width: height
         }
     }
-    DropShadow {
+    MultiEffect {
         anchors.fill: avatar
         source: avatar
-        horizontalOffset: 0
-        verticalOffset: 1
-        radius: 5
-        samples: 6
-        color: Qt.darker(Kirigami.Theme.backgroundColor, 1.1)
+        shadowEnabled: true
+        shadowHorizontalOffset: 0
+        shadowVerticalOffset: 1
+        blurMax: 5
+        shadowColor: Qt.darker(Kirigami.Theme.backgroundColor, 1.1)
     }
 }
