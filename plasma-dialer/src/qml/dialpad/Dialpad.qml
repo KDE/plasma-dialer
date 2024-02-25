@@ -96,24 +96,24 @@ GridLayout {
     DialerButton {
         id: one
         text: "1"
-        onClicked: onPadNumberPressed(text)
+        onClicked: (text)=>onPadNumberPressed(text)
         voicemail: showBottomRow // TODO: only show voicemail icon if voicemail number exists
         onHeld: !callActive && callVoicemail()
     }
-    DialerButton { text: "2"; sub: "ABC"; onClicked: onPadNumberPressed(text) }
-    DialerButton { text: "3"; sub: "DEF"; onClicked: onPadNumberPressed(text) }
+    DialerButton { text: "2"; sub: "ABC"; onClicked: (text)=>onPadNumberPressed(text) }
+    DialerButton { text: "3"; sub: "DEF"; onClicked: (text)=>onPadNumberPressed(text) }
 
-    DialerButton { text: "4"; sub: "GHI"; onClicked: onPadNumberPressed(text) }
-    DialerButton { text: "5"; sub: "JKL"; onClicked: onPadNumberPressed(text) }
-    DialerButton { text: "6"; sub: "MNO"; onClicked: onPadNumberPressed(text) }
+    DialerButton { text: "4"; sub: "GHI"; onClicked: (text)=>onPadNumberPressed(text) }
+    DialerButton { text: "5"; sub: "JKL"; onClicked: (text)=>onPadNumberPressed(text) }
+    DialerButton { text: "6"; sub: "MNO"; onClicked: (text)=>onPadNumberPressed(text) }
 
-    DialerButton { text: "7"; sub: "PQRS"; onClicked: onPadNumberPressed(text) }
-    DialerButton { text: "8"; sub: "TUV"; onClicked: onPadNumberPressed(text) }
-    DialerButton { text: "9"; sub: "WXYZ"; onClicked: onPadNumberPressed(text) }
+    DialerButton { text: "7"; sub: "PQRS"; onClicked: (text)=>onPadNumberPressed(text) }
+    DialerButton { text: "8"; sub: "TUV"; onClicked: (text)=>onPadNumberPressed(text) }
+    DialerButton { text: "9"; sub: "WXYZ"; onClicked: (text)=>onPadNumberPressed(text) }
 
-    DialerButton { display: "＊"; text: "*"; special: true; onClicked: onPadNumberPressed(text); onHeld: onPadNumberPressed(text) }
-    DialerButton { text: "0"; subdisplay: "＋"; sub: "+"; onClicked: onPadNumberPressed(text); onHeld: onPadNumberPressed("+") }
-    DialerButton { display: "＃"; text: "#"; special: true; onClicked: onPadNumberPressed(text); onHeld: onPadNumberPressed(text) }
+    DialerButton { display: "＊"; text: "*"; special: true; onClicked: (text)=>onPadNumberPressed(text); onHeld: (text)=>onPadNumberPressed(text) }
+    DialerButton { text: "0"; subdisplay: "＋"; sub: "+"; onClicked: (text)=>onPadNumberPressed(text); onHeld: onPadNumberPressed("+") }
+    DialerButton { display: "＃"; text: "#"; special: true; onClicked: (text)=>onPadNumberPressed(text); onHeld: (text)=>onPadNumberPressed(text) }
 
     Keys.onPressed: (event)=> {
         if (event.key === Qt.Key_Backspace) {
