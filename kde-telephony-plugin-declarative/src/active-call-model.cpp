@@ -119,7 +119,7 @@ void ActiveCallModel::onUtilsCallDeleted(const QString &deviceUni, const QString
 void ActiveCallModel::onUtilsCallStateChanged(const DialerTypes::CallData &callData)
 {
     qDebug() << Q_FUNC_INFO << callData.state << callData.stateReason;
-    auto callState = callData.state;
+    DialerTypes::CallState callState = callData.state;
 
     if (callState == DialerTypes::CallState::Active) {
         _callsTimer.start();
@@ -131,11 +131,14 @@ void ActiveCallModel::onUtilsCallStateChanged(const DialerTypes::CallData &callD
         _callsTimer.stop();
     }
 
+    if (_calls.size() < 1) {
+        qDebug() << Q_FUNC_INFO << "empty active calls list";
+    }
     // find call by id and update all the stuff including the duration
     for (int i = 0; i < _calls.size(); i++) {
-        auto call = _calls.at(i);
-        if (call.id == callData.id) {
-            call = callData;
+        if (_calls[i].id == callData.id) {
+            _calls[i].state = callData.state;
+            _calls[i].stateReason = callData.stateReason;
             Q_EMIT dataChanged(index(i), index(i));
             return;
         }
@@ -254,8 +257,8 @@ void ActiveCallModel::setCallUtils(org::kde::telephony::CallUtils *callUtils)
 void ActiveCallModel::_updateTimers()
 {
     for (int i = 0; i < _calls.size(); i++) {
-        auto call = _calls.at(i);
-        auto callState = call.state;
+        DialerTypes::CallData call = _calls.at(i);
+        DialerTypes::CallState callState = call.state;
 
         if (callState == DialerTypes::CallState::RingingIn) {
             qDebug() << "incoming call";
@@ -265,6 +268,7 @@ void ActiveCallModel::_updateTimers()
         if (callState == DialerTypes::CallState::Active) {
             qDebug() << "call started";
             call.duration++;
+            _calls[i].duration = call.duration;
             setDuration(call.duration);
             Q_EMIT dataChanged(index(i), index(i), {DurationRole});
         }
