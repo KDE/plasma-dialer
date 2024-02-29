@@ -8,7 +8,7 @@ import org.kde.kirigami as Kirigami
 
 Rectangle {
     implicitHeight: Kirigami.Units.gridUnit * 5 + Kirigami.Units.smallSpacing * 3
-    color: backgroundColor
+    color: Kirigami.Theme.backgroundColor
 
     ToolButton {
         Layout.preferredWidth: Kirigami.Units.gridUnit * 2
