@@ -137,8 +137,7 @@ void ActiveCallModel::onUtilsCallStateChanged(const DialerTypes::CallData &callD
     // find call by id and update all the stuff including the duration
     for (int i = 0; i < _calls.size(); i++) {
         if (_calls[i].id == callData.id) {
-            _calls[i].state = callData.state;
-            _calls[i].stateReason = callData.stateReason;
+            _calls[i] = callData;
             Q_EMIT dataChanged(index(i), index(i));
             return;
         }
