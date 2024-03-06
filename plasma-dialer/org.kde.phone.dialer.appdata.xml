@@ -25,6 +25,7 @@ SPDX-License-Identifier: CC0-1.0
   <name xml:lang="it">Telefono</name>
   <name xml:lang="ka">ტელეფონი</name>
   <name xml:lang="ko">전화</name>
+  <name xml:lang="lv">Tālrunis</name>
   <name xml:lang="nl">Telefoon</name>
   <name xml:lang="nn">Telefon</name>
   <name xml:lang="pa">ਫ਼ੋਨ</name>
@@ -61,6 +62,7 @@ SPDX-License-Identifier: CC0-1.0
   <summary xml:lang="it">Invia e riceve chiamate telefoniche</summary>
   <summary xml:lang="ka">სატელეფონო ზარების განხორციელება</summary>
   <summary xml:lang="ko">전화 걸고 받기</summary>
+  <summary xml:lang="lv">Nosūtīt un saņemt zvanus</summary>
   <summary xml:lang="nl">Telefoonoproepen verzenden en ontvangen</summary>
   <summary xml:lang="nn">Send og ta imot telefonsamtalar</summary>
   <summary xml:lang="pa">ਫ਼ੋਨ ਕਾਲਾਂ ਕਰੋ ਤੇ ਲਵੋ</summary>
@@ -98,6 +100,7 @@ SPDX-License-Identifier: CC0-1.0
   <developer_name xml:lang="it">Comunità KDE</developer_name>
   <developer_name xml:lang="ka">KDE Community</developer_name>
   <developer_name xml:lang="ko">KDE 커뮤니티</developer_name>
+  <developer_name xml:lang="lv">KDE kopiena</developer_name>
   <developer_name xml:lang="nl">KDE-gemeenschap</developer_name>
   <developer_name xml:lang="nn">KDE-fellesskapet</developer_name>
   <developer_name xml:lang="pa">ਕੇਡੀਈ ਕਮਿਊਨਟੀ</developer_name>
@@ -139,6 +142,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="it">L'applicazione Telefono ti permette di inviare e di ricevere in modo semplice le chiamate telefoniche dal tuo smartphone.</p>
     <p xml:lang="ka">ტელეფონის აპი საშუალებას გაძლევთ ადვილად მიიღოთ და განახორციელოთ ზარები თქვენი სმარტფონიდან.</p>
     <p xml:lang="ko">전화 앱을 사용하여 스마트폰에서 통화를 걸고 받을 수 있습니다.</p>
+    <p xml:lang="lv">Tālruņa programma ļauj viegli nosūtīt un saņemt tālruņa zvanus savā viedtālrunī.</p>
     <p xml:lang="nl">De toepassing Telefoon laat u gemakkelijk telefoonoproepen verzenden en ontvangen vanaf uw smartphone.</p>
     <p xml:lang="nn">Med telefonappen kan du lett ringja opp eller verta oppringd via smarttelefonen.</p>
     <p xml:lang="pa">ਫ਼ੋਨ ਐਪ ਤੁਹਾਨੂੰ ਤੁਹਾਡੇ ਸਮਾਰਟ-ਫ਼ੋਨ ਤੋਂ ਸੌਖੀ ਤਰ੍ਹਾਂ ਫ਼ੋਨ ਕਾਲਾਂ ਕਰਨ ਤੇ ਲੈਣ ਲਈ ਸਹਾਇਕ ਹੈ।</p>
@@ -174,6 +178,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="it">Funzionalità:</p>
     <p xml:lang="ka">თვისებები:</p>
     <p xml:lang="ko">기능:</p>
+    <p xml:lang="lv">Iespējas:</p>
     <p xml:lang="nl">Mogelijkheden:</p>
     <p xml:lang="nn">Funksjonar:</p>
     <p xml:lang="pa">ਫ਼ੀਚਰ:</p>
@@ -209,6 +214,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="it">Vedi la cronologia delle chiamate e richiama lo stesso numero in modo semplice</li>
       <li xml:lang="ka">იხილეთ ზარების თქვენი ისტორია და ადვილად გადარეკეთ იგივე ნომერზე</li>
       <li xml:lang="ko">통화 기록을 보고 같은 전화번호에 전화 다시 걸기</li>
+      <li xml:lang="lv">Skatiet visu savu zvanu vēsturi un viegli zvaniet uz nesen zvanītiem numuriem</li>
       <li xml:lang="nl">Bekijk uw oproepgeschiedenis en maak opnieuw een oproep naar hetzelfde nummer</li>
       <li xml:lang="nn">Sjå samtalelogg og ring opp att telefonnummer</li>
       <li xml:lang="pa">ਆਪਣੇ ਕਾਲ ਅਤੀਤ ਨੂੰ ਵੇਖੋ ਅਤੇ ਉਸ ਨੰਬਰ ਨੂੰ ਮੁੜ ਕੇ ਸੌਖੀ ਤਰ੍ਹਾਂ ਕਾਲ ਕਰੋ</li>
@@ -242,6 +248,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="it">Gestisci i tuoi contatti che hanno un numero di telefono impostato</li>
       <li xml:lang="ka">მართეთ კონტაქტები, რომლებსაც ტელეფონის ნომერი მითითებული აქვთ</li>
       <li xml:lang="ko">전화번호가 없는 연락처 관리</li>
+      <li xml:lang="lv">Pārvaldiet kontaktus ar saglabātiem numuriem</li>
       <li xml:lang="nl">Uw contactpersonen beheren die een telefoonnummer gezet hebben</li>
       <li xml:lang="nn">Administrer kontaktar registrerte med telefonnummer</li>
       <li xml:lang="pa">ਆਪਣੇ ਸੰਪਰਕਾਂ ਦਾ ਇੰਤਜ਼ਾਮ ਕਰੋ, ਜਿੰਨ੍ਹਾਂ ਲਈ ਫ਼ੋਨ ਨੰਬਰ ਸੈੱਟ ਹੈ</li>
@@ -281,6 +288,7 @@ SPDX-License-Identifier: CC0-1.0
       <caption xml:lang="it">La pagina del combinatore</caption>
       <caption xml:lang="ka">ღილაკების გვერდი</caption>
       <caption xml:lang="ko">다이얼 페이지</caption>
+      <caption xml:lang="lv">Numuru sastādītāja lapa</caption>
       <caption xml:lang="nl">De pagina met de kiezer</caption>
       <caption xml:lang="nn">Ringjesida</caption>
       <caption xml:lang="pa">ਡਾਇਲਰ ਸਫ਼ਾ</caption>
@@ -317,6 +325,7 @@ SPDX-License-Identifier: CC0-1.0
       <caption xml:lang="it">Chiama caselle vocali</caption>
       <caption xml:lang="ka">ხმოვანი ფოსტის გამოძახება</caption>
       <caption xml:lang="ko">음성 사서함 통화</caption>
+      <caption xml:lang="lv">Zvani uz balss pastu</caption>
       <caption xml:lang="nl">Voicemail aanroepen</caption>
       <caption xml:lang="nn">Ringjer talepost</caption>
       <caption xml:lang="pa">ਵੋਆਇਸ-ਮੇਲ ਨੂੰ ਕਾਲ ਜਾ ਰਹੀ ਹੈ</caption>
