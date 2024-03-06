@@ -1,0 +1,292 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the plasma-dialer package.
+#
+# SPDX-FileCopyrightText: 2024 Toms Trasuns <toms.trasuns@posteo.net>
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-dialer\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-11-11 00:43+0000\n"
+"PO-Revision-Date: 2024-03-04 18:25+0200\n"
+"Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
+"Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
+"Language: lv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
+"X-Generator: Lokalize 23.08.5\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Toms Trasūns"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "toms.trasuns@posteo.net"
+
+#: src/main.cpp:133 src/qml/main.qml:35
+#, kde-format
+msgid "Phone"
+msgstr "Tālrunis"
+
+#: src/main.cpp:135
+#, kde-format
+msgid "Plasma phone dialer"
+msgstr "„Plasma“ numuru sastādītājs"
+
+#: src/main.cpp:137
+#, kde-format
+msgid "© 2015-2022 KDE Community"
+msgstr "© 2015—2022 KDE kopiena"
+
+#: src/main.cpp:140
+#, kde-format
+msgid "Alexey Andreyev"
+msgstr "Alexey Andreyev"
+
+#: src/qml/call/AsymmetricAnswerSwipe.qml:86
+#, kde-format
+msgid "Swipe to accept"
+msgstr "Velciet, lai paceltu"
+
+#: src/qml/call/CallPage.qml:35 src/qml/call/InCallInlineMessage.qml:14
+#, kde-format
+msgid "Active call list"
+msgstr "Aktīvo zvanu saraksts"
+
+#: src/qml/call/CallPage.qml:108
+#, kde-format
+msgid "Incoming..."
+msgstr "Ienākošs..."
+
+#: src/qml/call/CallPage.qml:111
+#, kde-format
+msgid "Calling..."
+msgstr "Zvana..."
+
+#: src/qml/call/CallPage.qml:134
+#, kde-format
+msgid "Keypad"
+msgstr "Tastatūra"
+
+#: src/qml/call/CallPage.qml:154
+#, kde-format
+msgid "Speaker"
+msgstr "Skaļrunis"
+
+#: src/qml/call/CallPage.qml:168
+#, kde-format
+msgid "Mute"
+msgstr "Apklusināt"
+
+#: src/qml/call/InCallInlineMessage.qml:18
+#, kde-format
+msgid "View"
+msgstr "Skatīt"
+
+#: src/qml/components/BottomToolbar.qml:32 src/qml/components/Sidebar.qml:54
+#, kde-format
+msgid "History"
+msgstr "Vēsture"
+
+#: src/qml/components/BottomToolbar.qml:44 src/qml/components/Sidebar.qml:72
+#: src/qml/ContactsPage.qml:19
+#, kde-format
+msgid "Contacts"
+msgstr "Kontakti"
+
+#: src/qml/components/BottomToolbar.qml:56 src/qml/components/Sidebar.qml:90
+#: src/qml/DialerPage.qml:27
+#, kde-format
+msgid "Dialer"
+msgstr "Numura sastādītājs"
+
+#: src/qml/components/Sidebar.qml:114 src/qml/ContactsPage.qml:31
+#: src/qml/DialerPage.qml:57 src/qml/HistoryPage.qml:41
+#: src/qml/settings/SettingsPage.qml:20
+#, kde-format
+msgid "Settings"
+msgstr "Iestatījumi"
+
+#: src/qml/components/Sidebar.qml:133
+#, kde-format
+msgid "Quit"
+msgstr "Iziet"
+
+#: src/qml/ContactsPage.qml:92
+#, kde-format
+msgid "Select number to call"
+msgstr "Atlasīt zvanāmo numuru"
+
+#: src/qml/ContactsPage.qml:101
+#, kde-format
+msgid "No contacts have a phone number set"
+msgstr "Nevienam kontaktam nav saglabāts numurs"
+
+#: src/qml/DialerPage.qml:88
+#, kde-format
+msgid "Modem devices are not found"
+msgstr "Modema ierīces nav atrastas"
+
+#: src/qml/DialerPage.qml:97
+#, kde-format
+msgid "Voicemail number couldn't be found"
+msgstr "Balss pasta numurs nav atrasts"
+
+#: src/qml/history/HistoryDelegate.qml:61
+#, kde-format
+msgid "Duration: %1"
+msgstr "Ilgums: %1"
+
+#: src/qml/HistoryPage.qml:18
+#, kde-format
+msgid "Call History"
+msgstr "Zvanu vēsture"
+
+#: src/qml/HistoryPage.qml:34
+#, kde-format
+msgid "Clear history"
+msgstr "Notīrīt vēsturi"
+
+#: src/qml/HistoryPage.qml:73
+#, kde-format
+msgid "No recent calls"
+msgstr "Nav neseno zvanu"
+
+#: src/qml/ImeiSheet.qml:18
+#, kde-format
+msgid "IMEI"
+msgid_plural "IMEIs"
+msgstr[0] "IMEI"
+msgstr[1] "IMEI"
+msgstr[2] "IMEI"
+
+#: src/qml/ImeiSheet.qml:30
+#, kde-format
+msgid "No IMEIs found"
+msgstr "IMEI nav atrasti"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:21
+#, kde-format
+msgid "Adaptive Call Blocking"
+msgstr "Adaptīva zvanu bloķēšana"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:39
+#, kde-format
+msgid "Ignore calls from unknown numbers"
+msgstr "Ignorēt zvanus no nezināmiem numuriem"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:45
+#, kde-format
+msgid "When a call is an incoming from an unknown number"
+msgstr "Kad zvana no nezināma numura"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:53
+#, kde-format
+msgid "Immediately hang up"
+msgstr "Nekavējoties nolikt"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:58
+#, kde-format
+msgid "Ring without notification"
+msgstr "Ļaut zvanīt bez paziņojuma"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:63
+#, kde-format
+msgid "Ring with silent notification"
+msgstr "Ļaut zvanīt ar klusu paziņojumu"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:71
+#, kde-format
+msgid "Allowed exceptions"
+msgstr "Atļautie izņēmumi"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:80
+#, kde-format
+msgid "Anonymous numbers"
+msgstr "Anonīmi numuri"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:87
+#, kde-format
+msgid "Existing outgoing call to number"
+msgstr "Pastāv izejošs zvans uz šo numuru"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:94
+#, kde-format
+msgid "Callback within"
+msgstr "Atzvanīšanas laiks"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:112
+#, kde-format
+msgid "minutes"
+msgstr "minūtes"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:122
+#, kde-format
+msgid "Allowed phone number exceptions"
+msgstr "Atļautie tālruņa numuru izņēmumi"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:142
+#: src/qml/settings/CallBlockSettingsPage.qml:171
+#, kde-format
+msgid "Add new pattern"
+msgstr "Pievienot jaunu paraugu"
+
+#: src/qml/settings/SettingsPage.qml:41
+#, kde-format
+msgid "About"
+msgstr "Par"
+
+#: src/qml/settings/SettingsPage.qml:50
+#, kde-format
+msgid "Adaptive call blocking"
+msgstr "Adaptīvā zvanu bloķēšana"
+
+#: src/qml/settings/SettingsPage.qml:59
+#, kde-format
+msgid "Incoming call screen appearance"
+msgstr "Ienākoša zvana ekrāna izskats"
+
+#: src/qml/settings/SettingsPage.qml:60
+#, kde-format
+msgid "Buttons"
+msgstr "Pogas"
+
+#: src/qml/settings/SettingsPage.qml:60
+#, kde-format
+msgid "Symmetric Swipe"
+msgstr "Simetriska pavilkšana"
+
+#: src/qml/settings/SettingsPage.qml:60
+#, kde-format
+msgid "Asymmetric Swipe"
+msgstr "Asimetriska pavilkšana"
+
+#: src/qml/USSDSheet.qml:47
+#, kde-format
+msgid "USSD Error"
+msgstr "USSD kļūda"
+
+#: src/qml/USSDSheet.qml:47
+#, kde-format
+msgid "USSD Message"
+msgstr "USSD ziņojums"
+
+#: src/qml/USSDSheet.qml:56
+#, kde-format
+msgid "Write response..."
+msgstr "Rakstīt atbildi..."
+
+#: src/qml/USSDSheet.qml:62
+#, kde-format
+msgid "Send"
+msgstr "Nosūtīt"
+
+#: src/qml/USSDSheet.qml:78
+#, kde-format
+msgid "Cancel USSD session"
+msgstr "Atcelt USSD sesiju"
