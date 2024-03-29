@@ -114,6 +114,7 @@ void ActiveCallModel::onUtilsCallDeleted(const QString &deviceUni, const QString
     }
     _callUtils->fetchCalls();
     _callsTimer.stop();
+    setDuration(0);
 }
 
 void ActiveCallModel::onUtilsCallStateChanged(const DialerTypes::CallData &callData)
