@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-11 00:43+0000\n"
-"PO-Revision-Date: 2024-02-19 12:14+0000\n"
+"PO-Revision-Date: 2024-04-15 09:22+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -211,7 +211,7 @@ msgstr "Nafnlaus símanúmer"
 #: src/qml/settings/CallBlockSettingsPage.qml:87
 #, kde-format
 msgid "Existing outgoing call to number"
-msgstr ""
+msgstr "Fyrirliggjandi hringing í símanúmer"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:94
 #, kde-format
