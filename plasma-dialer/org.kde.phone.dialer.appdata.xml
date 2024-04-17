@@ -23,6 +23,7 @@ SPDX-License-Identifier: CC0-1.0
   <name xml:lang="hu">Telefon</name>
   <name xml:lang="ia">Phone (Telephono)</name>
   <name xml:lang="id">Telepon</name>
+  <name xml:lang="is">Sími</name>
   <name xml:lang="it">Telefono</name>
   <name xml:lang="ka">ტელეფონი</name>
   <name xml:lang="ko">전화</name>
@@ -61,6 +62,7 @@ SPDX-License-Identifier: CC0-1.0
   <summary xml:lang="hu">Telefonhívások indítása és fogadása</summary>
   <summary xml:lang="ia">Invia e recipe telephonatas</summary>
   <summary xml:lang="id">Kirim dan terima panggilan telepon</summary>
+  <summary xml:lang="is">Senda og taka við símhringingum</summary>
   <summary xml:lang="it">Invia e riceve chiamate telefoniche</summary>
   <summary xml:lang="ka">სატელეფონო ზარების განხორციელება</summary>
   <summary xml:lang="ko">전화 걸고 받기</summary>
@@ -100,6 +102,7 @@ SPDX-License-Identifier: CC0-1.0
   <developer_name xml:lang="hu">A KDE Közösség</developer_name>
   <developer_name xml:lang="ia">Communitate de KDE</developer_name>
   <developer_name xml:lang="id">KDE Community</developer_name>
+  <developer_name xml:lang="is">KDE-samfélagið</developer_name>
   <developer_name xml:lang="it">Comunità KDE</developer_name>
   <developer_name xml:lang="ka">KDE Community</developer_name>
   <developer_name xml:lang="ko">KDE 커뮤니티</developer_name>
@@ -181,6 +184,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="hu">Szolgáltatások:</p>
     <p xml:lang="ia">Characteristicas:</p>
     <p xml:lang="id">Fitur:</p>
+    <p xml:lang="is">Eiginleikar:</p>
     <p xml:lang="it">Funzionalità:</p>
     <p xml:lang="ka">თვისებები:</p>
     <p xml:lang="ko">기능:</p>
@@ -332,6 +336,7 @@ SPDX-License-Identifier: CC0-1.0
       <caption xml:lang="hu">Hangposta hívása</caption>
       <caption xml:lang="ia">Appellante voicemail (posta vocal)</caption>
       <caption xml:lang="id">Memanggil surat suara</caption>
+      <caption xml:lang="is">Hringja í talhólf</caption>
       <caption xml:lang="it">Chiama caselle vocali</caption>
       <caption xml:lang="ka">ხმოვანი ფოსტის გამოძახება</caption>
       <caption xml:lang="ko">음성 사서함 통화</caption>
