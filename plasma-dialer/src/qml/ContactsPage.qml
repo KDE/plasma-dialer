@@ -9,6 +9,8 @@ import QtQuick.Controls as Controls
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.people as KPeople
+import org.kde.kirigamiaddons.components as Components
+import org.kde.kirigamiaddons.delegates as Delegates
 
 import org.kde.telephony
 
@@ -21,7 +23,7 @@ Kirigami.ScrollablePage {
 
     // page animation
     property real yTranslate: 0
-    
+
     actions: [
         Kirigami.Action {
             icon.name: "settings-configure"
@@ -38,7 +40,7 @@ Kirigami.ScrollablePage {
 
         PhoneNumberDialog {}
     }
-    
+
     header: ColumnLayout {
         anchors.margins: Kirigami.Units.smallSpacing
         spacing: Kirigami.Units.smallSpacing
@@ -79,12 +81,50 @@ Kirigami.ScrollablePage {
 
         boundsBehavior: Flickable.StopAtBounds
 
-        delegate: Controls.ItemDelegate {
-            icon: model && model.decoration
-            text: model && model.display
-            width: ListView.view.width
+        delegate: Delegates.RoundedItemDelegate {
+            id: delegateItem
+            width: contactsList.width
+            implicitHeight: Kirigami.Units.iconSizes.medium + Kirigami.Units.largeSpacing * 2
+            verticalPadding: 0
 
-            onClicked: {
+            contentItem: RowLayout {
+                spacing: Kirigami.Units.largeSpacing
+
+                Components.Avatar {
+                    Layout.preferredWidth: Kirigami.Units.iconSizes.medium
+                    Layout.preferredHeight: Kirigami.Units.iconSizes.medium
+                    source: model.photoImageProviderUri
+                    name: model.display
+                    imageMode: Components.Avatar.ImageMode.AdaptiveImageOrInitals
+                }
+
+                ColumnLayout {
+                    Layout.fillWidth: true
+                    spacing: 0
+
+                    Controls.Label {
+                        id: labelItem
+                        Layout.fillWidth: true
+                        Layout.alignment: subtitleItem.visible ? Qt.AlignLeft | Qt.AlignBottom : Qt.AlignLeft | Qt.AlignVCenter
+                        text: model && model.display
+                        elide: Text.ElideRight
+                        color: Kirigami.Theme.textColor
+                    }
+                    Controls.Label {
+                        id: subtitleItem
+                        visible: text
+                        Layout.fillWidth: true
+                        Layout.alignment: Qt.AlignLeft | Qt.AlignTop
+                        text: model.phoneNumber
+                        elide: Text.ElideRight
+                        color: Kirigami.Theme.textColor
+                        opacity: 0.7
+                        font: Kirigami.Theme.smallFont
+                    }
+                }
+
+            }
+            onReleased: {
                 const phoneNumbers = ContactUtils.phoneNumbers(model.personUri)
                 if (phoneNumbers.length === 1) {
                     applicationWindow().call(phoneNumbers[0].normalizedNumber)
