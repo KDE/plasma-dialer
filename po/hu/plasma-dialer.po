@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-11 00:43+0000\n"
+"POT-Creation-Date: 2024-05-04 00:42+0000\n"
 "PO-Revision-Date: 2024-03-02 22:16+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -94,7 +94,7 @@ msgid "History"
 msgstr "Előzmények"
 
 #: src/qml/components/BottomToolbar.qml:44 src/qml/components/Sidebar.qml:72
-#: src/qml/ContactsPage.qml:19
+#: src/qml/ContactsPage.qml:21
 #, kde-format
 msgid "Contacts"
 msgstr "Névjegyek"
@@ -105,7 +105,7 @@ msgstr "Névjegyek"
 msgid "Dialer"
 msgstr "Tárcsázó"
 
-#: src/qml/components/Sidebar.qml:114 src/qml/ContactsPage.qml:31
+#: src/qml/components/Sidebar.qml:114 src/qml/ContactsPage.qml:33
 #: src/qml/DialerPage.qml:57 src/qml/HistoryPage.qml:41
 #: src/qml/settings/SettingsPage.qml:20
 #, kde-format
@@ -117,12 +117,12 @@ msgstr "Beállítások"
 msgid "Quit"
 msgstr "Kilépés"
 
-#: src/qml/ContactsPage.qml:92
+#: src/qml/ContactsPage.qml:132
 #, kde-format
 msgid "Select number to call"
 msgstr "Hívandó szám"
 
-#: src/qml/ContactsPage.qml:101
+#: src/qml/ContactsPage.qml:141
 #, kde-format
 msgid "No contacts have a phone number set"
 msgstr "Nincsenek több telefonszámmal rendelkező névjegyek"

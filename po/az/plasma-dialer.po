@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-11 00:43+0000\n"
+"POT-Creation-Date: 2024-05-04 00:42+0000\n"
 "PO-Revision-Date: 2023-03-12 18:41+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -93,7 +93,7 @@ msgid "History"
 msgstr "Tarixçə"
 
 #: src/qml/components/BottomToolbar.qml:44 src/qml/components/Sidebar.qml:72
-#: src/qml/ContactsPage.qml:19
+#: src/qml/ContactsPage.qml:21
 #, kde-format
 msgid "Contacts"
 msgstr "Əlaqələr"
@@ -104,7 +104,7 @@ msgstr "Əlaqələr"
 msgid "Dialer"
 msgstr "Nömrə yığımı"
 
-#: src/qml/components/Sidebar.qml:114 src/qml/ContactsPage.qml:31
+#: src/qml/components/Sidebar.qml:114 src/qml/ContactsPage.qml:33
 #: src/qml/DialerPage.qml:57 src/qml/HistoryPage.qml:41
 #: src/qml/settings/SettingsPage.qml:20
 #, kde-format
@@ -116,12 +116,12 @@ msgstr "Ayarlar"
 msgid "Quit"
 msgstr "Çıxış"
 
-#: src/qml/ContactsPage.qml:92
+#: src/qml/ContactsPage.qml:132
 #, kde-format
 msgid "Select number to call"
 msgstr "Zəng edəcəyiniz nömrəni seçin"
 
-#: src/qml/ContactsPage.qml:101
+#: src/qml/ContactsPage.qml:141
 #, kde-format
 msgid "No contacts have a phone number set"
 msgstr "Telefon nömrəsi olan əlaqələr yoxdur"

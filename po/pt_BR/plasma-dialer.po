@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-11 00:43+0000\n"
+"POT-Creation-Date: 2024-05-04 00:42+0000\n"
 "PO-Revision-Date: 2023-06-26 16:57-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -93,7 +93,7 @@ msgid "History"
 msgstr "Histórico"
 
 #: src/qml/components/BottomToolbar.qml:44 src/qml/components/Sidebar.qml:72
-#: src/qml/ContactsPage.qml:19
+#: src/qml/ContactsPage.qml:21
 #, kde-format
 msgid "Contacts"
 msgstr "Contatos"
@@ -104,7 +104,7 @@ msgstr "Contatos"
 msgid "Dialer"
 msgstr "Discador"
 
-#: src/qml/components/Sidebar.qml:114 src/qml/ContactsPage.qml:31
+#: src/qml/components/Sidebar.qml:114 src/qml/ContactsPage.qml:33
 #: src/qml/DialerPage.qml:57 src/qml/HistoryPage.qml:41
 #: src/qml/settings/SettingsPage.qml:20
 #, kde-format
@@ -116,12 +116,12 @@ msgstr "Configurações"
 msgid "Quit"
 msgstr "Sair"
 
-#: src/qml/ContactsPage.qml:92
+#: src/qml/ContactsPage.qml:132
 #, kde-format
 msgid "Select number to call"
 msgstr "Selecionar número a chamar"
 
-#: src/qml/ContactsPage.qml:101
+#: src/qml/ContactsPage.qml:141
 #, kde-format
 msgid "No contacts have a phone number set"
 msgstr "Nenhum contato tem um número de telefone definido"
