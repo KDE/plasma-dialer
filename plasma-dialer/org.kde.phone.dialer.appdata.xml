@@ -146,6 +146,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="hu">A Telefon alkalmazás lehetővé teszi hívások egyszerű indítását és fogadását okostelefonján.</p>
     <p xml:lang="ia">Le app de Phone (Telephono) lassa que tu facilemente  invia e recipe appellos de telephono ab tu smartphone.</p>
     <p xml:lang="id">Aplikasi telepon memungkinkanmu secara mudah mengirim dan menerima panggilan telepon dari smartphone-mu.</p>
+    <p xml:lang="is">Með símaforritinu er auðvelt að hringja og svara símtölum úr farsímanum þínum.</p>
     <p xml:lang="it">L'applicazione Telefono ti permette di inviare e di ricevere in modo semplice le chiamate telefoniche dal tuo smartphone.</p>
     <p xml:lang="ka">ტელეფონის აპი საშუალებას გაძლევთ ადვილად მიიღოთ და განახორციელოთ ზარები თქვენი სმარტფონიდან.</p>
     <p xml:lang="ko">전화 앱을 사용하여 스마트폰에서 통화를 걸고 받을 수 있습니다.</p>
@@ -222,6 +223,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="hu">Híváselőzmények megtekintése és egy korábbi szám gyors újrahívása</li>
       <li xml:lang="ia">Vide tu chronologia de appello e facilemente le mesme numero novemente</li>
       <li xml:lang="id">Lihat histori panggilanmu dan secara mudah memanggil nomor yang sama lagi</li>
+      <li xml:lang="is">Skoðaðu nýleg símtöl og hringdu í sama númerið aftur</li>
       <li xml:lang="it">Vedi la cronologia delle chiamate e richiama lo stesso numero in modo semplice</li>
       <li xml:lang="ka">იხილეთ ზარების თქვენი ისტორია და ადვილად გადარეკეთ იგივე ნომერზე</li>
       <li xml:lang="ko">통화 기록을 보고 같은 전화번호에 전화 다시 걸기</li>
@@ -257,6 +259,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="hu">Több telefonszámmal rendelkező névjegyek kezelése</li>
       <li xml:lang="ia">Gere tu contactos que ha un insimul de numero de telephono</li>
       <li xml:lang="id">Kelola kontakmu yang memiliki kumpulan nomor telepon</li>
+      <li xml:lang="is">Haltu utan um tengiliðina þína sem eru með skráð símanúmer</li>
       <li xml:lang="it">Gestisci i tuoi contatti che hanno un numero di telefono impostato</li>
       <li xml:lang="ka">მართეთ კონტაქტები, რომლებსაც ტელეფონის ნომერი მითითებული აქვთ</li>
       <li xml:lang="ko">전화번호가 없는 연락처 관리</li>
@@ -298,6 +301,7 @@ SPDX-License-Identifier: CC0-1.0
       <caption xml:lang="hu">A tárcsázó oldal</caption>
       <caption xml:lang="ia">Le pagina de Combinator (Dialer)</caption>
       <caption xml:lang="id">Halaman dial</caption>
+      <caption xml:lang="is">Símhringisíðan</caption>
       <caption xml:lang="it">La pagina del combinatore</caption>
       <caption xml:lang="ka">ღილაკების გვერდი</caption>
       <caption xml:lang="ko">다이얼 페이지</caption>
@@ -336,7 +340,7 @@ SPDX-License-Identifier: CC0-1.0
       <caption xml:lang="hu">Hangposta hívása</caption>
       <caption xml:lang="ia">Appellante voicemail (posta vocal)</caption>
       <caption xml:lang="id">Memanggil surat suara</caption>
-      <caption xml:lang="is">Hringja í talhólf</caption>
+      <caption xml:lang="is">Hringt í talhólf</caption>
       <caption xml:lang="it">Chiama caselle vocali</caption>
       <caption xml:lang="ka">ხმოვანი ფოსტის გამოძახება</caption>
       <caption xml:lang="ko">음성 사서함 통화</caption>
