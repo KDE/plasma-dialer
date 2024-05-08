@@ -9,7 +9,7 @@
 #include <QtFeedback/QFeedbackEffect>
 #endif // HAVE_QT5_FEEDBACK
 
-#include "callhistorydatabaseinterface.h"
+#include "call-history-database.h"
 #include "callutilsinterface.h"
 #include "contact-utils.h"
 
@@ -21,6 +21,7 @@ public:
 
     void setCallUtils(org::kde::telephony::CallUtils *callUtils);
     void setContactUtils(ContactUtils *contactUtils);
+    void setCallHistoryDatabase(CallHistoryDatabase *callHistoryDatabase);
 
 private Q_SLOTS:
     void onCallAdded(const QString &deviceUni,
@@ -45,7 +46,7 @@ private:
     void handleIncomingCall(const QString &deviceUni, const QString &callUni, const QString &communicationWith);
     void handleCallInteraction();
 
-    org::kde::telephony::CallHistoryDatabase *m_databaseInterface;
+    CallHistoryDatabase *m_callHistoryDatabase;
 
     org::kde::telephony::CallUtils *m_callUtils;
     ContactUtils *m_contactUtils;

@@ -57,15 +57,6 @@ NotificationManager::NotificationManager(QObject *parent)
     _ringEffect->setPeriod(1300);
 #endif // HAVE_QT5_FEEDBACK
 
-    m_databaseInterface = new org::kde::telephony::CallHistoryDatabase(QString::fromLatin1(m_databaseInterface->staticInterfaceName()),
-                                                                       QStringLiteral("/org/kde/telephony/CallHistoryDatabase/tel/mm"),
-                                                                       QDBusConnection::sessionBus(),
-                                                                       this);
-
-    if (!m_databaseInterface->isValid()) {
-        qDebug() << Q_FUNC_INFO << "Could not initiate CallHistoryDatabase interface";
-        return;
-    }
     m_ringingNotification->setAutoDelete(false);
 }
 
@@ -82,6 +73,11 @@ void NotificationManager::setCallUtils(org::kde::telephony::CallUtils *callUtils
 void NotificationManager::setContactUtils(ContactUtils *contactUtils)
 {
     m_contactUtils = contactUtils;
+}
+
+void NotificationManager::setCallHistoryDatabase(CallHistoryDatabase *callHistoryDatabase)
+{
+    m_callHistoryDatabase = callHistoryDatabase;
 }
 
 void NotificationManager::onCallAdded(const QString &deviceUni,
@@ -207,14 +203,14 @@ void NotificationManager::handleIncomingCall(const QString &deviceUni, const QSt
         }
 
         if (Config::self()->allowPreviousOutgoing()) {
-            QString lastOutgoing = m_databaseInterface->lastCall(communicationWith, static_cast<int>(DialerTypes::CallDirection::Outgoing));
+            QString lastOutgoing = m_callHistoryDatabase->lastCall(communicationWith, static_cast<int>(DialerTypes::CallDirection::Outgoing));
             if (!lastOutgoing.isEmpty()) {
                 allowed = true;
             }
         }
 
         if (Config::self()->allowCallback()) {
-            QString lastIncoming = m_databaseInterface->lastCall(communicationWith, static_cast<int>(DialerTypes::CallDirection::Incoming));
+            QString lastIncoming = m_callHistoryDatabase->lastCall(communicationWith, static_cast<int>(DialerTypes::CallDirection::Incoming));
             QDateTime lastTime = QDateTime::fromString(lastIncoming, QStringLiteral("yyyy-MM-ddThh:mm:ss.zzz"));
             qint64 diff = lastTime.msecsTo(QDateTime::currentDateTime());
             if (diff / 1000 / 60 < Config::self()->callbackInterval()) {

@@ -69,6 +69,7 @@ int main(int argc, char **argv)
     NotificationManager notificator(&app);
     notificator.setCallUtils(callUtils);
     notificator.setContactUtils(contactUtils);
+    notificator.setCallHistoryDatabase(callHistoryDatabase);
 
     new CallHistoryDatabaseAdaptor(callHistoryDatabase);
     dbus.registerObject(QStringLiteral("/org/kde/telephony/CallHistoryDatabase/tel/mm"), callHistoryDatabase);
