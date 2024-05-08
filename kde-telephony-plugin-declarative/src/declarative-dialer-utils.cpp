@@ -22,3 +22,8 @@ void DeclarativeDialerUtils::syncSettings()
 {
     org::kde::telephony::DialerUtils::syncSettings();
 }
+
+bool DeclarativeDialerUtils::isValid() const
+{
+    return org::kde::telephony::DialerUtils::isValid();
+}

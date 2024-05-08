@@ -61,3 +61,8 @@ QVariantList DeclarativeContactUtils::phoneNumbers(const QString &kPeopleUri)
 
     return toVariantList(addressee.phoneNumbers());
 }
+
+bool DeclarativeContactUtils::isValid() const
+{
+    return org::kde::telephony::ContactUtils::isValid();
+}
