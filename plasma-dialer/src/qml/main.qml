@@ -166,7 +166,7 @@ Kirigami.ApplicationWindow {
         id: imeiSheet
 
         function show() {
-            imeiSheet.imeis = DeviceUtils.equipmentIdentifiers();
+            imeiSheet.imeis = DeviceUtils.equipmentIdentifiers;
             imeiSheet.open();
         }
 
