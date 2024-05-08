@@ -136,9 +136,9 @@ FormCard.FormCardPage {
                 background: null
                 onClicked: phoneField.clicked()
                 onActiveFocusChanged: {
-                    if (activeFocus) {
+                    if (activeFocus)
                         phoneField.forceActiveFocus();
-                    }
+
                 }
 
                 contentItem: RowLayout {
@@ -173,9 +173,9 @@ FormCard.FormCardPage {
             background: null
             onClicked: toAddPattern.clicked()
             onActiveFocusChanged: {
-                if (activeFocus) {
+                if (activeFocus)
                     toAddPattern.forceActiveFocus();
-                }
+
             }
 
             contentItem: RowLayout {

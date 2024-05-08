@@ -58,8 +58,8 @@ Kirigami.OverlayDrawer {
                             applicationWindow().switchToPage(page, 0);
                         else
                             checked = Qt.binding(function() {
-                                return applicationWindow().pageStack.currentItem === page;
-                            });
+                            return applicationWindow().pageStack.currentItem === page;
+                        });
                     }
                 }
 
@@ -77,8 +77,8 @@ Kirigami.OverlayDrawer {
                             applicationWindow().switchToPage(page, 0);
                         else
                             checked = Qt.binding(function() {
-                                return applicationWindow().pageStack.currentItem === page;
-                            });
+                            return applicationWindow().pageStack.currentItem === page;
+                        });
                     }
                 }
 
@@ -95,8 +95,8 @@ Kirigami.OverlayDrawer {
                             applicationWindow().switchToPage(page, 0);
                         else
                             checked = Qt.binding(function() {
-                                return applicationWindow().pageStack.currentItem === page;
-                            });
+                            return applicationWindow().pageStack.currentItem === page;
+                        });
                     }
                 }
 
@@ -124,8 +124,8 @@ Kirigami.OverlayDrawer {
                             applicationWindow().switchToPage(page, 0);
                         else
                             checked = Qt.binding(function() {
-                                return applicationWindow().pageStack.currentItem === page;
-                            });
+                            return applicationWindow().pageStack.currentItem === page;
+                        });
                     }
                 }
 
