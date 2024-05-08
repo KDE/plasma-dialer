@@ -119,11 +119,11 @@ void NotificationManager::onCallStateChanged(const DialerTypes::CallData &callDa
             handleCallInteraction();
 
             if (callData.stateReason == DialerTypes::CallStateReason::Unknown && !m_callStarted) {
-                auto m_missedCallNotification = new KNotification(QStringLiteral("callMissed")); // FIXME: this looks suspicious
-                m_missedCallNotification->setComponentName(QStringLiteral("plasma_dialer"));
-                m_missedCallNotification->setTitle(i18n("Missed call"));
-                m_missedCallNotification->setText(i18n("Missed call from %1", callerDisplay));
-                m_missedCallNotification->sendEvent();
+                auto missedCallNotification = new KNotification(QStringLiteral("callMissed"), KNotification::Persistent, this);
+                missedCallNotification->setComponentName(QStringLiteral("plasma_dialer"));
+                missedCallNotification->setTitle(i18n("Missed call"));
+                missedCallNotification->setText(i18n("Missed call from %1", callerDisplay));
+                missedCallNotification->sendEvent();
             }
         }
         if (callData.state == DialerTypes::CallState::Active) {

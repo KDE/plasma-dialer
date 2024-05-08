@@ -35,7 +35,6 @@ private Q_SLOTS:
 
 private:
     std::unique_ptr<KNotification> m_ringingNotification;
-    std::unique_ptr<KNotification> m_missedCallNotification;
 
     void openRingingNotification(const QString &deviceUni, const QString &callUni, const QString callerDisplay, const QString notificationEvent);
     void closeRingingNotification();
