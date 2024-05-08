@@ -40,7 +40,7 @@ static void launchPlasmaDialerDesktopFile()
 
 NotificationManager::NotificationManager(QObject *parent)
     : QObject(parent)
-    , m_ringingNotification(std::make_unique<KNotification>(QStringLiteral("ringing"), KNotification::Persistent | KNotification::LoopSound, nullptr))
+    , m_ringingNotification(std::make_unique<KNotification>(QStringLiteral("ringing"), KNotification::Persistent | KNotification::LoopSound, this))
     , m_callStarted(false)
 
 #ifdef HAVE_QT5_FEEDBACK
@@ -138,6 +138,7 @@ void NotificationManager::openRingingNotification(const QString &deviceUni,
                                                   const QString callerDisplay,
                                                   const QString notificationEvent)
 {
+    m_ringingNotification->clearActions();
     m_ringingNotification->setEventId(notificationEvent);
     m_ringingNotification->setUrgency(KNotification::CriticalUrgency);
     m_ringingNotification->setComponentName(QStringLiteral("plasma_dialer"));
