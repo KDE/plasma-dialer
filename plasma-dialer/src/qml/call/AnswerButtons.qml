@@ -7,14 +7,13 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
-
 import org.kde.kirigami as Kirigami
 
 Item {
     id: root
 
-    signal accepted
-    signal rejected
+    signal accepted()
+    signal rejected()
 
     Layout.minimumHeight: Kirigami.Units.gridUnit * 3
     Layout.fillWidth: true
@@ -26,33 +25,49 @@ Item {
 
         QQC2.AbstractButton {
             id: endCallButton
+
             Layout.minimumWidth: height
             Layout.fillHeight: true
+            onClicked: {
+                root.rejected();
+            }
+
             background: Rectangle {
                 radius: height
                 color: Kirigami.Theme.negativeBackgroundColor
                 opacity: endCallButton.pressed ? 0.5 : 1
+
                 Kirigami.Icon {
                     id: endCallIcon
+
                     anchors.centerIn: parent
                     source: "call-end-symbolic"
 
                     SequentialAnimation {
                         running: true
                         loops: Animation.Infinite
-                        NumberAnimation { target: endCallIcon; property: "rotation"
-                            from: -8; to: 8;
-                            easing.type: Easing.OutInElastic; duration: Kirigami.Units.veryLongDuration * 3
+
+                        NumberAnimation {
+                            target: endCallIcon
+                            property: "rotation"
+                            from: -8
+                            to: 8
+                            easing.type: Easing.OutInElastic
+                            duration: Kirigami.Units.veryLongDuration * 3
                         }
-                        PauseAnimation { duration: Kirigami.Units.shortDuration}
+
+                        PauseAnimation {
+                            duration: Kirigami.Units.shortDuration
+                        }
+
                     }
+
                 }
+
             }
-            onClicked: {
-                root.rejected()
-            }
+
         }
-        
+
         Item {
             Layout.fillWidth: true
             Layout.fillHeight: true
@@ -60,31 +75,49 @@ Item {
 
         QQC2.AbstractButton {
             id: acceptCallButton
+
             Layout.minimumWidth: height
             Layout.fillHeight: true
+            onClicked: {
+                root.accepted();
+            }
+
             background: Rectangle {
                 radius: height
                 color: Kirigami.Theme.positiveBackgroundColor
                 opacity: acceptCallButton.pressed ? 0.5 : 1
+
                 Kirigami.Icon {
                     id: acceptCallIcon
+
                     anchors.centerIn: parent
                     source: "call-start-symbolic"
 
                     SequentialAnimation {
                         running: true
                         loops: Animation.Infinite
-                        NumberAnimation { target: acceptCallIcon; property: "rotation"
-                            from: -8; to: 8;
-                            easing.type: Easing.OutInElastic; duration: Kirigami.Units.veryLongDuration * 3
+
+                        NumberAnimation {
+                            target: acceptCallIcon
+                            property: "rotation"
+                            from: -8
+                            to: 8
+                            easing.type: Easing.OutInElastic
+                            duration: Kirigami.Units.veryLongDuration * 3
                         }
-                        PauseAnimation { duration: Kirigami.Units.shortDuration}
+
+                        PauseAnimation {
+                            duration: Kirigami.Units.shortDuration
+                        }
+
                     }
+
                 }
+
             }
-            onClicked: {
-                root.accepted()
-            }
+
         }
+
     }
+
 }

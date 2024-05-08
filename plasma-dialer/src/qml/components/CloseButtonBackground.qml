@@ -16,6 +16,10 @@ Rectangle {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: parent.bottom
         anchors.bottomMargin: Kirigami.Units.smallSpacing
+        onClicked: {
+            Qt.quit();
+        }
+
         Kirigami.Icon {
             source: "window-close-symbolic"
             isMask: true
@@ -24,8 +28,7 @@ Rectangle {
             width: Kirigami.Units.gridUnit * 1.5
             height: width
         }
-        onClicked: {
-            Qt.quit()
-        }
+
     }
+
 }

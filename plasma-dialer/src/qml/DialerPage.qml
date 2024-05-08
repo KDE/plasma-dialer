@@ -9,9 +9,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
-
 import org.kde.telephony
-
 import "call"
 import "dialpad"
 
@@ -20,37 +18,51 @@ Kirigami.Page {
 
     property alias numberEntryText: statusLabel.text
     property alias pad: dialPad
-    
     // page animation
     property real yTranslate: 0
 
     title: i18n("Dialer")
     icon.name: "call-start"
-
     leftPadding: 0
     rightPadding: 0
     topPadding: 0
     bottomPadding: 0
+    Component.onCompleted: {
+        // dynamic check could be dropped with KF6-only versions
+        // https://invent.kde.org/frameworks/kirigami/-/merge_requests/986
+        if (dialerPage.mainAction !== undefined)
+            dialerPage.mainAction = settingsAction;
+        else
+            dialerPage.actions = settingsAction;
+        // https://invent.kde.org/frameworks/kirigami/-/merge_requests/942
+        const name = "settings-configure";
+        if (settingsAction.iconName !== undefined)
+            settingsAction.iconName = name;
+        else
+            settingsAction.icon.name = name;
+    }
 
     Connections {
-        target: ActiveCallModel
         function onActiveChanged() {
-            const callPage = getPage("Call")
+            const callPage = getPage("Call");
             if (ActiveCallModel.active) {
-                applicationWindow().pageStack.layers.push(callPage, 1)
+                applicationWindow().pageStack.layers.push(callPage, 1);
             } else {
                 if (pageStack.layers.currentItem === callPage) {
-                    pageStack.layers.pop()
-                    if (ScreenSaverUtils.getActive()) {
-                        Qt.quit()
-                    }
+                    pageStack.layers.pop();
+                    if (ScreenSaverUtils.getActive())
+                        Qt.quit();
+
                 }
             }
         }
+
+        target: ActiveCallModel
     }
 
     Kirigami.Action {
         id: settingsAction
+
         displayHint: Kirigami.DisplayHint.IconOnly
         visible: !applicationWindow().isWidescreen
         enabled: !applicationWindow().lockscreenMode
@@ -58,71 +70,20 @@ Kirigami.Page {
         onTriggered: applicationWindow().pageStack.push(applicationWindow().getPage("Settings"))
     }
 
-    Component.onCompleted: {
-        // dynamic check could be dropped with KF6-only versions
-        // https://invent.kde.org/frameworks/kirigami/-/merge_requests/986
-        if (dialerPage.mainAction !== undefined) {
-            dialerPage.mainAction = settingsAction
-        } else {
-            dialerPage.actions = settingsAction
-        }
-
-        // https://invent.kde.org/frameworks/kirigami/-/merge_requests/942
-        const name = "settings-configure"
-        if (settingsAction.iconName !== undefined) {
-            settingsAction.iconName = name
-        } else {
-            settingsAction.icon.name = name
-        }
-    }
-
-    header: ColumnLayout {
-        anchors.margins: Kirigami.Units.smallSpacing
-        spacing: Kirigami.Units.smallSpacing
-        Kirigami.InlineMessage {
-            id: daemonsError
-            Layout.fillWidth: true
-            Layout.leftMargin: Kirigami.Units.smallSpacing
-            Layout.rightMargin: Kirigami.Units.smallSpacing
-            type: Kirigami.MessageType.Error
-            text: i18n("Telephony daemons are not responding")
-            visible: !DialerUtils.isValid
-        }
-        Kirigami.InlineMessage {
-            id: devicesError
-            Layout.fillWidth: true
-            Layout.leftMargin: Kirigami.Units.smallSpacing
-            Layout.rightMargin: Kirigami.Units.smallSpacing
-            type: Kirigami.MessageType.Error
-            text: i18n("Modem devices are not found")
-            visible: DeviceUtils.deviceUniList.length < 1
-        }
-        Kirigami.InlineMessage {
-            id: voicemailError
-            Layout.fillWidth: true
-            Layout.leftMargin: Kirigami.Units.smallSpacing
-            Layout.rightMargin: Kirigami.Units.smallSpacing
-            type: Kirigami.MessageType.Error
-            text: i18n("Voicemail number couldn't be found")
-            visible: dialPad.voicemailFail
-        }
-
-        InCallInlineMessage {}
-    }
-
     ColumnLayout {
         id: dialPadArea
-        transform: Translate { y: yTranslate }
+
         anchors.fill: parent
         spacing: 0
 
         QQC2.ScrollView {
             id: scrollView
+
             contentWidth: -1 // no horizontal scrolling necessary
             Layout.minimumWidth: dialerPage.width
             Layout.maximumWidth: dialerPage.width
             Layout.preferredHeight: applicationWindow().smallMode ? implicitHeight : parent.height * 0.3
-            
+
             QQC2.Label {
                 id: statusLabel
 
@@ -133,9 +94,9 @@ Kirigami.Page {
                 font.pixelSize: applicationWindow().smallMode ? Kirigami.Units.gridUnit * 1.6 : Kirigami.Units.gridUnit * 2.3
                 font.weight: Font.Light
                 wrapMode: QQC2.Label.WrapAnywhere
-
                 text: CallUtils.formatNumber(dialPad.number)
             }
+
         }
 
         Kirigami.Separator {
@@ -151,6 +112,7 @@ Kirigami.Page {
 
             Dialpad {
                 id: dialPad
+
                 anchors.fill: parent
                 anchors.bottomMargin: Kirigami.Units.largeSpacing * 2
                 anchors.topMargin: Kirigami.Units.largeSpacing * 2
@@ -158,6 +120,55 @@ Kirigami.Page {
                 anchors.rightMargin: Kirigami.Units.largeSpacing * 3
                 focus: true
             }
+
         }
+
+        transform: Translate {
+            y: yTranslate
+        }
+
     }
+
+    header: ColumnLayout {
+        anchors.margins: Kirigami.Units.smallSpacing
+        spacing: Kirigami.Units.smallSpacing
+
+        Kirigami.InlineMessage {
+            id: daemonsError
+
+            Layout.fillWidth: true
+            Layout.leftMargin: Kirigami.Units.smallSpacing
+            Layout.rightMargin: Kirigami.Units.smallSpacing
+            type: Kirigami.MessageType.Error
+            text: i18n("Telephony daemons are not responding")
+            visible: !DialerUtils.isValid
+        }
+
+        Kirigami.InlineMessage {
+            id: devicesError
+
+            Layout.fillWidth: true
+            Layout.leftMargin: Kirigami.Units.smallSpacing
+            Layout.rightMargin: Kirigami.Units.smallSpacing
+            type: Kirigami.MessageType.Error
+            text: i18n("Modem devices are not found")
+            visible: DeviceUtils.deviceUniList.length < 1
+        }
+
+        Kirigami.InlineMessage {
+            id: voicemailError
+
+            Layout.fillWidth: true
+            Layout.leftMargin: Kirigami.Units.smallSpacing
+            Layout.rightMargin: Kirigami.Units.smallSpacing
+            type: Kirigami.MessageType.Error
+            text: i18n("Voicemail number couldn't be found")
+            visible: dialPad.voicemailFail
+        }
+
+        InCallInlineMessage {
+        }
+
+    }
+
 }

@@ -2,9 +2,8 @@
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 import QtQuick
-import QtQuick.Controls 
+import QtQuick.Controls
 import QtQuick.Layouts
-
 import org.kde.kirigami as Kirigami
 import org.kde.telephony
 
@@ -12,6 +11,9 @@ Kirigami.InlineMessage {
     type: Kirigami.MessageType.Information
     visible: ActiveCallModel.active
     text: i18n("Active call list")
+    Layout.fillWidth: true
+    Layout.leftMargin: Kirigami.Units.smallSpacing
+    Layout.rightMargin: Kirigami.Units.smallSpacing
     actions: [
         Kirigami.Action {
             icon.name: "call-start"
@@ -19,7 +21,4 @@ Kirigami.InlineMessage {
             onTriggered: applicationWindow().pageStack.layers.push(getPage("Call"))
         }
     ]
-    Layout.fillWidth: true
-    Layout.leftMargin: Kirigami.Units.smallSpacing
-    Layout.rightMargin: Kirigami.Units.smallSpacing
 }

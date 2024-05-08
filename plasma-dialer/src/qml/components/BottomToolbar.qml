@@ -10,66 +10,68 @@ import org.kde.kirigami as Kirigami
 Kirigami.NavigationTabBar {
     id: navigationTabBar
 
-    visible: height !== 0
-
     function currentPage() {
-        return applicationWindow().pageStack.currentItem
+        return applicationWindow().pageStack.currentItem;
     }
 
     function getHistoryPage() {
         return applicationWindow().getPage("History");
     }
+
     function getContactsPage() {
         return applicationWindow().getPage("Contacts");
     }
+
     function getDialerPage() {
         return applicationWindow().getPage("Dialer");
     }
 
-    actions: [
-        Kirigami.Action {
-            icon.name: "clock"
-            text: i18n("History")
-            property bool opened: getHistoryPage() === currentPage()
-            checked: opened
-            enabled: !applicationWindow().lockscreenMode
-            onTriggered: {
-                if (!opened) {
-                    applicationWindow().switchToPage(getHistoryPage(), 0);
-                }
-            }
-        },
-        Kirigami.Action {
-            icon.name: "view-pim-contacts"
-            text: i18n("Contacts")
-            property bool opened: getContactsPage() === currentPage()
-            checked: opened
-            enabled: !applicationWindow().lockscreenMode
-            onTriggered: {
-                if (!opened) {
-                    applicationWindow().switchToPage(getContactsPage(), 0);
-                }
-            }
-        },
-        Kirigami.Action {
-            icon.name: "call-start"
-            text: i18n("Dialer")
-            property bool opened: getDialerPage() === currentPage()
-            checked: opened
-            onTriggered: {
-                if (!opened) {
-                    applicationWindow().switchToPage(getDialerPage(), 0);
-                }
-            }
-        }
-    ]
-
+    visible: height !== 0
     bottomPadding: applicationWindow().lockscreenMode ? (Kirigami.Units.gridUnit * 2) : 0
-
     Component.onCompleted: {
         if (applicationWindow().lockscreenMode) {
-            let closeButtonBackground = Qt.createComponent("qrc:/components/CloseButtonBackground.qml")
+            let closeButtonBackground = Qt.createComponent("qrc:/components/CloseButtonBackground.qml");
             background = closeButtonBackground.createObject(root);
         }
     }
-} 
+    actions: [
+        Kirigami.Action {
+            property bool opened: getHistoryPage() === currentPage()
+
+            icon.name: "clock"
+            text: i18n("History")
+            checked: opened
+            enabled: !applicationWindow().lockscreenMode
+            onTriggered: {
+                if (!opened)
+                    applicationWindow().switchToPage(getHistoryPage(), 0);
+
+            }
+        },
+        Kirigami.Action {
+            property bool opened: getContactsPage() === currentPage()
+
+            icon.name: "view-pim-contacts"
+            text: i18n("Contacts")
+            checked: opened
+            enabled: !applicationWindow().lockscreenMode
+            onTriggered: {
+                if (!opened)
+                    applicationWindow().switchToPage(getContactsPage(), 0);
+
+            }
+        },
+        Kirigami.Action {
+            property bool opened: getDialerPage() === currentPage()
+
+            icon.name: "call-start"
+            text: i18n("Dialer")
+            checked: opened
+            onTriggered: {
+                if (!opened)
+                    applicationWindow().switchToPage(getDialerPage(), 0);
+
+            }
+        }
+    ]
+}

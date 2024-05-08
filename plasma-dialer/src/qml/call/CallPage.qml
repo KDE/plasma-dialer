@@ -9,53 +9,60 @@
 import QtQuick
 import QtQuick.Controls as Controls
 import QtQuick.Layouts
-
 import org.kde.kirigami as Kirigami
-
 import org.kde.telephony
 import org.kde.phone.dialer // Config
-
 import "../dialpad"
 
 Kirigami.Page {
     id: callPage
 
-    function activeDeviceUni() {
-        return applicationWindow().selectModem()
-    }
-    function activeCallUni() {
-        return ActiveCallModel.activeCallUni()
-    }
-
     property bool callIncoming: ActiveCallModel.incoming
     property bool callActive: ActiveCallModel.active
     property int callDuration: ActiveCallModel.duration
     property string callCommunicationWith: ActiveCallModel.communicationWith
-    
-    title: i18n("Active call list")
+
+    function activeDeviceUni() {
+        return applicationWindow().selectModem();
+    }
+
+    function activeCallUni() {
+        return ActiveCallModel.activeCallUni();
+    }
 
     function secondsToTimeString(seconds) {
         var h = Math.floor(seconds / 3600);
         var m = Math.floor((seconds - (h * 3600)) / 60);
         var s = seconds - h * 3600 - m * 60;
-        if(m < 10) m = '0' + m;
-        if(s < 10) s = '0' + s;
-        if(h === 0) return '' + m + ':' + s;
+        if (m < 10)
+            m = '0' + m;
+
+        if (s < 10)
+            s = '0' + s;
+
+        if (h === 0)
+            return '' + m + ':' + s;
+
         return '' + h + ':' + m + ':' + s;
     }
 
+    title: i18n("Active call list")
+
     Connections {
-        target: DialerUtils
         function onMuteChanged(muted) {
-            muteButton.toggledOn = muted
+            muteButton.toggledOn = muted;
         }
+
         function onSpeakerModeChanged(enabled) {
-            speakerButton.toggledOn = enabled
+            speakerButton.toggledOn = enabled;
         }
+
+        target: DialerUtils
     }
 
     ColumnLayout {
         id: activeCallUi
+
         spacing: Kirigami.Units.largeSpacing
 
         anchors {
@@ -76,9 +83,11 @@ Kirigami.Page {
 
             Dialpad {
                 id: dialPad
+
                 showBottomRow: false
                 focus: true
             }
+
         }
 
         // phone number/alias
@@ -92,7 +101,7 @@ Kirigami.Page {
             font.bold: true
             visible: callActive
         }
-        
+
         // time spent on call
         Controls.Label {
             Layout.fillWidth: true
@@ -101,77 +110,75 @@ Kirigami.Page {
             verticalAlignment: Qt.AlignVCenter
             font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.1
             text: {
-                if (callDuration > 0) {
-                    return secondsToTimeString(callDuration)
-                }
-                if (callIncoming) {
-                    return i18n("Incoming...")
-                }
-                if (callActive) {
-                    return i18n("Calling...")
-                }
-                return ''
+                if (callDuration > 0)
+                    return secondsToTimeString(callDuration);
+
+                if (callIncoming)
+                    return i18n("Incoming...");
+
+                if (callActive)
+                    return i18n("Calling...");
+
+                return '';
             }
             visible: text !== ""
         }
 
         // controls
         RowLayout {
+            id: buttonRow
+
             opacity: callActive ? 1 : 0
             Layout.alignment: Qt.AlignHCenter
             Layout.maximumWidth: Kirigami.Units.gridUnit * 16
             Layout.minimumHeight: Kirigami.Units.gridUnit * 3.5
-            id: buttonRow
-            
             spacing: Kirigami.Units.smallSpacing
-            
+
             CallPageButton {
                 id: dialerButton
-                Layout.fillHeight: true
-                Layout.fillWidth: true
-                
-                iconSource: "input-dialpad-symbolic"
-                text: i18n("Keypad")
-                
-                onClicked: switchToogle()
-                toggledOn: (activeCallSwipeView.currentIndex == 1)
 
                 function switchToogle() {
                     // activeCallSwipeView: 0 is ActiveCallView, 1 is Dialpad
-                    if (toggledOn) {
-                        activeCallSwipeView.currentIndex = 0
-                    } else {
-                        activeCallSwipeView.currentIndex = 1
-                    }
+                    if (toggledOn)
+                        activeCallSwipeView.currentIndex = 0;
+                    else
+                        activeCallSwipeView.currentIndex = 1;
                 }
-            }
-            CallPageButton {
-                id: speakerButton
+
                 Layout.fillHeight: true
                 Layout.fillWidth: true
-                
+                iconSource: "input-dialpad-symbolic"
+                text: i18n("Keypad")
+                onClicked: switchToogle()
+                toggledOn: (activeCallSwipeView.currentIndex == 1)
+            }
+
+            CallPageButton {
+                id: speakerButton
+
+                Layout.fillHeight: true
+                Layout.fillWidth: true
                 iconSource: "audio-speakers-symbolic"
                 text: i18n("Speaker")
-                
                 onClicked: {
-                    const speakerMode = !toggledOn
+                    const speakerMode = !toggledOn;
                     DialerUtils.setSpeakerMode(speakerMode);
                 }
             }
+
             CallPageButton {
                 id: muteButton
 
                 Layout.fillHeight: true
                 Layout.fillWidth: true
-
                 iconSource: toggledOn ? "microphone-sensitivity-muted-symbolic" : "microphone-sensitivity-high-symbolic"
                 text: i18n("Mute")
-
                 onClicked: {
-                    const micMute = !toggledOn
-                    DialerUtils.setMute(micMute)
+                    const micMute = !toggledOn;
+                    DialerUtils.setMute(micMute);
                 }
             }
+
         }
 
         Item {
@@ -180,62 +187,69 @@ Kirigami.Page {
 
             Loader {
                 id: answerControlLoader
+
                 anchors.fill: parent
                 active: callIncoming
-                sourceComponent: (Config.answerControl === 2) ?
-                                     asymmetricAnswerSwipe
-                                   : (Config.answerControl === 1) ?
-                                         symmetricAnswerSwipe
-                                       : answerButtons
+                sourceComponent: (Config.answerControl === 2) ? asymmetricAnswerSwipe : (Config.answerControl === 1) ? symmetricAnswerSwipe : answerButtons
 
                 Connections {
-                    target: answerControlLoader.item
                     function onAccepted() {
                         CallUtils.accept(activeDeviceUni(), activeCallUni());
                     }
+
                     function onRejected() {
                         CallUtils.hangUp(activeDeviceUni(), activeCallUni());
                     }
+
+                    target: answerControlLoader.item
                 }
 
                 Component {
                     id: answerButtons
-                    AnswerButtons {}
+
+                    AnswerButtons {
+                    }
+
                 }
 
                 Component {
                     id: symmetricAnswerSwipe
-                    SymmetricAnswerSwipe {}
+
+                    SymmetricAnswerSwipe {
+                    }
+
                 }
 
                 Component {
                     id: asymmetricAnswerSwipe
-                    AsymmetricAnswerSwipe {}
+
+                    AsymmetricAnswerSwipe {
+                    }
+
                 }
+
             }
-            
+
             // end call button
             Controls.AbstractButton {
                 id: endCallButton
+
                 visible: callActive && !callIncoming
-                
                 anchors.centerIn: parent
                 width: Kirigami.Units.gridUnit * 3.5
                 height: Kirigami.Units.gridUnit * 3.5
-                
                 onClicked: {
                     CallUtils.hangUp(activeDeviceUni(), activeCallUni());
                 }
-                
+
                 background: Rectangle {
                     anchors.centerIn: parent
                     height: Kirigami.Units.gridUnit * 3.5
                     width: height
                     radius: height / 2
-                    
                     color: "red"
                     opacity: endCallButton.pressed ? 0.5 : 1
-                    
+
                     Kirigami.Icon {
                         source: "call-stop"
                         anchors.fill: parent
@@ -243,8 +257,13 @@ Kirigami.Page {
                         color: "white"
                         isMask: true
                     }
+
                 }
+
             }
+
         }
+
     }
+
 }
