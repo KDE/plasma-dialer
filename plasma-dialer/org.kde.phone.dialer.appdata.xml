@@ -90,6 +90,7 @@ SPDX-License-Identifier: CC0-1.0
   <url type="homepage">https://apps.kde.org/phone.dialer</url>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?product=Plasma%20Mobile%20Dialer</url>
   <url type="donation">https://www.kde.org/community/donations/?app=plasmaphonedialer</url>
+  <content_rating type="oars-1.1"/>
   <recommends>
     <control>touch</control>
     <control>keyboard</control>
