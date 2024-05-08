@@ -31,6 +31,6 @@ Q_SIGNALS:
     void speakerModeRequested();
 
 private:
-    bool _mute;
-    bool _speakerMode;
+    bool m_mute;
+    bool m_speakerMode;
 };

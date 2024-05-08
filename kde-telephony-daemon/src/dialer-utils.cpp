@@ -16,19 +16,19 @@ DialerUtils::DialerUtils(QObject *parent)
 
 bool DialerUtils::mute()
 {
-    return _mute;
+    return m_mute;
 }
 
 bool DialerUtils::speakerMode()
 {
-    return _speakerMode;
+    return m_speakerMode;
 }
 
 void DialerUtils::setSpeakerMode(bool enabled)
 {
-    if (_speakerMode != enabled) {
-        _speakerMode = enabled;
-        Q_EMIT speakerModeChanged(_speakerMode);
+    if (m_speakerMode != enabled) {
+        m_speakerMode = enabled;
+        Q_EMIT speakerModeChanged(m_speakerMode);
     }
 }
 
@@ -44,9 +44,9 @@ void DialerUtils::fetchSpeakerMode()
 
 void DialerUtils::setMute(bool muted)
 {
-    if (_mute != muted) {
-        _mute = muted;
-        Q_EMIT muteChanged(_mute);
+    if (m_mute != muted) {
+        m_mute = muted;
+        Q_EMIT muteChanged(m_mute);
     }
 }
 

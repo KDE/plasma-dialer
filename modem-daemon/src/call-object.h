@@ -52,7 +52,7 @@ public Q_SLOTS:
     void setDuration(const int &duration);
 
 private:
-    DialerTypes::CallData _callData;
-    QTimer _callAttemptTimer;
-    QTimer _callTimer;
+    DialerTypes::CallData m_callData;
+    QTimer m_callAttemptTimer;
+    QTimer m_callTimer;
 };

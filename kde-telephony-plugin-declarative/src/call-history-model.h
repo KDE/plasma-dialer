@@ -23,8 +23,8 @@ public:
     bool removeRows(int row, int count, const QModelIndex &parent = QModelIndex()) override;
 
 private:
-    org::kde::telephony::CallHistoryDatabase *_databaseInterface;
-    DialerTypes::CallDataVector _calls;
+    org::kde::telephony::CallHistoryDatabase *m_databaseInterface;
+    DialerTypes::CallDataVector m_calls;
 
-    void _fetchCalls();
+    void fetchCalls();
 };

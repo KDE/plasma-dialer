@@ -40,11 +40,11 @@ private:
     void pauseMedia();
     void unpauseMedia();
 
-    org::kde::telephony::CallUtils *_callUtils;
-    DialerUtils *_dialerUtils;
-    QSet<QString> _pausedSources;
+    org::kde::telephony::CallUtils *m_callUtils;
+    DialerUtils *m_dialerUtils;
+    QSet<QString> m_pausedSources;
 
-    bool _needsDefaultAudioMode;
+    bool m_needsDefaultAudioMode;
 };
 
 #endif // CALL_MANAGER_H

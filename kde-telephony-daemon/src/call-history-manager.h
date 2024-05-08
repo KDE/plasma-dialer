@@ -25,8 +25,7 @@ private Q_SLOTS:
     void onCallStateChanged(const DialerTypes::CallData &callData);
 
 private:
-    org::kde::telephony::CallUtils *_callUtils;
+    org::kde::telephony::CallUtils *m_callUtils;
 
-    ModemController *_modemController;
-    CallHistoryDatabase *_callHistoryDatabase;
+    CallHistoryDatabase *m_callHistoryDatabase;
 };

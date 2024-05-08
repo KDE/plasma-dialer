@@ -80,9 +80,9 @@ private:
     explicit ContactPhoneNumberMapper(bool testMode);
     [[nodiscard]] std::string normalizeNumber(const std::string &numberString) const;
 
-    KPeople::PersonsModel *_model;
-    std::unordered_map<std::string, QString> _numberToUri;
+    KPeople::PersonsModel *m_model;
+    std::unordered_map<std::string, QString> m_numberToUri;
 
-    std::string _cellCountry;
-    std::string _localeCountry;
+    std::string m_cellCountry;
+    std::string m_localeCountry;
 };

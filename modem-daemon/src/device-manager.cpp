@@ -15,17 +15,17 @@
 DeviceManager::DeviceManager(ModemController *modemController, DeviceUtils *deviceUtils, QObject *parent)
     : QObject(parent)
 {
-    _deviceUtils = deviceUtils;
-    _modemController = modemController;
+    m_deviceUtils = deviceUtils;
+    m_modemController = modemController;
 
-    connect(_modemController, &ModemController::deviceUniListChanged, _deviceUtils, &DeviceUtils::setDeviceUniList);
-    connect(_modemController, &ModemController::countryCodeChanged, _deviceUtils, &DeviceUtils::setCountryCode);
+    connect(m_modemController, &ModemController::deviceUniListChanged, m_deviceUtils, &DeviceUtils::setDeviceUniList);
+    connect(m_modemController, &ModemController::countryCodeChanged, m_deviceUtils, &DeviceUtils::setCountryCode);
 
-    _deviceUtils->setDeviceUniList(_modemController->deviceUniList());
+    m_deviceUtils->setDeviceUniList(m_modemController->deviceUniList());
 
     QStringList eqids;
-    for (const auto &uni : _modemController->deviceUniList()) {
-        eqids << _modemController->equipmentIdentifier(uni);
+    for (const auto &uni : m_modemController->deviceUniList()) {
+        eqids << m_modemController->equipmentIdentifier(uni);
     }
-    _deviceUtils->setEquipmentIdentifiers(eqids);
+    m_deviceUtils->setEquipmentIdentifiers(eqids);
 }

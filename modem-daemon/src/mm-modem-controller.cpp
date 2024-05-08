@@ -7,14 +7,14 @@
 ModemManagerController::ModemManagerController(QObject *parent)
     : ModemController(parent)
 {
-    _init();
+    init();
     connect(ModemManager::notifier(), &ModemManager::Notifier::modemAdded, this, [this](const QString &udi) {
         Q_UNUSED(udi);
-        _init();
+        init();
     });
     connect(ModemManager::notifier(), &ModemManager::Notifier::modemRemoved, this, [this](const QString &udi) {
         Q_UNUSED(udi);
-        _init();
+        init();
     });
 }
 
@@ -47,7 +47,7 @@ void ModemManagerController::ussdInitiate(const QString &deviceUni, const QStrin
         Q_EMIT ussdErrorReceived(deviceUni, tr("deviceUni not found"));
         return;
     }
-    const auto modem3gppUssdInterface = _modem3gppUssdInterface(modem);
+    const auto modem3gppUssdInterface = this->modem3gppUssdInterface(modem);
     QDBusPendingReply<QString> reply = modem3gppUssdInterface->initiate(command);
     /*
         During the following call to waitForFinished(), the DBus client waits for the DBus server to send a reply.
@@ -74,7 +74,7 @@ void ModemManagerController::ussdRespond(const QString &deviceUni, const QString
         Q_EMIT ussdErrorReceived(deviceUni, tr("deviceUni not found"));
         return;
     }
-    const auto modem3gppUssdInterface = _modem3gppUssdInterface(modem);
+    const auto modem3gppUssdInterface = this->modem3gppUssdInterface(modem);
     QDBusPendingReply<QString> dbusReply = modem3gppUssdInterface->respond(reply);
     dbusReply.waitForFinished();
     if (dbusReply.isError()) {
@@ -92,7 +92,7 @@ void ModemManagerController::ussdCancel(const QString &deviceUni)
         Q_EMIT ussdErrorReceived(deviceUni, tr("deviceUni not found"));
         return;
     }
-    const auto modem3gppUssdInterface = _modem3gppUssdInterface(modem);
+    const auto modem3gppUssdInterface = this->modem3gppUssdInterface(modem);
     modem3gppUssdInterface->cancel();
 }
 
@@ -104,7 +104,7 @@ QString ModemManagerController::callNumber(const QString &deviceUni, const QStri
         qDebug() << Q_FUNC_INFO << "deviceUni not found:" << deviceUni;
         return callNumber;
     }
-    const auto voiceInterface = _voiceInterface(modem);
+    const auto voiceInterface = this->voiceInterface(modem);
     if (voiceInterface.isNull()) {
         qDebug() << Q_FUNC_INFO << "voiceInterface not found";
         return callNumber;
@@ -125,7 +125,7 @@ void ModemManagerController::createCall(const QString &deviceUni, const QString 
         qDebug() << Q_FUNC_INFO << "deviceUni not found:" << deviceUni;
         return;
     }
-    const auto voiceInterface = _voiceInterface(modem);
+    const auto voiceInterface = this->voiceInterface(modem);
     if (voiceInterface.isNull()) {
         qDebug() << Q_FUNC_INFO << "voiceInterface not found";
         return;
@@ -145,7 +145,7 @@ void ModemManagerController::acceptCall(const QString &deviceUni, const QString 
         qDebug() << Q_FUNC_INFO << "deviceUni not found:" << deviceUni;
         return;
     }
-    const auto voiceInterface = _voiceInterface(modem);
+    const auto voiceInterface = this->voiceInterface(modem);
     if (voiceInterface.isNull()) {
         qDebug() << Q_FUNC_INFO << "voiceInterface not found";
         return;
@@ -165,7 +165,7 @@ void ModemManagerController::hangUp(const QString &deviceUni, const QString &cal
         qDebug() << Q_FUNC_INFO << "deviceUni not found:" << deviceUni;
         return;
     }
-    const auto voiceInterface = _voiceInterface(modem);
+    const auto voiceInterface = this->voiceInterface(modem);
     if (voiceInterface.isNull()) {
         qDebug() << Q_FUNC_INFO << "voiceInterface not found";
         return;
@@ -185,7 +185,7 @@ void ModemManagerController::sendDtmf(const QString &deviceUni, const QString &c
         qDebug() << Q_FUNC_INFO << "deviceUni not found:" << deviceUni;
         return;
     }
-    const auto voiceInterface = _voiceInterface(modem);
+    const auto voiceInterface = this->voiceInterface(modem);
     if (voiceInterface.isNull()) {
         qDebug() << Q_FUNC_INFO << "voiceInterface not found";
         return;
@@ -204,9 +204,9 @@ void ModemManagerController::sendDtmf(const QString &deviceUni, const QString &c
 DialerTypes::CallDataVector ModemManagerController::fetchCalls()
 {
     DialerTypes::CallDataVector callDataVector;
-    auto calls = _calls;
+    auto calls = m_calls;
     for (auto callObject : calls) {
-        auto callData = _voiceCallData(callObject);
+        auto callData = voiceCallData(callObject);
         callDataVector.append(callData);
     }
     return callDataVector;
@@ -215,9 +215,9 @@ DialerTypes::CallDataVector ModemManagerController::fetchCalls()
 DialerTypes::CallData ModemManagerController::getCall(const QString &deviceUni, const QString &callUni)
 {
     DialerTypes::CallData callData;
-    auto callObject = _getVoiceCallObject(deviceUni, callUni);
+    auto callObject = getVoiceCallObject(deviceUni, callUni);
     if (callObject) {
-        callData = _voiceCallData(callObject);
+        callData = voiceCallData(callObject);
     }
     return callData;
 }
@@ -226,7 +226,7 @@ void ModemManagerController::deleteCall(const QString &deviceUni, const QString 
 {
     Q_UNUSED(deviceUni) // TODO: improve deviceUni getter
     for (const QSharedPointer<ModemManager::ModemDevice> &modemDevice : ModemManager::modemDevices()) {
-        const auto voiceInterface = _voiceInterface(modemDevice);
+        const auto voiceInterface = this->voiceInterface(modemDevice);
         if (voiceInterface.isNull()) {
             qDebug() << Q_FUNC_INFO << "voiceInterface not found";
             continue;
@@ -254,7 +254,7 @@ void ModemManagerController::onModemRemoved(const QString &udi)
     Q_UNUSED(udi);
 }
 
-void ModemManagerController::_init()
+void ModemManagerController::init()
 {
     setDeviceUniList(QStringList());
     const auto modemDevices = ModemManager::modemDevices();
@@ -265,7 +265,7 @@ void ModemManagerController::_init()
     for (const auto &device : modemDevices) {
         appendDeviceUni(device->uni());
         // 3GPP
-        const auto modem3gppInterface = _modem3gppInterface(device);
+        const auto modem3gppInterface = this->modem3gppInterface(device);
         if (modem3gppInterface.isNull()) {
             qDebug() << "Skipping 3GPP-related connections";
             continue;
@@ -275,7 +275,7 @@ void ModemManagerController::_init()
         });
 
         // 3GPPUSSD
-        const auto modem3gppUssdInterface = _modem3gppUssdInterface(device);
+        const auto modem3gppUssdInterface = this->modem3gppUssdInterface(device);
         if (modem3gppInterface.isNull()) {
             qDebug() << "Skipping USSD-related connections";
             continue;
@@ -308,7 +308,7 @@ void ModemManagerController::_init()
         });
 
         // Voice
-        const auto voiceInterface = _voiceInterface(device);
+        const auto voiceInterface = this->voiceInterface(device);
         if (voiceInterface.isNull()) {
             qDebug() << "Skipping Voice-related connections";
             continue;
@@ -316,10 +316,10 @@ void ModemManagerController::_init()
         connect(voiceInterface.get(), &ModemManager::ModemVoice::callAdded, this, [this, device, voiceInterface](const QString &callUni) {
             qDebug() << Q_FUNC_INFO << "call added, initiating";
             ModemManager::Call::Ptr call = voiceInterface->findCall(callUni);
-            _initAddedCall(device, call);
+            initAddedCall(device, call);
         });
         connect(voiceInterface.get(), &ModemManager::ModemVoice::callDeleted, this, [this, device](const QString &callUni) {
-            _removeCall(callUni);
+            removeCall(callUni);
             Q_EMIT callDeleted(device->uni(), callUni);
         });
 
@@ -336,37 +336,37 @@ void ModemManagerController::_init()
         });
     }
 
-    _fetchModemCalls();
+    fetchModemCalls();
 }
 
-void ModemManagerController::_removeCall(const QString &callId)
+void ModemManagerController::removeCall(const QString &callId)
 {
-    _calls.erase(std::remove_if(_calls.begin(),
-                                _calls.end(),
-                                [callId](CallObject *callObject) {
-                                    return (callObject->id() == callId);
-                                }),
-                 _calls.end());
+    m_calls.erase(std::remove_if(m_calls.begin(),
+                                 m_calls.end(),
+                                 [callId](CallObject *callObject) {
+                                     return (callObject->id() == callId);
+                                 }),
+                  m_calls.end());
 }
 
-QSharedPointer<ModemManager::Modem3gpp> ModemManagerController::_modem3gppInterface(const QSharedPointer<ModemManager::ModemDevice> modemDevice)
+QSharedPointer<ModemManager::Modem3gpp> ModemManagerController::modem3gppInterface(const QSharedPointer<ModemManager::ModemDevice> modemDevice)
 {
     return modemDevice->interface(ModemManager::ModemDevice::GsmInterface).objectCast<ModemManager::Modem3gpp>();
 }
 
-QSharedPointer<ModemManager::Modem3gppUssd> ModemManagerController::_modem3gppUssdInterface(const QSharedPointer<ModemManager::ModemDevice> modemDevice)
+QSharedPointer<ModemManager::Modem3gppUssd> ModemManagerController::modem3gppUssdInterface(const QSharedPointer<ModemManager::ModemDevice> modemDevice)
 {
     return modemDevice->interface(ModemManager::ModemDevice::GsmUssdInterface).objectCast<ModemManager::Modem3gppUssd>();
 }
 
-QSharedPointer<ModemManager::ModemVoice> ModemManagerController::_voiceInterface(const QSharedPointer<ModemManager::ModemDevice> modemDevice)
+QSharedPointer<ModemManager::ModemVoice> ModemManagerController::voiceInterface(const QSharedPointer<ModemManager::ModemDevice> modemDevice)
 {
     return modemDevice->interface(ModemManager::ModemDevice::VoiceInterface).objectCast<ModemManager::ModemVoice>();
 }
 
-CallObject *ModemManagerController::_voiceCallObject(const QSharedPointer<ModemManager::ModemDevice> &device,
-                                                     const QSharedPointer<ModemManager::Call> &call,
-                                                     QObject *parent)
+CallObject *ModemManagerController::voiceCallObject(const QSharedPointer<ModemManager::ModemDevice> &device,
+                                                    const QSharedPointer<ModemManager::Call> &call,
+                                                    QObject *parent)
 {
     auto callObject = new CallObject(parent);
     callObject->setId(call->uni());
@@ -383,7 +383,7 @@ CallObject *ModemManagerController::_voiceCallObject(const QSharedPointer<ModemM
     return callObject;
 }
 
-DialerTypes::CallData ModemManagerController::_voiceCallData(CallObject *callObject)
+DialerTypes::CallData ModemManagerController::voiceCallData(CallObject *callObject)
 {
     DialerTypes::CallData callData;
     callData.id = callObject->id();
@@ -403,32 +403,32 @@ DialerTypes::CallData ModemManagerController::_voiceCallData(CallObject *callObj
     return callData;
 }
 
-void ModemManagerController::_fetchModemCalls()
+void ModemManagerController::fetchModemCalls()
 {
-    _calls.clear();
+    m_calls.clear();
     const auto modemDevices = ModemManager::modemDevices();
     if (modemDevices.isEmpty()) {
         qWarning() << "Could not find modem devices";
         return;
     }
     for (const auto &device : modemDevices) {
-        const auto voiceInterface = this->_voiceInterface(device);
+        const auto voiceInterface = this->voiceInterface(device);
         if (voiceInterface.isNull()) {
             qDebug() << "Skipping device without voice interface";
             continue;
         }
         const auto voiceCalls = voiceInterface->calls();
         for (const auto &call : voiceCalls) {
-            _initAddedCall(device, call);
+            initAddedCall(device, call);
         };
     };
 }
 
-CallObject *ModemManagerController::_getVoiceCallObject(const QString &deviceUni, const QString &callUni)
+CallObject *ModemManagerController::getVoiceCallObject(const QString &deviceUni, const QString &callUni)
 {
     Q_UNUSED(deviceUni);
     DialerTypes::CallData callData;
-    auto calls = _calls;
+    auto calls = m_calls;
     for (auto callObject : calls) {
         if (callObject->id() == callUni) {
             return callObject;
@@ -437,11 +437,11 @@ CallObject *ModemManagerController::_getVoiceCallObject(const QString &deviceUni
     return nullptr;
 }
 
-void ModemManagerController::_initAddedCall(const QSharedPointer<ModemManager::ModemDevice> &device, const QSharedPointer<ModemManager::Call> &call)
+void ModemManagerController::initAddedCall(const QSharedPointer<ModemManager::ModemDevice> &device, const QSharedPointer<ModemManager::Call> &call)
 {
     qDebug() << Q_FUNC_INFO << "call details:" << call->direction() << call->state() << call->stateReason();
-    auto voiceCallObject = _voiceCallObject(device, call, this);
-    _calls.append(voiceCallObject);
+    auto voiceCallObject = this->voiceCallObject(device, call, this);
+    m_calls.append(voiceCallObject);
     connect(call.get(),
             &ModemManager::Call::stateChanged,
             this,
@@ -454,7 +454,7 @@ void ModemManagerController::_initAddedCall(const QSharedPointer<ModemManager::M
                 if (voiceCallObject) {
                     voiceCallObject->onCallStateChanged(device->uni(), call->uni(), callDirection, callState, callReason);
                 }
-                Q_EMIT callStateChanged(_voiceCallData(voiceCallObject));
+                Q_EMIT callStateChanged(voiceCallData(voiceCallObject));
             });
     Q_EMIT callAdded(device->uni(),
                      call->uni(),

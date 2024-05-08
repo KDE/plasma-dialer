@@ -58,7 +58,7 @@ static void enable_speaker(bool want_speaker)
 
 DialerManager::DialerManager(QObject *parent)
     : QObject(parent)
-    , _needsDefaultAudioMode(false)
+    , m_needsDefaultAudioMode(false)
 {
     GError *err = nullptr;
     if (!call_audio_init(&err)) {
@@ -75,26 +75,26 @@ DialerManager::~DialerManager()
 
 void DialerManager::setCallUtils(org::kde::telephony::CallUtils *callUtils)
 {
-    _callUtils = callUtils;
+    m_callUtils = callUtils;
 
-    connect(_callUtils, &org::kde::telephony::CallUtils::callAdded, this, &DialerManager::onUtilsCallAdded);
-    connect(_callUtils, &org::kde::telephony::CallUtils::callsChanged, this, &DialerManager::onUtilsCallsChanged);
-    connect(_callUtils, &org::kde::telephony::CallUtils::callStateChanged, this, &DialerManager::onUtilsCallStateChanged);
+    connect(m_callUtils, &org::kde::telephony::CallUtils::callAdded, this, &DialerManager::onUtilsCallAdded);
+    connect(m_callUtils, &org::kde::telephony::CallUtils::callsChanged, this, &DialerManager::onUtilsCallsChanged);
+    connect(m_callUtils, &org::kde::telephony::CallUtils::callStateChanged, this, &DialerManager::onUtilsCallStateChanged);
 }
 
 void DialerManager::setDialerUtils(DialerUtils *dialerUtils)
 {
     qDebug() << Q_FUNC_INFO;
-    _dialerUtils = dialerUtils;
+    m_dialerUtils = dialerUtils;
 
-    connect(_dialerUtils, &DialerUtils::muteChanged, this, &DialerManager::onUtilsMuteChanged);
-    connect(_dialerUtils, &DialerUtils::speakerModeChanged, this, &DialerManager::onUtilsSpeakerModeChanged);
+    connect(m_dialerUtils, &DialerUtils::muteChanged, this, &DialerManager::onUtilsMuteChanged);
+    connect(m_dialerUtils, &DialerUtils::speakerModeChanged, this, &DialerManager::onUtilsSpeakerModeChanged);
 
-    connect(_dialerUtils, &DialerUtils::muteRequested, this, &DialerManager::onUtilsMuteRequested);
-    connect(_dialerUtils, &DialerUtils::speakerModeRequested, this, &DialerManager::onUtilsSpeakerModeRequested);
+    connect(m_dialerUtils, &DialerUtils::muteRequested, this, &DialerManager::onUtilsMuteRequested);
+    connect(m_dialerUtils, &DialerUtils::speakerModeRequested, this, &DialerManager::onUtilsSpeakerModeRequested);
 
-    _dialerUtils->fetchMute();
-    _dialerUtils->fetchSpeakerMode();
+    m_dialerUtils->fetchMute();
+    m_dialerUtils->fetchSpeakerMode();
 }
 
 void DialerManager::onUtilsCallAdded(const QString &deviceUni,
@@ -104,7 +104,7 @@ void DialerManager::onUtilsCallAdded(const QString &deviceUni,
                                      const DialerTypes::CallStateReason &callStateReason,
                                      const QString communicationWith)
 {
-    if (!_callUtils) {
+    if (!m_callUtils) {
         qCritical() << Q_FUNC_INFO;
     }
     qDebug() << Q_FUNC_INFO << "call added" << deviceUni << callUni << callDirection << callState << callStateReason;
@@ -125,19 +125,19 @@ void DialerManager::onUtilsCallsChanged(const DialerTypes::CallDataVector &calls
 
 void DialerManager::onUtilsCallStateChanged(const DialerTypes::CallData &callData)
 {
-    if (!_callUtils) {
+    if (!m_callUtils) {
         qCritical() << Q_FUNC_INFO;
     }
     qDebug() << Q_FUNC_INFO << "new call state:" << callData.state;
     switch (callData.state) {
     case DialerTypes::CallState::Active:
         enable_call_mode();
-        _needsDefaultAudioMode = true;
+        m_needsDefaultAudioMode = true;
         break;
     case DialerTypes::CallState::Terminated:
-        if (_needsDefaultAudioMode) {
+        if (m_needsDefaultAudioMode) {
             enable_default_mode();
-            _needsDefaultAudioMode = false;
+            m_needsDefaultAudioMode = false;
         }
 
         break;
@@ -153,7 +153,7 @@ void DialerManager::onUtilsSpeakerModeRequested()
     return;
 #else // LOWER_LIBCALLAUDIO_VERSION
     bool speakerMode = call_audio_get_speaker_state() == CALL_AUDIO_SPEAKER_ON;
-    _dialerUtils->setSpeakerMode(speakerMode);
+    m_dialerUtils->setSpeakerMode(speakerMode);
 #endif // LOWER_LIBCALLAUDIO_VERSION
 }
 
@@ -164,7 +164,7 @@ void DialerManager::onUtilsMuteRequested()
     return;
 #else // LOWER_LIBCALLAUDIO_VERSION
     auto micMute = call_audio_get_mic_state() == CALL_AUDIO_MIC_OFF;
-    _dialerUtils->setMute(micMute);
+    m_dialerUtils->setMute(micMute);
 #endif // LOWER_LIBCALLAUDIO_VERSION
 }
 
@@ -194,8 +194,8 @@ void DialerManager::pauseMedia()
             QString status = mprisInterface.playbackStatus();
             qDebug() << Q_FUNC_INFO << "Found player status:" << iface << status;
             if (status == QLatin1String("Playing")) {
-                if (!_pausedSources.contains(iface)) {
-                    _pausedSources.insert(iface);
+                if (!m_pausedSources.contains(iface)) {
+                    m_pausedSources.insert(iface);
                     if (mprisInterface.canPause()) {
                         mprisInterface.Pause();
                     } else {
@@ -210,9 +210,9 @@ void DialerManager::pauseMedia()
 void DialerManager::unpauseMedia()
 {
     auto sessionBus = QDBusConnection::sessionBus();
-    for (const QString &iface : qAsConst(_pausedSources)) {
+    for (const QString &iface : qAsConst(m_pausedSources)) {
         org::mpris::MediaPlayer2::Player mprisInterface(iface, QStringLiteral("/org/mpris/MediaPlayer2"), sessionBus);
         mprisInterface.Play();
     }
-    _pausedSources.clear();
+    m_pausedSources.clear();
 }

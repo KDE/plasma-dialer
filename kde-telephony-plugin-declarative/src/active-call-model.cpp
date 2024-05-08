@@ -13,33 +13,33 @@ ActiveCallModel::ActiveCallModel(QObject *parent)
 
 void ActiveCallModel::sendDtmf(const QString &tones)
 {
-    if (!_callUtils) {
+    if (!m_callUtils) {
         qDebug() << Q_FUNC_INFO << "CallUtils is not initiated";
         return;
     }
     QString deviceUni;
     QString callUni;
-    _callUtils->sendDtmf(deviceUni, callUni, tones);
+    m_callUtils->sendDtmf(deviceUni, callUni, tones);
 }
 
 void ActiveCallModel::dial(const QString &deviceUni, const QString &number)
 {
-    if (!_callUtils) {
+    if (!m_callUtils) {
         qDebug() << Q_FUNC_INFO << "CallUtils is not initiated";
         return;
     }
-    _callUtils->dial(deviceUni, number);
+    m_callUtils->dial(deviceUni, number);
 }
 
 QString ActiveCallModel::activeCallUni()
 {
     QString activeCallUni;
-    if (_calls.size() < 1) {
+    if (m_calls.size() < 1) {
         qDebug() << Q_FUNC_INFO << "empty active calls list";
         return activeCallUni;
     }
-    for (int i = 0; i < _calls.size(); i++) {
-        const auto call = _calls.at(i);
+    for (int i = 0; i < m_calls.size(); i++) {
+        const auto call = m_calls.at(i);
         if (call.state != DialerTypes::CallState::Terminated) {
             return call.id;
         }
@@ -52,27 +52,27 @@ QVariant ActiveCallModel::data(const QModelIndex &index, int role) const
     int row = index.row();
     switch (role) {
     case Roles::EventRole:
-        return _calls[row].id;
+        return m_calls[row].id;
     case Roles::ProtocolRole:
-        return _calls[row].protocol;
+        return m_calls[row].protocol;
     case Roles::AccountRole:
-        return _calls[row].account;
+        return m_calls[row].account;
     case Roles::ProviderRole:
-        return _calls[row].provider;
+        return m_calls[row].provider;
     case Roles::CommunicationWithRole:
-        return _calls[row].communicationWith;
+        return m_calls[row].communicationWith;
     case Roles::DirectionRole:
-        return QVariant::fromValue(_calls[row].direction);
+        return QVariant::fromValue(m_calls[row].direction);
     case Roles::StateRole:
-        return QVariant::fromValue(_calls[row].state);
+        return QVariant::fromValue(m_calls[row].state);
     case Roles::StateReasonRole:
-        return QVariant::fromValue(_calls[row].stateReason);
+        return QVariant::fromValue(m_calls[row].stateReason);
     case Roles::CallAttemptDurationRole:
-        return _calls[row].callAttemptDuration;
+        return m_calls[row].callAttemptDuration;
     case Roles::StartedAtRole:
-        return _calls[row].startedAt;
+        return m_calls[row].startedAt;
     case Roles::DurationRole:
-        return _calls[row].duration;
+        return m_calls[row].duration;
     }
     return {};
 }
@@ -80,7 +80,7 @@ QVariant ActiveCallModel::data(const QModelIndex &index, int role) const
 int ActiveCallModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent)
-    return _calls.size();
+    return m_calls.size();
 }
 
 void ActiveCallModel::onUtilsCallAdded(const QString &deviceUni,
@@ -95,25 +95,25 @@ void ActiveCallModel::onUtilsCallAdded(const QString &deviceUni,
     Q_UNUSED(callDirection);
     Q_UNUSED(callState);
     Q_UNUSED(callStateReason);
-    if (!_callUtils) {
+    if (!m_callUtils) {
         qDebug() << Q_FUNC_INFO << "CallUtils is not initiated";
         return;
     }
-    _callUtils->fetchCalls();
+    m_callUtils->fetchCalls();
     setCommunicationWith(communicationWith);
-    _callsTimer.start();
+    m_callsTimer.start();
 }
 
 void ActiveCallModel::onUtilsCallDeleted(const QString &deviceUni, const QString &callUni)
 {
     Q_UNUSED(deviceUni);
     Q_UNUSED(callUni);
-    if (!_callUtils) {
+    if (!m_callUtils) {
         qDebug() << Q_FUNC_INFO << "CallUtils is not initiated";
         return;
     }
-    _callUtils->fetchCalls();
-    _callsTimer.stop();
+    m_callUtils->fetchCalls();
+    m_callsTimer.stop();
     setDuration(0);
 }
 
@@ -123,22 +123,22 @@ void ActiveCallModel::onUtilsCallStateChanged(const DialerTypes::CallData &callD
     DialerTypes::CallState callState = callData.state;
 
     if (callState == DialerTypes::CallState::Active) {
-        _callsTimer.start();
+        m_callsTimer.start();
     }
     if (callState == DialerTypes::CallState::RingingIn) {
-        _callsTimer.start();
+        m_callsTimer.start();
     }
     if (callState == DialerTypes::CallState::Terminated) {
-        _callsTimer.stop();
+        m_callsTimer.stop();
     }
 
-    if (_calls.size() < 1) {
+    if (m_calls.size() < 1) {
         qDebug() << Q_FUNC_INFO << "empty active calls list";
     }
     // find call by id and update all the stuff including the duration
-    for (int i = 0; i < _calls.size(); i++) {
-        if (_calls[i].id == callData.id) {
-            _calls[i] = callData;
+    for (int i = 0; i < m_calls.size(); i++) {
+        if (m_calls[i].id == callData.id) {
+            m_calls[i] = callData;
             Q_EMIT dataChanged(index(i), index(i));
             return;
         }
@@ -147,18 +147,18 @@ void ActiveCallModel::onUtilsCallStateChanged(const DialerTypes::CallData &callD
 
 void ActiveCallModel::onUtilsCallsChanged(const DialerTypes::CallDataVector &fetchedCalls)
 {
-    qDebug() << Q_FUNC_INFO << _calls.size() << fetchedCalls.size();
+    qDebug() << Q_FUNC_INFO << m_calls.size() << fetchedCalls.size();
     beginResetModel();
-    _calls = fetchedCalls;
+    m_calls = fetchedCalls;
     endResetModel();
-    bool active = (_calls.size() > 0);
+    bool active = (m_calls.size() > 0);
     setActive(active);
     if (!active) {
         return;
     }
     bool incoming = false;
-    for (int i = 0; i < _calls.size(); i++) {
-        const auto call = _calls.at(i);
+    for (int i = 0; i < m_calls.size(); i++) {
+        const auto call = m_calls.at(i);
         // trying to determine current active call
         // should be checked could it be improved
         // with with DialerTypes::CallDirection
@@ -179,54 +179,54 @@ void ActiveCallModel::onUtilsCallsChanged(const DialerTypes::CallDataVector &fet
 
 bool ActiveCallModel::active() const
 {
-    return _active;
+    return m_active;
 }
 
 void ActiveCallModel::setActive(bool newActive)
 {
-    if (_active == newActive)
+    if (m_active == newActive)
         return;
-    _active = newActive;
+    m_active = newActive;
     qDebug() << Q_FUNC_INFO;
     Q_EMIT activeChanged();
 }
 
 bool ActiveCallModel::incoming() const
 {
-    return _incoming;
+    return m_incoming;
 }
 
 void ActiveCallModel::setIncoming(bool newIncoming)
 {
-    if (_incoming == newIncoming)
+    if (m_incoming == newIncoming)
         return;
-    _incoming = newIncoming;
+    m_incoming = newIncoming;
     Q_EMIT incomingChanged();
 }
 
 QString ActiveCallModel::communicationWith() const
 {
-    return _communicationWith;
+    return m_communicationWith;
 }
 
 void ActiveCallModel::setCommunicationWith(const QString communicationWith)
 {
-    if (_communicationWith == communicationWith)
+    if (m_communicationWith == communicationWith)
         return;
-    _communicationWith = communicationWith;
+    m_communicationWith = communicationWith;
     Q_EMIT communicationWithChanged();
 }
 
 qulonglong ActiveCallModel::duration() const
 {
-    return _duration;
+    return m_duration;
 }
 
 void ActiveCallModel::setDuration(qulonglong duration)
 {
-    if (_duration == duration)
+    if (m_duration == duration)
         return;
-    _duration = duration;
+    m_duration = duration;
     Q_EMIT durationChanged();
 }
 
@@ -236,28 +236,28 @@ void ActiveCallModel::setCallUtils(org::kde::telephony::CallUtils *callUtils)
         qDebug() << Q_FUNC_INFO << "Could not initiate CallUtils interface";
         return;
     }
-    _callUtils = callUtils;
+    m_callUtils = callUtils;
 
-    connect(_callUtils, &org::kde::telephony::CallUtils::callStateChanged, this, &ActiveCallModel::onUtilsCallStateChanged);
-    connect(_callUtils, &org::kde::telephony::CallUtils::callAdded, this, &ActiveCallModel::onUtilsCallAdded);
-    connect(_callUtils, &org::kde::telephony::CallUtils::callDeleted, this, &ActiveCallModel::onUtilsCallDeleted);
-    connect(_callUtils, &org::kde::telephony::CallUtils::callsChanged, this, &ActiveCallModel::onUtilsCallsChanged);
+    connect(m_callUtils, &org::kde::telephony::CallUtils::callStateChanged, this, &ActiveCallModel::onUtilsCallStateChanged);
+    connect(m_callUtils, &org::kde::telephony::CallUtils::callAdded, this, &ActiveCallModel::onUtilsCallAdded);
+    connect(m_callUtils, &org::kde::telephony::CallUtils::callDeleted, this, &ActiveCallModel::onUtilsCallDeleted);
+    connect(m_callUtils, &org::kde::telephony::CallUtils::callsChanged, this, &ActiveCallModel::onUtilsCallsChanged);
 
-    _callsTimer.setInterval(CALL_DURATION_UPDATE_DELAY);
-    connect(&_callsTimer, &QTimer::timeout, this, [this]() {
+    m_callsTimer.setInterval(CALL_DURATION_UPDATE_DELAY);
+    connect(&m_callsTimer, &QTimer::timeout, this, [this]() {
         // minimize the number of method calls by incrementing the duration on the client side too
         // see also (D-Bus API Design Guidelines):
         // https://dbus.freedesktop.org/doc/dbus-api-design.html
-        _updateTimers();
+        updateTimers();
     });
 
     callUtils->fetchCalls(); // TODO: simplify sync
 }
 
-void ActiveCallModel::_updateTimers()
+void ActiveCallModel::updateTimers()
 {
-    for (int i = 0; i < _calls.size(); i++) {
-        DialerTypes::CallData call = _calls.at(i);
+    for (int i = 0; i < m_calls.size(); i++) {
+        DialerTypes::CallData call = m_calls.at(i);
         DialerTypes::CallState callState = call.state;
 
         if (callState == DialerTypes::CallState::RingingIn) {
@@ -268,7 +268,7 @@ void ActiveCallModel::_updateTimers()
         if (callState == DialerTypes::CallState::Active) {
             qDebug() << "call started";
             call.duration++;
-            _calls[i].duration = call.duration;
+            m_calls[i].duration = call.duration;
             setDuration(call.duration);
             Q_EMIT dataChanged(index(i), index(i), {DurationRole});
         }

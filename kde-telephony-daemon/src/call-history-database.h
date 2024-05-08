@@ -33,10 +33,10 @@ public Q_SLOTS:
     QString lastCall(const QString &number, int direction) const;
 
 private:
-    uint _guessPreHistoricRevision();
-    void _migrationV1(uint current);
-    void _migrationV2(uint current);
-    void _migrate();
+    uint guessPreHistoricRevision();
+    void migrationV1(uint current);
+    void migrationV2(uint current);
+    void migrate();
 
-    QSqlDatabase _database;
+    QSqlDatabase m_database;
 };

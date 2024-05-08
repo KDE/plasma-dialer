@@ -28,5 +28,5 @@ Q_SIGNALS:
     void deviceUniListChanged();
 
 private:
-    org::kde::telephony::DeviceUtils *_deviceUtils;
+    org::kde::telephony::DeviceUtils *m_deviceUtils;
 };

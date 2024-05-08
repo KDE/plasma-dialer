@@ -14,18 +14,18 @@
 CallHistoryModel::CallHistoryModel(QObject *parent)
     : CallModel(parent)
 {
-    _databaseInterface = new org::kde::telephony::CallHistoryDatabase(QString::fromLatin1(_databaseInterface->staticInterfaceName()),
-                                                                      QStringLiteral("/org/kde/telephony/CallHistoryDatabase/tel/mm"),
-                                                                      QDBusConnection::sessionBus(),
-                                                                      this);
+    m_databaseInterface = new org::kde::telephony::CallHistoryDatabase(QString::fromLatin1(m_databaseInterface->staticInterfaceName()),
+                                                                       QStringLiteral("/org/kde/telephony/CallHistoryDatabase/tel/mm"),
+                                                                       QDBusConnection::sessionBus(),
+                                                                       this);
 
-    if (!_databaseInterface->isValid()) {
+    if (!m_databaseInterface->isValid()) {
         qDebug() << Q_FUNC_INFO << "Could not initiate CallHistoryDatabase interface";
         return;
     }
 
     beginResetModel();
-    _fetchCalls();
+    fetchCalls();
     endResetModel();
 
     /*
@@ -34,16 +34,16 @@ CallHistoryModel::CallHistoryModel(QObject *parent)
     });
     */
 
-    connect(_databaseInterface, &org::kde::telephony::CallHistoryDatabase::callsChanged, this, [this] {
+    connect(m_databaseInterface, &org::kde::telephony::CallHistoryDatabase::callsChanged, this, [this] {
         beginResetModel();
-        _fetchCalls();
+        fetchCalls();
         endResetModel();
     });
 }
 
 void CallHistoryModel::addCall(const DialerTypes::CallData &callData)
 {
-    QDBusPendingReply<int> reply = _databaseInterface->lastId();
+    QDBusPendingReply<int> reply = m_databaseInterface->lastId();
     reply.waitForFinished();
     int databaseLastId;
     if (reply.isValid()) {
@@ -53,34 +53,34 @@ void CallHistoryModel::addCall(const DialerTypes::CallData &callData)
         return;
     }
 
-    beginInsertRows(QModelIndex(), _calls.size(), _calls.size());
-    _databaseInterface->addCall(callData);
+    beginInsertRows(QModelIndex(), m_calls.size(), m_calls.size());
+    m_databaseInterface->addCall(callData);
 
     DialerTypes::CallData data;
     data.id = QString::number(databaseLastId);
 
-    _calls.push_front(callData); // insert latest calls at the top of the list
+    m_calls.push_front(callData); // insert latest calls at the top of the list
 
     endInsertRows();
 }
 
 void CallHistoryModel::clear()
 {
-    auto reply = _databaseInterface->clear();
+    auto reply = m_databaseInterface->clear();
     reply.waitForFinished();
     if (!reply.isValid()) {
         qDebug() << Q_FUNC_INFO << reply.error();
         return;
     }
     beginResetModel();
-    _calls.clear();
+    m_calls.clear();
     endResetModel();
 }
 
 bool CallHistoryModel::removeRows(int row, int count, const QModelIndex &parent)
 {
     Q_UNUSED(count)
-    auto reply = _databaseInterface->remove(_calls[row].id);
+    auto reply = m_databaseInterface->remove(m_calls[row].id);
     reply.waitForFinished();
     if (!reply.isValid()) {
         qDebug() << Q_FUNC_INFO << reply.error();
@@ -88,20 +88,20 @@ bool CallHistoryModel::removeRows(int row, int count, const QModelIndex &parent)
     }
 
     beginRemoveRows(parent, row, row);
-    _fetchCalls();
+    fetchCalls();
     endRemoveRows();
 
     return true;
 }
 
-void CallHistoryModel::_fetchCalls()
+void CallHistoryModel::fetchCalls()
 {
-    QDBusPendingReply<DialerTypes::CallDataVector> reply = _databaseInterface->fetchCalls();
+    QDBusPendingReply<DialerTypes::CallDataVector> reply = m_databaseInterface->fetchCalls();
     reply.waitForFinished();
     if (reply.isError()) {
         qDebug() << Q_FUNC_INFO << reply.error();
     }
-    _calls = reply;
+    m_calls = reply;
 }
 
 void CallHistoryModel::remove(int index)
@@ -114,27 +114,27 @@ QVariant CallHistoryModel::data(const QModelIndex &index, int role) const
     int row = index.row();
     switch (role) {
     case Roles::EventRole:
-        return _calls[row].id;
+        return m_calls[row].id;
     case Roles::ProtocolRole:
-        return _calls[row].protocol;
+        return m_calls[row].protocol;
     case Roles::AccountRole:
-        return _calls[row].account;
+        return m_calls[row].account;
     case Roles::ProviderRole:
-        return _calls[row].provider;
+        return m_calls[row].provider;
     case Roles::CommunicationWithRole:
-        return _calls[row].communicationWith;
+        return m_calls[row].communicationWith;
     case Roles::DirectionRole:
-        return QVariant::fromValue(_calls[row].direction);
+        return QVariant::fromValue(m_calls[row].direction);
     case Roles::StateRole:
-        return QVariant::fromValue(_calls[row].state);
+        return QVariant::fromValue(m_calls[row].state);
     case Roles::StateReasonRole:
-        return QVariant::fromValue(_calls[row].stateReason);
+        return QVariant::fromValue(m_calls[row].stateReason);
     case Roles::CallAttemptDurationRole:
-        return _calls[row].callAttemptDuration;
+        return m_calls[row].callAttemptDuration;
     case Roles::StartedAtRole:
-        return _calls[row].startedAt;
+        return m_calls[row].startedAt;
     case Roles::DurationRole:
-        return _calls[row].duration;
+        return m_calls[row].duration;
     }
     return {};
 }
@@ -142,5 +142,5 @@ QVariant CallHistoryModel::data(const QModelIndex &index, int role) const
 int CallHistoryModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent)
-    return _calls.size();
+    return m_calls.size();
 }

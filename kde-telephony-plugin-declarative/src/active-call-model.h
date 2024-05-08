@@ -59,13 +59,13 @@ private Q_SLOTS:
     void onUtilsCallsChanged(const DialerTypes::CallDataVector &fetchedCalls);
 
 private:
-    org::kde::telephony::CallUtils *_callUtils;
-    DialerTypes::CallDataVector _calls;
-    QTimer _callsTimer;
-    bool _active = false;
-    bool _incoming = false;
-    QString _communicationWith;
-    qulonglong _duration;
+    org::kde::telephony::CallUtils *m_callUtils;
+    DialerTypes::CallDataVector m_calls;
+    QTimer m_callsTimer;
+    bool m_active = false;
+    bool m_incoming = false;
+    QString m_communicationWith;
+    qulonglong m_duration;
 
-    void _updateTimers();
+    void updateTimers();
 };

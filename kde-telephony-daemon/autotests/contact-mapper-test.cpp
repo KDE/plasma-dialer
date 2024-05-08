@@ -18,16 +18,16 @@ class ContactMapperTest : public QObject
 private Q_SLOTS:
     void initTestCase()
     {
-        QVERIFY(_database.open());
+        QVERIFY(m_database.open());
 
         // For this test we assume we are in Sweden and the implicit country code is +46
         QLocale::setDefault(QLocale::Swedish);
 
         // Called before the first testfunction is executed
-        PersonManager::instance(_database.fileName());
-        _source = new FakeContactSource(nullptr); // don't own. PersonPluginManager removes it on destruction
+        PersonManager::instance(m_database.fileName());
+        m_source = new FakeContactSource(nullptr); // don't own. PersonPluginManager removes it on destruction
         QHash<QString, KPeople::BasePersonsDataSource *> sources;
-        sources[QStringLiteral("fakesource")] = _source;
+        sources[QStringLiteral("fakesource")] = m_source;
         KPeople::PersonPluginManager::setDataSourcePlugins(sources);
     }
 
@@ -63,8 +63,8 @@ private Q_SLOTS:
     }
 
 private:
-    FakeContactSource *_source;
-    QTemporaryFile _database;
+    FakeContactSource *m_source;
+    QTemporaryFile m_database;
 };
 
 QTEST_GUILESS_MAIN(ContactMapperTest)

@@ -36,8 +36,8 @@ private Q_SLOTS:
     void onUtilsCallsRequested();
 
 private:
-    ModemController *_modemController;
-    CallUtils *_callUtils;
+    ModemController *m_modemController;
+    CallUtils *m_callUtils;
 
-    std::optional<QDBusUnixFileDescriptor> _inhibitSleepFd;
+    std::optional<QDBusUnixFileDescriptor> m_inhibitSleepFd;
 };

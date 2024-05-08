@@ -49,23 +49,23 @@ private Q_SLOTS:
     void onModemRemoved(const QString &udi);
 
 private:
-    void _init();
+    void init();
 
-    QVector<CallObject *> _calls;
-    void _removeCall(const QString &callId);
+    QVector<CallObject *> m_calls;
+    void removeCall(const QString &callId);
 
-    QSharedPointer<ModemManager::Modem3gpp> _modem3gppInterface(const QSharedPointer<ModemManager::ModemDevice> modemDevice);
+    QSharedPointer<ModemManager::Modem3gpp> modem3gppInterface(const QSharedPointer<ModemManager::ModemDevice> modemDevice);
 
-    QSharedPointer<ModemManager::Modem3gppUssd> _modem3gppUssdInterface(const QSharedPointer<ModemManager::ModemDevice> modemDevice);
+    QSharedPointer<ModemManager::Modem3gppUssd> modem3gppUssdInterface(const QSharedPointer<ModemManager::ModemDevice> modemDevice);
 
-    QSharedPointer<ModemManager::ModemVoice> _voiceInterface(const QSharedPointer<ModemManager::ModemDevice> modemDevice);
+    QSharedPointer<ModemManager::ModemVoice> voiceInterface(const QSharedPointer<ModemManager::ModemDevice> modemDevice);
 
     CallObject *
-    _voiceCallObject(const QSharedPointer<ModemManager::ModemDevice> &device, const QSharedPointer<ModemManager::Call> &call, QObject *parent = nullptr);
+    voiceCallObject(const QSharedPointer<ModemManager::ModemDevice> &device, const QSharedPointer<ModemManager::Call> &call, QObject *parent = nullptr);
 
-    DialerTypes::CallData _voiceCallData(CallObject *callObject);
+    DialerTypes::CallData voiceCallData(CallObject *callObject);
 
-    void _fetchModemCalls();
-    CallObject *_getVoiceCallObject(const QString &deviceUni, const QString &callUni);
-    void _initAddedCall(const QSharedPointer<ModemManager::ModemDevice> &device, const QSharedPointer<ModemManager::Call> &call);
+    void fetchModemCalls();
+    CallObject *getVoiceCallObject(const QString &deviceUni, const QString &callUni);
+    void initAddedCall(const QSharedPointer<ModemManager::ModemDevice> &device, const QSharedPointer<ModemManager::Call> &call);
 };

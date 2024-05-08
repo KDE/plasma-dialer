@@ -16,27 +16,27 @@ constexpr auto DATABASE_REVISION = 2; // Keep MIGRATE_TO_LATEST_FROM in sync
 #define MIGRATE_TO(n, current)                                                                                                                                 \
     if (current < n) {                                                                                                                                         \
         qDebug() << "Running migration" << #n;                                                                                                                 \
-        _migrationV##n(current);                                                                                                                               \
+        migrationV##n(current);                                                                                                                                \
     }
 #define MIGRATE_TO_LATEST_FROM(current) MIGRATE_TO(2, current)
 
 CallHistoryDatabase::CallHistoryDatabase(QObject *parent)
     : QObject(parent)
-    , _database(QSqlDatabase::addDatabase(QStringLiteral("QSQLITE"), QStringLiteral("calls")))
+    , m_database(QSqlDatabase::addDatabase(QStringLiteral("QSQLITE"), QStringLiteral("calls")))
 {
     const QString databaseLocation = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/plasmaphonedialer");
     if (!QDir().mkpath(databaseLocation)) {
         qDebug() << "Could not create the database directory at" << databaseLocation;
     }
 
-    _database.setDatabaseName(databaseLocation + QStringLiteral("/calls.sqlite"));
-    const bool open = _database.open();
+    m_database.setDatabaseName(databaseLocation + QStringLiteral("/calls.sqlite"));
+    const bool open = m_database.open();
 
     if (!open) {
-        qWarning() << "Could not open call database" << _database.lastError();
+        qWarning() << "Could not open call database" << m_database.lastError();
     }
 
-    _migrate();
+    migrate();
 }
 
 void CallHistoryDatabase::exec(QSqlQuery &query)
@@ -52,7 +52,7 @@ void CallHistoryDatabase::exec(QSqlQuery &query)
 
 DialerTypes::CallDataVector CallHistoryDatabase::fetchCalls()
 {
-    QSqlQuery fetchCalls(_database);
+    QSqlQuery fetchCalls(m_database);
     fetchCalls.prepare(
         QStringLiteral("SELECT "
                        "id, protocol, account, provider, "
@@ -84,7 +84,7 @@ DialerTypes::CallDataVector CallHistoryDatabase::fetchCalls()
 
 void CallHistoryDatabase::addCall(const DialerTypes::CallData &callData)
 {
-    QSqlQuery putCall(_database);
+    QSqlQuery putCall(m_database);
     putCall.prepare(
         QStringLiteral("INSERT INTO History "
                        "("
@@ -116,7 +116,7 @@ void CallHistoryDatabase::addCall(const DialerTypes::CallData &callData)
 
 void CallHistoryDatabase::clear()
 {
-    QSqlQuery clearCalls(_database);
+    QSqlQuery clearCalls(m_database);
     clearCalls.prepare(QStringLiteral("DELETE FROM History"));
     exec(clearCalls);
 
@@ -125,7 +125,7 @@ void CallHistoryDatabase::clear()
 
 void CallHistoryDatabase::remove(const QString &id)
 {
-    QSqlQuery remove(_database);
+    QSqlQuery remove(m_database);
     remove.prepare(QStringLiteral("DELETE FROM History WHERE id=:id"));
     remove.bindValue(QStringLiteral(":id"), id);
     exec(remove);
@@ -135,7 +135,7 @@ void CallHistoryDatabase::remove(const QString &id)
 
 int CallHistoryDatabase::lastId() const
 {
-    QSqlQuery fetch(_database);
+    QSqlQuery fetch(m_database);
     fetch.prepare(QStringLiteral("SELECT id FROM History ORDER BY id DESC LIMIT 1"));
     exec(fetch);
     fetch.first();
@@ -145,7 +145,7 @@ int CallHistoryDatabase::lastId() const
 
 QString CallHistoryDatabase::lastCall(const QString &number, int direction) const
 {
-    QSqlQuery fetch(_database);
+    QSqlQuery fetch(m_database);
     fetch.prepare(QStringLiteral("SELECT startedAt FROM History WHERE communicationWith=:number and direction = :direction ORDER BY startedAt DESC LIMIT 1"));
     fetch.bindValue(QStringLiteral(":number"), number);
     fetch.bindValue(QStringLiteral(":direction"), direction);
@@ -155,11 +155,11 @@ QString CallHistoryDatabase::lastCall(const QString &number, int direction) cons
     return fetch.value(0).toString();
 }
 
-uint CallHistoryDatabase::_guessPreHistoricRevision()
+uint CallHistoryDatabase::guessPreHistoricRevision()
 {
     uint result = 0;
     uint columnCount = 0;
-    QSqlQuery tableInfo(_database);
+    QSqlQuery tableInfo(m_database);
     tableInfo.prepare(QStringLiteral("PRAGMA table_info('History')")); // http://sqlite.org/pragma.html
     exec(tableInfo);
     while (tableInfo.next()) {
@@ -173,18 +173,18 @@ uint CallHistoryDatabase::_guessPreHistoricRevision()
     return result;
 }
 
-void CallHistoryDatabase::_migrationV1(uint current)
+void CallHistoryDatabase::migrationV1(uint current)
 {
     if (current < 1) {
-        QSqlQuery tempTable(_database);
+        QSqlQuery tempTable(m_database);
         tempTable.prepare(QStringLiteral("CREATE TABLE temp_table AS SELECT * FROM History"));
         exec(tempTable);
 
-        QSqlQuery dropOld(_database);
+        QSqlQuery dropOld(m_database);
         dropOld.prepare(QStringLiteral("DROP TABLE History"));
         exec(dropOld);
 
-        QSqlQuery createNew(_database);
+        QSqlQuery createNew(m_database);
         createNew.prepare(
             QStringLiteral("CREATE TABLE IF NOT EXISTS "
                            "History( "
@@ -202,7 +202,7 @@ void CallHistoryDatabase::_migrationV1(uint current)
                            ")"));
         exec(createNew);
 
-        QSqlQuery copyTemp(_database);
+        QSqlQuery copyTemp(m_database);
         // clang-format off
         copyTemp.prepare(
             QStringLiteral("INSERT INTO History "
@@ -238,26 +238,26 @@ void CallHistoryDatabase::_migrationV1(uint current)
         // clang-format on
         exec(copyTemp);
 
-        QSqlQuery dropTemp(_database);
+        QSqlQuery dropTemp(m_database);
         dropTemp.prepare(QStringLiteral("DROP TABLE temp_table"));
         exec(dropTemp);
     }
 }
 
-void CallHistoryDatabase::_migrationV2(uint current)
+void CallHistoryDatabase::migrationV2(uint current)
 {
     MIGRATE_TO(1, current);
 }
 
-void CallHistoryDatabase::_migrate()
+void CallHistoryDatabase::migrate()
 {
     // Create migration table if necessary
-    QSqlQuery createMetadata(_database);
+    QSqlQuery createMetadata(m_database);
     createMetadata.prepare(QStringLiteral("CREATE TABLE IF NOT EXISTS Metadata (migrationId INTEGER NOT NULL)"));
     exec(createMetadata);
 
     // Find out current revision
-    QSqlQuery currentRevision(_database);
+    QSqlQuery currentRevision(m_database);
     currentRevision.prepare(QStringLiteral("SELECT migrationId FROM Metadata ORDER BY migrationId DESC LIMIT 1"));
     exec(currentRevision);
     currentRevision.first();
@@ -268,7 +268,7 @@ void CallHistoryDatabase::_migrate()
     }
 
     if (revision == 0) {
-        revision = _guessPreHistoricRevision();
+        revision = guessPreHistoricRevision();
     }
 
     qDebug() << "current database revision" << revision;
@@ -281,7 +281,7 @@ void CallHistoryDatabase::_migrate()
     MIGRATE_TO_LATEST_FROM(revision);
 
     // Update migration info if necessary
-    QSqlQuery update(_database);
+    QSqlQuery update(m_database);
     update.prepare(QStringLiteral("INSERT INTO Metadata (migrationId) VALUES (:migrationId)"));
     update.bindValue(QStringLiteral(":migrationId"), DATABASE_REVISION);
     exec(update);

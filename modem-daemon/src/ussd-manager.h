@@ -34,7 +34,7 @@ Q_SIGNALS:
     void stateChanged(const QString &deviceUni, const QString &state);
 
 private:
-    UssdUtils *_ussdUtils;
-    ModemController *_modemController;
-    QString _state;
+    UssdUtils *m_ussdUtils;
+    ModemController *m_modemController;
+    QString m_state;
 };

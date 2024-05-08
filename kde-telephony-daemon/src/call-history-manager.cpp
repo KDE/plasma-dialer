@@ -15,20 +15,20 @@ CallHistoryManager::CallHistoryManager(QObject *parent)
 
 void CallHistoryManager::setCallHistoryDatabase(CallHistoryDatabase *callHistoryDatabase)
 {
-    _callHistoryDatabase = callHistoryDatabase;
+    m_callHistoryDatabase = callHistoryDatabase;
 }
 
 void CallHistoryManager::setCallUtils(org::kde::telephony::CallUtils *callUtils)
 {
-    _callUtils = callUtils;
+    m_callUtils = callUtils;
 
-    connect(_callUtils, &org::kde::telephony::CallUtils::callStateChanged, this, &CallHistoryManager::onCallStateChanged);
+    connect(m_callUtils, &org::kde::telephony::CallUtils::callStateChanged, this, &CallHistoryManager::onCallStateChanged);
 }
 
 void CallHistoryManager::onCallStateChanged(const DialerTypes::CallData &callData)
 {
     qDebug() << "new call state:" << callData.state << callData.stateReason;
     if (callData.state == DialerTypes::CallState::Terminated) {
-        _callHistoryDatabase->addCall(callData);
+        m_callHistoryDatabase->addCall(callData);
     }
 }

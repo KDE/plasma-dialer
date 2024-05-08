@@ -40,8 +40,8 @@ static void launchPlasmaDialerDesktopFile()
 
 NotificationManager::NotificationManager(QObject *parent)
     : QObject(parent)
-    , _ringingNotification(std::make_unique<KNotification>(QStringLiteral("ringing"), KNotification::Persistent | KNotification::LoopSound, nullptr))
-    , _callStarted(false)
+    , m_ringingNotification(std::make_unique<KNotification>(QStringLiteral("ringing"), KNotification::Persistent | KNotification::LoopSound, nullptr))
+    , m_callStarted(false)
 
 #ifdef HAVE_QT5_FEEDBACK
     , _ringEffect(std::make_unique<QFeedbackHapticsEffect>())
@@ -57,31 +57,31 @@ NotificationManager::NotificationManager(QObject *parent)
     _ringEffect->setPeriod(1300);
 #endif // HAVE_QT5_FEEDBACK
 
-    _databaseInterface = new org::kde::telephony::CallHistoryDatabase(QString::fromLatin1(_databaseInterface->staticInterfaceName()),
-                                                                      QStringLiteral("/org/kde/telephony/CallHistoryDatabase/tel/mm"),
-                                                                      QDBusConnection::sessionBus(),
-                                                                      this);
+    m_databaseInterface = new org::kde::telephony::CallHistoryDatabase(QString::fromLatin1(m_databaseInterface->staticInterfaceName()),
+                                                                       QStringLiteral("/org/kde/telephony/CallHistoryDatabase/tel/mm"),
+                                                                       QDBusConnection::sessionBus(),
+                                                                       this);
 
-    if (!_databaseInterface->isValid()) {
+    if (!m_databaseInterface->isValid()) {
         qDebug() << Q_FUNC_INFO << "Could not initiate CallHistoryDatabase interface";
         return;
     }
-    _ringingNotification->setAutoDelete(false);
+    m_ringingNotification->setAutoDelete(false);
 }
 
 void NotificationManager::setCallUtils(org::kde::telephony::CallUtils *callUtils)
 {
     qDebug() << Q_FUNC_INFO;
-    _callUtils = callUtils;
+    m_callUtils = callUtils;
 
-    connect(_callUtils, &org::kde::telephony::CallUtils::callAdded, this, &NotificationManager::onCallAdded);
-    connect(_callUtils, &org::kde::telephony::CallUtils::callStateChanged, this, &NotificationManager::onCallStateChanged);
-    connect(_callUtils, &org::kde::telephony::CallUtils::callDeleted, this, &NotificationManager::onCallDeleted);
+    connect(m_callUtils, &org::kde::telephony::CallUtils::callAdded, this, &NotificationManager::onCallAdded);
+    connect(m_callUtils, &org::kde::telephony::CallUtils::callStateChanged, this, &NotificationManager::onCallStateChanged);
+    connect(m_callUtils, &org::kde::telephony::CallUtils::callDeleted, this, &NotificationManager::onCallDeleted);
 }
 
 void NotificationManager::setContactUtils(ContactUtils *contactUtils)
 {
-    _contactUtils = contactUtils;
+    m_contactUtils = contactUtils;
 }
 
 void NotificationManager::onCallAdded(const QString &deviceUni,
@@ -95,7 +95,7 @@ void NotificationManager::onCallAdded(const QString &deviceUni,
     if (callDirection == DialerTypes::CallDirection::Incoming) {
         if (callState == DialerTypes::CallState::RingingIn) {
             handleIncomingCall(deviceUni, callUni, communicationWith);
-            _callStarted = false;
+            m_callStarted = false;
         }
     }
 }
@@ -110,7 +110,7 @@ void NotificationManager::onCallStateChanged(const DialerTypes::CallData &callDa
 {
     qDebug() << Q_FUNC_INFO << "call state changed:" << callData.state << callData.stateReason;
 
-    const QString contactName = _contactUtils->displayString(callData.communicationWith);
+    const QString contactName = m_contactUtils->displayString(callData.communicationWith);
     QString callerDisplay = (contactName == callData.communicationWith)
         ? callData.communicationWith
         : callData.communicationWith + QStringLiteral("<br>") + QStringLiteral("<b>%1</b>").arg(contactName);
@@ -122,17 +122,17 @@ void NotificationManager::onCallStateChanged(const DialerTypes::CallData &callDa
         if (callData.state == DialerTypes::CallState::Terminated) {
             handleCallInteraction();
 
-            if (callData.stateReason == DialerTypes::CallStateReason::Unknown && !_callStarted) {
-                auto _missedCallNotification = new KNotification(QStringLiteral("callMissed"));
-                _missedCallNotification->setComponentName(QStringLiteral("plasma_dialer"));
-                _missedCallNotification->setTitle(i18n("Missed call"));
-                _missedCallNotification->setText(i18n("Missed call from %1", callerDisplay));
-                _missedCallNotification->sendEvent();
+            if (callData.stateReason == DialerTypes::CallStateReason::Unknown && !m_callStarted) {
+                auto m_missedCallNotification = new KNotification(QStringLiteral("callMissed")); // FIXME: this looks suspicious
+                m_missedCallNotification->setComponentName(QStringLiteral("plasma_dialer"));
+                m_missedCallNotification->setTitle(i18n("Missed call"));
+                m_missedCallNotification->setText(i18n("Missed call from %1", callerDisplay));
+                m_missedCallNotification->sendEvent();
             }
         }
         if (callData.state == DialerTypes::CallState::Active) {
             handleCallInteraction();
-            _callStarted = true;
+            m_callStarted = true;
         }
     }
 }
@@ -142,40 +142,40 @@ void NotificationManager::openRingingNotification(const QString &deviceUni,
                                                   const QString callerDisplay,
                                                   const QString notificationEvent)
 {
-    _ringingNotification->setEventId(notificationEvent);
-    _ringingNotification->setUrgency(KNotification::CriticalUrgency);
-    _ringingNotification->setComponentName(QStringLiteral("plasma_dialer"));
+    m_ringingNotification->setEventId(notificationEvent);
+    m_ringingNotification->setUrgency(KNotification::CriticalUrgency);
+    m_ringingNotification->setComponentName(QStringLiteral("plasma_dialer"));
 
     // _ringingNotification->setPixmap(person.photo());
-    _ringingNotification->setTitle(i18n("Incoming call"));
-    _ringingNotification->setText(callerDisplay);
+    m_ringingNotification->setTitle(i18n("Incoming call"));
+    m_ringingNotification->setText(callerDisplay);
     // this will be used by the notification applet to show custom notification UI
     // with swipe decision.
-    _ringingNotification->setHint(QStringLiteral("category"), QStringLiteral("x-kde.incoming-call"));
+    m_ringingNotification->setHint(QStringLiteral("category"), QStringLiteral("x-kde.incoming-call"));
 
-    auto acceptAction = _ringingNotification->addAction(i18n("Accept"));
+    auto acceptAction = m_ringingNotification->addAction(i18n("Accept"));
     connect(acceptAction, &KNotificationAction::activated, this, [this, deviceUni, callUni] {
         accept(deviceUni, callUni);
         launchPlasmaDialerDesktopFile();
     });
 
-    auto rejectAction = _ringingNotification->addAction(i18n("Reject"));
+    auto rejectAction = m_ringingNotification->addAction(i18n("Reject"));
     connect(rejectAction, &KNotificationAction::activated, this, [this, deviceUni, callUni] {
         hangUp(deviceUni, callUni);
     });
 
-    _ringingNotification->sendEvent();
+    m_ringingNotification->sendEvent();
 }
 
 void NotificationManager::closeRingingNotification()
 {
-    _ringingNotification->disconnect();
-    _ringingNotification->close();
+    m_ringingNotification->disconnect();
+    m_ringingNotification->close();
 }
 
 void NotificationManager::accept(const QString &deviceUni, const QString &callUni)
 {
-    QDBusPendingReply<> reply = _callUtils->accept(deviceUni, callUni);
+    QDBusPendingReply<> reply = m_callUtils->accept(deviceUni, callUni);
     reply.waitForFinished();
     if (reply.isError()) {
         qDebug() << Q_FUNC_INFO << reply.error();
@@ -185,7 +185,7 @@ void NotificationManager::accept(const QString &deviceUni, const QString &callUn
 
 void NotificationManager::hangUp(const QString &deviceUni, const QString &callUni)
 {
-    QDBusPendingReply<> reply = _callUtils->hangUp(deviceUni, callUni);
+    QDBusPendingReply<> reply = m_callUtils->hangUp(deviceUni, callUni);
     reply.waitForFinished();
     if (reply.isError()) {
         qDebug() << Q_FUNC_INFO << reply.error();
@@ -195,7 +195,7 @@ void NotificationManager::hangUp(const QString &deviceUni, const QString &callUn
 
 void NotificationManager::handleIncomingCall(const QString &deviceUni, const QString &callUni, const QString &communicationWith)
 {
-    const QString contactName = _contactUtils->displayString(communicationWith);
+    const QString contactName = m_contactUtils->displayString(communicationWith);
 
     bool allowed = true;
 
@@ -207,14 +207,14 @@ void NotificationManager::handleIncomingCall(const QString &deviceUni, const QSt
         }
 
         if (Config::self()->allowPreviousOutgoing()) {
-            QString lastOutgoing = _databaseInterface->lastCall(communicationWith, static_cast<int>(DialerTypes::CallDirection::Outgoing));
+            QString lastOutgoing = m_databaseInterface->lastCall(communicationWith, static_cast<int>(DialerTypes::CallDirection::Outgoing));
             if (!lastOutgoing.isEmpty()) {
                 allowed = true;
             }
         }
 
         if (Config::self()->allowCallback()) {
-            QString lastIncoming = _databaseInterface->lastCall(communicationWith, static_cast<int>(DialerTypes::CallDirection::Incoming));
+            QString lastIncoming = m_databaseInterface->lastCall(communicationWith, static_cast<int>(DialerTypes::CallDirection::Incoming));
             QDateTime lastTime = QDateTime::fromString(lastIncoming, QStringLiteral("yyyy-MM-ddThh:mm:ss.zzz"));
             qint64 diff = lastTime.msecsTo(QDateTime::currentDateTime());
             if (diff / 1000 / 60 < Config::self()->callbackInterval()) {

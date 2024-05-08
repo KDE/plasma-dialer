@@ -33,8 +33,8 @@ private Q_SLOTS:
     void onCallStateChanged(const DialerTypes::CallData &callData);
 
 private:
-    std::unique_ptr<KNotification> _ringingNotification;
-    std::unique_ptr<KNotification> _missedCallNotification;
+    std::unique_ptr<KNotification> m_ringingNotification;
+    std::unique_ptr<KNotification> m_missedCallNotification;
 
     void openRingingNotification(const QString &deviceUni, const QString &callUni, const QString callerDisplay, const QString notificationEvent);
     void closeRingingNotification();
@@ -45,12 +45,12 @@ private:
     void handleIncomingCall(const QString &deviceUni, const QString &callUni, const QString &communicationWith);
     void handleCallInteraction();
 
-    org::kde::telephony::CallHistoryDatabase *_databaseInterface;
+    org::kde::telephony::CallHistoryDatabase *m_databaseInterface;
 
-    org::kde::telephony::CallUtils *_callUtils;
-    ContactUtils *_contactUtils;
+    org::kde::telephony::CallUtils *m_callUtils;
+    ContactUtils *m_contactUtils;
 
-    bool _callStarted;
+    bool m_callStarted;
 
     void startHapticsFeedback();
     void stopHapticsFeedback();

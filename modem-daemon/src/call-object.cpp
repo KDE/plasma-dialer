@@ -10,129 +10,129 @@ constexpr int CALL_DURATION_UPDATE_DELAY = 1000;
 CallObject::CallObject(QObject *parent)
     : QObject(parent)
 {
-    _callAttemptTimer.setInterval(CALL_DURATION_UPDATE_DELAY);
-    _callTimer.setInterval(CALL_DURATION_UPDATE_DELAY);
-    connect(&_callAttemptTimer, &QTimer::timeout, this, [this]() {
-        _callData.callAttemptDuration++;
+    m_callAttemptTimer.setInterval(CALL_DURATION_UPDATE_DELAY);
+    m_callTimer.setInterval(CALL_DURATION_UPDATE_DELAY);
+    connect(&m_callAttemptTimer, &QTimer::timeout, this, [this]() {
+        m_callData.callAttemptDuration++;
     });
-    connect(&_callTimer, &QTimer::timeout, this, [this]() {
-        _callData.duration++;
+    connect(&m_callTimer, &QTimer::timeout, this, [this]() {
+        m_callData.duration++;
     });
 }
 
 QString CallObject::id()
 {
-    return _callData.id;
+    return m_callData.id;
 }
 
 QString CallObject::protocol()
 {
-    return _callData.protocol;
+    return m_callData.protocol;
 }
 
 QString CallObject::provider()
 {
-    return _callData.provider;
+    return m_callData.provider;
 }
 
 QString CallObject::account()
 {
-    return _callData.account;
+    return m_callData.account;
 }
 
 QString CallObject::communicationWith()
 {
-    return _callData.communicationWith;
+    return m_callData.communicationWith;
 }
 
 DialerTypes::CallDirection CallObject::direction()
 {
-    return _callData.direction;
+    return m_callData.direction;
 }
 
 DialerTypes::CallState CallObject::state()
 {
-    return _callData.state;
+    return m_callData.state;
 }
 
 DialerTypes::CallStateReason CallObject::stateReason()
 {
-    return _callData.stateReason;
+    return m_callData.stateReason;
 }
 
 int CallObject::callAttemptDuration()
 {
-    return _callData.callAttemptDuration;
+    return m_callData.callAttemptDuration;
 }
 
 QDateTime CallObject::startedAt()
 {
-    return _callData.startedAt;
+    return m_callData.startedAt;
 }
 
 int CallObject::duration()
 {
-    return _callData.duration;
+    return m_callData.duration;
 }
 
 DialerTypes::CallData CallObject::callData()
 {
-    return _callData;
+    return m_callData;
 }
 
 void CallObject::setId(const QString &id)
 {
-    _callData.id = id;
+    m_callData.id = id;
 }
 
 void CallObject::setProtocol(const QString &protocol)
 {
-    _callData.protocol = protocol;
+    m_callData.protocol = protocol;
 }
 
 void CallObject::setProvider(const QString &provider)
 {
-    _callData.provider = provider;
+    m_callData.provider = provider;
 }
 
 void CallObject::setAccount(const QString &account)
 {
-    _callData.account = account;
+    m_callData.account = account;
 }
 
 void CallObject::setCommunicationWith(const QString &communicationWith)
 {
-    _callData.communicationWith = communicationWith;
+    m_callData.communicationWith = communicationWith;
 }
 
 void CallObject::setDirection(const DialerTypes::CallDirection &direction)
 {
-    _callData.direction = direction;
+    m_callData.direction = direction;
 }
 
 void CallObject::setState(const DialerTypes::CallState &state)
 {
-    _callData.state = state;
+    m_callData.state = state;
 }
 
 void CallObject::setStateReason(const DialerTypes::CallStateReason &stateReason)
 {
-    _callData.stateReason = stateReason;
+    m_callData.stateReason = stateReason;
 }
 
 void CallObject::setCallAttemptDuration(const int &callAttemptDuration)
 {
-    _callData.callAttemptDuration = callAttemptDuration;
+    m_callData.callAttemptDuration = callAttemptDuration;
 }
 
 void CallObject::setStartedAt(const QDateTime &startedAt)
 {
-    _callData.startedAt = startedAt;
+    m_callData.startedAt = startedAt;
 }
 
 void CallObject::setDuration(const int &duration)
 {
-    _callData.duration = duration;
+    m_callData.duration = duration;
 }
 
 void CallObject::onCallStateChanged(const QString &deviceUni,
@@ -142,22 +142,22 @@ void CallObject::onCallStateChanged(const QString &deviceUni,
                                     const DialerTypes::CallStateReason &callStateReason)
 {
     qDebug() << "new call state:" << deviceUni << callUni << callDirection << callState << callStateReason;
-    _callData.state = callState;
-    _callData.stateReason = callStateReason;
+    m_callData.state = callState;
+    m_callData.stateReason = callStateReason;
     if (callState == DialerTypes::CallState::RingingIn) {
         qDebug() << "incoming call";
-        _callAttemptTimer.start();
+        m_callAttemptTimer.start();
     }
     if (callState == DialerTypes::CallState::Active) {
         qDebug() << "call started";
-        _callTimer.start();
+        m_callTimer.start();
     }
     if (callState == DialerTypes::CallState::Terminated) {
         qDebug() << "call terminated";
-        if ((callDirection == DialerTypes::CallDirection::Incoming) && !_callTimer.isActive()) {
+        if ((callDirection == DialerTypes::CallDirection::Incoming) && !m_callTimer.isActive()) {
             qDebug() << "missed a call";
         }
-        _callAttemptTimer.stop();
-        _callTimer.stop();
+        m_callAttemptTimer.stop();
+        m_callTimer.stop();
     }
 }

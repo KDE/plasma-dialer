@@ -30,7 +30,7 @@ Q_SIGNALS:
     void countryCodeChanged(const QString &countryCode);
 
 private:
-    QStringList _deviceUniList;
-    QStringList _equipmentIdentifiers;
-    QString _countryCode;
+    QStringList m_deviceUniList;
+    QStringList m_equipmentIdentifiers;
+    QString m_countryCode;
 };

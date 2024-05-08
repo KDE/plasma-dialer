@@ -59,5 +59,5 @@ public Q_SLOTS:
     virtual void deleteCall(const QString &deviceUni, const QString &callUni);
 
 private:
-    QStringList _deviceUniList;
+    QStringList m_deviceUniList;
 };

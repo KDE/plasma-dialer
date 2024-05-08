@@ -64,7 +64,7 @@ public:
 FakeAllContactsMonitor::FakeAllContactsMonitor()
 {
     // clang-format off
-    _contacts.insert(
+    m_contacts.insert(
         QStringLiteral("fakesource://contact1"),
         KPeople::AbstractContact::Ptr(new FakeContact({
             {KPeople::AbstractContact::NameProperty, QStringLiteral("Contact 1")},
@@ -72,7 +72,7 @@ FakeAllContactsMonitor::FakeAllContactsMonitor()
         }))
     );
 
-    _contacts.insert(
+    m_contacts.insert(
         QStringLiteral("fakesource://contact2"),
         KPeople::AbstractContact::Ptr(new FakeContact({
             {KPeople::AbstractContact::NameProperty, QStringLiteral("Contact 2")},
@@ -81,7 +81,7 @@ FakeAllContactsMonitor::FakeAllContactsMonitor()
         }))
     );
 
-    _contacts.insert(
+    m_contacts.insert(
         QStringLiteral("fakesource://contact3"),
         KPeople::AbstractContact::Ptr(new FakeContact({{KPeople::AbstractContact::NameProperty, QStringLiteral("Contact 3")},
             {KPeople::AbstractContact::EmailProperty, QStringLiteral("contact3@example.com")},
@@ -89,7 +89,7 @@ FakeAllContactsMonitor::FakeAllContactsMonitor()
         }))
     );
 
-    _contacts.insert(
+    m_contacts.insert(
         QStringLiteral("fakesource://contact4"),
         KPeople::AbstractContact::Ptr(new FakeContact({
             {KPeople::AbstractContact::NameProperty, QStringLiteral("Contact 4")},
@@ -98,7 +98,7 @@ FakeAllContactsMonitor::FakeAllContactsMonitor()
         }))
     );
 
-    _contacts.insert(
+    m_contacts.insert(
         QStringLiteral("fakesource://contact5"),
         KPeople::AbstractContact::Ptr(new FakeContact({
             {KPeople::AbstractContact::NameProperty, QStringLiteral("Contact 5")},
@@ -106,7 +106,7 @@ FakeAllContactsMonitor::FakeAllContactsMonitor()
         }))
     );
 
-    _contacts.insert(
+    m_contacts.insert(
         QStringLiteral("fakesource://contact6"),
         KPeople::AbstractContact::Ptr(new FakeContact({
             {KPeople::AbstractContact::NameProperty, QStringLiteral("Malory")},
@@ -121,13 +121,13 @@ FakeAllContactsMonitor::FakeAllContactsMonitor()
 
 void FakeAllContactsMonitor::remove(const QString &uri)
 {
-    _contacts.remove(uri);
+    m_contacts.remove(uri);
     Q_EMIT contactRemoved(uri);
 }
 
 QMap<QString, KPeople::AbstractContact::Ptr> FakeAllContactsMonitor::contacts()
 {
-    return _contacts;
+    return m_contacts;
 }
 
 void FakeAllContactsMonitor::changeProperty(const QString &key, const QVariant &value)

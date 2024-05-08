@@ -11,39 +11,39 @@ DeviceUtils::DeviceUtils(QObject *parent)
 
 QStringList DeviceUtils::equipmentIdentifiers()
 {
-    return _equipmentIdentifiers;
+    return m_equipmentIdentifiers;
 }
 
 QStringList DeviceUtils::deviceUniList()
 {
-    return _deviceUniList;
+    return m_deviceUniList;
 }
 
 QString DeviceUtils::countryCode()
 {
-    return _countryCode;
+    return m_countryCode;
 }
 
 void DeviceUtils::setEquipmentIdentifiers(const QStringList &equipmentIdentifiers)
 {
-    if (_equipmentIdentifiers != equipmentIdentifiers) {
-        _equipmentIdentifiers = equipmentIdentifiers;
-        Q_EMIT equipmentIdentifiersChanged(_equipmentIdentifiers);
+    if (m_equipmentIdentifiers != equipmentIdentifiers) {
+        m_equipmentIdentifiers = equipmentIdentifiers;
+        Q_EMIT equipmentIdentifiersChanged(m_equipmentIdentifiers);
     }
 }
 
 void DeviceUtils::setDeviceUniList(const QStringList &deviceUniList)
 {
-    if (_deviceUniList != deviceUniList) {
-        _deviceUniList = deviceUniList;
-        Q_EMIT deviceUniListChanged(_deviceUniList);
+    if (m_deviceUniList != deviceUniList) {
+        m_deviceUniList = deviceUniList;
+        Q_EMIT deviceUniListChanged(m_deviceUniList);
     }
 }
 
 void DeviceUtils::setCountryCode(const QString &countryCode)
 {
-    if (_countryCode != countryCode) {
-        _countryCode = countryCode;
-        Q_EMIT countryCodeChanged(_countryCode);
+    if (m_countryCode != countryCode) {
+        m_countryCode = countryCode;
+        Q_EMIT countryCodeChanged(m_countryCode);
     }
 }

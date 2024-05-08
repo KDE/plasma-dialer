@@ -17,6 +17,6 @@ public:
     explicit DeviceManager(ModemController *modemController, DeviceUtils *deviceUtils, QObject *parent = nullptr);
 
 private:
-    DeviceUtils *_deviceUtils;
-    ModemController *_modemController;
+    DeviceUtils *m_deviceUtils;
+    ModemController *m_modemController;
 };
