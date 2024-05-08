@@ -119,7 +119,6 @@ void KTelephonyPluginDeclarative::registerTypes(const char *uri)
     qmlRegisterSingletonType<DeclarativeDeviceUtils>(uri, major, minor, "DeviceUtils", deviceUtilsTypeProvider);
     qmlRegisterSingletonType<DeclarativeCallUtils>(uri, major, minor, "CallUtils", callUtilsTypeProvider);
 
-    qmlRegisterSingletonType<CallHistoryModel>(uri, major, minor, "CallHistoryModel", callHistoryModelTypeProvider);
     qmlRegisterSingletonType<ActiveCallModel>(uri, major, minor, "ActiveCallModel", activeCallModelTypeProvider);
 
     // plugin-only KContacts-related utils
@@ -129,4 +128,6 @@ void KTelephonyPluginDeclarative::registerTypes(const char *uri)
 
     qmlRegisterSingletonType<DeclarativeDialerUtils>(uri, major, minor, "DialerUtils", dialerUtilsTypeProvider);
     qmlRegisterSingletonType<DeclarativeContactUtils>(uri, major, minor, "ContactUtils", contactUtilsTypeProvider);
+
+    qmlRegisterSingletonType<CallHistoryModel>(uri, major, minor, "CallHistoryModel", callHistoryModelTypeProvider);
 }
