@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-04 00:42+0000\n"
+"POT-Creation-Date: 2024-05-09 00:41+0000\n"
 "PO-Revision-Date: 2023-03-21 18:45+0100\n"
 "Last-Translator: Phu Hung Nguyen <phu.nguyen@kdemail.net>\n"
 "Language-Team: Vietnamese <kde-l10n-vi@kde.org>\n"
@@ -27,7 +27,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "phu.nguyen@kdemail.net"
 
-#: src/main.cpp:133 src/qml/main.qml:35
+#: src/main.cpp:133 src/qml/main.qml:111
 #, kde-format
 msgid "Phone"
 msgstr "Điện thoại"
@@ -47,167 +47,172 @@ msgstr "© 2015-2022 Cộng đồng KDE"
 msgid "Alexey Andreyev"
 msgstr "Alexey Andreyev"
 
-#: src/qml/call/AsymmetricAnswerSwipe.qml:86
+#: src/qml/call/AsymmetricAnswerSwipe.qml:102
 #, kde-format
 msgid "Swipe to accept"
 msgstr "Hất để nhận"
 
-#: src/qml/call/CallPage.qml:35 src/qml/call/InCallInlineMessage.qml:14
+#: src/qml/call/CallPage.qml:49 src/qml/call/InCallInlineMessage.qml:13
 #, kde-format
 msgid "Active call list"
 msgstr "Danh sách gọi hoạt động"
 
-#: src/qml/call/CallPage.qml:108
+#: src/qml/call/CallPage.qml:117
 #, kde-format
 msgid "Incoming..."
 msgstr "Gọi đến..."
 
-#: src/qml/call/CallPage.qml:111
+#: src/qml/call/CallPage.qml:120
 #, kde-format
 msgid "Calling..."
 msgstr "Đang gọi..."
 
-#: src/qml/call/CallPage.qml:134
+#: src/qml/call/CallPage.qml:151
 #, kde-format
 msgid "Keypad"
 msgstr "Bàn phím"
 
-#: src/qml/call/CallPage.qml:154
+#: src/qml/call/CallPage.qml:162
 #, kde-format
 msgid "Speaker"
 msgstr "Loa"
 
-#: src/qml/call/CallPage.qml:168
+#: src/qml/call/CallPage.qml:175
 #, kde-format
 msgid "Mute"
 msgstr "Tắt tiếng"
 
-#: src/qml/call/InCallInlineMessage.qml:18
+#: src/qml/call/InCallInlineMessage.qml:20
 #, kde-format
 msgid "View"
 msgstr "Xem"
 
-#: src/qml/components/BottomToolbar.qml:32 src/qml/components/Sidebar.qml:54
+#: src/qml/components/BottomToolbar.qml:42 src/qml/components/Sidebar.qml:52
 #, kde-format
 msgid "History"
 msgstr "Lịch sử"
 
-#: src/qml/components/BottomToolbar.qml:44 src/qml/components/Sidebar.qml:72
-#: src/qml/ContactsPage.qml:21
+#: src/qml/components/BottomToolbar.qml:55 src/qml/components/Sidebar.qml:71
+#: src/qml/ContactsPage.qml:23
 #, kde-format
 msgid "Contacts"
 msgstr "Liên hệ"
 
-#: src/qml/components/BottomToolbar.qml:56 src/qml/components/Sidebar.qml:90
-#: src/qml/DialerPage.qml:27
+#: src/qml/components/BottomToolbar.qml:68 src/qml/components/Sidebar.qml:90
+#: src/qml/DialerPage.qml:24
 #, kde-format
 msgid "Dialer"
 msgstr "Trình quay số"
 
-#: src/qml/components/Sidebar.qml:114 src/qml/ContactsPage.qml:33
-#: src/qml/DialerPage.qml:57 src/qml/HistoryPage.qml:41
-#: src/qml/settings/SettingsPage.qml:20
+#: src/qml/components/Sidebar.qml:118 src/qml/ContactsPage.qml:31
+#: src/qml/DialerPage.qml:69 src/qml/HistoryPage.qml:47
+#: src/qml/settings/SettingsPage.qml:26
 #, kde-format
 msgid "Settings"
 msgstr "Thiết lập"
 
-#: src/qml/components/Sidebar.qml:133
+#: src/qml/components/Sidebar.qml:136
 #, kde-format
 msgid "Quit"
 msgstr "Thoát"
 
-#: src/qml/ContactsPage.qml:132
-#, kde-format
-msgid "Select number to call"
-msgstr "Chọn số để gọi"
-
-#: src/qml/ContactsPage.qml:141
+#: src/qml/ContactsPage.qml:55
 #, kde-format
 msgid "No contacts have a phone number set"
 msgstr "Không có liên hệ nào đã đặt số điện thoại"
 
-#: src/qml/DialerPage.qml:88
+#: src/qml/ContactsPage.qml:96
+#, kde-format
+msgid "Select number to call"
+msgstr "Chọn số để gọi"
+
+#: src/qml/ContactsPage.qml:162 src/qml/DialerPage.qml:143
+#, kde-format
+msgid "Telephony daemons are not responding"
+msgstr ""
+
+#: src/qml/DialerPage.qml:154
 #, kde-format
 msgid "Modem devices are not found"
 msgstr "Không tìm thấy các thiết bị điều giải"
 
-#: src/qml/DialerPage.qml:97
+#: src/qml/DialerPage.qml:165
 #, kde-format
 msgid "Voicemail number couldn't be found"
 msgstr "Không tìm được số hộp thư thoại"
 
-#: src/qml/history/HistoryDelegate.qml:61
+#: src/qml/history/HistoryDelegate.qml:65
 #, kde-format
 msgid "Duration: %1"
 msgstr "Thời lượng: %1"
 
-#: src/qml/HistoryPage.qml:18
+#: src/qml/HistoryPage.qml:34
 #, kde-format
 msgid "Call History"
 msgstr "Lịch sử gọi"
 
-#: src/qml/HistoryPage.qml:34
+#: src/qml/HistoryPage.qml:40
 #, kde-format
 msgid "Clear history"
 msgstr "Xoá lịch sử"
 
-#: src/qml/HistoryPage.qml:73
+#: src/qml/HistoryPage.qml:68
 #, kde-format
 msgid "No recent calls"
 msgstr "Không có cuộc gọi nào gần đây"
 
-#: src/qml/ImeiSheet.qml:18
+#: src/qml/ImeiSheet.qml:24
+#, kde-format
+msgid "No IMEIs found"
+msgstr "Không tìm thấy IMEI nào"
+
+#: src/qml/ImeiSheet.qml:30
 #, kde-format
 msgid "IMEI"
 msgid_plural "IMEIs"
 msgstr[0] "IMEI"
 
-#: src/qml/ImeiSheet.qml:30
-#, kde-format
-msgid "No IMEIs found"
-msgstr "Không tìm thấy IMEI nào"
-
-#: src/qml/settings/CallBlockSettingsPage.qml:21
+#: src/qml/settings/CallBlockSettingsPage.qml:25
 #, kde-format
 msgid "Adaptive Call Blocking"
 msgstr "Chặn cuộc gọi thích ứng"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:39
+#: src/qml/settings/CallBlockSettingsPage.qml:32
 #, kde-format
 msgid "Ignore calls from unknown numbers"
 msgstr "Bỏ qua cuộc gọi từ các số không rõ"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:45
+#: src/qml/settings/CallBlockSettingsPage.qml:39
 #, kde-format
 msgid "When a call is an incoming from an unknown number"
 msgstr "Khi một cuộc gọi đến từ một số không rõ"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:53
+#: src/qml/settings/CallBlockSettingsPage.qml:47
 #, kde-format
 msgid "Immediately hang up"
 msgstr "Gác máy ngay lập tức"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:58
+#: src/qml/settings/CallBlockSettingsPage.qml:53
 #, kde-format
 msgid "Ring without notification"
 msgstr "Đổ chuông không thông báo"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:63
+#: src/qml/settings/CallBlockSettingsPage.qml:59
 #, kde-format
 msgid "Ring with silent notification"
 msgstr "Đổ chuông với thông báo im lặng"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:71
+#: src/qml/settings/CallBlockSettingsPage.qml:68
 #, kde-format
 msgid "Allowed exceptions"
 msgstr "Các ngoại lệ được phép"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:80
+#: src/qml/settings/CallBlockSettingsPage.qml:78
 #, kde-format
 msgid "Anonymous numbers"
 msgstr "Số vô danh"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:87
+#: src/qml/settings/CallBlockSettingsPage.qml:86
 #, kde-format
 msgid "Existing outgoing call to number"
 msgstr "Các số gọi đi hiện có"
@@ -217,28 +222,28 @@ msgstr "Các số gọi đi hiện có"
 msgid "Callback within"
 msgstr "Gọi lại trong vòng"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:112
+#: src/qml/settings/CallBlockSettingsPage.qml:113
 #, kde-format
 msgid "minutes"
 msgstr "phút"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:122
+#: src/qml/settings/CallBlockSettingsPage.qml:126
 #, kde-format
 msgid "Allowed phone number exceptions"
 msgstr "Các ngoại lệ số điện thoại được phép"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:142
-#: src/qml/settings/CallBlockSettingsPage.qml:171
+#: src/qml/settings/CallBlockSettingsPage.qml:148
+#: src/qml/settings/CallBlockSettingsPage.qml:186
 #, kde-format
 msgid "Add new pattern"
 msgstr "Thêm dạng mẫu mới"
 
-#: src/qml/settings/SettingsPage.qml:41
+#: src/qml/settings/SettingsPage.qml:34
 #, kde-format
 msgid "About"
 msgstr "Thông tin"
 
-#: src/qml/settings/SettingsPage.qml:50
+#: src/qml/settings/SettingsPage.qml:46
 #, kde-format
 msgid "Adaptive call blocking"
 msgstr "Chặn cuộc gọi thích ứng"
@@ -263,27 +268,27 @@ msgstr "Hất đối xứng"
 msgid "Asymmetric Swipe"
 msgstr "Hất bất đối xứng"
 
-#: src/qml/USSDSheet.qml:47
+#: src/qml/USSDSheet.qml:64
 #, kde-format
 msgid "USSD Error"
 msgstr "Lỗi USSD"
 
-#: src/qml/USSDSheet.qml:47
+#: src/qml/USSDSheet.qml:64
 #, kde-format
 msgid "USSD Message"
 msgstr "Tin nhắn USSD"
 
-#: src/qml/USSDSheet.qml:56
+#: src/qml/USSDSheet.qml:77
 #, kde-format
 msgid "Write response..."
 msgstr "Viết lời hồi đáp..."
 
-#: src/qml/USSDSheet.qml:62
+#: src/qml/USSDSheet.qml:84
 #, kde-format
 msgid "Send"
 msgstr "Gửi"
 
-#: src/qml/USSDSheet.qml:78
+#: src/qml/USSDSheet.qml:102
 #, kde-format
 msgid "Cancel USSD session"
 msgstr "Hủy phiên USSD"
