@@ -189,7 +189,7 @@ Kirigami.Page {
                 id: answerControlLoader
 
                 anchors.fill: parent
-                active: callIncoming
+                active: callIncoming && (callDuration == 0)
                 sourceComponent: (Config.answerControl === 2) ? asymmetricAnswerSwipe : (Config.answerControl === 1) ? symmetricAnswerSwipe : answerButtons
 
                 Connections {
@@ -234,7 +234,7 @@ Kirigami.Page {
             Controls.AbstractButton {
                 id: endCallButton
 
-                visible: callActive && !callIncoming
+                visible: callActive && (callDuration > 0) || !callIncoming
                 anchors.centerIn: parent
                 width: Kirigami.Units.gridUnit * 3.5
                 height: Kirigami.Units.gridUnit * 3.5
