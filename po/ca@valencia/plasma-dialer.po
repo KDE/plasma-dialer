@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-09 00:41+0000\n"
-"PO-Revision-Date: 2024-01-30 11:04+0100\n"
+"PO-Revision-Date: 2024-05-09 12:16+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -63,12 +63,12 @@ msgstr "Llista de tocades actives"
 #: src/qml/call/CallPage.qml:117
 #, kde-format
 msgid "Incoming..."
-msgstr "Tocada entrant..."
+msgstr "Tocada entrant…"
 
 #: src/qml/call/CallPage.qml:120
 #, kde-format
 msgid "Calling..."
-msgstr "S'està tocant..."
+msgstr "S'està tocant…"
 
 #: src/qml/call/CallPage.qml:151
 #, kde-format
@@ -132,7 +132,7 @@ msgstr "Seleccioneu el número al que s'ha de tocar"
 #: src/qml/ContactsPage.qml:162 src/qml/DialerPage.qml:143
 #, kde-format
 msgid "Telephony daemons are not responding"
-msgstr ""
+msgstr "Els dominis de telefonia no responen"
 
 #: src/qml/DialerPage.qml:154
 #, kde-format
@@ -285,7 +285,7 @@ msgstr "Missatge USSD"
 #: src/qml/USSDSheet.qml:77
 #, kde-format
 msgid "Write response..."
-msgstr "Escriu una resposta..."
+msgstr "Escriu una resposta…"
 
 #: src/qml/USSDSheet.qml:84
 #, kde-format

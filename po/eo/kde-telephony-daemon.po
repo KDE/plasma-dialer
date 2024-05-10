@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-09 00:41+0000\n"
+"POT-Creation-Date: 2024-05-10 00:40+0000\n"
 "PO-Revision-Date: 2023-07-13 21:47+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: src/notification-manager.cpp:114 src/notification-manager.cpp:263
+#: src/notification-manager.cpp:114 src/notification-manager.cpp:264
 #, kde-format
 msgid "No Caller ID"
 msgstr "Neniu Vokant-ID"
@@ -32,17 +32,17 @@ msgstr "Maltrafita voko"
 msgid "Missed call from %1"
 msgstr "Maltrafita voko de %1"
 
-#: src/notification-manager.cpp:146
+#: src/notification-manager.cpp:147
 #, kde-format
 msgid "Incoming call"
 msgstr "Envenanta voko"
 
-#: src/notification-manager.cpp:152
+#: src/notification-manager.cpp:153
 #, kde-format
 msgid "Accept"
 msgstr "Akcepti"
 
-#: src/notification-manager.cpp:158
+#: src/notification-manager.cpp:159
 #, kde-format
 msgid "Reject"
 msgstr "Malakcepti"

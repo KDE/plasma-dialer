@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-09 00:41+0000\n"
+"POT-Creation-Date: 2024-05-10 00:40+0000\n"
 "PO-Revision-Date: 2024-04-22 15:59\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Crowdin-File: /kf6-trunk/messages/plasma-dialer/kde-telephony-daemon.pot\n"
 "X-Crowdin-File-ID: 49378\n"
 
-#: src/notification-manager.cpp:114 src/notification-manager.cpp:263
+#: src/notification-manager.cpp:114 src/notification-manager.cpp:264
 #, kde-format
 msgid "No Caller ID"
 msgstr "无呼叫者ID"
@@ -32,17 +32,17 @@ msgstr "未接来电"
 msgid "Missed call from %1"
 msgstr "来自 %1 的未接来电"
 
-#: src/notification-manager.cpp:146
+#: src/notification-manager.cpp:147
 #, kde-format
 msgid "Incoming call"
 msgstr "拨入电话"
 
-#: src/notification-manager.cpp:152
+#: src/notification-manager.cpp:153
 #, kde-format
 msgid "Accept"
 msgstr "接听"
 
-#: src/notification-manager.cpp:158
+#: src/notification-manager.cpp:159
 #, kde-format
 msgid "Reject"
 msgstr "挂断"
