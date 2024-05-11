@@ -156,6 +156,7 @@ void ActiveCallModel::onUtilsCallsChanged(const DialerTypes::CallDataVector &fet
     if (!active) {
         return;
     }
+    m_callsTimer.start();
     bool incoming = false;
     for (int i = 0; i < m_calls.size(); i++) {
         const auto call = m_calls.at(i);
