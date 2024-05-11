@@ -262,12 +262,10 @@ void ActiveCallModel::updateTimers()
         DialerTypes::CallState callState = call.state;
 
         if (callState == DialerTypes::CallState::RingingIn) {
-            qDebug() << "incoming call";
             call.callAttemptDuration++;
             Q_EMIT dataChanged(index(i), index(i), {CallAttemptDurationRole});
         }
         if (callState == DialerTypes::CallState::Active) {
-            qDebug() << "call started";
             call.duration++;
             m_calls[i].duration = call.duration;
             setDuration(call.duration);
