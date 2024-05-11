@@ -104,6 +104,7 @@ void DialerManager::onUtilsCallAdded(const QString &deviceUni,
                                      const DialerTypes::CallStateReason &callStateReason,
                                      const QString communicationWith)
 {
+    Q_UNUSED(communicationWith);
     if (!m_callUtils) {
         qCritical() << Q_FUNC_INFO;
     }
@@ -210,7 +211,7 @@ void DialerManager::pauseMedia()
 void DialerManager::unpauseMedia()
 {
     auto sessionBus = QDBusConnection::sessionBus();
-    for (const QString &iface : qAsConst(m_pausedSources)) {
+    for (const QString &iface : std::as_const(m_pausedSources)) {
         org::mpris::MediaPlayer2::Player mprisInterface(iface, QStringLiteral("/org/mpris/MediaPlayer2"), sessionBus);
         mprisInterface.Play();
     }
