@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-09 00:41+0000\n"
+"POT-Creation-Date: 2024-05-12 00:40+0000\n"
 "PO-Revision-Date: 2024-05-09 19:22+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -27,22 +27,22 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "adrian@chaves.io"
 
-#: src/main.cpp:133 src/qml/main.qml:111
+#: src/main.cpp:132 src/qml/main.qml:111
 #, kde-format
 msgid "Phone"
 msgstr "Teléfono"
 
-#: src/main.cpp:135
+#: src/main.cpp:134
 #, kde-format
 msgid "Plasma phone dialer"
 msgstr "Marcador de números de teléfono de Plasma."
 
-#: src/main.cpp:137
+#: src/main.cpp:136
 #, kde-format
 msgid "© 2015-2022 KDE Community"
 msgstr "© 2015-2022 Comunidade KDE"
 
-#: src/main.cpp:140
+#: src/main.cpp:139
 #, kde-format
 msgid "Alexey Andreyev"
 msgstr "Alexey Andreyev"
