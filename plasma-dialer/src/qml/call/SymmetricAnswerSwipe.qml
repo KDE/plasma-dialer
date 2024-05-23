@@ -5,8 +5,8 @@
  */
 
 import QtQuick
-import QtQuick.Layouts
 import QtQuick.Controls as QQC2
+import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 
 Item {
@@ -61,17 +61,14 @@ Item {
 
             property real shakeX: 0
             property real leftSpacing: (controlRectangle.width - width) / 2
-            property bool resting: x === leftSpacing
 
             function resetXPosition() {
-                if (x !== leftSpacing) {
+                if (x !== leftSpacing)
                     x = leftSpacing;
-                    if (!dragAreaZone.pressed)
-                        dragHandler.enabled = false;
 
-                }
             }
 
+            x: leftSpacing
             width: height
             height: Kirigami.Units.gridUnit * 3
             onXChanged: {
@@ -161,14 +158,13 @@ Item {
             enabled: false
             yAxis.enabled: false
             onDistanceChanged: {
-                if (distance === 0) {
-                    dragItem.resetXPosition();
+                if (distance === 0)
                     dragAreaItem.swipeAccepted = false;
-                }
+
             }
-            onTranslationChanged: {
+            onActiveTranslationChanged: {
                 syncDragItemX();
-                distance = translation["x"] / dragAreaItem.width;
+                distance = activeTranslation["x"] / dragAreaItem.width;
                 if (Math.abs(distance) > swipeAcceptThreshold) {
                     dragAreaItem.swipeAccepted = true;
                     dragItem.resetXPosition();
@@ -179,6 +175,11 @@ Item {
             }
             onActiveChanged: {
                 distance = 0;
+            }
+            onEnabledChanged: {
+                if (!enabled)
+                    dragItem.resetXPosition();
+
             }
         }
 
