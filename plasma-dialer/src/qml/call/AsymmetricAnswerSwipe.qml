@@ -195,9 +195,9 @@ Item {
                         dragAreaItem.swipeAccepted = false;
                     }
                 }
-                onTranslationChanged: {
+                onActiveTranslationChanged: {
                     syncDragItemX();
-                    distance = Math.abs(translation["x"]) / dragAreaItem.width;
+                    distance = Math.abs(activeTranslation["x"]) / dragAreaItem.width;
                     if (distance > swipeAcceptThreshold) {
                         dragAreaItem.swipeAccepted = true;
                         dragItem.resetXPosition();
