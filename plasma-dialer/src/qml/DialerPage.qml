@@ -130,45 +130,45 @@ Kirigami.Page {
     }
 
     header: ColumnLayout {
-        anchors.margins: Kirigami.Units.smallSpacing
-        spacing: Kirigami.Units.smallSpacing
+        spacing: 0
 
         Kirigami.InlineMessage {
             id: daemonsError
 
-            Layout.fillWidth: true
-            Layout.leftMargin: Kirigami.Units.smallSpacing
-            Layout.rightMargin: Kirigami.Units.smallSpacing
             type: Kirigami.MessageType.Error
+            position: Kirigami.InlineMessage.Header
             text: i18n("Telephony daemons are not responding")
             visible: !DialerUtils.isValid
+
+            Layout.fillWidth: true
         }
 
         Kirigami.InlineMessage {
             id: devicesError
 
-            Layout.fillWidth: true
-            Layout.leftMargin: Kirigami.Units.smallSpacing
-            Layout.rightMargin: Kirigami.Units.smallSpacing
             type: Kirigami.MessageType.Error
+            position: Kirigami.InlineMessage.Header
             text: i18n("Modem devices are not found")
             visible: DeviceUtils.deviceUniList.length < 1
+
+            Layout.fillWidth: true
         }
 
         Kirigami.InlineMessage {
             id: voicemailError
 
-            Layout.fillWidth: true
-            Layout.leftMargin: Kirigami.Units.smallSpacing
-            Layout.rightMargin: Kirigami.Units.smallSpacing
             type: Kirigami.MessageType.Error
+            position: Kirigami.InlineMessage.Header
             text: i18n("Voicemail number couldn't be found")
             visible: dialPad.voicemailFail
+
+            Layout.fillWidth: true
         }
 
         InCallInlineMessage {
+            position: Kirigami.Position.Header
+
+            Layout.fillWidth: true
         }
-
     }
-
 }

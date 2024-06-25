@@ -11,9 +11,6 @@ Kirigami.InlineMessage {
     type: Kirigami.MessageType.Information
     visible: ActiveCallModel.active
     text: i18n("Active call list")
-    Layout.fillWidth: true
-    Layout.leftMargin: Kirigami.Units.smallSpacing
-    Layout.rightMargin: Kirigami.Units.smallSpacing
     actions: [
         Kirigami.Action {
             icon.name: "call-start"
