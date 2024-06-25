@@ -160,8 +160,6 @@ Kirigami.ScrollablePage {
             position: Kirigami.InlineMessage.Header
 
             Layout.fillWidth: true
-            Layout.leftMargin: Kirigami.Units.smallSpacing
-            Layout.rightMargin: Kirigami.Units.smallSpacing
         }
 
         InCallInlineMessage {
