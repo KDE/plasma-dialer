@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-12 00:40+0000\n"
+"POT-Creation-Date: 2024-06-26 00:41+0000\n"
 "PO-Revision-Date: 2024-05-09 06:54+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -83,7 +83,7 @@ msgstr "Zvočnik"
 msgid "Mute"
 msgstr "Nemo"
 
-#: src/qml/call/InCallInlineMessage.qml:20
+#: src/qml/call/InCallInlineMessage.qml:17
 #, kde-format
 msgid "View"
 msgstr "Pogled"
@@ -127,17 +127,17 @@ msgstr "Ni še nobenih stikov s telefonsko številko"
 msgid "Select number to call"
 msgstr "Izberite številko, ki jo želite poklicati"
 
-#: src/qml/ContactsPage.qml:162 src/qml/DialerPage.qml:143
+#: src/qml/ContactsPage.qml:158 src/qml/DialerPage.qml:140
 #, kde-format
 msgid "Telephony daemons are not responding"
 msgstr "Demoni telefona se ne odzivajo"
 
-#: src/qml/DialerPage.qml:154
+#: src/qml/DialerPage.qml:151
 #, kde-format
 msgid "Modem devices are not found"
 msgstr "Ni najdenih modemskih naprav"
 
-#: src/qml/DialerPage.qml:165
+#: src/qml/DialerPage.qml:162
 #, kde-format
 msgid "Voicemail number couldn't be found"
 msgstr "Številke telefonskega odzivnika ni bilo mogoče najti"

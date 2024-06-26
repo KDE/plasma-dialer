@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-12 00:40+0000\n"
+"POT-Creation-Date: 2024-06-26 00:41+0000\n"
 "PO-Revision-Date: 2023-04-22 00:15+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -82,7 +82,7 @@ msgstr "스피커"
 msgid "Mute"
 msgstr "음소거"
 
-#: src/qml/call/InCallInlineMessage.qml:20
+#: src/qml/call/InCallInlineMessage.qml:17
 #, kde-format
 msgid "View"
 msgstr "보기"
@@ -126,17 +126,17 @@ msgstr "전화번호가 있는 연락처 없음"
 msgid "Select number to call"
 msgstr "전화를 걸 번호 선택"
 
-#: src/qml/ContactsPage.qml:162 src/qml/DialerPage.qml:143
+#: src/qml/ContactsPage.qml:158 src/qml/DialerPage.qml:140
 #, kde-format
 msgid "Telephony daemons are not responding"
 msgstr ""
 
-#: src/qml/DialerPage.qml:154
+#: src/qml/DialerPage.qml:151
 #, kde-format
 msgid "Modem devices are not found"
 msgstr "모뎀 장치를 찾을 수 없음"
 
-#: src/qml/DialerPage.qml:165
+#: src/qml/DialerPage.qml:162
 #, kde-format
 msgid "Voicemail number couldn't be found"
 msgstr "음성 사서함 번호를 찾을 수 없음"

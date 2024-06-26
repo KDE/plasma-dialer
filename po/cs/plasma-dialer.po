@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-12 00:40+0000\n"
+"POT-Creation-Date: 2024-06-26 00:41+0000\n"
 "PO-Revision-Date: 2024-05-17 14:04+0200\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -82,7 +82,7 @@ msgstr "Reproduktor"
 msgid "Mute"
 msgstr "Ztlumit"
 
-#: src/qml/call/InCallInlineMessage.qml:20
+#: src/qml/call/InCallInlineMessage.qml:17
 #, kde-format
 msgid "View"
 msgstr "Pohled"
@@ -126,17 +126,17 @@ msgstr "Žádné kontakty nemají nastaveno telefonní číslo"
 msgid "Select number to call"
 msgstr "Vyberte číslo k zavolání"
 
-#: src/qml/ContactsPage.qml:162 src/qml/DialerPage.qml:143
+#: src/qml/ContactsPage.qml:158 src/qml/DialerPage.qml:140
 #, kde-format
 msgid "Telephony daemons are not responding"
 msgstr "Služby telefonie neodpovídají"
 
-#: src/qml/DialerPage.qml:154
+#: src/qml/DialerPage.qml:151
 #, kde-format
 msgid "Modem devices are not found"
 msgstr ""
 
-#: src/qml/DialerPage.qml:165
+#: src/qml/DialerPage.qml:162
 #, kde-format
 msgid "Voicemail number couldn't be found"
 msgstr "Číslo hlasové schránky nelze najít"

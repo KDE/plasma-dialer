@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-12 00:40+0000\n"
+"POT-Creation-Date: 2024-06-26 00:41+0000\n"
 "PO-Revision-Date: 2023-01-29 14:00+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -83,7 +83,7 @@ msgstr "Динамик"
 msgid "Mute"
 msgstr "Выключить звук"
 
-#: src/qml/call/InCallInlineMessage.qml:20
+#: src/qml/call/InCallInlineMessage.qml:17
 #, kde-format
 msgid "View"
 msgstr "Вид"
@@ -127,17 +127,17 @@ msgstr "Не найдены контакты с телефонными номе�
 msgid "Select number to call"
 msgstr "Выберите номер для вызова"
 
-#: src/qml/ContactsPage.qml:162 src/qml/DialerPage.qml:143
+#: src/qml/ContactsPage.qml:158 src/qml/DialerPage.qml:140
 #, kde-format
 msgid "Telephony daemons are not responding"
 msgstr ""
 
-#: src/qml/DialerPage.qml:154
+#: src/qml/DialerPage.qml:151
 #, kde-format
 msgid "Modem devices are not found"
 msgstr "Модем не найден"
 
-#: src/qml/DialerPage.qml:165
+#: src/qml/DialerPage.qml:162
 #, kde-format
 msgid "Voicemail number couldn't be found"
 msgstr "Не удалось обнаружить номер голосовой почты"

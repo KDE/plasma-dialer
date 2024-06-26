@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-12 00:40+0000\n"
+"POT-Creation-Date: 2024-06-26 00:41+0000\n"
 "PO-Revision-Date: 2024-05-09 12:16+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -85,7 +85,7 @@ msgstr "Altaveu"
 msgid "Mute"
 msgstr "Silencia"
 
-#: src/qml/call/InCallInlineMessage.qml:20
+#: src/qml/call/InCallInlineMessage.qml:17
 #, kde-format
 msgid "View"
 msgstr "Visualitza"
@@ -129,17 +129,17 @@ msgstr "Cap contacte té definit un número de telèfon"
 msgid "Select number to call"
 msgstr "Seleccioneu el número al que s'ha de tocar"
 
-#: src/qml/ContactsPage.qml:162 src/qml/DialerPage.qml:143
+#: src/qml/ContactsPage.qml:158 src/qml/DialerPage.qml:140
 #, kde-format
 msgid "Telephony daemons are not responding"
 msgstr "Els dominis de telefonia no responen"
 
-#: src/qml/DialerPage.qml:154
+#: src/qml/DialerPage.qml:151
 #, kde-format
 msgid "Modem devices are not found"
 msgstr "No s'ha trobat cap dispositiu de mòdem"
 
-#: src/qml/DialerPage.qml:165
+#: src/qml/DialerPage.qml:162
 #, kde-format
 msgid "Voicemail number couldn't be found"
 msgstr "No s'ha pogut trobar el número de la bústia de veu"
