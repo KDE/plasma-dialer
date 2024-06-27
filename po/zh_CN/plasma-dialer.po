@@ -129,7 +129,7 @@ msgstr "选择要拨打的号码"
 #: src/qml/ContactsPage.qml:158 src/qml/DialerPage.qml:140
 #, kde-format
 msgid "Telephony daemons are not responding"
-msgstr ""
+msgstr "电话守护程序没有响应"
 
 #: src/qml/DialerPage.qml:151
 #, kde-format
