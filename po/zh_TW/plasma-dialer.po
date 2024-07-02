@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-26 00:41+0000\n"
-"PO-Revision-Date: 2024-01-28 20:59+0900\n"
+"PO-Revision-Date: 2024-07-01 11:42+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 24.01.95\n"
+"X-Generator: Lokalize 24.04.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -58,7 +58,7 @@ msgstr "滑動來接聽"
 #: src/qml/call/CallPage.qml:49 src/qml/call/InCallInlineMessage.qml:13
 #, kde-format
 msgid "Active call list"
-msgstr ""
+msgstr "作用中撥號清單"
 
 #: src/qml/call/CallPage.qml:117
 #, kde-format
@@ -73,7 +73,7 @@ msgstr "撥號中..."
 #: src/qml/call/CallPage.qml:151
 #, kde-format
 msgid "Keypad"
-msgstr ""
+msgstr "電話鍵盤"
 
 #: src/qml/call/CallPage.qml:162
 #, kde-format
@@ -132,12 +132,12 @@ msgstr "選擇要打電話給哪個號碼"
 #: src/qml/ContactsPage.qml:158 src/qml/DialerPage.qml:140
 #, kde-format
 msgid "Telephony daemons are not responding"
-msgstr ""
+msgstr "電話守護程式沒有回應"
 
 #: src/qml/DialerPage.qml:151
 #, kde-format
 msgid "Modem devices are not found"
-msgstr ""
+msgstr "未找到數據機裝置"
 
 #: src/qml/DialerPage.qml:162
 #, kde-format
@@ -178,7 +178,7 @@ msgstr[0] "IMEI 碼"
 #: src/qml/settings/CallBlockSettingsPage.qml:25
 #, kde-format
 msgid "Adaptive Call Blocking"
-msgstr ""
+msgstr "適應式通話封鎖"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:32
 #, kde-format
@@ -215,10 +215,15 @@ msgstr "允許的例外"
 msgid "Anonymous numbers"
 msgstr "匿名號碼"
 
+# 我不是很確定原文用詞是在講什麼。Call to number? Number to call?
+#
+# 所以這個譯文是依原文元件 ID (allowPreviousOutgoing) 翻譯的。
+#
+# --Kisaragi
 #: src/qml/settings/CallBlockSettingsPage.qml:86
 #, kde-format
 msgid "Existing outgoing call to number"
-msgstr ""
+msgstr "上次撥打的電話號碼"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:94
 #, kde-format
@@ -249,7 +254,7 @@ msgstr "關於"
 #: src/qml/settings/SettingsPage.qml:46
 #, kde-format
 msgid "Adaptive call blocking"
-msgstr ""
+msgstr "適應式通話封鎖"
 
 #: src/qml/settings/SettingsPage.qml:59
 #, kde-format
