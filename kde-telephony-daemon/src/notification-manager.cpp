@@ -43,11 +43,11 @@ NotificationManager::NotificationManager(QObject *parent)
     , m_ringingNotification(std::make_unique<KNotification>(QStringLiteral("ringing"), KNotification::Persistent | KNotification::LoopSound, this))
     , m_callStarted(false)
 
-#ifdef HAVE_QT5_FEEDBACK
+#ifdef HAVE_K_TACTILE_FEEDBACK
     , _ringEffect(std::make_unique<QFeedbackHapticsEffect>())
-#endif // HAVE_QT5_FEEDBACK
+#endif // HAVE_K_TACTILE_FEEDBACK
 {
-#ifdef HAVE_QT5_FEEDBACK
+#ifdef HAVE_K_TACTILE_FEEDBACK
     _ringEffect->setAttackIntensity(0.1);
     _ringEffect->setAttackTime(420);
     _ringEffect->setIntensity(0.7);
@@ -55,7 +55,7 @@ NotificationManager::NotificationManager(QObject *parent)
     _ringEffect->setFadeTime(700);
     _ringEffect->setFadeIntensity(0.07);
     _ringEffect->setPeriod(1300);
-#endif // HAVE_QT5_FEEDBACK
+#endif // HAVE_K_TACTILE_FEEDBACK
 
     m_ringingNotification->setAutoDelete(false);
 }
@@ -281,14 +281,14 @@ void NotificationManager::handleCallInteraction()
 
 void NotificationManager::startHapticsFeedback()
 {
-#ifdef HAVE_QT5_FEEDBACK
+#ifdef HAVE_K_TACTILE_FEEDBACK
     _ringEffect->start();
-#endif // HAVE_QT5_FEEDBACK
+#endif // HAVE_K_TACTILE_FEEDBACK
 }
 
 void NotificationManager::stopHapticsFeedback()
 {
-#ifdef HAVE_QT5_FEEDBACK
+#ifdef HAVE_K_TACTILE_FEEDBACK
     _ringEffect->stop();
-#endif // HAVE_QT5_FEEDBACK
+#endif // HAVE_K_TACTILE_FEEDBACK
 }

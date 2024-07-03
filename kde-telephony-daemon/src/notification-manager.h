@@ -5,9 +5,9 @@
 #pragma once
 
 #include <KNotification>
-#ifdef HAVE_QT5_FEEDBACK
-#include <QtFeedback/QFeedbackEffect>
-#endif // HAVE_QT5_FEEDBACK
+#ifdef HAVE_K_TACTILE_FEEDBACK
+#include <KTactileFeedback/QFeedbackEffect>
+#endif // HAVE_K_TACTILE_FEEDBACK
 
 #include "call-history-database.h"
 #include "callutilsinterface.h"
@@ -54,7 +54,7 @@ private:
 
     void startHapticsFeedback();
     void stopHapticsFeedback();
-#ifdef HAVE_QT5_FEEDBACK
+#ifdef HAVE_K_TACTILE_FEEDBACK
     std::unique_ptr<QFeedbackHapticsEffect> _ringEffect;
-#endif // HAVE_QT5_FEEDBACK
+#endif // HAVE_K_TACTILE_FEEDBACK
 };
