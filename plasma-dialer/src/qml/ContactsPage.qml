@@ -158,7 +158,6 @@ Kirigami.ScrollablePage {
             text: i18n("Telephony daemons are not responding")
             visible: !ContactUtils.isValid
             position: Kirigami.InlineMessage.Header
-
             Layout.fillWidth: true
         }
 
@@ -174,5 +173,7 @@ Kirigami.ScrollablePage {
             Layout.fillWidth: true
             Layout.margins: Kirigami.Units.largeSpacing
         }
+
     }
+
 }

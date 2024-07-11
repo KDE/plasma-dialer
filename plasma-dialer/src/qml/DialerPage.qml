@@ -139,7 +139,6 @@ Kirigami.Page {
             position: Kirigami.InlineMessage.Header
             text: i18n("Telephony daemons are not responding")
             visible: !DialerUtils.isValid
-
             Layout.fillWidth: true
         }
 
@@ -150,7 +149,6 @@ Kirigami.Page {
             position: Kirigami.InlineMessage.Header
             text: i18n("Modem devices are not found")
             visible: DeviceUtils.deviceUniList.length < 1
-
             Layout.fillWidth: true
         }
 
@@ -161,14 +159,14 @@ Kirigami.Page {
             position: Kirigami.InlineMessage.Header
             text: i18n("Voicemail number couldn't be found")
             visible: dialPad.voicemailFail
-
             Layout.fillWidth: true
         }
 
         InCallInlineMessage {
             position: Kirigami.Position.Header
-
             Layout.fillWidth: true
         }
+
     }
+
 }
