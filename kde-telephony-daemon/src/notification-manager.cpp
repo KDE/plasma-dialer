@@ -28,7 +28,7 @@ static bool getScreenSaverActive()
 
 static void launchPlasmaDialerDesktopFile()
 {
-    const auto desktopName = QStringLiteral("org.kde.phone.dialer");
+    const auto desktopName = QStringLiteral("org.kde.plasma.dialer");
     const KService::Ptr appService = KService::serviceByDesktopName(desktopName);
     if (!appService) {
         qWarning() << "Could not find" << desktopName;
@@ -120,7 +120,7 @@ void NotificationManager::onCallStateChanged(const DialerTypes::CallData &callDa
 
             if (callData.stateReason == DialerTypes::CallStateReason::Unknown && !m_callStarted) {
                 auto missedCallNotification = new KNotification(QStringLiteral("callMissed"), KNotification::Persistent, this);
-                missedCallNotification->setComponentName(QStringLiteral("plasma_dialer"));
+                missedCallNotification->setComponentName(QStringLiteral("plasma-dialer"));
                 missedCallNotification->setTitle(i18n("Missed call"));
                 missedCallNotification->setText(i18n("Missed call from %1", callerDisplay));
                 missedCallNotification->sendEvent();
@@ -141,7 +141,7 @@ void NotificationManager::openRingingNotification(const QString &deviceUni,
     m_ringingNotification->clearActions();
     m_ringingNotification->setEventId(notificationEvent);
     m_ringingNotification->setUrgency(KNotification::CriticalUrgency);
-    m_ringingNotification->setComponentName(QStringLiteral("plasma_dialer"));
+    m_ringingNotification->setComponentName(QStringLiteral("plasma-dialer"));
 
     // _ringingNotification->setPixmap(person.photo());
     m_ringingNotification->setTitle(i18n("Incoming call"));

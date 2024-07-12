@@ -11,7 +11,7 @@ import QtQuick.Controls as Controls
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.telephony
-import org.kde.phone.dialer // Config
+import org.kde.plasma.dialer // Config
 import "../dialpad"
 
 Kirigami.Page {

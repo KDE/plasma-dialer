@@ -6,13 +6,13 @@
 
 add_subdirectory(src)
 
-install(FILES org.kde.phone.dialer.desktop DESTINATION ${KDE_INSTALL_APPDIR})
+install(FILES org.kde.plasma.dialer.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 install(FILES dialer.svg DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/hicolor/scalable/apps/)
-install(FILES org.kde.phone.dialer.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
+install(FILES org.kde.plasma.dialer.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 
 # for Qt Creator IDE:
-set(DEPLOY_FILES org.kde.phone.dialer.desktop
+set(DEPLOY_FILES org.kde.plasma.dialer.desktop
     dialer.svg
-    org.kde.phone.dialer.appdata.xml
+    org.kde.plasma.dialer.appdata.xml
 )
 add_custom_target(deploy-files SOURCES ${DEPLOY_FILES})
