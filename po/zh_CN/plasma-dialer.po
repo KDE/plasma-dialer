@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-26 00:41+0000\n"
+"POT-Creation-Date: 2024-07-12 00:41+0000\n"
 "PO-Revision-Date: 2024-04-22 15:59\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -131,12 +131,12 @@ msgstr "选择要拨打的号码"
 msgid "Telephony daemons are not responding"
 msgstr "电话守护程序没有响应"
 
-#: src/qml/DialerPage.qml:151
+#: src/qml/DialerPage.qml:150
 #, kde-format
 msgid "Modem devices are not found"
 msgstr "未找到调制解调器设备"
 
-#: src/qml/DialerPage.qml:162
+#: src/qml/DialerPage.qml:160
 #, kde-format
 msgid "Voicemail number couldn't be found"
 msgstr "无法找到语音信箱号码"

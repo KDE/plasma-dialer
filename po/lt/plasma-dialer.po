@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-26 00:41+0000\n"
+"POT-Creation-Date: 2024-07-12 00:41+0000\n"
 "PO-Revision-Date: 2022-12-30 08:47+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -132,12 +132,12 @@ msgstr ""
 msgid "Telephony daemons are not responding"
 msgstr ""
 
-#: src/qml/DialerPage.qml:151
+#: src/qml/DialerPage.qml:150
 #, kde-format
 msgid "Modem devices are not found"
 msgstr ""
 
-#: src/qml/DialerPage.qml:162
+#: src/qml/DialerPage.qml:160
 #, kde-format
 msgid "Voicemail number couldn't be found"
 msgstr ""

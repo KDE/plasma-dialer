@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-26 00:41+0000\n"
+"POT-Creation-Date: 2024-07-12 00:41+0000\n"
 "PO-Revision-Date: 2024-05-09 06:54+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -132,12 +132,12 @@ msgstr "Izberite številko, ki jo želite poklicati"
 msgid "Telephony daemons are not responding"
 msgstr "Demoni telefona se ne odzivajo"
 
-#: src/qml/DialerPage.qml:151
+#: src/qml/DialerPage.qml:150
 #, kde-format
 msgid "Modem devices are not found"
 msgstr "Ni najdenih modemskih naprav"
 
-#: src/qml/DialerPage.qml:162
+#: src/qml/DialerPage.qml:160
 #, kde-format
 msgid "Voicemail number couldn't be found"
 msgstr "Številke telefonskega odzivnika ni bilo mogoče najti"
