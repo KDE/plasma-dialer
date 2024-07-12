@@ -8,7 +8,7 @@ add_executable(plasmaphonedialer
 )
 
 find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED Core Quick Qml QuickControls2)
-find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Config CoreAddons I18n DBusAddons WindowSystem)
+find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Config CoreAddons I18n DBusAddons)
 find_package(KF6KirigamiAddons 1.3 REQUIRED)
 
 if (DIALER_BUILD_SHELL_OVERLAY)
@@ -17,6 +17,7 @@ if (DIALER_BUILD_SHELL_OVERLAY)
     find_package(Qt6WaylandClient ${QT_MIN_VERSION} COMPONENTS CONFIG REQUIRED Private)
     find_package(Wayland REQUIRED)
     find_package(PlasmaWaylandProtocols 1.8 CONFIG)
+    find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS WindowSystem)
     set_package_properties(PlasmaWaylandProtocols PROPERTIES
         TYPE REQUIRED
         PURPOSE "Collection of Plasma-specific Wayland protocols"
@@ -40,7 +41,6 @@ target_link_libraries(plasmaphonedialer
     KF6::CoreAddons
     KF6::I18n
     KF6::DBusAddons
-    KF6::WindowSystem
 )
 if (DIALER_BUILD_SHELL_OVERLAY)
     target_link_libraries(plasmaphonedialer
@@ -48,6 +48,7 @@ if (DIALER_BUILD_SHELL_OVERLAY)
         Qt::WaylandClient
         Qt::WaylandClientPrivate
         Wayland::Client
+        KF6::WindowSystem
     )
 
     qt6_generate_wayland_protocol_client_sources(plasmaphonedialer FILES
