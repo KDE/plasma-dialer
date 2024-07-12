@@ -33,6 +33,7 @@ public Q_SLOTS:
     QString lastCall(const QString &number, int direction) const;
 
 private:
+    void renamePreviousDbLocation();
     uint guessPreHistoricRevision();
     void migrationV1(uint current);
     void migrationV2(uint current);

@@ -24,7 +24,8 @@ CallHistoryDatabase::CallHistoryDatabase(QObject *parent)
     : QObject(parent)
     , m_database(QSqlDatabase::addDatabase(QStringLiteral("QSQLITE"), QStringLiteral("calls")))
 {
-    const QString databaseLocation = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/plasmaphonedialer");
+    renamePreviousDbLocation();
+    const QString databaseLocation = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/plasma-dialer");
     if (!QDir().mkpath(databaseLocation)) {
         qDebug() << "Could not create the database directory at" << databaseLocation;
     }
@@ -153,6 +154,17 @@ QString CallHistoryDatabase::lastCall(const QString &number, int direction) cons
     fetch.first();
 
     return fetch.value(0).toString();
+}
+
+void CallHistoryDatabase::renamePreviousDbLocation()
+{
+    const QString genericDataLocation = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation);
+    const QString previousProjectLocation = genericDataLocation + QStringLiteral("/plasmaphonedialer");
+    const QString projectDataLocation = genericDataLocation + QStringLiteral("/plasma-dialer");
+    if (QDir().exists(projectDataLocation)) {
+        return;
+    }
+    QDir().rename(previousProjectLocation, projectDataLocation);
 }
 
 uint CallHistoryDatabase::guessPreHistoricRevision()
