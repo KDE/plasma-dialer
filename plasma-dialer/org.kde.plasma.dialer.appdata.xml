@@ -4,7 +4,7 @@ SPDX-FileCopyrightText: 2021 Smitty van Bodegom
 SPDX-License-Identifier: CC0-1.0
 -->
 <component type="desktop-application">
-  <id>org.kde.phone.dialer</id>
+  <id>org.kde.plasma.dialer</id>
   <name>Phone</name>
   <name xml:lang="ar">الهاتف</name>
   <name xml:lang="az">Telefon</name>
@@ -89,7 +89,7 @@ SPDX-License-Identifier: CC0-1.0
   </developer>
   <url type="homepage">https://apps.kde.org/phone.dialer</url>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?product=Plasma%20Mobile%20Dialer</url>
-  <url type="donation">https://www.kde.org/community/donations/?app=plasmaphonedialer</url>
+  <url type="donation">https://www.kde.org/community/donations/?app=plasma-dialer</url>
   <content_rating type="oars-1.1"/>
   <recommends>
     <control>touch</control>
@@ -329,9 +329,9 @@ SPDX-License-Identifier: CC0-1.0
     </screenshot>
   </screenshots>
   <provides>
-    <binary>plasmaphonedialer</binary>
+    <binary>plasma-dialer</binary>
   </provides>
-  <launchable type="desktop-id">org.kde.phone.dialer.desktop</launchable>
+  <launchable type="desktop-id">org.kde.plasma.dialer.desktop</launchable>
   <releases>
     <release version="23.01" date="2023-01-30">
       <url>https://plasma-mobile.org/2023/01/30/january-blog-post/</url>

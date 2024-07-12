@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: LicenseRef-KDE-Accepted-GPL
 
-add_executable(plasmaphonedialer
+add_executable(plasma-dialer
     main.cpp
     resources.qrc   
 )
@@ -30,9 +30,9 @@ if (DIALER_BUILD_SHELL_OVERLAY)
     )
 endif() # DIALER_BUILD_SHELL_OVERLAY
 
-target_include_directories(plasmaphonedialer PRIVATE ${CMAKE_BINARY_DIR})
+target_include_directories(plasma-dialer PRIVATE ${CMAKE_BINARY_DIR})
 
-target_link_libraries(plasmaphonedialer
+target_link_libraries(plasma-dialer
     Qt::Core
     Qt::Quick
     Qt::Qml
@@ -43,7 +43,7 @@ target_link_libraries(plasmaphonedialer
     KF6::DBusAddons
 )
 if (DIALER_BUILD_SHELL_OVERLAY)
-    target_link_libraries(plasmaphonedialer
+    target_link_libraries(plasma-dialer
         Qt::GuiPrivate
         Qt::WaylandClient
         Qt::WaylandClientPrivate
@@ -51,14 +51,14 @@ if (DIALER_BUILD_SHELL_OVERLAY)
         KF6::WindowSystem
     )
 
-    qt6_generate_wayland_protocol_client_sources(plasmaphonedialer FILES
+    qt6_generate_wayland_protocol_client_sources(plasma-dialer FILES
         ${PLASMA_WAYLAND_PROTOCOLS_DIR}/kde-lockscreen-overlay-v1.xml)
 endif() # DIALER_BUILD_SHELL_OVERLAY
 
-kconfig_add_kcfg_files(plasmaphonedialer config.kcfgc GENERATE_MOC)
-install(TARGETS plasmaphonedialer ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+kconfig_add_kcfg_files(plasma-dialer config.kcfgc GENERATE_MOC)
+install(TARGETS plasma-dialer ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 set(RINGING_SOUND "phone-incoming-call")
 set(RINGING_WITHOUT_POPUP_SOUND "phone-incoming-call")
 
-configure_file(plasma_dialer.notifyrc.in ${CMAKE_CURRENT_BINARY_DIR}/plasma_dialer.notifyrc)
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/plasma_dialer.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})
+configure_file(plasma-dialer.notifyrc.in ${CMAKE_CURRENT_BINARY_DIR}/plasma-dialer.notifyrc)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/plasma-dialer.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})

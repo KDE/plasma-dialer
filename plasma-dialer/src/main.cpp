@@ -117,7 +117,7 @@ static void raiseWindow(QWindow *window)
     if (screenLocked) {
         if (KWindowSystem::isPlatformWayland()) {
             window->setVisibility(QWindow::Visibility::FullScreen);
-            KWaylandExtras::requestXdgActivationToken(window, 0, QStringLiteral("org.kde.phone.dialer.desktop"));
+            KWaylandExtras::requestXdgActivationToken(window, 0, QStringLiteral("org.kde.plasma.dialer.desktop"));
             QObject::connect(KWaylandExtras::self(), &KWaylandExtras::xdgActivationTokenArrived, window, [window](int, const QString &token) {
                 KWindowSystem::setCurrentXdgActivationToken(token);
                 KWindowSystem::activateWindow(window);
@@ -156,7 +156,7 @@ int main(int argc, char **argv)
                          KAboutLicense::GPL,
                          i18n("© 2015-2022 KDE Community"));
     aboutData.setBugAddress("https://bugs.kde.org/describecomponents.cgi?product=Plasma%20Mobile%20Dialer");
-    aboutData.setDesktopFileName(QStringLiteral("org.kde.phone.dialer"));
+    aboutData.setDesktopFileName(QStringLiteral("org.kde.plasma.dialer"));
     aboutData.addAuthor(i18n("Alexey Andreyev"), QString(), QStringLiteral("aa13q@ya.ru"));
     KAboutData::setApplicationData(aboutData);
 
@@ -173,7 +173,7 @@ int main(int argc, char **argv)
 
     auto config = Config::self();
 
-    qmlRegisterSingletonInstance("org.kde.phone.dialer", 1, 0, "Config", config);
+    qmlRegisterSingletonInstance("org.kde.plasma.dialer", 1, 0, "Config", config);
 
     engine.rootContext()->setContextProperty(QStringLiteral("DialerAboutData"), QVariant::fromValue(aboutData));
 
