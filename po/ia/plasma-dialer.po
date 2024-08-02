@@ -139,7 +139,7 @@ msgstr "Le dispositivo de modem non es trovate"
 #: src/qml/DialerPage.qml:160
 #, kde-format
 msgid "Voicemail number couldn't be found"
-msgstr "Le numero de posta vocal nonpoteva esser trovate"
+msgstr "Le numero de posta vocal non poteva esser trovate"
 
 #: src/qml/history/HistoryDelegate.qml:65
 #, kde-format
