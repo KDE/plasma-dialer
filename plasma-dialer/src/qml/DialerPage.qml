@@ -163,7 +163,7 @@ Kirigami.Page {
         }
 
         InCallInlineMessage {
-            position: Kirigami.Position.Header
+            position: Kirigami.InlineMessage.Header
             Layout.fillWidth: true
         }
 
