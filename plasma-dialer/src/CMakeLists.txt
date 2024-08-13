@@ -9,7 +9,7 @@ add_executable(plasmaphonedialer
 
 find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED Core Quick Qml QuickControls2)
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Config CoreAddons I18n DBusAddons WindowSystem)
-find_package(KF6KirigamiAddons 0.11 REQUIRED)
+find_package(KF6KirigamiAddons 1.3 REQUIRED)
 
 if (DIALER_BUILD_SHELL_OVERLAY)
     find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED Gui WaylandClient)
