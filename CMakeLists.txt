@@ -4,7 +4,7 @@
 
 cmake_minimum_required (VERSION 3.16)
 
-set(PROJECT_VERSION "23.01")
+set(PROJECT_VERSION "24.08.0")
 project(plasma-dialer-with-subprojects VERSION ${PROJECT_VERSION})
 
 include(FeatureSummary)
