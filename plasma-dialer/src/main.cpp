@@ -173,10 +173,12 @@ int main(int argc, char **argv)
     Q_ASSERT(window);
 
 #ifdef DIALER_BUILD_SHELL_OVERLAY
-    Q_ASSERT(!window->isVisible());
-    WaylandAboveLockscreen aboveLockscreen;
-    Q_ASSERT(aboveLockscreen.isInitialized());
-    aboveLockscreen.allowWindow(window);
+    if (screenSaverUtils.getActive()) {
+        Q_ASSERT(!window->isVisible());
+        WaylandAboveLockscreen aboveLockscreen;
+        Q_ASSERT(aboveLockscreen.isInitialized());
+        aboveLockscreen.allowWindow(window);
+    }
 #endif // DIALER_BUILD_SHELL_OVERLAY
 
     raiseWindow(window);
