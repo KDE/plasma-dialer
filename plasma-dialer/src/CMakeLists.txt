@@ -51,8 +51,13 @@ if (DIALER_BUILD_SHELL_OVERLAY)
         KF6::WindowSystem
     )
 
+    if (Qt6_VERSION VERSION_GREATER_EQUAL "6.8.0")
+        set(private_code_option  "PRIVATE_CODE")
+    endif()
     qt6_generate_wayland_protocol_client_sources(plasma-dialer FILES
-        ${PLASMA_WAYLAND_PROTOCOLS_DIR}/kde-lockscreen-overlay-v1.xml)
+        ${PLASMA_WAYLAND_PROTOCOLS_DIR}/kde-lockscreen-overlay-v1.xml
+        ${private_code_option}
+    )
 endif() # DIALER_BUILD_SHELL_OVERLAY
 
 kconfig_add_kcfg_files(plasma-dialer config.kcfgc GENERATE_MOC)
