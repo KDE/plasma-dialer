@@ -36,7 +36,7 @@ SPDX-License-Identifier: CC0-1.0
   <name xml:lang="pt-BR">Celular</name>
   <name xml:lang="ro">Telefon</name>
   <name xml:lang="sk">Telefón</name>
-  <name xml:lang="sl">Phone</name>
+  <name xml:lang="sl">Telefon</name>
   <name xml:lang="sv">Telefon</name>
   <name xml:lang="tr">Telefon</name>
   <name xml:lang="uk">Телефон</name>
@@ -54,7 +54,7 @@ SPDX-License-Identifier: CC0-1.0
   <summary xml:lang="en-GB">Send and receive phone calls</summary>
   <summary xml:lang="eo">Sendi kaj ricevi telefon-alvokojn</summary>
   <summary xml:lang="es">Enviar y recibir llamadas de teléfono</summary>
-  <summary xml:lang="eu">Egin eta jaso telefono deiak</summary>
+  <summary xml:lang="eu">Telefono deiak egin eta jaso</summary>
   <summary xml:lang="fi">Soita ja vastaanota puheluja</summary>
   <summary xml:lang="fr">Réaliser et recevoir des appels téléphoniques</summary>
   <summary xml:lang="gl">Faga e reciba chamadas.</summary>
@@ -104,7 +104,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="en-GB">The Phone app lets you easily send and receive phone calls from your smartphone.</p>
     <p xml:lang="eo">La Telefon-app permesas al vi facile sendi kaj ricevi telefonvokojn el via inteligenta telefono.</p>
     <p xml:lang="es">La aplicación de teléfono le permite enviar y recibir llamadas de teléfono de manera fácil desde su teléfono móvil.</p>
-    <p xml:lang="eu">Telefono aplikazioak zure telefono adimendunetik telefono deiak erraz egin eta jasotzen uzten dizu.</p>
+    <p xml:lang="eu">Telefono aplikazioak zure telefono adimendunetik telefono deiak erraz egiten eta jasotzen uzten dizu.</p>
     <p xml:lang="fi">Phone-sovelluksella voit helposti soittaa ja vastaanottaa puheluja älypuhelimessasi.</p>
     <p xml:lang="fr">L'application Phone vous permet facilement de réaliser et recevoir des appels téléphoniques à partir de votre téléphone portable.</p>
     <p xml:lang="gl">A aplicación Teléfono permítelle facer e recibir facilmente chamadas de teléfono desde un teléfono intelixente.</p>
@@ -124,8 +124,8 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="pt">a aplicação de Telefone permite-lhe efectuar e receber facilmente chamadas telefónicas no seu telemóvel.</p>
     <p xml:lang="pt-BR">O aplicativo Phone permite a você enviar e receber chamadas telefônicas de seu celular.</p>
     <p xml:lang="ro">Aplicația Telefon vă permite să faceți și să primiți apeluri telefonice de pe telefonul inteligent.</p>
-    <p xml:lang="sl">Aplikacija Phone vam omogoča pošiljanje in sprejemanje telefonskih klicev vašega pametnega telefona.</p>
-    <p xml:lang="sv">Telefonprogrammet låter dig enkelt ringa och ta emot telefonsamtal på din smarta telefon.</p>
+    <p xml:lang="sl">Aplikacija Phone vam omogoča preprosto pošiljanje in sprejemanje telefonskih klicev iz vašegapametnega telefona.</p>
+    <p xml:lang="sv">Telefonprogrammet låter dig enkelt ringa och ta emot telefonsamtal med din smarta telefon</p>
     <p xml:lang="tr">Telefon uygulaması, akıllı telefonunuzdan kolaylıkla aramalar yapmanızı ve almanızı sağlar.</p>
     <p xml:lang="uk">Програма «Телефон» надає вам змогу без проблем виконувати та отримувати телефонні дзвінки на вашому смартфоні.</p>
     <p xml:lang="vi">Ứng dụng Điện thoại cho phép bạn dễ dàng gửi và nhận các cuộc gọi từ điện thoại của bạn.</p>
@@ -164,7 +164,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="pt-BR">Funcionalidades:</p>
     <p xml:lang="ro">Caracteristici:</p>
     <p xml:lang="sk">Funkcie:</p>
-    <p xml:lang="sl">Možnosti:</p>
+    <p xml:lang="sl">Zmožnosti:</p>
     <p xml:lang="sv">Funktioner:</p>
     <p xml:lang="tr">Özellikler:</p>
     <p xml:lang="uk">Можливості:</p>
@@ -181,7 +181,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="en-GB">See your call history and easily call the same number again</li>
       <li xml:lang="eo">Vidu vian vokhistorion kaj facile voku la saman numeron refoje</li>
       <li xml:lang="es">Vea su histórico de llamadas y llame fácilmente de nuevo a un número</li>
-      <li xml:lang="eu">Begiratu zure deien historia eta zenbaki berdinari erraz deitu iezaiozu</li>
+      <li xml:lang="eu">Ikusi zure deien historia eta zenbaki berari berriz erraz deitu</li>
       <li xml:lang="fi">Tarkastele puheluhistoriaasi ja soita helposti uudelleen samaan numeroon</li>
       <li xml:lang="fr">Consulter l'historique de vos appels et rappeler facilement le même numéro.</li>
       <li xml:lang="gl">Consulte o historial de chamadas e devolva chamadas facilmente.</li>
@@ -201,7 +201,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="pt">Ver o seu histórico de chamadas e invocar o mesmo número de novo</li>
       <li xml:lang="pt-BR">Veja seu histórico de chamadas e disque facilmente o mesmo número novamente</li>
       <li xml:lang="ro">Vedeți istoricul apelurilor și sunați același număr din nou</li>
-      <li xml:lang="sl">Ogled zgodovine klicev in enostavno ponovno klicanje iste številke</li>
+      <li xml:lang="sl">Oglejte si svojo zgodovino klicev in preprosto znova pokličite isto številko</li>
       <li xml:lang="sv">Se din samtalshistorik och ring enkelt samma nummer igen</li>
       <li xml:lang="tr">Arama geçmişinizi görün ve aynı numarayı kolaylıkla yeniden arayın</li>
       <li xml:lang="uk">Перегляд журналу дзвінків та просте повторне набирання номерів</li>
@@ -237,8 +237,8 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="pt">Gerir os seus contactos que tenham números de telefone atribuídos</li>
       <li xml:lang="pt-BR">Gerencie seus contatos que tenham um número de telefone definido</li>
       <li xml:lang="ro">Gestionați contactele ce au un număr de telefon înregistrat</li>
-      <li xml:lang="sl">Upravljanje vaših stikov, ki imajo nastavljeno telefonsko številko</li>
-      <li xml:lang="sv">Hantera dina kontakter som har ett telefonnummer inställt</li>
+      <li xml:lang="sl">Upravljajte svoje stike, ki imajo nastavljeno telefonsko številko</li>
+      <li xml:lang="sv">Hantera kontakter som har ett telefonnummer inställt</li>
       <li xml:lang="tr">Telefon numarası kayıtlı olan kişilerinizi yönetin</li>
       <li xml:lang="uk">Керування записами контактів, для яких встановлено номер телефону</li>
       <li xml:lang="vi">Quản lí các liên hệ đã đặt số điện thoại</li>
@@ -259,7 +259,7 @@ SPDX-License-Identifier: CC0-1.0
       <caption xml:lang="en-GB">The dialer page</caption>
       <caption xml:lang="eo">La telefonila paĝo</caption>
       <caption xml:lang="es">La página del marcador</caption>
-      <caption xml:lang="eu">Markatzailea-orria</caption>
+      <caption xml:lang="eu">Markatzeko orria</caption>
       <caption xml:lang="fi">Näppäimistösivu</caption>
       <caption xml:lang="fr">La page du numéroteur.</caption>
       <caption xml:lang="gl">A páxina do marcador.</caption>
@@ -279,7 +279,7 @@ SPDX-License-Identifier: CC0-1.0
       <caption xml:lang="pt">A página de marcação</caption>
       <caption xml:lang="pt-BR">A página do discador</caption>
       <caption xml:lang="ro">Pagina apelatorului</caption>
-      <caption xml:lang="sl">Stran klicanja številk</caption>
+      <caption xml:lang="sl">Stran številčnice</caption>
       <caption xml:lang="sv">Uppringningssidan</caption>
       <caption xml:lang="tr">Çevirici</caption>
       <caption xml:lang="uk">Сторінка набирання номеру</caption>
@@ -318,7 +318,7 @@ SPDX-License-Identifier: CC0-1.0
       <caption xml:lang="pt">A ligar ao correio de voz</caption>
       <caption xml:lang="pt-BR">Chamando o correio de voz</caption>
       <caption xml:lang="ro">Apelarea mesageriei vocale</caption>
-      <caption xml:lang="sl">Klic telefonskega predala</caption>
+      <caption xml:lang="sl">Klicanje glasovne pošte</caption>
       <caption xml:lang="sv">Ringa röstbrevlåda</caption>
       <caption xml:lang="tr">Telesekreteri arama</caption>
       <caption xml:lang="uk">Голосова пошта</caption>
@@ -335,7 +335,7 @@ SPDX-License-Identifier: CC0-1.0
   <releases>
     <release version="24.08.0" date="2024-08-14">
       <description>
-       <p>This release is the first release of Plasma Dialer based on Qt6.</p>
+        <p>This release is the first release of Plasma Dialer based on Qt6.</p>
       </description>
     </release>
     <release version="23.01" date="2023-01-30">
