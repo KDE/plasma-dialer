@@ -4,13 +4,19 @@
 
 cmake_minimum_required (VERSION 3.16)
 
-set(PROJECT_VERSION "24.08.0")
-project(plasma-dialer-with-subprojects VERSION ${PROJECT_VERSION})
+project(plasma-dialer)
+set(PROJECT_VERSION "6.1.80")
+set(PROJECT_VERSION_MAJOR 6)
 
-include(FeatureSummary)
+set(PROJECT_DEP_VERSION "6.0.90")
+set(QT_MIN_VERSION "6.7.0")
+set(KF6_MIN_VERSION "6.5.0")
+set(KDE_COMPILERSETTINGS_LEVEL "5.82")
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+include(FeatureSummary)
 
 # ModemManager, oFono
 set(MODEM_SUBSYSTEM "ModemManager" CACHE STRING "Modem subsystem (ModemManager or oFono)")
@@ -28,10 +34,7 @@ if (DIALER_BUILD_SHELL_OVERLAY)
     add_definitions(-DDIALER_BUILD_SHELL_OVERLAY)
 endif() # DIALER_BUILD_SHELL_OVERLAY
 
-set(QT_REQUIRED_VERSION "6.5")
-set(KF_MIN_VERSION "5.240.0")
-
-find_package(ECM ${KF_MIN_VERSION} NO_MODULE)
+find_package(ECM ${KF6_MIN_VERSION} NO_MODULE)
 set_package_properties(ECM PROPERTIES TYPE REQUIRED DESCRIPTION "Extra CMake Modules." URL "https://projects.kde.org/projects/kdesupport/extra-cmake-modules")
 
 # where to look first for cmake modules, before ${CMAKE_ROOT}/Modules/ is checked
