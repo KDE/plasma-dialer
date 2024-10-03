@@ -334,6 +334,7 @@ SPDX-License-Identifier: CC0-1.0
   <launchable type="desktop-id">org.kde.plasma.dialer.desktop</launchable>
   <releases>
     <release version="6.2.0" date="2024-10-08"/>
+    <release version="6.2.0" date="2024-10-08"/>
     <release version="24.08.0" date="2024-08-14">
       <description>
         <p>This release is the first release of Plasma Dialer based on Qt6.</p>
@@ -341,9 +342,6 @@ SPDX-License-Identifier: CC0-1.0
     </release>
     <release version="23.01" date="2023-01-30">
       <url>https://plasma-mobile.org/2023/01/30/january-blog-post/</url>
-    </release>
-    <release version="22.11" date="2022-11-30">
-      <url>https://plasma-mobile.org/2022/11/30/plasma-mobile-gear-22-11/</url>
     </release>
   </releases>
 </component>
