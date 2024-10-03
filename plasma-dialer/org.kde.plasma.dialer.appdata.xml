@@ -333,6 +333,7 @@ SPDX-License-Identifier: CC0-1.0
   </provides>
   <launchable type="desktop-id">org.kde.plasma.dialer.desktop</launchable>
   <releases>
+    <release version="6.2.0" date="2024-10-08"/>
     <release version="24.08.0" date="2024-08-14">
       <description>
         <p>This release is the first release of Plasma Dialer based on Qt6.</p>
@@ -343,73 +344,6 @@ SPDX-License-Identifier: CC0-1.0
     </release>
     <release version="22.11" date="2022-11-30">
       <url>https://plasma-mobile.org/2022/11/30/plasma-mobile-gear-22-11/</url>
-    </release>
-    <release version="22.09" date="2022-09-27">
-      <url>https://www.plasma-mobile.org/2022/09/27/plasma-mobile-gear-22-09/</url>
-    </release>
-    <release version="22.06" date="2022-06-24">
-      <url>https://www.plasma-mobile.org/2022/06/28/plasma-mobile-gear-22-06/</url>
-      <description>
-        <ul>
-          <li>Code improvements and bug-fixes</li>
-        </ul>
-      </description>
-    </release>
-    <release version="22.04" date="2022-04-26">
-      <url>https://www.plasma-mobile.org/2022/04/26/plasma-mobile-gear-22-04/</url>
-      <description>
-        <ul>
-          <li>Port audio handling to use callaudiod, this allows Plasma Dialer to work on wide range of devices.</li>
-          <li>Improve interaction with dialpad</li>
-          <li>General user interface improvements</li>
-        </ul>
-      </description>
-    </release>
-    <release version="22.02" date="2022-02-09">
-      <url>https://www.plasma-mobile.org/2022/02/09/plasma-mobile-gear-22-02/</url>
-      <description>
-        <ul>
-          <li>Confirm with user before clearing history</li>
-          <li>Fix audio profile switching</li>
-          <li>Return to dialer page after call</li>
-          <li>Support choosing of phone number for contacts</li>
-          <li>Pause media player on incoming call</li>
-          <li>General user interface improvements</li>
-        </ul>
-      </description>
-    </release>
-    <release version="21.12" date="2021-12-07">
-      <description>
-        <ul>
-          <li>Port Dialer to ModemManager</li>
-          <li>Introduce haptics feedback</li>
-        </ul>
-      </description>
-      <url>https://www.plasma-mobile.org/2021/12/07/plasma-mobile-gear-21-12/</url>
-    </release>
-    <release version="21.08" date="2021-08-31">
-      <url>https://www.plasma-mobile.org/2021/08/31/plasma-mobile-gear-21-08/</url>
-    </release>
-    <release version="21.07" date="2021-07-20">
-      <url>https://www.plasma-mobile.org/2021/07/20/plasma-mobile-gear-21-07/</url>
-    </release>
-    <release version="21.06" date="2021-06-10">
-      <description>
-        <p>Plasma Mobile Gear 21.06 release</p>
-        <ul>
-          <li>Show contact name and picture in call notifications</li>
-          <li>Show contact name and picture in active call view</li>
-          <li>Slightly improve performance by using Qt's own DelegateRecycler</li>
-          <li>Fix bug which prevented adding + by holding 0</li>
-          <li>Do not try to send 0 as DTMF tone</li>
-          <li>Allow muting microphone</li>
-          <li>Allow to put phone on speaker</li>
-          <li>Use light font for dialpad numbers, since they are sufficiently large in font size</li>
-          <li>Horizontally align voicemail icon</li>
-          <li>Properly handle overflow numbers (vertically so that it's easier to read)</li>
-        </ul>
-      </description>
-      <url>https://www.plasma-mobile.org/2021/06/10/plasma-mobile-update-june/</url>
     </release>
   </releases>
 </component>
