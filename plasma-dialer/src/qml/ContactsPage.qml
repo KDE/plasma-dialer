@@ -7,6 +7,7 @@
 import QtQuick
 import QtQuick.Controls as Controls
 import QtQuick.Layouts
+import QtQuick.Templates as T
 import org.kde.kirigami as Kirigami
 import org.kde.people as KPeople
 import org.kde.kirigamiaddons.components as Components
@@ -37,6 +38,7 @@ Kirigami.ScrollablePage {
         id: callPopup
 
         PhoneNumberDialog {
+            parent: contactsPage.T.Overlay.overlay
         }
 
     }
@@ -91,7 +93,7 @@ Kirigami.ScrollablePage {
                 if (phoneNumbers.length === 1) {
                     applicationWindow().call(phoneNumbers[0].normalizedNumber);
                 } else {
-                    const pop = callPopup.createObject(parent, {
+                    const pop = callPopup.createObject(this, {
                         "numbers": phoneNumbers,
                         "title": i18n("Select number to call")
                     });
