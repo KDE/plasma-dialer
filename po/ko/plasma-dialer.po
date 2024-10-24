@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-14 00:41+0000\n"
+"POT-Creation-Date: 2024-10-24 00:41+0000\n"
 "PO-Revision-Date: 2024-08-20 00:39+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -93,7 +93,7 @@ msgid "History"
 msgstr "통화 기록"
 
 #: src/qml/components/BottomToolbar.qml:55 src/qml/components/Sidebar.qml:71
-#: src/qml/ContactsPage.qml:23
+#: src/qml/ContactsPage.qml:24
 #, kde-format
 msgid "Contacts"
 msgstr "연락처"
@@ -104,7 +104,7 @@ msgstr "연락처"
 msgid "Dialer"
 msgstr "다이얼"
 
-#: src/qml/components/Sidebar.qml:118 src/qml/ContactsPage.qml:31
+#: src/qml/components/Sidebar.qml:118 src/qml/ContactsPage.qml:32
 #: src/qml/DialerPage.qml:69 src/qml/HistoryPage.qml:47
 #: src/qml/settings/SettingsPage.qml:26
 #, kde-format
@@ -116,17 +116,17 @@ msgstr "설정"
 msgid "Quit"
 msgstr "끝내기"
 
-#: src/qml/ContactsPage.qml:55
+#: src/qml/ContactsPage.qml:57
 #, kde-format
 msgid "No contacts have a phone number set"
 msgstr "전화번호가 있는 연락처 없음"
 
-#: src/qml/ContactsPage.qml:96
+#: src/qml/ContactsPage.qml:98
 #, kde-format
 msgid "Select number to call"
 msgstr "전화를 걸 번호 선택"
 
-#: src/qml/ContactsPage.qml:158 src/qml/DialerPage.qml:140
+#: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:140
 #, kde-format
 msgid "Telephony daemons are not responding"
 msgstr "전화 데몬이 응답하지 않음"

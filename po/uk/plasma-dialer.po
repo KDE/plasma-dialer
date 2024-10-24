@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-14 00:41+0000\n"
+"POT-Creation-Date: 2024-10-24 00:41+0000\n"
 "PO-Revision-Date: 2024-05-09 09:44+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
@@ -96,7 +96,7 @@ msgid "History"
 msgstr "Журнал"
 
 #: src/qml/components/BottomToolbar.qml:55 src/qml/components/Sidebar.qml:71
-#: src/qml/ContactsPage.qml:23
+#: src/qml/ContactsPage.qml:24
 #, kde-format
 msgid "Contacts"
 msgstr "Контакти"
@@ -107,7 +107,7 @@ msgstr "Контакти"
 msgid "Dialer"
 msgstr "Засіб набирання"
 
-#: src/qml/components/Sidebar.qml:118 src/qml/ContactsPage.qml:31
+#: src/qml/components/Sidebar.qml:118 src/qml/ContactsPage.qml:32
 #: src/qml/DialerPage.qml:69 src/qml/HistoryPage.qml:47
 #: src/qml/settings/SettingsPage.qml:26
 #, kde-format
@@ -119,17 +119,17 @@ msgstr "Параметри"
 msgid "Quit"
 msgstr "Вийти"
 
-#: src/qml/ContactsPage.qml:55
+#: src/qml/ContactsPage.qml:57
 #, kde-format
 msgid "No contacts have a phone number set"
 msgstr "Не встановлено номер телефону для жодного з контактів"
 
-#: src/qml/ContactsPage.qml:96
+#: src/qml/ContactsPage.qml:98
 #, kde-format
 msgid "Select number to call"
 msgstr "Виберіть номер для набирання"
 
-#: src/qml/ContactsPage.qml:158 src/qml/DialerPage.qml:140
+#: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:140
 #, kde-format
 msgid "Telephony daemons are not responding"
 msgstr "Фонові служби телефонії не відповідають"

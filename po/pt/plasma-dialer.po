@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-14 00:41+0000\n"
+"POT-Creation-Date: 2024-10-24 00:41+0000\n"
 "PO-Revision-Date: 2023-03-06 15:45+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -94,7 +94,7 @@ msgid "History"
 msgstr "Histórico"
 
 #: src/qml/components/BottomToolbar.qml:55 src/qml/components/Sidebar.qml:71
-#: src/qml/ContactsPage.qml:23
+#: src/qml/ContactsPage.qml:24
 #, kde-format
 msgid "Contacts"
 msgstr "Contactos"
@@ -105,7 +105,7 @@ msgstr "Contactos"
 msgid "Dialer"
 msgstr "Teclado"
 
-#: src/qml/components/Sidebar.qml:118 src/qml/ContactsPage.qml:31
+#: src/qml/components/Sidebar.qml:118 src/qml/ContactsPage.qml:32
 #: src/qml/DialerPage.qml:69 src/qml/HistoryPage.qml:47
 #: src/qml/settings/SettingsPage.qml:26
 #, kde-format
@@ -117,17 +117,17 @@ msgstr "Configuração"
 msgid "Quit"
 msgstr "Sair"
 
-#: src/qml/ContactsPage.qml:55
+#: src/qml/ContactsPage.qml:57
 #, kde-format
 msgid "No contacts have a phone number set"
 msgstr "Nenhum contacto tem números de telefone definidos"
 
-#: src/qml/ContactsPage.qml:96
+#: src/qml/ContactsPage.qml:98
 #, kde-format
 msgid "Select number to call"
 msgstr "Seleccione o número para onde ligar"
 
-#: src/qml/ContactsPage.qml:158 src/qml/DialerPage.qml:140
+#: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:140
 #, kde-format
 msgid "Telephony daemons are not responding"
 msgstr ""

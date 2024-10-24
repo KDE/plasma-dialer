@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-14 00:41+0000\n"
+"POT-Creation-Date: 2024-10-24 00:41+0000\n"
 "PO-Revision-Date: 2024-05-09 08:20+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -94,7 +94,7 @@ msgid "History"
 msgstr "היסטוריה"
 
 #: src/qml/components/BottomToolbar.qml:55 src/qml/components/Sidebar.qml:71
-#: src/qml/ContactsPage.qml:23
+#: src/qml/ContactsPage.qml:24
 #, kde-format
 msgid "Contacts"
 msgstr "אנשי קשר"
@@ -105,7 +105,7 @@ msgstr "אנשי קשר"
 msgid "Dialer"
 msgstr "חייגן"
 
-#: src/qml/components/Sidebar.qml:118 src/qml/ContactsPage.qml:31
+#: src/qml/components/Sidebar.qml:118 src/qml/ContactsPage.qml:32
 #: src/qml/DialerPage.qml:69 src/qml/HistoryPage.qml:47
 #: src/qml/settings/SettingsPage.qml:26
 #, kde-format
@@ -117,17 +117,17 @@ msgstr "הגדרות"
 msgid "Quit"
 msgstr "יציאה"
 
-#: src/qml/ContactsPage.qml:55
+#: src/qml/ContactsPage.qml:57
 #, kde-format
 msgid "No contacts have a phone number set"
 msgstr "לאף איש קשר לא מוגדר מספק טלפון"
 
-#: src/qml/ContactsPage.qml:96
+#: src/qml/ContactsPage.qml:98
 #, kde-format
 msgid "Select number to call"
 msgstr "נא לבחור מספר לשיחה"
 
-#: src/qml/ContactsPage.qml:158 src/qml/DialerPage.qml:140
+#: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:140
 #, kde-format
 msgid "Telephony daemons are not responding"
 msgstr "סוכני הטלפוניה לא מגיבים"
