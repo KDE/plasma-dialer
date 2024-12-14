@@ -36,6 +36,7 @@ SPDX-License-Identifier: CC0-1.0
   <name xml:lang="pt-BR">Celular</name>
   <name xml:lang="ro">Telefon</name>
   <name xml:lang="ru">Телефон</name>
+  <name xml:lang="sa">फोनं</name>
   <name xml:lang="sk">Telefón</name>
   <name xml:lang="sl">Telefon</name>
   <name xml:lang="sv">Telefon</name>
@@ -76,6 +77,7 @@ SPDX-License-Identifier: CC0-1.0
   <summary xml:lang="pt-BR">Enviar e receber chamadas telefônicas</summary>
   <summary xml:lang="ro">Trimite și primește apeluri telefonice</summary>
   <summary xml:lang="ru">Совершение и приём телефонных звонков</summary>
+  <summary xml:lang="sa">दूरभाषं प्रेषयन्तु, प्राप्नुवन्तु च</summary>
   <summary xml:lang="sl">Pošilja in sprejema telefonske klice</summary>
   <summary xml:lang="sv">Ring och ta emot telefonsamtal</summary>
   <summary xml:lang="tr">Arama Yapma ve Gelen Aramaları Alma</summary>
@@ -127,6 +129,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="pt-BR">O aplicativo Phone permite a você enviar e receber chamadas telefônicas de seu celular.</p>
     <p xml:lang="ro">Aplicația Telefon vă permite să faceți și să primiți apeluri telefonice de pe telefonul inteligent.</p>
     <p xml:lang="ru">Приложение «Телефон» позволяет с лёгкостью совершать и принимать телефонные звонки с помощью смартфона.</p>
+    <p xml:lang="sa">Phone app इत्यनेन भवन्तः स्मार्टफोनतः सहजतया दूरभाषं प्रेषयितुं प्राप्तुं च शक्नुवन्ति।</p>
     <p xml:lang="sl">Aplikacija Phone vam omogoča preprosto pošiljanje in sprejemanje telefonskih klicev iz vašegapametnega telefona.</p>
     <p xml:lang="sv">Telefonprogrammet låter dig enkelt ringa och ta emot telefonsamtal med din smarta telefon</p>
     <p xml:lang="tr">Telefon uygulaması, akıllı telefonunuzdan kolaylıkla aramalar yapmanızı ve almanızı sağlar.</p>
@@ -167,6 +170,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="pt-BR">Funcionalidades:</p>
     <p xml:lang="ro">Caracteristici:</p>
     <p xml:lang="ru">Возможности:</p>
+    <p xml:lang="sa">गुणाः:</p>
     <p xml:lang="sk">Funkcie:</p>
     <p xml:lang="sl">Zmožnosti:</p>
     <p xml:lang="sv">Funktioner:</p>
@@ -206,6 +210,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="pt-BR">Veja seu histórico de chamadas e disque facilmente o mesmo número novamente</li>
       <li xml:lang="ro">Vedeți istoricul apelurilor și sunați același număr din nou</li>
       <li xml:lang="ru">Просмотр журнала вызовов и удобный повторный вызов номеров</li>
+      <li xml:lang="sa">स्वस्य काल-इतिहासं पश्यन्तु पुनः सहजतया समानं नम्बरं आह्वयन्तु</li>
       <li xml:lang="sl">Oglejte si svojo zgodovino klicev in preprosto znova pokličite isto številko</li>
       <li xml:lang="sv">Se din samtalshistorik och ring enkelt samma nummer igen</li>
       <li xml:lang="tr">Arama geçmişinizi görün ve aynı numarayı kolaylıkla yeniden arayın</li>
@@ -243,6 +248,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="pt-BR">Gerencie seus contatos que tenham um número de telefone definido</li>
       <li xml:lang="ro">Gestionați contactele ce au un număr de telefon înregistrat</li>
       <li xml:lang="ru">Управление контактами с заданными номерами телефонов</li>
+      <li xml:lang="sa">येषु दूरभाषसङ्ख्या सेट् भवति तेषां सम्पर्कं प्रबन्धयन्तु</li>
       <li xml:lang="sl">Upravljajte svoje stike, ki imajo nastavljeno telefonsko številko</li>
       <li xml:lang="sv">Hantera kontakter som har ett telefonnummer inställt</li>
       <li xml:lang="tr">Telefon numarası kayıtlı olan kişilerinizi yönetin</li>
@@ -286,6 +292,7 @@ SPDX-License-Identifier: CC0-1.0
       <caption xml:lang="pt-BR">A página do discador</caption>
       <caption xml:lang="ro">Pagina apelatorului</caption>
       <caption xml:lang="ru">Набор номера</caption>
+      <caption xml:lang="sa">डायलर पृष्ठम्</caption>
       <caption xml:lang="sl">Stran številčnice</caption>
       <caption xml:lang="sv">Uppringningssidan</caption>
       <caption xml:lang="tr">Çevirici</caption>
@@ -326,6 +333,7 @@ SPDX-License-Identifier: CC0-1.0
       <caption xml:lang="pt-BR">Chamando o correio de voz</caption>
       <caption xml:lang="ro">Apelarea mesageriei vocale</caption>
       <caption xml:lang="ru">Голосовая почта</caption>
+      <caption xml:lang="sa">ध्वनिपत्रं आह्वयति</caption>
       <caption xml:lang="sl">Klicanje glasovne pošte</caption>
       <caption xml:lang="sv">Ringa röstbrevlåda</caption>
       <caption xml:lang="tr">Telesekreteri arama</caption>
