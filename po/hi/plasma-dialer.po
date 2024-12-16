@@ -1,0 +1,295 @@
+# Hindi translations for plasma-dialer package.
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the plasma-dialer package.
+# Kali <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-dialer\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-10-24 00:41+0000\n"
+"PO-Revision-Date: 2024-12-15 17:37+0530\n"
+"Last-Translator: Kali <EMAIL@ADDRESS>\n"
+"Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1)\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "तुम्हारे नाम"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "आपके ईमेल"
+
+#: src/main.cpp:153 src/qml/main.qml:111
+#, kde-format
+msgid "Phone"
+msgstr "फ़ोन"
+
+#: src/main.cpp:155
+#, kde-format
+msgid "Plasma phone dialer"
+msgstr "प्लाज्मा फोन डायलर"
+
+#: src/main.cpp:157
+#, kde-format
+msgid "© 2015-2022 KDE Community"
+msgstr "© 2015-2022 केडीई समुदाय"
+
+#: src/main.cpp:160
+#, kde-format
+msgid "Alexey Andreyev"
+msgstr "एलेक्सी आंद्रेयेव"
+
+#: src/qml/call/AsymmetricAnswerSwipe.qml:102
+#, kde-format
+msgid "Swipe to accept"
+msgstr "स्वीकार करने के लिए स्वाइप करें"
+
+#: src/qml/call/CallPage.qml:49 src/qml/call/InCallInlineMessage.qml:13
+#, kde-format
+msgid "Active call list"
+msgstr "सक्रिय कॉल सूची"
+
+#: src/qml/call/CallPage.qml:117
+#, kde-format
+msgid "Incoming..."
+msgstr "आने वाली..."
+
+#: src/qml/call/CallPage.qml:120
+#, kde-format
+msgid "Calling..."
+msgstr "कॉलिंग..."
+
+#: src/qml/call/CallPage.qml:151
+#, kde-format
+msgid "Keypad"
+msgstr "कीपैड"
+
+#: src/qml/call/CallPage.qml:162
+#, kde-format
+msgid "Speaker"
+msgstr "वक्ता"
+
+#: src/qml/call/CallPage.qml:175
+#, kde-format
+msgid "Mute"
+msgstr "आवाज़ बंद करना"
+
+#: src/qml/call/InCallInlineMessage.qml:17
+#, kde-format
+msgid "View"
+msgstr "देखना"
+
+#: src/qml/components/BottomToolbar.qml:42 src/qml/components/Sidebar.qml:52
+#, kde-format
+msgid "History"
+msgstr "इतिहास"
+
+#: src/qml/components/BottomToolbar.qml:55 src/qml/components/Sidebar.qml:71
+#: src/qml/ContactsPage.qml:24
+#, kde-format
+msgid "Contacts"
+msgstr "संपर्क"
+
+#: src/qml/components/BottomToolbar.qml:68 src/qml/components/Sidebar.qml:90
+#: src/qml/DialerPage.qml:24
+#, kde-format
+msgid "Dialer"
+msgstr "डायलर"
+
+#: src/qml/components/Sidebar.qml:118 src/qml/ContactsPage.qml:32
+#: src/qml/DialerPage.qml:69 src/qml/HistoryPage.qml:47
+#: src/qml/settings/SettingsPage.qml:26
+#, kde-format
+msgid "Settings"
+msgstr "सेटिंग्स"
+
+#: src/qml/components/Sidebar.qml:136
+#, kde-format
+msgid "Quit"
+msgstr "छोड़ना"
+
+#: src/qml/ContactsPage.qml:57
+#, kde-format
+msgid "No contacts have a phone number set"
+msgstr "किसी भी संपर्क का फ़ोन नंबर सेट नहीं है"
+
+#: src/qml/ContactsPage.qml:98
+#, kde-format
+msgid "Select number to call"
+msgstr "कॉल करने के लिए नंबर चुनें"
+
+#: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:140
+#, kde-format
+msgid "Telephony daemons are not responding"
+msgstr "टेलीफोनी डेमॉन प्रतिक्रिया नहीं दे रहे हैं"
+
+#: src/qml/DialerPage.qml:150
+#, kde-format
+msgid "Modem devices are not found"
+msgstr "मॉडेम डिवाइस नहीं मिले"
+
+#: src/qml/DialerPage.qml:160
+#, kde-format
+msgid "Voicemail number couldn't be found"
+msgstr "वॉइसमेल नंबर नहीं मिल सका"
+
+#: src/qml/history/HistoryDelegate.qml:65
+#, kde-format
+msgid "Duration: %1"
+msgstr "अवधि: %1"
+
+#: src/qml/HistoryPage.qml:34
+#, kde-format
+msgid "Call History"
+msgstr "कॉल इतिहास"
+
+#: src/qml/HistoryPage.qml:40
+#, kde-format
+msgid "Clear history"
+msgstr "इतिहास मिटा दें"
+
+#: src/qml/HistoryPage.qml:68
+#, kde-format
+msgid "No recent calls"
+msgstr "कोई हालिया कॉल नहीं"
+
+#: src/qml/ImeiSheet.qml:24
+#, kde-format
+msgid "No IMEIs found"
+msgstr "कोई IMEI नहीं मिला"
+
+#: src/qml/ImeiSheet.qml:30
+#, kde-format
+msgid "IMEI"
+msgid_plural "IMEIs"
+msgstr[0] "आईएमईआई"
+msgstr[1] "आईएमईआई"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:25
+#, kde-format
+msgid "Adaptive Call Blocking"
+msgstr "अनुकूली कॉल अवरोधन"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:32
+#, kde-format
+msgid "Ignore calls from unknown numbers"
+msgstr "अज्ञात नंबरों से आने वाली कॉल को अनदेखा करें"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:39
+#, kde-format
+msgid "When a call is an incoming from an unknown number"
+msgstr "जब कॉल किसी अज्ञात नंबर से आती है"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:47
+#, kde-format
+msgid "Immediately hang up"
+msgstr "तुरंत फ़ोन काट दो"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:53
+#, kde-format
+msgid "Ring without notification"
+msgstr "बिना सूचना के रिंग करें"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:59
+#, kde-format
+msgid "Ring with silent notification"
+msgstr "मौन अधिसूचना के साथ रिंग करें"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:68
+#, kde-format
+msgid "Allowed exceptions"
+msgstr "स्वीकृत अपवाद"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:78
+#, kde-format
+msgid "Anonymous numbers"
+msgstr "गुमनाम नंबर"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:86
+#, kde-format
+msgid "Existing outgoing call to number"
+msgstr "मौजूदा आउटगोइंग कॉल टू नंबर"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:94
+#, kde-format
+msgid "Callback within"
+msgstr "कॉलबैक के अंदर"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:113
+#, kde-format
+msgid "minutes"
+msgstr "मिनट"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:126
+#, kde-format
+msgid "Allowed phone number exceptions"
+msgstr "स्वीकृत फ़ोन नंबर अपवाद"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:148
+#: src/qml/settings/CallBlockSettingsPage.qml:186
+#, kde-format
+msgid "Add new pattern"
+msgstr "नया पैटर्न जोड़ें"
+
+#: src/qml/settings/SettingsPage.qml:34
+#, kde-format
+msgid "About"
+msgstr "के बारे में"
+
+#: src/qml/settings/SettingsPage.qml:46
+#, kde-format
+msgid "Adaptive call blocking"
+msgstr "अनुकूली कॉल अवरोधन"
+
+#: src/qml/settings/SettingsPage.qml:59
+#, kde-format
+msgid "Incoming call screen appearance"
+msgstr "इनकमिंग कॉल स्क्रीन का स्वरूप"
+
+#: src/qml/settings/SettingsPage.qml:60
+#, kde-format
+msgid "Buttons"
+msgstr "बटन"
+
+#: src/qml/settings/SettingsPage.qml:60
+#, kde-format
+msgid "Symmetric Swipe"
+msgstr "सममित स्वाइप"
+
+#: src/qml/settings/SettingsPage.qml:60
+#, kde-format
+msgid "Asymmetric Swipe"
+msgstr "असममित स्वाइप"
+
+#: src/qml/USSDSheet.qml:64
+#, kde-format
+msgid "USSD Error"
+msgstr "यूएसएसडी त्रुटि"
+
+#: src/qml/USSDSheet.qml:64
+#, kde-format
+msgid "USSD Message"
+msgstr "यूएसएसडी संदेश"
+
+#: src/qml/USSDSheet.qml:77
+#, kde-format
+msgid "Write response..."
+msgstr "प्रतिक्रिया लिखें..."
+
+#: src/qml/USSDSheet.qml:84
+#, kde-format
+msgid "Send"
+msgstr "भेजना"
+
+#: src/qml/USSDSheet.qml:102
+#, kde-format
+msgid "Cancel USSD session"
+msgstr "USSD सत्र रद्द करें"
