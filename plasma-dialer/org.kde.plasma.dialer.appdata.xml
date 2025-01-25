@@ -362,4 +362,7 @@ SPDX-License-Identifier: CC0-1.0
     <release version="6.2.3" date="2024-11-05"/>
     <release version="6.2.2" date="2024-10-22"/>
   </releases>
+  <requires>
+    <display_length compare="ge">360</display_length>
+  </requires>
 </component>
