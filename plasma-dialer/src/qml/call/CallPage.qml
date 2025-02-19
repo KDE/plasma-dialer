@@ -161,7 +161,8 @@ Kirigami.Page {
                 iconSource: "audio-speakers-symbolic"
                 text: i18n("Speaker")
                 onClicked: {
-                    const speakerMode = !toggledOn;
+                    toggledOn = !toggledOn;
+                    const speakerMode = toggledOn;
                     DialerUtils.setSpeakerMode(speakerMode);
                 }
             }
@@ -174,7 +175,8 @@ Kirigami.Page {
                 iconSource: toggledOn ? "microphone-sensitivity-muted-symbolic" : "microphone-sensitivity-high-symbolic"
                 text: i18n("Mute")
                 onClicked: {
-                    const micMute = !toggledOn;
+                    toggledOn = !toggledOn;
+                    const micMute = toggledOn;
                     DialerUtils.setMute(micMute);
                 }
             }
