@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-24 00:41+0000\n"
+"POT-Creation-Date: 2025-03-06 00:43+0000\n"
 "PO-Revision-Date: 2024-05-09 22:01+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-doc@kde.org>\n"
@@ -78,7 +78,7 @@ msgstr "Klavaro"
 msgid "Speaker"
 msgstr "Parolilo"
 
-#: src/qml/call/CallPage.qml:175
+#: src/qml/call/CallPage.qml:176
 #, kde-format
 msgid "Mute"
 msgstr "Silentigi"

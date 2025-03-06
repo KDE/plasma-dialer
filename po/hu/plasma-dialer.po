@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-24 00:41+0000\n"
+"POT-Creation-Date: 2025-03-06 00:43+0000\n"
 "PO-Revision-Date: 2024-05-11 23:07+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -78,7 +78,7 @@ msgstr "Számbillentyűzet"
 msgid "Speaker"
 msgstr "Hangszóró"
 
-#: src/qml/call/CallPage.qml:175
+#: src/qml/call/CallPage.qml:176
 #, kde-format
 msgid "Mute"
 msgstr "Némítás"

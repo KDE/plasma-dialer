@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-24 00:41+0000\n"
+"POT-Creation-Date: 2025-03-06 00:43+0000\n"
 "PO-Revision-Date: 2022-02-26 03:10+0100\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -79,7 +79,7 @@ msgstr "Tastenfeld"
 msgid "Speaker"
 msgstr "Lautsprecher"
 
-#: src/qml/call/CallPage.qml:175
+#: src/qml/call/CallPage.qml:176
 #, kde-format
 msgid "Mute"
 msgstr "Stummschalten"

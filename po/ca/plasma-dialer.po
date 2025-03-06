@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-24 00:41+0000\n"
+"POT-Creation-Date: 2025-03-06 00:43+0000\n"
 "PO-Revision-Date: 2024-05-09 12:16+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -80,7 +80,7 @@ msgstr "Teclat numèric"
 msgid "Speaker"
 msgstr "Altaveu"
 
-#: src/qml/call/CallPage.qml:175
+#: src/qml/call/CallPage.qml:176
 #, kde-format
 msgid "Mute"
 msgstr "Silencia"

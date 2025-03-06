@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-24 00:41+0000\n"
+"POT-Creation-Date: 2025-03-06 00:43+0000\n"
 "PO-Revision-Date: 2024-05-15 20:36+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -78,7 +78,7 @@ msgstr "Taltastatur"
 msgid "Speaker"
 msgstr "Høgtalar"
 
-#: src/qml/call/CallPage.qml:175
+#: src/qml/call/CallPage.qml:176
 #, kde-format
 msgid "Mute"
 msgstr "Demp"
