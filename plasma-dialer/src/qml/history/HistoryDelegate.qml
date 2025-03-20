@@ -17,6 +17,9 @@ Controls.ItemDelegate {
         Kirigami.Icon {
             width: Kirigami.Units.iconSizes.medium
             height: width
+            color: source == "call-incoming" ? "blue" :
+                    source == "call-missed" ? "red" :
+                    source == "call-outgoing" ? "green" : Kirigami.Theme.textColor
             source: {
                 if (model.direction == DialerTypes.CallDirection.Incoming) {
                     if (model.duration > 0)
