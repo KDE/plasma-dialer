@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-06 00:43+0000\n"
+"POT-Creation-Date: 2025-03-23 00:44+0000\n"
 "PO-Revision-Date: 2024-08-22 16:58+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -58,27 +58,27 @@ msgstr "Velciet, lai paceltu"
 msgid "Active call list"
 msgstr "Aktīvo zvanu saraksts"
 
-#: src/qml/call/CallPage.qml:117
+#: src/qml/call/CallPage.qml:105
 #, kde-format
 msgid "Incoming..."
 msgstr "Ienākošs..."
 
-#: src/qml/call/CallPage.qml:120
+#: src/qml/call/CallPage.qml:108
 #, kde-format
 msgid "Calling..."
 msgstr "Zvana..."
 
-#: src/qml/call/CallPage.qml:151
+#: src/qml/call/CallPage.qml:139
 #, kde-format
 msgid "Keypad"
 msgstr "Tastatūra"
 
-#: src/qml/call/CallPage.qml:162
+#: src/qml/call/CallPage.qml:150
 #, kde-format
 msgid "Speaker"
 msgstr "Skaļrunis"
 
-#: src/qml/call/CallPage.qml:176
+#: src/qml/call/CallPage.qml:161
 #, kde-format
 msgid "Mute"
 msgstr "Apklusināt"
@@ -142,7 +142,7 @@ msgstr "Modema ierīces nav atrastas"
 msgid "Voicemail number couldn't be found"
 msgstr "Balss pasta numurs nav atrasts"
 
-#: src/qml/history/HistoryDelegate.qml:65
+#: src/qml/history/HistoryDelegate.qml:68
 #, kde-format
 msgid "Duration: %1"
 msgstr "Ilgums: %1"

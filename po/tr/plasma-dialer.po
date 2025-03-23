@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-06 00:43+0000\n"
+"POT-Creation-Date: 2025-03-23 00:44+0000\n"
 "PO-Revision-Date: 2024-05-09 19:17+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -57,27 +57,27 @@ msgstr "Kabul etmek için kaydırın"
 msgid "Active call list"
 msgstr "Etkin arama listesi"
 
-#: src/qml/call/CallPage.qml:117
+#: src/qml/call/CallPage.qml:105
 #, kde-format
 msgid "Incoming..."
 msgstr "Gelen arama…"
 
-#: src/qml/call/CallPage.qml:120
+#: src/qml/call/CallPage.qml:108
 #, kde-format
 msgid "Calling..."
 msgstr "Arıyor…"
 
-#: src/qml/call/CallPage.qml:151
+#: src/qml/call/CallPage.qml:139
 #, kde-format
 msgid "Keypad"
 msgstr "Düğme Takımı"
 
-#: src/qml/call/CallPage.qml:162
+#: src/qml/call/CallPage.qml:150
 #, kde-format
 msgid "Speaker"
 msgstr "Hoparlör"
 
-#: src/qml/call/CallPage.qml:176
+#: src/qml/call/CallPage.qml:161
 #, kde-format
 msgid "Mute"
 msgstr "Sessize Al"
@@ -141,7 +141,7 @@ msgstr "Modem aygıtı bulunamadı"
 msgid "Voicemail number couldn't be found"
 msgstr "Telesekreter numarası bulunamadı"
 
-#: src/qml/history/HistoryDelegate.qml:65
+#: src/qml/history/HistoryDelegate.qml:68
 #, kde-format
 msgid "Duration: %1"
 msgstr "Arama süresi: %1"

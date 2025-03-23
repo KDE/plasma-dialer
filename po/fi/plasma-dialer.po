@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-06 00:43+0000\n"
+"POT-Creation-Date: 2025-03-23 00:44+0000\n"
 "PO-Revision-Date: 2024-10-18 11:45+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -57,27 +57,27 @@ msgstr "Hyväksy pyyhkäisemällä"
 msgid "Active call list"
 msgstr "Aktiivisten puhelujen luettelo"
 
-#: src/qml/call/CallPage.qml:117
+#: src/qml/call/CallPage.qml:105
 #, kde-format
 msgid "Incoming..."
 msgstr "Saapuva…"
 
-#: src/qml/call/CallPage.qml:120
+#: src/qml/call/CallPage.qml:108
 #, kde-format
 msgid "Calling..."
 msgstr "Soitetaan…"
 
-#: src/qml/call/CallPage.qml:151
+#: src/qml/call/CallPage.qml:139
 #, kde-format
 msgid "Keypad"
 msgstr "Numeronäppäimistö"
 
-#: src/qml/call/CallPage.qml:162
+#: src/qml/call/CallPage.qml:150
 #, kde-format
 msgid "Speaker"
 msgstr "Kaiutin"
 
-#: src/qml/call/CallPage.qml:176
+#: src/qml/call/CallPage.qml:161
 #, kde-format
 msgid "Mute"
 msgstr "Vaimenna"
@@ -141,7 +141,7 @@ msgstr "Modeemilaitteita ei löytynyt"
 msgid "Voicemail number couldn't be found"
 msgstr "Vastaajan numeroa ei löytynyt"
 
-#: src/qml/history/HistoryDelegate.qml:65
+#: src/qml/history/HistoryDelegate.qml:68
 #, kde-format
 msgid "Duration: %1"
 msgstr "Kesto: %1"

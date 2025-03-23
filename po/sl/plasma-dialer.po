@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-06 00:43+0000\n"
+"POT-Creation-Date: 2025-03-23 00:44+0000\n"
 "PO-Revision-Date: 2024-05-09 06:54+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -58,27 +58,27 @@ msgstr "S prstom potegni za sprejem"
 msgid "Active call list"
 msgstr "Aktivni seznam klicev"
 
-#: src/qml/call/CallPage.qml:117
+#: src/qml/call/CallPage.qml:105
 #, kde-format
 msgid "Incoming..."
 msgstr "Prihajajoče..."
 
-#: src/qml/call/CallPage.qml:120
+#: src/qml/call/CallPage.qml:108
 #, kde-format
 msgid "Calling..."
 msgstr "Kličem..."
 
-#: src/qml/call/CallPage.qml:151
+#: src/qml/call/CallPage.qml:139
 #, kde-format
 msgid "Keypad"
 msgstr "Tipkovnica"
 
-#: src/qml/call/CallPage.qml:162
+#: src/qml/call/CallPage.qml:150
 #, kde-format
 msgid "Speaker"
 msgstr "Zvočnik"
 
-#: src/qml/call/CallPage.qml:176
+#: src/qml/call/CallPage.qml:161
 #, kde-format
 msgid "Mute"
 msgstr "Nemo"
@@ -142,7 +142,7 @@ msgstr "Ni najdenih modemskih naprav"
 msgid "Voicemail number couldn't be found"
 msgstr "Številke telefonskega odzivnika ni bilo mogoče najti"
 
-#: src/qml/history/HistoryDelegate.qml:65
+#: src/qml/history/HistoryDelegate.qml:68
 #, kde-format
 msgid "Duration: %1"
 msgstr "Trajanje: %1"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-06 00:43+0000\n"
+"POT-Creation-Date: 2025-03-23 00:44+0000\n"
 "PO-Revision-Date: 2025-01-17 07:30+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -58,27 +58,27 @@ msgstr "اسحب للقبول"
 msgid "Active call list"
 msgstr "قائمة المكالمات النشطة"
 
-#: src/qml/call/CallPage.qml:117
+#: src/qml/call/CallPage.qml:105
 #, kde-format
 msgid "Incoming..."
 msgstr "قادم..."
 
-#: src/qml/call/CallPage.qml:120
+#: src/qml/call/CallPage.qml:108
 #, kde-format
 msgid "Calling..."
 msgstr "يتصل..."
 
-#: src/qml/call/CallPage.qml:151
+#: src/qml/call/CallPage.qml:139
 #, kde-format
 msgid "Keypad"
 msgstr "لوح المفاتيح"
 
-#: src/qml/call/CallPage.qml:162
+#: src/qml/call/CallPage.qml:150
 #, kde-format
 msgid "Speaker"
 msgstr "المكبر"
 
-#: src/qml/call/CallPage.qml:176
+#: src/qml/call/CallPage.qml:161
 #, kde-format
 msgid "Mute"
 msgstr "اكتم"
@@ -142,7 +142,7 @@ msgstr "لا يوجد أجهزة مودم"
 msgid "Voicemail number couldn't be found"
 msgstr "لا يوجد رقم البريد الصوتي"
 
-#: src/qml/history/HistoryDelegate.qml:65
+#: src/qml/history/HistoryDelegate.qml:68
 #, kde-format
 msgid "Duration: %1"
 msgstr "المدة: %1"
