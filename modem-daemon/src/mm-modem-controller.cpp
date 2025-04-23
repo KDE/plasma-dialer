@@ -53,9 +53,10 @@ void ModemManagerController::ussdInitiate(const QString &deviceUni, const QStrin
         During the following call to waitForFinished(), the DBus client waits for the DBus server to send a reply.
         In the meantime, the ModemManager instance will send the USSD request and wait for an USSD response.
         Once the ModemManager instance has received an USSD response, it will send a DBus response as well as a state update, in a possibly undefined order.
-        Even if the state update would be sent before the DBus response, it will be received from this code after the DBus response, as waitForFinished() waits for the correct DBus response and queues any other DBus activity (such as the state update).
-        Hence, the state update will always be received later than waitForFinished() returns.
-        Hence, the ussdInitiateComplete() call will contain the correct message, but the corresponding state update will only happen (milliseconds) later.
+        Even if the state update would be sent before the DBus response, it will be received from this code after the DBus response, as waitForFinished() waits
+       for the correct DBus response and queues any other DBus activity (such as the state update). Hence, the state update will always be received later than
+       waitForFinished() returns. Hence, the ussdInitiateComplete() call will contain the correct message, but the corresponding state update will only happen
+       (milliseconds) later.
     */
     reply.waitForFinished();
     if (reply.isError()) {
@@ -440,6 +441,10 @@ CallObject *ModemManagerController::getVoiceCallObject(const QString &deviceUni,
 void ModemManagerController::initAddedCall(const QSharedPointer<ModemManager::ModemDevice> &device, const QSharedPointer<ModemManager::Call> &call)
 {
     qDebug() << Q_FUNC_INFO << "call details:" << call->direction() << call->state() << call->stateReason();
+    if (getVoiceCallObject(device->uni(), call->uni())) {
+        // voice call object already exists, we do not need to append to list again
+        return;
+    }
     auto voiceCallObject = this->voiceCallObject(device, call, this);
     m_calls.append(voiceCallObject);
     connect(call.get(),
