@@ -126,8 +126,7 @@ Name[zh_CN]=电话
 Name[zh_TW]=電話
 Type=Application
 Icon=dialer
-# https://invent.kde.org/plasma/kwin/-/merge_requests/6053
-Exec=/usr/bin/plasma-dialer %u
+Exec=@CMAKE_INSTALL_FULL_BINDIR@/plasma-dialer %u
 Categories=Qt;KDE;Telephony;Network;
 MimeType=x-scheme-handler/tel;x-scheme-handler/callto;
 InitialPreference=10
