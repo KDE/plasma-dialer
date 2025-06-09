@@ -1,13 +1,14 @@
-# Copyright (C) YEAR This file is copyright:
+# Spanish translations for plasma-dialer.po package.
+# Copyright (C) 2020-2025 This file is copyright:
 # This file is distributed under the same license as the plasma-dialer package.
 #
-# Víctor Rodrigo Córdoba <vrcordoba@gmail.com>, 2020, 2021, 2022, 2023, 2024.
+# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024, 2025 Víctor Rodrigo Córdoba <vrcordoba@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-23 00:44+0000\n"
-"PO-Revision-Date: 2024-05-11 17:44+0200\n"
+"PO-Revision-Date: 2025-06-09 02:23+0100\n"
 "Last-Translator: Víctor Rodrigo Córdoba <vrcordoba@gmail.com>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -60,12 +61,12 @@ msgstr "Lista de llamadas activa"
 #: src/qml/call/CallPage.qml:105
 #, kde-format
 msgid "Incoming..."
-msgstr "Entrante..."
+msgstr "Entrante…"
 
 #: src/qml/call/CallPage.qml:108
 #, kde-format
 msgid "Calling..."
-msgstr "Llamando..."
+msgstr "Llamando…"
 
 #: src/qml/call/CallPage.qml:139
 #, kde-format
@@ -282,7 +283,7 @@ msgstr "Mensaje USSD"
 #: src/qml/USSDSheet.qml:77
 #, kde-format
 msgid "Write response..."
-msgstr "Escribir respuesta..."
+msgstr "Escribir respuesta…"
 
 #: src/qml/USSDSheet.qml:84
 #, kde-format
