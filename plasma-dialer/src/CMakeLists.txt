@@ -13,8 +13,14 @@ find_package(KF6KirigamiAddons 1.3 REQUIRED)
 
 if (DIALER_BUILD_SHELL_OVERLAY)
     find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED Gui WaylandClient)
-    find_package(Qt6Gui ${QT_MIN_VERSION} CONFIG REQUIRED Private)
-    find_package(Qt6WaylandClient ${QT_MIN_VERSION} COMPONENTS CONFIG REQUIRED Private)
+
+    if (Qt6Gui_VERSION VERSION_GREATER_EQUAL "6.10.0")
+        find_package(Qt6 REQUIRED COMPONENTS GuiPrivate WaylandClientPrivate)
+    else()
+        find_package(Qt6Gui ${QT_MIN_VERSION} CONFIG REQUIRED Private)
+        find_package(Qt6WaylandClient ${QT_MIN_VERSION} COMPONENTS CONFIG REQUIRED Private)
+    endif()
+
     find_package(Wayland REQUIRED)
     find_package(PlasmaWaylandProtocols 1.8 CONFIG)
     find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS WindowSystem)
