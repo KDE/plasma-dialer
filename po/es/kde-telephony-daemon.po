@@ -1,13 +1,14 @@
-# Copyright (C) YEAR This file is copyright:
+# Spanish translations for kde-telephony-daemon.po package.
+# Copyright (C) 2021-2025 This file is copyright:
 # This file is distributed under the same license as the plasma-dialer package.
 #
-# Víctor Rodrigo Córdoba <vrcordoba@gmail.com>, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2025 Víctor Rodrigo Córdoba <vrcordoba@gmail.com>
 msgid ""
 msgstr ""
-"Project-Id-Version: plasma-dialer\n"
+"Project-Id-Version: kde-telephony-daemon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-10 00:40+0000\n"
-"PO-Revision-Date: 2023-03-11 17:24+0100\n"
+"PO-Revision-Date: 2025-06-18 01:56+0100\n"
 "Last-Translator: Víctor Rodrigo Córdoba <vrcordoba@gmail.com>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
