@@ -2,37 +2,37 @@
 # Copyright (C) 2022 This file is copyright:
 # This file is distributed under the same license as the plasma-dialer package.
 # Frederik Schwarzer <schwarzer@kde.org>, 2022.
-#
+# SPDX-FileCopyrightText: 2025 Alois Spitzbart <spitz234@hotmail.com>
 # Automatically generated, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-telephony-daemon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-10 00:40+0000\n"
-"PO-Revision-Date: 2022-01-03 22:23+0100\n"
-"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
-"Language-Team: German <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2025-06-29 18:18+0200\n"
+"Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 21.08.0\n"
+"X-Generator: Lokalize 25.04.2\n"
 
 #: src/notification-manager.cpp:114 src/notification-manager.cpp:264
 #, kde-format
 msgid "No Caller ID"
-msgstr ""
+msgstr "Anonymer Anruf"
 
 #: src/notification-manager.cpp:124
 #, kde-format
 msgid "Missed call"
-msgstr ""
+msgstr "Verpasster Anruf"
 
 #: src/notification-manager.cpp:125
 #, kde-format
 msgid "Missed call from %1"
-msgstr ""
+msgstr "Verpasster Anruf von %1"
 
 #: src/notification-manager.cpp:147
 #, kde-format
