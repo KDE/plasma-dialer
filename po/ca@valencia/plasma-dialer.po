@@ -127,7 +127,7 @@ msgstr "Cap contacte té definit un número de telèfon"
 #: src/qml/ContactsPage.qml:98
 #, kde-format
 msgid "Select number to call"
-msgstr "Seleccioneu el número al que s'ha de tocar"
+msgstr "Trieu el número al que s'ha de tocar"
 
 #: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:140
 #, kde-format
