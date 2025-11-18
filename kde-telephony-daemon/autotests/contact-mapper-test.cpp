@@ -36,7 +36,7 @@ private Q_SLOTS:
         QTest::addColumn<QString>("number");
         QTest::addColumn<QString>("uri");
 
-        QTest::newRow("nonexistant number") << QStringLiteral("+49123456") << QString();
+        QTest::newRow("nonexistent number") << QStringLiteral("+49123456") << QString();
 
         QTest::newRow("contact 2, foreign country code") << QStringLiteral("+1 234 567 890") << QStringLiteral("fakesource://contact2");
         QTest::newRow("contact 2, dashes") << QStringLiteral("+1-234-567-890") << QStringLiteral("fakesource://contact2");

@@ -58,8 +58,8 @@ void CallManager::onCallStateChanged(const DialerTypes::CallData &callData)
     m_callUtils->setCallState(callData);
 
     // Add inhibition in logind when call is active.
-    // Otherwise if powerdevil is configured to suspend device afer few minutes,
-    // it will happily put it to suspend, freezing calls.
+    // Otherwise if powerdevil is configured to suspend device after a few minutes,
+    // it will happily put it into suspend, freezing calls.
     //
     // For XDG spec, see also:
     // https://gitlab.freedesktop.org/xdg/xdg-specs/-/issues/99
