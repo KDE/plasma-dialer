@@ -25,6 +25,8 @@ FormCard.FormCardPage {
     title: i18n("Adaptive Call Blocking")
 
     FormCard.FormCard {
+        Layout.topMargin: Kirigami.Units.gridUnit
+
         FormCard.FormSwitchDelegate {
             id: adaptiveBlocking
 
@@ -32,7 +34,6 @@ FormCard.FormCardPage {
             text: i18n("Ignore calls from unknown numbers")
             onToggled: Config.adaptiveBlocking = checked
         }
-
     }
 
     FormCard.FormHeader {
