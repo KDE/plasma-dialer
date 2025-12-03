@@ -25,6 +25,10 @@ FormCard.FormCardPage {
 
     title: i18n("Settings")
 
+    flickable.transform: Translate {
+        y: yTranslate
+    }
+
     FormCard.FormCard {
         Layout.topMargin: Kirigami.Units.gridUnit
 
