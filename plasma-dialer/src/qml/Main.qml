@@ -7,47 +7,46 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import QtQuick.LocalStorage
+
 import org.kde.kirigami as Kirigami
 import org.kde.telephony
+import org.kde.plasma.dialer
+
 import "call"
 
 Kirigami.ApplicationWindow {
     id: root
 
     readonly property bool smallMode: applicationWindow().height < Kirigami.Units.gridUnit * 28
-    property bool lockscreenMode: ScreenSaverUtils.getActive()
+    property bool lockscreenMode: LockScreenUtils.lockscreenActive
     property bool isWidescreen: root.width >= root.height
 
     signal ussdUserInitiated()
 
-    function updateLockscreenMode(mode) {
-        root.lockscreenMode = mode;
-    }
-
     function getPage(name) {
         switch (name) {
         case "History":
-            return pagePool.loadPage("qrc:/HistoryPage.qml");
+            return pagePool.loadPage("HistoryPage.qml");
         case "Contacts":
-            return pagePool.loadPage("qrc:/ContactsPage.qml");
+            return pagePool.loadPage("ContactsPage.qml");
         case "Dialer":
-            return pagePool.loadPage("qrc:/DialerPage.qml");
+            return pagePool.loadPage("DialerPage.qml");
         case "Call":
-            return pagePool.loadPage("qrc:/call/CallPage.qml");
+            return pagePool.loadPage("call/CallPage.qml");
         case "Settings":
-            return pagePool.loadPage("qrc:/settings/SettingsPage.qml");
+            return pagePool.loadPage("settings/SettingsPage.qml");
         case "CallBlockSettings":
-            return pagePool.loadPage("qrc:/settings/CallBlockSettingsPage.qml");
+            return pagePool.loadPage("settings/CallBlockSettingsPage.qml");
         case "About":
-            return pagePool.loadPage("qrc:/AboutPage.qml");
+            return pagePool.loadPage("AboutPage.qml");
         }
     }
 
     function switchToPage(page, depth) {
         if (!page)
-            return ;
+            return;
 
-        while (pageStack.depth > depth)pageStack.pop()
+        while (pageStack.depth > depth) pageStack.pop()
         // page switch animation
         yAnim.target = page;
         yAnim.properties = "yTranslate";
@@ -74,7 +73,7 @@ Kirigami.ApplicationWindow {
         } else {
             sidebarLoader.active = false;
             globalDrawer = null;
-            let bottomToolbar = Qt.createComponent("qrc:/components/BottomToolbar.qml");
+            let bottomToolbar = Qt.createComponent("components/BottomToolbar.qml");
             footer = bottomToolbar.createObject(root);
         }
     }
@@ -96,12 +95,11 @@ Kirigami.ApplicationWindow {
         switchToPage(getPage("Dialer"), 0);
     }
 
-    wideScreen: false
-    pageStack.globalToolBar.canContainHandles: true
     pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.ToolBar
     pageStack.globalToolBar.showNavigationButtons: Kirigami.ApplicationHeaderStyle.ShowBackButton
     pageStack.popHiddenPages: true
     pageStack.columnView.columnResizeMode: Kirigami.ColumnView.SingleColumn
+
     // needs to work with 360x720 (+ panel heights)
     minimumWidth: 300
     minimumHeight: minimumWidth + 1
@@ -109,6 +107,7 @@ Kirigami.ApplicationWindow {
     height: Kirigami.Settings.isMobile ? 650 : 500
     visibility: lockscreenMode ? "FullScreen" : "Windowed"
     title: i18n("Phone")
+
     onIsWidescreenChanged: changeNav(isWidescreen)
     Component.onCompleted: {
         // initial page and nav type
@@ -145,7 +144,7 @@ Kirigami.ApplicationWindow {
     Loader {
         id: sidebarLoader
 
-        source: "qrc:/components/Sidebar.qml"
+        source: "components/Sidebar.qml"
         active: false
     }
 

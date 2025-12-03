@@ -52,6 +52,8 @@ include(ECMSetupVersion)
 include(KDEClangFormat)
 include(KDEGitCommitHooks)
 include(ECMCheckOutboundLicense)
+include(ECMQMLModules)
+include(ECMQmlModule)
 
 ecm_setup_version(${PROJECT_VERSION}
     VARIABLE_PREFIX PLASMADIALER
