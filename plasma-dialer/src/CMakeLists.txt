@@ -2,13 +2,47 @@
 #
 # SPDX-License-Identifier: LicenseRef-KDE-Accepted-GPL
 
-add_executable(plasma-dialer
-    main.cpp
-    resources.qrc   
+set(dialer_SRCS
+    lockscreenutils.cpp
 )
 
+kconfig_add_kcfg_files(dialer_SRCS GENERATE_MOC config.kcfgc)
+
+add_executable(plasma-dialer main.cpp ${dialer_SRCS})
+
+ecm_add_qml_module(plasma-dialer GENERATE_PLUGIN_SOURCE URI org.kde.plasma.dialer)
+
+qt_target_qml_sources(plasma-dialer QML_FILES
+    qml/Main.qml
+    qml/components/Sidebar.qml
+    qml/components/BottomToolbar.qml
+    qml/components/CloseButtonBackground.qml
+    qml/DialerPage.qml
+    qml/ContactsPage.qml
+    qml/HistoryPage.qml
+    qml/AboutPage.qml
+    qml/settings/SettingsPage.qml
+    qml/settings/CallBlockSettingsPage.qml
+    qml/call/InCallInlineMessage.qml
+    qml/call/AsymmetricAnswerSwipe.qml
+    qml/call/SymmetricAnswerSwipe.qml
+    qml/call/AnswerButtons.qml
+    qml/call/CallPage.qml
+    qml/call/Avatar.qml
+    qml/call/ActiveCallView.qml
+    qml/call/CallPageButton.qml
+    qml/history/HistoryDelegate.qml
+    qml/dialpad/Dialpad.qml
+    qml/dialpad/DialerButton.qml
+    qml/dialpad/DialerIconButton.qml
+    qml/USSDSheet.qml
+    qml/ImeiSheet.qml
+    qml/PhoneNumberDialog.qml
+)
+
+
 find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED Core Quick Qml QuickControls2)
-find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Config CoreAddons I18n DBusAddons)
+find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Config Crash CoreAddons I18n DBusAddons)
 find_package(KF6KirigamiAddons 1.3 REQUIRED)
 
 if (DIALER_BUILD_SHELL_OVERLAY)
@@ -36,20 +70,20 @@ if (DIALER_BUILD_SHELL_OVERLAY)
     )
 endif() # DIALER_BUILD_SHELL_OVERLAY
 
-target_include_directories(plasma-dialer PRIVATE ${CMAKE_BINARY_DIR})
-
-target_link_libraries(plasma-dialer
+target_link_libraries(plasma-dialer PRIVATE
     Qt::Core
     Qt::Quick
     Qt::Qml
     Qt::QuickControls2
     KF6::ConfigGui
     KF6::CoreAddons
+    KF6::Crash
     KF6::I18n
+    KF6::I18nQml
     KF6::DBusAddons
 )
 if (DIALER_BUILD_SHELL_OVERLAY)
-    target_link_libraries(plasma-dialer
+    target_link_libraries(plasma-dialer PRIVATE
         Qt::GuiPrivate
         Qt::WaylandClient
         Qt::WaylandClientPrivate
@@ -66,7 +100,7 @@ if (DIALER_BUILD_SHELL_OVERLAY)
     )
 endif() # DIALER_BUILD_SHELL_OVERLAY
 
-kconfig_add_kcfg_files(plasma-dialer config.kcfgc GENERATE_MOC)
+target_include_directories(plasma-dialer PRIVATE ${CMAKE_BINARY_DIR})
 install(TARGETS plasma-dialer ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 set(RINGING_SOUND "phone-incoming-call")
 set(RINGING_WITHOUT_POPUP_SOUND "phone-incoming-call")
