@@ -10,13 +10,17 @@ Kirigami.OverlayDrawer {
     id: drawer
 
     modal: false
+    collapsible: false
+    collapsed: false
     width: Kirigami.Units.gridUnit * 5
     height: applicationWindow().height
     edge: Qt.application.layoutDirection === Qt.RightToLeft ? Qt.RightEdge : Qt.LeftEdge
     parent: QQC2.Overlay.overlay
     x: 0
+
     Kirigami.Theme.colorSet: Kirigami.Theme.Window
     Kirigami.Theme.inherit: false
+
     leftPadding: 0
     rightPadding: 0
     topPadding: 0
@@ -31,6 +35,7 @@ Kirigami.OverlayDrawer {
 
         QQC2.ScrollView {
             id: scrollView
+            clip: true
 
             Layout.fillWidth: true
             Layout.fillHeight: true
@@ -99,49 +104,43 @@ Kirigami.OverlayDrawer {
                         });
                     }
                 }
-
-                Item {
-                    Layout.fillHeight: true
-                }
-
-                Kirigami.Separator {
-                    Layout.fillWidth: true
-                    Layout.rightMargin: Kirigami.Units.smallSpacing
-                    Layout.leftMargin: Kirigami.Units.smallSpacing
-                }
-
-                Kirigami.NavigationTabButton {
-                    property var page: applicationWindow().getPage("Settings")
-
-                    Layout.fillWidth: true
-                    width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
-                    text: i18n("Settings")
-                    icon.name: "settings-configure"
-                    checked: pageStack.currentItem === page
-                    enabled: !applicationWindow().lockscreenMode
-                    onClicked: {
-                        if (applicationWindow().pageStack.currentItem !== page)
-                            applicationWindow().switchToPage(page, 0);
-                        else
-                            checked = Qt.binding(function() {
-                            return applicationWindow().pageStack.currentItem === page;
-                        });
-                    }
-                }
-
-                Kirigami.NavigationTabButton {
-                    Layout.fillWidth: true
-                    width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
-                    visible: applicationWindow().lockscreenMode
-                    text: i18n("Quit")
-                    icon.name: "window-close-symbolic"
-                    onClicked: {
-                        Qt.quit();
-                    }
-                }
-
             }
+        }
 
+        Kirigami.Separator {
+            Layout.fillWidth: true
+            Layout.rightMargin: Kirigami.Units.smallSpacing
+            Layout.leftMargin: Kirigami.Units.smallSpacing
+        }
+
+        Kirigami.NavigationTabButton {
+            property var page: applicationWindow().getPage("Settings")
+
+            Layout.fillWidth: true
+            width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
+            text: i18n("Settings")
+            icon.name: "settings-configure"
+            checked: pageStack.currentItem === page
+            enabled: !applicationWindow().lockscreenMode
+            onClicked: {
+                if (applicationWindow().pageStack.currentItem !== page)
+                    applicationWindow().switchToPage(page, 0);
+                else
+                    checked = Qt.binding(function() {
+                    return applicationWindow().pageStack.currentItem === page;
+                });
+            }
+        }
+
+        Kirigami.NavigationTabButton {
+            Layout.fillWidth: true
+            width: column.width - column.Layout.leftMargin - column.Layout.rightMargin
+            visible: applicationWindow().lockscreenMode
+            text: i18n("Quit")
+            icon.name: "window-close-symbolic"
+            onClicked: {
+                Qt.quit();
+            }
         }
 
     }
