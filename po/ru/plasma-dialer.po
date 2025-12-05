@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2025-12-05 00:45+0000\n"
 "PO-Revision-Date: 2024-12-04 17:01+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -29,22 +29,22 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kekcuha@gmail.com, translation-team@basealt.ru"
 
-#: src/main.cpp:153 src/qml/main.qml:111
+#: src/main.cpp:138 src/qml/Main.qml:109
 #, kde-format
 msgid "Phone"
 msgstr "Телефон"
 
-#: src/main.cpp:155
+#: src/main.cpp:140
 #, kde-format
 msgid "Plasma phone dialer"
 msgstr "Номеронабиратель Plasma"
 
-#: src/main.cpp:157
+#: src/main.cpp:142
 #, kde-format
 msgid "© 2015-2022 KDE Community"
 msgstr "© Сообщество KDE, 2015-2022"
 
-#: src/main.cpp:160
+#: src/main.cpp:145
 #, kde-format
 msgid "Alexey Andreyev"
 msgstr "Алексей Андреев"
@@ -89,31 +89,31 @@ msgstr "Выключить звук"
 msgid "View"
 msgstr "Вид"
 
-#: src/qml/components/BottomToolbar.qml:42 src/qml/components/Sidebar.qml:52
+#: src/qml/components/BottomToolbar.qml:42 src/qml/components/Sidebar.qml:57
 #, kde-format
 msgid "History"
 msgstr "Журнал"
 
-#: src/qml/components/BottomToolbar.qml:55 src/qml/components/Sidebar.qml:71
+#: src/qml/components/BottomToolbar.qml:55 src/qml/components/Sidebar.qml:76
 #: src/qml/ContactsPage.qml:24
 #, kde-format
 msgid "Contacts"
 msgstr "Контакты"
 
-#: src/qml/components/BottomToolbar.qml:68 src/qml/components/Sidebar.qml:90
+#: src/qml/components/BottomToolbar.qml:68 src/qml/components/Sidebar.qml:95
 #: src/qml/DialerPage.qml:24
 #, kde-format
 msgid "Dialer"
 msgstr "Номеронабиратель"
 
-#: src/qml/components/Sidebar.qml:118 src/qml/ContactsPage.qml:32
+#: src/qml/components/Sidebar.qml:121 src/qml/ContactsPage.qml:32
 #: src/qml/DialerPage.qml:69 src/qml/HistoryPage.qml:47
 #: src/qml/settings/SettingsPage.qml:26
 #, kde-format
 msgid "Settings"
 msgstr "Параметры"
 
-#: src/qml/components/Sidebar.qml:136
+#: src/qml/components/Sidebar.qml:139
 #, kde-format
 msgid "Quit"
 msgstr "Выйти"
@@ -182,93 +182,93 @@ msgstr[3] "IMEI"
 msgid "Adaptive Call Blocking"
 msgstr "Адаптивная блокировка вызовов"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:32
+#: src/qml/settings/CallBlockSettingsPage.qml:34
 #, kde-format
 msgid "Ignore calls from unknown numbers"
 msgstr "Игнорировать звонки с неизвестных номеров"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:39
+#: src/qml/settings/CallBlockSettingsPage.qml:40
 #, kde-format
 msgid "When a call is an incoming from an unknown number"
 msgstr "При вызове с незнакомого номера"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:47
+#: src/qml/settings/CallBlockSettingsPage.qml:48
 #, kde-format
 msgid "Immediately hang up"
 msgstr "Немедленно вешать трубку"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:53
+#: src/qml/settings/CallBlockSettingsPage.qml:54
 #, kde-format
 msgid "Ring without notification"
 msgstr "Звонить без уведомления"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:59
+#: src/qml/settings/CallBlockSettingsPage.qml:60
 #, kde-format
 msgid "Ring with silent notification"
 msgstr "Звонить с беззвучным уведомлением"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:68
+#: src/qml/settings/CallBlockSettingsPage.qml:69
 #, kde-format
 msgid "Allowed exceptions"
 msgstr "Разрешённые исключения"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:78
+#: src/qml/settings/CallBlockSettingsPage.qml:79
 #, kde-format
 msgid "Anonymous numbers"
 msgstr "Анонимные номера"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:86
+#: src/qml/settings/CallBlockSettingsPage.qml:87
 #, kde-format
 msgid "Existing outgoing call to number"
 msgstr "При существующем исходящем вызове на номер"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:94
+#: src/qml/settings/CallBlockSettingsPage.qml:95
 #, kde-format
 msgid "Callback within"
 msgstr "Перезванивать через"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:113
+#: src/qml/settings/CallBlockSettingsPage.qml:114
 #, kde-format
 msgid "minutes"
 msgstr "минут"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:126
+#: src/qml/settings/CallBlockSettingsPage.qml:127
 #, kde-format
 msgid "Allowed phone number exceptions"
 msgstr "Исключения"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:148
-#: src/qml/settings/CallBlockSettingsPage.qml:186
+#: src/qml/settings/CallBlockSettingsPage.qml:149
+#: src/qml/settings/CallBlockSettingsPage.qml:187
 #, kde-format
 msgid "Add new pattern"
 msgstr "Создать шаблон"
 
-#: src/qml/settings/SettingsPage.qml:34
+#: src/qml/settings/SettingsPage.qml:38
 #, kde-format
 msgid "About"
 msgstr "О программе"
 
-#: src/qml/settings/SettingsPage.qml:46
+#: src/qml/settings/SettingsPage.qml:50
 #, kde-format
 msgid "Adaptive call blocking"
 msgstr "Адаптивная блокировка вызовов"
 
-#: src/qml/settings/SettingsPage.qml:59
+#: src/qml/settings/SettingsPage.qml:63
 #, kde-format
 msgid "Incoming call screen appearance"
 msgstr "Внешний вид экрана вызова"
 
-#: src/qml/settings/SettingsPage.qml:60
+#: src/qml/settings/SettingsPage.qml:64
 #, kde-format
 msgid "Buttons"
 msgstr "Кнопки"
 
-#: src/qml/settings/SettingsPage.qml:60
+#: src/qml/settings/SettingsPage.qml:64
 #, kde-format
 msgid "Symmetric Swipe"
 msgstr "Симметричное смахивание"
 
-#: src/qml/settings/SettingsPage.qml:60
+#: src/qml/settings/SettingsPage.qml:64
 #, kde-format
 msgid "Asymmetric Swipe"
 msgstr "Асимметричное смахивание"

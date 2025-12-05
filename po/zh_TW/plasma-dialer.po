@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2025-12-05 00:45+0000\n"
 "PO-Revision-Date: 2024-07-01 11:42+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -30,22 +30,22 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "mail@kisaragi-hiu.com"
 
-#: src/main.cpp:153 src/qml/main.qml:111
+#: src/main.cpp:138 src/qml/Main.qml:109
 #, kde-format
 msgid "Phone"
 msgstr "電話"
 
-#: src/main.cpp:155
+#: src/main.cpp:140
 #, kde-format
 msgid "Plasma phone dialer"
 msgstr "Plasma 電話撥打程式"
 
-#: src/main.cpp:157
+#: src/main.cpp:142
 #, kde-format
 msgid "© 2015-2022 KDE Community"
 msgstr "© 2015-2022 KDE 社群"
 
-#: src/main.cpp:160
+#: src/main.cpp:145
 #, kde-format
 msgid "Alexey Andreyev"
 msgstr "Alexey Andreyev"
@@ -90,31 +90,31 @@ msgstr "靜音"
 msgid "View"
 msgstr "檢視"
 
-#: src/qml/components/BottomToolbar.qml:42 src/qml/components/Sidebar.qml:52
+#: src/qml/components/BottomToolbar.qml:42 src/qml/components/Sidebar.qml:57
 #, kde-format
 msgid "History"
 msgstr "歷史"
 
-#: src/qml/components/BottomToolbar.qml:55 src/qml/components/Sidebar.qml:71
+#: src/qml/components/BottomToolbar.qml:55 src/qml/components/Sidebar.qml:76
 #: src/qml/ContactsPage.qml:24
 #, kde-format
 msgid "Contacts"
 msgstr "聯絡人"
 
-#: src/qml/components/BottomToolbar.qml:68 src/qml/components/Sidebar.qml:90
+#: src/qml/components/BottomToolbar.qml:68 src/qml/components/Sidebar.qml:95
 #: src/qml/DialerPage.qml:24
 #, kde-format
 msgid "Dialer"
 msgstr "電話"
 
-#: src/qml/components/Sidebar.qml:118 src/qml/ContactsPage.qml:32
+#: src/qml/components/Sidebar.qml:121 src/qml/ContactsPage.qml:32
 #: src/qml/DialerPage.qml:69 src/qml/HistoryPage.qml:47
 #: src/qml/settings/SettingsPage.qml:26
 #, kde-format
 msgid "Settings"
 msgstr "設定"
 
-#: src/qml/components/Sidebar.qml:136
+#: src/qml/components/Sidebar.qml:139
 #, kde-format
 msgid "Quit"
 msgstr "離開"
@@ -180,37 +180,37 @@ msgstr[0] "IMEI 碼"
 msgid "Adaptive Call Blocking"
 msgstr "適應式通話封鎖"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:32
+#: src/qml/settings/CallBlockSettingsPage.qml:34
 #, kde-format
 msgid "Ignore calls from unknown numbers"
 msgstr "忽略來自未知號碼的來電"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:39
+#: src/qml/settings/CallBlockSettingsPage.qml:40
 #, kde-format
 msgid "When a call is an incoming from an unknown number"
 msgstr "當有來自未知號碼的來電時"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:47
+#: src/qml/settings/CallBlockSettingsPage.qml:48
 #, kde-format
 msgid "Immediately hang up"
 msgstr "立即掛斷"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:53
+#: src/qml/settings/CallBlockSettingsPage.qml:54
 #, kde-format
 msgid "Ring without notification"
 msgstr "鈴響但不通知"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:59
+#: src/qml/settings/CallBlockSettingsPage.qml:60
 #, kde-format
 msgid "Ring with silent notification"
 msgstr "鈴響並讓通知靜音"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:68
+#: src/qml/settings/CallBlockSettingsPage.qml:69
 #, kde-format
 msgid "Allowed exceptions"
 msgstr "允許的例外"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:78
+#: src/qml/settings/CallBlockSettingsPage.qml:79
 #, kde-format
 msgid "Anonymous numbers"
 msgstr "匿名號碼"
@@ -220,58 +220,58 @@ msgstr "匿名號碼"
 # 所以這個譯文是依原文元件 ID (allowPreviousOutgoing) 翻譯的。
 #
 # --Kisaragi
-#: src/qml/settings/CallBlockSettingsPage.qml:86
+#: src/qml/settings/CallBlockSettingsPage.qml:87
 #, kde-format
 msgid "Existing outgoing call to number"
 msgstr "上次撥打的電話號碼"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:94
+#: src/qml/settings/CallBlockSettingsPage.qml:95
 #, kde-format
 msgid "Callback within"
 msgstr "在多久之內回撥"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:113
+#: src/qml/settings/CallBlockSettingsPage.qml:114
 #, kde-format
 msgid "minutes"
 msgstr "分鐘"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:126
+#: src/qml/settings/CallBlockSettingsPage.qml:127
 #, kde-format
 msgid "Allowed phone number exceptions"
 msgstr "允許的電話號碼例外"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:148
-#: src/qml/settings/CallBlockSettingsPage.qml:186
+#: src/qml/settings/CallBlockSettingsPage.qml:149
+#: src/qml/settings/CallBlockSettingsPage.qml:187
 #, kde-format
 msgid "Add new pattern"
 msgstr "新增樣式"
 
-#: src/qml/settings/SettingsPage.qml:34
+#: src/qml/settings/SettingsPage.qml:38
 #, kde-format
 msgid "About"
 msgstr "關於"
 
-#: src/qml/settings/SettingsPage.qml:46
+#: src/qml/settings/SettingsPage.qml:50
 #, kde-format
 msgid "Adaptive call blocking"
 msgstr "適應式通話封鎖"
 
-#: src/qml/settings/SettingsPage.qml:59
+#: src/qml/settings/SettingsPage.qml:63
 #, kde-format
 msgid "Incoming call screen appearance"
 msgstr "來電畫面外觀"
 
-#: src/qml/settings/SettingsPage.qml:60
+#: src/qml/settings/SettingsPage.qml:64
 #, kde-format
 msgid "Buttons"
 msgstr "按鈕"
 
-#: src/qml/settings/SettingsPage.qml:60
+#: src/qml/settings/SettingsPage.qml:64
 #, kde-format
 msgid "Symmetric Swipe"
 msgstr "對稱滑動"
 
-#: src/qml/settings/SettingsPage.qml:60
+#: src/qml/settings/SettingsPage.qml:64
 #, kde-format
 msgid "Asymmetric Swipe"
 msgstr "不對稱滑動"
