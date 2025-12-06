@@ -158,6 +158,7 @@ void NotificationManager::openRingingNotification(const QString &deviceUni,
 
     auto rejectAction = m_ringingNotification->addAction(i18n("Reject"));
     connect(rejectAction, &KNotificationAction::activated, this, [this, deviceUni, callUni] {
+        qDebug() << "Call rejected by user";
         hangUp(deviceUni, callUni);
     });
 
@@ -234,6 +235,7 @@ void NotificationManager::handleIncomingCall(const QString &deviceUni, const QSt
     bool silent = false;
     if (!allowed) {
         if (Config::self()->ringOption() == 0) {
+            qDebug() << "Blocking call, hanging up";
             hangUp(deviceUni, callUni);
             return;
         } else if (Config::self()->ringOption() == 1) {

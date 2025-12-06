@@ -75,6 +75,7 @@ add_subdirectory(modem-daemon)
 add_subdirectory(kde-telephony-daemon)
 add_subdirectory(kde-telephony-plugin-declarative)
 add_subdirectory(plasma-dialer)
+add_subdirectory(test)
 
 file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES *.cpp *.h)
 kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
