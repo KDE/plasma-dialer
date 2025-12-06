@@ -8,8 +8,11 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
+
 import org.kde.kirigami as Kirigami
 import org.kde.telephony
+import org.kde.plasma.dialer
+
 import "call"
 import "dialpad"
 
@@ -50,9 +53,10 @@ Kirigami.Page {
             } else {
                 if (pageStack.layers.currentItem === callPage) {
                     pageStack.layers.pop();
-                    if (ScreenSaverUtils.getActive())
-                        Qt.quit();
 
+                    if (LockScreenUtils.lockscreenActive) {
+                        Qt.quit();
+                    }
                 }
             }
         }
