@@ -16,7 +16,6 @@ qt_target_qml_sources(plasma-dialer QML_FILES
     qml/Main.qml
     qml/components/Sidebar.qml
     qml/components/BottomToolbar.qml
-    qml/components/CloseButtonBackground.qml
     qml/DialerPage.qml
     qml/ContactsPage.qml
     qml/HistoryPage.qml

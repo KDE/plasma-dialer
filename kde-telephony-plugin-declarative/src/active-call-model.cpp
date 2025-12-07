@@ -38,13 +38,7 @@ QString ActiveCallModel::activeCallUni()
         qDebug() << Q_FUNC_INFO << "empty active calls list";
         return activeCallUni;
     }
-    for (int i = 0; i < m_calls.size(); i++) {
-        const auto call = m_calls.at(i);
-        if (call.state != DialerTypes::CallState::Terminated) {
-            return call.id;
-        }
-    }
-    return activeCallUni;
+    return findActiveCall().id;
 }
 
 QVariant ActiveCallModel::data(const QModelIndex &index, int role) const
@@ -100,8 +94,7 @@ void ActiveCallModel::onUtilsCallAdded(const QString &deviceUni,
         return;
     }
     m_callUtils->fetchCalls();
-    setCommunicationWith(communicationWith);
-    m_callsTimer.start();
+    updateActiveCallProps();
 }
 
 void ActiveCallModel::onUtilsCallDeleted(const QString &deviceUni, const QString &callUni)
@@ -113,24 +106,12 @@ void ActiveCallModel::onUtilsCallDeleted(const QString &deviceUni, const QString
         return;
     }
     m_callUtils->fetchCalls();
-    m_callsTimer.stop();
-    setDuration(0);
+    updateActiveCallProps();
 }
 
 void ActiveCallModel::onUtilsCallStateChanged(const DialerTypes::CallData &callData)
 {
     qDebug() << Q_FUNC_INFO << callData.state << callData.stateReason;
-    DialerTypes::CallState callState = callData.state;
-
-    if (callState == DialerTypes::CallState::Active) {
-        m_callsTimer.start();
-    }
-    if (callState == DialerTypes::CallState::RingingIn) {
-        m_callsTimer.start();
-    }
-    if (callState == DialerTypes::CallState::Terminated) {
-        m_callsTimer.stop();
-    }
 
     if (m_calls.size() < 1) {
         qDebug() << Q_FUNC_INFO << "empty active calls list";
@@ -140,6 +121,8 @@ void ActiveCallModel::onUtilsCallStateChanged(const DialerTypes::CallData &callD
         if (m_calls[i].id == callData.id) {
             m_calls[i] = callData;
             Q_EMIT dataChanged(index(i), index(i));
+
+            updateActiveCallProps();
             return;
         }
     }
@@ -151,31 +134,8 @@ void ActiveCallModel::onUtilsCallsChanged(const DialerTypes::CallDataVector &fet
     beginResetModel();
     m_calls = fetchedCalls;
     endResetModel();
-    bool active = (m_calls.size() > 0);
-    setActive(active);
-    if (!active) {
-        return;
-    }
-    m_callsTimer.start();
-    bool incoming = false;
-    for (int i = 0; i < m_calls.size(); i++) {
-        const auto call = m_calls.at(i);
-        // trying to determine current active call
-        // should be checked could it be improved
-        // with with DialerTypes::CallDirection
-        if ((call.state != DialerTypes::CallState::Unknown) && (call.state != DialerTypes::CallState::Held) && (call.state != DialerTypes::CallState::Waiting)
-            && (call.state != DialerTypes::CallState::Terminated)) {
-            setCommunicationWith(call.communicationWith);
-            setDuration(call.duration);
-        }
-        if (call.direction == DialerTypes::CallDirection::Incoming) {
-            if (call.state == DialerTypes::CallState::RingingIn) {
-                incoming = true;
-                break;
-            }
-        }
-    }
-    setIncoming(incoming);
+
+    updateActiveCallProps();
 }
 
 bool ActiveCallModel::active() const
@@ -190,6 +150,21 @@ void ActiveCallModel::setActive(bool newActive)
     m_active = newActive;
     qDebug() << Q_FUNC_INFO;
     Q_EMIT activeChanged();
+}
+
+bool ActiveCallModel::inCall() const
+{
+    return m_inCall;
+}
+
+void ActiveCallModel::setInCall(bool inCall)
+{
+    if (inCall == m_inCall) {
+        return;
+    }
+    m_inCall = inCall;
+    qDebug() << Q_FUNC_INFO;
+    Q_EMIT inCallChanged();
 }
 
 bool ActiveCallModel::incoming() const
@@ -253,6 +228,7 @@ void ActiveCallModel::setCallUtils(org::kde::telephony::CallUtils *callUtils)
     });
 
     callUtils->fetchCalls(); // TODO: simplify sync
+    updateActiveCallProps();
 }
 
 void ActiveCallModel::updateTimers()
@@ -271,5 +247,43 @@ void ActiveCallModel::updateTimers()
             setDuration(call.duration);
             Q_EMIT dataChanged(index(i), index(i), {DurationRole});
         }
+    }
+}
+
+DialerTypes::CallData ActiveCallModel::findActiveCall()
+{
+    for (int i = 0; i < m_calls.size(); i++) {
+        const auto call = m_calls.at(i);
+        if ((call.state != DialerTypes::CallState::Unknown) && (call.state != DialerTypes::CallState::Held) && (call.state != DialerTypes::CallState::Waiting)
+            && (call.state != DialerTypes::CallState::Terminated)) {
+            return call;
+        }
+    }
+    return {};
+}
+
+void ActiveCallModel::updateActiveCallProps()
+{
+    if (m_calls.size() == 0) {
+        setActive(false);
+        setInCall(false);
+        setIncoming(false);
+        setDuration(0);
+        return;
+    }
+
+    DialerTypes::CallData call = findActiveCall();
+    setCommunicationWith(call.communicationWith);
+    setActive(true);
+    setInCall(call.state == DialerTypes::CallState::Active);
+    setIncoming(call.direction == DialerTypes::CallDirection::Incoming);
+    setDuration(call.duration);
+
+    if (m_inCall) {
+        if (!m_callsTimer.isActive()) {
+            m_callsTimer.start();
+        }
+    } else {
+        m_callsTimer.stop();
     }
 }

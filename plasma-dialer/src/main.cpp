@@ -174,9 +174,9 @@ int main(int argc, char **argv)
     QWindow *window = qobject_cast<QWindow *>(engine.rootObjects().at(0));
     Q_ASSERT(window);
 
-    allowAboveLockscreen(window);
-
     QObject::connect(&service, &KDBusService::activateRequested, window, [&window](const QStringList &arguments) {
+        qDebug() << "Window activation requested over DBus";
+
         for (const auto &arg : arguments) {
             QString numberArg = parseTelArgument(arg);
             if (!numberArg.isEmpty()) {
@@ -184,6 +184,8 @@ int main(int argc, char **argv)
                 break;
             }
         }
+
+        allowAboveLockscreen(window);
         raiseWindow(window);
     });
 

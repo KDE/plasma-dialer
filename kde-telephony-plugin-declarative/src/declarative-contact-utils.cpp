@@ -8,6 +8,8 @@
 #include <KPeopleBackend/AbstractContact>
 #include <KPeople/PersonData>
 
+#include <QRegularExpression>
+
 #include "callutilsinterface.h"
 
 template<typename T>
@@ -55,14 +57,50 @@ QString DeclarativeContactUtils::displayString(const QString &contact)
 
 QVariantList DeclarativeContactUtils::phoneNumbers(const QString &kPeopleUri)
 {
-    auto person = contactData(kPeopleUri);
-    auto vcard = person->contactCustomProperty(KPeople::AbstractContact::VCardProperty).toByteArray();
-    auto addressee = converter.parseVCard(vcard);
+    return toVariantList(internalPhoneNumbers(kPeopleUri));
+}
 
-    return toVariantList(addressee.phoneNumbers());
+QString DeclarativeContactUtils::phoneNumberToContactUri(const QString &phoneNumber)
+{
+    KPeople::PersonsModel *personsModel = new KPeople::PersonsModel{this};
+    personsModel->deleteLater();
+
+    for (int i = 0; i < personsModel->rowCount(); ++i) {
+        QModelIndex index = personsModel->index(i, 0, {});
+        if (index.isValid()) {
+            QString uri = personsModel->data(index, KPeople::PersonsModel::PersonUriRole).toString();
+            auto list = internalPhoneNumbers(uri);
+
+            for (auto number : list) {
+                if (numericOnlyString(number.number()) == numericOnlyString(phoneNumber)) {
+                    return uri;
+                }
+            }
+        }
+    }
+    return {};
+}
+
+QString DeclarativeContactUtils::photoImageProviderUri(const QString &contactUri)
+{
+    return u"image://kpeople-avatar/" % QString::fromUtf8(contactUri.toUtf8().toBase64()) % u"#" % QString::number(QRandomGenerator::system()->generate());
 }
 
 bool DeclarativeContactUtils::isValid() const
 {
     return org::kde::telephony::ContactUtils::isValid();
+}
+
+QList<KContacts::PhoneNumber> DeclarativeContactUtils::internalPhoneNumbers(const QString &kPeopleUri) const
+{
+    auto person = contactData(kPeopleUri);
+    auto vcard = person->contactCustomProperty(KPeople::AbstractContact::VCardProperty).toByteArray();
+    auto addressee = converter.parseVCard(vcard);
+    return addressee.phoneNumbers();
+}
+
+QString DeclarativeContactUtils::numericOnlyString(QString str) const
+{
+    QRegularExpression nonNumericRegex(QStringLiteral("\\D"));
+    return str.remove(nonNumericRegex);
 }

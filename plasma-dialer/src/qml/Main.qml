@@ -19,7 +19,7 @@ Kirigami.ApplicationWindow {
 
     readonly property bool smallMode: applicationWindow().height < Kirigami.Units.gridUnit * 28
     property bool lockscreenMode: LockScreenUtils.lockscreenActive
-    property bool isWidescreen: root.width >= root.height
+    property bool isWidescreen: !LockScreenUtils.lockscreenActive && root.width >= root.height
 
     signal ussdUserInitiated()
 
@@ -42,37 +42,47 @@ Kirigami.ApplicationWindow {
         }
     }
 
-    function switchToPage(page, depth) {
+    function switchToPage(page) {
         if (!page)
             return;
 
-        while (pageStack.depth > depth) pageStack.pop()
-        // page switch animation
-        yAnim.target = page;
-        yAnim.properties = "yTranslate";
-        anim.target = page;
-        anim.properties = "contentItem.opacity";
-        if (page.header)
-            anim.properties += ",header.opacity";
+        while (pageStack.layers.depth > 1) pageStack.layers.pop();
+        pageStack.clear();
 
-        yAnim.restart();
-        anim.restart();
+        // page switch animation
+        if (!lockscreenMode && page.hasOwnProperty("yTranslate")) {
+            yAnim.target = page;
+            yAnim.properties = "yTranslate";
+            anim.target = page;
+            anim.properties = "contentItem.opacity";
+            if (page.header)
+                anim.properties += ",header.opacity";
+            yAnim.restart();
+            anim.restart();
+        }
+
         pageStack.push(page);
         page.forceActiveFocus();
     }
 
     // switch between bottom toolbar and sidebar
     function changeNav(toWidescreen) {
+        if (footer != null) {
+            footer.destroy();
+            footer = null;
+        }
+        sidebarLoader.active = false;
+        globalDrawer = null;
+
+        // No navigation on lockscreen
+        if (applicationWindow().lockscreenMode) {
+            return;
+        }
+
         if (toWidescreen) {
-            if (footer != null) {
-                footer.destroy();
-                footer = null;
-            }
             sidebarLoader.active = true;
             globalDrawer = sidebarLoader.item;
         } else {
-            sidebarLoader.active = false;
-            globalDrawer = null;
             let bottomToolbar = Qt.createComponent("components/BottomToolbar.qml");
             footer = bottomToolbar.createObject(root);
         }
@@ -92,7 +102,7 @@ Kirigami.ApplicationWindow {
 
     function call(number) {
         getPage("Dialer").pad.number = number;
-        switchToPage(getPage("Dialer"), 0);
+        switchToPage(getPage("Dialer"));
     }
 
     pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.ToolBar
@@ -111,11 +121,30 @@ Kirigami.ApplicationWindow {
     onIsWidescreenChanged: changeNav(isWidescreen)
     Component.onCompleted: {
         // initial page and nav type
-        switchToPage(getPage("Dialer"), 1);
+        switchToPage(getPage("Dialer"));
+        changeNav(isWidescreen);
+
+        applyCallScreenState();
+    }
+
+    onLockscreenModeChanged: {
+        applyCallScreenState();
+
+        // Apply navigation style
         changeNav(isWidescreen);
     }
+
     onUssdUserInitiated: {
         ussdSheet.open(); // open it already since async interaction is not immediate
+    }
+
+    // Performs the logic needed to open the call screen if necessary
+    function applyCallScreenState() {
+        const callPage = getPage("Call");
+
+        if (ActiveCallModel.active && pageStack.layers.currentItem !== callPage) {
+            pageStack.layers.push(callPage);
+        }
     }
 
     Kirigami.PagePool {
@@ -168,7 +197,39 @@ Kirigami.ApplicationWindow {
             imeiSheet.imeis = DeviceUtils.equipmentIdentifiers;
             imeiSheet.open();
         }
+    }
 
+    Connections {
+        function onDepthChanged() {
+            if (root.lockscreenMode && applicationWindow().pageStack.layers.depth < 2) {
+                console.log("Exiting since the call page was dismissed on the lockscreen");
+                Qt.quit();
+            }
+        }
+        target: applicationWindow().pageStack.layers
+    }
+
+    Connections {
+        // Open call page when a call initiates
+        function onActiveChanged() {
+            root.applyCallScreenState();
+
+            if (!ActiveCallModel.active) {
+                if (root.lockscreenMode) {
+                    // When the call exits, just quit on the menu
+                    // We can't do this in applyCallScreenState(), because the initial call state is always active = false
+                    console.log("There is no call ongoing, exiting");
+                    Qt.quit();
+                } else {
+                    // Remove call page
+                    if (pageStack.layers.currentItem === getPage("Call")) {
+                        pageStack.layers.pop();
+                    }
+                }
+            }
+        }
+
+        target: ActiveCallModel
     }
 
     Connections {
@@ -202,8 +263,4 @@ Kirigami.ApplicationWindow {
 
         target: UssdUtils
     }
-
-    contextDrawer: Kirigami.ContextDrawer {
-    }
-
 }
