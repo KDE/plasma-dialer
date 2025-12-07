@@ -92,12 +92,11 @@ Kirigami.ScrollablePage {
     }
 
     header: ColumnLayout {
-        anchors.margins: Kirigami.Units.smallSpacing
-        spacing: Kirigami.Units.smallSpacing
-
+        spacing: 0
         InCallInlineMessage {
+            position: Kirigami.InlineMessage.Header
+            Layout.fillWidth: true
         }
-
     }
 
 }

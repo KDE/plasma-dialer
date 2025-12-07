@@ -27,13 +27,6 @@ Kirigami.NavigationTabBar {
     }
 
     visible: height !== 0
-    bottomPadding: applicationWindow().lockscreenMode ? (Kirigami.Units.gridUnit * 2) : 0
-    Component.onCompleted: {
-        if (applicationWindow().lockscreenMode) {
-            let closeButtonBackground = Qt.createComponent("qrc:/components/CloseButtonBackground.qml");
-            background = closeButtonBackground.createObject(root);
-        }
-    }
 
     onImplicitHeightChanged: {
         // If implicit height changes, make sure we animate to it
@@ -42,8 +35,7 @@ Kirigami.NavigationTabBar {
         }
     }
 
-    property bool shouldShow: applicationWindow().lockscreenMode || (applicationWindow().pageStack.layers.depth <= 1 && applicationWindow().pageStack.depth <= 1) //true
-    onShouldShowChanged: {
+    function applyShouldShow() {
         if (shouldShow) {
             hideAnim.stop();
             showAnim.restart();
@@ -52,6 +44,10 @@ Kirigami.NavigationTabBar {
             hideAnim.restart();
         }
     }
+
+    property bool shouldShow: (applicationWindow().pageStack.layers.depth <= 1 && applicationWindow().pageStack.depth <= 1)
+    Component.onCompleted: applyShouldShow()
+    onShouldShowChanged: applyShouldShow()
 
     // animate showing and hiding of navbar
     ParallelAnimation {
@@ -97,10 +93,9 @@ Kirigami.NavigationTabBar {
             icon.name: "clock"
             text: i18n("History")
             checked: opened
-            enabled: !applicationWindow().lockscreenMode
             onTriggered: {
                 if (!opened)
-                    applicationWindow().switchToPage(getHistoryPage(), 0);
+                    applicationWindow().switchToPage(getHistoryPage());
 
             }
         },
@@ -110,10 +105,9 @@ Kirigami.NavigationTabBar {
             icon.name: "view-pim-contacts"
             text: i18n("Contacts")
             checked: opened
-            enabled: !applicationWindow().lockscreenMode
             onTriggered: {
                 if (!opened)
-                    applicationWindow().switchToPage(getContactsPage(), 0);
+                    applicationWindow().switchToPage(getContactsPage());
 
             }
         },
@@ -125,7 +119,7 @@ Kirigami.NavigationTabBar {
             checked: opened
             onTriggered: {
                 if (!opened)
-                    applicationWindow().switchToPage(getDialerPage(), 0);
+                    applicationWindow().switchToPage(getDialerPage());
 
             }
         }

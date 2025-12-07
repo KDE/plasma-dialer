@@ -19,6 +19,7 @@ Kirigami.Page {
 
     property bool callIncoming: ActiveCallModel.incoming
     property bool callActive: ActiveCallModel.active
+    property bool inCall: ActiveCallModel.inCall
     property int callDuration: ActiveCallModel.duration
     property string callCommunicationWith: ActiveCallModel.communicationWith
 
@@ -46,7 +47,17 @@ Kirigami.Page {
         return '' + h + ':' + m + ':' + s;
     }
 
-    title: i18n("Active call list")
+    title: i18n("Call")
+
+    actions: [
+        // Allow user to close window if the window is open and no call is ongoing
+        Kirigami.Action {
+            visible: applicationWindow().lockscreenMode
+            text: i18n("Close")
+            icon.name: "window-close"
+            onTriggered: Qt.quit()
+        }
+    ]
 
     ColumnLayout {
         id: activeCallUi
@@ -68,62 +79,27 @@ Kirigami.Page {
             ActiveCallView {
                 id: activeCallView
             }
-
             Dialpad {
                 id: dialPad
 
                 showBottomRow: false
                 focus: true
             }
-
-        }
-
-        // phone number/alias
-        Controls.Label {
-            Layout.fillWidth: true
-            Layout.minimumHeight: implicitHeight
-            horizontalAlignment: Qt.AlignHCenter
-            verticalAlignment: Qt.AlignVCenter
-            font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.15
-            text: ContactUtils.displayString(callCommunicationWith)
-            font.bold: true
-            visible: callActive
-        }
-
-        // time spent on call
-        Controls.Label {
-            Layout.fillWidth: true
-            Layout.minimumHeight: implicitHeight
-            horizontalAlignment: Qt.AlignHCenter
-            verticalAlignment: Qt.AlignVCenter
-            font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.1
-            text: {
-                if (callDuration > 0)
-                    return secondsToTimeString(callDuration);
-
-                if (callIncoming)
-                    return i18n("Incoming...");
-
-                if (callActive)
-                    return i18n("Calling...");
-
-                return '';
-            }
-            visible: text !== ""
         }
 
         // controls
         RowLayout {
             id: buttonRow
 
-            opacity: callActive ? 1 : 0
             Layout.alignment: Qt.AlignHCenter
             Layout.maximumWidth: Kirigami.Units.gridUnit * 16
             Layout.minimumHeight: Kirigami.Units.gridUnit * 3.5
+            Layout.preferredHeight: dialerButton.implicitHeight
             spacing: Kirigami.Units.smallSpacing
 
             CallPageButton {
                 id: dialerButton
+                visible: callPage.inCall
 
                 function switchToogle() {
                     // activeCallSwipeView: 0 is ActiveCallView, 1 is Dialpad
@@ -143,6 +119,7 @@ Kirigami.Page {
 
             CallPageButton {
                 id: speakerButton
+                visible: callPage.inCall
 
                 Layout.fillHeight: true
                 Layout.fillWidth: true
@@ -154,6 +131,7 @@ Kirigami.Page {
 
             CallPageButton {
                 id: muteButton
+                visible: callPage.inCall
 
                 Layout.fillHeight: true
                 Layout.fillWidth: true
@@ -162,7 +140,6 @@ Kirigami.Page {
                 toggledOn: DialerUtils.mute
                 onClicked: DialerUtils.setMute(!toggledOn);
             }
-
         }
 
         Item {
@@ -173,7 +150,7 @@ Kirigami.Page {
                 id: answerControlLoader
 
                 anchors.fill: parent
-                active: callIncoming && (callDuration == 0)
+                active: callIncoming && !inCall
                 sourceComponent: (Config.answerControl === 2) ? asymmetricAnswerSwipe : (Config.answerControl === 1) ? symmetricAnswerSwipe : answerButtons
 
                 Connections {
@@ -218,7 +195,7 @@ Kirigami.Page {
             Controls.AbstractButton {
                 id: endCallButton
 
-                visible: callActive && (callDuration > 0) || !callIncoming
+                visible: callPage.callActive && (callPage.inCall || !callPage.callIncoming)
                 anchors.centerIn: parent
                 width: Kirigami.Units.gridUnit * 3.5
                 height: Kirigami.Units.gridUnit * 3.5

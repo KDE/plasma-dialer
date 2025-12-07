@@ -30,49 +30,19 @@ Kirigami.Page {
     rightPadding: 0
     topPadding: 0
     bottomPadding: 0
-    Component.onCompleted: {
-        // dynamic check could be dropped with KF6-only versions
-        // https://invent.kde.org/frameworks/kirigami/-/merge_requests/986
-        if (dialerPage.mainAction !== undefined)
-            dialerPage.mainAction = settingsAction;
-        else
-            dialerPage.actions = settingsAction;
-        // https://invent.kde.org/frameworks/kirigami/-/merge_requests/942
-        const name = "settings-configure";
-        if (settingsAction.iconName !== undefined)
-            settingsAction.iconName = name;
-        else
-            settingsAction.icon.name = name;
-    }
 
-    Connections {
-        function onActiveChanged() {
-            const callPage = getPage("Call");
-            if (ActiveCallModel.active) {
-                applicationWindow().pageStack.layers.push(callPage, 1);
-            } else {
-                if (pageStack.layers.currentItem === callPage) {
-                    pageStack.layers.pop();
+    actions: [
+        Kirigami.Action {
+            id: settingsAction
 
-                    if (LockScreenUtils.lockscreenActive) {
-                        Qt.quit();
-                    }
-                }
-            }
+            icon.name: "settings-configure"
+            displayHint: Kirigami.DisplayHint.IconOnly
+            visible: !applicationWindow().isWidescreen
+            enabled: !applicationWindow().lockscreenMode
+            text: i18n("Settings")
+            onTriggered: applicationWindow().pageStack.push(applicationWindow().getPage("Settings"))
         }
-
-        target: ActiveCallModel
-    }
-
-    Kirigami.Action {
-        id: settingsAction
-
-        displayHint: Kirigami.DisplayHint.IconOnly
-        visible: !applicationWindow().isWidescreen
-        enabled: !applicationWindow().lockscreenMode
-        text: i18n("Settings")
-        onTriggered: applicationWindow().pageStack.push(applicationWindow().getPage("Settings"))
-    }
+    ]
 
     ColumnLayout {
         id: dialPadArea

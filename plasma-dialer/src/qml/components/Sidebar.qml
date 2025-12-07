@@ -60,7 +60,7 @@ Kirigami.OverlayDrawer {
                     enabled: !applicationWindow().lockscreenMode
                     onClicked: {
                         if (applicationWindow().pageStack.currentItem !== page)
-                            applicationWindow().switchToPage(page, 0);
+                            applicationWindow().switchToPage(page);
                         else
                             checked = Qt.binding(function() {
                             return applicationWindow().pageStack.currentItem === page;
@@ -79,7 +79,7 @@ Kirigami.OverlayDrawer {
                     enabled: !applicationWindow().lockscreenMode
                     onClicked: {
                         if (applicationWindow().pageStack.currentItem !== page)
-                            applicationWindow().switchToPage(page, 0);
+                            applicationWindow().switchToPage(page);
                         else
                             checked = Qt.binding(function() {
                             return applicationWindow().pageStack.currentItem === page;
@@ -97,7 +97,7 @@ Kirigami.OverlayDrawer {
                     checked: pageStack.currentItem === page
                     onClicked: {
                         if (applicationWindow().pageStack.currentItem !== page)
-                            applicationWindow().switchToPage(page, 0);
+                            applicationWindow().switchToPage(page);
                         else
                             checked = Qt.binding(function() {
                             return applicationWindow().pageStack.currentItem === page;
@@ -124,7 +124,7 @@ Kirigami.OverlayDrawer {
             enabled: !applicationWindow().lockscreenMode
             onClicked: {
                 if (applicationWindow().pageStack.currentItem !== page)
-                    applicationWindow().switchToPage(page, 0);
+                    applicationWindow().switchToPage(page);
                 else
                     checked = Qt.binding(function() {
                     return applicationWindow().pageStack.currentItem === page;

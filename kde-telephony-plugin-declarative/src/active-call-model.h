@@ -13,14 +13,20 @@ class ActiveCallModel : public CallModel
     Q_OBJECT
     Q_PROPERTY(bool incoming READ incoming NOTIFY incomingChanged)
     Q_PROPERTY(bool active READ active NOTIFY activeChanged)
+    Q_PROPERTY(bool inCall READ inCall NOTIFY inCallChanged)
     Q_PROPERTY(QString communicationWith READ communicationWith NOTIFY communicationWithChanged)
     Q_PROPERTY(qulonglong duration READ duration NOTIFY durationChanged)
 
 public:
     ActiveCallModel(QObject *parent = nullptr);
 
+    // Whether any sort of call is ongoing (includes waiting incoming or outgoing calls)
     bool active() const;
     void setActive(bool newActive);
+
+    // Whether a call is ongoing, where both ends have picked up
+    bool inCall() const;
+    void setInCall(bool inCall);
 
     bool incoming() const;
     void setIncoming(bool newIncoming);
@@ -43,6 +49,7 @@ public Q_SLOTS:
 
 Q_SIGNALS:
     void activeChanged();
+    void inCallChanged();
     void incomingChanged();
     void communicationWithChanged();
     void durationChanged();
@@ -59,10 +66,14 @@ private Q_SLOTS:
     void onUtilsCallsChanged(const DialerTypes::CallDataVector &fetchedCalls);
 
 private:
+    DialerTypes::CallData findActiveCall();
+    void updateActiveCallProps();
+
     org::kde::telephony::CallUtils *m_callUtils;
     DialerTypes::CallDataVector m_calls;
     QTimer m_callsTimer;
     bool m_active = false;
+    bool m_inCall = false;
     bool m_incoming = false;
     QString m_communicationWith;
     qulonglong m_duration;
