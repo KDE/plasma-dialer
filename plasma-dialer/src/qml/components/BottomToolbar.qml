@@ -34,6 +34,62 @@ Kirigami.NavigationTabBar {
             background = closeButtonBackground.createObject(root);
         }
     }
+
+    onImplicitHeightChanged: {
+        // If implicit height changes, make sure we animate to it
+        if (shouldShow) {
+            showAnim.restart();
+        }
+    }
+
+    property bool shouldShow: applicationWindow().lockscreenMode || (applicationWindow().pageStack.layers.depth <= 1 && applicationWindow().pageStack.depth <= 1) //true
+    onShouldShowChanged: {
+        if (shouldShow) {
+            hideAnim.stop();
+            showAnim.restart();
+        } else {
+            showAnim.stop();
+            hideAnim.restart();
+        }
+    }
+
+    // animate showing and hiding of navbar
+    ParallelAnimation {
+        id: showAnim
+        NumberAnimation {
+            target: navigationTabBar
+            property: "height"
+            to: navigationTabBar.implicitHeight
+            duration: Kirigami.Units.longDuration
+            easing.type: Easing.InOutQuad
+        }
+        NumberAnimation {
+            target: navigationTabBar
+            property: "opacity"
+            to: 1
+            duration: Kirigami.Units.longDuration
+            easing.type: Easing.InOutQuad
+        }
+    }
+
+    SequentialAnimation {
+        id: hideAnim
+        NumberAnimation {
+            target: navigationTabBar
+            property: "opacity"
+            to: 0
+            duration: Kirigami.Units.longDuration
+            easing.type: Easing.InOutQuad
+        }
+        NumberAnimation {
+            target: navigationTabBar
+            property: "height"
+            to: 0
+            duration: Kirigami.Units.longDuration
+            easing.type: Easing.InOutQuad
+        }
+    }
+
     actions: [
         Kirigami.Action {
             property bool opened: getHistoryPage() === currentPage()
