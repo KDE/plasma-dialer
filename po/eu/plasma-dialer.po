@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-05 00:45+0000\n"
+"POT-Creation-Date: 2025-12-08 00:45+0000\n"
 "PO-Revision-Date: 2024-07-04 12:54+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -90,25 +90,25 @@ msgstr "Isilarazi"
 msgid "View"
 msgstr "Ikusi"
 
-#: src/qml/components/BottomToolbar.qml:42 src/qml/components/Sidebar.qml:57
+#: src/qml/components/BottomToolbar.qml:98 src/qml/components/Sidebar.qml:57
 #, kde-format
 msgid "History"
 msgstr "Historia"
 
-#: src/qml/components/BottomToolbar.qml:55 src/qml/components/Sidebar.qml:76
+#: src/qml/components/BottomToolbar.qml:111 src/qml/components/Sidebar.qml:76
 #: src/qml/ContactsPage.qml:24
 #, kde-format
 msgid "Contacts"
 msgstr "Kontaktuak"
 
-#: src/qml/components/BottomToolbar.qml:68 src/qml/components/Sidebar.qml:95
-#: src/qml/DialerPage.qml:24
+#: src/qml/components/BottomToolbar.qml:124 src/qml/components/Sidebar.qml:95
+#: src/qml/DialerPage.qml:27
 #, kde-format
 msgid "Dialer"
 msgstr "Markatzailea"
 
 #: src/qml/components/Sidebar.qml:121 src/qml/ContactsPage.qml:32
-#: src/qml/DialerPage.qml:69 src/qml/HistoryPage.qml:47
+#: src/qml/DialerPage.qml:73 src/qml/HistoryPage.qml:47
 #: src/qml/settings/SettingsPage.qml:26
 #, kde-format
 msgid "Settings"
@@ -129,17 +129,17 @@ msgstr "Ez dago telefono zenbakirik ezarrita duen kontakturik"
 msgid "Select number to call"
 msgstr "Hautatu deitu beharreko zenbakia"
 
-#: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:140
+#: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:144
 #, kde-format
 msgid "Telephony daemons are not responding"
 msgstr "Telefonia daimonek ez dute erantzuten"
 
-#: src/qml/DialerPage.qml:150
+#: src/qml/DialerPage.qml:154
 #, kde-format
 msgid "Modem devices are not found"
 msgstr "Ez da moden gailurik aurkitu"
 
-#: src/qml/DialerPage.qml:160
+#: src/qml/DialerPage.qml:164
 #, kde-format
 msgid "Voicemail number couldn't be found"
 msgstr "Ahots-posta zenbakia ezin izan da aurkitu"

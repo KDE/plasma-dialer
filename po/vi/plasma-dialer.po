@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-05 00:45+0000\n"
+"POT-Creation-Date: 2025-12-08 00:45+0000\n"
 "PO-Revision-Date: 2023-03-21 18:45+0100\n"
 "Last-Translator: Phu Hung Nguyen <phu.nguyen@kdemail.net>\n"
 "Language-Team: Vietnamese <kde-l10n-vi@kde.org>\n"
@@ -87,25 +87,25 @@ msgstr "Tắt tiếng"
 msgid "View"
 msgstr "Xem"
 
-#: src/qml/components/BottomToolbar.qml:42 src/qml/components/Sidebar.qml:57
+#: src/qml/components/BottomToolbar.qml:98 src/qml/components/Sidebar.qml:57
 #, kde-format
 msgid "History"
 msgstr "Lịch sử"
 
-#: src/qml/components/BottomToolbar.qml:55 src/qml/components/Sidebar.qml:76
+#: src/qml/components/BottomToolbar.qml:111 src/qml/components/Sidebar.qml:76
 #: src/qml/ContactsPage.qml:24
 #, kde-format
 msgid "Contacts"
 msgstr "Liên hệ"
 
-#: src/qml/components/BottomToolbar.qml:68 src/qml/components/Sidebar.qml:95
-#: src/qml/DialerPage.qml:24
+#: src/qml/components/BottomToolbar.qml:124 src/qml/components/Sidebar.qml:95
+#: src/qml/DialerPage.qml:27
 #, kde-format
 msgid "Dialer"
 msgstr "Trình quay số"
 
 #: src/qml/components/Sidebar.qml:121 src/qml/ContactsPage.qml:32
-#: src/qml/DialerPage.qml:69 src/qml/HistoryPage.qml:47
+#: src/qml/DialerPage.qml:73 src/qml/HistoryPage.qml:47
 #: src/qml/settings/SettingsPage.qml:26
 #, kde-format
 msgid "Settings"
@@ -126,17 +126,17 @@ msgstr "Không có liên hệ nào đã đặt số điện thoại"
 msgid "Select number to call"
 msgstr "Chọn số để gọi"
 
-#: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:140
+#: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:144
 #, kde-format
 msgid "Telephony daemons are not responding"
 msgstr ""
 
-#: src/qml/DialerPage.qml:150
+#: src/qml/DialerPage.qml:154
 #, kde-format
 msgid "Modem devices are not found"
 msgstr "Không tìm thấy các thiết bị điều giải"
 
-#: src/qml/DialerPage.qml:160
+#: src/qml/DialerPage.qml:164
 #, kde-format
 msgid "Voicemail number couldn't be found"
 msgstr "Không tìm được số hộp thư thoại"

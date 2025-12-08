@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-05 00:45+0000\n"
+"POT-Creation-Date: 2025-12-08 00:45+0000\n"
 "PO-Revision-Date: 2024-12-15 17:37+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -87,25 +87,25 @@ msgstr "आवाज़ बंद करना"
 msgid "View"
 msgstr "देखना"
 
-#: src/qml/components/BottomToolbar.qml:42 src/qml/components/Sidebar.qml:57
+#: src/qml/components/BottomToolbar.qml:98 src/qml/components/Sidebar.qml:57
 #, kde-format
 msgid "History"
 msgstr "इतिहास"
 
-#: src/qml/components/BottomToolbar.qml:55 src/qml/components/Sidebar.qml:76
+#: src/qml/components/BottomToolbar.qml:111 src/qml/components/Sidebar.qml:76
 #: src/qml/ContactsPage.qml:24
 #, kde-format
 msgid "Contacts"
 msgstr "संपर्क"
 
-#: src/qml/components/BottomToolbar.qml:68 src/qml/components/Sidebar.qml:95
-#: src/qml/DialerPage.qml:24
+#: src/qml/components/BottomToolbar.qml:124 src/qml/components/Sidebar.qml:95
+#: src/qml/DialerPage.qml:27
 #, kde-format
 msgid "Dialer"
 msgstr "डायलर"
 
 #: src/qml/components/Sidebar.qml:121 src/qml/ContactsPage.qml:32
-#: src/qml/DialerPage.qml:69 src/qml/HistoryPage.qml:47
+#: src/qml/DialerPage.qml:73 src/qml/HistoryPage.qml:47
 #: src/qml/settings/SettingsPage.qml:26
 #, kde-format
 msgid "Settings"
@@ -126,17 +126,17 @@ msgstr "किसी भी संपर्क का फ़ोन नंबर 
 msgid "Select number to call"
 msgstr "कॉल करने के लिए नंबर चुनें"
 
-#: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:140
+#: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:144
 #, kde-format
 msgid "Telephony daemons are not responding"
 msgstr "टेलीफोनी डेमॉन प्रतिक्रिया नहीं दे रहे हैं"
 
-#: src/qml/DialerPage.qml:150
+#: src/qml/DialerPage.qml:154
 #, kde-format
 msgid "Modem devices are not found"
 msgstr "मॉडेम डिवाइस नहीं मिले"
 
-#: src/qml/DialerPage.qml:160
+#: src/qml/DialerPage.qml:164
 #, kde-format
 msgid "Voicemail number couldn't be found"
 msgstr "वॉइसमेल नंबर नहीं मिल सका"

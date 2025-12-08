@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-05 00:45+0000\n"
+"POT-Creation-Date: 2025-12-08 00:45+0000\n"
 "PO-Revision-Date: 2025-07-04 22:13+0200\n"
 "Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -88,25 +88,25 @@ msgstr "Stummschalten"
 msgid "View"
 msgstr "Ansicht"
 
-#: src/qml/components/BottomToolbar.qml:42 src/qml/components/Sidebar.qml:57
+#: src/qml/components/BottomToolbar.qml:98 src/qml/components/Sidebar.qml:57
 #, kde-format
 msgid "History"
 msgstr "Anrufliste"
 
-#: src/qml/components/BottomToolbar.qml:55 src/qml/components/Sidebar.qml:76
+#: src/qml/components/BottomToolbar.qml:111 src/qml/components/Sidebar.qml:76
 #: src/qml/ContactsPage.qml:24
 #, kde-format
 msgid "Contacts"
 msgstr "Kontakte"
 
-#: src/qml/components/BottomToolbar.qml:68 src/qml/components/Sidebar.qml:95
-#: src/qml/DialerPage.qml:24
+#: src/qml/components/BottomToolbar.qml:124 src/qml/components/Sidebar.qml:95
+#: src/qml/DialerPage.qml:27
 #, kde-format
 msgid "Dialer"
 msgstr "Nummerneingabe"
 
 #: src/qml/components/Sidebar.qml:121 src/qml/ContactsPage.qml:32
-#: src/qml/DialerPage.qml:69 src/qml/HistoryPage.qml:47
+#: src/qml/DialerPage.qml:73 src/qml/HistoryPage.qml:47
 #: src/qml/settings/SettingsPage.qml:26
 #, kde-format
 msgid "Settings"
@@ -127,17 +127,17 @@ msgstr "In keinem Kontakt ist eine Rufnummer hinterlegt"
 msgid "Select number to call"
 msgstr "Anzurufende Nummer auswählen"
 
-#: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:140
+#: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:144
 #, kde-format
 msgid "Telephony daemons are not responding"
 msgstr "Telefonie-Dienste antworten nicht"
 
-#: src/qml/DialerPage.qml:150
+#: src/qml/DialerPage.qml:154
 #, kde-format
 msgid "Modem devices are not found"
 msgstr "Keine Modems gefunden"
 
-#: src/qml/DialerPage.qml:160
+#: src/qml/DialerPage.qml:164
 #, kde-format
 msgid "Voicemail number couldn't be found"
 msgstr "Nummer des Anrufbeantworters kann nicht gefunden werden"

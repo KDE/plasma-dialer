@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-05 00:45+0000\n"
+"POT-Creation-Date: 2025-12-08 00:45+0000\n"
 "PO-Revision-Date: 2024-05-09 11:47+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -87,25 +87,25 @@ msgstr "Mute"
 msgid "View"
 msgstr "Vista"
 
-#: src/qml/components/BottomToolbar.qml:42 src/qml/components/Sidebar.qml:57
+#: src/qml/components/BottomToolbar.qml:98 src/qml/components/Sidebar.qml:57
 #, kde-format
 msgid "History"
 msgstr "Historia o Chronologia"
 
-#: src/qml/components/BottomToolbar.qml:55 src/qml/components/Sidebar.qml:76
+#: src/qml/components/BottomToolbar.qml:111 src/qml/components/Sidebar.qml:76
 #: src/qml/ContactsPage.qml:24
 #, kde-format
 msgid "Contacts"
 msgstr "Contactos"
 
-#: src/qml/components/BottomToolbar.qml:68 src/qml/components/Sidebar.qml:95
-#: src/qml/DialerPage.qml:24
+#: src/qml/components/BottomToolbar.qml:124 src/qml/components/Sidebar.qml:95
+#: src/qml/DialerPage.qml:27
 #, kde-format
 msgid "Dialer"
 msgstr "Dialer (pro telephonar):"
 
 #: src/qml/components/Sidebar.qml:121 src/qml/ContactsPage.qml:32
-#: src/qml/DialerPage.qml:69 src/qml/HistoryPage.qml:47
+#: src/qml/DialerPage.qml:73 src/qml/HistoryPage.qml:47
 #: src/qml/settings/SettingsPage.qml:26
 #, kde-format
 msgid "Settings"
@@ -126,17 +126,17 @@ msgstr "Nulle contactos ha un insimul de numero de telephono"
 msgid "Select number to call"
 msgstr "Selige  numero de appellar"
 
-#: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:140
+#: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:144
 #, kde-format
 msgid "Telephony daemons are not responding"
 msgstr "Daemons de Telephony non es respondente"
 
-#: src/qml/DialerPage.qml:150
+#: src/qml/DialerPage.qml:154
 #, kde-format
 msgid "Modem devices are not found"
 msgstr "Le dispositivo de modem non es trovate"
 
-#: src/qml/DialerPage.qml:160
+#: src/qml/DialerPage.qml:164
 #, kde-format
 msgid "Voicemail number couldn't be found"
 msgstr "Le numero de posta vocal non poteva esser trovate"
