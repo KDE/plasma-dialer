@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-08 00:45+0000\n"
+"POT-Creation-Date: 2025-12-10 00:46+0000\n"
 "PO-Revision-Date: 2024-05-09 06:54+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -28,7 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "matjaz.jeran@amis.net"
 
-#: src/main.cpp:138 src/qml/Main.qml:109
+#: src/main.cpp:138 src/qml/Main.qml:119
 #, kde-format
 msgid "Phone"
 msgstr "Telefon"
@@ -48,65 +48,75 @@ msgstr "© 2015-2022 skupnost KDE"
 msgid "Alexey Andreyev"
 msgstr "Alexey Andreyev"
 
+#: src/qml/call/ActiveCallView.qml:57
+#, kde-format
+msgid "Incoming..."
+msgstr "Prihajajoče..."
+
+#: src/qml/call/ActiveCallView.qml:60
+#, kde-format
+msgid "Calling..."
+msgstr "Kličem..."
+
 #: src/qml/call/AsymmetricAnswerSwipe.qml:102
 #, kde-format
 msgid "Swipe to accept"
 msgstr "S prstom potegni za sprejem"
 
-#: src/qml/call/CallPage.qml:49 src/qml/call/InCallInlineMessage.qml:13
+#: src/qml/call/CallPage.qml:50
 #, kde-format
-msgid "Active call list"
-msgstr "Aktivni seznam klicev"
+msgid "Call"
+msgstr ""
 
-#: src/qml/call/CallPage.qml:105
+#: src/qml/call/CallPage.qml:56
 #, kde-format
-msgid "Incoming..."
-msgstr "Prihajajoče..."
+msgid "Close"
+msgstr ""
 
-#: src/qml/call/CallPage.qml:108
-#, kde-format
-msgid "Calling..."
-msgstr "Kličem..."
-
-#: src/qml/call/CallPage.qml:139
+#: src/qml/call/CallPage.qml:115
 #, kde-format
 msgid "Keypad"
 msgstr "Tipkovnica"
 
-#: src/qml/call/CallPage.qml:150
+#: src/qml/call/CallPage.qml:127
 #, kde-format
 msgid "Speaker"
 msgstr "Zvočnik"
 
-#: src/qml/call/CallPage.qml:161
+#: src/qml/call/CallPage.qml:139
 #, kde-format
 msgid "Mute"
 msgstr "Nemo"
+
+#: src/qml/call/InCallInlineMessage.qml:13
+#, kde-format
+msgid "Active call list"
+msgstr "Aktivni seznam klicev"
 
 #: src/qml/call/InCallInlineMessage.qml:17
 #, kde-format
 msgid "View"
 msgstr "Pogled"
 
-#: src/qml/components/BottomToolbar.qml:98 src/qml/components/Sidebar.qml:57
+#: src/qml/components/BottomToolbar.qml:94 src/qml/components/Sidebar.qml:57
 #, kde-format
 msgid "History"
 msgstr "Zgodovina"
 
-#: src/qml/components/BottomToolbar.qml:111 src/qml/components/Sidebar.qml:76
+#: src/qml/components/BottomToolbar.qml:106 src/qml/components/Sidebar.qml:76
 #: src/qml/ContactsPage.qml:24
 #, kde-format
 msgid "Contacts"
 msgstr "Stiki"
 
-#: src/qml/components/BottomToolbar.qml:124 src/qml/components/Sidebar.qml:95
+#: src/qml/components/BottomToolbar.qml:118 src/qml/components/Sidebar.qml:95
 #: src/qml/DialerPage.qml:27
 #, kde-format
 msgid "Dialer"
 msgstr "Klicalnik"
 
 #: src/qml/components/Sidebar.qml:121 src/qml/ContactsPage.qml:32
-#: src/qml/DialerPage.qml:73 src/qml/HistoryPage.qml:47
+#: src/qml/DialerPage.qml:42 src/qml/HistoryPage.qml:47
 #: src/qml/settings/SettingsPage.qml:26
 #, kde-format
 msgid "Settings"
@@ -127,17 +137,17 @@ msgstr "Ni še nobenih stikov s telefonsko številko"
 msgid "Select number to call"
 msgstr "Izberite številko, ki jo želite poklicati"
 
-#: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:144
+#: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:114
 #, kde-format
 msgid "Telephony daemons are not responding"
 msgstr "Demoni telefona se ne odzivajo"
 
-#: src/qml/DialerPage.qml:154
+#: src/qml/DialerPage.qml:124
 #, kde-format
 msgid "Modem devices are not found"
 msgstr "Ni najdenih modemskih naprav"
 
-#: src/qml/DialerPage.qml:164
+#: src/qml/DialerPage.qml:134
 #, kde-format
 msgid "Voicemail number couldn't be found"
 msgstr "Številke telefonskega odzivnika ni bilo mogoče najti"

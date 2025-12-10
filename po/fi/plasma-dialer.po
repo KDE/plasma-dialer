@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-08 00:45+0000\n"
+"POT-Creation-Date: 2025-12-10 00:46+0000\n"
 "PO-Revision-Date: 2024-10-18 11:45+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -27,7 +27,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "translator@legisign.org"
 
-#: src/main.cpp:138 src/qml/Main.qml:109
+#: src/main.cpp:138 src/qml/Main.qml:119
 #, kde-format
 msgid "Phone"
 msgstr "Puhelin"
@@ -47,65 +47,75 @@ msgstr "© 2015–2022 KDE-yhteisö"
 msgid "Alexey Andreyev"
 msgstr "Alexey Andreyev"
 
+#: src/qml/call/ActiveCallView.qml:57
+#, kde-format
+msgid "Incoming..."
+msgstr "Saapuva…"
+
+#: src/qml/call/ActiveCallView.qml:60
+#, kde-format
+msgid "Calling..."
+msgstr "Soitetaan…"
+
 #: src/qml/call/AsymmetricAnswerSwipe.qml:102
 #, kde-format
 msgid "Swipe to accept"
 msgstr "Hyväksy pyyhkäisemällä"
 
-#: src/qml/call/CallPage.qml:49 src/qml/call/InCallInlineMessage.qml:13
+#: src/qml/call/CallPage.qml:50
 #, kde-format
-msgid "Active call list"
-msgstr "Aktiivisten puhelujen luettelo"
+msgid "Call"
+msgstr ""
 
-#: src/qml/call/CallPage.qml:105
+#: src/qml/call/CallPage.qml:56
 #, kde-format
-msgid "Incoming..."
-msgstr "Saapuva…"
+msgid "Close"
+msgstr ""
 
-#: src/qml/call/CallPage.qml:108
-#, kde-format
-msgid "Calling..."
-msgstr "Soitetaan…"
-
-#: src/qml/call/CallPage.qml:139
+#: src/qml/call/CallPage.qml:115
 #, kde-format
 msgid "Keypad"
 msgstr "Numeronäppäimistö"
 
-#: src/qml/call/CallPage.qml:150
+#: src/qml/call/CallPage.qml:127
 #, kde-format
 msgid "Speaker"
 msgstr "Kaiutin"
 
-#: src/qml/call/CallPage.qml:161
+#: src/qml/call/CallPage.qml:139
 #, kde-format
 msgid "Mute"
 msgstr "Vaimenna"
+
+#: src/qml/call/InCallInlineMessage.qml:13
+#, kde-format
+msgid "Active call list"
+msgstr "Aktiivisten puhelujen luettelo"
 
 #: src/qml/call/InCallInlineMessage.qml:17
 #, kde-format
 msgid "View"
 msgstr "Näkymä"
 
-#: src/qml/components/BottomToolbar.qml:98 src/qml/components/Sidebar.qml:57
+#: src/qml/components/BottomToolbar.qml:94 src/qml/components/Sidebar.qml:57
 #, kde-format
 msgid "History"
 msgstr "Historia"
 
-#: src/qml/components/BottomToolbar.qml:111 src/qml/components/Sidebar.qml:76
+#: src/qml/components/BottomToolbar.qml:106 src/qml/components/Sidebar.qml:76
 #: src/qml/ContactsPage.qml:24
 #, kde-format
 msgid "Contacts"
 msgstr "Yhteystiedot"
 
-#: src/qml/components/BottomToolbar.qml:124 src/qml/components/Sidebar.qml:95
+#: src/qml/components/BottomToolbar.qml:118 src/qml/components/Sidebar.qml:95
 #: src/qml/DialerPage.qml:27
 #, kde-format
 msgid "Dialer"
 msgstr "Numerovalitsin"
 
 #: src/qml/components/Sidebar.qml:121 src/qml/ContactsPage.qml:32
-#: src/qml/DialerPage.qml:73 src/qml/HistoryPage.qml:47
+#: src/qml/DialerPage.qml:42 src/qml/HistoryPage.qml:47
 #: src/qml/settings/SettingsPage.qml:26
 #, kde-format
 msgid "Settings"
@@ -126,17 +136,17 @@ msgstr "Puhelinnumeroa ei ole asetettu yhdellekään yhteystiedolle"
 msgid "Select number to call"
 msgstr "Valitse numero, johon soitetaan"
 
-#: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:144
+#: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:114
 #, kde-format
 msgid "Telephony daemons are not responding"
 msgstr "Puhelinpalvelut eivät vastaa"
 
-#: src/qml/DialerPage.qml:154
+#: src/qml/DialerPage.qml:124
 #, kde-format
 msgid "Modem devices are not found"
 msgstr "Modeemilaitteita ei löytynyt"
 
-#: src/qml/DialerPage.qml:164
+#: src/qml/DialerPage.qml:134
 #, kde-format
 msgid "Voicemail number couldn't be found"
 msgstr "Vastaajan numeroa ei löytynyt"
