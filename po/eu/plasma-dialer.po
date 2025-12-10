@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-05 02:34+0000\n"
+"POT-Creation-Date: 2025-12-10 02:48+0000\n"
 "PO-Revision-Date: 2024-07-04 12:54+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -30,7 +30,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "xalba@ni.eus"
 
-#: src/main.cpp:138 src/qml/Main.qml:109
+#: src/main.cpp:138 src/qml/Main.qml:119
 #, kde-format
 msgid "Phone"
 msgstr "Telefonoa"
@@ -55,32 +55,22 @@ msgstr "Alexey Andreyev"
 msgid "Swipe to accept"
 msgstr "Kolpe arina onartzeko"
 
-#: src/qml/call/CallPage.qml:49 src/qml/call/InCallInlineMessage.qml:13
+#: src/qml/call/CallPage.qml:50 src/qml/call/InCallInlineMessage.qml:13
 #, kde-format
 msgid "Active call list"
 msgstr "Dei aktiboen zerrenda"
 
-#: src/qml/call/CallPage.qml:105
-#, kde-format
-msgid "Incoming..."
-msgstr "Sarrerakoa..."
-
-#: src/qml/call/CallPage.qml:108
-#, kde-format
-msgid "Calling..."
-msgstr "Deitzen..."
-
-#: src/qml/call/CallPage.qml:139
+#: src/qml/call/CallPage.qml:115
 #, kde-format
 msgid "Keypad"
 msgstr "Zenbakizko teklatua"
 
-#: src/qml/call/CallPage.qml:150
+#: src/qml/call/CallPage.qml:127
 #, kde-format
 msgid "Speaker"
 msgstr "Bozgorailua"
 
-#: src/qml/call/CallPage.qml:161
+#: src/qml/call/CallPage.qml:139
 #, kde-format
 msgid "Mute"
 msgstr "Isilarazi"
@@ -90,25 +80,25 @@ msgstr "Isilarazi"
 msgid "View"
 msgstr "Ikusi"
 
-#: src/qml/components/BottomToolbar.qml:42 src/qml/components/Sidebar.qml:57
+#: src/qml/components/BottomToolbar.qml:94 src/qml/components/Sidebar.qml:57
 #, kde-format
 msgid "History"
 msgstr "Historia"
 
-#: src/qml/components/BottomToolbar.qml:55 src/qml/components/Sidebar.qml:76
+#: src/qml/components/BottomToolbar.qml:106 src/qml/components/Sidebar.qml:76
 #: src/qml/ContactsPage.qml:24
 #, kde-format
 msgid "Contacts"
 msgstr "Kontaktuak"
 
-#: src/qml/components/BottomToolbar.qml:68 src/qml/components/Sidebar.qml:95
-#: src/qml/DialerPage.qml:24
+#: src/qml/components/BottomToolbar.qml:118 src/qml/components/Sidebar.qml:95
+#: src/qml/DialerPage.qml:27
 #, kde-format
 msgid "Dialer"
 msgstr "Markatzailea"
 
 #: src/qml/components/Sidebar.qml:121 src/qml/ContactsPage.qml:32
-#: src/qml/DialerPage.qml:69 src/qml/HistoryPage.qml:47
+#: src/qml/DialerPage.qml:42 src/qml/HistoryPage.qml:47
 #: src/qml/settings/SettingsPage.qml:26
 #, kde-format
 msgid "Settings"
@@ -129,17 +119,17 @@ msgstr "Ez dago telefono zenbakirik ezarrita duen kontakturik"
 msgid "Select number to call"
 msgstr "Hautatu deitu beharreko zenbakia"
 
-#: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:140
+#: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:114
 #, kde-format
 msgid "Telephony daemons are not responding"
 msgstr "Telefonia daimonek ez dute erantzuten"
 
-#: src/qml/DialerPage.qml:150
+#: src/qml/DialerPage.qml:124
 #, kde-format
 msgid "Modem devices are not found"
 msgstr "Ez da moden gailurik aurkitu"
 
-#: src/qml/DialerPage.qml:160
+#: src/qml/DialerPage.qml:134
 #, kde-format
 msgid "Voicemail number couldn't be found"
 msgstr "Ahots-posta zenbakia ezin izan da aurkitu"
@@ -296,6 +286,12 @@ msgstr "Bidali"
 #, kde-format
 msgid "Cancel USSD session"
 msgstr "Utzi USSD saioa"
+
+#~ msgid "Incoming..."
+#~ msgstr "Sarrerakoa..."
+
+#~ msgid "Calling..."
+#~ msgstr "Deitzen..."
 
 #~ msgid "Numbers matching a pattern:"
 #~ msgstr "Eredu batekin bat datozen zenbakiak:"

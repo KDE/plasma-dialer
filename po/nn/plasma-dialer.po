@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-05 02:34+0000\n"
+"POT-Creation-Date: 2025-12-10 02:48+0000\n"
 "PO-Revision-Date: 2024-05-15 20:36+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -28,7 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "karl@huftis.org"
 
-#: src/main.cpp:138 src/qml/Main.qml:109
+#: src/main.cpp:138 src/qml/Main.qml:119
 #, kde-format
 msgid "Phone"
 msgstr "Telefon"
@@ -53,32 +53,22 @@ msgstr "Alexey Andreyev"
 msgid "Swipe to accept"
 msgstr "Sveip for å godta"
 
-#: src/qml/call/CallPage.qml:49 src/qml/call/InCallInlineMessage.qml:13
+#: src/qml/call/CallPage.qml:50 src/qml/call/InCallInlineMessage.qml:13
 #, kde-format
 msgid "Active call list"
 msgstr "Pågåande oppringingar"
 
-#: src/qml/call/CallPage.qml:105
-#, kde-format
-msgid "Incoming..."
-msgstr "Innkommande …"
-
-#: src/qml/call/CallPage.qml:108
-#, kde-format
-msgid "Calling..."
-msgstr "Ringjer …"
-
-#: src/qml/call/CallPage.qml:139
+#: src/qml/call/CallPage.qml:115
 #, kde-format
 msgid "Keypad"
 msgstr "Taltastatur"
 
-#: src/qml/call/CallPage.qml:150
+#: src/qml/call/CallPage.qml:127
 #, kde-format
 msgid "Speaker"
 msgstr "Høgtalar"
 
-#: src/qml/call/CallPage.qml:161
+#: src/qml/call/CallPage.qml:139
 #, kde-format
 msgid "Mute"
 msgstr "Demp"
@@ -88,25 +78,25 @@ msgstr "Demp"
 msgid "View"
 msgstr "Vis"
 
-#: src/qml/components/BottomToolbar.qml:42 src/qml/components/Sidebar.qml:57
+#: src/qml/components/BottomToolbar.qml:94 src/qml/components/Sidebar.qml:57
 #, kde-format
 msgid "History"
 msgstr "Logg"
 
-#: src/qml/components/BottomToolbar.qml:55 src/qml/components/Sidebar.qml:76
+#: src/qml/components/BottomToolbar.qml:106 src/qml/components/Sidebar.qml:76
 #: src/qml/ContactsPage.qml:24
 #, kde-format
 msgid "Contacts"
 msgstr "Kontaktar"
 
-#: src/qml/components/BottomToolbar.qml:68 src/qml/components/Sidebar.qml:95
-#: src/qml/DialerPage.qml:24
+#: src/qml/components/BottomToolbar.qml:118 src/qml/components/Sidebar.qml:95
+#: src/qml/DialerPage.qml:27
 #, kde-format
 msgid "Dialer"
 msgstr "Telefonringjar"
 
 #: src/qml/components/Sidebar.qml:121 src/qml/ContactsPage.qml:32
-#: src/qml/DialerPage.qml:69 src/qml/HistoryPage.qml:47
+#: src/qml/DialerPage.qml:42 src/qml/HistoryPage.qml:47
 #: src/qml/settings/SettingsPage.qml:26
 #, kde-format
 msgid "Settings"
@@ -127,17 +117,17 @@ msgstr "Ingen kontaktar er registrerte med telefonnummer"
 msgid "Select number to call"
 msgstr "Vel nummeret du vil ringja"
 
-#: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:140
+#: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:114
 #, kde-format
 msgid "Telephony daemons are not responding"
 msgstr "Telefoni­tenester svarar ikkje"
 
-#: src/qml/DialerPage.qml:150
+#: src/qml/DialerPage.qml:124
 #, kde-format
 msgid "Modem devices are not found"
 msgstr "Fann ingen modemeiningar"
 
-#: src/qml/DialerPage.qml:160
+#: src/qml/DialerPage.qml:134
 #, kde-format
 msgid "Voicemail number couldn't be found"
 msgstr "Fann ikkje telefonnummeret til talepostkassen"
@@ -295,3 +285,9 @@ msgstr "Send"
 #, kde-format
 msgid "Cancel USSD session"
 msgstr "Avbryt USSD-økt"
+
+#~ msgid "Incoming..."
+#~ msgstr "Innkommande …"
+
+#~ msgid "Calling..."
+#~ msgstr "Ringjer …"
