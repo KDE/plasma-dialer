@@ -65,12 +65,12 @@ msgstr ""
 #: src/qml/call/CallPage.qml:50
 #, kde-format
 msgid "Call"
-msgstr ""
+msgstr "Volání"
 
 #: src/qml/call/CallPage.qml:56
 #, kde-format
 msgid "Close"
-msgstr ""
+msgstr "Zavřít"
 
 #: src/qml/call/CallPage.qml:115
 #, kde-format
