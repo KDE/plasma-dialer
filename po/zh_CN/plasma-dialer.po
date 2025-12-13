@@ -282,9 +282,3 @@ msgstr "发送"
 #, kde-format
 msgid "Cancel USSD session"
 msgstr "取消 USSD 会话"
-
-#~ msgid "Incoming..."
-#~ msgstr "来电..."
-
-#~ msgid "Calling..."
-#~ msgstr "正在呼叫..."
