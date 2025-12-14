@@ -65,12 +65,12 @@ msgstr "滑动接听"
 #: src/qml/call/CallPage.qml:50
 #, kde-format
 msgid "Call"
-msgstr ""
+msgstr "呼叫"
 
 #: src/qml/call/CallPage.qml:56
 #, kde-format
 msgid "Close"
-msgstr ""
+msgstr "关闭"
 
 #: src/qml/call/CallPage.qml:115
 #, kde-format
