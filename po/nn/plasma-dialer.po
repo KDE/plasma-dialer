@@ -285,9 +285,3 @@ msgstr "Send"
 #, kde-format
 msgid "Cancel USSD session"
 msgstr "Avbryt USSD-økt"
-
-#~ msgid "Incoming..."
-#~ msgstr "Innkommande …"
-
-#~ msgid "Calling..."
-#~ msgstr "Ringjer …"
