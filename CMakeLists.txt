@@ -63,6 +63,9 @@ ecm_setup_version(${PROJECT_VERSION}
 find_package(KF6I18n NO_MODULE)
 ki18n_install(po)
 
+# Required for enabling/disabling speaker
+find_package(KF6PulseAudioQt REQUIRED)
+
 #set(DBUS_INTERFACES_PATH "${CMAKE_INSTALL_PREFIX}/${KDE_INSTALL_DBUSINTERFACEDIR}/")
 
 add_subdirectory(kde-telephony-meta)
