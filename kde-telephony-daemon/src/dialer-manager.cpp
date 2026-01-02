@@ -4,13 +4,7 @@
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
 #include "dialer-manager.h"
-
-#include <glib.h>
-
-#ifndef LOWER_LIBCALLAUDIO_VERSION
-#include <libcallaudio-enums.h>
-#endif // LOWER_LIBCALLAUDIO_VERSION
-#include <libcallaudio.h>
+#include "dialer-utils.h"
 
 #include <KLocalizedString>
 #include <QDBusConnection>
@@ -18,59 +12,17 @@
 
 #include <QDebug>
 
+#include "dialer-audio.h"
 #include "mprisplayerinterface.h"
-
-static void enable_call_mode()
-{
-#ifdef LOWER_LIBCALLAUDIO_VERSION
-    qWarning() << "callaudio version is not supported";
-    return;
-#endif // LOWER_LIBCALLAUDIO_VERSION
-    call_audio_select_mode_async(CALL_AUDIO_MODE_CALL, nullptr, nullptr);
-}
-
-static void enable_default_mode()
-{
-#ifdef LOWER_LIBCALLAUDIO_VERSION
-    qWarning() << "callaudio version is not supported";
-    return;
-#endif // LOWER_LIBCALLAUDIO_VERSION
-    call_audio_select_mode_async(CALL_AUDIO_MODE_DEFAULT, nullptr, nullptr);
-}
-
-static void mute_mic(bool want_mute)
-{
-#ifdef LOWER_LIBCALLAUDIO_VERSION
-    qWarning() << "callaudio version is not supported";
-    return;
-#endif // LOWER_LIBCALLAUDIO_VERSION
-    call_audio_mute_mic_async(want_mute, nullptr, nullptr);
-}
-
-static void enable_speaker(bool want_speaker)
-{
-#ifdef LOWER_LIBCALLAUDIO_VERSION
-    qWarning() << "callaudio version is not supported";
-    return;
-#endif // LOWER_LIBCALLAUDIO_VERSION
-    call_audio_enable_speaker_async(want_speaker, nullptr, nullptr);
-}
 
 DialerManager::DialerManager(QObject *parent)
     : QObject(parent)
-    , m_needsDefaultAudioMode(false)
 {
-    GError *err = nullptr;
-    if (!call_audio_init(&err)) {
-        qWarning() << "Failed to init callaudio" << err->message;
-    }
+    DialerAudio::instance();
 }
 
 DialerManager::~DialerManager()
 {
-    enable_default_mode();
-    call_audio_deinit();
-    qDebug() << "Deleting DialerManager";
 }
 
 void DialerManager::setCallUtils(org::kde::telephony::CallUtils *callUtils)
@@ -130,53 +82,36 @@ void DialerManager::onUtilsCallStateChanged(const DialerTypes::CallData &callDat
         qCritical() << Q_FUNC_INFO;
     }
     qDebug() << Q_FUNC_INFO << "new call state:" << callData.state;
-    switch (callData.state) {
-    case DialerTypes::CallState::Active:
-        enable_call_mode();
-        m_needsDefaultAudioMode = true;
-        break;
-    case DialerTypes::CallState::Terminated:
-        if (m_needsDefaultAudioMode) {
-            enable_default_mode();
-            m_needsDefaultAudioMode = false;
-        }
+}
 
-        break;
-    default:
-        break;
+// get current speaker mode and pass it to the DailerUtils
+void DialerManager::onUtilsSpeakerModeRequested()
+{
+    bool speakerMode = DialerAudio::instance()->getCallMode() & AudioModeSpeaker;
+    m_dialerUtils->setSpeakerMode(speakerMode);
+}
+
+// get current mute state and pass it to the DialerUtils
+void DialerManager::onUtilsMuteRequested()
+{
+    auto micMute = DialerAudio::instance()->getMicMute();
+    m_dialerUtils->setMute(micMute);
+}
+
+// set speaker mode
+void DialerManager::onUtilsSpeakerModeChanged(bool enabled)
+{
+    if (enabled) {
+        DialerAudio::instance()->setCallMode(CallActive, AudioModeSpeaker);
+    } else {
+        DialerAudio::instance()->setCallMode(CallActive, AudioModeEarpiece);
     }
 }
 
-void DialerManager::onUtilsSpeakerModeRequested()
-{
-#ifdef LOWER_LIBCALLAUDIO_VERSION
-    qWarning() << "callaudio version is not supported";
-    return;
-#else // LOWER_LIBCALLAUDIO_VERSION
-    bool speakerMode = call_audio_get_speaker_state() == CALL_AUDIO_SPEAKER_ON;
-    m_dialerUtils->setSpeakerMode(speakerMode);
-#endif // LOWER_LIBCALLAUDIO_VERSION
-}
-
-void DialerManager::onUtilsMuteRequested()
-{
-#ifdef LOWER_LIBCALLAUDIO_VERSION
-    qWarning() << "callaudio version is not supported";
-    return;
-#else // LOWER_LIBCALLAUDIO_VERSION
-    auto micMute = call_audio_get_mic_state() == CALL_AUDIO_MIC_OFF;
-    m_dialerUtils->setMute(micMute);
-#endif // LOWER_LIBCALLAUDIO_VERSION
-}
-
-void DialerManager::onUtilsSpeakerModeChanged(bool enabled)
-{
-    enable_speaker(enabled);
-}
-
+// set mute mode
 void DialerManager::onUtilsMuteChanged(bool muted)
 {
-    mute_mic(muted);
+    DialerAudio::instance()->setMicMute(muted);
 }
 
 void DialerManager::pauseMedia()
