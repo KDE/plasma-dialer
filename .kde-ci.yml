@@ -19,19 +19,3 @@ Dependencies:
     'libraries/kirigami-addons': '@latest-kf6'
     'third-party/wayland': '@latest'
 
-- 'on': ['Linux/Qt5', 'FreeBSD/Qt5', 'Windows/Qt5', 'Android/Qt5']
-  'require':
-    'frameworks/extra-cmake-modules': '@stable'
-    'frameworks/kcontacts': '@stable'
-    'frameworks/kcoreaddons': '@stable'
-    'frameworks/kconfig': '@stable'
-    'frameworks/kdbusaddons': '@stable'
-    'frameworks/ki18n': '@stable'
-    'frameworks/kio': '@stable'
-    'frameworks/kirigami': '@stable'
-    'frameworks/knotifications': '@stable'
-    'frameworks/kpeople': '@stable'
-    'frameworks/kwindowsystem': '@stable'
-    'frameworks/modemmanager-qt': '@stable'
-    'libraries/kirigami-addons': '@latest'
-    'third-party/wayland': '@latest'
