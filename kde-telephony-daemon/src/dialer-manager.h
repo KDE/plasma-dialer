@@ -31,8 +31,12 @@ private Q_SLOTS:
                           const QString communicationWith);
     void onUtilsCallsChanged(const DialerTypes::CallDataVector &calls);
     void onUtilsCallStateChanged(const DialerTypes::CallData &callData);
+
+    // set the mute or speaker state
     void onUtilsMuteChanged(bool muted);
     void onUtilsSpeakerModeChanged(bool enabled);
+
+    // request the current state of the mute or speaker state
     void onUtilsMuteRequested();
     void onUtilsSpeakerModeRequested();
 
@@ -43,8 +47,6 @@ private:
     org::kde::telephony::CallUtils *m_callUtils;
     DialerUtils *m_dialerUtils;
     QSet<QString> m_pausedSources;
-
-    bool m_needsDefaultAudioMode;
 };
 
 #endif // CALL_MANAGER_H
