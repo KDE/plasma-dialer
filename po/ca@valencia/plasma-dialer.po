@@ -286,9 +286,3 @@ msgstr "Envia"
 #, kde-format
 msgid "Cancel USSD session"
 msgstr "Cancel·la la sessió USSD"
-
-#~ msgid "Incoming..."
-#~ msgstr "Tocada entrant…"
-
-#~ msgid "Calling..."
-#~ msgstr "S'està tocant…"
