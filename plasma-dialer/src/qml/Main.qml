@@ -200,13 +200,14 @@ Kirigami.ApplicationWindow {
     }
 
     Connections {
-        function onDepthChanged() {
-            if (root.lockscreenMode && applicationWindow().pageStack.layers.depth < 2) {
-                console.log("Exiting since the call page was dismissed on the lockscreen");
+        function onLockscreenLocked() {
+            if (!ActiveCallModel.active) {
+                console.log("There is no call ongoing and we are in the lockscreen, exiting");
                 Qt.quit();
             }
         }
-        target: applicationWindow().pageStack.layers
+
+        target: LockScreenUtils
     }
 
     Connections {
