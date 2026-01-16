@@ -174,6 +174,9 @@ int main(int argc, char **argv)
     QWindow *window = qobject_cast<QWindow *>(engine.rootObjects().at(0));
     Q_ASSERT(window);
 
+    // Register with lockscreen overlay protocol at startup before window is visible
+    allowAboveLockscreen(window);
+
     QObject::connect(&service, &KDBusService::activateRequested, window, [&window](const QStringList &arguments) {
         qDebug() << "Window activation requested over DBus";
 
@@ -185,7 +188,6 @@ int main(int argc, char **argv)
             }
         }
 
-        allowAboveLockscreen(window);
         raiseWindow(window);
     });
 
