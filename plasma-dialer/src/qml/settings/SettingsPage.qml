@@ -45,6 +45,19 @@ FormCard.FormCardPage {
         Layout.topMargin: Kirigami.Units.gridUnit
 
         FormCard.FormButtonDelegate {
+            id: ringtoneSettings
+
+            text: i18n("Ringtone")
+            description: Config.customRingtone ? Config.customRingtone.split('/').pop() : i18n("Default")
+            onClicked: applicationWindow().pageStack.push(applicationWindow().getPage("RingtoneSettings"))
+        }
+
+        FormCard.FormDelegateSeparator {
+            above: ringtoneSettings
+            below: adaptiveCallBlocking
+        }
+
+        FormCard.FormButtonDelegate {
             id: adaptiveCallBlocking
 
             text: i18n("Adaptive call blocking")

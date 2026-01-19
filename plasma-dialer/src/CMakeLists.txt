@@ -4,6 +4,7 @@
 
 set(dialer_SRCS
     lockscreenutils.cpp
+    ringtoneutils.cpp
 )
 
 kconfig_add_kcfg_files(dialer_SRCS GENERATE_MOC config.kcfgc)
@@ -22,6 +23,7 @@ qt_target_qml_sources(plasma-dialer QML_FILES
     qml/AboutPage.qml
     qml/settings/SettingsPage.qml
     qml/settings/CallBlockSettingsPage.qml
+    qml/settings/RingtoneSettingsPage.qml
     qml/call/InCallInlineMessage.qml
     qml/call/AsymmetricAnswerSwipe.qml
     qml/call/SymmetricAnswerSwipe.qml
@@ -40,7 +42,7 @@ qt_target_qml_sources(plasma-dialer QML_FILES
 )
 
 
-find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED Core Quick Qml QuickControls2)
+find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED Core Quick Qml QuickControls2 Multimedia)
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Config Crash CoreAddons I18n DBusAddons)
 find_package(KF6KirigamiAddons 1.3 REQUIRED)
 
@@ -74,6 +76,7 @@ target_link_libraries(plasma-dialer PRIVATE
     Qt::Quick
     Qt::Qml
     Qt::QuickControls2
+    Qt::Multimedia
     KF6::ConfigGui
     KF6::CoreAddons
     KF6::Crash

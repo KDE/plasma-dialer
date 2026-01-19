@@ -43,4 +43,10 @@
             </choices>
         </entry>
     </group>
+    <group name="Sound">
+        <entry name="customRingtone" type="String">
+            <label>Custom ringtone file path</label>
+            <default></default>
+        </entry>
+    </group>
 </kcfg>

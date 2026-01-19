@@ -37,6 +37,8 @@ Kirigami.ApplicationWindow {
             return pagePool.loadPage("settings/SettingsPage.qml");
         case "CallBlockSettings":
             return pagePool.loadPage("settings/CallBlockSettingsPage.qml");
+        case "RingtoneSettings":
+            return pagePool.loadPage("settings/RingtoneSettingsPage.qml");
         case "About":
             return pagePool.loadPage("AboutPage.qml");
         }

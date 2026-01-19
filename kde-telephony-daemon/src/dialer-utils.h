@@ -31,6 +31,8 @@ Q_SIGNALS:
     void speakerModeRequested();
 
 private:
+    void updateRingtoneConfig();
+
     bool m_mute;
     bool m_speakerMode;
 };
