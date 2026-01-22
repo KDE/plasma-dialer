@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-10 00:46+0000\n"
+"POT-Creation-Date: 2026-01-22 01:00+0000\n"
 "PO-Revision-Date: 2024-08-20 00:39+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -27,7 +27,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde@peremen.name"
 
-#: src/main.cpp:138 src/qml/Main.qml:119
+#: src/main.cpp:138 src/qml/Main.qml:121
 #, kde-format
 msgid "Phone"
 msgstr "전화"
@@ -248,32 +248,58 @@ msgstr "허용된 전화번호 예외"
 msgid "Add new pattern"
 msgstr "새 패턴 추가"
 
+#: src/qml/settings/RingtoneSettingsPage.qml:25
+#: src/qml/settings/SettingsPage.qml:50
+#, kde-format
+msgid "Ringtone"
+msgstr ""
+
+#: src/qml/settings/RingtoneSettingsPage.qml:79
+#, kde-format
+msgid "Select from files..."
+msgstr ""
+
+#: src/qml/settings/RingtoneSettingsPage.qml:100
+#, kde-format
+msgid "Default (System)"
+msgstr ""
+
+#: src/qml/settings/RingtoneSettingsPage.qml:150
+#, kde-format
+msgid "Choose a ringtone"
+msgstr ""
+
 #: src/qml/settings/SettingsPage.qml:38
 #, kde-format
 msgid "About"
 msgstr "정보"
 
-#: src/qml/settings/SettingsPage.qml:50
+#: src/qml/settings/SettingsPage.qml:51
+#, kde-format
+msgid "Default"
+msgstr ""
+
+#: src/qml/settings/SettingsPage.qml:63
 #, kde-format
 msgid "Adaptive call blocking"
 msgstr "적응형 통화 차단"
 
-#: src/qml/settings/SettingsPage.qml:63
+#: src/qml/settings/SettingsPage.qml:76
 #, kde-format
 msgid "Incoming call screen appearance"
 msgstr "수신 통화 화면 표시"
 
-#: src/qml/settings/SettingsPage.qml:64
+#: src/qml/settings/SettingsPage.qml:77
 #, kde-format
 msgid "Buttons"
 msgstr "단추"
 
-#: src/qml/settings/SettingsPage.qml:64
+#: src/qml/settings/SettingsPage.qml:77
 #, kde-format
 msgid "Symmetric Swipe"
 msgstr "대칭 스와이프"
 
-#: src/qml/settings/SettingsPage.qml:64
+#: src/qml/settings/SettingsPage.qml:77
 #, kde-format
 msgid "Asymmetric Swipe"
 msgstr "비대칭 스와이프"

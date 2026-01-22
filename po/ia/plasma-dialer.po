@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-10 00:46+0000\n"
+"POT-Creation-Date: 2026-01-22 01:00+0000\n"
 "PO-Revision-Date: 2024-05-09 11:47+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -27,7 +27,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "g.sora@tiscali.it"
 
-#: src/main.cpp:138 src/qml/Main.qml:119
+#: src/main.cpp:138 src/qml/Main.qml:121
 #, kde-format
 msgid "Phone"
 msgstr "Telephono"
@@ -249,32 +249,58 @@ msgstr "Exceptiones de numero de telephono permittite"
 msgid "Add new pattern"
 msgstr "Adde nove patrono"
 
+#: src/qml/settings/RingtoneSettingsPage.qml:25
+#: src/qml/settings/SettingsPage.qml:50
+#, kde-format
+msgid "Ringtone"
+msgstr ""
+
+#: src/qml/settings/RingtoneSettingsPage.qml:79
+#, kde-format
+msgid "Select from files..."
+msgstr ""
+
+#: src/qml/settings/RingtoneSettingsPage.qml:100
+#, kde-format
+msgid "Default (System)"
+msgstr ""
+
+#: src/qml/settings/RingtoneSettingsPage.qml:150
+#, kde-format
+msgid "Choose a ringtone"
+msgstr ""
+
 #: src/qml/settings/SettingsPage.qml:38
 #, kde-format
 msgid "About"
 msgstr "A proposito"
 
-#: src/qml/settings/SettingsPage.qml:50
+#: src/qml/settings/SettingsPage.qml:51
+#, kde-format
+msgid "Default"
+msgstr ""
+
+#: src/qml/settings/SettingsPage.qml:63
 #, kde-format
 msgid "Adaptive call blocking"
 msgstr "Blocar de appello adaptative"
 
-#: src/qml/settings/SettingsPage.qml:63
+#: src/qml/settings/SettingsPage.qml:76
 #, kde-format
 msgid "Incoming call screen appearance"
 msgstr "Apparentia deschermo de appello in arrivata"
 
-#: src/qml/settings/SettingsPage.qml:64
+#: src/qml/settings/SettingsPage.qml:77
 #, kde-format
 msgid "Buttons"
 msgstr "Buttones"
 
-#: src/qml/settings/SettingsPage.qml:64
+#: src/qml/settings/SettingsPage.qml:77
 #, kde-format
 msgid "Symmetric Swipe"
 msgstr "Glissa Symmetric"
 
-#: src/qml/settings/SettingsPage.qml:64
+#: src/qml/settings/SettingsPage.qml:77
 #, kde-format
 msgid "Asymmetric Swipe"
 msgstr "Glissa Asymmetric"

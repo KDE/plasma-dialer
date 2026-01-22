@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-10 00:46+0000\n"
+"POT-Creation-Date: 2026-01-22 01:00+0000\n"
 "PO-Revision-Date: 2024-02-07 21:52-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -27,7 +27,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "aalam@punlinux.org"
 
-#: src/main.cpp:138 src/qml/Main.qml:119
+#: src/main.cpp:138 src/qml/Main.qml:121
 #, kde-format
 msgid "Phone"
 msgstr "ਫ਼ੋਨ"
@@ -249,32 +249,58 @@ msgstr "ਮਨਜ਼ਰ ਕੀਤੇ ਫ਼ੋਨ ਨੰਬਰ ਛੋਟਾਂ"
 msgid "Add new pattern"
 msgstr "ਨਵੀਂ ਤਰਤੀਬ ਜੋੜੋ"
 
+#: src/qml/settings/RingtoneSettingsPage.qml:25
+#: src/qml/settings/SettingsPage.qml:50
+#, kde-format
+msgid "Ringtone"
+msgstr ""
+
+#: src/qml/settings/RingtoneSettingsPage.qml:79
+#, kde-format
+msgid "Select from files..."
+msgstr ""
+
+#: src/qml/settings/RingtoneSettingsPage.qml:100
+#, kde-format
+msgid "Default (System)"
+msgstr ""
+
+#: src/qml/settings/RingtoneSettingsPage.qml:150
+#, kde-format
+msgid "Choose a ringtone"
+msgstr ""
+
 #: src/qml/settings/SettingsPage.qml:38
 #, kde-format
 msgid "About"
 msgstr "ਇਸ ਬਾਰੇ"
 
-#: src/qml/settings/SettingsPage.qml:50
+#: src/qml/settings/SettingsPage.qml:51
+#, kde-format
+msgid "Default"
+msgstr ""
+
+#: src/qml/settings/SettingsPage.qml:63
 #, kde-format
 msgid "Adaptive call blocking"
 msgstr "ਢਲਣਯੋਗ ਕਾਲ ਪਾਬੰਦੀ"
 
-#: src/qml/settings/SettingsPage.qml:63
+#: src/qml/settings/SettingsPage.qml:76
 #, kde-format
 msgid "Incoming call screen appearance"
 msgstr "ਆਉਣ ਵਾਲੀ ਕਾਲ ਸਕਰੀਨ ਦੀ ਦਿੱਖ"
 
-#: src/qml/settings/SettingsPage.qml:64
+#: src/qml/settings/SettingsPage.qml:77
 #, kde-format
 msgid "Buttons"
 msgstr "ਬਟਨ"
 
-#: src/qml/settings/SettingsPage.qml:64
+#: src/qml/settings/SettingsPage.qml:77
 #, kde-format
 msgid "Symmetric Swipe"
 msgstr ""
 
-#: src/qml/settings/SettingsPage.qml:64
+#: src/qml/settings/SettingsPage.qml:77
 #, kde-format
 msgid "Asymmetric Swipe"
 msgstr ""

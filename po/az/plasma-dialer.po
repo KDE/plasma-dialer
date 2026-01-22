@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-10 00:46+0000\n"
+"POT-Creation-Date: 2026-01-22 01:00+0000\n"
 "PO-Revision-Date: 2024-06-25 14:28+0400\n"
 "Last-Translator: Kheyyam Godjayev <xxmn77gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -28,7 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "xxmn77@gmail.com"
 
-#: src/main.cpp:138 src/qml/Main.qml:119
+#: src/main.cpp:138 src/qml/Main.qml:121
 #, kde-format
 msgid "Phone"
 msgstr "Telefon"
@@ -250,32 +250,58 @@ msgstr "İcazə verilən telefon nömrələri üçün istisnalar"
 msgid "Add new pattern"
 msgstr "Yeni forma əlavə edin"
 
+#: src/qml/settings/RingtoneSettingsPage.qml:25
+#: src/qml/settings/SettingsPage.qml:50
+#, kde-format
+msgid "Ringtone"
+msgstr ""
+
+#: src/qml/settings/RingtoneSettingsPage.qml:79
+#, kde-format
+msgid "Select from files..."
+msgstr ""
+
+#: src/qml/settings/RingtoneSettingsPage.qml:100
+#, kde-format
+msgid "Default (System)"
+msgstr ""
+
+#: src/qml/settings/RingtoneSettingsPage.qml:150
+#, kde-format
+msgid "Choose a ringtone"
+msgstr ""
+
 #: src/qml/settings/SettingsPage.qml:38
 #, kde-format
 msgid "About"
 msgstr "Haqqında"
 
-#: src/qml/settings/SettingsPage.qml:50
+#: src/qml/settings/SettingsPage.qml:51
+#, kde-format
+msgid "Default"
+msgstr ""
+
+#: src/qml/settings/SettingsPage.qml:63
 #, kde-format
 msgid "Adaptive call blocking"
 msgstr "Uyğun zəng əngəlləmə"
 
-#: src/qml/settings/SettingsPage.qml:63
+#: src/qml/settings/SettingsPage.qml:76
 #, kde-format
 msgid "Incoming call screen appearance"
 msgstr "Gələn zəng pəncərəsinin görünüşü"
 
-#: src/qml/settings/SettingsPage.qml:64
+#: src/qml/settings/SettingsPage.qml:77
 #, kde-format
 msgid "Buttons"
 msgstr "Düymələr"
 
-#: src/qml/settings/SettingsPage.qml:64
+#: src/qml/settings/SettingsPage.qml:77
 #, kde-format
 msgid "Symmetric Swipe"
 msgstr "Simmetrik sürüşdürmə"
 
-#: src/qml/settings/SettingsPage.qml:64
+#: src/qml/settings/SettingsPage.qml:77
 #, kde-format
 msgid "Asymmetric Swipe"
 msgstr "Assimetrik sürüşdürmə"
