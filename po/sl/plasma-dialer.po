@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-22 01:00+0000\n"
-"PO-Revision-Date: 2025-12-10 06:50+0100\n"
+"PO-Revision-Date: 2026-01-22 07:39+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -256,22 +256,22 @@ msgstr "Dodaj nov vzorec"
 #: src/qml/settings/SettingsPage.qml:50
 #, kde-format
 msgid "Ringtone"
-msgstr ""
+msgstr "Melodija zvonjenja"
 
 #: src/qml/settings/RingtoneSettingsPage.qml:79
 #, kde-format
 msgid "Select from files..."
-msgstr ""
+msgstr "Izberi izmed datotek..."
 
 #: src/qml/settings/RingtoneSettingsPage.qml:100
 #, kde-format
 msgid "Default (System)"
-msgstr ""
+msgstr "Privzeto (Sistem)"
 
 #: src/qml/settings/RingtoneSettingsPage.qml:150
 #, kde-format
 msgid "Choose a ringtone"
-msgstr ""
+msgstr "Izberite melodijo zvonjenja"
 
 #: src/qml/settings/SettingsPage.qml:38
 #, kde-format
@@ -281,7 +281,7 @@ msgstr "O programu"
 #: src/qml/settings/SettingsPage.qml:51
 #, kde-format
 msgid "Default"
-msgstr ""
+msgstr "Privzeto"
 
 #: src/qml/settings/SettingsPage.qml:63
 #, kde-format

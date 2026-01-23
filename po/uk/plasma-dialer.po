@@ -3,13 +3,13 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2021, 2022, 2023, 2024, 2025.
+# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2021, 2022, 2023, 2024, 2025, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-22 01:00+0000\n"
-"PO-Revision-Date: 2025-12-10 16:41+0200\n"
+"PO-Revision-Date: 2026-01-22 21:09+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -258,22 +258,22 @@ msgstr "Додати новий взірець"
 #: src/qml/settings/SettingsPage.qml:50
 #, kde-format
 msgid "Ringtone"
-msgstr ""
+msgstr "Мелодія дзвінка"
 
 #: src/qml/settings/RingtoneSettingsPage.qml:79
 #, kde-format
 msgid "Select from files..."
-msgstr ""
+msgstr "Вибрати з файлів…"
 
 #: src/qml/settings/RingtoneSettingsPage.qml:100
 #, kde-format
 msgid "Default (System)"
-msgstr ""
+msgstr "Типова (загальносистемна)"
 
 #: src/qml/settings/RingtoneSettingsPage.qml:150
 #, kde-format
 msgid "Choose a ringtone"
-msgstr ""
+msgstr "Виберіть мелодію дзвінка"
 
 #: src/qml/settings/SettingsPage.qml:38
 #, kde-format
@@ -283,7 +283,7 @@ msgstr "Про програму"
 #: src/qml/settings/SettingsPage.qml:51
 #, kde-format
 msgid "Default"
-msgstr ""
+msgstr "Типове"
 
 #: src/qml/settings/SettingsPage.qml:63
 #, kde-format

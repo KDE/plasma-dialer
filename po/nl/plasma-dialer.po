@@ -1,13 +1,13 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the plasma-dialer package.
 #
-# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024, 2025 Freek de Kruijf <freekdekruijf@kde.nl>
+# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024, 2025, 2026 Freek de Kruijf <freekdekruijf@kde.nl>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-22 01:00+0000\n"
-"PO-Revision-Date: 2025-12-10 16:58+0100\n"
+"PO-Revision-Date: 2026-01-22 10:46+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,12 +15,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Freek de Kruijf - 2020-2025"
+msgstr "Freek de Kruijf - 2020-2026"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
@@ -253,22 +253,22 @@ msgstr "Nieuwe patronen toevoegen"
 #: src/qml/settings/SettingsPage.qml:50
 #, kde-format
 msgid "Ringtone"
-msgstr ""
+msgstr "Oproeptoon"
 
 #: src/qml/settings/RingtoneSettingsPage.qml:79
 #, kde-format
 msgid "Select from files..."
-msgstr ""
+msgstr "Uit bestanden selecteren..."
 
 #: src/qml/settings/RingtoneSettingsPage.qml:100
 #, kde-format
 msgid "Default (System)"
-msgstr ""
+msgstr "Standaard (systeem)"
 
 #: src/qml/settings/RingtoneSettingsPage.qml:150
 #, kde-format
 msgid "Choose a ringtone"
-msgstr ""
+msgstr "Kies een oproeptoon"
 
 #: src/qml/settings/SettingsPage.qml:38
 #, kde-format
@@ -278,7 +278,7 @@ msgstr "Info over"
 #: src/qml/settings/SettingsPage.qml:51
 #, kde-format
 msgid "Default"
-msgstr ""
+msgstr "Standaard"
 
 #: src/qml/settings/SettingsPage.qml:63
 #, kde-format
