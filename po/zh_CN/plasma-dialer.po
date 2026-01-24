@@ -252,22 +252,22 @@ msgstr "添加新模式"
 #: src/qml/settings/SettingsPage.qml:50
 #, kde-format
 msgid "Ringtone"
-msgstr ""
+msgstr "铃声"
 
 #: src/qml/settings/RingtoneSettingsPage.qml:79
 #, kde-format
 msgid "Select from files..."
-msgstr ""
+msgstr "选择音频文件..."
 
 #: src/qml/settings/RingtoneSettingsPage.qml:100
 #, kde-format
 msgid "Default (System)"
-msgstr ""
+msgstr "默认 (系统)"
 
 #: src/qml/settings/RingtoneSettingsPage.qml:150
 #, kde-format
 msgid "Choose a ringtone"
-msgstr ""
+msgstr "选择一个铃声"
 
 #: src/qml/settings/SettingsPage.qml:38
 #, kde-format
@@ -277,7 +277,7 @@ msgstr "关于"
 #: src/qml/settings/SettingsPage.qml:51
 #, kde-format
 msgid "Default"
-msgstr ""
+msgstr "默认"
 
 #: src/qml/settings/SettingsPage.qml:63
 #, kde-format
