@@ -254,7 +254,7 @@ msgstr "Přidat nový vzor"
 #: src/qml/settings/SettingsPage.qml:50
 #, kde-format
 msgid "Ringtone"
-msgstr ""
+msgstr "Vyzvánění"
 
 #: src/qml/settings/RingtoneSettingsPage.qml:79
 #, kde-format
@@ -279,7 +279,7 @@ msgstr "O aplikaci"
 #: src/qml/settings/SettingsPage.qml:51
 #, kde-format
 msgid "Default"
-msgstr ""
+msgstr "Výchozí"
 
 #: src/qml/settings/SettingsPage.qml:63
 #, kde-format
