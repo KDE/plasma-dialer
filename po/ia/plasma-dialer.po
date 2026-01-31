@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-22 01:00+0000\n"
-"PO-Revision-Date: 2026-01-29 12:19+0100\n"
+"PO-Revision-Date: 2026-01-30 10:21+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -253,7 +253,7 @@ msgstr "Adde nove patrono"
 #: src/qml/settings/SettingsPage.qml:50
 #, kde-format
 msgid "Ringtone"
-msgstr ""
+msgstr "Soneria"
 
 #: src/qml/settings/RingtoneSettingsPage.qml:79
 #, kde-format
@@ -263,12 +263,12 @@ msgstr "Selectiona ab files..."
 #: src/qml/settings/RingtoneSettingsPage.qml:100
 #, kde-format
 msgid "Default (System)"
-msgstr ""
+msgstr "Predefinite (Systema)"
 
 #: src/qml/settings/RingtoneSettingsPage.qml:150
 #, kde-format
 msgid "Choose a ringtone"
-msgstr ""
+msgstr "Selige un soneria"
 
 #: src/qml/settings/SettingsPage.qml:38
 #, kde-format
