@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasma-dialer package.
-# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Shinjo Park <kde@peremen.name>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2026 Shinjo Park <kde@peremen.name>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-22 01:00+0000\n"
-"PO-Revision-Date: 2024-08-20 00:39+0200\n"
+"PO-Revision-Date: 2026-02-03 22:03+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -65,12 +65,12 @@ msgstr "밀어서 받기"
 #: src/qml/call/CallPage.qml:50
 #, kde-format
 msgid "Call"
-msgstr ""
+msgstr "통화"
 
 #: src/qml/call/CallPage.qml:56
 #, kde-format
 msgid "Close"
-msgstr ""
+msgstr "닫기"
 
 #: src/qml/call/CallPage.qml:115
 #, kde-format
@@ -252,22 +252,22 @@ msgstr "새 패턴 추가"
 #: src/qml/settings/SettingsPage.qml:50
 #, kde-format
 msgid "Ringtone"
-msgstr ""
+msgstr "벨소리"
 
 #: src/qml/settings/RingtoneSettingsPage.qml:79
 #, kde-format
 msgid "Select from files..."
-msgstr ""
+msgstr "파일에서 선택..."
 
 #: src/qml/settings/RingtoneSettingsPage.qml:100
 #, kde-format
 msgid "Default (System)"
-msgstr ""
+msgstr "기본값(시스템)"
 
 #: src/qml/settings/RingtoneSettingsPage.qml:150
 #, kde-format
 msgid "Choose a ringtone"
-msgstr ""
+msgstr "벨소리 선택"
 
 #: src/qml/settings/SettingsPage.qml:38
 #, kde-format
@@ -277,7 +277,7 @@ msgstr "정보"
 #: src/qml/settings/SettingsPage.qml:51
 #, kde-format
 msgid "Default"
-msgstr ""
+msgstr "기본값"
 
 #: src/qml/settings/SettingsPage.qml:63
 #, kde-format
