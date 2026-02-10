@@ -70,6 +70,7 @@ endif()
 
 
 target_link_libraries(kde-telephony-daemon
+    DialerShared
     KF6::ConfigGui
     Qt::Core
     Qt::DBus
@@ -95,6 +96,6 @@ set(SERV_EXEC ${KDE_INSTALL_FULL_LIBEXECDIR}/kde-telephony-daemon)
 configure_file(org.kde.telephony.service.in ${CMAKE_CURRENT_BINARY_DIR}/org.kde.telephony.service)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.kde.telephony.service DESTINATION ${KDE_INSTALL_DBUSSERVICEDIR})
 
-kconfig_add_kcfg_files(kde-telephony-daemon ../../plasma-dialer/src/config.kcfgc GENERATE_MOC)
+kconfig_add_kcfg_files(kde-telephony-daemon ../../plasma-dialer/shared/config.kcfgc GENERATE_MOC)
 install(TARGETS kde-telephony-daemon DESTINATION ${KDE_INSTALL_FULL_LIBEXECDIR})
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/daemon-autostart.desktop DESTINATION ${KDE_INSTALL_AUTOSTARTDIR} RENAME org.kde.telephony.daemon.desktop)

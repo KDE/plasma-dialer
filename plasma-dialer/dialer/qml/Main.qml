@@ -12,35 +12,31 @@ import org.kde.kirigami as Kirigami
 import org.kde.telephony
 import org.kde.plasma.dialer
 
-import "call"
 
 Kirigami.ApplicationWindow {
     id: root
 
-    readonly property bool smallMode: applicationWindow().height < Kirigami.Units.gridUnit * 28
-    property bool lockscreenMode: LockScreenUtils.lockscreenActive
-    property bool isWidescreen: !LockScreenUtils.lockscreenActive && root.width >= root.height
+    readonly property bool smallMode: height < Kirigami.Units.gridUnit * 28
+    property bool isWidescreen: width >= height
 
     signal ussdUserInitiated()
 
     function getPage(name) {
         switch (name) {
-        case "History":
-            return pagePool.loadPage("HistoryPage.qml");
-        case "Contacts":
-            return pagePool.loadPage("ContactsPage.qml");
-        case "Dialer":
-            return pagePool.loadPage("DialerPage.qml");
-        case "Call":
-            return pagePool.loadPage("call/CallPage.qml");
-        case "Settings":
-            return pagePool.loadPage("settings/SettingsPage.qml");
-        case "CallBlockSettings":
-            return pagePool.loadPage("settings/CallBlockSettingsPage.qml");
-        case "RingtoneSettings":
-            return pagePool.loadPage("settings/RingtoneSettingsPage.qml");
-        case "About":
-            return pagePool.loadPage("AboutPage.qml");
+            case "History":
+                return pagePool.loadPage("HistoryPage.qml");
+            case "Contacts":
+                return pagePool.loadPage("ContactsPage.qml");
+            case "Dialer":
+                return pagePool.loadPage("DialerPage.qml");
+            case "Settings":
+                return pagePool.loadPage("settings/SettingsPage.qml");
+            case "CallBlockSettings":
+                return pagePool.loadPage("settings/CallBlockSettingsPage.qml");
+            case "RingtoneSettings":
+                return pagePool.loadPage("settings/RingtoneSettingsPage.qml");
+            case "About":
+                return pagePool.loadPage("AboutPage.qml");
         }
     }
 
@@ -52,7 +48,7 @@ Kirigami.ApplicationWindow {
         pageStack.clear();
 
         // page switch animation
-        if (!lockscreenMode && page.hasOwnProperty("yTranslate")) {
+        if (page.hasOwnProperty("yTranslate")) {
             yAnim.target = page;
             yAnim.properties = "yTranslate";
             anim.target = page;
@@ -76,11 +72,6 @@ Kirigami.ApplicationWindow {
         sidebarLoader.active = false;
         globalDrawer = null;
 
-        // No navigation on lockscreen
-        if (applicationWindow().lockscreenMode) {
-            return;
-        }
-
         if (toWidescreen) {
             sidebarLoader.active = true;
             globalDrawer = sidebarLoader.item;
@@ -103,8 +94,7 @@ Kirigami.ApplicationWindow {
     }
 
     function call(number) {
-        getPage("Dialer").pad.number = number;
-        switchToPage(getPage("Dialer"));
+        CallUtils.dial(number);
     }
 
     pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.ToolBar
@@ -117,7 +107,7 @@ Kirigami.ApplicationWindow {
     minimumHeight: minimumWidth + 1
     width: Kirigami.Settings.isMobile ? 400 : 550
     height: Kirigami.Settings.isMobile ? 650 : 500
-    visibility: lockscreenMode ? "FullScreen" : "Windowed"
+    visibility: "Windowed"
     title: i18n("Phone")
 
     onIsWidescreenChanged: changeNav(isWidescreen)
@@ -125,28 +115,10 @@ Kirigami.ApplicationWindow {
         // initial page and nav type
         switchToPage(getPage("Dialer"));
         changeNav(isWidescreen);
-
-        applyCallScreenState();
-    }
-
-    onLockscreenModeChanged: {
-        applyCallScreenState();
-
-        // Apply navigation style
-        changeNav(isWidescreen);
     }
 
     onUssdUserInitiated: {
         ussdSheet.open(); // open it already since async interaction is not immediate
-    }
-
-    // Performs the logic needed to open the call screen if necessary
-    function applyCallScreenState() {
-        const callPage = getPage("Call");
-
-        if (ActiveCallModel.active && pageStack.layers.currentItem !== callPage) {
-            pageStack.layers.push(callPage);
-        }
     }
 
     Kirigami.PagePool {
@@ -199,40 +171,6 @@ Kirigami.ApplicationWindow {
             imeiSheet.imeis = DeviceUtils.equipmentIdentifiers;
             imeiSheet.open();
         }
-    }
-
-    Connections {
-        function onLockscreenLocked() {
-            if (!ActiveCallModel.active) {
-                console.log("There is no call ongoing and we are in the lockscreen, exiting");
-                Qt.quit();
-            }
-        }
-
-        target: LockScreenUtils
-    }
-
-    Connections {
-        // Open call page when a call initiates
-        function onActiveChanged() {
-            root.applyCallScreenState();
-
-            if (!ActiveCallModel.active) {
-                if (root.lockscreenMode) {
-                    // When the call exits, just quit on the menu
-                    // We can't do this in applyCallScreenState(), because the initial call state is always active = false
-                    console.log("There is no call ongoing, exiting");
-                    Qt.quit();
-                } else {
-                    // Remove call page
-                    if (pageStack.layers.currentItem === getPage("Call")) {
-                        pageStack.layers.pop();
-                    }
-                }
-            }
-        }
-
-        target: ActiveCallModel
     }
 
     Connections {
