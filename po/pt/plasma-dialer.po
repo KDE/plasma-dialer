@@ -1,32 +1,33 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the plasma-dialer package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+# SPDX-FileCopyrightText: 2026 André Barata <andretiagob@protonmail.com>
+# SPDX-FileCopyrightText: 2026 César A. P. Cláudio <cesarapclaudio@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-22 01:00+0000\n"
-"PO-Revision-Date: 2023-03-06 15:45+0000\n"
-"Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
-"Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
+"PO-Revision-Date: 2026-02-11 21:27+0000\n"
+"Last-Translator: César A. P. Cláudio <cesarapclaudio@gmail.com>\n"
+"Language-Team: pt\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-POFile-SpellExtra: USSD IMEI Alexey Andreyev\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "José Nuno Pires"
+msgstr "André Barata, José Nuno Pires"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "zepires@gmail.com"
+msgstr "andretiagob@protonmail.com"
 
 #: src/main.cpp:138 src/qml/Main.qml:121
 #, kde-format
@@ -41,7 +42,7 @@ msgstr "Teclado de telefone do Plasma"
 #: src/main.cpp:142
 #, kde-format
 msgid "© 2015-2022 KDE Community"
-msgstr "© 2015-2022 da Comunidade do KDE"
+msgstr "© 2015-2022 Comunidade KDE"
 
 #: src/main.cpp:145
 #, kde-format
@@ -61,17 +62,17 @@ msgstr "A chamar..."
 #: src/qml/call/AsymmetricAnswerSwipe.qml:102
 #, kde-format
 msgid "Swipe to accept"
-msgstr "Deslize para aceitar"
+msgstr "Deslizar para aceitar"
 
 #: src/qml/call/CallPage.qml:50
 #, kde-format
 msgid "Call"
-msgstr ""
+msgstr "Chamar"
 
 #: src/qml/call/CallPage.qml:56
 #, kde-format
 msgid "Close"
-msgstr ""
+msgstr "Fechar"
 
 #: src/qml/call/CallPage.qml:115
 #, kde-format
@@ -91,7 +92,7 @@ msgstr "Silenciar"
 #: src/qml/call/InCallInlineMessage.qml:13
 #, kde-format
 msgid "Active call list"
-msgstr "Lista de chamadas activas"
+msgstr "Lista de chamadas ativas"
 
 #: src/qml/call/InCallInlineMessage.qml:17
 #, kde-format
@@ -120,7 +121,7 @@ msgstr "Teclado"
 #: src/qml/settings/SettingsPage.qml:26
 #, kde-format
 msgid "Settings"
-msgstr "Configuração"
+msgstr "Definições"
 
 #: src/qml/components/Sidebar.qml:139
 #, kde-format
@@ -130,22 +131,22 @@ msgstr "Sair"
 #: src/qml/ContactsPage.qml:57
 #, kde-format
 msgid "No contacts have a phone number set"
-msgstr "Nenhum contacto tem números de telefone definidos"
+msgstr "Não existem contatos com números atribuídos"
 
 #: src/qml/ContactsPage.qml:98
 #, kde-format
 msgid "Select number to call"
-msgstr "Seleccione o número para onde ligar"
+msgstr "Selecione um número para chamar"
 
 #: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:114
 #, kde-format
 msgid "Telephony daemons are not responding"
-msgstr ""
+msgstr "Os serviços do Telefone não estão a responder"
 
 #: src/qml/DialerPage.qml:124
 #, kde-format
 msgid "Modem devices are not found"
-msgstr "Não foram detectados dispositivos de modem"
+msgstr "Não foram encontrados dispositivos de modem"
 
 #: src/qml/DialerPage.qml:134
 #, kde-format
@@ -160,12 +161,12 @@ msgstr "Duração: %1"
 #: src/qml/HistoryPage.qml:34
 #, kde-format
 msgid "Call History"
-msgstr "Histórico de Chamadas"
+msgstr "Histórico de chamadas"
 
 #: src/qml/HistoryPage.qml:40
 #, kde-format
 msgid "Clear history"
-msgstr "Limpar o histórico"
+msgstr "Limpar histórico"
 
 #: src/qml/HistoryPage.qml:68
 #, kde-format
@@ -187,22 +188,22 @@ msgstr[1] "IMEI's"
 #: src/qml/settings/CallBlockSettingsPage.qml:25
 #, kde-format
 msgid "Adaptive Call Blocking"
-msgstr "Bloqueio Adaptativo de Chamadas"
+msgstr "Bloqueio adaptativo de chamadas"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:34
 #, kde-format
 msgid "Ignore calls from unknown numbers"
-msgstr "Ignorar as chamadas de números desconhecidos"
+msgstr "Ignorar chamadas de números desconhecidos"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:40
 #, kde-format
 msgid "When a call is an incoming from an unknown number"
-msgstr "Quando é recebida uma chamada com um número desconhecido"
+msgstr "Quando recebe uma chamada com número desconhecido"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:48
 #, kde-format
 msgid "Immediately hang up"
-msgstr "Suspender imediatamente"
+msgstr "Terminar chamada imediatamente"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:54
 #, kde-format
@@ -227,12 +228,12 @@ msgstr "Números anónimos"
 #: src/qml/settings/CallBlockSettingsPage.qml:87
 #, kde-format
 msgid "Existing outgoing call to number"
-msgstr "Chamada efectuada existente para o número"
+msgstr "Chamada feita existente para o número"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:95
 #, kde-format
 msgid "Callback within"
-msgstr "Chamada de retorno nos próximos"
+msgstr "Devolver chamada dentro de"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:114
 #, kde-format
@@ -254,32 +255,32 @@ msgstr "Adicionar um novo padrão"
 #: src/qml/settings/SettingsPage.qml:50
 #, kde-format
 msgid "Ringtone"
-msgstr ""
+msgstr "Som de toque"
 
 #: src/qml/settings/RingtoneSettingsPage.qml:79
 #, kde-format
 msgid "Select from files..."
-msgstr ""
+msgstr "Selecionar a partir de ficheiros..."
 
 #: src/qml/settings/RingtoneSettingsPage.qml:100
 #, kde-format
 msgid "Default (System)"
-msgstr ""
+msgstr "Padrão (Sistema)"
 
 #: src/qml/settings/RingtoneSettingsPage.qml:150
 #, kde-format
 msgid "Choose a ringtone"
-msgstr ""
+msgstr "Escolha um som de toque"
 
 #: src/qml/settings/SettingsPage.qml:38
 #, kde-format
 msgid "About"
-msgstr "Acerca"
+msgstr "Acerca de"
 
 #: src/qml/settings/SettingsPage.qml:51
 #, kde-format
 msgid "Default"
-msgstr ""
+msgstr "Padrão"
 
 #: src/qml/settings/SettingsPage.qml:63
 #, kde-format
@@ -299,22 +300,22 @@ msgstr "Botões"
 #: src/qml/settings/SettingsPage.qml:77
 #, kde-format
 msgid "Symmetric Swipe"
-msgstr "Deslize Simétrico"
+msgstr "Deslize simétrico"
 
 #: src/qml/settings/SettingsPage.qml:77
 #, kde-format
 msgid "Asymmetric Swipe"
-msgstr "Deslize Assimétrico"
+msgstr "Deslize assimétrico"
 
 #: src/qml/USSDSheet.qml:64
 #, kde-format
 msgid "USSD Error"
-msgstr "Erro do USSD"
+msgstr "Erro do 'USSD'"
 
 #: src/qml/USSDSheet.qml:64
 #, kde-format
 msgid "USSD Message"
-msgstr "Mensagem do USSD"
+msgstr "Mensagem do 'USSD'"
 
 #: src/qml/USSDSheet.qml:77
 #, kde-format
@@ -329,4 +330,4 @@ msgstr "Enviar"
 #: src/qml/USSDSheet.qml:102
 #, kde-format
 msgid "Cancel USSD session"
-msgstr "Cancelar a sessão do USSD"
+msgstr "Cancelar a sessão do 'USSD'"
