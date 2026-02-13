@@ -127,7 +127,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="nn">Med telefonappen kan du lett ringja opp eller verta oppringd via smarttelefonen.</p>
     <p xml:lang="pa">ਫ਼ੋਨ ਐਪ ਤੁਹਾਨੂੰ ਤੁਹਾਡੇ ਸਮਾਰਟ-ਫ਼ੋਨ ਤੋਂ ਸੌਖੀ ਤਰ੍ਹਾਂ ਫ਼ੋਨ ਕਾਲਾਂ ਕਰਨ ਤੇ ਲੈਣ ਲਈ ਸਹਾਇਕ ਹੈ।</p>
     <p xml:lang="pl">Aplikacja telefonu umożliwia łatwe nawiązywanie połączeń telefonicznych z twojego smartfonu.</p>
-    <p xml:lang="pt">a aplicação de Telefone permite-lhe efectuar e receber facilmente chamadas telefónicas no seu telemóvel.</p>
+    <p xml:lang="pt">A aplicação Telefone permite-lhe efetuar e receber facilmente chamadas telefónicas a partir do seu telemóvel.</p>
     <p xml:lang="pt-BR">O aplicativo Phone permite a você enviar e receber chamadas telefônicas de seu celular.</p>
     <p xml:lang="ro">Aplicația Telefon vă permite să faceți și să primiți apeluri telefonice de pe telefonul inteligent.</p>
     <p xml:lang="ru">Приложение «Телефон» позволяет с лёгкостью совершать и принимать телефонные звонки с помощью смартфона.</p>
@@ -209,7 +209,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="nn">Sjå samtalelogg og ring opp att telefonnummer</li>
       <li xml:lang="pa">ਆਪਣੇ ਕਾਲ ਅਤੀਤ ਨੂੰ ਵੇਖੋ ਅਤੇ ਉਸ ਨੰਬਰ ਨੂੰ ਮੁੜ ਕੇ ਸੌਖੀ ਤਰ੍ਹਾਂ ਕਾਲ ਕਰੋ</li>
       <li xml:lang="pl">Zobacz swoją historię dzwonienia i łatwo dzwoń na te same numery ponownie</li>
-      <li xml:lang="pt">Ver o seu histórico de chamadas e invocar o mesmo número de novo</li>
+      <li xml:lang="pt">Veja o seu histórico de chamadas e ligue novamente, de forma fácil, para o mesmo número</li>
       <li xml:lang="pt-BR">Veja seu histórico de chamadas e disque facilmente o mesmo número novamente</li>
       <li xml:lang="ro">Vedeți istoricul apelurilor și sunați același număr din nou</li>
       <li xml:lang="ru">Просмотр журнала вызовов и удобный повторный вызов номеров</li>
@@ -248,7 +248,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="nn">Administrer kontaktar registrerte med telefonnummer</li>
       <li xml:lang="pa">ਆਪਣੇ ਸੰਪਰਕਾਂ ਦਾ ਇੰਤਜ਼ਾਮ ਕਰੋ, ਜਿੰਨ੍ਹਾਂ ਲਈ ਫ਼ੋਨ ਨੰਬਰ ਸੈੱਟ ਹੈ</li>
       <li xml:lang="pl">Zarządzaj swoimi kontaktami, które mają ustawiony numer telefonu</li>
-      <li xml:lang="pt">Gerir os seus contactos que tenham números de telefone atribuídos</li>
+      <li xml:lang="pt">Faça a gestão dos seus contatos que tenham números de telefone atribuídos</li>
       <li xml:lang="pt-BR">Gerencie seus contatos que tenham um número de telefone definido</li>
       <li xml:lang="ro">Gestionați contactele ce au un număr de telefon înregistrat</li>
       <li xml:lang="ru">Управление контактами с заданными номерами телефонов</li>
@@ -293,7 +293,7 @@ SPDX-License-Identifier: CC0-1.0
       <caption xml:lang="nn">Ringjesida</caption>
       <caption xml:lang="pa">ਡਾਇਲਰ ਸਫ਼ਾ</caption>
       <caption xml:lang="pl">Strona dialera</caption>
-      <caption xml:lang="pt">A página de marcação</caption>
+      <caption xml:lang="pt">Página do teclado do telefone</caption>
       <caption xml:lang="pt-BR">A página do discador</caption>
       <caption xml:lang="ro">Pagina apelatorului</caption>
       <caption xml:lang="ru">Набор номера</caption>
