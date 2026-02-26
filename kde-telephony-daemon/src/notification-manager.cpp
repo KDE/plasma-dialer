@@ -11,6 +11,7 @@
 #include <KLocalizedString>
 #include <QDBusConnection>
 #include <QTimer>
+#include <qdbusmessage.h>
 
 static bool getScreenSaverActive()
 {
@@ -265,6 +266,12 @@ void NotificationManager::handleIncomingCall(const QString &deviceUni, const QSt
     if (callerDisplay.isEmpty()) {
         callerDisplay = i18n("No Caller ID");
     }
+
+    QDBusMessage wakeupCall = QDBusMessage::createMethodCall(QStringLiteral("org.kde.Solid.PowerManagement"),
+                                                             QStringLiteral("/org/kde/Solid/PowerManagement"),
+                                                             QStringLiteral("org.kde.Solid.PowerManagement"),
+                                                             QStringLiteral("wakeup"));
+    QDBusConnection::sessionBus().call(wakeupCall);
 
     if (!skipNotification) {
         openRingingNotification(deviceUni, callUni, callerDisplay, notificationEvent);
