@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-22 01:00+0000\n"
-"PO-Revision-Date: 2024-05-15 20:36+0200\n"
+"PO-Revision-Date: 2026-02-26 18:45+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 26.03.70\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -66,12 +66,12 @@ msgstr "Sveip for å godta"
 #: src/qml/call/CallPage.qml:50
 #, kde-format
 msgid "Call"
-msgstr ""
+msgstr "Oppringing"
 
 #: src/qml/call/CallPage.qml:56
 #, kde-format
 msgid "Close"
-msgstr ""
+msgstr "Lukk"
 
 #: src/qml/call/CallPage.qml:115
 #, kde-format
@@ -255,22 +255,22 @@ msgstr "Legg til nytt mønster"
 #: src/qml/settings/SettingsPage.qml:50
 #, kde-format
 msgid "Ringtone"
-msgstr ""
+msgstr "Ringjetone"
 
 #: src/qml/settings/RingtoneSettingsPage.qml:79
 #, kde-format
 msgid "Select from files..."
-msgstr ""
+msgstr "Vel frå filer …"
 
 #: src/qml/settings/RingtoneSettingsPage.qml:100
 #, kde-format
 msgid "Default (System)"
-msgstr ""
+msgstr "Standard (system)"
 
 #: src/qml/settings/RingtoneSettingsPage.qml:150
 #, kde-format
 msgid "Choose a ringtone"
-msgstr ""
+msgstr "Vel ringjetone"
 
 #: src/qml/settings/SettingsPage.qml:38
 #, kde-format
@@ -280,7 +280,7 @@ msgstr "Om"
 #: src/qml/settings/SettingsPage.qml:51
 #, kde-format
 msgid "Default"
-msgstr ""
+msgstr "Standard"
 
 #: src/qml/settings/SettingsPage.qml:63
 #, kde-format
