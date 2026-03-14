@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-08 00:45+0000\n"
+"POT-Creation-Date: 2026-03-14 02:42+0000\n"
 "PO-Revision-Date: 2024-01-15 00:30+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -20,32 +20,32 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 24.01.90\n"
 
-#: src/notification-manager.cpp:114 src/notification-manager.cpp:266
+#: src/notification-manager.cpp:115 src/notification-manager.cpp:267
 #, kde-format
 msgid "No Caller ID"
 msgstr "無來電者 ID"
 
-#: src/notification-manager.cpp:124
+#: src/notification-manager.cpp:125
 #, kde-format
 msgid "Missed call"
 msgstr "未接來電"
 
-#: src/notification-manager.cpp:125
+#: src/notification-manager.cpp:126
 #, kde-format
 msgid "Missed call from %1"
 msgstr "錯過 %1 的來電"
 
-#: src/notification-manager.cpp:147
+#: src/notification-manager.cpp:148
 #, kde-format
 msgid "Incoming call"
 msgstr "電話來電"
 
-#: src/notification-manager.cpp:153
+#: src/notification-manager.cpp:154
 #, kde-format
 msgid "Accept"
 msgstr "接受"
 
-#: src/notification-manager.cpp:159
+#: src/notification-manager.cpp:160
 #, kde-format
 msgid "Reject"
 msgstr "拒絕"
