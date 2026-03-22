@@ -33,6 +33,20 @@ Kirigami.Page {
 
     actions: [
         Kirigami.Action {
+            id: addPhoneNumber
+
+            icon.name: "list-add-user"
+            visible: true
+            enabled: !applicationWindow().lockscreenMode
+            text: i18n("Add contact")
+            onTriggered: {
+                var comp = Qt.createComponent("AddContactPage.qml")
+                var page = comp.createObject(pageStack)
+                page.phoneNumber = numberEntryText
+                pageStack.push(page)
+            }
+        },
+        Kirigami.Action {
             id: settingsAction
 
             icon.name: "settings-configure"
