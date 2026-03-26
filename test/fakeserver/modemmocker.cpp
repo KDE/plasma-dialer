@@ -10,6 +10,8 @@
 
 #include <ModemManager/ModemManager.h>
 #include <QDBusConnection>
+#include <QDBusMessage>
+#include <QTimer>
 
 using namespace Qt::StringLiterals;
 
@@ -20,6 +22,8 @@ ModemMocker::ModemMocker(SimMocker *sim, ObjectManagerMocker *objectManager, QOb
 {
     setDBusName(QStringLiteral("org.freedesktop.ModemManager1.Modem"));
     setDBusPath(QDBusObjectPath(QStringLiteral("/org/freedesktop/ModemManager1/Modem/0")));
+
+    m_ussdStateTimer.setSingleShot(true);
 }
 
 QDBusObjectPath ModemMocker::sim() const
@@ -53,21 +57,53 @@ QString ModemMocker::operatorName() const
 
 int ModemMocker::state() const
 {
-    return MM_MODEM_3GPP_USSD_SESSION_STATE_IDLE; // MMModem3gppUssdSessionState
+    return m_ussdState;
 }
 
 QString ModemMocker::networkNotification() const
 {
-    qDebug() << "Modem3gppUssdMocker networkNotification()";
-    // TODO
-    return {};
+    return m_networkNotification;
 }
 
 QString ModemMocker::networkRequest() const
 {
-    qDebug() << "Modem3gppUssdMocker networkRequest()";
-    // TODO
-    return {};
+    return m_networkRequest;
+}
+
+void ModemMocker::setUssdState(int state)
+{
+    if (m_ussdState == state) {
+        return;
+    }
+    m_ussdState = state;
+    emitUssdPropertyChanged(u"State"_s, QVariant::fromValue(static_cast<uint>(state)));
+    Q_EMIT stateChanged();
+}
+
+void ModemMocker::setNetworkNotification(const QString &message)
+{
+    m_networkNotification = message;
+    emitUssdPropertyChanged(u"NetworkNotification"_s, QVariant::fromValue(message));
+    Q_EMIT networkNotificationChanged();
+}
+
+void ModemMocker::setNetworkRequest(const QString &message)
+{
+    m_networkRequest = message;
+    emitUssdPropertyChanged(u"NetworkRequest"_s, QVariant::fromValue(message));
+    Q_EMIT networkRequestChanged();
+}
+
+void ModemMocker::emitUssdPropertyChanged(const QString &name, const QVariant &value)
+{
+    QVariantMap updatedProperties;
+    updatedProperties[name] = value;
+
+    QDBusMessage signal = QDBusMessage::createSignal(dbusPath().path(), u"org.freedesktop.DBus.Properties"_s, u"PropertiesChanged"_s);
+    signal << u"org.freedesktop.ModemManager1.Modem.Modem3gpp.Ussd"_s;
+    signal << updatedProperties;
+    signal << QStringList();
+    QDBusConnection::systemBus().send(signal);
 }
 
 QStringList ModemMocker::calls() const
@@ -95,18 +131,59 @@ QList<QVariantMap> ModemMocker::Scan()
 QString ModemMocker::Initiate(const QString &command)
 {
     qDebug() << "3gppUssd Initiate:" << command;
-    return {};
+
+    if (m_ussdState != MM_MODEM_3GPP_USSD_SESSION_STATE_IDLE) {
+        qWarning() << "3gppUssd Initiate: session already active, ignoring";
+        return {};
+    }
+
+    setUssdState(MM_MODEM_3GPP_USSD_SESSION_STATE_ACTIVE);
+
+    QString response;
+    if (command == u"*123#"_s || command == u"*100#"_s) {
+        response = u"Your balance is $42.00. Reply 1 for details, 2 for top-up."_s;
+    } else {
+        response = u"USSD response for: "_s + command;
+    }
+
+    // Transition to USER_RESPONSE after returning (multi-step session)
+    m_ussdStateTimer.disconnect();
+    connect(&m_ussdStateTimer, &QTimer::timeout, this, [this]() {
+        setUssdState(MM_MODEM_3GPP_USSD_SESSION_STATE_USER_RESPONSE);
+    });
+    m_ussdStateTimer.start(100);
+
+    return response;
 }
 
 QString ModemMocker::Respond(const QString &response)
 {
     qDebug() << "3gppUssd Respond:" << response;
-    return {};
+
+    if (m_ussdState != MM_MODEM_3GPP_USSD_SESSION_STATE_USER_RESPONSE) {
+        qWarning() << "3gppUssd Respond: no active session expecting response";
+        return {};
+    }
+
+    QString reply = u"Response received: "_s + response;
+
+    // End session after responding
+    m_ussdStateTimer.disconnect();
+    connect(&m_ussdStateTimer, &QTimer::timeout, this, [this]() {
+        setUssdState(MM_MODEM_3GPP_USSD_SESSION_STATE_IDLE);
+    });
+    m_ussdStateTimer.start(100);
+
+    return reply;
 }
 
 void ModemMocker::Cancel()
 {
     qDebug() << "3gppUssd Cancel";
+    m_ussdStateTimer.stop();
+    setNetworkNotification({});
+    setNetworkRequest({});
+    setUssdState(MM_MODEM_3GPP_USSD_SESSION_STATE_IDLE);
 }
 
 // Voice

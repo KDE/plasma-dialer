@@ -27,6 +27,8 @@ public:
 public Q_SLOTS:
     void startIncomingCall();
     void stopIncomingCall(const QString &callPath);
+    void sendUssdNotification(const QString &message);
+    void sendUssdRequest(const QString &message);
 
 private:
     ObjectManagerMocker *m_objectManagerMocker{nullptr};

@@ -5,6 +5,7 @@
 #pragma once
 
 #include <QObject>
+#include <QTimer>
 
 #include <QDBusObjectPath>
 #include <QList>
@@ -60,6 +61,11 @@ public:
     // Voice
     QStringList calls() const;
 
+    // USSD control (called from Server/QML)
+    void setUssdState(int state);
+    void setNetworkNotification(const QString &message);
+    void setNetworkRequest(const QString &message);
+
     // Other
     QDBusObjectPath addCall(QVariantMap props);
     void removeCall(QDBusObjectPath callPath);
@@ -102,6 +108,8 @@ Q_SIGNALS:
     void callsChanged();
 
 private:
+    void emitUssdPropertyChanged(const QString &name, const QVariant &value);
+
     QList<CallMocker *> m_calls;
 
     QDBusObjectPath m_simPath;
@@ -110,4 +118,9 @@ private:
     ObjectManagerMocker *m_objectManagerMocker{nullptr};
 
     int m_callNum = 0;
+
+    int m_ussdState{0}; // MM_MODEM_3GPP_USSD_SESSION_STATE_IDLE
+    QString m_networkNotification;
+    QString m_networkRequest;
+    QTimer m_ussdStateTimer;
 };

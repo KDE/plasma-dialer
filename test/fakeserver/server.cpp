@@ -7,6 +7,9 @@
 #include <QCoreApplication>
 #include <QDBusConnection>
 #include <QDateTime>
+#include <QTimer>
+
+#include <ModemManager/ModemManager.h>
 
 using namespace Qt::StringLiterals;
 
@@ -60,4 +63,21 @@ void Server::startIncomingCall()
 void Server::stopIncomingCall(const QString &callPath)
 {
     m_modemMocker->removeCall(QDBusObjectPath{callPath});
+}
+
+void Server::sendUssdNotification(const QString &message)
+{
+    m_modemMocker->setNetworkNotification(message);
+    m_modemMocker->setUssdState(MM_MODEM_3GPP_USSD_SESSION_STATE_ACTIVE);
+
+    // Auto-return to idle
+    QTimer::singleShot(500, this, [this]() {
+        m_modemMocker->setUssdState(MM_MODEM_3GPP_USSD_SESSION_STATE_IDLE);
+    });
+}
+
+void Server::sendUssdRequest(const QString &message)
+{
+    m_modemMocker->setNetworkRequest(message);
+    m_modemMocker->setUssdState(MM_MODEM_3GPP_USSD_SESSION_STATE_USER_RESPONSE);
 }
