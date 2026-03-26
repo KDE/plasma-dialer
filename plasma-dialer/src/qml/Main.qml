@@ -250,6 +250,7 @@ Kirigami.ApplicationWindow {
     Connections {
         function onNotificationReceived(deviceUni, message) {
             ussdSheet.showNotification(message);
+            ussdSheet.open();
         }
 
         function onStateChanged(deviceUni, state) {
