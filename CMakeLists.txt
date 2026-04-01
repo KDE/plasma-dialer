@@ -84,4 +84,4 @@ kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
 file(GLOB_RECURSE ALL_SOURCE_FILES *.cpp *.h *.qml)
 ecm_check_outbound_license(LICENSES GPL-3.0-only FILES ${ALL_SOURCE_FILES})
 
-feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
+feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
