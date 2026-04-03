@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-22 01:00+0000\n"
+"POT-Creation-Date: 2026-04-03 00:46+0000\n"
 "PO-Revision-Date: 2026-01-23 05:01+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -312,27 +312,27 @@ msgstr "對稱滑動"
 msgid "Asymmetric Swipe"
 msgstr "不對稱滑動"
 
-#: src/qml/USSDSheet.qml:64
+#: src/qml/USSDSheet.qml:39
 #, kde-format
 msgid "USSD Error"
 msgstr "USSD 錯誤"
 
-#: src/qml/USSDSheet.qml:64
+#: src/qml/USSDSheet.qml:39
 #, kde-format
 msgid "USSD Message"
 msgstr "USSD 訊息"
 
-#: src/qml/USSDSheet.qml:77
+#: src/qml/USSDSheet.qml:70
 #, kde-format
 msgid "Write response..."
 msgstr "撰寫回應..."
 
-#: src/qml/USSDSheet.qml:84
+#: src/qml/USSDSheet.qml:77
 #, kde-format
 msgid "Send"
 msgstr "傳送"
 
-#: src/qml/USSDSheet.qml:102
+#: src/qml/USSDSheet.qml:95
 #, kde-format
 msgid "Cancel USSD session"
 msgstr "取消 USSD 工作階段"

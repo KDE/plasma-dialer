@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-22 01:00+0000\n"
+"POT-Creation-Date: 2026-04-03 00:46+0000\n"
 "PO-Revision-Date: 2026-02-11 21:27+0000\n"
 "Last-Translator: César A. P. Cláudio <cesarapclaudio@gmail.com>\n"
 "Language-Team: pt\n"
@@ -307,27 +307,27 @@ msgstr "Deslize simétrico"
 msgid "Asymmetric Swipe"
 msgstr "Deslize assimétrico"
 
-#: src/qml/USSDSheet.qml:64
+#: src/qml/USSDSheet.qml:39
 #, kde-format
 msgid "USSD Error"
 msgstr "Erro do 'USSD'"
 
-#: src/qml/USSDSheet.qml:64
+#: src/qml/USSDSheet.qml:39
 #, kde-format
 msgid "USSD Message"
 msgstr "Mensagem do 'USSD'"
 
-#: src/qml/USSDSheet.qml:77
+#: src/qml/USSDSheet.qml:70
 #, kde-format
 msgid "Write response..."
 msgstr "Escrever uma resposta..."
 
-#: src/qml/USSDSheet.qml:84
+#: src/qml/USSDSheet.qml:77
 #, kde-format
 msgid "Send"
 msgstr "Enviar"
 
-#: src/qml/USSDSheet.qml:102
+#: src/qml/USSDSheet.qml:95
 #, kde-format
 msgid "Cancel USSD session"
 msgstr "Cancelar a sessão do 'USSD'"

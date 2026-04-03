@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-22 01:00+0000\n"
+"POT-Creation-Date: 2026-04-03 00:46+0000\n"
 "PO-Revision-Date: 2026-01-22 07:39+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -308,27 +308,27 @@ msgstr "Simetrični poteg"
 msgid "Asymmetric Swipe"
 msgstr "Asimetrični poteg"
 
-#: src/qml/USSDSheet.qml:64
+#: src/qml/USSDSheet.qml:39
 #, kde-format
 msgid "USSD Error"
 msgstr "Napaka USSD"
 
-#: src/qml/USSDSheet.qml:64
+#: src/qml/USSDSheet.qml:39
 #, kde-format
 msgid "USSD Message"
 msgstr "Sporočilo USSD"
 
-#: src/qml/USSDSheet.qml:77
+#: src/qml/USSDSheet.qml:70
 #, kde-format
 msgid "Write response..."
 msgstr "Piši odgovor..."
 
-#: src/qml/USSDSheet.qml:84
+#: src/qml/USSDSheet.qml:77
 #, kde-format
 msgid "Send"
 msgstr "Pošlji"
 
-#: src/qml/USSDSheet.qml:102
+#: src/qml/USSDSheet.qml:95
 #, kde-format
 msgid "Cancel USSD session"
 msgstr "Prekliči sejo USSD"
