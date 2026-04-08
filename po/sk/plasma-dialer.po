@@ -13,8 +13,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.12.1\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 20.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -29,7 +29,7 @@ msgstr "wizzardsk@gmail.com"
 #: src/main.cpp:138 src/qml/Main.qml:119
 #, kde-format
 msgid "Phone"
-msgstr ""
+msgstr "Telefón"
 
 #: src/main.cpp:140
 #, kde-format
@@ -39,16 +39,15 @@ msgstr "Plasma vytáčanie telefónu"
 #: src/main.cpp:142
 #, kde-format
 msgid "© 2015-2022 KDE Community"
-msgstr ""
+msgstr "© 2015-2022 Komunita KDE"
 
 #: src/main.cpp:145
 #, kde-format
 msgid "Alexey Andreyev"
-msgstr ""
+msgstr "Alexey Andreyev"
 
 #: src/qml/call/ActiveCallView.qml:57
-#, fuzzy, kde-format
-#| msgid "Incoming call"
+#, kde-format
 msgid "Incoming..."
 msgstr "Prichádzajúci hovor"
 
@@ -60,17 +59,17 @@ msgstr "Volanie..."
 #: src/qml/call/AsymmetricAnswerSwipe.qml:102
 #, kde-format
 msgid "Swipe to accept"
-msgstr ""
+msgstr "Potiahnite pre prijatie"
 
 #: src/qml/call/CallPage.qml:50
 #, kde-format
 msgid "Call"
-msgstr ""
+msgstr "Hovor"
 
 #: src/qml/call/CallPage.qml:56
 #, kde-format
 msgid "Close"
-msgstr ""
+msgstr "Zavrieť"
 
 #: src/qml/call/CallPage.qml:115
 #, kde-format
@@ -90,7 +89,7 @@ msgstr "Stlmiť"
 #: src/qml/call/InCallInlineMessage.qml:13
 #, kde-format
 msgid "Active call list"
-msgstr ""
+msgstr "Zoznam aktívnych hovorov"
 
 #: src/qml/call/InCallInlineMessage.qml:17
 #, kde-format
@@ -98,10 +97,9 @@ msgid "View"
 msgstr "Zobraziť"
 
 #: src/qml/components/BottomToolbar.qml:94 src/qml/components/Sidebar.qml:57
-#, fuzzy, kde-format
-#| msgid "Call History"
+#, kde-format
 msgid "History"
-msgstr "História hovorov"
+msgstr "História"
 
 #: src/qml/components/BottomToolbar.qml:106 src/qml/components/Sidebar.qml:76
 #: src/qml/ContactsPage.qml:24
@@ -120,37 +118,37 @@ msgstr "Vytáčanie"
 #: src/qml/settings/SettingsPage.qml:26
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "Nastavenia"
 
 #: src/qml/components/Sidebar.qml:139
 #, kde-format
 msgid "Quit"
-msgstr ""
+msgstr "Ukončiť"
 
 #: src/qml/ContactsPage.qml:57
 #, kde-format
 msgid "No contacts have a phone number set"
-msgstr ""
+msgstr "Žiadne kontakty nemajú nastavené telefónne číslo"
 
 #: src/qml/ContactsPage.qml:98
 #, kde-format
 msgid "Select number to call"
-msgstr ""
+msgstr "Vyberte číslo na zavolanie"
 
 #: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:114
 #, kde-format
 msgid "Telephony daemons are not responding"
-msgstr ""
+msgstr "Telefónne démony neodpovedajú"
 
 #: src/qml/DialerPage.qml:124
 #, kde-format
 msgid "Modem devices are not found"
-msgstr ""
+msgstr "Modemové zariadenia sa nenašli"
 
 #: src/qml/DialerPage.qml:134
 #, kde-format
 msgid "Voicemail number couldn't be found"
-msgstr ""
+msgstr "Číslo hlasovej schránky sa nepodarilo nájsť"
 
 #: src/qml/history/HistoryDelegate.qml:68
 #, kde-format
@@ -175,136 +173,136 @@ msgstr "Žiadne nedávne hovory"
 #: src/qml/ImeiSheet.qml:24
 #, kde-format
 msgid "No IMEIs found"
-msgstr ""
+msgstr "Neboli nájdené žiadne IMEI"
 
 #: src/qml/ImeiSheet.qml:30
 #, kde-format
 msgid "IMEI"
 msgid_plural "IMEIs"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "IMEI"
+msgstr[1] "IMEI"
+msgstr[2] "IMEI"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:25
 #, kde-format
 msgid "Adaptive Call Blocking"
-msgstr ""
+msgstr "Adaptívne blokovanie hovorov"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:34
 #, kde-format
 msgid "Ignore calls from unknown numbers"
-msgstr ""
+msgstr "Ignorovať hovory z neznámych čísel"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:40
 #, kde-format
 msgid "When a call is an incoming from an unknown number"
-msgstr ""
+msgstr "Keď je hovor prichádzajúci z neznámeho čísla"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:48
 #, kde-format
 msgid "Immediately hang up"
-msgstr ""
+msgstr "Ihneď zavesiť"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:54
 #, kde-format
 msgid "Ring without notification"
-msgstr ""
+msgstr "Zvoniť bez oznámenia"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:60
 #, kde-format
 msgid "Ring with silent notification"
-msgstr ""
+msgstr "Zvoniť s tichým oznámením"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:69
 #, kde-format
 msgid "Allowed exceptions"
-msgstr ""
+msgstr "Povolené výnimky"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:79
 #, kde-format
 msgid "Anonymous numbers"
-msgstr ""
+msgstr "Anonymné čísla"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:87
 #, kde-format
 msgid "Existing outgoing call to number"
-msgstr ""
+msgstr "Existujúci odchádzajúci hovor na číslo"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:95
 #, kde-format
 msgid "Callback within"
-msgstr ""
+msgstr "Spätné volanie v rámci"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:114
 #, kde-format
 msgid "minutes"
-msgstr ""
+msgstr "minút"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:127
 #, kde-format
 msgid "Allowed phone number exceptions"
-msgstr ""
+msgstr "Povolené výnimky telefónnych čísel"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:149
 #: src/qml/settings/CallBlockSettingsPage.qml:187
 #, kde-format
 msgid "Add new pattern"
-msgstr ""
+msgstr "Pridať nový vzor"
 
 #: src/qml/settings/SettingsPage.qml:38
 #, kde-format
 msgid "About"
-msgstr ""
+msgstr "O programe"
 
 #: src/qml/settings/SettingsPage.qml:50
 #, kde-format
 msgid "Adaptive call blocking"
-msgstr ""
+msgstr "Adaptívne blokovanie hovorov"
 
 #: src/qml/settings/SettingsPage.qml:63
 #, kde-format
 msgid "Incoming call screen appearance"
-msgstr ""
+msgstr "Vzhľad obrazovky prichádzajúceho hovoru"
 
 #: src/qml/settings/SettingsPage.qml:64
 #, kde-format
 msgid "Buttons"
-msgstr ""
+msgstr "Tlačidlá"
 
 #: src/qml/settings/SettingsPage.qml:64
 #, kde-format
 msgid "Symmetric Swipe"
-msgstr ""
+msgstr "Symetrické potiahnutie"
 
 #: src/qml/settings/SettingsPage.qml:64
 #, kde-format
 msgid "Asymmetric Swipe"
-msgstr ""
+msgstr "Asymetrické potiahnutie"
 
 #: src/qml/USSDSheet.qml:64
 #, kde-format
 msgid "USSD Error"
-msgstr ""
+msgstr "Chyba USSD"
 
 #: src/qml/USSDSheet.qml:64
 #, kde-format
 msgid "USSD Message"
-msgstr ""
+msgstr "Správa USSD"
 
 #: src/qml/USSDSheet.qml:77
 #, kde-format
 msgid "Write response..."
-msgstr ""
+msgstr "Napíšte odpoveď..."
 
 #: src/qml/USSDSheet.qml:84
 #, kde-format
 msgid "Send"
-msgstr ""
+msgstr "Odoslať"
 
 #: src/qml/USSDSheet.qml:102
 #, kde-format
 msgid "Cancel USSD session"
-msgstr ""
+msgstr "Zrušiť reláciu USSD"
 
 #~ msgid "Accept"
 #~ msgstr "Prijať"
