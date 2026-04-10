@@ -258,17 +258,17 @@ msgstr "Ringtone"
 #: src/qml/settings/RingtoneSettingsPage.qml:79
 #, kde-format
 msgid "Select from files..."
-msgstr ""
+msgstr "Vybrať zo súborov..."
 
 #: src/qml/settings/RingtoneSettingsPage.qml:100
 #, kde-format
 msgid "Default (System)"
-msgstr ""
+msgstr "Predvolený (systémový)"
 
 #: src/qml/settings/RingtoneSettingsPage.qml:150
 #, kde-format
 msgid "Choose a ringtone"
-msgstr ""
+msgstr "Vybrať vyzváňací tón"
 
 #: src/qml/settings/SettingsPage.qml:38
 #, kde-format
