@@ -47,7 +47,7 @@ Kirigami.Page {
         return '' + h + ':' + m + ':' + s;
     }
 
-    title: i18n("Call")
+    title: i18nc("This is a noun", "Call")
 
     actions: [
         // Allow user to close window if the window is open and no call is ongoing
@@ -124,7 +124,7 @@ Kirigami.Page {
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 iconSource: "audio-speakers-symbolic"
-                text: i18n("Speaker")
+                text: i18nc("As in 'loudspeaker'", "Speaker")
                 toggledOn: DialerUtils.speakerMode
                 onClicked: DialerUtils.setSpeakerMode(!toggledOn);
             }
@@ -136,7 +136,7 @@ Kirigami.Page {
                 Layout.fillHeight: true
                 Layout.fillWidth: true
                 iconSource: toggledOn ? "microphone-sensitivity-muted-symbolic" : "microphone-sensitivity-high-symbolic"
-                text: i18n("Mute")
+                text: i18nc("@action:button", "Mute")
                 toggledOn: DialerUtils.mute
                 onClicked: DialerUtils.setMute(!toggledOn);
             }
