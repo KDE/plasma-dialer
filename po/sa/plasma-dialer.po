@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-03 00:46+0000\n"
+"POT-Creation-Date: 2026-04-23 00:46+0000\n"
 "PO-Revision-Date: 2024-12-24 20:39+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -66,6 +66,7 @@ msgstr "स्वीकारं कर्तुं स्वाइप् कु
 
 #: src/qml/call/CallPage.qml:50
 #, kde-format
+msgctxt "This is a noun"
 msgid "Call"
 msgstr ""
 
@@ -80,12 +81,16 @@ msgid "Keypad"
 msgstr "कीपैड"
 
 #: src/qml/call/CallPage.qml:127
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Speaker"
+msgctxt "As in 'loudspeaker'"
 msgid "Speaker"
 msgstr "वक्ता"
 
 #: src/qml/call/CallPage.qml:139
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Mute"
+msgctxt "@action:button"
 msgid "Mute"
 msgstr "मूक"
 

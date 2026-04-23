@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-03 00:46+0000\n"
+"POT-Creation-Date: 2026-04-23 00:46+0000\n"
 "PO-Revision-Date: 2026-01-22 12:09+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -63,7 +63,9 @@ msgid "Swipe to accept"
 msgstr "Kabul etmek için kaydırın"
 
 #: src/qml/call/CallPage.qml:50
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Call"
+msgctxt "This is a noun"
 msgid "Call"
 msgstr "Ara"
 
@@ -78,12 +80,16 @@ msgid "Keypad"
 msgstr "Düğme Takımı"
 
 #: src/qml/call/CallPage.qml:127
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Speaker"
+msgctxt "As in 'loudspeaker'"
 msgid "Speaker"
 msgstr "Hoparlör"
 
 #: src/qml/call/CallPage.qml:139
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Mute"
+msgctxt "@action:button"
 msgid "Mute"
 msgstr "Sessize Al"
 
