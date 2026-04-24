@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-23 00:46+0000\n"
-"PO-Revision-Date: 2026-01-22 07:39+0100\n"
+"PO-Revision-Date: 2026-04-23 06:54+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -64,8 +64,7 @@ msgid "Swipe to accept"
 msgstr "S prstom potegni za sprejem"
 
 #: src/qml/call/CallPage.qml:50
-#, fuzzy, kde-format
-#| msgid "Call"
+#, kde-format
 msgctxt "This is a noun"
 msgid "Call"
 msgstr "Kliči"
@@ -81,15 +80,13 @@ msgid "Keypad"
 msgstr "Tipkovnica"
 
 #: src/qml/call/CallPage.qml:127
-#, fuzzy, kde-format
-#| msgid "Speaker"
+#, kde-format
 msgctxt "As in 'loudspeaker'"
 msgid "Speaker"
 msgstr "Zvočnik"
 
 #: src/qml/call/CallPage.qml:139
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Nemo"

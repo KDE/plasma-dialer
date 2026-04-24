@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-23 00:46+0000\n"
-"PO-Revision-Date: 2026-01-22 09:05+0200\n"
+"PO-Revision-Date: 2026-04-23 08:26+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -64,11 +64,10 @@ msgid "Swipe to accept"
 msgstr "החלקה לאישור"
 
 #: src/qml/call/CallPage.qml:50
-#, fuzzy, kde-format
-#| msgid "Call"
+#, kde-format
 msgctxt "This is a noun"
 msgid "Call"
-msgstr "התקשרות"
+msgstr "שיחה"
 
 #: src/qml/call/CallPage.qml:56
 #, kde-format
@@ -81,15 +80,13 @@ msgid "Keypad"
 msgstr "לוח מקשים"
 
 #: src/qml/call/CallPage.qml:127
-#, fuzzy, kde-format
-#| msgid "Speaker"
+#, kde-format
 msgctxt "As in 'loudspeaker'"
 msgid "Speaker"
 msgstr "רמקול"
 
 #: src/qml/call/CallPage.qml:139
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "השתקה"
