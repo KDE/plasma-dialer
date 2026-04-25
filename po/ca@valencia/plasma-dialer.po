@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-23 00:46+0000\n"
-"PO-Revision-Date: 2026-01-22 10:35+0100\n"
+"PO-Revision-Date: 2026-04-23 09:19+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -66,11 +66,10 @@ msgid "Swipe to accept"
 msgstr "Llisca per a acceptar"
 
 #: src/qml/call/CallPage.qml:50
-#, fuzzy, kde-format
-#| msgid "Call"
+#, kde-format
 msgctxt "This is a noun"
 msgid "Call"
-msgstr "Toca"
+msgstr "Tocada"
 
 #: src/qml/call/CallPage.qml:56
 #, kde-format
@@ -83,15 +82,13 @@ msgid "Keypad"
 msgstr "Teclat numèric"
 
 #: src/qml/call/CallPage.qml:127
-#, fuzzy, kde-format
-#| msgid "Speaker"
+#, kde-format
 msgctxt "As in 'loudspeaker'"
 msgid "Speaker"
 msgstr "Altaveu"
 
 #: src/qml/call/CallPage.qml:139
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Silencia"
@@ -272,7 +269,7 @@ msgstr "Selecció a partir de fitxers…"
 #: src/qml/settings/RingtoneSettingsPage.qml:100
 #, kde-format
 msgid "Default (System)"
-msgstr "Predeterminat (Sistema)"
+msgstr "Predeterminat (sistema)"
 
 #: src/qml/settings/RingtoneSettingsPage.qml:150
 #, kde-format
