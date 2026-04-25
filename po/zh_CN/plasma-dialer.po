@@ -65,7 +65,7 @@ msgstr "滑动接听"
 #: src/qml/call/CallPage.qml:50
 #, kde-format
 msgid "Call"
-msgstr "呼叫"
+msgstr ""
 
 #: src/qml/call/CallPage.qml:56
 #, kde-format
@@ -80,12 +80,12 @@ msgstr "键盘"
 #: src/qml/call/CallPage.qml:127
 #, kde-format
 msgid "Speaker"
-msgstr "外放"
+msgstr ""
 
 #: src/qml/call/CallPage.qml:139
 #, kde-format
 msgid "Mute"
-msgstr "静音"
+msgstr ""
 
 #: src/qml/call/InCallInlineMessage.qml:13
 #, kde-format
