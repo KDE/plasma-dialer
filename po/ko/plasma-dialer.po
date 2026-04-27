@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-23 00:46+0000\n"
-"PO-Revision-Date: 2026-02-03 22:03+0100\n"
+"PO-Revision-Date: 2026-04-26 20:56+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -63,8 +63,7 @@ msgid "Swipe to accept"
 msgstr "밀어서 받기"
 
 #: src/qml/call/CallPage.qml:50
-#, fuzzy, kde-format
-#| msgid "Call"
+#, kde-format
 msgctxt "This is a noun"
 msgid "Call"
 msgstr "통화"
@@ -80,15 +79,13 @@ msgid "Keypad"
 msgstr "키패드"
 
 #: src/qml/call/CallPage.qml:127
-#, fuzzy, kde-format
-#| msgid "Speaker"
+#, kde-format
 msgctxt "As in 'loudspeaker'"
 msgid "Speaker"
 msgstr "스피커"
 
 #: src/qml/call/CallPage.qml:139
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "음소거"
