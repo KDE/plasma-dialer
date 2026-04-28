@@ -87,8 +87,7 @@ msgid "Speaker"
 msgstr "Reproduktor"
 
 #: src/qml/call/CallPage.qml:139
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Ztlumit"
