@@ -66,7 +66,7 @@ msgstr "滑动接听"
 #, kde-format
 msgctxt "This is a noun"
 msgid "Call"
-msgstr ""
+msgstr "拨号"
 
 #: src/qml/call/CallPage.qml:56
 #, kde-format
@@ -82,13 +82,13 @@ msgstr "键盘"
 #, kde-format
 msgctxt "As in 'loudspeaker'"
 msgid "Speaker"
-msgstr ""
+msgstr "扬声器"
 
 #: src/qml/call/CallPage.qml:139
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
-msgstr ""
+msgstr "静音"
 
 #: src/qml/call/InCallInlineMessage.qml:13
 #, kde-format
