@@ -35,3 +35,6 @@ Dependencies:
     'frameworks/modemmanager-qt': '@stable'
     'libraries/kirigami-addons': '@latest'
     'third-party/wayland': '@latest'
+
+Options:
+  require-passing-tests-on: ['@all']
