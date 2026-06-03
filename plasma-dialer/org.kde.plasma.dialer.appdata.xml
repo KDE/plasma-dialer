@@ -42,6 +42,7 @@ SPDX-License-Identifier: CC0-1.0
   <name xml:lang="sl">Phone</name>
   <name xml:lang="sv">Telefon</name>
   <name xml:lang="tr">Telefon</name>
+  <name xml:lang="ug">تېلېفون</name>
   <name xml:lang="uk">Телефон</name>
   <name xml:lang="vi">Điện thoại</name>
   <name xml:lang="zh-CN">电话</name>
@@ -180,6 +181,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="sl">Zmožnosti:</p>
     <p xml:lang="sv">Funktioner:</p>
     <p xml:lang="tr">Özellikler:</p>
+    <p xml:lang="ug">ئىقتىدار:</p>
     <p xml:lang="uk">Можливості:</p>
     <p xml:lang="vi">Tính năng:</p>
     <p xml:lang="zh-CN">程序功能：</p>
