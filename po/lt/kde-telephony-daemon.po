@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-14 00:46+0000\n"
-"PO-Revision-Date: 2022-11-17 00:48+0000\n"
+"PO-Revision-Date: 2026-06-19 01:27+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -17,33 +17,34 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
+"X-Generator: Poedit 3.9\n"
 
 #: src/notification-manager.cpp:115 src/notification-manager.cpp:267
 #, kde-format
 msgid "No Caller ID"
-msgstr ""
+msgstr "Nėra skambintojo ID"
 
 #: src/notification-manager.cpp:125
 #, kde-format
 msgid "Missed call"
-msgstr ""
+msgstr "Praleistas skambutis"
 
 #: src/notification-manager.cpp:126
 #, kde-format
 msgid "Missed call from %1"
-msgstr ""
+msgstr "Praleistas skambutis nuo %1"
 
 #: src/notification-manager.cpp:148
 #, kde-format
 msgid "Incoming call"
-msgstr ""
+msgstr "Gaunamasis skambutis"
 
 #: src/notification-manager.cpp:154
 #, kde-format
 msgid "Accept"
-msgstr ""
+msgstr "Atsiliepti"
 
 #: src/notification-manager.cpp:160
 #, kde-format
 msgid "Reject"
-msgstr ""
+msgstr "Atmesti"

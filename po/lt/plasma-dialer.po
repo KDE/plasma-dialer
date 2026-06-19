@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-23 00:46+0000\n"
-"PO-Revision-Date: 2022-12-30 08:47+0000\n"
+"PO-Revision-Date: 2026-06-19 01:59+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -17,320 +17,322 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
+"X-Generator: Poedit 3.9\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Moo"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "<>"
 
 #: src/main.cpp:138 src/qml/Main.qml:121
 #, kde-format
 msgid "Phone"
-msgstr ""
+msgstr "Telefonas"
 
 #: src/main.cpp:140
 #, kde-format
 msgid "Plasma phone dialer"
-msgstr ""
+msgstr "Plasma telefono numerių rinkiklis"
 
 #: src/main.cpp:142
 #, kde-format
 msgid "© 2015-2022 KDE Community"
-msgstr ""
+msgstr "© 2015–2022 KDE bendruomenė"
 
 #: src/main.cpp:145
 #, kde-format
 msgid "Alexey Andreyev"
-msgstr ""
+msgstr "Alexey Andreyev"
 
 #: src/qml/call/ActiveCallView.qml:57
 #, kde-format
 msgid "Incoming..."
-msgstr ""
+msgstr "Gaunamasis..."
 
 #: src/qml/call/ActiveCallView.qml:60
 #, kde-format
 msgid "Calling..."
-msgstr ""
+msgstr "Skambinama..."
 
 #: src/qml/call/AsymmetricAnswerSwipe.qml:102
 #, kde-format
 msgid "Swipe to accept"
-msgstr ""
+msgstr "Perbraukite norėdami atsiliepti"
 
 #: src/qml/call/CallPage.qml:50
 #, kde-format
 msgctxt "This is a noun"
 msgid "Call"
-msgstr ""
+msgstr "Skambutis"
 
 #: src/qml/call/CallPage.qml:56
 #, kde-format
 msgid "Close"
-msgstr ""
+msgstr "Užverti"
 
 #: src/qml/call/CallPage.qml:115
 #, kde-format
 msgid "Keypad"
-msgstr ""
+msgstr "Pagalbinė klaviatūra"
 
 #: src/qml/call/CallPage.qml:127
 #, kde-format
 msgctxt "As in 'loudspeaker'"
 msgid "Speaker"
-msgstr ""
+msgstr "Garsiakalbis"
 
 #: src/qml/call/CallPage.qml:139
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
-msgstr ""
+msgstr "Nutildyti"
 
 #: src/qml/call/InCallInlineMessage.qml:13
 #, kde-format
 msgid "Active call list"
-msgstr ""
+msgstr "Aktyvių skambučių sąrašas"
 
 #: src/qml/call/InCallInlineMessage.qml:17
 #, kde-format
 msgid "View"
-msgstr ""
+msgstr "Rodyti"
 
 #: src/qml/components/BottomToolbar.qml:94 src/qml/components/Sidebar.qml:57
 #, kde-format
 msgid "History"
-msgstr ""
+msgstr "Istorija"
 
 #: src/qml/components/BottomToolbar.qml:106 src/qml/components/Sidebar.qml:76
 #: src/qml/ContactsPage.qml:24
 #, kde-format
 msgid "Contacts"
-msgstr ""
+msgstr "Adresatai"
 
 #: src/qml/components/BottomToolbar.qml:118 src/qml/components/Sidebar.qml:95
 #: src/qml/DialerPage.qml:27
 #, kde-format
 msgid "Dialer"
-msgstr ""
+msgstr "Numerio rinkiklis"
 
 #: src/qml/components/Sidebar.qml:121 src/qml/ContactsPage.qml:32
 #: src/qml/DialerPage.qml:42 src/qml/HistoryPage.qml:47
 #: src/qml/settings/SettingsPage.qml:26
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "Nuostatos"
 
 #: src/qml/components/Sidebar.qml:139
 #, kde-format
 msgid "Quit"
-msgstr ""
+msgstr "Išjungti"
 
 #: src/qml/ContactsPage.qml:57
 #, kde-format
 msgid "No contacts have a phone number set"
-msgstr ""
+msgstr "Nėra adresatų su įrašytu telefono numeriu"
 
 #: src/qml/ContactsPage.qml:98
 #, kde-format
 msgid "Select number to call"
-msgstr ""
+msgstr "Pasirinkite, kuriuo numeriu skambinti"
 
 #: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:114
 #, kde-format
 msgid "Telephony daemons are not responding"
-msgstr ""
+msgstr "Telefonijos tarnybos nereaguoja"
 
 #: src/qml/DialerPage.qml:124
 #, kde-format
 msgid "Modem devices are not found"
-msgstr ""
+msgstr "Nerasti jokie modemo įrenginiai"
 
 #: src/qml/DialerPage.qml:134
 #, kde-format
 msgid "Voicemail number couldn't be found"
-msgstr ""
+msgstr "Nepavyko rasti balso pašto numerio"
 
 #: src/qml/history/HistoryDelegate.qml:68
 #, kde-format
 msgid "Duration: %1"
-msgstr ""
+msgstr "Trukmė: %1"
 
 #: src/qml/HistoryPage.qml:34
 #, kde-format
 msgid "Call History"
-msgstr ""
+msgstr "Skambučių istorija"
 
 #: src/qml/HistoryPage.qml:40
 #, kde-format
 msgid "Clear history"
-msgstr ""
+msgstr "Išvalyti istoriją"
 
 #: src/qml/HistoryPage.qml:68
 #, kde-format
 msgid "No recent calls"
-msgstr ""
+msgstr "Nėra paskiausių skambučių"
 
 #: src/qml/ImeiSheet.qml:24
 #, kde-format
 msgid "No IMEIs found"
-msgstr ""
+msgstr "Nerasti jokie IMEI"
 
 #: src/qml/ImeiSheet.qml:30
 #, kde-format
 msgid "IMEI"
 msgid_plural "IMEIs"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "IMEI"
+msgstr[1] "IMEI"
+msgstr[2] "IMEI"
+msgstr[3] "IMEI"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:25
 #, kde-format
 msgid "Adaptive Call Blocking"
-msgstr ""
+msgstr "Prisitaikantis skambučių blokavimas"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:34
 #, kde-format
 msgid "Ignore calls from unknown numbers"
-msgstr ""
+msgstr "Nepaisyti skambučių nuo nežinomų numerių"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:40
 #, kde-format
 msgid "When a call is an incoming from an unknown number"
-msgstr ""
+msgstr "Kai gaunamas skambutis nuo nežinomo numerio"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:48
 #, kde-format
 msgid "Immediately hang up"
-msgstr ""
+msgstr "Nedelsiant padėti ragelį"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:54
 #, kde-format
 msgid "Ring without notification"
-msgstr ""
+msgstr "Leisti telefonui skambėti be pranešimo"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:60
 #, kde-format
 msgid "Ring with silent notification"
-msgstr ""
+msgstr "Leisti telefonui skambėti su tyliu pranešimu"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:69
 #, kde-format
 msgid "Allowed exceptions"
-msgstr ""
+msgstr "Leidžiamos išimtys"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:79
 #, kde-format
 msgid "Anonymous numbers"
-msgstr ""
+msgstr "Anoniminiai numeriai"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:87
 #, kde-format
 msgid "Existing outgoing call to number"
-msgstr ""
+msgstr "Esamas išsiunčiamasis skambutis numeriu"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:95
 #, kde-format
 msgid "Callback within"
-msgstr ""
+msgstr "Atskambinti per"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:114
 #, kde-format
 msgid "minutes"
-msgstr ""
+msgstr "min."
 
 #: src/qml/settings/CallBlockSettingsPage.qml:127
 #, kde-format
 msgid "Allowed phone number exceptions"
-msgstr ""
+msgstr "Leidžiamos telefono numerio išimtys"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:149
 #: src/qml/settings/CallBlockSettingsPage.qml:187
 #, kde-format
 msgid "Add new pattern"
-msgstr ""
+msgstr "Pridėti naują šabloną"
 
 #: src/qml/settings/RingtoneSettingsPage.qml:25
 #: src/qml/settings/SettingsPage.qml:50
 #, kde-format
 msgid "Ringtone"
-msgstr ""
+msgstr "Skambučio melodija"
 
 #: src/qml/settings/RingtoneSettingsPage.qml:79
 #, kde-format
 msgid "Select from files..."
-msgstr ""
+msgstr "Pasirinkti iš failų..."
 
 #: src/qml/settings/RingtoneSettingsPage.qml:100
 #, kde-format
 msgid "Default (System)"
-msgstr ""
+msgstr "Numatytoji (Sistemos)"
 
 #: src/qml/settings/RingtoneSettingsPage.qml:150
 #, kde-format
 msgid "Choose a ringtone"
-msgstr ""
+msgstr "Pasirinkti skambučio melodiją"
 
 #: src/qml/settings/SettingsPage.qml:38
 #, kde-format
 msgid "About"
-msgstr ""
+msgstr "Apie"
 
 #: src/qml/settings/SettingsPage.qml:51
 #, kde-format
 msgid "Default"
-msgstr ""
+msgstr "Numatytasis"
 
 #: src/qml/settings/SettingsPage.qml:63
 #, kde-format
 msgid "Adaptive call blocking"
-msgstr ""
+msgstr "Prisitaikantis skambučių blokavimas"
 
 #: src/qml/settings/SettingsPage.qml:76
 #, kde-format
 msgid "Incoming call screen appearance"
-msgstr ""
+msgstr "Gaunamojo skambučio išvaizda ekrane"
 
 #: src/qml/settings/SettingsPage.qml:77
 #, kde-format
 msgid "Buttons"
-msgstr ""
+msgstr "Mygtukai"
 
 #: src/qml/settings/SettingsPage.qml:77
 #, kde-format
 msgid "Symmetric Swipe"
-msgstr ""
+msgstr "Simetrinis perbraukimas"
 
 #: src/qml/settings/SettingsPage.qml:77
 #, kde-format
 msgid "Asymmetric Swipe"
-msgstr ""
+msgstr "Asimetrinis perbraukimas"
 
 #: src/qml/USSDSheet.qml:39
 #, kde-format
 msgid "USSD Error"
-msgstr ""
+msgstr "USSD klaida"
 
 #: src/qml/USSDSheet.qml:39
 #, kde-format
 msgid "USSD Message"
-msgstr ""
+msgstr "USSD žinutė"
 
 #: src/qml/USSDSheet.qml:70
 #, kde-format
 msgid "Write response..."
-msgstr ""
+msgstr "Rašyti atsakymą..."
 
 #: src/qml/USSDSheet.qml:77
 #, kde-format
 msgid "Send"
-msgstr ""
+msgstr "Siųsti"
 
 #: src/qml/USSDSheet.qml:95
 #, kde-format
 msgid "Cancel USSD session"
-msgstr ""
+msgstr "Atsisakyti USSD seanso"
