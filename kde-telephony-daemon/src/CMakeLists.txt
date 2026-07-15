@@ -21,7 +21,7 @@ set_source_files_properties(
 )
 
 find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED Core DBus Sql)
-find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Config I18n Notifications KIO)
+find_package(KF6 ${KF6_MIN_VERSION} REQUIRED COMPONENTS Config I18n Notifications KIO)
 find_package(KTactileFeedback OPTIONAL_COMPONENTS KTactileFeedback)
 
 qt_add_dbus_interface(ktelephonyd_SRCS "${DBUS_INTERFACES_PATH}/org.kde.telephony.DeviceUtils.xml"

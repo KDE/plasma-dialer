@@ -28,7 +28,7 @@ set_source_files_properties(
 )
 
 find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED Core Quick Qml Sql DBus)
-find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS CoreAddons I18n DBusAddons Contacts People)
+find_package(KF6 ${KF6_MIN_VERSION} REQUIRED COMPONENTS CoreAddons I18n DBusAddons Contacts People)
 find_package(PhoneNumber COMPONENTS PhoneNumber REQUIRED)
 
 # calls-daemon

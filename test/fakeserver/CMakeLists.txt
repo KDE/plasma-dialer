@@ -84,7 +84,7 @@ qt_add_qml_module(plasma-dialer-fakeserver
 )
 
 find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED Core Quick Qml Gui Widgets DBus QuickControls2)
-find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS CoreAddons DBusAddons ModemManagerQt)
+find_package(KF6 ${KF6_MIN_VERSION} REQUIRED COMPONENTS CoreAddons DBusAddons ModemManagerQt)
 
 target_link_libraries(plasma-dialer-fakeserver PUBLIC
     Qt::Qml

@@ -30,7 +30,7 @@ set(modemd_SRCS
 
 find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED Core Gui DBus)
 if (${MODEM_SUBSYSTEM} STREQUAL "ModemManager")
-    find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS ModemManagerQt)
+    find_package(KF6 ${KF6_MIN_VERSION} REQUIRED COMPONENTS ModemManagerQt)
 elseif(${MODEM_SUBSYSTEM} STREQUAL "oFono")
     message(STATUS "oFono support is not implemented yet")
 endif()
