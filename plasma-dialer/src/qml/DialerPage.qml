@@ -36,7 +36,7 @@ Kirigami.Page {
             id: addPhoneNumber
 
             icon.name: "list-add-user"
-            visible: true
+            visible: dialPad.number !== ""
             enabled: !applicationWindow().lockscreenMode
             text: i18n("Add contact")
             onTriggered: {
