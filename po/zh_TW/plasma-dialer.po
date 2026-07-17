@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-23 00:46+0000\n"
+"POT-Creation-Date: 2026-07-17 00:46+0000\n"
 "PO-Revision-Date: 2026-05-12 03:13+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -30,7 +30,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "mail@kisaragi-hiu.com"
 
-#: src/main.cpp:138 src/qml/Main.qml:121
+#: src/main.cpp:138 src/qml/AddContactPage.qml:64 src/qml/Main.qml:123
 #, kde-format
 msgid "Phone"
 msgstr "電話"
@@ -49,6 +49,16 @@ msgstr "© 2015-2022 KDE 社群"
 #, kde-format
 msgid "Alexey Andreyev"
 msgstr "Alexey Andreyev"
+
+#: src/qml/AddContactPage.qml:26
+#, kde-format
+msgid "Adding contact"
+msgstr ""
+
+#: src/qml/AddContactPage.qml:43
+#, kde-format
+msgid "Name"
+msgstr ""
 
 #: src/qml/call/ActiveCallView.qml:57
 #, kde-format
@@ -121,7 +131,7 @@ msgid "Dialer"
 msgstr "電話"
 
 #: src/qml/components/Sidebar.qml:121 src/qml/ContactsPage.qml:32
-#: src/qml/DialerPage.qml:42 src/qml/HistoryPage.qml:47
+#: src/qml/DialerPage.qml:56 src/qml/HistoryPage.qml:47
 #: src/qml/settings/SettingsPage.qml:26
 #, kde-format
 msgid "Settings"
@@ -142,17 +152,23 @@ msgstr "沒有已設定電話號碼的聯絡人"
 msgid "Select number to call"
 msgstr "選擇要打電話給哪個號碼"
 
-#: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:114
+#: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:128
 #, kde-format
 msgid "Telephony daemons are not responding"
 msgstr "電話守護程式沒有回應"
 
-#: src/qml/DialerPage.qml:124
+#: src/qml/DialerPage.qml:41
+#, fuzzy, kde-format
+#| msgid "Contacts"
+msgid "Add contact"
+msgstr "聯絡人"
+
+#: src/qml/DialerPage.qml:138
 #, kde-format
 msgid "Modem devices are not found"
 msgstr "未找到數據機裝置"
 
-#: src/qml/DialerPage.qml:134
+#: src/qml/DialerPage.qml:148
 #, kde-format
 msgid "Voicemail number couldn't be found"
 msgstr "找不到語音信箱號碼"

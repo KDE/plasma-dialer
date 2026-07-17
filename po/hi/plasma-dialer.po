@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-23 00:46+0000\n"
+"POT-Creation-Date: 2026-07-17 00:46+0000\n"
 "PO-Revision-Date: 2024-12-15 17:37+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -27,7 +27,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "आपके ईमेल"
 
-#: src/main.cpp:138 src/qml/Main.qml:121
+#: src/main.cpp:138 src/qml/AddContactPage.qml:64 src/qml/Main.qml:123
 #, kde-format
 msgid "Phone"
 msgstr "फ़ोन"
@@ -46,6 +46,16 @@ msgstr "© 2015-2022 केडीई समुदाय"
 #, kde-format
 msgid "Alexey Andreyev"
 msgstr "एलेक्सी आंद्रेयेव"
+
+#: src/qml/AddContactPage.qml:26
+#, kde-format
+msgid "Adding contact"
+msgstr ""
+
+#: src/qml/AddContactPage.qml:43
+#, kde-format
+msgid "Name"
+msgstr ""
 
 #: src/qml/call/ActiveCallView.qml:57
 #, kde-format
@@ -120,7 +130,7 @@ msgid "Dialer"
 msgstr "डायलर"
 
 #: src/qml/components/Sidebar.qml:121 src/qml/ContactsPage.qml:32
-#: src/qml/DialerPage.qml:42 src/qml/HistoryPage.qml:47
+#: src/qml/DialerPage.qml:56 src/qml/HistoryPage.qml:47
 #: src/qml/settings/SettingsPage.qml:26
 #, kde-format
 msgid "Settings"
@@ -141,17 +151,23 @@ msgstr "किसी भी संपर्क का फ़ोन नंबर 
 msgid "Select number to call"
 msgstr "कॉल करने के लिए नंबर चुनें"
 
-#: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:114
+#: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:128
 #, kde-format
 msgid "Telephony daemons are not responding"
 msgstr "टेलीफोनी डेमॉन प्रतिक्रिया नहीं दे रहे हैं"
 
-#: src/qml/DialerPage.qml:124
+#: src/qml/DialerPage.qml:41
+#, fuzzy, kde-format
+#| msgid "Contacts"
+msgid "Add contact"
+msgstr "संपर्क"
+
+#: src/qml/DialerPage.qml:138
 #, kde-format
 msgid "Modem devices are not found"
 msgstr "मॉडेम डिवाइस नहीं मिले"
 
-#: src/qml/DialerPage.qml:134
+#: src/qml/DialerPage.qml:148
 #, kde-format
 msgid "Voicemail number couldn't be found"
 msgstr "वॉइसमेल नंबर नहीं मिल सका"

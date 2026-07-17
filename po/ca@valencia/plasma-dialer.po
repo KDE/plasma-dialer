@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-23 00:46+0000\n"
+"POT-Creation-Date: 2026-07-17 00:46+0000\n"
 "PO-Revision-Date: 2026-04-23 09:19+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -30,7 +30,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "txemaq@gmail.com"
 
-#: src/main.cpp:138 src/qml/Main.qml:121
+#: src/main.cpp:138 src/qml/AddContactPage.qml:64 src/qml/Main.qml:123
 #, kde-format
 msgid "Phone"
 msgstr "Telèfon"
@@ -49,6 +49,16 @@ msgstr "© 2015-2022 Comunitat KDE"
 #, kde-format
 msgid "Alexey Andreyev"
 msgstr "Alexey Andreyev"
+
+#: src/qml/AddContactPage.qml:26
+#, kde-format
+msgid "Adding contact"
+msgstr ""
+
+#: src/qml/AddContactPage.qml:43
+#, kde-format
+msgid "Name"
+msgstr ""
 
 #: src/qml/call/ActiveCallView.qml:57
 #, kde-format
@@ -121,7 +131,7 @@ msgid "Dialer"
 msgstr "Marcador"
 
 #: src/qml/components/Sidebar.qml:121 src/qml/ContactsPage.qml:32
-#: src/qml/DialerPage.qml:42 src/qml/HistoryPage.qml:47
+#: src/qml/DialerPage.qml:56 src/qml/HistoryPage.qml:47
 #: src/qml/settings/SettingsPage.qml:26
 #, kde-format
 msgid "Settings"
@@ -142,17 +152,23 @@ msgstr "Cap contacte té definit un número de telèfon"
 msgid "Select number to call"
 msgstr "Trieu el número al que s'ha de tocar"
 
-#: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:114
+#: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:128
 #, kde-format
 msgid "Telephony daemons are not responding"
 msgstr "Els dominis de telefonia no responen"
 
-#: src/qml/DialerPage.qml:124
+#: src/qml/DialerPage.qml:41
+#, fuzzy, kde-format
+#| msgid "Contacts"
+msgid "Add contact"
+msgstr "Contactes"
+
+#: src/qml/DialerPage.qml:138
 #, kde-format
 msgid "Modem devices are not found"
 msgstr "No s'ha trobat cap dispositiu de mòdem"
 
-#: src/qml/DialerPage.qml:134
+#: src/qml/DialerPage.qml:148
 #, kde-format
 msgid "Voicemail number couldn't be found"
 msgstr "No s'ha pogut trobar el número de la bústia de veu"

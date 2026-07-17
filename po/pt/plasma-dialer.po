@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-23 00:46+0000\n"
+"POT-Creation-Date: 2026-07-17 00:46+0000\n"
 "PO-Revision-Date: 2026-02-11 21:27+0000\n"
 "Last-Translator: César A. P. Cláudio <cesarapclaudio@gmail.com>\n"
 "Language-Team: pt\n"
@@ -29,7 +29,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "andretiagob@protonmail.com"
 
-#: src/main.cpp:138 src/qml/Main.qml:121
+#: src/main.cpp:138 src/qml/AddContactPage.qml:64 src/qml/Main.qml:123
 #, kde-format
 msgid "Phone"
 msgstr "Telefone"
@@ -48,6 +48,16 @@ msgstr "© 2015-2022 Comunidade KDE"
 #, kde-format
 msgid "Alexey Andreyev"
 msgstr "Alexey Andreyev"
+
+#: src/qml/AddContactPage.qml:26
+#, kde-format
+msgid "Adding contact"
+msgstr ""
+
+#: src/qml/AddContactPage.qml:43
+#, kde-format
+msgid "Name"
+msgstr ""
 
 #: src/qml/call/ActiveCallView.qml:57
 #, kde-format
@@ -123,7 +133,7 @@ msgid "Dialer"
 msgstr "Teclado"
 
 #: src/qml/components/Sidebar.qml:121 src/qml/ContactsPage.qml:32
-#: src/qml/DialerPage.qml:42 src/qml/HistoryPage.qml:47
+#: src/qml/DialerPage.qml:56 src/qml/HistoryPage.qml:47
 #: src/qml/settings/SettingsPage.qml:26
 #, kde-format
 msgid "Settings"
@@ -144,17 +154,23 @@ msgstr "Não existem contatos com números atribuídos"
 msgid "Select number to call"
 msgstr "Selecione um número para chamar"
 
-#: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:114
+#: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:128
 #, kde-format
 msgid "Telephony daemons are not responding"
 msgstr "Os serviços do Telefone não estão a responder"
 
-#: src/qml/DialerPage.qml:124
+#: src/qml/DialerPage.qml:41
+#, fuzzy, kde-format
+#| msgid "Contacts"
+msgid "Add contact"
+msgstr "Contactos"
+
+#: src/qml/DialerPage.qml:138
 #, kde-format
 msgid "Modem devices are not found"
 msgstr "Não foram encontrados dispositivos de modem"
 
-#: src/qml/DialerPage.qml:134
+#: src/qml/DialerPage.qml:148
 #, kde-format
 msgid "Voicemail number couldn't be found"
 msgstr "Não foi possível encontrar o número do correio de voz"

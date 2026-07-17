@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-23 00:46+0000\n"
+"POT-Creation-Date: 2026-07-17 00:46+0000\n"
 "PO-Revision-Date: 2026-06-04 20:58+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -30,7 +30,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "xalba@ni.eus"
 
-#: src/main.cpp:138 src/qml/Main.qml:121
+#: src/main.cpp:138 src/qml/AddContactPage.qml:64 src/qml/Main.qml:123
 #, kde-format
 msgid "Phone"
 msgstr "Telefonoa"
@@ -49,6 +49,17 @@ msgstr "© 2015-2022 KDE komunitatea"
 #, kde-format
 msgid "Alexey Andreyev"
 msgstr "Alexey Andreyev"
+
+#: src/qml/AddContactPage.qml:26
+#, fuzzy, kde-format
+#| msgid "No contacts"
+msgid "Adding contact"
+msgstr "Kontakturik ez"
+
+#: src/qml/AddContactPage.qml:43
+#, kde-format
+msgid "Name"
+msgstr ""
 
 #: src/qml/call/ActiveCallView.qml:57
 #, kde-format
@@ -121,7 +132,7 @@ msgid "Dialer"
 msgstr "Markatzailea"
 
 #: src/qml/components/Sidebar.qml:121 src/qml/ContactsPage.qml:32
-#: src/qml/DialerPage.qml:42 src/qml/HistoryPage.qml:47
+#: src/qml/DialerPage.qml:56 src/qml/HistoryPage.qml:47
 #: src/qml/settings/SettingsPage.qml:26
 #, kde-format
 msgid "Settings"
@@ -142,17 +153,23 @@ msgstr "Ez dago telefono zenbakirik ezarrita duen kontakturik"
 msgid "Select number to call"
 msgstr "Hautatu deitu beharreko zenbakia"
 
-#: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:114
+#: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:128
 #, kde-format
 msgid "Telephony daemons are not responding"
 msgstr "Telefonia daimonek ez dute erantzuten"
 
-#: src/qml/DialerPage.qml:124
+#: src/qml/DialerPage.qml:41
+#, fuzzy, kde-format
+#| msgid "No contacts"
+msgid "Add contact"
+msgstr "Kontakturik ez"
+
+#: src/qml/DialerPage.qml:138
 #, kde-format
 msgid "Modem devices are not found"
 msgstr "Ez da moden gailurik aurkitu"
 
-#: src/qml/DialerPage.qml:134
+#: src/qml/DialerPage.qml:148
 #, kde-format
 msgid "Voicemail number couldn't be found"
 msgstr "Ahots-posta zenbakia ezin izan da aurkitu"
@@ -386,6 +403,3 @@ msgstr "Utzi USSD saioa"
 
 #~ msgid "In call with %1."
 #~ msgstr "%1(r)ekin dei batean."
-
-#~ msgid "No contacts"
-#~ msgstr "Kontakturik ez"

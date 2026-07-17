@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-23 00:46+0000\n"
+"POT-Creation-Date: 2026-07-17 00:46+0000\n"
 "PO-Revision-Date: 2026-06-01 22:15+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -28,7 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "ulysses@fsf.hu"
 
-#: src/main.cpp:138 src/qml/Main.qml:121
+#: src/main.cpp:138 src/qml/AddContactPage.qml:64 src/qml/Main.qml:123
 #, kde-format
 msgid "Phone"
 msgstr "Telefon"
@@ -47,6 +47,17 @@ msgstr "© A KDE közösség, 2015-2022."
 #, kde-format
 msgid "Alexey Andreyev"
 msgstr "Alexey Andreyev"
+
+#: src/qml/AddContactPage.qml:26
+#, fuzzy, kde-format
+#| msgid "No contacts"
+msgid "Adding contact"
+msgstr "Nincsenek névjegyek"
+
+#: src/qml/AddContactPage.qml:43
+#, kde-format
+msgid "Name"
+msgstr ""
 
 #: src/qml/call/ActiveCallView.qml:57
 #, kde-format
@@ -119,7 +130,7 @@ msgid "Dialer"
 msgstr "Tárcsázó"
 
 #: src/qml/components/Sidebar.qml:121 src/qml/ContactsPage.qml:32
-#: src/qml/DialerPage.qml:42 src/qml/HistoryPage.qml:47
+#: src/qml/DialerPage.qml:56 src/qml/HistoryPage.qml:47
 #: src/qml/settings/SettingsPage.qml:26
 #, kde-format
 msgid "Settings"
@@ -140,17 +151,23 @@ msgstr "Nincsenek több telefonszámmal rendelkező névjegyek"
 msgid "Select number to call"
 msgstr "Hívandó szám"
 
-#: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:114
+#: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:128
 #, kde-format
 msgid "Telephony daemons are not responding"
 msgstr "A Telephony démon nem válaszol"
 
-#: src/qml/DialerPage.qml:124
+#: src/qml/DialerPage.qml:41
+#, fuzzy, kde-format
+#| msgid "No contacts"
+msgid "Add contact"
+msgstr "Nincsenek névjegyek"
+
+#: src/qml/DialerPage.qml:138
 #, kde-format
 msgid "Modem devices are not found"
 msgstr "Nem találhatók modemeszközök"
 
-#: src/qml/DialerPage.qml:134
+#: src/qml/DialerPage.qml:148
 #, kde-format
 msgid "Voicemail number couldn't be found"
 msgstr "A hangposta telefonszáma nem található"
@@ -375,6 +392,3 @@ msgstr "USSD munkamenet megszakítása"
 
 #~ msgid "In call with %1."
 #~ msgstr "Hívás közben vele: %1."
-
-#~ msgid "No contacts"
-#~ msgstr "Nincsenek névjegyek"
