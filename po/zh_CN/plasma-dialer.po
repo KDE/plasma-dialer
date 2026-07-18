@@ -155,10 +155,9 @@ msgid "Telephony daemons are not responding"
 msgstr "电话守护程序没有响应"
 
 #: src/qml/DialerPage.qml:41
-#, fuzzy, kde-format
-#| msgid "Contacts"
+#, kde-format
 msgid "Add contact"
-msgstr "联系人"
+msgstr ""
 
 #: src/qml/DialerPage.qml:138
 #, kde-format

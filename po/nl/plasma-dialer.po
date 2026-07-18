@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-17 00:46+0000\n"
-"PO-Revision-Date: 2026-04-23 18:55+0200\n"
+"PO-Revision-Date: 2026-07-17 13:53+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.04.0\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -48,15 +48,14 @@ msgid "Alexey Andreyev"
 msgstr "Alexey Andreyev"
 
 #: src/qml/AddContactPage.qml:26
-#, fuzzy, kde-format
-#| msgid "No contacts"
+#, kde-format
 msgid "Adding contact"
-msgstr "Geen contactpersonen"
+msgstr "Contactpersoon toevoegen"
 
 #: src/qml/AddContactPage.qml:43
 #, kde-format
 msgid "Name"
-msgstr ""
+msgstr "Naam"
 
 #: src/qml/call/ActiveCallView.qml:57
 #, kde-format
@@ -156,10 +155,9 @@ msgid "Telephony daemons are not responding"
 msgstr "Telefoon-daemons reageren niet"
 
 #: src/qml/DialerPage.qml:41
-#, fuzzy, kde-format
-#| msgid "No contacts"
+#, kde-format
 msgid "Add contact"
-msgstr "Geen contactpersonen"
+msgstr "Contactpersoon toevoegen"
 
 #: src/qml/DialerPage.qml:138
 #, kde-format
