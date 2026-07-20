@@ -1,11 +1,11 @@
-# SPDX-FileCopyrightText: 2020, 2021, 2022, 2024, 2025, 2026 Xavier Besnard <xavier.besnard@kde.org>
+# SPDX-FileCopyrightText: 2020-2022, 2024-2026 Xavier Besnard <xavier.besnard@kde.org>
 # Xavier Besnard <xavier.besnard@kde.org>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-17 00:46+0000\n"
-"PO-Revision-Date: 2026-04-24 08:12+0200\n"
+"PO-Revision-Date: 2026-07-18 10:36+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -46,15 +46,14 @@ msgid "Alexey Andreyev"
 msgstr "Alexey Andreyev"
 
 #: src/qml/AddContactPage.qml:26
-#, fuzzy, kde-format
-#| msgid "No contacts"
+#, kde-format
 msgid "Adding contact"
-msgstr "Aucun contact"
+msgstr "Ajout d'un contact en cours"
 
 #: src/qml/AddContactPage.qml:43
 #, kde-format
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 #: src/qml/call/ActiveCallView.qml:57
 #, kde-format
@@ -154,10 +153,9 @@ msgid "Telephony daemons are not responding"
 msgstr "Les démons pour la téléphonie ne répondent pas."
 
 #: src/qml/DialerPage.qml:41
-#, fuzzy, kde-format
-#| msgid "No contacts"
+#, kde-format
 msgid "Add contact"
-msgstr "Aucun contact"
+msgstr "Ajouter un contact"
 
 #: src/qml/DialerPage.qml:138
 #, kde-format
