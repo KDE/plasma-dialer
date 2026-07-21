@@ -43,7 +43,7 @@ msgstr "Marcador de telèfon de Plasma"
 #: src/main.cpp:142
 #, kde-format
 msgid "© 2015-2022 KDE Community"
-msgstr "© 2015-2022 Comunitat KDE"
+msgstr "© 2015-2022 La comunitat KDE"
 
 #: src/main.cpp:145
 #, kde-format
