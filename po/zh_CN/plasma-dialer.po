@@ -50,12 +50,12 @@ msgstr "Alexey Andreyev"
 #: src/qml/AddContactPage.qml:26
 #, kde-format
 msgid "Adding contact"
-msgstr ""
+msgstr "添加联系人"
 
 #: src/qml/AddContactPage.qml:43
 #, kde-format
 msgid "Name"
-msgstr ""
+msgstr "名字"
 
 #: src/qml/call/ActiveCallView.qml:57
 #, kde-format
@@ -157,7 +157,7 @@ msgstr "电话守护程序没有响应"
 #: src/qml/DialerPage.qml:41
 #, kde-format
 msgid "Add contact"
-msgstr ""
+msgstr "添加联系人"
 
 #: src/qml/DialerPage.qml:138
 #, kde-format
