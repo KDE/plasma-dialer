@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-17 00:46+0000\n"
-"PO-Revision-Date: 2026-06-01 17:56-0400\n"
+"PO-Revision-Date: 2026-07-22 17:25-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -36,17 +36,17 @@ msgstr "تېلېفون"
 #: src/main.cpp:140
 #, kde-format
 msgid "Plasma phone dialer"
-msgstr "Plasma تېلېفون بۇراش پىروگراممىسى"
+msgstr "Plasma تېلېفون نومۇر بۇرىغۇچ"
 
 #: src/main.cpp:142
 #, kde-format
 msgid "© 2015-2022 KDE Community"
-msgstr ""
+msgstr "© 2015-2022 KDE جامائىتى"
 
 #: src/main.cpp:145
 #, kde-format
 msgid "Alexey Andreyev"
-msgstr ""
+msgstr "Alexey Andreyev"
 
 #: src/qml/AddContactPage.qml:26
 #, kde-format
@@ -61,17 +61,17 @@ msgstr ""
 #: src/qml/call/ActiveCallView.qml:57
 #, kde-format
 msgid "Incoming..."
-msgstr ""
+msgstr "چاقىرىلىۋاتىدۇ…"
 
 #: src/qml/call/ActiveCallView.qml:60
 #, kde-format
 msgid "Calling..."
-msgstr ""
+msgstr "چاقىرىۋاتىدۇ…"
 
 #: src/qml/call/AsymmetricAnswerSwipe.qml:102
 #, kde-format
 msgid "Swipe to accept"
-msgstr ""
+msgstr "سىيرىلسا قوبۇللايدۇ"
 
 #: src/qml/call/CallPage.qml:50
 #, kde-format
@@ -104,7 +104,7 @@ msgstr "ئۈنسىز"
 #: src/qml/call/InCallInlineMessage.qml:13
 #, kde-format
 msgid "Active call list"
-msgstr ""
+msgstr "ئاكتىپ چاقىرىش تىزىمى"
 
 #: src/qml/call/InCallInlineMessage.qml:17
 #, kde-format
@@ -126,7 +126,7 @@ msgstr "ئالاقەداش"
 #: src/qml/DialerPage.qml:27
 #, kde-format
 msgid "Dialer"
-msgstr ""
+msgstr "نومۇر بۇرىغۇچ"
 
 #: src/qml/components/Sidebar.qml:121 src/qml/ContactsPage.qml:32
 #: src/qml/DialerPage.qml:56 src/qml/HistoryPage.qml:47
@@ -143,17 +143,17 @@ msgstr "چىكىن"
 #: src/qml/ContactsPage.qml:57
 #, kde-format
 msgid "No contacts have a phone number set"
-msgstr ""
+msgstr "تېلېفون نومۇرى تەڭشەلگەن ئالاقەداش يوق"
 
 #: src/qml/ContactsPage.qml:98
 #, kde-format
 msgid "Select number to call"
-msgstr ""
+msgstr "چاقىرىدىغان نومۇر تاللىنىدۇ"
 
 #: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:128
 #, kde-format
 msgid "Telephony daemons are not responding"
-msgstr ""
+msgstr "تېلېفون نازارەتچىسىدە ئىنكاس يوق"
 
 #: src/qml/DialerPage.qml:41
 #, fuzzy, kde-format
@@ -164,22 +164,22 @@ msgstr "ئالاقەداش"
 #: src/qml/DialerPage.qml:138
 #, kde-format
 msgid "Modem devices are not found"
-msgstr ""
+msgstr "مودېم ئۈسكۈنىسى تېپىلمىدى"
 
 #: src/qml/DialerPage.qml:148
 #, kde-format
 msgid "Voicemail number couldn't be found"
-msgstr ""
+msgstr "ئۈنخەت نومۇرى تېپىلمىدى"
 
 #: src/qml/history/HistoryDelegate.qml:68
 #, kde-format
 msgid "Duration: %1"
-msgstr ""
+msgstr "داۋاملىشىش ۋاقتى: %1"
 
 #: src/qml/HistoryPage.qml:34
 #, kde-format
 msgid "Call History"
-msgstr ""
+msgstr "چاقىرىش خاتىرىسى"
 
 #: src/qml/HistoryPage.qml:40
 #, kde-format
@@ -189,12 +189,12 @@ msgstr "تارىخ خاتىرىسىنى تازىلا"
 #: src/qml/HistoryPage.qml:68
 #, kde-format
 msgid "No recent calls"
-msgstr ""
+msgstr "يېقىنقى چاقىرىش يوق"
 
 #: src/qml/ImeiSheet.qml:24
 #, kde-format
 msgid "No IMEIs found"
-msgstr ""
+msgstr "ھېچقانداق IMEI تېپىلمىدى"
 
 #: src/qml/ImeiSheet.qml:30
 #, kde-format
@@ -205,52 +205,52 @@ msgstr[0] "IMEI"
 #: src/qml/settings/CallBlockSettingsPage.qml:25
 #, kde-format
 msgid "Adaptive Call Blocking"
-msgstr ""
+msgstr "ماسلىشىشچان چاقىرىشنى توسۇش"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:34
 #, kde-format
 msgid "Ignore calls from unknown numbers"
-msgstr ""
+msgstr "يوچۇن چاقىرغۇچىنىڭ نومۇرىغا پەرۋا قىلما"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:40
 #, kde-format
 msgid "When a call is an incoming from an unknown number"
-msgstr ""
+msgstr "يوچۇن نومۇردىن چاقىرىلغاندا"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:48
 #, kde-format
 msgid "Immediately hang up"
-msgstr ""
+msgstr "شۇئان قويۇۋەت"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:54
 #, kde-format
 msgid "Ring without notification"
-msgstr ""
+msgstr "ئۇقتۇرۇشسىز قوڭغۇراق"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:60
 #, kde-format
 msgid "Ring with silent notification"
-msgstr ""
+msgstr "ئۈنسىز ئۇقتۇرۇشلۇق قوڭغۇراق"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:69
 #, kde-format
 msgid "Allowed exceptions"
-msgstr ""
+msgstr "يول قويۇلغان مۇستەسنا"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:79
 #, kde-format
 msgid "Anonymous numbers"
-msgstr ""
+msgstr "ئاتسىز نومۇر"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:87
 #, kde-format
 msgid "Existing outgoing call to number"
-msgstr ""
+msgstr "مەۋجۇت چاقىرغان نومۇر"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:95
 #, kde-format
 msgid "Callback within"
-msgstr ""
+msgstr "قايتۇرۇپ چاقىرىش ۋاقتى"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:114
 #, kde-format
@@ -260,34 +260,34 @@ msgstr "مىنۇت"
 #: src/qml/settings/CallBlockSettingsPage.qml:127
 #, kde-format
 msgid "Allowed phone number exceptions"
-msgstr ""
+msgstr "يول قويغان تېلېفون نومۇر مۇستاسناسى"
 
 #: src/qml/settings/CallBlockSettingsPage.qml:149
 #: src/qml/settings/CallBlockSettingsPage.qml:187
 #, kde-format
 msgid "Add new pattern"
-msgstr ""
+msgstr "يېڭى ئەندىزە قوش"
 
 #: src/qml/settings/RingtoneSettingsPage.qml:25
 #: src/qml/settings/SettingsPage.qml:50
 #, kde-format
 msgid "Ringtone"
-msgstr ""
+msgstr "قوڭغۇراق ئاۋازى"
 
 #: src/qml/settings/RingtoneSettingsPage.qml:79
 #, kde-format
 msgid "Select from files..."
-msgstr ""
+msgstr "ھۆججەتتىن تاللىنىدۇ…"
 
 #: src/qml/settings/RingtoneSettingsPage.qml:100
 #, kde-format
 msgid "Default (System)"
-msgstr ""
+msgstr "كۆڭۈلدىكى (سىستېما)"
 
 #: src/qml/settings/RingtoneSettingsPage.qml:150
 #, kde-format
 msgid "Choose a ringtone"
-msgstr ""
+msgstr "قوڭغۇراق تاللىنىدۇ"
 
 #: src/qml/settings/SettingsPage.qml:38
 #, kde-format
@@ -302,12 +302,12 @@ msgstr "كۆڭۈلدىكى"
 #: src/qml/settings/SettingsPage.qml:63
 #, kde-format
 msgid "Adaptive call blocking"
-msgstr ""
+msgstr "ماسلىشىشچان چاقىرىشنى توسۇش"
 
 #: src/qml/settings/SettingsPage.qml:76
 #, kde-format
 msgid "Incoming call screen appearance"
-msgstr ""
+msgstr "چاقىرىلىش ئېكران قىياپىتى"
 
 #: src/qml/settings/SettingsPage.qml:77
 #, kde-format
@@ -317,27 +317,27 @@ msgstr "توپچە"
 #: src/qml/settings/SettingsPage.qml:77
 #, kde-format
 msgid "Symmetric Swipe"
-msgstr ""
+msgstr "سىممېتىرىك سىيرىش"
 
 #: src/qml/settings/SettingsPage.qml:77
 #, kde-format
 msgid "Asymmetric Swipe"
-msgstr ""
+msgstr "بىسىممېتىرىك سىيرىش"
 
 #: src/qml/USSDSheet.qml:39
 #, kde-format
 msgid "USSD Error"
-msgstr ""
+msgstr "USSD خاتالىقى"
 
 #: src/qml/USSDSheet.qml:39
 #, kde-format
 msgid "USSD Message"
-msgstr ""
+msgstr "USSD ئۇچۇرى"
 
 #: src/qml/USSDSheet.qml:70
 #, kde-format
 msgid "Write response..."
-msgstr ""
+msgstr "ئىنكاس ياز…"
 
 #: src/qml/USSDSheet.qml:77
 #, kde-format
@@ -347,4 +347,4 @@ msgstr "يوللا"
 #: src/qml/USSDSheet.qml:95
 #, kde-format
 msgid "Cancel USSD session"
-msgstr ""
+msgstr "USSD جەريانچاقتىن ۋاز كەچ"
