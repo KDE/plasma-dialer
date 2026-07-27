@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-17 00:46+0000\n"
-"PO-Revision-Date: 2026-04-27 21:52+0200\n"
+"PO-Revision-Date: 2026-07-26 12:40+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@nuug.no>\n"
 "Language: nn\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.04.0\n"
+"X-Generator: Lokalize 26.11.70\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -51,12 +51,12 @@ msgstr "Alexey Andreyev"
 #: src/qml/AddContactPage.qml:26
 #, kde-format
 msgid "Adding contact"
-msgstr ""
+msgstr "Legg til kontakt"
 
 #: src/qml/AddContactPage.qml:43
 #, kde-format
 msgid "Name"
-msgstr ""
+msgstr "Namn"
 
 #: src/qml/call/ActiveCallView.qml:57
 #, kde-format
@@ -156,10 +156,9 @@ msgid "Telephony daemons are not responding"
 msgstr "Telefoni­tenester svarar ikkje"
 
 #: src/qml/DialerPage.qml:41
-#, fuzzy, kde-format
-#| msgid "Contacts"
+#, kde-format
 msgid "Add contact"
-msgstr "Kontaktar"
+msgstr "Legg til kontakt"
 
 #: src/qml/DialerPage.qml:138
 #, kde-format
