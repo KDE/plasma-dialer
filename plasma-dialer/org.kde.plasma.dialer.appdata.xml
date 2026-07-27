@@ -86,6 +86,7 @@ SPDX-License-Identifier: CC0-1.0
   <summary xml:lang="sl">Pošilja in sprejema telefonske klice</summary>
   <summary xml:lang="sv">Ring och ta emot telefonsamtal</summary>
   <summary xml:lang="tr">Arama Yapma ve Gelen Aramaları Alma</summary>
+  <summary xml:lang="ug">تېلېفون ئۇرىدۇ ۋە قوبۇللايدۇ</summary>
   <summary xml:lang="uk">Надсилання і отримання телефонних дзвінків</summary>
   <summary xml:lang="vi">Gửi và nhận các cuộc gọi điện thoại</summary>
   <summary xml:lang="zh-CN">拨打和接听电话</summary>
@@ -142,6 +143,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="sl">Aplikacija Phone vam omogoča preprosto pošiljanje in sprejemanje telefonskih klicev iz vašega pametnega telefona.</p>
     <p xml:lang="sv">Telefonprogrammet låter dig enkelt ringa och ta emot telefonsamtal med din smarta telefon</p>
     <p xml:lang="tr">Telefon uygulaması, akıllı telefonunuzdan kolaylıkla aramalar yapmanızı ve almanızı sağlar.</p>
+    <p xml:lang="ug">تېلېفون پىروگراممىسى ئارقىلىق ئەقلىي تېلېفوندا ئاسانلا چاقىرىپ ياكى چاقىرىقنى قوبۇللىيالايسىز.</p>
     <p xml:lang="uk">Програма «Телефон» надає вам змогу без проблем виконувати та отримувати телефонні дзвінки на вашому смартфоні.</p>
     <p xml:lang="vi">Ứng dụng Điện thoại cho phép bạn dễ dàng gửi và nhận các cuộc gọi từ điện thoại của bạn.</p>
     <p xml:lang="zh-CN">电话应用让您可以轻松地拨打和接听智能手机的电话。</p>
@@ -229,6 +231,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="sl">Oglejte si svojo zgodovino klicev in preprosto znova pokličite isto številko</li>
       <li xml:lang="sv">Se din samtalshistorik och ring enkelt samma nummer igen</li>
       <li xml:lang="tr">Arama geçmişinizi görün ve aynı numarayı kolaylıkla yeniden arayın</li>
+      <li xml:lang="ug">چاقىرىش خاتىرىسى كۆرۈپ ۋە ئوخشاش نومۇرنى ئاسانلا قايتا چاقىرالايسىز</li>
       <li xml:lang="uk">Перегляд журналу дзвінків та просте повторне набирання номерів</li>
       <li xml:lang="vi">Xem lịch sử gọi và dễ dàng gọi lại cùng số đó</li>
       <li xml:lang="zh-CN">查看通话记录，并轻松地再次呼叫相同的号码</li>
@@ -271,6 +274,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="sl">Upravljajte svoje stike, ki imajo nastavljeno telefonsko številko</li>
       <li xml:lang="sv">Hantera kontakter som har ett telefonnummer inställt</li>
       <li xml:lang="tr">Telefon numarası kayıtlı olan kişilerinizi yönetin</li>
+      <li xml:lang="ug">تېلېفون نومۇرى بار ئالاقەداشنى باشقۇرالايسىز</li>
       <li xml:lang="uk">Керування записами контактів, для яких встановлено номер телефону</li>
       <li xml:lang="vi">Quản lí các liên hệ đã đặt số điện thoại</li>
       <li xml:lang="zh-CN">管理有电话号码的联系人</li>
@@ -319,6 +323,7 @@ SPDX-License-Identifier: CC0-1.0
       <caption xml:lang="sl">Stran številčnice</caption>
       <caption xml:lang="sv">Uppringningssidan</caption>
       <caption xml:lang="tr">Çevirici</caption>
+      <caption xml:lang="ug">نومۇر بۇرىغۇچ بېتى</caption>
       <caption xml:lang="uk">Сторінка набирання номеру</caption>
       <caption xml:lang="vi">Trang quay số</caption>
       <caption xml:lang="zh-CN">拨号器页面</caption>
@@ -364,6 +369,7 @@ SPDX-License-Identifier: CC0-1.0
       <caption xml:lang="sl">Klicanje glasovne pošte</caption>
       <caption xml:lang="sv">Ringa röstbrevlåda</caption>
       <caption xml:lang="tr">Telesekreteri arama</caption>
+      <caption xml:lang="ug">ئۈنخەتنى چاقىر</caption>
       <caption xml:lang="uk">Голосова пошта</caption>
       <caption xml:lang="vi">Gọi hộp thư thoại</caption>
       <caption xml:lang="zh-CN">呼叫语音信箱</caption>
