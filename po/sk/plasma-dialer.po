@@ -47,15 +47,14 @@ msgid "Alexey Andreyev"
 msgstr "Alexey Andreyev"
 
 #: src/qml/AddContactPage.qml:26
-#, fuzzy, kde-format
-#| msgid "No contacts"
+#, kde-format
 msgid "Adding contact"
-msgstr "Žiadne kontakty"
+msgstr "Pridáva sa kontakt"
 
 #: src/qml/AddContactPage.qml:43
 #, kde-format
 msgid "Name"
-msgstr ""
+msgstr "Meno"
 
 #: src/qml/call/ActiveCallView.qml:57
 #, kde-format
@@ -155,10 +154,9 @@ msgid "Telephony daemons are not responding"
 msgstr "Telefónne démony neodpovedajú"
 
 #: src/qml/DialerPage.qml:41
-#, fuzzy, kde-format
-#| msgid "No contacts"
+#, kde-format
 msgid "Add contact"
-msgstr "Žiadne kontakty"
+msgstr "Pridať kontakt"
 
 #: src/qml/DialerPage.qml:138
 #, kde-format
