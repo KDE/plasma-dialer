@@ -86,7 +86,7 @@ msgstr "关闭"
 #: src/qml/call/CallPage.qml:115
 #, kde-format
 msgid "Keypad"
-msgstr "键盘"
+msgstr "数字键盘"
 
 #: src/qml/call/CallPage.qml:127
 #, kde-format
