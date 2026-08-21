@@ -8,12 +8,13 @@ import QtQuick
 import QtQuick.Controls as Controls
 import QtQuick.Layouts
 import QtQuick.Templates as T
+
 import org.kde.kirigami as Kirigami
 import org.kde.people as KPeople
 import org.kde.kirigamiaddons.components as Components
 import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.telephony
-import "call"
+import org.kde.plasma.dialer.shared
 
 Kirigami.ScrollablePage {
     id: contactsPage

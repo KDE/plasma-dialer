@@ -17,6 +17,7 @@ import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kirigamiaddons.formcard as FormCard
 
 import org.kde.plasma.dialer
+import org.kde.plasma.dialer.shared
 import org.kde.telephony
 
 Kirigami.ScrollablePage {

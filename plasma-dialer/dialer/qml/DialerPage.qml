@@ -12,9 +12,7 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.telephony
 import org.kde.plasma.dialer
-
-import "call"
-import "dialpad"
+import org.kde.plasma.dialer.shared
 
 Kirigami.Page {
     id: dialerPage

@@ -27,12 +27,12 @@ static bool getScreenSaverActive()
     return active;
 }
 
-static void launchPlasmaDialerDesktopFile()
+static void launchCallScreen()
 {
-    const auto desktopName = QStringLiteral("org.kde.plasma.dialer");
+    const auto desktopName = QStringLiteral("org.kde.plasma.callscreen");
     const KService::Ptr appService = KService::serviceByDesktopName(desktopName);
     if (!appService) {
-        qWarning() << "Could not find" << desktopName;
+        qWarning() << "Could not find " << desktopName;
         return;
     }
     KIO::ApplicationLauncherJob job(appService);
@@ -95,6 +95,10 @@ void NotificationManager::onCallAdded(const QString &deviceUni,
             m_callStarted = false;
         }
     }
+    else if (callDirection == DialerTypes::CallDirection::Outgoing) {
+        launchCallScreen();
+        m_callStarted = true;
+    }
 }
 
 void NotificationManager::onCallDeleted(const QString &deviceUni, const QString &callUni)
@@ -154,7 +158,7 @@ void NotificationManager::openRingingNotification(const QString &deviceUni,
     auto acceptAction = m_ringingNotification->addAction(i18n("Accept"));
     connect(acceptAction, &KNotificationAction::activated, this, [this, deviceUni, callUni] {
         accept(deviceUni, callUni);
-        launchPlasmaDialerDesktopFile();
+        launchCallScreen();
     });
 
     auto rejectAction = m_ringingNotification->addAction(i18n("Reject"));
@@ -271,14 +275,14 @@ void NotificationManager::handleIncomingCall(const QString &deviceUni, const QSt
                                                              QStringLiteral("/org/kde/Solid/PowerManagement"),
                                                              QStringLiteral("org.kde.Solid.PowerManagement"),
                                                              QStringLiteral("wakeup"));
-    QDBusConnection::sessionBus().call(wakeupCall);
+                                                             QDBusConnection::sessionBus().call(wakeupCall);
 
     if (!skipNotification) {
         openRingingNotification(deviceUni, callUni, callerDisplay, notificationEvent);
     }
 
     if (screenLocked) {
-        launchPlasmaDialerDesktopFile();
+        launchCallScreen();
     }
 }
 

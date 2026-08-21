@@ -4,9 +4,11 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
+
 import org.kde.kirigami as Kirigami
 import org.kde.telephony
-import "call"
+import org.kde.plasma.dialer.shared
+
 import "history"
 
 Kirigami.ScrollablePage {
