@@ -28,6 +28,7 @@ SPDX-License-Identifier: CC0-1.0
   <name xml:lang="it">Telefono</name>
   <name xml:lang="ka">ტელეფონი</name>
   <name xml:lang="ko">전화</name>
+  <name xml:lang="lt">Telefonas</name>
   <name xml:lang="lv">Tālrunis</name>
   <name xml:lang="nl">Telefoon</name>
   <name xml:lang="nn">Telefon</name>
@@ -42,6 +43,7 @@ SPDX-License-Identifier: CC0-1.0
   <name xml:lang="sl">Phone</name>
   <name xml:lang="sv">Telefon</name>
   <name xml:lang="tr">Telefon</name>
+  <name xml:lang="ug">تېلېفون</name>
   <name xml:lang="uk">Телефон</name>
   <name xml:lang="vi">Điện thoại</name>
   <name xml:lang="zh-CN">电话</name>
@@ -69,6 +71,7 @@ SPDX-License-Identifier: CC0-1.0
   <summary xml:lang="it">Invia e riceve chiamate telefoniche</summary>
   <summary xml:lang="ka">სატელეფონო ზარების განხორციელება</summary>
   <summary xml:lang="ko">전화 걸고 받기</summary>
+  <summary xml:lang="lt">Inicijuoti ir priimti telefono skambučius</summary>
   <summary xml:lang="lv">Nosūtīt un saņemt zvanus</summary>
   <summary xml:lang="nl">Telefoonoproepen verzenden en ontvangen</summary>
   <summary xml:lang="nn">Send og ta imot telefonsamtalar</summary>
@@ -79,9 +82,11 @@ SPDX-License-Identifier: CC0-1.0
   <summary xml:lang="ro">Trimite și primește apeluri telefonice</summary>
   <summary xml:lang="ru">Совершение и приём телефонных звонков</summary>
   <summary xml:lang="sa">दूरभाषं प्रेषयन्तु, प्राप्नुवन्तु च</summary>
+  <summary xml:lang="sk">Send and receive phone calls</summary>
   <summary xml:lang="sl">Pošilja in sprejema telefonske klice</summary>
   <summary xml:lang="sv">Ring och ta emot telefonsamtal</summary>
   <summary xml:lang="tr">Arama Yapma ve Gelen Aramaları Alma</summary>
+  <summary xml:lang="ug">تېلېفون ئۇرىدۇ ۋە قوبۇللايدۇ</summary>
   <summary xml:lang="uk">Надсилання і отримання телефонних дзвінків</summary>
   <summary xml:lang="vi">Gửi và nhận các cuộc gọi điện thoại</summary>
   <summary xml:lang="zh-CN">拨打和接听电话</summary>
@@ -105,6 +110,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="az">Telefon, smartfonunuzdan asanlıqla zəng etməyə və zəngləri qəbul etməyə imkan verir.</p>
     <p xml:lang="ca">L'aplicació Telèfon permet enviar i rebre fàcilment trucades de telèfon en el vostre telèfon intel·ligent.</p>
     <p xml:lang="ca-valencia">L'aplicació Telèfon permet enviar i rebre amb facilitat tocades de telèfon en el vostre telèfon intel·ligent.</p>
+    <p xml:lang="cs">Aplikace Telefon umožňuje snadné odesílání a přijímání telefonních hovorů ze smartphonu.</p>
     <p xml:lang="de">Mit der Telefon-App können Sie ganz einfach Anrufe über Ihr Smartphone tätigen und entgegennehmen.</p>
     <p xml:lang="en-GB">The Phone app lets you easily send and receive phone calls from your smartphone.</p>
     <p xml:lang="eo">La Telefon-app permesas al vi facile sendi kaj ricevi telefonvokojn el via inteligenta telefono.</p>
@@ -122,19 +128,22 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="it">L'applicazione Telefono ti permette di inviare e di ricevere in modo semplice le chiamate telefoniche dal tuo smartphone.</p>
     <p xml:lang="ka">ტელეფონის აპი საშუალებას გაძლევთ ადვილად მიიღოთ და განახორციელოთ ზარები თქვენი სმარტფონიდან.</p>
     <p xml:lang="ko">전화 앱을 사용하여 스마트폰에서 통화를 걸고 받을 수 있습니다.</p>
+    <p xml:lang="lt">Telefono programėlė jums leidžia lengvai inicijuoti ir priimti telefono skambučius išmaniajame telefone.</p>
     <p xml:lang="lv">Tālruņa programma ļauj viegli nosūtīt un saņemt tālruņa zvanus savā viedtālrunī.</p>
     <p xml:lang="nl">De toepassing Telefoon laat u gemakkelijk telefoonoproepen verzenden en ontvangen vanaf uw smartphone.</p>
     <p xml:lang="nn">Med telefonappen kan du lett ringja opp eller verta oppringd via smarttelefonen.</p>
     <p xml:lang="pa">ਫ਼ੋਨ ਐਪ ਤੁਹਾਨੂੰ ਤੁਹਾਡੇ ਸਮਾਰਟ-ਫ਼ੋਨ ਤੋਂ ਸੌਖੀ ਤਰ੍ਹਾਂ ਫ਼ੋਨ ਕਾਲਾਂ ਕਰਨ ਤੇ ਲੈਣ ਲਈ ਸਹਾਇਕ ਹੈ।</p>
     <p xml:lang="pl">Aplikacja telefonu umożliwia łatwe nawiązywanie połączeń telefonicznych z twojego smartfonu.</p>
-    <p xml:lang="pt">a aplicação de Telefone permite-lhe efectuar e receber facilmente chamadas telefónicas no seu telemóvel.</p>
+    <p xml:lang="pt">A aplicação Telefone permite-lhe efetuar e receber facilmente chamadas telefónicas a partir do seu telemóvel.</p>
     <p xml:lang="pt-BR">O aplicativo Phone permite a você enviar e receber chamadas telefônicas de seu celular.</p>
     <p xml:lang="ro">Aplicația Telefon vă permite să faceți și să primiți apeluri telefonice de pe telefonul inteligent.</p>
     <p xml:lang="ru">Приложение «Телефон» позволяет с лёгкостью совершать и принимать телефонные звонки с помощью смартфона.</p>
     <p xml:lang="sa">Phone app इत्यनेन भवन्तः स्मार्टफोनतः सहजतया दूरभाषं प्रेषयितुं प्राप्तुं च शक्नुवन्ति।</p>
+    <p xml:lang="sk">The Phone app lets you easily send and receive phone calls from your smartphone.</p>
     <p xml:lang="sl">Aplikacija Phone vam omogoča preprosto pošiljanje in sprejemanje telefonskih klicev iz vašega pametnega telefona.</p>
     <p xml:lang="sv">Telefonprogrammet låter dig enkelt ringa och ta emot telefonsamtal med din smarta telefon</p>
     <p xml:lang="tr">Telefon uygulaması, akıllı telefonunuzdan kolaylıkla aramalar yapmanızı ve almanızı sağlar.</p>
+    <p xml:lang="ug">تېلېفون پىروگراممىسى ئارقىلىق ئەقلىي تېلېفوندا ئاسانلا چاقىرىپ ياكى چاقىرىقنى قوبۇللىيالايسىز.</p>
     <p xml:lang="uk">Програма «Телефон» надає вам змогу без проблем виконувати та отримувати телефонні дзвінки на вашому смартфоні.</p>
     <p xml:lang="vi">Ứng dụng Điện thoại cho phép bạn dễ dàng gửi và nhận các cuộc gọi từ điện thoại của bạn.</p>
     <p xml:lang="zh-CN">电话应用让您可以轻松地拨打和接听智能手机的电话。</p>
@@ -163,6 +172,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="it">Funzionalità:</p>
     <p xml:lang="ka">თვისებები:</p>
     <p xml:lang="ko">기능:</p>
+    <p xml:lang="lt">Ypatybės:</p>
     <p xml:lang="lv">Iespējas:</p>
     <p xml:lang="nl">Mogelijkheden:</p>
     <p xml:lang="nn">Funksjonar:</p>
@@ -177,6 +187,7 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="sl">Zmožnosti:</p>
     <p xml:lang="sv">Funktioner:</p>
     <p xml:lang="tr">Özellikler:</p>
+    <p xml:lang="ug">ئىقتىدار:</p>
     <p xml:lang="uk">Можливості:</p>
     <p xml:lang="vi">Tính năng:</p>
     <p xml:lang="zh-CN">程序功能：</p>
@@ -187,6 +198,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="az">Zəng tarixçəsinə baxın və həmin nömrəyə asanlıqla yenidən zəng edin</li>
       <li xml:lang="ca">Vegeu l'historial de trucades i torneu a trucar al mateix número amb facilitat</li>
       <li xml:lang="ca-valencia">Vegeu l'historial de tocades i torneu a tocar al mateix número amb facilitat</li>
+      <li xml:lang="cs">Zobrazte si historii hovorů a snadno znovu vytočte stejné číslo</li>
       <li xml:lang="de">Lassen Sie sich Ihre Anrufliste anzeigen und rufen Sie die gleiche Nummer einfach erneut an</li>
       <li xml:lang="en-GB">See your call history and easily call the same number again</li>
       <li xml:lang="eo">Vidu vian vokhistorion kaj facile voku la saman numeron refoje</li>
@@ -204,19 +216,22 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="it">Vedi la cronologia delle chiamate e richiama lo stesso numero in modo semplice</li>
       <li xml:lang="ka">იხილეთ ზარების თქვენი ისტორია და ადვილად გადარეკეთ იგივე ნომერზე</li>
       <li xml:lang="ko">통화 기록을 보고 같은 전화번호에 전화 다시 걸기</li>
+      <li xml:lang="lt">Matyti skambučių istoriją ir lengvai vėl skambinti tuo pačiu numeriu</li>
       <li xml:lang="lv">Skatiet visu savu zvanu vēsturi un viegli zvaniet uz nesen zvanītiem numuriem</li>
       <li xml:lang="nl">Bekijk uw oproepgeschiedenis en maak opnieuw een oproep naar hetzelfde nummer</li>
       <li xml:lang="nn">Sjå samtalelogg og ring opp att telefonnummer</li>
       <li xml:lang="pa">ਆਪਣੇ ਕਾਲ ਅਤੀਤ ਨੂੰ ਵੇਖੋ ਅਤੇ ਉਸ ਨੰਬਰ ਨੂੰ ਮੁੜ ਕੇ ਸੌਖੀ ਤਰ੍ਹਾਂ ਕਾਲ ਕਰੋ</li>
       <li xml:lang="pl">Zobacz swoją historię dzwonienia i łatwo dzwoń na te same numery ponownie</li>
-      <li xml:lang="pt">Ver o seu histórico de chamadas e invocar o mesmo número de novo</li>
+      <li xml:lang="pt">Veja o seu histórico de chamadas e ligue novamente, de forma fácil, para o mesmo número</li>
       <li xml:lang="pt-BR">Veja seu histórico de chamadas e disque facilmente o mesmo número novamente</li>
       <li xml:lang="ro">Vedeți istoricul apelurilor și sunați același număr din nou</li>
       <li xml:lang="ru">Просмотр журнала вызовов и удобный повторный вызов номеров</li>
       <li xml:lang="sa">स्वस्य काल-इतिहासं पश्यन्तु पुनः सहजतया समानं नम्बरं आह्वयन्तु</li>
+      <li xml:lang="sk">Zobrazujte históriu hovorov a jednoducho volajte na rovnaké číslo znova.</li>
       <li xml:lang="sl">Oglejte si svojo zgodovino klicev in preprosto znova pokličite isto številko</li>
       <li xml:lang="sv">Se din samtalshistorik och ring enkelt samma nummer igen</li>
       <li xml:lang="tr">Arama geçmişinizi görün ve aynı numarayı kolaylıkla yeniden arayın</li>
+      <li xml:lang="ug">چاقىرىش خاتىرىسى كۆرۈپ ۋە ئوخشاش نومۇرنى ئاسانلا قايتا چاقىرالايسىز</li>
       <li xml:lang="uk">Перегляд журналу дзвінків та просте повторне набирання номерів</li>
       <li xml:lang="vi">Xem lịch sử gọi và dễ dàng gọi lại cùng số đó</li>
       <li xml:lang="zh-CN">查看通话记录，并轻松地再次呼叫相同的号码</li>
@@ -226,6 +241,7 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="az">Telefon nömrəsini saxladığınız şəxslər siyahısını idarə edin</li>
       <li xml:lang="ca">Gestioneu els contactes que tenen un número de telèfon establert</li>
       <li xml:lang="ca-valencia">Gestioneu els contactes que tenen un número de telèfon establit</li>
+      <li xml:lang="cs">Spravujte své kontakty, které mají nastavené telefonní číslo</li>
       <li xml:lang="de">Verwalten Sie Ihre Kontakte, für die eine Telefonnummer hinterlegt ist</li>
       <li xml:lang="en-GB">Manage your contacts that have a phone number set</li>
       <li xml:lang="eo">Mastrumu viajn kontaktojn por kiuj metiĝis telefonnumero.</li>
@@ -243,19 +259,22 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="it">Gestisci i tuoi contatti che hanno un numero di telefono impostato</li>
       <li xml:lang="ka">მართეთ კონტაქტები, რომლებსაც ტელეფონის ნომერი მითითებული აქვთ</li>
       <li xml:lang="ko">전화번호가 없는 연락처 관리</li>
+      <li xml:lang="lt">Tvarkyti adresatus su įrašytu telefono numeriu</li>
       <li xml:lang="lv">Pārvaldiet kontaktus ar saglabātiem numuriem</li>
       <li xml:lang="nl">Uw contactpersonen beheren die een telefoonnummer gezet hebben</li>
       <li xml:lang="nn">Administrer kontaktar registrerte med telefonnummer</li>
       <li xml:lang="pa">ਆਪਣੇ ਸੰਪਰਕਾਂ ਦਾ ਇੰਤਜ਼ਾਮ ਕਰੋ, ਜਿੰਨ੍ਹਾਂ ਲਈ ਫ਼ੋਨ ਨੰਬਰ ਸੈੱਟ ਹੈ</li>
       <li xml:lang="pl">Zarządzaj swoimi kontaktami, które mają ustawiony numer telefonu</li>
-      <li xml:lang="pt">Gerir os seus contactos que tenham números de telefone atribuídos</li>
+      <li xml:lang="pt">Faça a gestão dos seus contatos que tenham números de telefone atribuídos</li>
       <li xml:lang="pt-BR">Gerencie seus contatos que tenham um número de telefone definido</li>
       <li xml:lang="ro">Gestionați contactele ce au un număr de telefon înregistrat</li>
       <li xml:lang="ru">Управление контактами с заданными номерами телефонов</li>
       <li xml:lang="sa">येषु दूरभाषसङ्ख्या सेट् भवति तेषां सम्पर्कं प्रबन्धयन्तु</li>
+      <li xml:lang="sk">Manage your contacts that have a phone number set</li>
       <li xml:lang="sl">Upravljajte svoje stike, ki imajo nastavljeno telefonsko številko</li>
       <li xml:lang="sv">Hantera kontakter som har ett telefonnummer inställt</li>
       <li xml:lang="tr">Telefon numarası kayıtlı olan kişilerinizi yönetin</li>
+      <li xml:lang="ug">تېلېفون نومۇرى بار ئالاقەداشنى باشقۇرالايسىز</li>
       <li xml:lang="uk">Керування записами контактів, для яких встановлено номер телефону</li>
       <li xml:lang="vi">Quản lí các liên hệ đã đặt số điện thoại</li>
       <li xml:lang="zh-CN">管理有电话号码的联系人</li>
@@ -271,6 +290,7 @@ SPDX-License-Identifier: CC0-1.0
       <caption xml:lang="az">Nömrə yığma səhifəsi</caption>
       <caption xml:lang="ca">La pàgina del marcador</caption>
       <caption xml:lang="ca-valencia">La pàgina del marcador</caption>
+      <caption xml:lang="cs">Stránka volání</caption>
       <caption xml:lang="de">Nummerneingabe</caption>
       <caption xml:lang="en-GB">The dialer page</caption>
       <caption xml:lang="eo">La telefonila paĝo</caption>
@@ -288,19 +308,22 @@ SPDX-License-Identifier: CC0-1.0
       <caption xml:lang="it">La pagina del combinatore</caption>
       <caption xml:lang="ka">ღილაკების გვერდი</caption>
       <caption xml:lang="ko">다이얼 페이지</caption>
+      <caption xml:lang="lt">Numerio rinkiklio puslapis</caption>
       <caption xml:lang="lv">Numuru sastādītāja lapa</caption>
       <caption xml:lang="nl">De pagina met de kiezer</caption>
       <caption xml:lang="nn">Ringjesida</caption>
       <caption xml:lang="pa">ਡਾਇਲਰ ਸਫ਼ਾ</caption>
       <caption xml:lang="pl">Strona dialera</caption>
-      <caption xml:lang="pt">A página de marcação</caption>
+      <caption xml:lang="pt">Página do teclado do telefone</caption>
       <caption xml:lang="pt-BR">A página do discador</caption>
       <caption xml:lang="ro">Pagina apelatorului</caption>
       <caption xml:lang="ru">Набор номера</caption>
       <caption xml:lang="sa">डायलर पृष्ठम्</caption>
+      <caption xml:lang="sk">The dialer page</caption>
       <caption xml:lang="sl">Stran številčnice</caption>
       <caption xml:lang="sv">Uppringningssidan</caption>
       <caption xml:lang="tr">Çevirici</caption>
+      <caption xml:lang="ug">نومۇر بۇرىغۇچ بېتى</caption>
       <caption xml:lang="uk">Сторінка набирання номеру</caption>
       <caption xml:lang="vi">Trang quay số</caption>
       <caption xml:lang="zh-CN">拨号器页面</caption>
@@ -313,6 +336,7 @@ SPDX-License-Identifier: CC0-1.0
       <caption xml:lang="az">Səsli poçt nömrəsinə zəng edin</caption>
       <caption xml:lang="ca">Trucada a la bústia de veu</caption>
       <caption xml:lang="ca-valencia">Tocada a la bústia de veu</caption>
+      <caption xml:lang="cs">Volání do hlasové schránky</caption>
       <caption xml:lang="de">Abrufen der Sprachnachrichten</caption>
       <caption xml:lang="en-GB">Calling voicemail</caption>
       <caption xml:lang="eo">Alvokante voĉpoŝton</caption>
@@ -330,6 +354,7 @@ SPDX-License-Identifier: CC0-1.0
       <caption xml:lang="it">Chiama caselle vocali</caption>
       <caption xml:lang="ka">ხმოვანი ფოსტის გამოძახება</caption>
       <caption xml:lang="ko">음성 사서함 통화</caption>
+      <caption xml:lang="lt">Skambinama balso paštui</caption>
       <caption xml:lang="lv">Zvani uz balss pastu</caption>
       <caption xml:lang="nl">Voicemail aanroepen</caption>
       <caption xml:lang="nn">Ringjer talepost</caption>
@@ -340,9 +365,11 @@ SPDX-License-Identifier: CC0-1.0
       <caption xml:lang="ro">Apelarea mesageriei vocale</caption>
       <caption xml:lang="ru">Голосовая почта</caption>
       <caption xml:lang="sa">ध्वनिपत्रं आह्वयति</caption>
+      <caption xml:lang="sk">Calling voicemail</caption>
       <caption xml:lang="sl">Klicanje glasovne pošte</caption>
       <caption xml:lang="sv">Ringa röstbrevlåda</caption>
       <caption xml:lang="tr">Telesekreteri arama</caption>
+      <caption xml:lang="ug">ئۈنخەتنى چاقىر</caption>
       <caption xml:lang="uk">Голосова пошта</caption>
       <caption xml:lang="vi">Gọi hộp thư thoại</caption>
       <caption xml:lang="zh-CN">呼叫语音信箱</caption>
@@ -354,10 +381,10 @@ SPDX-License-Identifier: CC0-1.0
   </provides>
   <launchable type="desktop-id">org.kde.plasma.dialer.desktop</launchable>
   <releases>
-    <release version="6.5.5" date="2026-01-13"/>
-    <release version="6.5.4" date="2025-12-09"/>
-    <release version="6.5.3" date="2025-11-18"/>
-    <release version="6.4.6" date="2025-11-11"/>
+    <release version="6.7.4" date="2026-08-04"/>
+    <release version="6.7.3" date="2026-07-14"/>
+    <release version="6.7.2" date="2026-06-30"/>
+    <release version="6.7.1" date="2026-06-23"/>
   </releases>
   <requires>
     <display_length compare="ge">360</display_length>
