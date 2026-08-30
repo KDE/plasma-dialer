@@ -25,7 +25,7 @@ Kirigami.Page {
     property string callCommunicationWith: ActiveCallModel.communicationWith
 
     function activeDeviceUni() {
-        return applicationWindow().selectModem();
+        return SharedUtils.selectModem(DeviceUtils.deviceUniList);
     }
 
     function activeCallUni() {

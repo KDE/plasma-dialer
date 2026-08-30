@@ -1,4 +1,6 @@
-// SPDX-FileCopyrightText: 2026 Micah Stanley <stanleymicah@proton.me>
+// SPDX-FileCopyrightText: 2014 Aaron Seigo <aseigo@kde.org>
+// SPDX-FileCopyrightText: 2014 Marco Martin <mart@kde.org>
+// SPDX-FileCopyrightText: 2021 Alexey Andreyev <aa13q@ya.ru>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 import QtQuick
@@ -28,18 +30,6 @@ Kirigami.ApplicationWindow {
     color: Kirigami.Theme.backgroundColor
 
     pageStack.initialPage: CallPage {}
-
-    function selectModem() {
-        const deviceUniList = DeviceUtils.deviceUniList;
-        if (deviceUniList.length === 0) {
-            console.warn("Modem devices not found");
-            return "";
-        }
-        if (deviceUniList.length === 1)
-            return deviceUniList[0];
-
-        console.log("TODO: select device uni");
-    }
 
     Connections {
         target: ActiveCallModel

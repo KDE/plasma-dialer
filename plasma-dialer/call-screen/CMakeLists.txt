@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2022 Alexey Andreyev <aa13q@ya.ru>
 # SPDX-FileCopyrightText: 2026 Micah Stanley <stanleymicah@proton.me>
 #
 # SPDX-License-Identifier: LicenseRef-KDE-Accepted-GPL
@@ -25,7 +26,7 @@ qt_target_qml_sources(plasma-call-screen QML_FILES
 )
 
 find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED Core Quick Qml QuickControls2 Multimedia)
-find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Config Crash CoreAddons I18n DBusAddons)
+find_package(KF6 ${KF6_MIN_VERSION} REQUIRED COMPONENTS Config Crash CoreAddons I18n DBusAddons)
 find_package(KF6KirigamiAddons 1.3 REQUIRED)
 
 if (DIALER_BUILD_SHELL_OVERLAY)
@@ -40,7 +41,7 @@ if (DIALER_BUILD_SHELL_OVERLAY)
 
     find_package(Wayland REQUIRED)
     find_package(PlasmaWaylandProtocols 1.8 CONFIG)
-    find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS WindowSystem)
+    find_package(KF6 ${KF6_MIN_VERSION} REQUIRED COMPONENTS WindowSystem)
     set_package_properties(PlasmaWaylandProtocols PROPERTIES
         TYPE REQUIRED
         PURPOSE "Collection of Plasma-specific Wayland protocols"

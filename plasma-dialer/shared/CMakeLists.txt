@@ -1,9 +1,10 @@
+# SPDX-FileCopyrightText: 2022 Alexey Andreyev <aa13q@ya.ru>
 # SPDX-FileCopyrightText: 2026 Micah Stanley <stanleymicah@proton.me>
 #
 # SPDX-License-Identifier: LicenseRef-KDE-Accepted-GPL
 
 find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED Core Quick Qml QuickControls2 Multimedia)
-find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Config Crash CoreAddons I18n)
+find_package(KF6 ${KF6_MIN_VERSION} REQUIRED COMPONENTS Config Crash CoreAddons I18n)
 find_package(KF6KirigamiAddons 1.3 REQUIRED)
 
 set(shared_SRCS

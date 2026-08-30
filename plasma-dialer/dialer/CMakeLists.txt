@@ -32,7 +32,7 @@ qt_target_qml_sources(plasma-dialer QML_FILES
 )
 
 find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED Core Quick Qml QuickControls2 Multimedia)
-find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Config Contacts Crash CoreAddons I18n DBusAddons)
+find_package(KF6 ${KF6_MIN_VERSION} REQUIRED COMPONENTS Config Contacts Crash CoreAddons I18n DBusAddons)
 find_package(KF6KirigamiAddons 1.3 REQUIRED)
 
 target_link_libraries(plasma-dialer PRIVATE

@@ -83,18 +83,6 @@ Kirigami.ApplicationWindow {
         }
     }
 
-    function selectModem() {
-        const deviceUniList = DeviceUtils.deviceUniList;
-        if (deviceUniList.length === 0) {
-            console.warn("Modem devices not found");
-            return "";
-        }
-        if (deviceUniList.length === 1)
-            return deviceUniList[0];
-
-        console.log("TODO: select device uni");
-    }
-
     function call(number) {
         getPage("Dialer").pad.number = number;
         switchToPage(getPage("Dialer"));
@@ -158,11 +146,11 @@ Kirigami.ApplicationWindow {
         id: ussdSheet
 
         onResponseReady: {
-            const deviceUni = applicationWindow().selectModem();
+            const deviceUni = SharedUtils.selectModem(DeviceUtils.deviceUniList);
             UssdUtils.respond(deviceUni, response);
         }
         onCancelSessionRequested: {
-            const deviceUni = applicationWindow().selectModem();
+            const deviceUni = SharedUtils.selectModem(DeviceUtils.deviceUniList);
             UssdUtils.cancel(deviceUni);
         }
     }

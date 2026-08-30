@@ -16,4 +16,5 @@ public:
     explicit SharedUtils(QObject *parent = nullptr);
 
     Q_INVOKABLE void launchCallScreen();
+    Q_INVOKABLE QString selectModem(const QStringList &deviceUniList);
 };

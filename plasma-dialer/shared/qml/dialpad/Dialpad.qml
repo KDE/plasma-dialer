@@ -20,7 +20,7 @@ GridLayout {
     property bool callActive: ActiveCallModel.active
 
     function sendDtmf(tones) {
-        const deviceUni = applicationWindow().selectModem();
+        const deviceUni = SharedUtils.selectModem(DeviceUtils.deviceUniList);
         const callUni = ActiveCallModel.activeCallUni();
         CallUtils.sendDtmf(deviceUni, callUni, tones);
     }
@@ -58,7 +58,7 @@ GridLayout {
     }
 
     function onCallButtonPressed(number) {
-        const deviceUni = applicationWindow().selectModem();
+        const deviceUni = SharedUtils.selectModem(DeviceUtils.deviceUniList);
         if (isSpecialCode(number)) {
             applicationWindow().ussdUserInitiated();
             UssdUtils.initiate(deviceUni, number);
@@ -76,7 +76,7 @@ GridLayout {
         } else {
             pad.voicemailFail = false;
             // voicemail number is real phone number and should not be a MMI code
-            var device = applicationWindow().selectModem();
+            var device = SharedUtils.selectModem(DeviceUtils.deviceUniList);
             CallUtils.dial(device, number);
         }
     }

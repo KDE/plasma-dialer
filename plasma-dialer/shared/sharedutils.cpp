@@ -22,3 +22,20 @@ void SharedUtils::launchCallScreen()
 
     QProcess::startDetached(executable, QStringList());
 }
+
+QString SharedUtils::selectModem(const QStringList &deviceUniList)
+{
+    if (deviceUniList.isEmpty()) {
+        qWarning() << "Modem devices not found";
+        return QString();
+    }
+
+    if (deviceUniList.size() == 1) {
+        return deviceUniList.first();
+    }
+
+    // TODO: select device uni
+    qWarning() << "Multiple modems are not yet supported!";
+
+    return QString();
+}

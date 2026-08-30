@@ -275,7 +275,7 @@ void NotificationManager::handleIncomingCall(const QString &deviceUni, const QSt
                                                              QStringLiteral("/org/kde/Solid/PowerManagement"),
                                                              QStringLiteral("org.kde.Solid.PowerManagement"),
                                                              QStringLiteral("wakeup"));
-                                                             QDBusConnection::sessionBus().call(wakeupCall);
+    QDBusConnection::sessionBus().call(wakeupCall);
 
     if (!skipNotification) {
         openRingingNotification(deviceUni, callUni, callerDisplay, notificationEvent);
