@@ -4,7 +4,7 @@ Plasma Dialer is an application that allows for making and receiving phone calls
 
 ## Links
 
-* Project page: https://invent.kde.org/plasma-mobile/spacebar
+* Project page: https://invent.kde.org/plasma-mobile/plasma-dialer
 * File issues: https://invent.kde.org/plasma-mobile/plasma-dialer/-/issues
 * Development channel: https://matrix.to/#/#plasmamobile:matrix.org
 
