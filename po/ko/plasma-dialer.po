@@ -1,21 +1,21 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasma-dialer package.
-# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2026 Shinjo Park <kde@peremen.name>
+# SPDX-FileCopyrightText: 2021-2024, 2026 Shinjo Park <kde@peremen.name>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-17 00:46+0000\n"
-"PO-Revision-Date: 2026-04-26 20:56+0200\n"
-"Last-Translator: Shinjo Park <kde@peremen.name>\n"
-"Language-Team: Korean <kde-kr@kde.org>\n"
+"PO-Revision-Date: 2026-09-22 00:00+0200\n"
+"Last-Translator: Shinjo Park <peremen@gmail.com>\n"
+"Language-Team: Korean\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -50,12 +50,12 @@ msgstr "Alexey Andreyev"
 #: src/qml/AddContactPage.qml:26
 #, kde-format
 msgid "Adding contact"
-msgstr ""
+msgstr "연락처 추가"
 
 #: src/qml/AddContactPage.qml:43
 #, kde-format
 msgid "Name"
-msgstr ""
+msgstr "이름"
 
 #: src/qml/call/ActiveCallView.qml:57
 #, kde-format
@@ -155,10 +155,9 @@ msgid "Telephony daemons are not responding"
 msgstr "전화 데몬이 응답하지 않음"
 
 #: src/qml/DialerPage.qml:41
-#, fuzzy, kde-format
-#| msgid "Contacts"
+#, kde-format
 msgid "Add contact"
-msgstr "연락처"
+msgstr "연락처 추가"
 
 #: src/qml/DialerPage.qml:138
 #, kde-format
