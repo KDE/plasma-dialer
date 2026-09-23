@@ -136,6 +136,16 @@ void ActiveCallModel::onUtilsCallsChanged(const DialerTypes::CallDataVector &fet
     endResetModel();
 
     updateActiveCallProps();
+
+    if (!m_initialized) {
+        m_initialized = true;
+        Q_EMIT initializedChanged();
+    }
+}
+
+bool ActiveCallModel::initialized() const
+{
+    return m_initialized;
 }
 
 bool ActiveCallModel::active() const

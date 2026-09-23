@@ -11,6 +11,7 @@
 class ActiveCallModel : public CallModel
 {
     Q_OBJECT
+    Q_PROPERTY(bool initialized READ initialized NOTIFY initializedChanged)
     Q_PROPERTY(bool incoming READ incoming NOTIFY incomingChanged)
     Q_PROPERTY(bool active READ active NOTIFY activeChanged)
     Q_PROPERTY(bool inCall READ inCall NOTIFY inCallChanged)
@@ -19,6 +20,9 @@ class ActiveCallModel : public CallModel
 
 public:
     ActiveCallModel(QObject *parent = nullptr);
+
+    // Whether the initial call list fetch has completed
+    bool initialized() const;
 
     // Whether any sort of call is ongoing (includes waiting incoming or outgoing calls)
     bool active() const;
@@ -48,6 +52,7 @@ public Q_SLOTS:
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
 
 Q_SIGNALS:
+    void initializedChanged();
     void activeChanged();
     void inCallChanged();
     void incomingChanged();
@@ -72,6 +77,7 @@ private:
     org::kde::telephony::CallUtils *m_callUtils;
     DialerTypes::CallDataVector m_calls;
     QTimer m_callsTimer;
+    bool m_initialized = false;
     bool m_active = false;
     bool m_inCall = false;
     bool m_incoming = false;

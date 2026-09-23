@@ -1,0 +1,10 @@
+[Desktop Entry]
+Comment=Plasma call screen
+Name=Call Screen
+NoDisplay=true
+Type=Application
+Icon=dialer
+Exec=@CMAKE_INSTALL_FULL_BINDIR@/plasma-call-screen %u
+Categories=Qt;KDE;Telephony;Network;
+InitialPreference=10
+X-KDE-Wayland-Interfaces=kde_lockscreen_overlay_v1

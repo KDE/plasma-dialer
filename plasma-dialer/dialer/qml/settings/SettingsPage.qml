@@ -1,0 +1,93 @@
+/*
+ *  SPDX-FileCopyrightText: 2021 Devin Lin <devin@kde.org>
+ *  SPDX-FileCopyrightText: 2022 Michael Lang <criticaltemp@protonmail.com>
+ *
+ *  SPDX-License-Identifier: GPL-2.0-or-later
+ */
+
+import QtQuick
+import QtQuick.Layouts
+
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.formcard as FormCard
+import org.kde.plasma.dialer
+import org.kde.telephony
+
+FormCard.FormCardPage {
+    id: page
+
+    // page animation
+    property real yTranslate: 0
+
+    function saveConfig() {
+        Config.save();
+        DialerUtils.syncSettings();
+    }
+
+    title: i18n("Settings")
+
+    flickable.transform: Translate {
+        y: yTranslate
+    }
+
+    FormCard.FormCard {
+        Layout.topMargin: Kirigami.Units.gridUnit
+
+        FormCard.FormButtonDelegate {
+            id: about
+
+            text: i18n("About")
+            onClicked: applicationWindow().pageStack.push(applicationWindow().getPage("About"))
+        }
+
+    }
+
+    FormCard.FormCard {
+        Layout.topMargin: Kirigami.Units.gridUnit
+
+        FormCard.FormButtonDelegate {
+            id: ringtoneSettings
+
+            text: i18n("Ringtone")
+            description: Config.customRingtone ? Config.customRingtone.split('/').pop() : i18n("Default")
+            onClicked: applicationWindow().pageStack.push(applicationWindow().getPage("RingtoneSettings"))
+        }
+
+        FormCard.FormDelegateSeparator {
+            above: ringtoneSettings
+            below: adaptiveCallBlocking
+        }
+
+        FormCard.FormButtonDelegate {
+            id: adaptiveCallBlocking
+
+            text: i18n("Adaptive call blocking")
+            onClicked: applicationWindow().pageStack.push(applicationWindow().getPage("CallBlockSettings"))
+        }
+
+        FormCard.FormDelegateSeparator {
+            above: adaptiveCallBlocking
+            below: callScreenAppearance
+        }
+
+        FormCard.FormComboBoxDelegate {
+            id: callScreenAppearance
+
+            displayMode: FormCard.FormComboBoxDelegate.Dialog
+            text: i18n("Incoming call screen appearance")
+            model: [i18n("Buttons"), i18n("Symmetric Swipe"), i18n("Asymmetric Swipe")]
+            currentIndex: Config.answerControl
+            onCurrentIndexChanged: Config.answerControl = currentIndex
+        }
+
+    }
+
+    data: Connections {
+        function onCurrentIndexChanged() {
+            page.saveConfig();
+        }
+
+        target: applicationWindow().pageStack
+    }
+
+}
