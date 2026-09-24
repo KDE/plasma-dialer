@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-telephony-daemon\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-14 00:46+0000\n"
+"POT-Creation-Date: 2026-09-24 00:48+0000\n"
 "PO-Revision-Date: 2025-06-29 18:18+0200\n"
 "Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -18,32 +18,32 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 25.04.2\n"
 
-#: src/notification-manager.cpp:115 src/notification-manager.cpp:267
+#: src/notification-manager.cpp:119 src/notification-manager.cpp:271
 #, kde-format
 msgid "No Caller ID"
 msgstr "Anonymer Anruf"
 
-#: src/notification-manager.cpp:125
+#: src/notification-manager.cpp:129
 #, kde-format
 msgid "Missed call"
 msgstr "Verpasster Anruf"
 
-#: src/notification-manager.cpp:126
+#: src/notification-manager.cpp:130
 #, kde-format
 msgid "Missed call from %1"
 msgstr "Verpasster Anruf von %1"
 
-#: src/notification-manager.cpp:148
+#: src/notification-manager.cpp:152
 #, kde-format
 msgid "Incoming call"
 msgstr "Eingehender Anruf"
 
-#: src/notification-manager.cpp:154
+#: src/notification-manager.cpp:158
 #, kde-format
 msgid "Accept"
 msgstr "Annehmen"
 
-#: src/notification-manager.cpp:160
+#: src/notification-manager.cpp:164
 #, kde-format
 msgid "Reject"
 msgstr "Ablehnen"

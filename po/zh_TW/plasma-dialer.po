@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-17 00:46+0000\n"
+"POT-Creation-Date: 2026-09-24 00:48+0000\n"
 "PO-Revision-Date: 2026-07-22 01:17+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -30,215 +30,212 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "mail@kisaragi-hiu.com"
 
-#: src/main.cpp:138 src/qml/AddContactPage.qml:64 src/qml/Main.qml:123
+#: call-screen/main.cpp:118 dialer/main.cpp:65 dialer/qml/AddContactPage.qml:64
+#: dialer/qml/Main.qml:102
 #, kde-format
 msgid "Phone"
 msgstr "電話"
 
-#: src/main.cpp:140
+#: call-screen/main.cpp:120
 #, kde-format
-msgid "Plasma phone dialer"
-msgstr "Plasma 電話撥打程式"
+msgid "Plasma call screen"
+msgstr ""
 
-#: src/main.cpp:142
+#: call-screen/main.cpp:122 dialer/main.cpp:69
 #, kde-format
 msgid "© 2015-2022 KDE Community"
 msgstr "© 2015-2022 KDE 社群"
 
-#: src/main.cpp:145
+#: call-screen/main.cpp:125 dialer/main.cpp:72
 #, kde-format
 msgid "Alexey Andreyev"
 msgstr "Alexey Andreyev"
 
-#: src/qml/AddContactPage.qml:26
-#, kde-format
-msgid "Adding contact"
-msgstr "新增聯絡人"
-
-#: src/qml/AddContactPage.qml:43
-#, kde-format
-msgid "Name"
-msgstr "名稱"
-
-#: src/qml/call/ActiveCallView.qml:57
+#: call-screen/qml/call/ActiveCallView.qml:57
 #, kde-format
 msgid "Incoming..."
 msgstr "來電..."
 
-#: src/qml/call/ActiveCallView.qml:60
+#: call-screen/qml/call/ActiveCallView.qml:60
 #, kde-format
 msgid "Calling..."
 msgstr "撥號中..."
 
-#: src/qml/call/AsymmetricAnswerSwipe.qml:102
+#: call-screen/qml/call/AsymmetricAnswerSwipe.qml:103
 #, kde-format
 msgid "Swipe to accept"
 msgstr "滑動來接聽"
 
-#: src/qml/call/CallPage.qml:50
+#: call-screen/qml/call/CallPage.qml:51
 #, kde-format
 msgctxt "This is a noun"
 msgid "Call"
 msgstr "通話"
 
-#: src/qml/call/CallPage.qml:56
+#: call-screen/qml/call/CallPage.qml:57
 #, kde-format
 msgid "Close"
 msgstr "關閉"
 
-#: src/qml/call/CallPage.qml:115
+#: call-screen/qml/call/CallPage.qml:116
 #, kde-format
 msgid "Keypad"
 msgstr "電話鍵盤"
 
-#: src/qml/call/CallPage.qml:127
+#: call-screen/qml/call/CallPage.qml:128
 #, kde-format
 msgctxt "As in 'loudspeaker'"
 msgid "Speaker"
 msgstr "擴音"
 
-#: src/qml/call/CallPage.qml:139
+#: call-screen/qml/call/CallPage.qml:140
 #, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "靜音"
 
-#: src/qml/call/InCallInlineMessage.qml:13
+#: dialer/main.cpp:67
 #, kde-format
-msgid "Active call list"
-msgstr "作用中撥號清單"
+msgid "Plasma phone dialer"
+msgstr "Plasma 電話撥打程式"
 
-#: src/qml/call/InCallInlineMessage.qml:17
+#: dialer/qml/AddContactPage.qml:26
 #, kde-format
-msgid "View"
-msgstr "檢視"
+msgid "Adding contact"
+msgstr "新增聯絡人"
 
-#: src/qml/components/BottomToolbar.qml:94 src/qml/components/Sidebar.qml:57
+#: dialer/qml/AddContactPage.qml:43
+#, kde-format
+msgid "Name"
+msgstr "名稱"
+
+#: dialer/qml/components/BottomToolbar.qml:95
+#: dialer/qml/components/Sidebar.qml:58
 #, kde-format
 msgid "History"
 msgstr "歷史"
 
-#: src/qml/components/BottomToolbar.qml:106 src/qml/components/Sidebar.qml:76
-#: src/qml/ContactsPage.qml:24
+#: dialer/qml/components/BottomToolbar.qml:107
+#: dialer/qml/components/Sidebar.qml:76 dialer/qml/ContactsPage.qml:25
 #, kde-format
 msgid "Contacts"
 msgstr "聯絡人"
 
-#: src/qml/components/BottomToolbar.qml:118 src/qml/components/Sidebar.qml:95
-#: src/qml/DialerPage.qml:27
+#: dialer/qml/components/BottomToolbar.qml:119
+#: dialer/qml/components/Sidebar.qml:94 dialer/qml/DialerPage.qml:25
 #, kde-format
 msgid "Dialer"
 msgstr "電話"
 
-#: src/qml/components/Sidebar.qml:121 src/qml/ContactsPage.qml:32
-#: src/qml/DialerPage.qml:56 src/qml/HistoryPage.qml:47
-#: src/qml/settings/SettingsPage.qml:26
+#: dialer/qml/components/Sidebar.qml:120 dialer/qml/ContactsPage.qml:33
+#: dialer/qml/DialerPage.qml:54 dialer/qml/HistoryPage.qml:49
+#: dialer/qml/settings/SettingsPage.qml:27
 #, kde-format
 msgid "Settings"
 msgstr "設定"
 
-#: src/qml/components/Sidebar.qml:139
+#: dialer/qml/components/Sidebar.qml:136
 #, kde-format
 msgid "Quit"
 msgstr "離開"
 
-#: src/qml/ContactsPage.qml:57
+#: dialer/qml/ContactsPage.qml:58
 #, kde-format
 msgid "No contacts have a phone number set"
 msgstr "沒有已設定電話號碼的聯絡人"
 
-#: src/qml/ContactsPage.qml:98
+#: dialer/qml/ContactsPage.qml:99
 #, kde-format
 msgid "Select number to call"
 msgstr "選擇要打電話給哪個號碼"
 
-#: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:128
+#: dialer/qml/ContactsPage.qml:161 dialer/qml/DialerPage.qml:126
 #, kde-format
 msgid "Telephony daemons are not responding"
 msgstr "電話守護程式沒有回應"
 
-#: src/qml/DialerPage.qml:41
+#: dialer/qml/DialerPage.qml:39
 #, kde-format
 msgid "Add contact"
 msgstr "新增聯絡人"
 
-#: src/qml/DialerPage.qml:138
+#: dialer/qml/DialerPage.qml:136
 #, kde-format
 msgid "Modem devices are not found"
 msgstr "未找到數據機裝置"
 
-#: src/qml/DialerPage.qml:148
+#: dialer/qml/DialerPage.qml:146
 #, kde-format
 msgid "Voicemail number couldn't be found"
 msgstr "找不到語音信箱號碼"
 
-#: src/qml/history/HistoryDelegate.qml:68
+#: dialer/qml/history/HistoryDelegate.qml:69
 #, kde-format
 msgid "Duration: %1"
 msgstr "時長：%1"
 
-#: src/qml/HistoryPage.qml:34
+#: dialer/qml/HistoryPage.qml:36
 #, kde-format
 msgid "Call History"
 msgstr "撥號歷史"
 
-#: src/qml/HistoryPage.qml:40
+#: dialer/qml/HistoryPage.qml:42
 #, kde-format
 msgid "Clear history"
 msgstr "清除歷史"
 
-#: src/qml/HistoryPage.qml:68
+#: dialer/qml/HistoryPage.qml:70
 #, kde-format
 msgid "No recent calls"
 msgstr "沒有最近撥號"
 
-#: src/qml/ImeiSheet.qml:24
+#: dialer/qml/ImeiSheet.qml:25
 #, kde-format
 msgid "No IMEIs found"
 msgstr "找不到 IMEI 碼"
 
-#: src/qml/ImeiSheet.qml:30
+#: dialer/qml/ImeiSheet.qml:31
 #, kde-format
 msgid "IMEI"
 msgid_plural "IMEIs"
 msgstr[0] "IMEI 碼"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:25
+#: dialer/qml/settings/CallBlockSettingsPage.qml:26
 #, kde-format
 msgid "Adaptive Call Blocking"
 msgstr "適應式通話封鎖"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:34
+#: dialer/qml/settings/CallBlockSettingsPage.qml:35
 #, kde-format
 msgid "Ignore calls from unknown numbers"
 msgstr "忽略來自未知號碼的來電"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:40
+#: dialer/qml/settings/CallBlockSettingsPage.qml:41
 #, kde-format
 msgid "When a call is an incoming from an unknown number"
 msgstr "當有來自未知號碼的來電時"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:48
+#: dialer/qml/settings/CallBlockSettingsPage.qml:49
 #, kde-format
 msgid "Immediately hang up"
 msgstr "立即掛斷"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:54
+#: dialer/qml/settings/CallBlockSettingsPage.qml:55
 #, kde-format
 msgid "Ring without notification"
 msgstr "鈴響但不通知"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:60
+#: dialer/qml/settings/CallBlockSettingsPage.qml:61
 #, kde-format
 msgid "Ring with silent notification"
 msgstr "鈴響並讓通知靜音"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:69
+#: dialer/qml/settings/CallBlockSettingsPage.qml:70
 #, kde-format
 msgid "Allowed exceptions"
 msgstr "允許的例外"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:79
+#: dialer/qml/settings/CallBlockSettingsPage.qml:80
 #, kde-format
 msgid "Anonymous numbers"
 msgstr "匿名號碼"
@@ -248,109 +245,120 @@ msgstr "匿名號碼"
 # 所以這個譯文是依原文元件 ID (allowPreviousOutgoing) 翻譯的。
 #
 # --Kisaragi
-#: src/qml/settings/CallBlockSettingsPage.qml:87
+#: dialer/qml/settings/CallBlockSettingsPage.qml:88
 #, kde-format
 msgid "Existing outgoing call to number"
 msgstr "上次撥打的電話號碼"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:95
+#: dialer/qml/settings/CallBlockSettingsPage.qml:96
 #, kde-format
 msgid "Callback within"
 msgstr "在多久之內回撥"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:114
+#: dialer/qml/settings/CallBlockSettingsPage.qml:115
 #, kde-format
 msgid "minutes"
 msgstr "分鐘"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:127
+#: dialer/qml/settings/CallBlockSettingsPage.qml:128
 #, kde-format
 msgid "Allowed phone number exceptions"
 msgstr "允許的電話號碼例外"
 
-#: src/qml/settings/CallBlockSettingsPage.qml:149
-#: src/qml/settings/CallBlockSettingsPage.qml:187
+#: dialer/qml/settings/CallBlockSettingsPage.qml:150
+#: dialer/qml/settings/CallBlockSettingsPage.qml:188
 #, kde-format
 msgid "Add new pattern"
 msgstr "新增樣式"
 
-#: src/qml/settings/RingtoneSettingsPage.qml:25
-#: src/qml/settings/SettingsPage.qml:50
+#: dialer/qml/settings/RingtoneSettingsPage.qml:26
+#: dialer/qml/settings/SettingsPage.qml:51
 #, kde-format
 msgid "Ringtone"
 msgstr "鈴聲"
 
-#: src/qml/settings/RingtoneSettingsPage.qml:79
+#: dialer/qml/settings/RingtoneSettingsPage.qml:80
 #, kde-format
 msgid "Select from files..."
 msgstr "從檔案選取..."
 
-#: src/qml/settings/RingtoneSettingsPage.qml:100
+#: dialer/qml/settings/RingtoneSettingsPage.qml:101
 #, kde-format
 msgid "Default (System)"
 msgstr "預設（系統）"
 
-#: src/qml/settings/RingtoneSettingsPage.qml:150
+#: dialer/qml/settings/RingtoneSettingsPage.qml:151
 #, kde-format
 msgid "Choose a ringtone"
 msgstr "選擇鈴聲"
 
-#: src/qml/settings/SettingsPage.qml:38
+#: dialer/qml/settings/SettingsPage.qml:39
 #, kde-format
 msgid "About"
 msgstr "關於"
 
-#: src/qml/settings/SettingsPage.qml:51
+#: dialer/qml/settings/SettingsPage.qml:52
 #, kde-format
 msgid "Default"
 msgstr "預設"
 
-#: src/qml/settings/SettingsPage.qml:63
+#: dialer/qml/settings/SettingsPage.qml:64
 #, kde-format
 msgid "Adaptive call blocking"
 msgstr "適應式通話封鎖"
 
-#: src/qml/settings/SettingsPage.qml:76
+#: dialer/qml/settings/SettingsPage.qml:77
 #, kde-format
 msgid "Incoming call screen appearance"
 msgstr "來電畫面外觀"
 
-#: src/qml/settings/SettingsPage.qml:77
+#: dialer/qml/settings/SettingsPage.qml:78
 #, kde-format
 msgid "Buttons"
 msgstr "按鈕"
 
-#: src/qml/settings/SettingsPage.qml:77
+#: dialer/qml/settings/SettingsPage.qml:78
 #, kde-format
 msgid "Symmetric Swipe"
 msgstr "對稱滑動"
 
-#: src/qml/settings/SettingsPage.qml:77
+#: dialer/qml/settings/SettingsPage.qml:78
 #, kde-format
 msgid "Asymmetric Swipe"
 msgstr "不對稱滑動"
 
-#: src/qml/USSDSheet.qml:39
+#: dialer/qml/USSDSheet.qml:40
 #, kde-format
 msgid "USSD Error"
 msgstr "USSD 錯誤"
 
-#: src/qml/USSDSheet.qml:39
+#: dialer/qml/USSDSheet.qml:40
 #, kde-format
 msgid "USSD Message"
 msgstr "USSD 訊息"
 
-#: src/qml/USSDSheet.qml:70
+#: dialer/qml/USSDSheet.qml:71
 #, kde-format
 msgid "Write response..."
 msgstr "撰寫回應..."
 
-#: src/qml/USSDSheet.qml:77
+#: dialer/qml/USSDSheet.qml:78
 #, kde-format
 msgid "Send"
 msgstr "傳送"
 
-#: src/qml/USSDSheet.qml:95
+#: dialer/qml/USSDSheet.qml:96
 #, kde-format
 msgid "Cancel USSD session"
 msgstr "取消 USSD 工作階段"
+
+#: shared/qml/call/InCallInlineMessage.qml:15
+#, fuzzy, kde-format
+#| msgid "Active call list"
+msgid "Active call"
+msgstr "作用中撥號清單"
+
+#: shared/qml/call/InCallInlineMessage.qml:19
+#, kde-format
+msgid "View"
+msgstr "檢視"

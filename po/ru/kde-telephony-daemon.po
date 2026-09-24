@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-14 00:46+0000\n"
+"POT-Creation-Date: 2026-09-24 00:48+0000\n"
 "PO-Revision-Date: 2024-12-04 17:06+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -18,32 +18,32 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 23.08.5\n"
 
-#: src/notification-manager.cpp:115 src/notification-manager.cpp:267
+#: src/notification-manager.cpp:119 src/notification-manager.cpp:271
 #, kde-format
 msgid "No Caller ID"
 msgstr "Неизвестный номер"
 
-#: src/notification-manager.cpp:125
+#: src/notification-manager.cpp:129
 #, kde-format
 msgid "Missed call"
 msgstr "Пропущенный вызов"
 
-#: src/notification-manager.cpp:126
+#: src/notification-manager.cpp:130
 #, kde-format
 msgid "Missed call from %1"
 msgstr "Пропущенный вызов от %1"
 
-#: src/notification-manager.cpp:148
+#: src/notification-manager.cpp:152
 #, kde-format
 msgid "Incoming call"
 msgstr "Входящий вызов"
 
-#: src/notification-manager.cpp:154
+#: src/notification-manager.cpp:158
 #, kde-format
 msgid "Accept"
 msgstr "Принять"
 
-#: src/notification-manager.cpp:160
+#: src/notification-manager.cpp:164
 #, kde-format
 msgid "Reject"
 msgstr "Отклонить"
