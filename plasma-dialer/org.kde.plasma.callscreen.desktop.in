@@ -1,6 +1,24 @@
 [Desktop Entry]
 Comment=Plasma call screen
+Comment[ca]=Pantalla de trucada del Plasma
+Comment[ca@valencia]=Pantalla de tocada de Plasma
+Comment[cs]=Obrazovka hovorů Plasma
+Comment[ka]=Plasma-ის დარეკვის ეკრანი
+Comment[nl]=Plasma oproepscherm
+Comment[pt_BR]=Tela de chamada do Plasma
+Comment[sl]=Plasma zaslon klica
+Comment[tr]=Plasma arama ekranı
+Comment[uk]=Екран викликів Плазми
 Name=Call Screen
+Name[ca]=Pantalla de trucada
+Name[ca@valencia]=Pantalla de tocada
+Name[cs]=Obrazovka hovorů
+Name[ka]=დარეკვის ეკრანი
+Name[nl]=Oproepscherm
+Name[pt_BR]=Tela de chamada
+Name[sl]=Zaslon klica
+Name[tr]=Arama Ekranı
+Name[uk]=Екран викликів
 NoDisplay=true
 Type=Application
 Icon=dialer
