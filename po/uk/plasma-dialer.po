@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-24 00:48+0000\n"
-"PO-Revision-Date: 2026-07-17 08:40+0300\n"
+"PO-Revision-Date: 2026-09-24 09:14+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -39,7 +39,7 @@ msgstr "Телефон"
 #: call-screen/main.cpp:120
 #, kde-format
 msgid "Plasma call screen"
-msgstr ""
+msgstr "Екран викликів Плазми"
 
 #: call-screen/main.cpp:122 dialer/main.cpp:69
 #, kde-format
@@ -351,10 +351,9 @@ msgid "Cancel USSD session"
 msgstr "Скасувати сеанс USSD"
 
 #: shared/qml/call/InCallInlineMessage.qml:15
-#, fuzzy, kde-format
-#| msgid "Active call list"
+#, kde-format
 msgid "Active call"
-msgstr "Список активних викликів"
+msgstr "Активний виклик"
 
 #: shared/qml/call/InCallInlineMessage.qml:19
 #, kde-format

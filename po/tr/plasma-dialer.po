@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-24 00:48+0000\n"
-"PO-Revision-Date: 2026-07-17 19:48+0300\n"
+"PO-Revision-Date: 2026-09-24 19:29+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 26.04.2\n"
+"X-Generator: Lokalize 26.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -36,7 +36,7 @@ msgstr "Telefon"
 #: call-screen/main.cpp:120
 #, kde-format
 msgid "Plasma call screen"
-msgstr ""
+msgstr "Plasma arama ekranı"
 
 #: call-screen/main.cpp:122 dialer/main.cpp:69
 #, kde-format
@@ -346,10 +346,9 @@ msgid "Cancel USSD session"
 msgstr "USSD oturumunu iptal et"
 
 #: shared/qml/call/InCallInlineMessage.qml:15
-#, fuzzy, kde-format
-#| msgid "Active call list"
+#, kde-format
 msgid "Active call"
-msgstr "Etkin arama listesi"
+msgstr "Etkin arama"
 
 #: shared/qml/call/InCallInlineMessage.qml:19
 #, kde-format
