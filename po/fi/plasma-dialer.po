@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-17 00:46+0000\n"
-"PO-Revision-Date: 2026-02-25 16:34+0200\n"
+"PO-Revision-Date: 2026-08-24 19:59+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -48,15 +48,14 @@ msgid "Alexey Andreyev"
 msgstr "Alexey Andreyev"
 
 #: src/qml/AddContactPage.qml:26
-#, fuzzy, kde-format
-#| msgid "No contacts"
+#, kde-format
 msgid "Adding contact"
-msgstr "Ei yhteystietoja"
+msgstr "Lisätään yhteystietoa"
 
 #: src/qml/AddContactPage.qml:43
 #, kde-format
 msgid "Name"
-msgstr ""
+msgstr "Nimi"
 
 #: src/qml/call/ActiveCallView.qml:57
 #, kde-format
@@ -74,8 +73,7 @@ msgid "Swipe to accept"
 msgstr "Hyväksy pyyhkäisemällä"
 
 #: src/qml/call/CallPage.qml:50
-#, fuzzy, kde-format
-#| msgid "Call"
+#, kde-format
 msgctxt "This is a noun"
 msgid "Call"
 msgstr "Soita"
@@ -91,15 +89,13 @@ msgid "Keypad"
 msgstr "Numeronäppäimistö"
 
 #: src/qml/call/CallPage.qml:127
-#, fuzzy, kde-format
-#| msgid "Speaker"
+#, kde-format
 msgctxt "As in 'loudspeaker'"
 msgid "Speaker"
 msgstr "Kaiutin"
 
 #: src/qml/call/CallPage.qml:139
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Vaimenna"
@@ -159,10 +155,9 @@ msgid "Telephony daemons are not responding"
 msgstr "Puhelinpalvelut eivät vastaa"
 
 #: src/qml/DialerPage.qml:41
-#, fuzzy, kde-format
-#| msgid "No contacts"
+#, kde-format
 msgid "Add contact"
-msgstr "Ei yhteystietoja"
+msgstr "Lisää yhteystieto"
 
 #: src/qml/DialerPage.qml:138
 #, kde-format
