@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-24 00:48+0000\n"
-"PO-Revision-Date: 2026-09-24 20:14-0400\n"
+"PO-Revision-Date: 2026-10-03 18:55-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -37,7 +37,7 @@ msgstr "تېلېفون"
 #: call-screen/main.cpp:120
 #, kde-format
 msgid "Plasma call screen"
-msgstr ""
+msgstr "Plasma چاقىرىش ئېكرانى"
 
 #: call-screen/main.cpp:122 dialer/main.cpp:69
 #, kde-format
@@ -346,10 +346,9 @@ msgid "Cancel USSD session"
 msgstr "USSD جەريانچاقتىن ۋاز كەچ"
 
 #: shared/qml/call/InCallInlineMessage.qml:15
-#, fuzzy, kde-format
-#| msgid "Active call list"
+#, kde-format
 msgid "Active call"
-msgstr "ئاكتىپ چاقىرىش تىزىمى"
+msgstr "ئاكتىپ چاقىرىش"
 
 #: shared/qml/call/InCallInlineMessage.qml:19
 #, kde-format
