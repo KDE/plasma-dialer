@@ -35,7 +35,7 @@ msgstr "Telefón"
 #: call-screen/main.cpp:120
 #, kde-format
 msgid "Plasma call screen"
-msgstr ""
+msgstr "Obrazovka hovoru Plasma"
 
 #: call-screen/main.cpp:122 dialer/main.cpp:69
 #, kde-format
@@ -346,10 +346,9 @@ msgid "Cancel USSD session"
 msgstr "Zrušiť reláciu USSD"
 
 #: shared/qml/call/InCallInlineMessage.qml:15
-#, fuzzy, kde-format
-#| msgid "Active call list"
+#, kde-format
 msgid "Active call"
-msgstr "Zoznam aktívnych hovorov"
+msgstr "Aktívny hovor"
 
 #: shared/qml/call/InCallInlineMessage.qml:19
 #, kde-format
