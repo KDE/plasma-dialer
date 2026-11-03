@@ -80,15 +80,13 @@ msgid "Keypad"
 msgstr "Teclado numérico"
 
 #: call-screen/qml/call/CallPage.qml:128
-#, fuzzy, kde-format
-#| msgid "Speaker"
+#, kde-format
 msgctxt "As in 'loudspeaker'"
 msgid "Speaker"
 msgstr "Altofalante"
 
 #: call-screen/qml/call/CallPage.qml:140
-#, fuzzy, kde-format
-#| msgid "Mute"
+#, kde-format
 msgctxt "@action:button"
 msgid "Mute"
 msgstr "Silenciar"
