@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-dialer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-24 00:48+0000\n"
-"PO-Revision-Date: 2026-08-24 19:59+0300\n"
+"PO-Revision-Date: 2026-10-05 15:36+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -36,7 +36,7 @@ msgstr "Puhelin"
 #: call-screen/main.cpp:120
 #, kde-format
 msgid "Plasma call screen"
-msgstr ""
+msgstr "Plasma-puhelunäyttö"
 
 #: call-screen/main.cpp:122 dialer/main.cpp:69
 #, kde-format
@@ -346,10 +346,9 @@ msgid "Cancel USSD session"
 msgstr "Peru USSD-istunto"
 
 #: shared/qml/call/InCallInlineMessage.qml:15
-#, fuzzy, kde-format
-#| msgid "Active call list"
+#, kde-format
 msgid "Active call"
-msgstr "Aktiivisten puhelujen luettelo"
+msgstr "Aktiivinen puhelu"
 
 #: shared/qml/call/InCallInlineMessage.qml:19
 #, kde-format
