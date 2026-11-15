@@ -1,0 +1,349 @@
+# Copyright (C) 2026 This file is copyright:
+# This file is distributed under the same license as the plasma-dialer package.
+#
+# SPDX-FileCopyrightText: 2026 Petros Vidalis <pvidalis@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-dialer\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-07-17 00:46+0000\n"
+"PO-Revision-Date: 2026-11-14 15:48+0200\n"
+"Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
+"Language-Team: Greek <kde-i18n-el@kde.org>\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 25.12.3\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Πέτρος Βιδάλης"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "pvidalis@gmail.com"
+
+#: src/main.cpp:138 src/qml/AddContactPage.qml:64 src/qml/Main.qml:123
+#, kde-format
+msgid "Phone"
+msgstr "Τηλέφωνο"
+
+#: src/main.cpp:140
+#, kde-format
+msgid "Plasma phone dialer"
+msgstr "Εφαρμογή τηλεφωνικών κλήσεων του Plasma"
+
+#: src/main.cpp:142
+#, kde-format
+msgid "© 2015-2022 KDE Community"
+msgstr "© 2015-2022 Κοινότητα του KDE"
+
+#: src/main.cpp:145
+#, kde-format
+msgid "Alexey Andreyev"
+msgstr "Alexey Andreyev"
+
+#: src/qml/AddContactPage.qml:26
+#, kde-format
+msgid "Adding contact"
+msgstr "Προσθήκη επαφής"
+
+#: src/qml/AddContactPage.qml:43
+#, kde-format
+msgid "Name"
+msgstr "Όνομα"
+
+#: src/qml/call/ActiveCallView.qml:57
+#, kde-format
+msgid "Incoming..."
+msgstr "Εισερχόμενη κλήση..."
+
+#: src/qml/call/ActiveCallView.qml:60
+#, kde-format
+msgid "Calling..."
+msgstr "Καλείται..."
+
+#: src/qml/call/AsymmetricAnswerSwipe.qml:102
+#, kde-format
+msgid "Swipe to accept"
+msgstr "Σύρετε για αποδοχή"
+
+#: src/qml/call/CallPage.qml:50
+#, kde-format
+msgctxt "This is a noun"
+msgid "Call"
+msgstr "Κλήση"
+
+#: src/qml/call/CallPage.qml:56
+#, kde-format
+msgid "Close"
+msgstr "Κλείσιμο"
+
+#: src/qml/call/CallPage.qml:115
+#, kde-format
+msgid "Keypad"
+msgstr "Αριθμητικό πληκτρολόγιο"
+
+#: src/qml/call/CallPage.qml:127
+#, kde-format
+msgctxt "As in 'loudspeaker'"
+msgid "Speaker"
+msgstr "Ηχείο"
+
+#: src/qml/call/CallPage.qml:139
+#, kde-format
+msgctxt "@action:button"
+msgid "Mute"
+msgstr "Σίγαση"
+
+#: src/qml/call/InCallInlineMessage.qml:13
+#, kde-format
+msgid "Active call list"
+msgstr ""
+
+#: src/qml/call/InCallInlineMessage.qml:17
+#, kde-format
+msgid "View"
+msgstr "Προβολή"
+
+#: src/qml/components/BottomToolbar.qml:94 src/qml/components/Sidebar.qml:57
+#, kde-format
+msgid "History"
+msgstr "Ιστορικό"
+
+#: src/qml/components/BottomToolbar.qml:106 src/qml/components/Sidebar.qml:76
+#: src/qml/ContactsPage.qml:24
+#, kde-format
+msgid "Contacts"
+msgstr "Επαφές"
+
+#: src/qml/components/BottomToolbar.qml:118 src/qml/components/Sidebar.qml:95
+#: src/qml/DialerPage.qml:27
+#, kde-format
+msgid "Dialer"
+msgstr "Πληκτρολόγηση αριθμού"
+
+#: src/qml/components/Sidebar.qml:121 src/qml/ContactsPage.qml:32
+#: src/qml/DialerPage.qml:56 src/qml/HistoryPage.qml:47
+#: src/qml/settings/SettingsPage.qml:26
+#, kde-format
+msgid "Settings"
+msgstr "Ρυθμίσεις"
+
+#: src/qml/components/Sidebar.qml:139
+#, kde-format
+msgid "Quit"
+msgstr "Έξοδος"
+
+#: src/qml/ContactsPage.qml:57
+#, kde-format
+msgid "No contacts have a phone number set"
+msgstr "Καμία επαφή δεν έχει αριθμό τηλεφώνου"
+
+#: src/qml/ContactsPage.qml:98
+#, kde-format
+msgid "Select number to call"
+msgstr "Επιλέξτε αριθμό για κλήση"
+
+#: src/qml/ContactsPage.qml:160 src/qml/DialerPage.qml:128
+#, kde-format
+msgid "Telephony daemons are not responding"
+msgstr "Οι δαίμονες τηλεφωνίας δεν αποκρίνονται"
+
+#: src/qml/DialerPage.qml:41
+#, kde-format
+msgid "Add contact"
+msgstr "Προσθήκη επαφής"
+
+#: src/qml/DialerPage.qml:138
+#, kde-format
+msgid "Modem devices are not found"
+msgstr "Δεν βρέθηκαν συσκευές μόντεμ"
+
+#: src/qml/DialerPage.qml:148
+#, kde-format
+msgid "Voicemail number couldn't be found"
+msgstr "Δεν βρέθηκε ο αριθμός του τηλεφωνητή"
+
+#: src/qml/history/HistoryDelegate.qml:68
+#, kde-format
+msgid "Duration: %1"
+msgstr "Διάρκεια: %1"
+
+#: src/qml/HistoryPage.qml:34
+#, kde-format
+msgid "Call History"
+msgstr "Ιστορικό κλήσεων"
+
+#: src/qml/HistoryPage.qml:40
+#, kde-format
+msgid "Clear history"
+msgstr "Εκκαθάριση ιστορικού"
+
+#: src/qml/HistoryPage.qml:68
+#, kde-format
+msgid "No recent calls"
+msgstr "Δεν υπάρχουν πρόσφατες κλήσεις"
+
+#: src/qml/ImeiSheet.qml:24
+#, kde-format
+msgid "No IMEIs found"
+msgstr "Δεν βρέθηκαν αριθμοί IMEI"
+
+#: src/qml/ImeiSheet.qml:30
+#, kde-format
+msgid "IMEI"
+msgid_plural "IMEIs"
+msgstr[0] "IMEI"
+msgstr[1] ""
+
+#: src/qml/settings/CallBlockSettingsPage.qml:25
+#, kde-format
+msgid "Adaptive Call Blocking"
+msgstr "Προσαρμοζόμενη φραγή κλήσεων"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:34
+#, kde-format
+msgid "Ignore calls from unknown numbers"
+msgstr "Παράβλεψη κλήσεων από άγνωστους αριθμούς"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:40
+#, kde-format
+msgid "When a call is an incoming from an unknown number"
+msgstr "Όταν υπάρχει εισερχόμενη κλήση από άγνωστο αριθμό"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:48
+#, kde-format
+msgid "Immediately hang up"
+msgstr "Άμεσος τερματισμός της κλήσης"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:54
+#, kde-format
+msgid "Ring without notification"
+msgstr "Κουδούνισμα χωρίς ειδοποίηση"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:60
+#, kde-format
+msgid "Ring with silent notification"
+msgstr "Κουδούνισμα με σιωπηλή ειδοποίηση"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:69
+#, kde-format
+msgid "Allowed exceptions"
+msgstr "Επιτρεπόμενες εξαιρέσεις"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:79
+#, kde-format
+msgid "Anonymous numbers"
+msgstr "Κλήσεις με απόκρυψη αριθμού"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:87
+#, kde-format
+msgid "Existing outgoing call to number"
+msgstr "Έχει προηγηθεί εξερχόμενη κλήση προς τον αριθμό"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:95
+#, kde-format
+msgid "Callback within"
+msgstr "Επιστροφή κλήσης εντός"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:114
+#, kde-format
+msgid "minutes"
+msgstr "λεπτά"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:127
+#, kde-format
+msgid "Allowed phone number exceptions"
+msgstr "Αριθμοί τηλεφώνου που επιτρέπονται κατ’ εξαίρεση"
+
+#: src/qml/settings/CallBlockSettingsPage.qml:149
+#: src/qml/settings/CallBlockSettingsPage.qml:187
+#, kde-format
+msgid "Add new pattern"
+msgstr "Προσθήκη νέου μοτίβου"
+
+#: src/qml/settings/RingtoneSettingsPage.qml:25
+#: src/qml/settings/SettingsPage.qml:50
+#, kde-format
+msgid "Ringtone"
+msgstr "Ήχος κλήσης"
+
+#: src/qml/settings/RingtoneSettingsPage.qml:79
+#, kde-format
+msgid "Select from files..."
+msgstr "Επιλογή από αρχεία..."
+
+#: src/qml/settings/RingtoneSettingsPage.qml:100
+#, kde-format
+msgid "Default (System)"
+msgstr "Προεπιλογή (σύστημα)"
+
+#: src/qml/settings/RingtoneSettingsPage.qml:150
+#, kde-format
+msgid "Choose a ringtone"
+msgstr "Επιλέξτε ήχο κλήσης"
+
+#: src/qml/settings/SettingsPage.qml:38
+#, kde-format
+msgid "About"
+msgstr "Σχετικά"
+
+#: src/qml/settings/SettingsPage.qml:51
+#, kde-format
+msgid "Default"
+msgstr "Προεπιλογή"
+
+#: src/qml/settings/SettingsPage.qml:63
+#, kde-format
+msgid "Adaptive call blocking"
+msgstr "Προσαρμοζόμενη φραγή κλήσεων"
+
+#: src/qml/settings/SettingsPage.qml:76
+#, kde-format
+msgid "Incoming call screen appearance"
+msgstr "Εμφάνιση οθόνης εισερχόμενης κλήσης"
+
+#: src/qml/settings/SettingsPage.qml:77
+#, kde-format
+msgid "Buttons"
+msgstr "Κουμπιά"
+
+#: src/qml/settings/SettingsPage.qml:77
+#, kde-format
+msgid "Symmetric Swipe"
+msgstr "Συμμετρική σάρωση"
+
+#: src/qml/settings/SettingsPage.qml:77
+#, kde-format
+msgid "Asymmetric Swipe"
+msgstr "Ασύμμετρη σάρωση"
+
+#: src/qml/USSDSheet.qml:39
+#, kde-format
+msgid "USSD Error"
+msgstr "Σφάλμα USSD"
+
+#: src/qml/USSDSheet.qml:39
+#, kde-format
+msgid "USSD Message"
+msgstr "Μήνυμα USSD"
+
+#: src/qml/USSDSheet.qml:70
+#, kde-format
+msgid "Write response..."
+msgstr "Πληκτρολογήστε την απάντηση..."
+
+#: src/qml/USSDSheet.qml:77
+#, kde-format
+msgid "Send"
+msgstr "Αποστολή"
+
+#: src/qml/USSDSheet.qml:95
+#, kde-format
+msgid "Cancel USSD session"
+msgstr "Ακύρωση συνεδρίας USSD"
