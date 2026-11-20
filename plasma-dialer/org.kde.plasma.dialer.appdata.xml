@@ -42,6 +42,10 @@ SPDX-License-Identifier: CC0-1.0
   <name xml:lang="sa">फोनं</name>
   <name xml:lang="sk">Telefón</name>
   <name xml:lang="sl">Phone</name>
+  <name xml:lang="sr">Телефон</name>
+  <name xml:lang="sr-Latn">Telefon</name>
+  <name xml:lang="sr-ijekavian">Телефон</name>
+  <name xml:lang="sr-ijekavianlatin">Telefon</name>
   <name xml:lang="sv">Telefon</name>
   <name xml:lang="tr">Telefon</name>
   <name xml:lang="ug">تېلېفون</name>
@@ -86,6 +90,10 @@ SPDX-License-Identifier: CC0-1.0
   <summary xml:lang="sa">दूरभाषं प्रेषयन्तु, प्राप्नुवन्तु च</summary>
   <summary xml:lang="sk">Send and receive phone calls</summary>
   <summary xml:lang="sl">Pošilja in sprejema telefonske klice</summary>
+  <summary xml:lang="sr">Упућивање и примање телефонских позива</summary>
+  <summary xml:lang="sr-Latn">Upućivanje i primanje telefonskih poziva</summary>
+  <summary xml:lang="sr-ijekavian">Упућивање и примање телефонских позива</summary>
+  <summary xml:lang="sr-ijekavianlatin">Upućivanje i primanje telefonskih poziva</summary>
   <summary xml:lang="sv">Ring och ta emot telefonsamtal</summary>
   <summary xml:lang="tr">Arama Yapma ve Gelen Aramaları Alma</summary>
   <summary xml:lang="ug">تېلېفون ئۇرىدۇ ۋە قوبۇللايدۇ</summary>
@@ -144,6 +152,10 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="sa">Phone app इत्यनेन भवन्तः स्मार्टफोनतः सहजतया दूरभाषं प्रेषयितुं प्राप्तुं च शक्नुवन्ति।</p>
     <p xml:lang="sk">The Phone app lets you easily send and receive phone calls from your smartphone.</p>
     <p xml:lang="sl">Aplikacija Phone vam omogoča preprosto pošiljanje in sprejemanje telefonskih klicev iz vašega pametnega telefona.</p>
+    <p xml:lang="sr">Програм „Телефон“ омогућава вам да лако упућујете и примате телефонске позиве са свог паметног телефона.</p>
+    <p xml:lang="sr-Latn">Program „Telefon“ omogućava vam da lako upućujete i primate telefonske pozive sa svog pametnog telefona.</p>
+    <p xml:lang="sr-ijekavian">Програм „Телефон“ омогућава вам да лако упућујете и примате телефонске позиве са свог паметног телефона.</p>
+    <p xml:lang="sr-ijekavianlatin">Program „Telefon“ omogućava vam da lako upućujete i primate telefonske pozive sa svog pametnog telefona.</p>
     <p xml:lang="sv">Telefonprogrammet låter dig enkelt ringa och ta emot telefonsamtal med din smarta telefon</p>
     <p xml:lang="tr">Telefon uygulaması, akıllı telefonunuzdan kolaylıkla aramalar yapmanızı ve almanızı sağlar.</p>
     <p xml:lang="ug">تېلېفون پىروگراممىسى ئارقىلىق ئەقلىي تېلېفوندا ئاسانلا چاقىرىپ ياكى چاقىرىقنى قوبۇللىيالايسىز.</p>
@@ -189,6 +201,10 @@ SPDX-License-Identifier: CC0-1.0
     <p xml:lang="sa">गुणाः:</p>
     <p xml:lang="sk">Funkcie:</p>
     <p xml:lang="sl">Zmožnosti:</p>
+    <p xml:lang="sr">Могућности:</p>
+    <p xml:lang="sr-Latn">Mogućnosti:</p>
+    <p xml:lang="sr-ijekavian">Могућности:</p>
+    <p xml:lang="sr-ijekavianlatin">Mogućnosti:</p>
     <p xml:lang="sv">Funktioner:</p>
     <p xml:lang="tr">Özellikler:</p>
     <p xml:lang="ug">ئىقتىدار:</p>
@@ -234,6 +250,10 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="sa">स्वस्य काल-इतिहासं पश्यन्तु पुनः सहजतया समानं नम्बरं आह्वयन्तु</li>
       <li xml:lang="sk">Zobrazujte históriu hovorov a jednoducho volajte na rovnaké číslo znova.</li>
       <li xml:lang="sl">Oglejte si svojo zgodovino klicev in preprosto znova pokličite isto številko</li>
+      <li xml:lang="sr">Прегледајте историјат позива и лако поново позовите исти број</li>
+      <li xml:lang="sr-Latn">Pregledajte istorijat poziva i lako ponovo pozovite isti broj</li>
+      <li xml:lang="sr-ijekavian">Прегледајте историјат позива и лако поново позовите исти број</li>
+      <li xml:lang="sr-ijekavianlatin">Pregledajte istorijat poziva i lako ponovo pozovite isti broj</li>
       <li xml:lang="sv">Se din samtalshistorik och ring enkelt samma nummer igen</li>
       <li xml:lang="tr">Arama geçmişinizi görün ve aynı numarayı kolaylıkla yeniden arayın</li>
       <li xml:lang="ug">چاقىرىش خاتىرىسى كۆرۈپ ۋە ئوخشاش نومۇرنى ئاسانلا قايتا چاقىرالايسىز</li>
@@ -278,6 +298,10 @@ SPDX-License-Identifier: CC0-1.0
       <li xml:lang="sa">येषु दूरभाषसङ्ख्या सेट् भवति तेषां सम्पर्कं प्रबन्धयन्तु</li>
       <li xml:lang="sk">Manage your contacts that have a phone number set</li>
       <li xml:lang="sl">Upravljajte svoje stike, ki imajo nastavljeno telefonsko številko</li>
+      <li xml:lang="sr">Управљајте контактима који имају постављен број телефона</li>
+      <li xml:lang="sr-Latn">Upravljajte kontaktima koji imaju postavljen broj telefona</li>
+      <li xml:lang="sr-ijekavian">Управљајте контактима који имају постављен број телефона</li>
+      <li xml:lang="sr-ijekavianlatin">Upravljajte kontaktima koji imaju postavljen broj telefona</li>
       <li xml:lang="sv">Hantera kontakter som har ett telefonnummer inställt</li>
       <li xml:lang="tr">Telefon numarası kayıtlı olan kişilerinizi yönetin</li>
       <li xml:lang="ug">تېلېفون نومۇرى بار ئالاقەداشنى باشقۇرالايسىز</li>
@@ -328,6 +352,10 @@ SPDX-License-Identifier: CC0-1.0
       <caption xml:lang="sa">डायलर पृष्ठम्</caption>
       <caption xml:lang="sk">The dialer page</caption>
       <caption xml:lang="sl">Stran številčnice</caption>
+      <caption xml:lang="sr">Страница за бирање бројева</caption>
+      <caption xml:lang="sr-Latn">Stranica za biranje brojeva</caption>
+      <caption xml:lang="sr-ijekavian">Страница за бирање бројева</caption>
+      <caption xml:lang="sr-ijekavianlatin">Stranica za biranje brojeva</caption>
       <caption xml:lang="sv">Uppringningssidan</caption>
       <caption xml:lang="tr">Çevirici</caption>
       <caption xml:lang="ug">نومۇر بۇرىغۇچ بېتى</caption>
@@ -375,6 +403,10 @@ SPDX-License-Identifier: CC0-1.0
       <caption xml:lang="sa">ध्वनिपत्रं आह्वयति</caption>
       <caption xml:lang="sk">Calling voicemail</caption>
       <caption xml:lang="sl">Klicanje glasovne pošte</caption>
+      <caption xml:lang="sr">Позивање говорне поште</caption>
+      <caption xml:lang="sr-Latn">Pozivanje govorne pošte</caption>
+      <caption xml:lang="sr-ijekavian">Позивање говорне поште</caption>
+      <caption xml:lang="sr-ijekavianlatin">Pozivanje govorne pošte</caption>
       <caption xml:lang="sv">Ringa röstbrevlåda</caption>
       <caption xml:lang="tr">Telesekreteri arama</caption>
       <caption xml:lang="ug">ئۈنخەتنى چاقىر</caption>
