@@ -36,7 +36,7 @@ msgstr "电话"
 #: call-screen/main.cpp:120
 #, kde-format
 msgid "Plasma call screen"
-msgstr ""
+msgstr "Plasma 通话画面"
 
 #: call-screen/main.cpp:122 dialer/main.cpp:69
 #, kde-format
@@ -345,10 +345,9 @@ msgid "Cancel USSD session"
 msgstr "取消 USSD 会话"
 
 #: shared/qml/call/InCallInlineMessage.qml:15
-#, fuzzy, kde-format
-#| msgid "Active call list"
+#, kde-format
 msgid "Active call"
-msgstr "活动通话列表"
+msgstr "活动通话"
 
 #: shared/qml/call/InCallInlineMessage.qml:19
 #, kde-format
